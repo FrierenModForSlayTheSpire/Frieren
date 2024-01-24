@@ -8,8 +8,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
-import static FrierenMod.tags.CustomTags.RECAST;
+import static FrierenMod.tags.CustomTags.*;
 
 public class MagicPower extends CustomCard {
     public static final String ID = ModHelper.makePath(MagicPower.class.getSimpleName());
