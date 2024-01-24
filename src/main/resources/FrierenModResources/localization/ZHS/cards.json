@@ -1,0 +1,147 @@
+{
+  "FrierenMod:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "FrierenMod:Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "FrierenMod:ShaRenMoFa": {
+    "NAME": "杀人魔法",
+    "DESCRIPTION": " frierenmod:强力魔法 。 NL 造成你已 消耗 的 *魔力 数量的伤害2次 NL （已消耗 !M! 张魔力） NL (至多计算20张)。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:强力魔法 。 NL 造成你已 消耗 的 *魔力 数量的伤害2次 NL （已消耗 !M! 张魔力） NL (至多计算20张)。。"
+  },
+  "FrierenMod:FangYuMoFa": {
+    "NAME": "防御魔法",
+    "DESCRIPTION": " frierenmod:咏唱  !M! 。获得 !B! 点格挡。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !M! 。获得 !B! 点格挡。"
+  },
+  "FrierenMod:HolyChant": {
+    "NAME": "神圣咏唱",
+    "DESCRIPTION": " frierenmod:咏唱  !M! 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !M! 。"
+  },
+  "FrierenMod:MagicPower": {
+    "NAME": "魔力",
+    "DESCRIPTION": " frierenmod:重铸 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:重铸 。"
+  },
+  "FrierenMod:SaveMagic": {
+    "NAME": "积蓄魔力",
+    "DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。"
+  },
+  "FrierenMod:HideMagic": {
+    "NAME": "魔力隐藏",
+    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部置入弃牌堆。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部置入弃牌堆。"
+  },
+  "FrierenMod:ChantFromDrawPile": {
+    "NAME": "从抽牌堆中咏唱",
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得2x !M! 点 格挡 。",
+    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得2x !M! 点 格挡 。"
+  },
+  "FrierenMod:ChantFromHand": {
+    "NAME": "从手牌中咏唱",
+    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 能量 。",
+    "UPGRADE_DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 能量 。"
+  },
+  "FrierenMod:ChantFromDiscardPile": {
+    "NAME": "从弃牌堆中咏唱",
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
+    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
+  },
+  "FrierenMod:TransferMagic": {
+    "NAME": "运转",
+    "DESCRIPTION": "抽 !M! 张 *魔力 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张 *魔力 。"
+  },
+  "FrierenMod:ChiXuSanShe": {
+    "NAME": "持续散射",
+    "DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 ",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。 "
+  },
+  "FrierenMod:YongXu": {
+    "NAME": "永续",
+    "DESCRIPTION": "在你的回合开始时，将2张 *魔力 置入弃牌堆。 ",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时，将2张 *魔力 置入弃牌堆。"
+  },
+  "FrierenMod:NiLiu": {
+    "NAME": "逆流",
+    "DESCRIPTION": "在弃牌堆中抽 !M! 张 *魔力 。",
+    "UPGRADE_DESCRIPTION": "在弃牌堆中抽 !M! 张 *魔力 。"
+  },
+  "FrierenMod:FenSan": {
+    "NAME": "分散",
+    "DESCRIPTION": "将1张 *魔力 置入抽牌堆。 NL 将2张 *魔力 置入手牌。 NL 将3张 *魔力 置入弃牌堆。 消耗 。",
+    "UPGRADE_DESCRIPTION": "将1张 *魔力 置入抽牌堆。 NL 将2张 *魔力 置入手牌。 NL 将3张 *魔力 置入弃牌堆。"
+  },
+  "FrierenMod:LiuZhuan": {
+    "NAME": "流转",
+    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 置入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 置入弃牌堆。"
+  },
+  "FrierenMod:FeiXingMoFa": {
+    "NAME": "飞行魔法",
+    "DESCRIPTION": " frierenmod:强力魔法 。 NL 获得 !M! 层 无实体 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:强力魔法 。 NL 获得 !M! 层 无实体 。"
+  },
+  "FrierenMod:MoDaoShu": {
+    "NAME": "魔导书",
+    "DESCRIPTION": "随机将2张 frierenmod:强力魔法 置入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "随机将2张 frierenmod:强力魔法 置入手牌。这2张牌在本回合耗能变为0。 NL  消耗 。"
+  },
+  "FrierenMod:QingXie": {
+    "NAME": "倾泻",
+    "DESCRIPTION": "打出此牌后，你在本回合内不能再抽牌， NL 且每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 打出此牌后，你在本回合内不能再抽牌， NL 且每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。"
+  },
+  "FrierenMod:GuiYi": {
+    "NAME": "归一",
+    "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果） 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果）。 NL  消耗 。"
+  },
+  "FrierenMod:TuPo": {
+    "NAME": "突破",
+    "DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。",
+    "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。"
+  },
+  "FrierenMod:LianHuanYongChang": {
+    "NAME": "连环咏唱",
+    "DESCRIPTION": " frierenmod:强力魔法 。 NL 将 !M! 张 *魔力 置入抽牌堆。 NL  frierenmod:咏唱  !M!  。",
+    "UPGRADE_DESCRIPTION": " frierenmod:强力魔法 。 NL 将 !M! 张 *魔力 置入抽牌堆。 NL  frierenmod:咏唱  !M!  。"
+  },
+  "FrierenMod:HeiAnYongChang": {
+    "NAME": "黑暗咏唱",
+    "DESCRIPTION": " frierenmod:强力魔法 。 NL  消耗 手牌中1张 *魔力 ， 给予所有敌人2层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）",
+    "UPGRADE_DESCRIPTION": " 消耗 手牌中1张 *魔力 , 给予所有敌人2层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）。"
+  },
+  "FrierenMod:ShuiYiXingTai": {
+    "NAME": "睡衣形态",
+    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的2倍。 NL （将造成 !D! 点伤害）。",
+    "UPGRADE_DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的2倍。 NL （将造成 !D! 点伤害）。"
+  },
+  "FrierenMod:ZhunBei": {
+    "NAME": "准备",
+    "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。",
+    "UPGRADE_DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
+  },
+  "FrierenMod:QiPianMoZuDeXiaoBaXi": {
+    "NAME": "欺骗魔族的小把戏",
+    "DESCRIPTION": "在你的回合开始时，将1张 *魔力隐藏 置入手牌。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，将1张 *魔力隐藏 置入手牌。"
+  },
+  "FrierenMod:XuLi": {
+    "NAME": "让花盛开的魔法",
+    "DESCRIPTION": " frierenmod:咏唱 !M! 。抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !M! 。抽 !M! 张牌。"
+  },
+  "FrierenMod:LianTong": {
+    "NAME": "连通",
+    "DESCRIPTION": " frierenmod:咏唱 3X 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱 3X 。"
+  }
+}

@@ -1,0 +1,30 @@
+[
+  {
+    "PROPER_NAME":"咏唱X",
+    "NAMES": [
+      "咏唱X","咏唱"
+    ],
+    "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得2X点 #y格挡  NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量  NL 消耗手牌中X张 #y魔力 ，获得X点能量"
+  },
+  {
+    "PROPER_NAME":"重铸",
+    "NAMES": [
+      "重铸"
+    ],
+    "DESCRIPTION": "抽1张牌， #y消耗"
+  },
+  {
+    "PROPER_NAME":"强力魔法",
+    "NAMES": [
+      "强力魔法"
+    ],
+    "DESCRIPTION": "本回合中打出过 #y咏唱 牌后才可打出。"
+  },
+  {
+    "PROPER_NAME":"临时力量",
+    "NAMES": [
+      "临时力量"
+    ],
+    "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
+  }
+]

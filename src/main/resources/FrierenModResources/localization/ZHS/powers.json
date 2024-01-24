@@ -1,0 +1,26 @@
+{
+  "FrierenMod:YongXuPower": {
+    "NAME": "永续",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，将 #b%d 张 #y魔力 置入弃牌堆。 "
+    ]
+  },
+  "FrierenMod:QingXiePower": {
+    "NAME": "倾泻",
+    "DESCRIPTIONS": [
+      "每打出一张 #y重铸 牌，获得 #b%d 点 #y临时力量 。"
+    ]
+  },
+  "FrierenMod:ShuiYiXingTaiPower": {
+    "NAME": "睡衣形态",
+    "DESCRIPTIONS": [
+      "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的2倍。 NL （将造成 #b%d 点伤害）。"
+    ]
+  },
+  "FrierenMod:QiPianMoZuDeXiaoBaXiPower": {
+    "NAME": "欺骗魔族的小把戏",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，将 #b%d 张 #y魔力隐藏 置入手牌。"
+    ]
+  }
+}

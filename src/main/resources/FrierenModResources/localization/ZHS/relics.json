@@ -1,0 +1,9 @@
+{
+  "FrierenMod:MyRelic": {
+    "NAME": "圣仗之证",
+    "FLAVOR": "这个人很懒，什么都没写",
+    "DESCRIPTIONS": [
+      "第 #b2 回合开始时，将1张 #b魔力隐藏 置入手牌。"
+    ]
+  }
+}
