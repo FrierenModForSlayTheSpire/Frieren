@@ -45,16 +45,6 @@ public class FeiXingMoFa extends CustomCard{
         this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        PowerfulMagicHelper helper = new PowerfulMagicHelper();
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (helper.cannotPlayPowerfulMagic()){
-            return false;
-        }
-        else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
-        }
+        return new PowerfulMagicHelper().canPowerfulMagicUse(this,p,m);
     }
 }
