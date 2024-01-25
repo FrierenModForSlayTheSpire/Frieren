@@ -51,8 +51,8 @@
   },
   "FrierenMod:ChantFromDiscardPile": {
     "NAME": "从弃牌堆中咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
-    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
+    "UPGRADE_DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
   },
   "FrierenMod:TransferMagic": {
     "NAME": "运转",
