@@ -79,7 +79,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new MeiJunMoFa());
         BaseMod.addCard(new FenSan());
         BaseMod.addCard(new LiuZhuan());
-        BaseMod.addCard(new ShaRenMoFa());
+        BaseMod.addCard(new PuGongMoFa());
         BaseMod.addCard(new FeiXingMoFa());
         BaseMod.addCard(new MoDaoShu());
         BaseMod.addCard(new QingXie());

@@ -1,8 +1,6 @@
 package FrierenMod.helpers;
 
-import FrierenMod.cards.white.FeiXingMoFa;
-import FrierenMod.cards.white.LianHuanYongChang;
-import FrierenMod.cards.white.ShaRenMoFa;
+import FrierenMod.cards.white.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -38,8 +36,10 @@ public class LegendMagicHelper {
     private ArrayList<AbstractCard> initPowerMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FeiXingMoFa());
-        pool.add(new ShaRenMoFa());
+        pool.add(new PuGongMoFa());
         pool.add(new LianHuanYongChang());
+        pool.add(new ShiPingMoFa());
+        pool.add(new YouZiMoFa());
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){

@@ -4,11 +4,9 @@ import FrierenMod.helpers.ModHelper;
 import FrierenMod.helpers.LegendMagicHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -17,8 +15,8 @@ import basemod.abstracts.CustomCard;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class ShaRenMoFa extends CustomCard{
-    public static final String ID = ModHelper.makePath(ShaRenMoFa.class.getSimpleName());
+public class PuGongMoFa extends CustomCard{
+    public static final String ID = ModHelper.makePath(PuGongMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -29,7 +27,7 @@ public class ShaRenMoFa extends CustomCard{
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
 
-    public ShaRenMoFa() {
+    public PuGongMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
@@ -84,16 +82,6 @@ public class ShaRenMoFa extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        LegendMagicHelper helper = new LegendMagicHelper();
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (helper.cannotPlayLegendMagic()){
-            return false;
-        }
-        else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
-        }
+        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
     }
 }
