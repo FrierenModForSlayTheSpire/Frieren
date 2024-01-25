@@ -31,7 +31,7 @@ public class ShuiYiXingTai extends CustomCard{
         this.cardsToPreview = new MagicPower();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *2;
+        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *3;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -42,7 +42,7 @@ public class ShuiYiXingTai extends CustomCard{
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *2;
+        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *3;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;

@@ -39,7 +39,7 @@ public class ShuiYiXingTaiPower extends AbstractPower {
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 2;
+        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 3;
 
         this.amount = -1;
 
@@ -57,7 +57,7 @@ public class ShuiYiXingTaiPower extends AbstractPower {
             this.addToBot(new ExhaustMagicPowerInDrawPileAction(new ChantHelper().getMagicPowerNumInDrawPile()));
             this.addToBot(new ExhaustMagicPowerInHandAction(new ChantHelper().getMagicPowerNumInHand()));
             this.addToBot(new ExhaustMagicPowerInDiscardPileAction(new ChantHelper().getMagicPowerNumInDiscardPile()));
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.baseDamage * 2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
 
     }
@@ -68,7 +68,7 @@ public class ShuiYiXingTaiPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 2;
+        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 3;
         this.description = String.format(DESCRIPTIONS[0], this.baseDamage);
     }
 
