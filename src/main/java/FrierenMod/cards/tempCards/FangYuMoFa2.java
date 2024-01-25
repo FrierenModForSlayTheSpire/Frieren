@@ -1,7 +1,6 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.tempCards.FangYuMoFa2;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -18,22 +17,22 @@ import basemod.abstracts.CustomCard;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.CHANT;
 
-public class FangYuMoFa extends CustomCard{
-    public static final String ID = ModHelper.makePath(FangYuMoFa.class.getSimpleName());
+public class FangYuMoFa2 extends CustomCard{
+    public static final String ID = ModHelper.makePath(FangYuMoFa2.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
     private static final int COST = 1;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public FangYuMoFa() {
+    public FangYuMoFa2() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = 3;
         this.tags.add(CHANT);
-        this.cardsToPreview = new FangYuMoFa2();
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
@@ -48,14 +47,6 @@ public class FangYuMoFa extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChantAction(1));
         this.addToBot(new GainBlockAction(p,this.block));
-        if(this.upgraded){
-            AbstractCard c = new FangYuMoFa2();
-            c.upgraded = true;
-            this.addToBot(new MakeTempCardInHandAction(c));
-        }
-        else {
-            this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy()));
-        }
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
