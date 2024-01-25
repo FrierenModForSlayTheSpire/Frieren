@@ -16,8 +16,8 @@
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡 NL 将另一张 *防御魔法 置入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 置入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法 置入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 置入手牌。"
   },
   "FrierenMod:FangYuMoFa2": {
     "NAME": "防御魔法",
@@ -161,8 +161,8 @@
   },
   "FrierenMod:ShiJueMoFa": {
     "NAME": "视觉攻击魔法",
-    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自都只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。",
-    "UPGRADE_DESCRIPTION": " 你的手牌、抽牌堆、弃牌堆各自都只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。"
+    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量恰好为 !M! 时才可打出。 NL 对所有敌人造成999点伤害。",
+    "UPGRADE_DESCRIPTION": " 你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量恰好为 !M! 时才可打出。 NL 对所有敌人造成999点伤害。"
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",
@@ -171,7 +171,7 @@
   },
   "FrierenMod:RaoKouLingMoFa": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "如果你的手牌中有 *魔力，抽 !M! 张牌。 NL 否则，抽 !M! 张。",
-    "UPGRADE_DESCRIPTION": "如果你的手牌中有 *魔力，抽 !M! 张牌。 NL 否则，抽 !M! 张。"
+    "DESCRIPTION": "如果你的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则，抽 3 张。",
+    "UPGRADE_DESCRIPTION": "如果你的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则，抽 4 张。"
   }
 }
