@@ -35,12 +35,14 @@ public class HeiAnYongChang extends CustomCard{
     public HeiAnYongChang() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
+        this.magicNumber = this.baseMagicNumber = 3;
         this.tags.add(POWERFUL_MAGIC);
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeMagicNumber(1);
             this.tags.clear();
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();

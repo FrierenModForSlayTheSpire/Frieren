@@ -116,8 +116,8 @@
   },
   "FrierenMod:HeiAnYongChang": {
     "NAME": "黑暗咏唱",
-    "DESCRIPTION": " frierenmod:强力魔法 。 NL  消耗 手牌中1张 *魔力 ， 给予所有敌人2层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）",
-    "UPGRADE_DESCRIPTION": " 消耗 手牌中1张 *魔力 , 给予所有敌人2层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）。"
+    "DESCRIPTION": " frierenmod:强力魔法 。 NL  消耗 手牌中1张 *魔力 ， 给予所有敌人 !M! 层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）",
+    "UPGRADE_DESCRIPTION": " 消耗 手牌中1张 *魔力 , 给予所有敌人 !M! 层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）。"
   },
   "FrierenMod:ShuiYiXingTai": {
     "NAME": "睡衣形态",
