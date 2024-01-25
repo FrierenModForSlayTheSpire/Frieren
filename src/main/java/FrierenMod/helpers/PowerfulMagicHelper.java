@@ -41,7 +41,6 @@ public class PowerfulMagicHelper {
         pool.add(new FeiXingMoFa());
         pool.add(new ShaRenMoFa());
         pool.add(new LianHuanYongChang());
-        pool.add(new HeiAnYongChang());
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){
