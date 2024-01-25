@@ -16,8 +16,13 @@
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱  !M! 。获得 !B! 点格挡。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !M! 。获得 !B! 点格挡。"
+    "DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡 NL 将另一张 *防御魔法 置入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 置入手牌。"
+  },
+  "FrierenMod:FangYuMoFa2": {
+    "NAME": "防御魔法",
+    "DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱1。获得 !B! 点格挡。 NL  消耗 。"
   },
   "FrierenMod:HolyChant": {
     "NAME": "神圣咏唱",
@@ -30,7 +35,7 @@
     "UPGRADE_DESCRIPTION": " frierenmod:重铸 。"
   },
   "FrierenMod:SaveMagic": {
-    "NAME": "积蓄魔力",
+    "NAME": "变出刨冰的魔法",
     "DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。",
     "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。"
   },
@@ -55,14 +60,14 @@
     "UPGRADE_DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
   },
   "FrierenMod:TransferMagic": {
-    "NAME": "运转",
+    "NAME": "拔出无底沼泽的魔法",
     "DESCRIPTION": "抽 !M! 张 *魔力 。",
     "UPGRADE_DESCRIPTION": "抽 !M! 张 *魔力 。"
   },
-  "FrierenMod:ChiXuSanShe": {
-    "NAME": "持续散射",
-    "DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 ",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。 "
+  "FrierenMod:MeiJunMoFa": {
+    "NAME": "消灭霉菌的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 ",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 "
   },
   "FrierenMod:YongXu": {
     "NAME": "永续",
@@ -104,8 +109,8 @@
     "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果） 。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果）。 NL  消耗 。"
   },
-  "FrierenMod:TuPo": {
-    "NAME": "突破",
+  "FrierenMod:HongPingGuo": {
+    "NAME": "将红苹果变成青苹果的魔法",
     "DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。",
     "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。"
   },
@@ -149,9 +154,24 @@
     "DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。",
     "UPGRADE_DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。"
   },
-  "FrierenMod:QingChuMoFa": {
+  "FrierenMod:YouZiMoFa": {
     "NAME": "清除顽固油渍的魔法",
-    "DESCRIPTION": "传说魔法",
-    "UPGRADE_DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 NL 如果有敌人未死亡，则再造成 !D! 点伤害。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 NL 如果有敌人未死亡，则再造成 !D! 点伤害。"
+  },
+  "FrierenMod:ShiJueMoFa": {
+    "NAME": "视觉攻击魔法",
+    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。",
+    "UPGRADE_DESCRIPTION": " 你的手牌、抽牌堆、弃牌堆各自只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。"
+  },
+  "FrierenMod:BaoBingMoFa": {
+    "NAME": "翻薄饼时会很顺利的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法。 NL 从抽牌堆中选择1张牌放入你的手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法。 NL 从抽牌堆中选择1张牌放入你的手牌。"
+  },
+  "FrierenMod:RaoKouLingMoFa": {
+    "NAME": "说绕口令时绝对不会大舌头的魔法",
+    "DESCRIPTION": "如果你的手牌中有 *魔力，抽 !M! 张牌。 NL 否则，抽 !M! 张。",
+    "UPGRADE_DESCRIPTION": "如果你的手牌中有 *魔力，抽 !M! 张牌。 NL 否则，抽 !M! 张。"
   }
 }
