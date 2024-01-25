@@ -1,10 +1,9 @@
-package FrierenMod.cards.white.powerfulMagic;
+package FrierenMod.cards.white;
 
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.helpers.PowerfulMagicHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -19,7 +18,6 @@ import com.megacrit.cardcrawl.powers.VulnerablePower;
 import java.util.Iterator;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.POWERFUL_MAGIC;
 
 public class HeiAnYongChang extends CustomCard{
     public static final String ID = ModHelper.makePath(HeiAnYongChang.class.getSimpleName());
@@ -36,7 +34,6 @@ public class HeiAnYongChang extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
         this.magicNumber = this.baseMagicNumber = 3;
-        this.tags.add(POWERFUL_MAGIC);
     }
     @Override
     public void upgrade() {
@@ -59,30 +56,16 @@ public class HeiAnYongChang extends CustomCard{
         }
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        PowerfulMagicHelper helper1 = new PowerfulMagicHelper();
         ChantHelper helper2 = new ChantHelper();
-        if(!this.upgraded){
-            if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-                return false;
-            } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-                return false;
-            } else if (helper1.cannotPlayPowerfulMagic() || !helper2.canChantFromHand(1)){
-                return false;
-            }
-            else {
-                return this.cardPlayable(m) && this.hasEnoughEnergy();
-            }
-        }else {
-            if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-                return false;
-            } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-                return false;
-            } else if (!helper2.canChantFromHand(1)){
-                return false;
-            }
-            else {
-                return this.cardPlayable(m) && this.hasEnoughEnergy();
-            }
+        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
+            return false;
+        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
+            return false;
+        } else if (!helper2.canChantFromHand(1)){
+            return false;
+        }
+        else {
+            return this.cardPlayable(m) && this.hasEnoughEnergy();
         }
     }
 }

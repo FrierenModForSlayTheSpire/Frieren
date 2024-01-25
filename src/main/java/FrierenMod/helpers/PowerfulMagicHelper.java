@@ -1,7 +1,7 @@
 package FrierenMod.helpers;
 
 import FrierenMod.cards.white.powerfulMagic.FeiXingMoFa;
-import FrierenMod.cards.white.powerfulMagic.HeiAnYongChang;
+import FrierenMod.cards.white.HeiAnYongChang;
 import FrierenMod.cards.white.powerfulMagic.LianHuanYongChang;
 import FrierenMod.cards.white.powerfulMagic.ShaRenMoFa;
 import com.megacrit.cardcrawl.cards.AbstractCard;
