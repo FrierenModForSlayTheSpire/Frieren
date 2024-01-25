@@ -25,7 +25,7 @@ public class SaveMagic extends CustomCard{
     public SaveMagic() {
         // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseMagicNumber = this.magicNumber = 6;
+        this.baseMagicNumber = this.magicNumber = 4;
         this.cardsToPreview = new MagicPower();
     }
     // 这些方法怎么写，之后再讨论
