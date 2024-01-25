@@ -28,7 +28,7 @@ public class LiuZhuan extends CustomCard{
     private static final CardTarget TARGET = CardTarget.NONE;
     public LiuZhuan() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new MagicPower();
     }
     @Override
