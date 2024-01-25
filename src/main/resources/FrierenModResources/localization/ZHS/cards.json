@@ -31,8 +31,8 @@
   },
   "FrierenMod:MagicPower": {
     "NAME": "魔力",
-    "DESCRIPTION": " frierenmod:重铸 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:重铸 。"
+    "DESCRIPTION": " frierenmod:同调 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:同调 。"
   },
   "FrierenMod:SaveMagic": {
     "NAME": "变出刨冰的魔法",
@@ -101,18 +101,18 @@
   },
   "FrierenMod:QingXie": {
     "NAME": "倾泻",
-    "DESCRIPTION": "打出此牌后，你在本回合内每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。"
+    "DESCRIPTION": "打出此牌后，你在本回合内每打出一张 frierenmod:同调 牌，获得 !M! 点 力量 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每打出一张 frierenmod:同调 牌，获得 !M! 点 力量 。 NL  消耗 。"
   },
   "FrierenMod:GuiYi": {
     "NAME": "归一",
-    "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果） 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:重铸 （不触发重铸效果）。 NL  消耗 。"
+    "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果） 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果）。 NL  消耗 。"
   },
   "FrierenMod:HongPingGuo": {
     "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。",
-    "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:重铸 NL （打出原本不能打出的牌只触发 *重铸 效果）。"
+    "DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:同调 NL （打出原本不能打出的牌只触发 *同调 效果）。",
+    "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:同调 NL （打出原本不能打出的牌只触发 *同调 效果）。"
   },
   "FrierenMod:LianHuanYongChang": {
     "NAME": "连环咏唱",
@@ -146,8 +146,8 @@
   },
   "FrierenMod:MoLiPengZhang": {
     "NAME": "魔力膨胀",
-    "DESCRIPTION": "使你当前所有 frierenmod:重铸 牌再获得 *重铸 1次。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 使你当前所有 frierenmod:重铸 牌再获得 *重铸 1次。 NL 消耗 。"
+    "DESCRIPTION": "使你当前所有 frierenmod:同调 牌再获得 *同调 1次。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 使你当前所有 frierenmod:同调 牌再获得 *同调 1次。 NL 消耗 。"
   },
   "FrierenMod:ShiPingMoFa": {
     "NAME": "寻找遗失饰品的魔法",
@@ -171,7 +171,7 @@
   },
   "FrierenMod:RaoKouLingMoFa": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "如果你的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则，抽 3 张。",
-    "UPGRADE_DESCRIPTION": "如果你的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则，抽 4 张。"
+    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则抽 3 张。",
+    "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则抽 4 张。"
   }
 }

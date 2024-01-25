@@ -7,11 +7,11 @@
     "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得2X点 #y格挡  NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量  NL 消耗手牌中X张 #y魔力 ，获得X点能量"
   },
   {
-    "PROPER_NAME":"重铸",
+    "PROPER_NAME":"同调",
     "NAMES": [
-      "重铸"
+      "同调"
     ],
-    "DESCRIPTION": "抽1张牌， #y消耗"
+    "DESCRIPTION": "抽1张牌。 #y消耗 。"
   },
   {
     "PROPER_NAME":"传说魔法",
