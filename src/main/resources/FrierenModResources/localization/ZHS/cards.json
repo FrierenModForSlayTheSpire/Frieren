@@ -156,13 +156,13 @@
   },
   "FrierenMod:YouZiMoFa": {
     "NAME": "清除顽固油渍的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 NL 如果有敌人未死亡，则再造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 NL 如果有敌人未死亡，则再造成 !D! 点伤害。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果打出此牌后没有敌人死亡，则再造成 10 点伤害。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果打出此牌后没有敌人死亡，则再造成 10 点伤害。"
   },
   "FrierenMod:ShiJueMoFa": {
     "NAME": "视觉攻击魔法",
-    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。",
-    "UPGRADE_DESCRIPTION": " 你的手牌、抽牌堆、弃牌堆各自只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。"
+    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自都只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。",
+    "UPGRADE_DESCRIPTION": " 你的手牌、抽牌堆、弃牌堆各自都只有 !M! 张 *魔力 时才能打出。 NL 对所有敌人造成999点伤害。"
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",

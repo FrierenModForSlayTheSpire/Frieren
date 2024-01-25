@@ -67,6 +67,5 @@ public class ChantHelper {
         else {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
         }
-
     }
 }

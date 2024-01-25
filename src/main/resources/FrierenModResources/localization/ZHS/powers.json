@@ -22,5 +22,11 @@
     "DESCRIPTIONS": [
       "在你的回合开始时，将 #b%d 张 #y魔力隐藏 置入手牌。"
     ]
+  },
+  "FrierenMod:GainRelicPower": {
+    "NAME": "寻找遗失饰品的魔法",
+    "DESCRIPTIONS": [
+      "战斗结束时，获得 #b%d 件随机遗物。"
+    ]
   }
 }
