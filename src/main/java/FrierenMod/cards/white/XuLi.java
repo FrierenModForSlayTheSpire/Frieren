@@ -42,7 +42,7 @@ public class XuLi extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.magicNumber));
+        this.addToBot(new ChantAction(3));
         this.addToBot(new DrawCardAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -51,7 +51,7 @@ public class XuLi extends CustomCard{
             return false;
         } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;
-        } else if (helper.cannotChant(this.magicNumber)){
+        } else if (helper.cannotChant(3)){
             return false;
         }
         else {
