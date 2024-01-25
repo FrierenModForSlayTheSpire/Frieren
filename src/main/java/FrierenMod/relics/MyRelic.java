@@ -34,6 +34,6 @@ public class MyRelic extends CustomRelic {
     public void atTurnStartPostDraw() {
         this.flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),4,true,true));
+        this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),3,true,true));
     }
 }
