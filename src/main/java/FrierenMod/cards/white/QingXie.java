@@ -39,7 +39,6 @@ public class QingXie extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new NoDrawPower(p), 1));
         this.addToBot(new ApplyPowerAction(p, p, new QingXiePower(p,this.magicNumber)));
     }
 }
