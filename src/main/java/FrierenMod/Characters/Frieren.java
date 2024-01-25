@@ -91,7 +91,7 @@ public class Frieren extends CustomPlayer {
         for(int x = 0; x<4; x++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(SaveMagic.ID);
+        retVal.add(LiuZhuan.ID);
         retVal.add(FangYuMoFa.ID);
         retVal.add(HolyChant.ID);
         return retVal;
