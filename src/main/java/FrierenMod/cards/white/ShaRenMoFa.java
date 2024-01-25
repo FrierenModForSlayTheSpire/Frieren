@@ -1,7 +1,7 @@
-package FrierenMod.cards.white.powerfulMagic;
+package FrierenMod.cards.white;
 
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.helpers.PowerfulMagicHelper;
+import FrierenMod.helpers.LegendMagicHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.POWERFUL_MAGIC;
+import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class ShaRenMoFa extends CustomCard{
     public static final String ID = ModHelper.makePath(ShaRenMoFa.class.getSimpleName());
@@ -34,7 +34,7 @@ public class ShaRenMoFa extends CustomCard{
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
-        this.tags.add(POWERFUL_MAGIC);
+        this.tags.add(LEGEND_MAGIC);
     }
     @Override
     public void upgrade() {
@@ -47,7 +47,7 @@ public class ShaRenMoFa extends CustomCard{
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = new PowerfulMagicHelper().getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = new LegendMagicHelper().getExhaustedMagicPowerNumber();
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -57,7 +57,7 @@ public class ShaRenMoFa extends CustomCard{
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = new PowerfulMagicHelper().getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = new LegendMagicHelper().getExhaustedMagicPowerNumber();
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -84,12 +84,12 @@ public class ShaRenMoFa extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        PowerfulMagicHelper helper = new PowerfulMagicHelper();
+        LegendMagicHelper helper = new LegendMagicHelper();
         if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
             return false;
         } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;
-        } else if (helper.cannotPlayPowerfulMagic()){
+        } else if (helper.cannotPlayLegendMagic()){
             return false;
         }
         else {

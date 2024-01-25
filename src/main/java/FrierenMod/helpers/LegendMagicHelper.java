@@ -1,9 +1,8 @@
 package FrierenMod.helpers;
 
-import FrierenMod.cards.white.powerfulMagic.FeiXingMoFa;
-import FrierenMod.cards.white.HeiAnYongChang;
-import FrierenMod.cards.white.powerfulMagic.LianHuanYongChang;
-import FrierenMod.cards.white.powerfulMagic.ShaRenMoFa;
+import FrierenMod.cards.white.FeiXingMoFa;
+import FrierenMod.cards.white.LianHuanYongChang;
+import FrierenMod.cards.white.ShaRenMoFa;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,10 +13,10 @@ import java.util.Collections;
 
 import static FrierenMod.tags.CustomTags.*;
 
-public class PowerfulMagicHelper {
+public class LegendMagicHelper {
 
 
-    public boolean cannotPlayPowerfulMagic(){
+    public boolean cannotPlayLegendMagic(){
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (c.hasTag(CHANT)) {
@@ -57,12 +56,12 @@ public class PowerfulMagicHelper {
             return null;
         }
     }
-    public boolean canPowerfulMagicUse(AbstractCard c, AbstractPlayer p, AbstractMonster m){
+    public boolean canLegendMagicUse(AbstractCard c, AbstractPlayer p, AbstractMonster m){
         if (c.type == AbstractCard.CardType.STATUS && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
             return false;
         } else if (c.type == AbstractCard.CardType.CURSE && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;
-        } else if (this.cannotPlayPowerfulMagic()){
+        } else if (this.cannotPlayLegendMagic()){
             return false;
         }
         else {

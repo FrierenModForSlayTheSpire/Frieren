@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.helpers.PowerfulMagicHelper;
+import FrierenMod.helpers.LegendMagicHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -37,7 +37,7 @@ public class MoDaoShu extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        PowerfulMagicHelper helper = new PowerfulMagicHelper();
+        LegendMagicHelper helper = new LegendMagicHelper();
         if(!this.upgraded){
             for(AbstractCard c : helper.getRandomCards(2)){
                 this.addToBot(new MakeTempCardInHandAction(c));

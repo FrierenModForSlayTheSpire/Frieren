@@ -10,7 +10,7 @@ public class CustomTags
     @SpireEnum
     public static AbstractCard.CardTags CHANT;
     @SpireEnum
-    public static AbstractCard.CardTags POWERFUL_MAGIC;
+    public static AbstractCard.CardTags LEGEND_MAGIC;
     @SpireEnum
     public static AbstractCard.CardTags RECAST;
 }

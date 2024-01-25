@@ -10,7 +10,6 @@ import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.FangYuMoFa;
 import FrierenMod.cards.white.HolyChant;
-import FrierenMod.cards.white.powerfulMagic.*;
 import FrierenMod.relics.MyRelic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
