@@ -47,7 +47,7 @@ public class LianHuanYongChang extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToTop(new MakeTempCardInDrawPileAction(new MagicPower(),this.magicNumber,true,true));
-        this.addToBot(new ChantAction(p, this.magicNumber));
+        this.addToBot(new ChantAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return new PowerfulMagicHelper().canPowerfulMagicUse(this,p,m);

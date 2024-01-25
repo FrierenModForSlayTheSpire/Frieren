@@ -41,7 +41,7 @@ public class HolyChant extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(p,this.magicNumber));
+        this.addToBot(new ChantAction(this.magicNumber));
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

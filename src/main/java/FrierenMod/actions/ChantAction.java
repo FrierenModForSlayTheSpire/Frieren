@@ -12,18 +12,15 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
-    private AbstractPlayer p;
-    private int x;
-    private ChantHelper helper;
+    private final int x;
 
-    public ChantAction(AbstractPlayer p, int x) {
-        this.p = p;
+    public ChantAction(int x) {
         this.x = x;
     }
 
     @Override
     public void update() {
-        helper = new ChantHelper();
+        ChantHelper helper = new ChantHelper();
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         if (helper.canChantFromDrawPile(this.x)) {
             ChantFromDrawPile c = new ChantFromDrawPile();

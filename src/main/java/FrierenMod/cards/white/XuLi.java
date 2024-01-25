@@ -42,7 +42,7 @@ public class XuLi extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(p,this.magicNumber));
+        this.addToBot(new ChantAction(this.magicNumber));
         this.addToBot(new DrawCardAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
