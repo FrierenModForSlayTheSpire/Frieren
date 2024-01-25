@@ -53,11 +53,6 @@ public class GainRelicPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        super.updateDescription();
-        if (this.amount == 1) {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        } else {
-            this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[2];
-        }
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 }
