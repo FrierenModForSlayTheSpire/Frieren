@@ -1,6 +1,7 @@
 package FrierenMod.relics;
 
 import FrierenMod.cards.tempCards.HideMagic;
+import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -22,7 +23,6 @@ public class MyRelic extends CustomRelic {
         super(ID, ImageMaster.loadImage(IMG_PATH), RELIC_TIER, LANDING_SOUND);
     }
 
-    // 获取遗物描述，但原版游戏只在初始化和获取遗物时调用，故该方法等于初始描述
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
@@ -31,26 +31,9 @@ public class MyRelic extends CustomRelic {
         return new MyRelic();
     }
     @Override
-    public void atBattleStart() {
-        this.counter = 0;
-    }
-
-    public void atTurnStart() {
-        ++this.counter;
-        if (this.counter == 2) {
-            this.flash();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            HideMagic c = new HideMagic();
-            this.addToBot(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
-            this.grayscale = true;
-        }
-    }
-    public void justEnteredRoom(AbstractRoom room) {
-        this.grayscale = false;
-    }
-
-    public void onVictory() {
-        this.counter = -1;
-        this.stopPulse();
+    public void atTurnStartPostDraw() {
+        this.flash();
+        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+        this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),4,true,true));
     }
 }
