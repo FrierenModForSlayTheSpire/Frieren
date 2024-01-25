@@ -96,8 +96,8 @@
   },
   "FrierenMod:QingXie": {
     "NAME": "倾泻",
-    "DESCRIPTION": "打出此牌后，你在本回合内不每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 你在本回合内每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。"
+    "DESCRIPTION": "打出此牌后，你在本回合内每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每打出一张 frierenmod:重铸 牌，获得 !M! 点 力量 。 NL  消耗 。"
   },
   "FrierenMod:GuiYi": {
     "NAME": "归一",
