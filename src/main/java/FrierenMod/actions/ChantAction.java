@@ -7,13 +7,11 @@ import FrierenMod.helpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
     private final int x;
-
     public ChantAction(int x) {
         this.x = x;
     }
@@ -37,10 +35,9 @@ public class ChantAction extends AbstractGameAction {
             c.magicNumber = c.baseMagicNumber = x;
             stanceChoices.add(c);
         }
-        if (!stanceChoices.isEmpty()){
+        if (!stanceChoices.isEmpty()) {
             this.addToBot(new ChooseOneAction(stanceChoices));
         }
         this.isDone = true;
     }
 }
-

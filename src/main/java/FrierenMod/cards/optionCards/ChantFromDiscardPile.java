@@ -59,6 +59,5 @@ public class ChantFromDiscardPile extends CustomCard {
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
         this.addToBot(new ExhaustMagicPowerInDiscardPileAction(this.magicNumber));
         this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
-        //this.addToBot(new ApplyPowerAction(p,p,new LoseStrengthPower(p,this.magicNumber)));
     }
 }
