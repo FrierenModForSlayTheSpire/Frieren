@@ -45,17 +45,17 @@
     "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部置入弃牌堆。"
   },
   "FrierenMod:ChantFromDrawPile": {
-    "NAME": "从抽牌堆中咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得2x !M! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得2x !M! 点 格挡 。"
+    "NAME": "从抽牌堆咏唱",
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 [#9ffc4f]!B![] 点 格挡 2次。",
+    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 [#9ffc4f]!B![] 点 格挡 2次。"
   },
   "FrierenMod:ChantFromHand": {
-    "NAME": "从手牌中咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 能量 。",
-    "UPGRADE_DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 能量 。"
+    "NAME": "从手牌咏唱",
+    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
+    "UPGRADE_DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。"
   },
   "FrierenMod:ChantFromDiscardPile": {
-    "NAME": "从弃牌堆中咏唱",
+    "NAME": "从弃牌堆咏唱",
     "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
     "UPGRADE_DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
   },
@@ -108,11 +108,6 @@
     "NAME": "归一",
     "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果） 。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果）。 NL  消耗 。"
-  },
-  "FrierenMod:HongPingGuo": {
-    "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:同调 NL （打出原本不能打出的牌只触发 *同调 效果）。",
-    "UPGRADE_DESCRIPTION": "你打出的下 !M! 张牌获得 frierenmod:同调 NL （打出原本不能打出的牌只触发 *同调 效果）。"
   },
   "FrierenMod:LianHuanYongChang": {
     "NAME": "连环咏唱",

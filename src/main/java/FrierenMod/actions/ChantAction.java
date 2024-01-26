@@ -7,6 +7,8 @@ import FrierenMod.helpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
@@ -23,6 +25,14 @@ public class ChantAction extends AbstractGameAction {
         if (helper.canChantFromDrawPile(this.x)) {
             ChantFromDrawPile c = new ChantFromDrawPile();
             c.magicNumber = c.baseMagicNumber = x;
+            int counts = 0;
+            for (AbstractPower po : AbstractDungeon.player.powers){
+                if(po.ID.matches("Dexterity")){
+                    counts += po.amount;
+                    break;
+                }
+            }
+            c.baseBlock = c.block = c.magicNumber + counts;
             stanceChoices.add(c);
         }
         if (helper.canChantFromHand(this.x)) {

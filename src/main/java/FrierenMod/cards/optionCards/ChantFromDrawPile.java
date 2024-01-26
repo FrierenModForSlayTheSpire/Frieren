@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
@@ -31,8 +32,9 @@ public class ChantFromDrawPile extends CustomCard{
     public ChantFromDrawPile() {
         // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = 1;
         this.cardsToPreview = new MagicPower();
+        this.block = this.baseBlock = 0;
+        this.magicNumber = this.baseMagicNumber = 0;
     }
     @Override
     public void upgrade() {
@@ -52,6 +54,8 @@ public class ChantFromDrawPile extends CustomCard{
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
         this.addToBot(new ExhaustMagicPowerInDrawPileAction(this.magicNumber));
-        this.addToBot(new GainBlockAction(p,p,this.magicNumber * 2));
+        for (int i = 0; i < 2; i++) {
+            this.addToBot(new GainBlockAction(p,p,this.block));
+        }
     }
 }
