@@ -1,4 +1,5 @@
 package FrierenMod.cards.white;
+import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,6 +13,7 @@ import basemod.abstracts.CustomCard;
 
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class MeiJunMoFa extends CustomCard{
     public static final String ID = ModHelper.makePath(MeiJunMoFa.class.getSimpleName());
@@ -27,7 +29,7 @@ public class MeiJunMoFa extends CustomCard{
     public MeiJunMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 2;
-        this.isMultiDamage = true;
+        this.tags.add(LEGEND_MAGIC);
     }
     @Override
     public void upgrade() {
@@ -43,5 +45,9 @@ public class MeiJunMoFa extends CustomCard{
         for(int i = 0; i < 5; ++i) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
+    }
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
     }
 }
