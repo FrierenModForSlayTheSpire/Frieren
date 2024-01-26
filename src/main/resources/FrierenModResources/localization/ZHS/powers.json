@@ -8,7 +8,7 @@
   "FrierenMod:QingXiePower": {
     "NAME": "倾泻",
     "DESCRIPTIONS": [
-      "每打出一张 #y重铸 牌，获得 #b%d 点 #y临时力量 。"
+      "每打出一张 #y同调 牌，获得 #b%d 点 #y力量 。"
     ]
   },
   "FrierenMod:ShuiYiXingTaiPower": {
@@ -27,6 +27,12 @@
     "NAME": "寻找遗失饰品的魔法",
     "DESCRIPTIONS": [
       "战斗结束时，获得 #b%d 件随机遗物。"
+    ]
+  },
+  "FrierenMod:YiShiZhunBeiPower": {
+    "NAME": "仪式准备",
+    "DESCRIPTIONS": [
+      "你每打出5张同调牌， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
     ]
   }
 }

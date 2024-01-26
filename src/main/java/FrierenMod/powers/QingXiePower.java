@@ -48,7 +48,7 @@ public class QingXiePower extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(RECAST)) {
             this.flash();
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount), 1));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), this.amount));
         }
     }
     public void atEndOfTurn(boolean isPlayer) {
@@ -56,7 +56,7 @@ public class QingXiePower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount * 2);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
 }
