@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.ShiJueMoFaAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
@@ -44,20 +45,6 @@ public class ShiJueMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(999, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-    }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        ChantHelper helper = new ChantHelper();
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (helper.getMagicPowerNumInDrawPile() != this.magicNumber || helper.getMagicPowerNumInHand() != this.magicNumber || helper.getMagicPowerNumInDiscardPile() != this.magicNumber){
-            return false;
-        }
-        else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
-        }
+        this.addToBot(new ShiJueMoFaAction(this,this.magicNumber));
     }
 }

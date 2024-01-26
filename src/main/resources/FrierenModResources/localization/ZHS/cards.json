@@ -156,8 +156,8 @@
   },
   "FrierenMod:ShiJueMoFa": {
     "NAME": "视觉攻击魔法",
-    "DESCRIPTION": "你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量恰好为 !M! 时才可打出。 NL 对所有敌人造成999点伤害。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量恰好为 !M! 时才可打出。 NL 对所有敌人造成999点伤害。"
+    "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 !M! ， 对所有敌人造成999点伤害。 否则抽1张牌。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 !M! ， 对所有敌人造成999点伤害。 否则抽1张牌。"
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",
@@ -218,5 +218,10 @@
     "NAME": "苍月草",
     "DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。",
     "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。"
+  },
+  "FrierenMod:PuTaoMoFa": {
+    "NAME": "把甜葡萄变成酸葡萄的魔法",
+    "DESCRIPTION": "选择手牌中的3张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择手牌中的3张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。"
   }
 }
