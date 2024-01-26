@@ -95,9 +95,9 @@
     "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。"
   },
   "FrierenMod:MoDaoShu": {
-    "NAME": "魔导书",
-    "DESCRIPTION": "随机将2张 frierenmod:传说魔法 置入手牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "随机将2张 frierenmod:传说魔法 置入手牌。这2张牌在本回合耗能变为0。 NL  消耗 。"
+    "NAME": "民间的魔导书",
+    "DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 置入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 置入手牌。这2张牌在本回合耗能变为0。 NL  消耗 。"
   },
   "FrierenMod:QingXie": {
     "NAME": "倾泻",

@@ -1,9 +1,13 @@
 package FrierenMod.helpers;
 
+import FrierenMod.cards.white.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
@@ -66,6 +70,28 @@ public class ChantHelper {
         }
         else {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
+        }
+    }
+    private ArrayList<AbstractCard> initPowerMagicCardPool(){
+        ArrayList<AbstractCard> pool = new ArrayList<>();
+        pool.add(new FangYuMoFa());
+        pool.add(new HolyChant());
+        pool.add(new LianHuanYongChang());
+        pool.add(new HuaTianMoFa());
+        return pool;
+    }
+    public ArrayList<AbstractCard> getRandomCards(int amounts){
+        ArrayList<AbstractCard> pool = this.initPowerMagicCardPool();
+        if(pool.size() >= amounts){
+            Collections.shuffle(pool);
+            ArrayList<AbstractCard> cards = new ArrayList<>();
+            for (int i = 0; i < amounts; i++) {
+                cards.add(pool.get(i));
+            }
+            return cards;
+        }
+        else {
+            return null;
         }
     }
 }

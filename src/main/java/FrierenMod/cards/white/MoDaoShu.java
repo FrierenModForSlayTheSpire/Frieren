@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import FrierenMod.helpers.LegendMagicHelper;
 import basemod.abstracts.CustomCard;
@@ -37,17 +38,13 @@ public class MoDaoShu extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        LegendMagicHelper helper = new LegendMagicHelper();
-        if(!this.upgraded){
-            for(AbstractCard c : helper.getRandomCards(2)){
-                this.addToBot(new MakeTempCardInHandAction(c));
-            }
+        AbstractCard c1 = new ChantHelper().getRandomCards(1).get(0);
+        AbstractCard c2 = new LegendMagicHelper().getRandomCards(1).get(0);
+        if(this.upgraded){
+            c1.setCostForTurn(0);
+            c2.setCostForTurn(0);
         }
-        else {
-            for(AbstractCard c : helper.getRandomCards(2)){
-                c.setCostForTurn(0);
-                this.addToBot(new MakeTempCardInHandAction(c));
-            }
-        }
+        this.addToBot(new MakeTempCardInHandAction(c1));
+        this.addToBot(new MakeTempCardInHandAction(c2));
     }
 }
