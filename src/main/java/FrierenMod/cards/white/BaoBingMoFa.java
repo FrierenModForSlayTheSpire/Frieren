@@ -3,11 +3,9 @@ package FrierenMod.cards.white;
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +15,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class BaoBingMoFa extends CustomCard{
     public static final String ID = ModHelper.makePath(BaoBingMoFa.class.getSimpleName());

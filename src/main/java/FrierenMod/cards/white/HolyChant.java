@@ -3,10 +3,8 @@ package FrierenMod.cards.white;
 import FrierenMod.actions.ChantAction;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 

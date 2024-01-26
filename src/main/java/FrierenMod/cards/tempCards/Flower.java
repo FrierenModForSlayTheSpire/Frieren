@@ -1,19 +1,12 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.actions.DrawPileToDiscardPileAction;
-import FrierenMod.actions.HandToDiscardPileAction;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.Iterator;
-
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class Flower extends CustomCard{
     public static final String ID = ModHelper.makePath(Flower.class.getSimpleName());

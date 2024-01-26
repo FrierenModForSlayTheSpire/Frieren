@@ -1,12 +1,9 @@
 package FrierenMod.powers;
 
 import FrierenMod.cards.tempCards.HideMagic;
-import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.tempCards.Shiv;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
