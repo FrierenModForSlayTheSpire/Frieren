@@ -171,8 +171,8 @@
   },
   "FrierenMod:DuoChongMoFa": {
     "NAME": "多重攻击魔法",
-    "DESCRIPTION": " 造成 !D! 点伤害2次，获得 !M! 点魔力。",
-    "UPGRADE_DESCRIPTION": " 造成 !D! 点伤害2次，获得 !M! 点魔力。"
+    "DESCRIPTION": " 随机造成X+1点伤害X次，将X张 *魔力 置入手牌。",
+    "UPGRADE_DESCRIPTION": "随机造成X+1点伤害X+1次，将X张 *魔力 置入手牌。"
   },
   "FrierenMod:YiShiMoFa": {
     "NAME": "仪式的准备",
