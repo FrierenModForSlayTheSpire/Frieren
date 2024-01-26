@@ -11,6 +11,7 @@ import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.FangYuMoFa;
 import FrierenMod.cards.white.HolyChant;
+import FrierenMod.cards.white.LanSan;
 import FrierenMod.relics.MyRelic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -98,6 +99,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new RaoKouLingMoFa());
         BaseMod.addCard(new DuoChongMoFa());
         BaseMod.addCard(new YiShiZhunBei());
+        BaseMod.addCard(new LanSan());
     }
     @Override
     public void receiveEditRelics() {

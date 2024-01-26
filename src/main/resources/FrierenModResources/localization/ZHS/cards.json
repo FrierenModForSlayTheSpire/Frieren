@@ -186,8 +186,8 @@
   },
   "FrierenMod:LanSan": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": "回合结束时若此牌在手中，将一张 *懒懒散散 置入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "回合结束时若此牌在手中，将一张 *懒懒散散 置入弃牌堆。"
+    "DESCRIPTION": "在你的回合结束且在手牌中时，将一张复制置入弃牌堆。 NL  打出1张 frierenmod:同调 牌 以 消耗 此牌 。",
+    "UPGRADE_DESCRIPTION": "在你的回合结束且在手牌中时，将一张复制置入弃牌堆。 NL  打出1张 frierenmod:同调 牌 以 消耗 此牌 。"
   },
   "FrierenMod:ZhuiYi": {
     "NAME": "追忆",
