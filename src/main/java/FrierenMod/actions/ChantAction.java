@@ -37,7 +37,9 @@ public class ChantAction extends AbstractGameAction {
             c.magicNumber = c.baseMagicNumber = x;
             stanceChoices.add(c);
         }
-        this.addToBot(new ChooseOneAction(stanceChoices));
+        if (!stanceChoices.isEmpty()){
+            this.addToBot(new ChooseOneAction(stanceChoices));
+        }
         this.isDone = true;
     }
 }
