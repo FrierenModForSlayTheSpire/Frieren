@@ -52,9 +52,11 @@ public class YouZiMoFa extends CustomCard{
     public void use(AbstractPlayer p, AbstractMonster m) {
         int flag = 0;
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (mo.currentHealth - this.damage <= 0) {
-                flag = 1;
-                break;
+            if(!mo.isDead && !mo.halfDead){
+                if (mo.currentHealth - this.damage <= 0) {
+                    flag = 1;
+                    break;
+                }
             }
         }
         this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
