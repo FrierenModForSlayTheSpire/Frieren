@@ -139,10 +139,10 @@
     "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。",
     "UPGRADE_DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。"
   },
-  "FrierenMod:XuLi": {
+  "FrierenMod:HuaTianMoFa": {
     "NAME": "开出花田的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 3 。抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。抽 !M! 张牌。"
+    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草 置入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草+ 置入手牌。"
   },
   "FrierenMod:MoLiPengZhang": {
     "NAME": "魔力膨胀",
@@ -198,5 +198,30 @@
     "NAME": "追忆",
     "DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。",
     "UPGRADE_DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。"
+  },
+  "FrierenMod:DiYuMoFa": {
+    "NAME": "地狱业火魔法",
+    "DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。"
+  },
+  "FrierenMod:TongXiangMoFa": {
+    "NAME": "清洁铜像生锈的魔法",
+    "DESCRIPTION": " frierenmod:咏唱 1。 NL 熔化目标的护甲。若对方原本拥有 !M! 以上的护甲，自身获得 金属化 3。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。 NL 熔化目标的护甲。若对方原本拥有 !M! 以上的护甲，自身获得 金属化 3。"
+  },
+  "FrierenMod:PingGuoMoFa": {
+    "NAME": "将红苹果变成青苹果的魔法",
+    "DESCRIPTION": " 对调自身的力量和敏捷然后获得 !B! 点格挡两次。在你的回合结束时，换回。",
+    "UPGRADE_DESCRIPTION": " 对调自身的力量和敏捷然后获得 !B! 点格挡两次。在你的回合结束时，换回。"
+  },
+  "FrierenMod:PoMieMoFa": {
+    "NAME": "破灭之雷魔法",
+    "DESCRIPTION": " frierenmod:传说魔法。 NL 抽取所有魔力，本场战斗中将 frierenmod:同调 变为 frieren:终极同调 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法。 NL 抽取所有魔力，本场战斗中将 frierenmod:同调 变为 frieren:终极同调 。"
+  },
+  "FrierenMod:Flower": {
+    "NAME": "苍月草",
+    "DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。"
   }
 }

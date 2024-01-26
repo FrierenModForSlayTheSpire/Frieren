@@ -5,6 +5,7 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
+import FrierenMod.cards.tempCards.Flower;
 import FrierenMod.cards.tempCards.HideMagic;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.cards.white.*;
@@ -88,7 +89,8 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new ShuiYiXingTai());
         BaseMod.addCard(new ZhunBei());
         BaseMod.addCard(new QiPianMoZuDeXiaoBaXi());
-        BaseMod.addCard(new XuLi());
+        BaseMod.addCard(new HuaTianMoFa());
+        BaseMod.addCard(new Flower());
         BaseMod.addCard(new ShiPingMoFa());
         BaseMod.addCard(new YouZiMoFa());
         BaseMod.addCard(new ShiJueMoFa());
