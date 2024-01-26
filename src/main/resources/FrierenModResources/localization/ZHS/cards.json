@@ -174,10 +174,10 @@
     "DESCRIPTION": " 随机造成X+1点伤害X次，将X张 *魔力 置入手牌。",
     "UPGRADE_DESCRIPTION": "随机造成X+1点伤害X+1次，将X张 *魔力 置入手牌。"
   },
-  "FrierenMod:YiShiMoFa": {
+  "FrierenMod:YiShiZhunBei": {
     "NAME": "仪式的准备",
     "DESCRIPTION": "你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。",
-    "UPGRADE_DESCRIPTION": "你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。"
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。"
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
