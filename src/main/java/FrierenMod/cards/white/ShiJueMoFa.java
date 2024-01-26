@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
@@ -32,13 +33,13 @@ public class ShiJueMoFa extends CustomCard{
     public ShiJueMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 6;
+        this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             this.selfRetain = true;
-            this.upgradeMagicNumber(-1);
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

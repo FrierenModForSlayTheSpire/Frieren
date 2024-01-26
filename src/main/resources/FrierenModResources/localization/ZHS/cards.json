@@ -156,8 +156,8 @@
   },
   "FrierenMod:YouZiMoFa": {
     "NAME": "清除顽固油渍的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果打出此牌后没有敌人死亡，则再造成 10 点伤害。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果打出此牌后没有敌人死亡，则再造成 10 点伤害。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。"
   },
   "FrierenMod:ShiJueMoFa": {
     "NAME": "视觉攻击魔法",
@@ -171,7 +171,7 @@
   },
   "FrierenMod:RaoKouLingMoFa": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则抽 3 张。",
-    "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌。 NL 否则抽 4 张。"
+    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。",
+    "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
   }
 }

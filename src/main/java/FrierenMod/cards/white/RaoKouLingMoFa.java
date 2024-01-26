@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -25,6 +26,7 @@ public class RaoKouLingMoFa extends CustomCard{
     public RaoKouLingMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
