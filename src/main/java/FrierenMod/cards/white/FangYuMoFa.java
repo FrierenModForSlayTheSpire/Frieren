@@ -33,7 +33,11 @@ public class FangYuMoFa extends CustomCard{
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = 3;
         this.tags.add(CHANT);
-        this.cardsToPreview = new FangYuMoFa2();
+        FangYuMoFa2 c = new FangYuMoFa2();
+        if(this.upgraded) {
+            c.upgraded = true;
+        }
+        this.cardsToPreview = c;
     }
     @Override
     public void upgrade() {
