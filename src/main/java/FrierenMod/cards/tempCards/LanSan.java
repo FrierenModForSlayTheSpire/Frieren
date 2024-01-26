@@ -1,4 +1,4 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.tempCards;
 
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
