@@ -156,8 +156,8 @@
   },
   "FrierenMod:ShiJueMoFa": {
     "NAME": "视觉攻击魔法",
-    "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 !M! ， 对所有敌人造成999点伤害。 否则抽1张牌。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 !M! ， 对所有敌人造成999点伤害。 否则抽1张牌。"
+    "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。"
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",
@@ -171,8 +171,8 @@
   },
   "FrierenMod:DuoChongMoFa": {
     "NAME": "多重攻击魔法",
-    "DESCRIPTION": " frierenmod:咏唱 2。 NL 造成 !D! 伤害2次。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 2。 NL 造成 !D! 伤害2次。"
+    "DESCRIPTION": " 造成 !D! 点伤害2次，获得 !M! 点魔力。",
+    "UPGRADE_DESCRIPTION": " 造成 !D! 点伤害2次，获得 !M! 点魔力。"
   },
   "FrierenMod:YiShiMoFa": {
     "NAME": "仪式的准备",
@@ -181,8 +181,8 @@
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
-    "DESCRIPTION": "对所有敌人造成18点伤害，将一张 *懒懒散散 加入手牌。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成18点伤害，将一张 *懒懒散散 加入手牌。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 加入手牌。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 加入手牌。"
   },
   "FrierenMod:LanSan": {
     "NAME": "懒懒散散",
@@ -221,7 +221,7 @@
   },
   "FrierenMod:PuTaoMoFa": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
-    "DESCRIPTION": "选择手牌中的3张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "选择手牌中的3张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。"
+    "DESCRIPTION": "选择手牌中的 !M! 张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "选择手牌中的 !M! 张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。"
   }
 }

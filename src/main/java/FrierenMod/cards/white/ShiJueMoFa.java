@@ -31,7 +31,7 @@ public class ShiJueMoFa extends CustomCard{
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public ShiJueMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.cardsToPreview = new MagicPower();
     }
     @Override
@@ -39,6 +39,7 @@ public class ShiJueMoFa extends CustomCard{
         if (!this.upgraded) {
             this.upgradeName();
             this.selfRetain = true;
+            this.upgradeMagicNumber(1);
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
