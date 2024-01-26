@@ -1,12 +1,18 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.ExhaustMagicPowerInHandAction;
+import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -26,7 +32,7 @@ public class BaoBingMoFa extends CustomCard{
     private static final CardTarget TARGET = CardTarget.NONE;
     public BaoBingMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.tags.add(LEGEND_MAGIC);
+        this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
@@ -39,10 +45,21 @@ public class BaoBingMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ExhaustMagicPowerInHandAction(1));
+        this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeCopy(),1,true,true));
         this.addToBot(new BetterDrawPileToHandAction(1));
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
+        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
+            return false;
+        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
+            return false;
+        } else if (!new ChantHelper().canChantFromHand(1)){
+            return false;
+        }
+        else {
+            return this.cardPlayable(m) && this.hasEnoughEnergy();
+        }
     }
 }

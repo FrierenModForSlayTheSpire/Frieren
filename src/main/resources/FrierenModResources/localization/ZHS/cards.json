@@ -166,8 +166,8 @@
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 从抽牌堆中选择1张牌放入你的手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 从抽牌堆中选择1张牌放入你的手牌。"
+    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。",
+    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。"
   },
   "FrierenMod:RaoKouLingMoFa": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
