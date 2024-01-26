@@ -50,21 +50,16 @@ public class YouZiMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        ArrayList<AbstractMonster> preMonsters = new ArrayList<>();
-        ArrayList<AbstractMonster> curMonsters = new ArrayList<>();
+        int flag = 0;
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (mo != null && !mo.isDeadOrEscaped()) {
-                preMonsters.add(mo);
+            if (mo.currentHealth - this.damage <= 0) {
+                flag = 1;
+                break;
             }
         }
-        this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if (mo != null && !mo.isDeadOrEscaped()) {
-                curMonsters.add(mo);
-            }
-        }
-        if(curMonsters.size() == preMonsters.size()){
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(8, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+        this.addToTop(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+        if(flag == 0){
+            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(10, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
     @Override
