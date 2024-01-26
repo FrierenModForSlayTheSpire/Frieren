@@ -24,13 +24,13 @@ public class QiPianMoZuDeXiaoBaXiPower extends AbstractPower {
     // 能力的描述
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public QiPianMoZuDeXiaoBaXiPower(AbstractCreature owner, int amount) {
+    public QiPianMoZuDeXiaoBaXiPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
 
-        this.amount = amount;
+        this.amount = -1;
 
         String path128 = "FrierenModResources/img/powers/Example84.png";
         String path48 = "FrierenModResources/img/powers/Example32.png";
@@ -44,13 +44,15 @@ public class QiPianMoZuDeXiaoBaXiPower extends AbstractPower {
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            this.addToBot(new MakeTempCardInHandAction(new HideMagic(),this.amount));
+            if(!AbstractDungeon.player.hand.group.contains(new HideMagic())){
+                this.addToBot(new MakeTempCardInHandAction(new HideMagic(),1));
+            }
         }
     }
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0]);
     }
 
 }

@@ -136,8 +136,8 @@
   },
   "FrierenMod:QiPianMoZuDeXiaoBaXi": {
     "NAME": "欺骗魔族的小把戏",
-    "DESCRIPTION": "在你的回合开始时，将1张 *魔力隐藏 置入手牌。",
-    "UPGRADE_DESCRIPTION": "在你的回合开始时，将1张 *魔力隐藏 置入手牌。"
+    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。"
   },
   "FrierenMod:XuLi": {
     "NAME": "开出花田的魔法",
@@ -173,5 +173,30 @@
     "NAME": "说绕口令时绝对不会大舌头的魔法",
     "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。",
     "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
+  },
+  "FrierenMod:DuoChongMoFa": {
+    "NAME": "多重攻击魔法",
+    "DESCRIPTION": " frierenmod:咏唱 2。 NL 造成 !D! 伤害2次。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 2。 NL 造成 !D! 伤害2次。"
+  },
+  "FrierenMod:YiShiMoFa": {
+    "NAME": "仪式的准备",
+    "DESCRIPTION": "你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。",
+    "UPGRADE_DESCRIPTION": "你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。"
+  },
+  "FrierenMod:BaoPoMoFa": {
+    "NAME": "爆破魔法",
+    "DESCRIPTION": "对所有敌人造成18点伤害，将一张 *懒懒散散 加入手牌。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成18点伤害，将一张 *懒懒散散 加入手牌。"
+  },
+  "FrierenMod:LanSan": {
+    "NAME": "懒懒散散",
+    "DESCRIPTION": "回合结束时若此牌在手中，将一张 *懒懒散散 置入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "回合结束时若此牌在手中，将一张 *懒懒散散 置入弃牌堆。"
+  },
+  "FrierenMod:ZhuiYi": {
+    "NAME": "追忆",
+    "DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。",
+    "UPGRADE_DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。"
   }
 }

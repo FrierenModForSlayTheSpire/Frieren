@@ -38,6 +38,6 @@ public class QiPianMoZuDeXiaoBaXi extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p,new QiPianMoZuDeXiaoBaXiPower(p,1)));
+        this.addToBot(new ApplyPowerAction(p,p,new QiPianMoZuDeXiaoBaXiPower(p)));
     }
 }
