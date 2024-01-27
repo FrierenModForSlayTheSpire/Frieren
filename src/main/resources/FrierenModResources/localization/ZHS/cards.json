@@ -228,5 +228,10 @@
     "NAME": "婴儿般的睡眠",
     "DESCRIPTION": " 获得!B!点格挡，保留一张手牌，结束回合。",
     "UPGRADE_DESCRIPTION": "获得!B!点格挡，保留一张手牌，结束回合 。"
+  },
+  "FrierenMod:LittleFire": {
+    "NAME": "小小火花",
+    "DESCRIPTION": "造成!D!点伤害，在本场战斗中升级一张手牌。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害，在本场战斗中升级你的所有手牌。"
   }
 }
