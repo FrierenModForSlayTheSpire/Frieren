@@ -191,8 +191,8 @@
   },
   "FrierenMod:ZhuiYi": {
     "NAME": "追忆",
-    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并使其获得 保留 。",
-    "UPGRADE_DESCRIPTION": "从消耗牌堆中选择 !M! 张牌放入你的手牌并使其获得 保留 。"
+    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。",
+    "UPGRADE_DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。"
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
