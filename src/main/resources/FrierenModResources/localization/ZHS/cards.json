@@ -161,8 +161,8 @@
   },
   "FrierenMod:BaoBingMoFa": {
     "NAME": "翻薄饼时会很顺利的魔法",
-    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。",
-    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。"
+    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。",
+    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。"
   },
   "FrierenMod:RaoKouLingMoFa": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
@@ -226,13 +226,13 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得 !B! 点格挡，保留一张手牌，结束回合。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，保留一张手牌，结束回合 。"
+    "DESCRIPTION": " 获得 !B! 点格挡， 保留 一张手牌，结束回合。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡， 保留 一张手牌，结束回合 。"
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
-    "DESCRIPTION": "造成 !D! 点伤害，在本场战斗中升级一张手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，在本场战斗中升级你的所有手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 一张手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 你的所有手牌。"
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
