@@ -125,7 +125,7 @@
     "UPGRADE_DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !D! 点伤害）。"
   },
   "FrierenMod:ZhunBei": {
-    "NAME": "准备",
+    "NAME": "准备架势",
     "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。",
     "UPGRADE_DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
   },
@@ -226,12 +226,17 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得!B!点格挡，保留一张手牌，结束回合。",
-    "UPGRADE_DESCRIPTION": "获得!B!点格挡，保留一张手牌，结束回合 。"
+    "DESCRIPTION": " 获得 !B! 点格挡，保留一张手牌，结束回合。",
+    "UPGRADE_DESCRIPTION": "获得 !B! 点格挡，保留一张手牌，结束回合 。"
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
-    "DESCRIPTION": "造成!D!点伤害，在本场战斗中升级一张手牌。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害，在本场战斗中升级你的所有手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害，在本场战斗中升级一张手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，在本场战斗中升级你的所有手牌。"
+  },
+  "FrierenMod:FullAhead": {
+    "NAME": "全速前进",
+    "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
   }
 }
