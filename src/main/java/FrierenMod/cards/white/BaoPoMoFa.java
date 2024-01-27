@@ -26,11 +26,11 @@ public class BaoPoMoFa extends CustomCard{
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.ATTACK;
     private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.COMMON;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public BaoPoMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = 20;
+        this.baseDamage = 18;
         this.isMultiDamage = true;
         this.cardsToPreview = new LanSan();
     }
