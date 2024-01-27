@@ -16,8 +16,8 @@
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法 置入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 置入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 放入手牌。"
   },
   "FrierenMod:FangYuMoFa2": {
     "NAME": "防御魔法",
@@ -36,13 +36,13 @@
   },
   "FrierenMod:SaveMagic": {
     "NAME": "变出刨冰的魔法",
-    "DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 置入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。"
   },
   "FrierenMod:HideMagic": {
     "NAME": "魔力隐藏",
-    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部置入弃牌堆。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部置入弃牌堆。"
+    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。"
   },
   "FrierenMod:ChantFromDrawPile": {
     "NAME": "从抽牌堆咏唱",
@@ -71,8 +71,8 @@
   },
   "FrierenMod:YongXu": {
     "NAME": "永续",
-    "DESCRIPTION": "在你的回合开始时，将2张 *魔力 置入弃牌堆。 ",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时，将2张 *魔力 置入弃牌堆。"
+    "DESCRIPTION": "在你的回合开始时，将2张 *魔力 放入弃牌堆。 ",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时，将2张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:NiLiu": {
     "NAME": "逆流",
@@ -81,13 +81,13 @@
   },
   "FrierenMod:FenSan": {
     "NAME": "分散",
-    "DESCRIPTION": "将1张 *魔力 置入抽牌堆。 NL 将2张 *魔力 置入手牌。 NL 将3张 *魔力 置入弃牌堆。 消耗 。",
-    "UPGRADE_DESCRIPTION": "将1张 *魔力 置入抽牌堆。 NL 将2张 *魔力 置入手牌。 NL 将3张 *魔力 置入弃牌堆。"
+    "DESCRIPTION": "将1张 *魔力 放入抽牌堆。 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆。 消耗 。",
+    "UPGRADE_DESCRIPTION": "将1张 *魔力 放入抽牌堆。 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:LiuZhuan": {
     "NAME": "流转",
-    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 置入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 置入弃牌堆。"
+    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:FeiXingMoFa": {
     "NAME": "飞行魔法",
@@ -96,8 +96,8 @@
   },
   "FrierenMod:MoDaoShu": {
     "NAME": "民间的魔导书",
-    "DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 置入手牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 置入手牌。这2张牌在本回合耗能变为0。 NL  消耗 。"
+    "DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。这2张牌在本回合耗能变为0。 NL  消耗 。"
   },
   "FrierenMod:QingXie": {
     "NAME": "倾泻",
@@ -111,8 +111,8 @@
   },
   "FrierenMod:LianHuanYongChang": {
     "NAME": "连环咏唱",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 置入抽牌堆。 NL  frierenmod:咏唱  !M!  。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 置入抽牌堆。 NL  frierenmod:咏唱  !M!  。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 放入抽牌堆。 NL  frierenmod:咏唱  !M!  。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 放入抽牌堆。 NL  frierenmod:咏唱  !M!  。"
   },
   "FrierenMod:HeiAnYongChang": {
     "NAME": "黑暗咏唱",
@@ -131,13 +131,13 @@
   },
   "FrierenMod:QiPianMoZuDeXiaoBaXi": {
     "NAME": "欺骗魔族的小把戏",
-    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。",
-    "UPGRADE_DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 置入手牌。"
+    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。"
   },
   "FrierenMod:HuaTianMoFa": {
     "NAME": "开出花田的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草 置入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草+ 置入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草+ 放入手牌。"
   },
   "FrierenMod:MoLiPengZhang": {
     "NAME": "魔力膨胀",
@@ -171,8 +171,8 @@
   },
   "FrierenMod:DuoChongMoFa": {
     "NAME": "多重攻击魔法",
-    "DESCRIPTION": " 随机造成X+1点伤害X次，将X张 *魔力 置入手牌。",
-    "UPGRADE_DESCRIPTION": "随机造成X+1点伤害X+1次，将X张 *魔力 置入手牌。"
+    "DESCRIPTION": " 随机造成X+1点伤害X次，将X张 *魔力 放入手牌。",
+    "UPGRADE_DESCRIPTION": "随机造成X+1点伤害X+1次，将X张 *魔力 放入手牌。"
   },
   "FrierenMod:YiShiZhunBei": {
     "NAME": "仪式的准备",
@@ -181,18 +181,18 @@
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 置入手牌。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 置入手牌。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。"
   },
   "FrierenMod:LanSan": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": "在你的回合结束且在手牌中时，将一张复制置入弃牌堆。 NL  打出1张 frierenmod:同调 牌 以 消耗 此牌 。",
-    "UPGRADE_DESCRIPTION": "在你的回合结束且在手牌中时，将一张复制置入弃牌堆。 NL  打出1张 frierenmod:同调 牌 以 消耗 此牌 。"
+    "DESCRIPTION": "打出1张 frierenmod:同调 牌 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。",
+    "UPGRADE_DESCRIPTION": "打出1张 frierenmod:同调 牌 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:ZhuiYi": {
     "NAME": "追忆",
-    "DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。",
-    "UPGRADE_DESCRIPTION": "从消耗牌堆中选择 !M! 张牌置入你的手牌并使其获得 保留 。"
+    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并使其获得 保留 。",
+    "UPGRADE_DESCRIPTION": "从消耗牌堆中选择 !M! 张牌放入你的手牌并使其获得 保留 。"
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
