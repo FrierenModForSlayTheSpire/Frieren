@@ -181,8 +181,8 @@
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 加入手牌。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 加入手牌。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 置入手牌。",
+    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 置入手牌。"
   },
   "FrierenMod:LanSan": {
     "NAME": "懒懒散散",
