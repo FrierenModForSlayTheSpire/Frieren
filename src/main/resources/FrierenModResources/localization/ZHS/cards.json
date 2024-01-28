@@ -12,7 +12,7 @@
   "FrierenMod:PuGongMoFa": {
     "NAME": "普通攻击魔法",
     "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次 NL （已消耗 !M! 张魔力） NL (至多计算30张)。",
-    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次 NL （已消耗 !M! 张魔力） NL (至多计算30张)。。"
+    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次 NL （已消耗 !M! 张魔力） NL (至多计算30张)。"
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
@@ -226,8 +226,8 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得!B!点格挡，保留一张手牌，结束回合。",
-    "UPGRADE_DESCRIPTION": "获得!B!点格挡，保留一张手牌，结束回合 。"
+    "DESCRIPTION": " 获得!B!点格挡， 保留 一张手牌，结束回合。",
+    "UPGRADE_DESCRIPTION": "获得!B!点格挡， 保留 一张手牌，结束回合 。"
   },
   "FrierenMod:SaiLiYeDeMoDaoShu": {
     "NAME": "赛莉耶的魔导书",
@@ -243,5 +243,10 @@
     "NAME": "全速前进",
     "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。",
     "UPGRADE_DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
-  }
+  },
+  "FrierenMod:LockTarget": {
+  "NAME": "定叫他有来无回",
+  "DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。",
+  "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。"
+}
 }
