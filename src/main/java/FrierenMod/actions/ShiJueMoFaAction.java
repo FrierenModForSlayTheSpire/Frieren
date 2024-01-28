@@ -18,10 +18,10 @@ public class ShiJueMoFaAction extends AbstractGameAction {
     @Override
     public void update() {
         ChantHelper helper = new ChantHelper();
-        if (helper.getMagicPowerNumInDrawPile() == this.magicNumber && helper.getMagicPowerNumInHand() == this.magicNumber && helper.getMagicPowerNumInDiscardPile() == this.magicNumber){
+        if (helper.getMagicPowerNumInDrawPile() == 6 && helper.getMagicPowerNumInHand() == 6 && helper.getMagicPowerNumInDiscardPile() == 6){
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(999, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }else {
-            this.addToBot(new DrawCardAction(1));
+            this.addToBot(new DrawCardAction(this.magicNumber));
         }
         this.isDone = true;
     }
