@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.DuoChongAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -28,8 +29,6 @@ public class DuoChongMoFa extends CustomCard{
     public DuoChongMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
-        this.magicNumber = this.baseMagicNumber = this.energyOnUse;
-        this.baseDamage = this.energyOnUse + 1;
     }
     @Override
     public void upgrade() {
@@ -42,11 +41,6 @@ public class DuoChongMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.magicNumber = this.baseMagicNumber = this.energyOnUse;
-        this.baseDamage = this.energyOnUse + 1;
-        for(int i = 0; i < this.magicNumber; ++i) {
-            this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING));
-        }
-        this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(),this.energyOnUse));
+        this.addToBot(new DuoChongAction(p,this.energyOnUse,this.upgraded));
     }
 }
