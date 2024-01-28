@@ -5,7 +5,6 @@ import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
 import FrierenMod.helpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
