@@ -24,11 +24,13 @@ import com.megacrit.cardcrawl.vfx.combat.WhirlwindEffect;
 
 public class DuoChongAction extends AbstractGameAction {
     private AbstractPlayer p;
+    private AbstractCard card;
     private int energyOnUse = -1;
     private boolean isUpgraded = false;
 
-    public DuoChongAction(AbstractPlayer p, int energyOnUse, boolean isUpgraded) {
+    public DuoChongAction(AbstractPlayer p, AbstractCard c, int energyOnUse, boolean isUpgraded) {
         this.p = p;
+        this.card = c;
         this.energyOnUse = energyOnUse;
         this.isUpgraded = isUpgraded;
     }
@@ -43,21 +45,18 @@ public class DuoChongAction extends AbstractGameAction {
             magicNum += 2;
             this.p.getRelic("Chemical X").flash();
         }
-        for(AbstractPower po:p.powers){
-            if(po.ID.matches("Strength")){
-                baseDamage += po.amount;
-            }
-        }
+        this.card.baseDamage = baseDamage;
         for(int i = 0; i < counts; ++i) {
-            AbstractMonster  mo = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-            if (mo != null) {
-                this.addToTop(new DamageAction(mo, new DamageInfo(AbstractDungeon.player, baseDamage, DamageInfo.DamageType.NORMAL), AttackEffect.NONE));
+            this.target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
+            this.card.calculateCardDamage((AbstractMonster)this.target);
+            if (this.target != null) {
+                this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), AttackEffect.NONE));
                 this.addToTop(new SFXAction("ORB_LIGHTNING_EVOKE", 0.1F));
-                this.addToTop(new VFXAction(new LightningEffect(mo.hb.cX, mo.hb.cY)));
+                this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.card.hb.cY)));
             }
-            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),magicNum));
-            this.p.energy.use(EnergyPanel.totalCount);
         }
+        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),magicNum));
+        this.p.energy.use(EnergyPanel.totalCount);
         this.isDone = true;
     }
 }

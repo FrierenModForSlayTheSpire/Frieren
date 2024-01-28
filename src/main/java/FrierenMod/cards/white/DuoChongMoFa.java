@@ -41,6 +41,6 @@ public class DuoChongMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DuoChongAction(p,this.energyOnUse,this.upgraded));
+        this.addToBot(new DuoChongAction(p,this, this.energyOnUse,this.upgraded));
     }
 }
