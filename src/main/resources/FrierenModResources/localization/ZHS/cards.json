@@ -248,5 +248,10 @@
   "NAME": "定叫他有来无回",
   "DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。",
   "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。"
-}
+  },
+  "FrierenMod:FiveMinutesMore": {
+    "NAME": "再睡五分钟",
+    "DESCRIPTION": "获得 [E] [E] ，将一张 *懒懒散散 放入手牌。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] ，将一张 *懒懒散散 放入手牌。"
+  }
 }

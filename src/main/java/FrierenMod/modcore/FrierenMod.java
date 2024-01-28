@@ -16,6 +16,7 @@ import FrierenMod.relics.MyRelic;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import basemod.BaseMod;
 import com.google.gson.Gson;
@@ -106,6 +107,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new LittleFire());
         BaseMod.addCard(new FullAhead());
         BaseMod.addCard(new LockTarget());
+        BaseMod.addCard(new FiveMinutesMore());
     }
     @Override
     public void receiveEditRelics() {
