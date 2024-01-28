@@ -31,7 +31,7 @@ public class HuaTianMoFa extends CustomCard{
         this.tags.add(CHANT);
         Flower c = new Flower();
         if(this.upgraded){
-            c.upgraded = true;
+            c.upgrade();
         }
         this.cardsToPreview = c;
     }
