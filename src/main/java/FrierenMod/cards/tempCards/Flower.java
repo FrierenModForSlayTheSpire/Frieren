@@ -22,8 +22,8 @@ public class Flower extends CustomCard{
     public Flower() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.selfRetain = true;
         this.exhaust = true;
-        this.isEthereal = true;
     }
     @Override
     public void upgrade() {
