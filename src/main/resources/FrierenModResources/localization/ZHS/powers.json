@@ -14,7 +14,7 @@
   "FrierenMod:ShuiYiXingTaiPower": {
     "NAME": "睡衣形态",
     "DESCRIPTIONS": [
-      "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的2倍。 NL （将造成 #b%d 点伤害）。"
+      "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的 #b%d 倍。 NL （将造成 #b%d 点伤害）。"
     ]
   },
   "FrierenMod:QiPianMoZuDeXiaoBaXiPower": {

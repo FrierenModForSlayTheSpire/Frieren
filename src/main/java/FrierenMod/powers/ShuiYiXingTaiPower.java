@@ -33,15 +33,16 @@ public class ShuiYiXingTaiPower extends AbstractPower {
     // 能力的描述
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private int baseDamage;
+    private int rate;
 
-    public ShuiYiXingTaiPower(AbstractCreature owner) {
+    public ShuiYiXingTaiPower(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
         this.type = PowerType.BUFF;
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 3;
-
-        this.amount = -1;
+        this.amount = amount;
+        this.rate = this.amount * 3;
+        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * this.rate;
 
         String path128 = "FrierenModResources/img/powers/Example84.png";
         String path48 = "FrierenModResources/img/powers/Example32.png";
@@ -68,8 +69,9 @@ public class ShuiYiXingTaiPower extends AbstractPower {
     }
 
     public void updateDescription() {
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * 3;
-        this.description = String.format(DESCRIPTIONS[0], this.baseDamage);
+        this.rate = this.amount * 3;
+        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * this.rate;
+        this.description = String.format(DESCRIPTIONS[0], this.rate, this.baseDamage);
     }
 
 }
