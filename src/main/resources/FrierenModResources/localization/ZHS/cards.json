@@ -196,7 +196,7 @@
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": "造成 !D! 点伤害。当此牌在手中时你每打出一张 frierenmod:同调 牌 ，耗能-1。",
+    "DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。"
   },
   "FrierenMod:TongXiangMoFa": {
@@ -216,8 +216,8 @@
   },
   "FrierenMod:Flower": {
     "NAME": "苍月草",
-    "DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。"
+    "DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。",
+    "UPGRADE_DESCRIPTION": "抽 !M! 张牌。 NL  消耗 。 NL  虚无 。"
   },
   "FrierenMod:PuTaoMoFa": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
@@ -233,5 +233,15 @@
     "NAME": "赛莉耶的魔导书",
     "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 ！",
     "UPGRADE_DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 ！"
+  },
+  "FrierenMod:LittleFire": {
+    "NAME": "小小火花",
+    "DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 一张手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 你的所有手牌。"
+  },
+  "FrierenMod:FullAhead": {
+    "NAME": "全速前进",
+    "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
   }
 }
