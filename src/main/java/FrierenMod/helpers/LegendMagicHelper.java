@@ -30,13 +30,12 @@ public class LegendMagicHelper {
                 counts++;
             }
         }
-        return Math.min(counts, 20);
+        return Math.min(counts, 30);
     }
 
     private ArrayList<AbstractCard> initPowerMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FeiXingMoFa());
-        pool.add(new PuGongMoFa());
         pool.add(new LianHuanYongChang());
         pool.add(new ShiPingMoFa());
         pool.add(new YouZiMoFa());

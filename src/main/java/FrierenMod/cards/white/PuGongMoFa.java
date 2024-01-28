@@ -32,7 +32,6 @@ public class PuGongMoFa extends CustomCard{
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
-        this.tags.add(LEGEND_MAGIC);
     }
     @Override
     public void upgrade() {
@@ -79,9 +78,5 @@ public class PuGongMoFa extends CustomCard{
                    AbstractGameAction.AttackEffect.FIRE,true
             ));
         }
-    }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
     }
 }
