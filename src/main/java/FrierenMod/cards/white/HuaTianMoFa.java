@@ -1,15 +1,21 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.tempCards.Flower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.unique.DiscoveryAction;
+import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.CHANT;
@@ -44,7 +50,7 @@ public class HuaTianMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToTop(new ChantAction(3));
+        this.addToBot(new ChantAction(3));
         this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(),1));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
