@@ -46,6 +46,6 @@ public class ShiJueMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ShiJueMoFaAction(this,this.magicNumber));
+        this.addToBot(new ShiJueMoFaAction(this.magicNumber));
     }
 }

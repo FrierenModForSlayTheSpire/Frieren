@@ -9,10 +9,9 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class ShiJueMoFaAction extends AbstractGameAction {
-    private final AbstractCard c;
+
     private final int magicNumber;
-    public ShiJueMoFaAction(AbstractCard c, int magicNumber){
-        this.c = c;
+    public ShiJueMoFaAction(int magicNumber){
         this.magicNumber = magicNumber;
     }
     @Override
