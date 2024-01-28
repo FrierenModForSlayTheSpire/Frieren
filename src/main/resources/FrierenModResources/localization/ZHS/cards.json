@@ -121,8 +121,8 @@
   },
   "FrierenMod:ShuiYiXingTai": {
     "NAME": "睡衣形态",
-    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !D! 点伤害）。",
-    "UPGRADE_DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !D! 点伤害）。"
+    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。",
+    "UPGRADE_DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。"
   },
   "FrierenMod:ZhunBei": {
     "NAME": "准备",
