@@ -52,7 +52,7 @@ public class HeiAnYongChang extends CustomCard{
         AbstractMonster mo;
         while(var3.hasNext()) {
             mo = (AbstractMonster)var3.next();
-            this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, 2, false), 1, true, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new ApplyPowerAction(mo, p, new VulnerablePower(mo, this.magicNumber, false), 1, true, AbstractGameAction.AttackEffect.NONE));
         }
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
