@@ -101,8 +101,8 @@
   },
   "FrierenMod:QingXie": {
     "NAME": "倾泻",
-    "DESCRIPTION": "打出此牌后，你在本回合内每打出一张 frierenmod:同调 牌，获得 !M! 点 力量 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每打出一张 frierenmod:同调 牌，获得 !M! 点 力量 。 NL  消耗 。"
+    "DESCRIPTION": "打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。"
   },
   "FrierenMod:GuiYi": {
     "NAME": "归一",
@@ -176,8 +176,8 @@
   },
   "FrierenMod:YiShiZhunBei": {
     "NAME": "仪式的准备",
-    "DESCRIPTION": "你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每打出5张 frierenmod:同调 牌， 就对所有敌人造成8点伤害。"
+    "DESCRIPTION": "你每 frierenmod:同调 5张 *魔力， 就对所有敌人造成8点伤害。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每 frierenmod:同调 5张 *魔力， 就对所有敌人造成8点伤害。"
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
@@ -186,8 +186,8 @@
   },
   "FrierenMod:LanSan": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": "打出1张 frierenmod:同调 牌 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "打出1张 frierenmod:同调 牌 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。",
+    "UPGRADE_DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:ZhuiYi": {
     "NAME": "追忆",
