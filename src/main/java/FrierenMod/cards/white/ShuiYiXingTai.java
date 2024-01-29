@@ -62,7 +62,6 @@ public class ShuiYiXingTai extends CustomCard{
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.damage += this.magicNumber;
-        this.calculateCardDamage(m);
         this.addToBot(new ApplyPowerAction(p, p, new ShuiYiXingTaiPower(p,1)));
     }
 }
