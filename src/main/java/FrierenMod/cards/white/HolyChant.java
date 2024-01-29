@@ -26,7 +26,6 @@ public class HolyChant extends CustomCard{
     private static final CardTarget TARGET = CardTarget.NONE;
     public HolyChant() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 3;
         this.tags.add(CHANT);
     }
     @Override
@@ -44,6 +43,6 @@ public class HolyChant extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,m,this.magicNumber);
+        return new ChantHelper().canChantUse(this,m,3);
     }
 }
