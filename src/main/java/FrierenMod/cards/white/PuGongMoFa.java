@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import basemod.abstracts.CustomCard;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class PuGongMoFa extends CustomCard{
     public static final String ID = ModHelper.makePath(PuGongMoFa.class.getSimpleName());
