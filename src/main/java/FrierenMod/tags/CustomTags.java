@@ -11,6 +11,4 @@ public class CustomTags
     public static AbstractCard.CardTags CHANT;
     @SpireEnum
     public static AbstractCard.CardTags LEGEND_MAGIC;
-    @SpireEnum
-    public static AbstractCard.CardTags RECAST;
 }

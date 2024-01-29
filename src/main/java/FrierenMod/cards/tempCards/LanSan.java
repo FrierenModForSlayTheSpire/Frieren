@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.RECAST;
+import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class LanSan extends CustomCard{
     public static final String ID = ModHelper.makePath(LanSan.class.getSimpleName());
@@ -46,7 +46,7 @@ public class LanSan extends CustomCard{
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c.hasTag(RECAST)){
+        if(c.hasTag(MAGIC_POWER)){
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }

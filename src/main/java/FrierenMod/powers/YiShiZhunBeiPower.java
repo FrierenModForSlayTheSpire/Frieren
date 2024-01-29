@@ -13,7 +13,6 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
-import static FrierenMod.tags.CustomTags.RECAST;
 
 public class YiShiZhunBeiPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.makePath(YiShiZhunBeiPower.class.getSimpleName());
