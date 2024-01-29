@@ -1,6 +1,8 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.TongXiangAction;
+import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.RemoveAllBlockAction;
@@ -25,6 +27,7 @@ public class TongXiangMoFa extends CustomCard{
     public TongXiangMoFa() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 10;
+
     }
     @Override
     public void upgrade() {
@@ -37,6 +40,12 @@ public class TongXiangMoFa extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ChantAction(1));
         this.addToBot(new TongXiangAction(m,p,this.magicNumber));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return new ChantHelper().canChantUse(this,m,1);
     }
 }
