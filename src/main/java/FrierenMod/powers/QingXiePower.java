@@ -1,7 +1,5 @@
 package FrierenMod.powers;
 
-import FrierenMod.actions.GainTempPowerAction;
-import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
