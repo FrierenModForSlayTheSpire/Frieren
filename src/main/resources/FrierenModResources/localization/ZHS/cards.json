@@ -11,8 +11,8 @@
   },
   "FrierenMod:PuGongMoFa": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。（已 消耗  !M! 张魔力）。",
-    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。（已 消耗  !M! 张魔力）。"
+    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。",
+    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。"
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
@@ -26,8 +26,8 @@
   },
   "FrierenMod:HolyChant": {
     "NAME": "神圣咏唱",
-    "DESCRIPTION": " frierenmod:咏唱  !M! 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱  !M! 。"
+    "DESCRIPTION": " frierenmod:咏唱 3 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱 3。"
   },
   "FrierenMod:MagicPower": {
     "NAME": "魔力",
@@ -46,8 +46,8 @@
   },
   "FrierenMod:ChantFromDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 2次。",
-    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 2次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。",
+    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。"
   },
   "FrierenMod:ChantFromHand": {
     "NAME": "从手牌咏唱",
@@ -176,8 +176,8 @@
   },
   "FrierenMod:YiShiZhunBei": {
     "NAME": "仪式的准备",
-    "DESCRIPTION": "你每 frierenmod:同调 5张 *魔力， 就对所有敌人造成8点伤害。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每 frierenmod:同调 5张 *魔力， 就对所有敌人造成8点伤害。"
+    "DESCRIPTION": "你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。"
   },
   "FrierenMod:BaoPoMoFa": {
     "NAME": "爆破魔法",
