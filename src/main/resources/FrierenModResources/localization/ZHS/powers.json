@@ -34,5 +34,11 @@
     "DESCRIPTIONS": [
       "你每打出5张同调牌， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
     ]
+  },
+  "FrierenMod:SwitchStrengthAndDexterityPower": {
+    "NAME": "交换",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，交换你的 #y力量 和 #y敏捷 层数。"
+    ]
   }
 }

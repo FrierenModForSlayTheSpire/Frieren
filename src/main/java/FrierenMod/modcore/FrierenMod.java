@@ -106,6 +106,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new LittleFire());
         BaseMod.addCard(new FullAhead());
         BaseMod.addCard(new TongXiangMoFa());
+        BaseMod.addCard(new HongPingGuoMoFa());
     }
     @Override
     public void receiveEditRelics() {
