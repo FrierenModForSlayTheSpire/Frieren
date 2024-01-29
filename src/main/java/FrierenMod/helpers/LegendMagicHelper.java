@@ -30,10 +30,10 @@ public class LegendMagicHelper {
                 counts++;
             }
         }
-        return Math.min(counts, 30);
+        return counts;
     }
 
-    private ArrayList<AbstractCard> initPowerMagicCardPool(){
+    private ArrayList<AbstractCard> initLegendMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FeiXingMoFa());
         pool.add(new LianHuanYongChang());
@@ -42,7 +42,7 @@ public class LegendMagicHelper {
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){
-        ArrayList<AbstractCard> pool = this.initPowerMagicCardPool();
+        ArrayList<AbstractCard> pool = this.initLegendMagicCardPool();
         if(pool.size() >= amounts){
             Collections.shuffle(pool);
             ArrayList<AbstractCard> cards = new ArrayList<>();

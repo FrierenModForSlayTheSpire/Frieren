@@ -72,7 +72,7 @@ public class ChantHelper {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
         }
     }
-    private ArrayList<AbstractCard> initPowerMagicCardPool(){
+    private ArrayList<AbstractCard> intiChantCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FangYuMoFa());
         pool.add(new HolyChant());
@@ -81,7 +81,7 @@ public class ChantHelper {
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){
-        ArrayList<AbstractCard> pool = this.initPowerMagicCardPool();
+        ArrayList<AbstractCard> pool = this.intiChantCardPool();
         if(pool.size() >= amounts){
             Collections.shuffle(pool);
             ArrayList<AbstractCard> cards = new ArrayList<>();
@@ -94,4 +94,5 @@ public class ChantHelper {
             return null;
         }
     }
+
 }
