@@ -44,6 +44,6 @@ public class HolyChant extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,p,m,this.magicNumber);
+        return new ChantHelper().canChantUse(this,m,this.magicNumber);
     }
 }

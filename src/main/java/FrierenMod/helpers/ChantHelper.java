@@ -60,7 +60,7 @@ public class ChantHelper {
         int num = this.getMagicPowerNumInDiscardPile();
         return x <= num;
     }
-    public boolean canChantUse(AbstractCard c, AbstractPlayer p, AbstractMonster m, int x){
+    public boolean canChantUse(AbstractCard c, AbstractMonster m, int x){
         if (c.type == AbstractCard.CardType.STATUS && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
             return false;
         } else if (c.type == AbstractCard.CardType.CURSE && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {

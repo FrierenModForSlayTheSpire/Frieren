@@ -46,6 +46,6 @@ public class FangYuMoFa2 extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,p,m,1);
+        return new ChantHelper().canChantUse(this,m,1);
     }
 }

@@ -48,6 +48,6 @@ public class LianHuanYongChang extends CustomCard{
         this.addToBot(new ChantAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
+        return new LegendMagicHelper().canLegendMagicUse(this,m);
     }
 }

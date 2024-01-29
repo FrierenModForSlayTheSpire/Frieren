@@ -43,6 +43,6 @@ public class FeiXingMoFa extends CustomCard{
         this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
+        return new LegendMagicHelper().canLegendMagicUse(this,m);
     }
 }

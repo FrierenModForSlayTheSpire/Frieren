@@ -49,6 +49,6 @@ public class HuaTianMoFa extends CustomCard{
         this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(),1));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,p,m,3);
+        return new ChantHelper().canChantUse(this,m,3);
     }
 }

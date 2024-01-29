@@ -63,6 +63,6 @@ public class YouZiMoFa extends CustomCard{
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,p,m);
+        return new LegendMagicHelper().canLegendMagicUse(this,m);
     }
 }
