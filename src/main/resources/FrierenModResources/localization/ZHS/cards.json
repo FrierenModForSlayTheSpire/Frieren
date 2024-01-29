@@ -11,8 +11,8 @@
   },
   "FrierenMod:PuGongMoFa": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。 NL （已 消耗  !M! 张魔力）。",
-    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。 NL （已 消耗  !M! 张魔力）。"
+    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。（已 消耗  !M! 张魔力）。",
+    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害2次。（已 消耗  !M! 张魔力）。"
   },
   "FrierenMod:FangYuMoFa": {
     "NAME": "防御魔法",
