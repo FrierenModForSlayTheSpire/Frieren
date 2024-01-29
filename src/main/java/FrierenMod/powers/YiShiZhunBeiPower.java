@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 import static FrierenMod.tags.CustomTags.RECAST;
 
 public class YiShiZhunBeiPower extends AbstractPower {
@@ -22,7 +23,7 @@ public class YiShiZhunBeiPower extends AbstractPower {
     private static final String NAME = powerStrings.NAME;
     // 能力的描述
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    private int recastCardPlayedNum = 0;
+    private int MagicPowerPlayedNum = 0;
     public YiShiZhunBeiPower(AbstractCreature owner,int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
@@ -41,17 +42,17 @@ public class YiShiZhunBeiPower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         super.onAfterCardPlayed(usedCard);
-        if(usedCard.tags.contains(RECAST)){
-            this.recastCardPlayedNum++;
+        if(usedCard.tags.contains(MAGIC_POWER)){
+            this.MagicPowerPlayedNum++;
         }
-        if(this.recastCardPlayedNum == 5){
+        if(this.MagicPowerPlayedNum == 3){
             this.flash();
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.amount * 8, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-            this.recastCardPlayedNum = 0;
+            this.MagicPowerPlayedNum = 0;
         }
         this.updateDescription();
     }
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount * 8, this.recastCardPlayedNum);
+        this.description = String.format(DESCRIPTIONS[0], this.amount * 8, this.MagicPowerPlayedNum);
     }
 }
