@@ -46,8 +46,8 @@
   },
   "FrierenMod:ChantFromDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 [#9ffc4f]!B![] 点 格挡 2次。",
-    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 [#9ffc4f]!B![] 点 格挡 2次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 2次。",
+    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 2次。"
   },
   "FrierenMod:ChantFromHand": {
     "NAME": "从手牌咏唱",

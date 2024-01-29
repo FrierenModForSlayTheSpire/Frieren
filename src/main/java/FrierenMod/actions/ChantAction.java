@@ -17,43 +17,32 @@ public class ChantAction extends AbstractGameAction {
     private final int x;
     public ChantAction(int x) {
         this.x = x;
-        this.duration = Settings.ACTION_DUR_FAST;
     }
 
     @Override
     public void update() {
-        if (this.duration == Settings.ACTION_DUR_FAST) {
-            ChantHelper helper = new ChantHelper();
-            ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-            if (helper.canChantFromDrawPile(this.x)) {
-                ChantFromDrawPile c = new ChantFromDrawPile();
-                c.magicNumber = c.baseMagicNumber = x;
-                int counts = 0;
-                for (AbstractPower po : AbstractDungeon.player.powers){
-                    if(po.ID.matches("Dexterity")){
-                        counts += po.amount;
-                        break;
-                    }
-                }
-                c.baseBlock = c.block = c.magicNumber + counts;
-                stanceChoices.add(c);
-            }
-            if (helper.canChantFromHand(this.x)) {
-                ChantFromHand c = new ChantFromHand();
-                c.magicNumber = c.baseMagicNumber = x;
-                stanceChoices.add(c);
-            }
-            if (helper.canChantFromDiscardPile(this.x)) {
-                ChantFromDiscardPile c = new ChantFromDiscardPile();
-                c.magicNumber = c.baseMagicNumber = x;
-                stanceChoices.add(c);
-            }
-            if (!stanceChoices.isEmpty()) {
-                this.addToTop(new ChooseOneAction(stanceChoices));
-            }
+        ChantHelper helper = new ChantHelper();
+        ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
+        if (helper.canChantFromDrawPile(this.x)) {
+            ChantFromDrawPile c = new ChantFromDrawPile();
+            c.block = c.baseBlock = x;
+            c.magicNumber = c.baseMagicNumber = x;
+            c.applyPowers();
+            stanceChoices.add(c);
         }
-
-        this.tickDuration();
+        if (helper.canChantFromHand(this.x)) {
+            ChantFromHand c = new ChantFromHand();
+            c.magicNumber = c.baseMagicNumber = x;
+            stanceChoices.add(c);
+        }
+        if (helper.canChantFromDiscardPile(this.x)) {
+            ChantFromDiscardPile c = new ChantFromDiscardPile();
+            c.magicNumber = c.baseMagicNumber = x;
+            stanceChoices.add(c);
+        }
+        if (!stanceChoices.isEmpty()) {
+            this.addToTop(new ChooseOneAction(stanceChoices));
+        }
         this.isDone = true;
     }
 }

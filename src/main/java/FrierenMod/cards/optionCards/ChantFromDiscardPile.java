@@ -1,5 +1,6 @@
 package FrierenMod.cards.optionCards;
 
+import FrierenMod.actions.ChantFromDiscardPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInDiscardPileAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
@@ -30,9 +31,7 @@ public class ChantFromDiscardPile extends CustomCard {
 
 
     public ChantFromDiscardPile() {
-        // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = 1;
         this.cardsToPreview = new MagicPower();
     }
     @Override
@@ -49,11 +48,6 @@ public class ChantFromDiscardPile extends CustomCard {
     }
 
     public void onChoseThisOption() {
-        super.onChoseThisOption();
-        AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
-        this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        this.addToBot(new ExhaustMagicPowerInDiscardPileAction(this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
+        this.addToBot(new ChantFromDiscardPileAction(this.magicNumber));
     }
 }

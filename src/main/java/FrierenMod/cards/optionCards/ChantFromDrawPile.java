@@ -1,5 +1,6 @@
 package FrierenMod.cards.optionCards;
 
+import FrierenMod.actions.ChantFromDrawPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInDrawPileAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
@@ -30,11 +31,8 @@ public class ChantFromDrawPile extends CustomCard{
 
 
     public ChantFromDrawPile() {
-        // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
-        this.block = this.baseBlock = 0;
-        this.magicNumber = this.baseMagicNumber = 0;
     }
     @Override
     public void upgrade() {
@@ -49,13 +47,6 @@ public class ChantFromDrawPile extends CustomCard{
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        super.onChoseThisOption();
-        AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
-        this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        this.addToBot(new ExhaustMagicPowerInDrawPileAction(this.magicNumber));
-        for (int i = 0; i < 2; i++) {
-            this.addToBot(new GainBlockAction(p,p,this.block));
-        }
+        this.addToBot(new ChantFromDrawPileAction(this.block,this.magicNumber));
     }
 }

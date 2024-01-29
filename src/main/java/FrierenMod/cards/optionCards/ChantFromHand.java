@@ -1,5 +1,6 @@
 package FrierenMod.cards.optionCards;
 
+import FrierenMod.actions.ChantFromHandAction;
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
@@ -33,9 +34,7 @@ public class ChantFromHand extends CustomCard{
 
 
     public ChantFromHand() {
-        // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = baseMagicNumber = 1;
         this.cardsToPreview = new MagicPower();
     }
     @Override
@@ -51,15 +50,6 @@ public class ChantFromHand extends CustomCard{
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        super.onChoseThisOption();
-        AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
-        this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        this.addToBot(new ExhaustMagicPowerInHandAction(this.magicNumber));
-        if (!Settings.DISABLE_EFFECTS) {
-            this.addToBot(new VFXAction(new BorderFlashEffect(Color.GOLDENROD, true)));
-        }
-        this.addToBot(new VFXAction(new MiracleEffect()));
-        this.addToBot(new GainEnergyAction(this.magicNumber));
+        this.addToBot(new ChantFromHandAction(this.magicNumber));
     }
 }
