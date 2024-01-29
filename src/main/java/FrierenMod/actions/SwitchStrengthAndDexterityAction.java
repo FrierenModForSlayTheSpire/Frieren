@@ -24,7 +24,8 @@ public class SwitchStrengthAndDexterityAction extends AbstractGameAction {
             }
         }
         if(strengthAmounts != 0 || dexterityAmounts != 0){
-            AbstractDungeon.player.powers.clear();
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,strengthAmounts * (-1)),strengthAmounts * (-1)));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,dexterityAmounts * (-1)),dexterityAmounts * (-1)));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,dexterityAmounts),dexterityAmounts));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,strengthAmounts),strengthAmounts));
         }
