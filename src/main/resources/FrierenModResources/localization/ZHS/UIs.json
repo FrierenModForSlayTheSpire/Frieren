@@ -1,0 +1,90 @@
+{
+  "FrierenMod:DrawMod": {
+  "TEXT": [
+    "抽 ", " 张牌",
+    " NL 抽 ", " 张牌。", " 张牌。"
+    ]
+  },
+  "FrierenMod:MagicPowerMod": {
+    "TEXT": [
+      "将 ", " 张 *魔力 置入弃牌堆",
+      " NL 将 ", " 张 *魔力 置入弃牌堆。", " 张 *魔力 置入弃牌堆。"
+    ]
+  },
+  "FrierenMod:GainRandomCardMod": {
+    "TEXT": [
+      "获得 ", " 张在本回合耗能为0的随机普通牌。",
+      " NL 获得 ", " 张在本回合耗能为0的随机普通牌。", " 张在本回合耗能为0的随机普通牌。"
+    ]
+  },
+  "FrierenMod:SelfRetainMod": {
+    "TEXT": [
+      " 保留 手中的 ", " 张牌。",
+      " NL  保留 手中的 ", " 张牌。"
+    ]
+  },
+  "FrierenMod:DamageAllMod": {
+    "TEXT": [
+      "对所有敌人造成 ", " 点伤害。",
+      " NL  对所有敌人造成 ", " 点伤害。", " 点伤害。"
+    ]
+  },
+  "FrierenMod:DamageMod": {
+    "TEXT": [
+      "造成 ", " 点伤害。",
+      " NL  造成 ", " 点伤害。", " 点伤害。"
+    ]
+  },
+  "FrierenMod:BlockMod": {
+    "TEXT": [
+      "获得 ", " 点 格挡。",
+      " NL  获得 ", " 点格挡。", " 点格挡。"
+    ]
+  },
+  "FrierenMod:ExtinguishMod": {
+    "TEXT": [
+      "如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。",
+      " NL  如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。", " 点，则将其生命值变为0。"
+    ]
+  },
+  "FrierenMod:ChantMod": {
+    "TEXT": [
+      " frierenmod:咏唱 ", " 。",
+      " NL  frierenmod:咏唱 ", " 。", " 。"
+    ]
+  },
+  "FrierenMod:DexterityMod": {
+    "TEXT": [
+      "获得 ", " 点 敏捷 。",
+      " NL 获得 ", " 点 敏捷 。", " 点 敏捷 。"
+    ]
+  },
+  "FrierenMod:IntangibleMod": {
+    "TEXT": [
+      "获得 ", " 层 无实体 。 NL 消耗 。",
+      " NL 获得", " 层 无实体 。 NL 消耗 。"
+    ]
+  },
+  "FrierenMod:RemoveDebuffMod": {
+    "TEXT": [
+      " NL 移除你身上的所有负面效果。", "",
+      " ", " ", " "
+    ]
+  },
+  "FrierenMod:StrengthMod": {
+    "TEXT": [
+      "将你的 力量 翻倍。 NL  消耗 。"
+    ]
+  },
+  "FrierenMod:UpgradeMod": {
+    "TEXT": [
+      "在本场战斗中升级手牌中的所有牌。 NL  消耗 。"
+    ]
+  },
+  "FrierenMod:VulnerableMod": {
+    "TEXT": [
+      "给与所有敌人 ", " 层 易伤 。",
+      " NL 给与所有敌人 ", " 层 易伤 。", " 层 易伤 。"
+    ]
+  }
+}

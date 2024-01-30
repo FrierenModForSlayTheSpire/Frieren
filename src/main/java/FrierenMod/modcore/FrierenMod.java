@@ -5,10 +5,20 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
-import FrierenMod.cards.tempCards.Flower;
-import FrierenMod.cards.tempCards.HideMagic;
-import FrierenMod.cards.tempCards.LanSan;
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost0;
+import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost1;
+import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost2;
+import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost3;
+import FrierenMod.cards.optionCards.saiLiYe.layer2.DrawOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer2.GainRandomCardOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer2.MagicPowerOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer2.SelfRetainOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer3.BlockOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer3.DamageAllOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer3.DamageOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer3.ExtinguishOption;
+import FrierenMod.cards.optionCards.saiLiYe.layer4.*;
+import FrierenMod.cards.tempCards.*;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.FangYuMoFa;
 import FrierenMod.cards.white.HolyChant;
@@ -19,6 +29,7 @@ import com.badlogic.gdx.Gdx;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import basemod.BaseMod;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
@@ -109,6 +120,27 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new HongPingGuoMoFa());
         BaseMod.addCard(new LockTarget());
         BaseMod.addCard(new FiveMinutesMore());
+        BaseMod.addCard(new SaiLiYeDeMoDaoShu());
+        BaseMod.addCard(new CustomLegendMagic());
+        BaseMod.addCard(new Cost0((AbstractCard) null));
+        BaseMod.addCard(new Cost1((AbstractCard) null));
+        BaseMod.addCard(new Cost2((AbstractCard) null));
+        BaseMod.addCard(new Cost3((AbstractCard) null));
+        BaseMod.addCard(new DrawOption((AbstractCard) null, 0));
+        BaseMod.addCard(new GainRandomCardOption((AbstractCard) null, 0));
+        BaseMod.addCard(new MagicPowerOption((AbstractCard) null,0));
+        BaseMod.addCard(new SelfRetainOption((AbstractCard) null,0));
+        BaseMod.addCard(new BlockOption((AbstractCard) null,0));
+        BaseMod.addCard(new DamageAllOption((AbstractCard) null,0));
+        BaseMod.addCard(new DamageOption((AbstractCard) null,0));
+        BaseMod.addCard(new ExtinguishOption((AbstractCard) null,0));
+        BaseMod.addCard(new ChantOption((AbstractCard) null,0));
+        BaseMod.addCard(new DexterityOption((AbstractCard) null,0));
+        BaseMod.addCard(new IntangibleOption((AbstractCard) null,0));
+        BaseMod.addCard(new RemoveDebuffOption((AbstractCard) null));
+        BaseMod.addCard(new StrengthOption((AbstractCard) null));
+        BaseMod.addCard(new UpgradeOption((AbstractCard) null));
+        BaseMod.addCard(new VulnerableOption((AbstractCard) null,0));
     }
     @Override
     public void receiveEditRelics() {
@@ -147,5 +179,6 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "FrierenModResources/localization/" + lang + "/characters.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "FrierenModResources/localization/" + lang + "/relics.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "FrierenModResources/localization/" + lang + "/powers.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class,"FrierenModResources/localization/" + lang + "/UIs.json");
     }
 }
