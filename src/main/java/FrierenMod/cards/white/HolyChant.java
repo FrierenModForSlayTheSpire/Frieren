@@ -27,6 +27,7 @@ public class HolyChant extends CustomCard{
     public HolyChant() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.tags.add(CHANT);
+        this.magicNumber = this.baseMagicNumber = 3;
     }
     @Override
     public void upgrade() {
