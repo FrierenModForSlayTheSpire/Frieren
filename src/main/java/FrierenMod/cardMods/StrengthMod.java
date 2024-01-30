@@ -38,6 +38,6 @@ public class StrengthMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2];
+        return rawDescription + TEXT[0];
     }
 }
