@@ -39,6 +39,6 @@ public class ExtinguishMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + card.block + TEXT[3];
+        return rawDescription + TEXT[2] + this.hpAmt + TEXT[3];
     }
 }
