@@ -231,8 +231,8 @@
   },
   "FrierenMod:SaiLiYeDeMoDaoShu": {
     "NAME": "赛莉耶的魔导书",
-    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 ！",
-    "UPGRADE_DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 ！"
+    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。"
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
@@ -280,7 +280,7 @@
   },
   "FrierenMod:MagicPowerOption": {
     "NAME": "月亮",
-    "DESCRIPTION": " 将 !M! 张魔力置入抽牌堆。"
+    "DESCRIPTION": " 将 !M! 张魔力置入弃牌堆。"
   },
   "FrierenMod:SelfRetainOption": {
     "NAME": "节制",
@@ -288,7 +288,7 @@
   },
   "FrierenMod:GainRandomCardOption": {
     "NAME": "命运之轮",
-    "DESCRIPTION": "将 !M! 张随机普通牌放入手牌。 NL 其在本回合耗能变为0。"
+    "DESCRIPTION": "将 !M! 张随机普通牌放入手中。 NL 其在本回合耗能变为0。"
   },
   "FrierenMod:DamageOption": {
     "NAME": "正义",
@@ -300,7 +300,7 @@
   },
   "FrierenMod:BlockOption": {
     "NAME": "隐者",
-    "DESCRIPTION": "获得 !B! 点格挡。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "FrierenMod:ExtinguishOption": {
     "NAME": "审判",
@@ -328,7 +328,7 @@
   },
   "FrierenMod:UpgradeOption": {
     "NAME": "世界",
-    "DESCRIPTION": "在本场战斗中随机 升级 手牌中的 !M! 张牌。"
+    "DESCRIPTION": "在本场战斗中升级手牌中的所有牌。 NL  消耗 。"
   },
   "FrierenMod:RemoveDebuffOption": {
     "NAME": "权杖",

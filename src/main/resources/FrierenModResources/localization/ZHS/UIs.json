@@ -38,7 +38,7 @@
   "FrierenMod:BlockMod": {
     "TEXT": [
       "获得 ", " 点 格挡。",
-      " NL  获得 ", " 点格挡。", " 点格挡。"
+      " NL  获得 ", " 点 格挡 。", " 点 格挡 。"
     ]
   },
   "FrierenMod:ExtinguishMod": {
@@ -67,8 +67,7 @@
   },
   "FrierenMod:RemoveDebuffMod": {
     "TEXT": [
-      " NL 移除你身上的所有负面效果。", "",
-      " ", " ", " "
+      " NL 移除你身上的所有负面效果。"
     ]
   },
   "FrierenMod:StrengthMod": {

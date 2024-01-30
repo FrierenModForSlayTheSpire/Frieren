@@ -13,6 +13,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+import static FrierenMod.tags.CustomTags.CHANT;
+
 public class ChantMod extends AbstractCardModifier {
     public static final String ID = ModHelper.makePath(ChantMod.class.getSimpleName());
 
@@ -22,6 +24,10 @@ public class ChantMod extends AbstractCardModifier {
 
     public ChantMod(int chantAmt) {
         this.chantAmt = chantAmt;
+    }
+    public void onInitialApplication(AbstractCard card) {
+        card.magicNumber = this.chantAmt;
+        card.tags.add(CHANT);
     }
 
     public AbstractCardModifier makeCopy() {
@@ -36,14 +42,7 @@ public class ChantMod extends AbstractCardModifier {
         return ID;
     }
 
-    @Override
-    public boolean canPlayCard(AbstractCard card) {
-        return new ChantHelper().canChantUse(card,(AbstractMonster) null,this.chantAmt) && new LegendMagicHelper().canLegendMagicUse(card,(AbstractMonster) null);
-    }
-
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (this.chantAmt == 1)
-            return rawDescription + TEXT[2] + this.chantAmt + TEXT[3];
-        return rawDescription + TEXT[2] + this.chantAmt + TEXT[4];
+        return rawDescription + TEXT[2] + this.chantAmt + TEXT[3];
     }
 }
