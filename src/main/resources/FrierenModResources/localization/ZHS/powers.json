@@ -40,5 +40,11 @@
     "DESCRIPTIONS": [
       "在你的回合结束时，交换你的 #y力量 和 #y敏捷 层数。"
     ]
+  },
+  "FrierenMod:TimeTravelPower": {
+    "NAME": "精灵的时间观念",
+    "DESCRIPTIONS": [
+      "将你当前的一切送入 #b%d 回合后的未来。"
+    ]
   }
 }
