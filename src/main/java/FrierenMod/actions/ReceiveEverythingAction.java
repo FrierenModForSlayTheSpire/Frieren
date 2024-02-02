@@ -14,7 +14,7 @@ public class ReceiveEverythingAction extends AbstractGameAction {
     @Override
     public void update() {
         this.addToBot(new ReceiveCardsAction(status.drawPile,status.hand,status.discardPile,status.exhaustPile,isChanged));
-        this.addToBot(new ReceivePlayerStatusAction(status,new ObtainPotionsAction(status.potions)));
+        this.addToBot(new ReceivePlayerStatusAction(status));
         this.isDone = true;
     }
 }

@@ -11,10 +11,8 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class ReceivePlayerStatusAction extends AbstractGameAction {
     private final Status status;
-    private AbstractGameAction nextAction;
-    public ReceivePlayerStatusAction(Status status, AbstractGameAction nextAction){
+    public ReceivePlayerStatusAction(Status status){
         this.status = status;
-        this.nextAction = nextAction;
     }
     @Override
     public void update() {
@@ -36,7 +34,9 @@ public class ReceivePlayerStatusAction extends AbstractGameAction {
         EnergyPanel.totalCount = status.energy;
         AbstractDungeon.player.reorganizeRelics();
         AbstractDungeon.player.updatePowers();
-        this.addToBot(nextAction);
+        for(AbstractPotion potion: status.potions){
+            this.addToBot(new ObtainPotionAction(potion));
+        }
         this.isDone = true;
     }
 }
