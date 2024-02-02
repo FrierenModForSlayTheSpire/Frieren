@@ -8,7 +8,7 @@
   "FrierenMod:QingXiePower": {
     "NAME": "倾泻",
     "DESCRIPTIONS": [
-      "每打出一张 #y同调 牌，获得 #b%d 点 #y力量 。"
+      "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y力量 。"
     ]
   },
   "FrierenMod:ShuiYiXingTaiPower": {
@@ -32,7 +32,7 @@
   "FrierenMod:YiShiZhunBeiPower": {
     "NAME": "仪式准备",
     "DESCRIPTIONS": [
-      "你每打出5张同调牌， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
+      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {
