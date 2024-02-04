@@ -3,7 +3,6 @@ package FrierenMod.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Iterator;
@@ -11,13 +10,10 @@ import java.util.Iterator;
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class ExhaustMagicPowerInDiscardPileAction extends AbstractGameAction {
-    private final float startingDuration;
     private final int exhaustNumber;
 
     public ExhaustMagicPowerInDiscardPileAction(int exhaustNumber) {
         this.actionType = ActionType.WAIT;
-        this.startingDuration = Settings.ACTION_DUR_FAST;
-        this.duration = this.startingDuration;
         this.exhaustNumber = exhaustNumber;
     }
 
