@@ -1,9 +1,8 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.SaiLiYeDeMoDaoShuAction;
+import FrierenMod.actions.HongPingGuoAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -11,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class SaiLiYeDeMoDaoShu extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(SaiLiYeDeMoDaoShu.class.getSimpleName());
+public class RedAppleMagic extends AbstractFrierenCard {
+    public static final String ID = ModHelper.makePath(RedAppleMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -20,11 +19,11 @@ public class SaiLiYeDeMoDaoShu extends AbstractFrierenCard {
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
     private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public SaiLiYeDeMoDaoShu() {
+    public RedAppleMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.exhaust = true;
+        this.block = this.baseBlock =3;
     }
     @Override
     public void upgrade() {
@@ -37,6 +36,6 @@ public class SaiLiYeDeMoDaoShu extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new SaiLiYeDeMoDaoShuAction());
+        this.addToBot(new HongPingGuoAction());
     }
 }

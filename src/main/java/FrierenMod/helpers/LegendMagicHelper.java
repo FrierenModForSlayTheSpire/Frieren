@@ -34,10 +34,10 @@ public class LegendMagicHelper {
 
     private ArrayList<AbstractCard> initLegendMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new FeiXingMoFa());
-        pool.add(new LianHuanYongChang());
-        pool.add(new ShiPingMoFa());
-        pool.add(new YouZiMoFa());
+        pool.add(new FlightMagic());
+        pool.add(new ContinualChant());
+        pool.add(new JewelryMagic());
+        pool.add(new OilMagic());
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){

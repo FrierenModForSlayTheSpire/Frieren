@@ -4,7 +4,6 @@ import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import FrierenMod.powers.ShuiYiXingTaiPower;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,8 +12,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class ShuiYiXingTai extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(ShuiYiXingTai.class.getSimpleName());
+public class NightDressForm extends AbstractFrierenCard {
+    public static final String ID = ModHelper.makePath(NightDressForm.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -24,7 +23,7 @@ public class ShuiYiXingTai extends AbstractFrierenCard {
     private static final CardColor COLOR = FRIEREN_CARD;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public ShuiYiXingTai() {
+    public NightDressForm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseDamage = 0;
         this.baseMagicNumber = 0;

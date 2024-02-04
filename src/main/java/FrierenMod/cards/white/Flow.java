@@ -4,20 +4,17 @@ import FrierenMod.actions.DrawPileToDiscardPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import java.util.Iterator;
-
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
-public class LiuZhuan extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(LiuZhuan.class.getSimpleName());
+public class Flow extends AbstractFrierenCard {
+    public static final String ID = ModHelper.makePath(Flow.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -27,7 +24,7 @@ public class LiuZhuan extends AbstractFrierenCard {
     private static final CardColor COLOR = FRIEREN_CARD;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public LiuZhuan() {
+    public Flow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new MagicPower();

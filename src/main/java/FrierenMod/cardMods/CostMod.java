@@ -1,8 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.FangYuMoFa2;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.modcore.FrierenMod;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

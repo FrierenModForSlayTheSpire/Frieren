@@ -1,9 +1,8 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.LanSan;
+import FrierenMod.cards.tempCards.Laziness;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -27,7 +26,7 @@ public class FiveMinutesMore extends AbstractFrierenCard {
     public FiveMinutesMore() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber=this.magicNumber=2;
-        this.cardsToPreview = new LanSan();
+        this.cardsToPreview = new Laziness();
         this.exhaust = true;
     }
     @Override

@@ -73,10 +73,10 @@ public class ChantHelper {
     }
     private ArrayList<AbstractCard> intiChantCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new FangYuMoFa());
+        pool.add(new DefendMagic());
         pool.add(new HolyChant());
-        pool.add(new LianHuanYongChang());
-        pool.add(new HuaTianMoFa());
+        pool.add(new ContinualChant());
+        pool.add(new FlowerFieldMagic());
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){

@@ -10,14 +10,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
-
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class MeiJunMoFa extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(MeiJunMoFa.class.getSimpleName());
+public class MoldMagic extends AbstractFrierenCard {
+    public static final String ID = ModHelper.makePath(MoldMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -27,7 +25,7 @@ public class MeiJunMoFa extends AbstractFrierenCard {
     private static final CardColor COLOR = FRIEREN_CARD;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.ENEMY;
-    public MeiJunMoFa() {
+    public MoldMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 2;
         this.tags.add(LEGEND_MAGIC);

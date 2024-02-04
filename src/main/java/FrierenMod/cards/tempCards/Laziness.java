@@ -2,7 +2,6 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,8 +13,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
-public class LanSan extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(LanSan.class.getSimpleName());
+public class Laziness extends AbstractFrierenCard {
+    public static final String ID = ModHelper.makePath(Laziness.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Slack_skill.png";
@@ -25,7 +24,7 @@ public class LanSan extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public LanSan() {
+    public Laziness() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
     }

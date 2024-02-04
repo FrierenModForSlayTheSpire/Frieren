@@ -1,7 +1,7 @@
 package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
-import FrierenMod.cards.white.FangYuMoFa;
+import FrierenMod.cards.white.DefendMagic;
 import FrierenMod.cards.white.HolyChant;
 import FrierenMod.modcore.FrierenMod;
 import FrierenMod.relics.MyRelic;
@@ -91,8 +91,8 @@ public class Frieren extends CustomPlayer {
         for(int x = 0; x<4; x++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(LiuZhuan.ID);
-        retVal.add(FangYuMoFa.ID);
+        retVal.add(Flow.ID);
+        retVal.add(DefendMagic.ID);
         retVal.add(HolyChant.ID);
         return retVal;
     }
