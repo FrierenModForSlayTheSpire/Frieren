@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.DuoChongAction;
+import FrierenMod.actions.MultipleAttackMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
@@ -37,6 +37,6 @@ public class MultipleAttackMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DuoChongAction(p,this, this.energyOnUse,this.upgraded));
+        this.addToBot(new MultipleAttackMagicAction(p,this, this.energyOnUse,this.upgraded));
     }
 }

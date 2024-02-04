@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.ZhuiYiAction;
+import FrierenMod.actions.RecallAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,6 +36,6 @@ public class Recall extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ZhuiYiAction(this.magicNumber));
+        this.addToBot(new RecallAction(this.magicNumber));
     }
 }

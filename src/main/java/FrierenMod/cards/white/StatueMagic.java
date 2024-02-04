@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.actions.TongXiangAction;
+import FrierenMod.actions.StatueMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
@@ -40,7 +40,7 @@ public class StatueMagic extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChantAction(1));
-        this.addToBot(new TongXiangAction(m,p,this.magicNumber));
+        this.addToBot(new StatueMagicAction(m,p,this.magicNumber));
     }
 
     @Override

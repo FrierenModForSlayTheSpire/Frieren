@@ -11,13 +11,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class ZhuiYiAction extends AbstractGameAction {
+public class RecallAction extends AbstractGameAction {
     public static final String[] TEXT;
     private final AbstractPlayer player;
     private final int numberOfCards;
     private final boolean optional = false;
 
-    public ZhuiYiAction(int numberOfCards) {
+    public RecallAction(int numberOfCards) {
         this.actionType = ActionType.CARD_MANIPULATION;
         this.duration = this.startDuration = Settings.ACTION_DUR_FAST;
         this.player = AbstractDungeon.player;

@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.ShiJueMoFaAction;
+import FrierenMod.actions.VisionMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
@@ -39,6 +39,6 @@ public class VisionMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ShiJueMoFaAction(this.magicNumber));
+        this.addToBot(new VisionMagicAction(this.magicNumber));
     }
 }

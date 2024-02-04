@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.HongPingGuoAction;
+import FrierenMod.actions.RedAppleMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -36,6 +36,6 @@ public class RedAppleMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new HongPingGuoAction());
+        this.addToBot(new RedAppleMagicAction());
     }
 }

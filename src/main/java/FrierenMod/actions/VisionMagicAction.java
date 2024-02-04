@@ -4,14 +4,13 @@ import FrierenMod.helpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class ShiJueMoFaAction extends AbstractGameAction {
+public class VisionMagicAction extends AbstractGameAction {
 
     private final int magicNumber;
-    public ShiJueMoFaAction(int magicNumber){
+    public VisionMagicAction(int magicNumber){
         this.magicNumber = magicNumber;
     }
     @Override

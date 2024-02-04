@@ -1,17 +1,16 @@
 package FrierenMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 
-public class TongXiangAction extends AbstractGameAction {
+public class StatueMagicAction extends AbstractGameAction {
     private static final float DUR = 0.25F;
     private final int magicNumber;
 
-    public TongXiangAction(AbstractCreature target, AbstractCreature source, int magicNumber) {
+    public StatueMagicAction(AbstractCreature target, AbstractCreature source, int magicNumber) {
         this.setValues(target, source, this.amount);
         this.actionType = ActionType.BLOCK;
         this.duration = 0.25F;

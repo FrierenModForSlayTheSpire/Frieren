@@ -4,7 +4,7 @@ import FrierenMod.cards.tempCards.CustomLegendMagic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 
-public class SaiLiYeDeMoDaoShuAction extends AbstractGameAction {
+public class ZeerieMagicBookAction extends AbstractGameAction {
     @Override
     public void update() {
         CustomLegendMagic c = new CustomLegendMagic();
