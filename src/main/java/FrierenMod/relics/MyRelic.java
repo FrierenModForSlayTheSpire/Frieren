@@ -1,15 +1,17 @@
 package FrierenMod.relics;
 
+import FrierenMod.cards.tempCards.HideMagic;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class MyRelic extends CustomRelic {
-    public static final String ID = ModInfo.makeID("MyRelic");
+    public static final String ID = ModHelper.makePath("MyRelic");
     // 图片路径
     private static final String IMG_PATH = "FrierenModResources/img/relics/MyRelic.png";
     // 遗物类型

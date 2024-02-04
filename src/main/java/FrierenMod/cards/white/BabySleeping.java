@@ -1,18 +1,20 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.helpers.ChantHelper;
+import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
-public class BabySleeping extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(BabySleeping.class.getSimpleName());
+import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
+import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+public class BabySleeping extends CustomCard{
+    public static final String ID = ModHelper.makePath(BabySleeping.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/BabySleeping_skill.png";
@@ -32,6 +34,8 @@ public class BabySleeping extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(3);
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     @Override

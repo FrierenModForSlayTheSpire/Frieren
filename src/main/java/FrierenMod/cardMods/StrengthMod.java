@@ -1,16 +1,18 @@
 package FrierenMod.cardMods;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.unique.LimitBreakAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.red.LimitBreak;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class StrengthMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(StrengthMod.class.getSimpleName());
+    public static final String ID = ModHelper.makePath(StrengthMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

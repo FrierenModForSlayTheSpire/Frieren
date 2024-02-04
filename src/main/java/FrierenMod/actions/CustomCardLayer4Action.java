@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.ArrayList;
 
 public class CustomCardLayer4Action extends AbstractGameAction {
-    private AbstractCard currentLegendMagic;
+    private AbstractCard currenLegendMagic;
     private final AbstractGameAction nextAction;
     private ArrayList<AbstractCard> layer4 = new ArrayList<>();
     private static final int CHANT0 = 2;
@@ -24,11 +24,11 @@ public class CustomCardLayer4Action extends AbstractGameAction {
     private static final int VULNERABLE2 = 3;
     public CustomCardLayer4Action(AbstractGameAction nextAction, AbstractCard currenLegendMagic){
         this.nextAction = nextAction;
-        this.currentLegendMagic = currenLegendMagic;
+        this.currenLegendMagic = currenLegendMagic;
     }
     @Override
     public void update() {
-        this.initLayer(currentLegendMagic.cost);
+        this.initLayer(currenLegendMagic.cost);
         this.addToBot(new ChooseOneAction(layer4));
         this.addToBot(nextAction);
         this.isDone = true;
@@ -36,26 +36,26 @@ public class CustomCardLayer4Action extends AbstractGameAction {
     public void initLayer(int cost){
         switch (cost){
             case 0:
-                layer4.add(new ChantOption(currentLegendMagic,CHANT0));
-                layer4.add(new DexterityOption(currentLegendMagic,DEXTERITY0));
-                layer4.add(new VulnerableOption(currentLegendMagic,VULNERABLE0));
+                layer4.add(new ChantOption(currenLegendMagic,CHANT0));
+                layer4.add(new DexterityOption(currenLegendMagic,DEXTERITY0));
+                layer4.add(new VulnerableOption(currenLegendMagic,VULNERABLE0));
                 break;
             case 1:
-                layer4.add(new ChantOption(currentLegendMagic,CHANT1));
-                layer4.add(new DexterityOption(currentLegendMagic,DEXTERITY1));
-                layer4.add(new VulnerableOption(currentLegendMagic,VULNERABLE1));
+                layer4.add(new ChantOption(currenLegendMagic,CHANT1));
+                layer4.add(new DexterityOption(currenLegendMagic,DEXTERITY1));
+                layer4.add(new VulnerableOption(currenLegendMagic,VULNERABLE1));
                 break;
             case 2:
-                layer4.add(new ChantOption(currentLegendMagic,CHANT2));
-                layer4.add(new DexterityOption(currentLegendMagic,DEXTERITY2));
-                layer4.add(new VulnerableOption(currentLegendMagic,VULNERABLE2));
-                layer4.add(new IntangibleOption(currentLegendMagic,INTANGIBLE2));
-                layer4.add(new UpgradeOption(currentLegendMagic));
+                layer4.add(new ChantOption(currenLegendMagic,CHANT2));
+                layer4.add(new DexterityOption(currenLegendMagic,DEXTERITY2));
+                layer4.add(new VulnerableOption(currenLegendMagic,VULNERABLE2));
+                layer4.add(new IntangibleOption(currenLegendMagic,INTANGIBLE2));
+                layer4.add(new UpgradeOption(currenLegendMagic));
                 break;
             case 3:
-                layer4.add(new IntangibleOption(currentLegendMagic,INTANGIBLE3));
-                layer4.add(new StrengthOption(currentLegendMagic));
-                layer4.add(new RemoveDebuffOption(currentLegendMagic));
+                layer4.add(new IntangibleOption(currenLegendMagic,INTANGIBLE3));
+                layer4.add(new StrengthOption(currenLegendMagic));
+                layer4.add(new RemoveDebuffOption(currenLegendMagic));
                 break;
             default:
                 break;
