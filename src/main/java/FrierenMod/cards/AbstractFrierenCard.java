@@ -13,8 +13,6 @@ public class AbstractFrierenCard extends CustomCard {
     public int chantX = -1;
     public boolean isChantXModified;
     public boolean upgradedChantX;
-    public boolean isMagicPower;
-    public boolean isFinalMagicPower;
     public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         this.isCostModified = false;
@@ -25,8 +23,6 @@ public class AbstractFrierenCard extends CustomCard {
         this.isChantCard = false;
         this.isLegendMagicCard = false;
         this.isChantXModified = false;
-        this.isMagicPower = false;
-        this.isFinalMagicPower = false;
     }
     @Override
     public void upgrade() {
