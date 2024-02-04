@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.powers.YongXuPower;
+import FrierenMod.powers.SustainabilityPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,6 +36,6 @@ public class Sustainability extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new YongXuPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new SustainabilityPower(p, 1), 1));
     }
 }

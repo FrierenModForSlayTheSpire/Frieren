@@ -3,7 +3,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.powers.ShuiYiXingTaiPower;
+import FrierenMod.powers.NightDressPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -62,6 +62,6 @@ public class NightDressForm extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.damage += this.magicNumber;
-        this.addToBot(new ApplyPowerAction(p, p, new ShuiYiXingTaiPower(p,1)));
+        this.addToBot(new ApplyPowerAction(p, p, new NightDressPower(p,1)));
     }
 }

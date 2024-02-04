@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
-public class YiShiZhunBeiPower extends AbstractPower {
-    public static final String POWER_ID = ModHelper.makePath(YiShiZhunBeiPower.class.getSimpleName());
+public class PrepareRitePower extends AbstractPower {
+    public static final String POWER_ID = ModHelper.makePath(PrepareRitePower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称
@@ -23,7 +23,7 @@ public class YiShiZhunBeiPower extends AbstractPower {
     // 能力的描述
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private int MagicPowerPlayedNum = 0;
-    public YiShiZhunBeiPower(AbstractCreature owner,int amount) {
+    public PrepareRitePower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

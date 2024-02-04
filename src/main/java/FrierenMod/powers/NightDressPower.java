@@ -1,6 +1,5 @@
 package FrierenMod.powers;
 
-import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.ExhaustMagicPowerInDiscardPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInDrawPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
@@ -8,24 +7,17 @@ import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.vfx.combat.OmegaFlashEffect;
 
-import java.util.Iterator;
-
-public class ShuiYiXingTaiPower extends AbstractPower {
+public class NightDressPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModHelper.makePath(ShuiYiXingTaiPower.class.getSimpleName());
+    public static final String POWER_ID = ModHelper.makePath(NightDressPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称
@@ -35,7 +27,7 @@ public class ShuiYiXingTaiPower extends AbstractPower {
     private int baseDamage;
     private int rate;
 
-    public ShuiYiXingTaiPower(AbstractCreature owner,int amount) {
+    public NightDressPower(AbstractCreature owner, int amount) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

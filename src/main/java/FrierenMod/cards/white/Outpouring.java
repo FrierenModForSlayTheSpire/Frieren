@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.powers.QingXiePower;
+import FrierenMod.powers.OutpouringPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,6 +38,6 @@ public class Outpouring extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new QingXiePower(p,this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new OutpouringPower(p,this.magicNumber)));
     }
 }

@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.powers.YiShiZhunBeiPower;
+import FrierenMod.powers.PrepareRitePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -36,6 +36,6 @@ public class PrepareRite extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p,new YiShiZhunBeiPower(p,1),1));
+        this.addToBot(new ApplyPowerAction(p,p,new PrepareRitePower(p,1),1));
     }
 }

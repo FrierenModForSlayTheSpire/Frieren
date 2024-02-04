@@ -3,7 +3,7 @@ package FrierenMod.cards.white;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.HideMagic;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.powers.QiPianMoZuDeXiaoBaXiPower;
+import FrierenMod.powers.TrickPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,6 +38,6 @@ public class Trick extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p,new QiPianMoZuDeXiaoBaXiPower(p)));
+        this.addToBot(new ApplyPowerAction(p,p,new TrickPower(p)));
     }
 }
