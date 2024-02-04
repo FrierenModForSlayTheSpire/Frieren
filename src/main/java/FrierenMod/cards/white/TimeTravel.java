@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.TimeTravelAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class TimeTravel extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(TimeTravel.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(TimeTravel.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

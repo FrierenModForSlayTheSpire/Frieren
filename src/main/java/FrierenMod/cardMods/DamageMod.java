@@ -1,7 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.cards.tempCards.CustomLegendMagic;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DamageMod extends AbstractCardModifier {
-    public static final String ID = ModHelper.makePath(DamageMod.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(DamageMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

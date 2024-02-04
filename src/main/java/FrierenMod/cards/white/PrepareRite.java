@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import FrierenMod.powers.PrepareRitePower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class PrepareRite extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(PrepareRite.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(PrepareRite.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Laziness;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class BoomMagic extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(BoomMagic.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(BoomMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

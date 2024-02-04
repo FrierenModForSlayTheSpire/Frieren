@@ -2,7 +2,7 @@ package FrierenMod.cards.optionCards.saiLiYe.layer1;
 
 import FrierenMod.cardMods.CostMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Cost0 extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(Cost0.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(Cost0.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

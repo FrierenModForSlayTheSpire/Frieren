@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.HideMagic;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import FrierenMod.powers.TrickPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Trick extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(Trick.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(Trick.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

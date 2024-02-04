@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -17,7 +17,7 @@ import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class OutpouringPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModHelper.makePath(OutpouringPower.class.getSimpleName());
+    public static final String POWER_ID = ModInfo.makeID(OutpouringPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称

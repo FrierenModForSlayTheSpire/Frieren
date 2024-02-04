@@ -3,14 +3,14 @@ package FrierenMod.cards.optionCards;
 import FrierenMod.actions.ChantFromDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantFromDrawPile extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(ChantFromDrawPile.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(ChantFromDrawPile.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";

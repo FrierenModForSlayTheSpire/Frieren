@@ -67,11 +67,11 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
     // 在卡牌预览界面的能量图标
     private static final String BIG_ORB = "FrierenModResources/img/char/card_orb.png";
     // 小尺寸的能量图标（战斗中，牌堆预览）
-    private static final String ENEYGY_ORB = "FrierenModResources/img/char/cost_orb.png";
+    private static final String ENERGY_ORB = "FrierenModResources/img/char/cost_orb.png";
     public static final Color FRIEREN_WHITE = new Color(237.0F / 255.0F, 234.0F / 255.0F, 245.0F / 255.0F, 1.0F);
     public FrierenMod() {
         BaseMod.subscribe(this);
-        BaseMod.addColor(FRIEREN_CARD, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
+        BaseMod.addColor(FRIEREN_CARD, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512, ENERGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
     }
 
     public static void initialize() {
