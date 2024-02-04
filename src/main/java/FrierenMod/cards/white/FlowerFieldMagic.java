@@ -11,9 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.CHANT;
 
 public class FlowerFieldMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(FlowerFieldMagic.class.getSimpleName());
@@ -28,7 +26,7 @@ public class FlowerFieldMagic extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     public FlowerFieldMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.tags.add(CHANT);
+        this.isChantCard = true;
         Flower c = new Flower();
         if(this.upgraded){
             c.upgrade();

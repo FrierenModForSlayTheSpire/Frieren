@@ -1,4 +1,5 @@
 package FrierenMod.cards.white;
+
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
@@ -10,9 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class MoldMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(MoldMagic.class.getSimpleName());
@@ -28,7 +27,7 @@ public class MoldMagic extends AbstractFrierenCard {
     public MoldMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 2;
-        this.tags.add(LEGEND_MAGIC);
+        this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {

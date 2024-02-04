@@ -1,8 +1,8 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModHelper;
 import FrierenMod.helpers.LegendMagicHelper;
+import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class FlightMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(FlightMagic.class.getSimpleName());
@@ -27,7 +26,7 @@ public class FlightMagic extends AbstractFrierenCard {
     public FlightMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.tags.add(LEGEND_MAGIC);
+        this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {

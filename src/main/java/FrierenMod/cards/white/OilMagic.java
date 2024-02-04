@@ -15,7 +15,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class OilMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(OilMagic.class.getSimpleName());
@@ -32,7 +31,7 @@ public class OilMagic extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.damage = this.baseDamage = 12;
         this.isMultiDamage = true;
-        this.tags.add(LEGEND_MAGIC);
+        this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {

@@ -10,8 +10,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.CHANT;
-
 public class SecondDefendMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(SecondDefendMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
@@ -26,7 +24,7 @@ public class SecondDefendMagic extends AbstractFrierenCard {
     public SecondDefendMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = 3;
-        this.tags.add(CHANT);
+        this.isChantCard = true;
         this.exhaust = true;
     }
     @Override

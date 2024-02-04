@@ -1,5 +1,6 @@
 package FrierenMod.helpers;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,7 +17,7 @@ public class LegendMagicHelper {
     public boolean cannotPlayLegendMagic(){
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.hasTag(CHANT)) {
+            if (((AbstractFrierenCard)c).isChantCard) {
                 return false;
             }
         }

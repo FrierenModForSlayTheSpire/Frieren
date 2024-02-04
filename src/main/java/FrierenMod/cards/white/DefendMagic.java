@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.CHANT;
 
 public class DefendMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(DefendMagic.class.getSimpleName());
@@ -30,7 +29,7 @@ public class DefendMagic extends AbstractFrierenCard {
     public DefendMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = 3;
-        this.tags.add(CHANT);
+        this.isChantCard = true;
         SecondDefendMagic c = new SecondDefendMagic();
         if(this.upgraded) {
             c.upgraded = true;

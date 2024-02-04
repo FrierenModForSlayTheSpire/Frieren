@@ -3,8 +3,8 @@ package FrierenMod.cards.white;
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModHelper;
 import FrierenMod.helpers.LegendMagicHelper;
+import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,8 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.CHANT;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class ContinualChant extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(ContinualChant.class.getSimpleName());
@@ -30,8 +28,8 @@ public class ContinualChant extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 4;
         this.cardsToPreview = new MagicPower();
-        this.tags.add(LEGEND_MAGIC);
-        this.tags.add(CHANT);
+        this.isChantCard = true;
+        this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {

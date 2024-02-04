@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
 public class CustomLegendMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(CustomLegendMagic.class.getSimpleName());
@@ -27,7 +26,7 @@ public class CustomLegendMagic extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     public CustomLegendMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.tags.add(LEGEND_MAGIC);
+        this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {}
