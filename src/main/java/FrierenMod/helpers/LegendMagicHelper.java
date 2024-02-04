@@ -1,7 +1,10 @@
 package FrierenMod.helpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.white.*;
+import FrierenMod.cards.white.chant.ContinualChant;
+import FrierenMod.cards.white.legendMagic.FlightMagic;
+import FrierenMod.cards.white.legendMagic.JewelryMagic;
+import FrierenMod.cards.white.legendMagic.OilMagic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -9,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import static FrierenMod.tags.CustomTags.*;
+import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class LegendMagicHelper {
 

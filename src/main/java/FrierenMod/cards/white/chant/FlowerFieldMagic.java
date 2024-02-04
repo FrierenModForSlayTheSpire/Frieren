@@ -1,4 +1,4 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;

@@ -1,8 +1,8 @@
 package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
-import FrierenMod.cards.white.DefendMagic;
-import FrierenMod.cards.white.HolyChant;
+import FrierenMod.cards.white.chant.DefendMagic;
+import FrierenMod.cards.white.chant.HolyChant;
 import FrierenMod.modcore.FrierenMod;
 import FrierenMod.relics.MyRelic;
 import basemod.abstracts.CustomPlayer;
