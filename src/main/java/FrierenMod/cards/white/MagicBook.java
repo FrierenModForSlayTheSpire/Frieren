@@ -1,11 +1,8 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.MagicBookAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
-import FrierenMod.helpers.LegendMagicHelper;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -38,13 +35,6 @@ public class MagicBook extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractCard c1 = new ChantHelper().getRandomCards(1).get(0);
-        AbstractCard c2 = new LegendMagicHelper().getRandomCards(1).get(0);
-        if(this.upgraded){
-            c1.setCostForTurn(0);
-            c2.setCostForTurn(0);
-        }
-        this.addToBot(new MakeTempCardInHandAction(c1));
-        this.addToBot(new MakeTempCardInHandAction(c2));
+        this.addToBot(new MagicBookAction(this.upgraded));
     }
 }

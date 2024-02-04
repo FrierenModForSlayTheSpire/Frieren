@@ -48,7 +48,7 @@ public class LittleFire extends AbstractFrierenCard {
                 ),
                 AbstractGameAction.AttackEffect.FIRE,true
         ));
-        addToBot((AbstractGameAction)new ArmamentsAction(this.upgraded));
+        this.addToBot(new ArmamentsAction(this.upgraded));
     }
 
 }

@@ -1,10 +1,9 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.TwisterMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -37,11 +36,6 @@ public class TwisterMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(new ChantHelper().getMagicPowerNumInHand() > 0){
-            this.addToBot(new DrawCardAction(this.magicNumber));
-        }
-        else {
-            this.addToBot(new DrawCardAction(this.magicNumber + 1));
-        }
+        this.addToBot(new TwisterMagicAction(this.magicNumber));
     }
 }

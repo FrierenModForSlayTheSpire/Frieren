@@ -1,12 +1,9 @@
 package FrierenMod.cards.white;
 
 
+import FrierenMod.actions.LockTargetAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -40,12 +37,6 @@ public class LockTarget extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new DrawCardAction(this.magicNumber));
-        if (p.currentHealth >= m.currentHealth) {
-            this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-            this.addToBot(new DrawCardAction(this.magicNumber));
-
-        }
+        this.addToBot(new LockTargetAction(this.magicNumber,this.damage,this.damageTypeForTurn,m));
     }
 }

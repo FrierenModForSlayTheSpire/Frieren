@@ -1,12 +1,9 @@
 package FrierenMod.cards.white.chant;
 
-import FrierenMod.actions.ChantAction;
+import FrierenMod.actions.DefendMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.SecondDefendMagic;
 import FrierenMod.helpers.ModHelper;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -32,7 +29,7 @@ public class DefendMagic extends AbstractFrierenCard {
         this.isChantCard = true;
         SecondDefendMagic c = new SecondDefendMagic();
         if(this.upgraded) {
-            c.upgraded = true;
+            c.upgrade();
         }
         this.cardsToPreview = c;
     }
@@ -47,15 +44,6 @@ public class DefendMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX));
-        this.addToBot(new GainBlockAction(p,this.block));
-        if(this.upgraded){
-            AbstractCard c = new SecondDefendMagic();
-            c.upgraded = true;
-            this.addToBot(new MakeTempCardInHandAction(c));
-        }
-        else {
-            this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy()));
-        }
+        this.addToBot(new DefendMagicAction(this.chantX,this.block,this.upgraded,this.cardsToPreview));
     }
 }

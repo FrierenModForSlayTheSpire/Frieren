@@ -10,9 +10,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
 
@@ -44,19 +44,9 @@ public class LegendMagicHelper {
         pool.add(new OilMagic());
         return pool;
     }
-    public ArrayList<AbstractCard> getRandomCards(int amounts){
-        ArrayList<AbstractCard> pool = this.initLegendMagicCardPool();
-        if(pool.size() >= amounts){
-            Collections.shuffle(pool);
-            ArrayList<AbstractCard> cards = new ArrayList<>();
-            for (int i = 0; i < amounts; i++) {
-                cards.add(pool.get(i));
-            }
-            return cards;
-        }
-        else {
-            return null;
-        }
+    public AbstractCard getRandomCard(){
+        ArrayList<AbstractCard> list = initLegendMagicCardPool();
+        return (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
     }
     public boolean canLegendMagicUse(AbstractCard c, AbstractMonster m){
         if (c.type == AbstractCard.CardType.STATUS && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {

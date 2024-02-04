@@ -1,17 +1,15 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.DrawPileToDiscardPileAction;
+import FrierenMod.actions.FlowAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class Flow extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(Flow.class.getSimpleName());
@@ -38,17 +36,6 @@ public class Flow extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.drawPile.isEmpty()) {
-            int counts = 0;
-            for(AbstractCard c : p.drawPile.group){
-                if(counts >= this.magicNumber){
-                    break;
-                }
-                if(c.hasTag(MAGIC_POWER)){
-                    counts++;
-                    this.addToBot(new DrawPileToDiscardPileAction(c));
-                }
-            }
-        }
+        this.addToBot(new FlowAction(this.magicNumber));
     }
 }

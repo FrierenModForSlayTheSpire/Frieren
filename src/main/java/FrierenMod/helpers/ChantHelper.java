@@ -6,9 +6,9 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class ChantHelper {
 
@@ -80,19 +80,9 @@ public class ChantHelper {
         pool.add(new StatueMagic());
         return pool;
     }
-    public ArrayList<AbstractCard> getRandomCards(int amounts){
-        ArrayList<AbstractCard> pool = this.intiChantCardPool();
-        if(pool.size() >= amounts){
-            Collections.shuffle(pool);
-            ArrayList<AbstractCard> cards = new ArrayList<>();
-            for (int i = 0; i < amounts; i++) {
-                cards.add(pool.get(i));
-            }
-            return cards;
-        }
-        else {
-            return null;
-        }
+    public AbstractCard getRandomCard(){
+        ArrayList<AbstractCard> list = intiChantCardPool();
+        return (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
     }
 
 }
