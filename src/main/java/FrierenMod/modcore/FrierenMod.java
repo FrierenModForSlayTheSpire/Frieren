@@ -20,30 +20,28 @@ import FrierenMod.cards.optionCards.saiLiYe.layer3.ExtinguishOption;
 import FrierenMod.cards.optionCards.saiLiYe.layer4.*;
 import FrierenMod.cards.tempCards.*;
 import FrierenMod.cards.white.*;
-import FrierenMod.cards.white.chant.DefendMagic;
-import FrierenMod.cards.white.chant.FlowerFieldMagic;
-import FrierenMod.cards.white.chant.HolyChant;
-import FrierenMod.cards.white.chant.ContinualChant;
-import FrierenMod.cards.white.legendMagic.FlightMagic;
-import FrierenMod.cards.white.legendMagic.JewelryMagic;
-import FrierenMod.cards.white.legendMagic.OilMagic;
+import FrierenMod.cards.white.chant.*;
+import FrierenMod.cards.white.FlightMagic;
+import FrierenMod.cards.white.JewelryMagic;
+import FrierenMod.cards.white.OilMagic;
 import FrierenMod.relics.MyRelic;
 import FrierenMod.variables.ChantXVariable;
+import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import basemod.BaseMod;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
-import com.badlogic.gdx.graphics.Color;
 
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.Characters.Frieren.Enums.*;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 

@@ -16,8 +16,8 @@
   },
   "FrierenMod:DefendMagic": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法 放入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 放入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱  !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 放入手牌。"
   },
   "FrierenMod:SecondDefendMagic": {
     "NAME": "防御魔法",
@@ -111,8 +111,7 @@
   },
   "FrierenMod:ContinualChant": {
     "NAME": "连环咏唱",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 放入抽牌堆。 NL  frierenmod:咏唱  !M!  。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 放入抽牌堆。 NL  frierenmod:咏唱  !M!  。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将 !M! 张 *魔力 放入抽牌堆。 NL  frierenmod:咏唱 !CX! 。"
   },
   "FrierenMod:DarkChant": {
     "NAME": "黑暗咏唱",
@@ -136,8 +135,8 @@
   },
   "FrierenMod:FlowerFieldMagic": {
     "NAME": "开出花田的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草 放入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 将1张 *苍月草+ 放入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草+ 放入手牌。"
   },
   "FrierenMod:MoLiPengZhang": {
     "NAME": "魔力膨胀",
@@ -201,8 +200,8 @@
   },
   "FrierenMod:StatueMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 1。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，自身获得 金属化 3。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，自身获得 金属化 3。"
   },
   "FrierenMod:RedAppleMagic": {
     "NAME": "将红苹果变成青苹果的魔法",
@@ -312,7 +311,7 @@
   },
   "FrierenMod:ChantOption": {
     "NAME": "圣杯",
-    "DESCRIPTION": " frierenmod:咏唱 !M! 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。"
   },
   "FrierenMod:IntangibleOption": {
     "NAME": "倒吊者",

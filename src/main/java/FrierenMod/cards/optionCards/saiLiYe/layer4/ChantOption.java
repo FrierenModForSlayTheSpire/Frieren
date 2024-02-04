@@ -30,7 +30,7 @@ public class ChantOption extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
         this.chantAmt = chantAmt;
-        this.magicNumber = this.baseMagicNumber = chantAmt;
+        this.chantX = this.baseChantX = this.chantAmt;
     }
     @Override
     public void upgrade() {

@@ -1,10 +1,10 @@
 package FrierenMod.helpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.white.FlightMagic;
+import FrierenMod.cards.white.JewelryMagic;
+import FrierenMod.cards.white.OilMagic;
 import FrierenMod.cards.white.chant.ContinualChant;
-import FrierenMod.cards.white.legendMagic.FlightMagic;
-import FrierenMod.cards.white.legendMagic.JewelryMagic;
-import FrierenMod.cards.white.legendMagic.OilMagic;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

@@ -1,4 +1,4 @@
-package FrierenMod.cards.white.legendMagic;
+package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;

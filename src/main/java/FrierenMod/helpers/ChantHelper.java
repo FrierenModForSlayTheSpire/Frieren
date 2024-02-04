@@ -1,9 +1,6 @@
 package FrierenMod.helpers;
 
-import FrierenMod.cards.white.chant.ContinualChant;
-import FrierenMod.cards.white.chant.DefendMagic;
-import FrierenMod.cards.white.chant.FlowerFieldMagic;
-import FrierenMod.cards.white.chant.HolyChant;
+import FrierenMod.cards.white.chant.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -80,6 +77,7 @@ public class ChantHelper {
         pool.add(new HolyChant());
         pool.add(new ContinualChant());
         pool.add(new FlowerFieldMagic());
+        pool.add(new StatueMagic());
         return pool;
     }
     public ArrayList<AbstractCard> getRandomCards(int amounts){
