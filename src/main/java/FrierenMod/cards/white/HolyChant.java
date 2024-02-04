@@ -2,17 +2,13 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import basemod.abstracts.CustomCard;
-
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.CHANT;
 
 public class HolyChant extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(HolyChant.class.getSimpleName());

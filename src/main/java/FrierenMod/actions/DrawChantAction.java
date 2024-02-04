@@ -3,13 +3,7 @@ package FrierenMod.actions;
 import FrierenMod.cards.AbstractFrierenCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import java.util.Iterator;
-
-import static FrierenMod.tags.CustomTags.CHANT;
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class DrawChantAction extends AbstractGameAction {
     private int drawNumber = 0;

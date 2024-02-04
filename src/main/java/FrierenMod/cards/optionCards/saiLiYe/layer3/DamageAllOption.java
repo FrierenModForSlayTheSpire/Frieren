@@ -1,11 +1,9 @@
 package FrierenMod.cards.optionCards.saiLiYe.layer3;
 
-import FrierenMod.cardMods.BlockMod;
 import FrierenMod.cardMods.DamageAllMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
-import basemod.abstracts.CustomCard;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

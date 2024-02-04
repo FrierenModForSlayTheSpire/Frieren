@@ -2,14 +2,13 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.*;
+import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class MagicPower extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(MagicPower.class.getSimpleName());

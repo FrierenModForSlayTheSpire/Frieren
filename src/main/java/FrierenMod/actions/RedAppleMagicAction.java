@@ -2,7 +2,7 @@ package FrierenMod.actions;
 
 import FrierenMod.powers.SwitchStrengthAndDexterityPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class RedAppleMagicAction extends AbstractGameAction {

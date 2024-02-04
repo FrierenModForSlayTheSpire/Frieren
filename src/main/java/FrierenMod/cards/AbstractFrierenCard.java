@@ -6,8 +6,6 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.CHANT;
-
 public class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
     public boolean isLegendMagicCard;
