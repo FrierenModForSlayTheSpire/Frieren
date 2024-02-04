@@ -22,7 +22,7 @@ public class MagicPowerOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
+    private final AbstractCard currentLegendMagic;
 
 
     public MagicPowerOption(AbstractCard currentLegendMagic, int magicPowerAmt) {

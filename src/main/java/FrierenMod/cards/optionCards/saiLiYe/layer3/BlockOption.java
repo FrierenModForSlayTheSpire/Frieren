@@ -22,8 +22,8 @@ public class BlockOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int blockAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int blockAmt;
 
 
     public BlockOption(AbstractCard currentLegendMagic, int blockAmt) {

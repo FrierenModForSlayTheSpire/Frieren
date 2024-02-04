@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 public class CostMod extends AbstractCardModifier {
     public static final String ID = ModHelper.makePath(CostMod.class.getSimpleName());
 
-    private int cost;
+    private final int cost;
 
     public CostMod(int cost) {
         this.cost = cost;

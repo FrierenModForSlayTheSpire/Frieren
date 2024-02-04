@@ -22,8 +22,8 @@ public class DexterityOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int dexterityAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int dexterityAmt;
 
 
     public DexterityOption(AbstractCard currentLegendMagic, int dexterityAmt) {

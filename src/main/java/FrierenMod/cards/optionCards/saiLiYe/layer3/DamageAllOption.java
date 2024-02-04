@@ -22,8 +22,8 @@ public class DamageAllOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int damageAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int damageAmt;
 
 
     public DamageAllOption(AbstractCard currentLegendMagic, int damageAmt) {

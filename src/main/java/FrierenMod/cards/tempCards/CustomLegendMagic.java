@@ -30,9 +30,7 @@ public class CustomLegendMagic extends AbstractFrierenCard {
         this.tags.add(LEGEND_MAGIC);
     }
     @Override
-    public void upgrade() {
-        return;
-    }
+    public void upgrade() {}
     public boolean canUpgrade(){
         return false;
     }

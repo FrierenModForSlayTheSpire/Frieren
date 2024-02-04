@@ -7,13 +7,11 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
 
 public class StatueMagicAction extends AbstractGameAction {
-    private static final float DUR = 0.25F;
     private final int magicNumber;
 
     public StatueMagicAction(AbstractCreature target, AbstractCreature source, int magicNumber) {
         this.setValues(target, source, this.amount);
         this.actionType = ActionType.BLOCK;
-        this.duration = 0.25F;
         this.magicNumber = magicNumber;
     }
 

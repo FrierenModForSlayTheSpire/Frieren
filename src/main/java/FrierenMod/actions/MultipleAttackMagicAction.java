@@ -15,10 +15,10 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 
 public class MultipleAttackMagicAction extends AbstractGameAction {
-    private AbstractPlayer p;
-    private AbstractCard card;
-    private int energyOnUse = -1;
-    private boolean isUpgraded = false;
+    private final AbstractPlayer p;
+    private final AbstractCard card;
+    private final int energyOnUse;
+    private final boolean isUpgraded;
 
     public MultipleAttackMagicAction(AbstractPlayer p, AbstractCard c, int energyOnUse, boolean isUpgraded) {
         this.p = p;

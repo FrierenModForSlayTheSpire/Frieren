@@ -22,7 +22,7 @@ public class Cost3 extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
+    private final AbstractCard currentLegendMagic;
 
 
     public Cost3(AbstractCard currentLegendMagic) {

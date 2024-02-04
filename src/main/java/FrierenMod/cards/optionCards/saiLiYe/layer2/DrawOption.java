@@ -22,8 +22,8 @@ public class DrawOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int drawAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int drawAmt;
 
 
     public DrawOption(AbstractCard currentLegendMagic, int drawAmt) {

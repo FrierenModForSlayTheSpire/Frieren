@@ -22,8 +22,8 @@ public class GainRandomCardOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int cardAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int cardAmt;
 
 
     public GainRandomCardOption(AbstractCard currentLegendMagic, int cardAmt) {

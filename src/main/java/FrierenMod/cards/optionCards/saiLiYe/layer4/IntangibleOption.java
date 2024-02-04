@@ -22,8 +22,8 @@ public class IntangibleOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private AbstractCard currentLegendMagic;
-    private int stackAmt;
+    private final AbstractCard currentLegendMagic;
+    private final int stackAmt;
 
 
     public IntangibleOption(AbstractCard currentLegendMagic, int stackAmt) {

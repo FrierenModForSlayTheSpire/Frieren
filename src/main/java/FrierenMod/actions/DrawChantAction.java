@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DrawChantAction extends AbstractGameAction {
-    private int drawNumber = 0;
+    private final int drawNumber;
 
     public DrawChantAction(int drawNumber) {
         this.actionType = ActionType.WAIT;
