@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class IceCreamMagic extends AbstractFrierenCard {
-    public static final String ID = ModHelper.makePath(SaveMagic.class.getSimpleName());
+    public static final String ID = ModHelper.makePath(IceCreamMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/ShavedIceMagic_skill.png";
@@ -23,7 +23,7 @@ public class IceCreamMagic extends AbstractFrierenCard {
     private static final CardColor COLOR = FRIEREN_CARD;
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public SaveMagic() {
+    public IceCreamMagic() {
         // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 4;
