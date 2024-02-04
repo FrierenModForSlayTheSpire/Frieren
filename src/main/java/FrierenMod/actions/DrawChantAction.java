@@ -19,7 +19,7 @@ public class DrawChantAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if(((AbstractFrierenCard)c).isChantCard){
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard){
                 counts++;
                 this.addToBot(new DrawPileToHandAction(c));
             }

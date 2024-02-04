@@ -17,7 +17,7 @@ public class LegendMagicHelper {
     public boolean cannotPlayLegendMagic(){
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (((AbstractFrierenCard)c).isChantCard) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
                 return false;
             }
         }
