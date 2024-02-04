@@ -159,12 +159,12 @@
     "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。"
   },
-  "FrierenMod:PanCakeMagic": {
+  "FrierenMod:PancakeMagic": {
     "NAME": "翻薄饼时会很顺利的魔法",
-    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。",
-    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张魔力交换。"
+    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。",
+    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。"
   },
-  "FrierenMod:Twister": {
+  "FrierenMod:TwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
     "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。",
     "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
