@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
 
 public class FullAhead extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(FullAhead.class.getSimpleName());

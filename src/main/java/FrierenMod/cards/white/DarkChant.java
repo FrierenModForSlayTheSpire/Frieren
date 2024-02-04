@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
 
 public class DarkChant extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(DarkChant.class.getSimpleName());
