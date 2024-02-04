@@ -1,6 +1,7 @@
 package FrierenMod.cards.optionCards.saiLiYe.layer3;
 
 import FrierenMod.cardMods.ExtinguishMod;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ExtinguishOption extends CustomCard {
+public class ExtinguishOption extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(ExtinguishOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;

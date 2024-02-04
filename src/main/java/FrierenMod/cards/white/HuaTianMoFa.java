@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Flower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.CHANT;
 
-public class HuaTianMoFa extends CustomCard{
+public class HuaTianMoFa extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(HuaTianMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

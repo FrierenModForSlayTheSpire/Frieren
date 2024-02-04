@@ -23,6 +23,7 @@ import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.FangYuMoFa;
 import FrierenMod.cards.white.HolyChant;
 import FrierenMod.relics.MyRelic;
+import FrierenMod.variables.ChantXVariable;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
@@ -76,6 +77,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new MagicPower());

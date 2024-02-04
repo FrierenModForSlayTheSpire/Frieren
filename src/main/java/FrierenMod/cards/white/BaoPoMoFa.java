@@ -1,12 +1,11 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.LanSan;
 import FrierenMod.helpers.ModHelper;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class BaoPoMoFa extends CustomCard{
+public class BaoPoMoFa extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(BaoPoMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

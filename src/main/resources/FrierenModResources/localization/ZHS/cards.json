@@ -26,8 +26,8 @@
   },
   "FrierenMod:HolyChant": {
     "NAME": "神圣咏唱",
-    "DESCRIPTION": " frierenmod:咏唱 3 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱 3。"
+    "DESCRIPTION": " frierenmod:咏唱  !CX! 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱  !CX! 。"
   },
   "FrierenMod:MagicPower": {
     "NAME": "魔力",
@@ -348,14 +348,19 @@
     "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，获得 !B! 点格挡。否则将 !M! 张 *魔力 放入弃牌堆。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，获得 !B! 点格挡。否则将 !M! 张 *魔力 放入弃牌堆。"
   },
-  "FrierenMod:4": {
+  "FrierenMod:MoLiTanZhi": {
     "NAME": "魔力探知",
-    "DESCRIPTION": "选择1个敌人。 NL 每当目标敌人受到攻击时，将 !M! 张 *魔力 放入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "选择1个敌人。 NL 每当目标敌人受到攻击时，将 !M! 张 *魔力 放入弃牌堆。"
+    "DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。"
   },
   "FrierenMod:TimeTravel": {
     "NAME": "精灵的时间观念",
     "DESCRIPTION": "将你当前的一切送入两回合后的未来。",
+    "UPGRADE_DESCRIPTION": "将你当前的一切送入两回合后的未来，并使世界线发生变动。"
+  },
+  "FrierenMod:Imagination": {
+    "NAME": "魔法&想象力",
+    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力。 NL  你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "将你当前的一切送入两回合后的未来，并使世界线发生变动。"
   }
 }

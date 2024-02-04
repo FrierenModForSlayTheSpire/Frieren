@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import FrierenMod.powers.QingXiePower;
 import basemod.abstracts.CustomCard;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.powers.NoDrawPower;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class QingXie extends CustomCard{
+public class QingXie extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(QingXie.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

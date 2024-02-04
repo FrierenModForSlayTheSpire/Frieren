@@ -1,4 +1,5 @@
 package FrierenMod.cards.white;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,7 +16,7 @@ import basemod.abstracts.CustomCard;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class MeiJunMoFa extends CustomCard{
+public class MeiJunMoFa extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(MeiJunMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字

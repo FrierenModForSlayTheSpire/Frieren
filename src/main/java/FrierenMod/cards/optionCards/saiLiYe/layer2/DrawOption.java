@@ -1,6 +1,7 @@
 package FrierenMod.cards.optionCards.saiLiYe.layer2;
 
 import FrierenMod.cardMods.DrawMod;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
@@ -11,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DrawOption extends CustomCard {
+public class DrawOption extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(DrawOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;

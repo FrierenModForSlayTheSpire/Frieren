@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class FullAhead extends CustomCard {
+public class FullAhead extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(FullAhead.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

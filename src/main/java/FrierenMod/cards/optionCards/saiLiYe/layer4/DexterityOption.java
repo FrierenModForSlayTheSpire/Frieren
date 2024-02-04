@@ -3,6 +3,7 @@ package FrierenMod.cards.optionCards.saiLiYe.layer4;
 import FrierenMod.cardMods.ChantMod;
 import FrierenMod.cardMods.DexterityMod;
 import FrierenMod.cardMods.ExtinguishMod;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DexterityOption extends CustomCard {
+public class DexterityOption extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(DexterityOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;

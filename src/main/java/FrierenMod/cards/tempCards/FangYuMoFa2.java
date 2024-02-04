@@ -1,6 +1,7 @@
 package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -13,7 +14,7 @@ import basemod.abstracts.CustomCard;
 
 import static FrierenMod.tags.CustomTags.CHANT;
 
-public class FangYuMoFa2 extends CustomCard{
+public class FangYuMoFa2 extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(FangYuMoFa2.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字

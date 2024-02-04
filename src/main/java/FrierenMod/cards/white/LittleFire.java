@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,7 +17,7 @@ import basemod.abstracts.CustomCard;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class LittleFire extends CustomCard {
+public class LittleFire extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(LittleFire.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

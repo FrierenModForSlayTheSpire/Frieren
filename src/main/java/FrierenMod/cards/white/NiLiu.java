@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.DrawMagicFromDiscardPileAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class NiLiu extends CustomCard{
+public class NiLiu extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(NiLiu.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

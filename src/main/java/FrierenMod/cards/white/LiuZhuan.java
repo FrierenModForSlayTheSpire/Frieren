@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.DrawPileToDiscardPileAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -15,7 +16,7 @@ import java.util.Iterator;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
-public class LiuZhuan extends CustomCard{
+public class LiuZhuan extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(LiuZhuan.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

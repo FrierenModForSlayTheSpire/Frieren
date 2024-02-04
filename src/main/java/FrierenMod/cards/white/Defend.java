@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class Defend extends CustomCard{
+public class Defend extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(Defend.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

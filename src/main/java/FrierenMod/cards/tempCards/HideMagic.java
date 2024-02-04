@@ -2,6 +2,7 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.DrawPileToDiscardPileAction;
 import FrierenMod.actions.HandToDiscardPileAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,7 +15,7 @@ import java.util.Iterator;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
-public class HideMagic extends CustomCard{
+public class HideMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(HideMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字

@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.ChantFromHandAction;
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -20,7 +21,7 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import com.megacrit.cardcrawl.vfx.combat.MiracleEffect;
 
-public class ChantFromHand extends CustomCard{
+public class ChantFromHand extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(ChantFromHand.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字

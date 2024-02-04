@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class YouZiMoFa extends CustomCard{
+public class YouZiMoFa extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(YouZiMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

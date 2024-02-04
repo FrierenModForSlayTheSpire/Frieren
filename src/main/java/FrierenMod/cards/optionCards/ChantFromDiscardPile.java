@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.ChantFromDiscardPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInDiscardPileAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -17,7 +18,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
-public class ChantFromDiscardPile extends CustomCard {
+public class ChantFromDiscardPile extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(ChantFromDiscardPile.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;

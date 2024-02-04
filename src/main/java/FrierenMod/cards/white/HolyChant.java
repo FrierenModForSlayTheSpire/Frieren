@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +14,7 @@ import basemod.abstracts.CustomCard;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.CHANT;
 
-public class HolyChant extends CustomCard{
+public class HolyChant extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(HolyChant.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
@@ -26,13 +27,14 @@ public class HolyChant extends CustomCard{
     private static final CardTarget TARGET = CardTarget.NONE;
     public HolyChant() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.tags.add(CHANT);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.isChantCard = true;
+        this.chantX = this.baseChantX = 3;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.upgradeChantX(1);
             this.selfRetain = true;
             this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
             this.initializeDescription();
@@ -40,10 +42,6 @@ public class HolyChant extends CustomCard{
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.magicNumber));
-    }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,m,3);
+        this.addToBot(new ChantAction(this.chantX));
     }
 }

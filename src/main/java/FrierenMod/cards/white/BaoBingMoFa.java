@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
@@ -16,7 +17,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class BaoBingMoFa extends CustomCard{
+public class BaoBingMoFa extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(BaoBingMoFa.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

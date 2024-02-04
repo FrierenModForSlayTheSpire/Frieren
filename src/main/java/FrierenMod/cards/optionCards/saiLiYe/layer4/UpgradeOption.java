@@ -3,6 +3,7 @@ package FrierenMod.cards.optionCards.saiLiYe.layer4;
 import FrierenMod.cardMods.ChantMod;
 import FrierenMod.cardMods.ExtinguishMod;
 import FrierenMod.cardMods.UpgradeMod;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.abstracts.CustomCard;
@@ -13,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class UpgradeOption extends CustomCard {
+public class UpgradeOption extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(UpgradeOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;

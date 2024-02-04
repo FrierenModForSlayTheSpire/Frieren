@@ -1,6 +1,7 @@
 package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.SaiLiYeDeMoDaoShuAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModHelper;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class CustomLegendMagic extends CustomCard{
+public class CustomLegendMagic extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(CustomLegendMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

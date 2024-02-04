@@ -1,4 +1,5 @@
 package FrierenMod.cards.white;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -13,7 +14,7 @@ import basemod.abstracts.CustomCard;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class Strike extends CustomCard{
+public class Strike extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(Strike.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字

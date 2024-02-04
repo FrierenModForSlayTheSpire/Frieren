@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.HideMagic;
 import FrierenMod.helpers.ModHelper;
 import FrierenMod.powers.QiPianMoZuDeXiaoBaXiPower;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class QiPianMoZuDeXiaoBaXi extends CustomCard{
+public class QiPianMoZuDeXiaoBaXi extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(QiPianMoZuDeXiaoBaXi.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

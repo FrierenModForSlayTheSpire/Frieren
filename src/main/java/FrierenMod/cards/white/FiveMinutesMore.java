@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.LanSan;
 import FrierenMod.helpers.ModHelper;
 import basemod.abstracts.CustomCard;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class FiveMinutesMore extends CustomCard{
+public class FiveMinutesMore extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(FiveMinutesMore.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;

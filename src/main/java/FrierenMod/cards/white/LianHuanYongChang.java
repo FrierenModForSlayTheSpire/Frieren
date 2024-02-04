@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModHelper;
 import FrierenMod.helpers.LegendMagicHelper;
@@ -15,7 +16,7 @@ import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.tags.CustomTags.CHANT;
 import static FrierenMod.tags.CustomTags.LEGEND_MAGIC;
 
-public class LianHuanYongChang extends CustomCard{
+public class LianHuanYongChang extends AbstractFrierenCard {
     public static final String ID = ModHelper.makePath(LianHuanYongChang.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
