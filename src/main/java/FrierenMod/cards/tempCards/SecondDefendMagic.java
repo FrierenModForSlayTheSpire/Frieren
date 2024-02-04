@@ -2,7 +2,6 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,6 +24,7 @@ public class SecondDefendMagic extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.block = this.baseBlock = 3;
         this.isChantCard = true;
+        this.chantX = this.baseChantX = 1;
         this.exhaust = true;
     }
     @Override
@@ -32,17 +32,11 @@ public class SecondDefendMagic extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(2);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(1));
+        this.addToBot(new ChantAction(this.chantX));
         this.addToBot(new GainBlockAction(p,this.block));
-    }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,m,1);
     }
 }

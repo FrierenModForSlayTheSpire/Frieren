@@ -36,8 +36,6 @@ public class NormalAttackMagic extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(1);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     public void applyPowers() {

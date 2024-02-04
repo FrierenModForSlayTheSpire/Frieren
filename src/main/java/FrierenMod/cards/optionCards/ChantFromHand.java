@@ -27,14 +27,6 @@ public class ChantFromHand extends AbstractFrierenCard {
         this.cardsToPreview = new MagicPower();
     }
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-        }
-    }
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }

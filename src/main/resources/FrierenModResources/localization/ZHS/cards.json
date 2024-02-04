@@ -1,28 +1,24 @@
 {
   "FrierenMod:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。"
   },
   "FrierenMod:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得 !B! 点 格挡 。",
-    "UPGRADE_DESCRIPTION": "获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
   "FrierenMod:NormalAttackMagic": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。",
-    "UPGRADE_DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。"
+    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。"
   },
   "FrierenMod:DefendMagic": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱  !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法 放入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 放入手牌。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。获得 !B! 点格挡 NL 将另一张 *防御魔法+ 放入手牌。"
   },
   "FrierenMod:SecondDefendMagic": {
     "NAME": "防御魔法",
-    "DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 1。获得 !B! 点格挡。 NL  消耗 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。获得 !B! 点格挡。 NL  消耗 。"
   },
   "FrierenMod:HolyChant": {
     "NAME": "神圣咏唱",
@@ -31,13 +27,11 @@
   },
   "FrierenMod:MagicPower": {
     "NAME": "魔力",
-    "DESCRIPTION": " frierenmod:同调 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:同调 。"
+    "DESCRIPTION": " frierenmod:同调 。"
   },
   "FrierenMod:IceCreamMagic": {
     "NAME": "变出刨冰的魔法",
-    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
-    "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。"
   },
   "FrierenMod:HideMagic": {
     "NAME": "魔力隐藏",
@@ -46,28 +40,23 @@
   },
   "FrierenMod:ChantFromDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。",
-    "UPGRADE_DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。"
   },
   "FrierenMod:ChantFromHand": {
     "NAME": "从手牌咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
-    "UPGRADE_DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。"
+    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。"
   },
   "FrierenMod:ChantFromDiscardPile": {
     "NAME": "从弃牌堆咏唱",
-    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
-    "UPGRADE_DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
   },
   "FrierenMod:MarshMagic": {
     "NAME": "拔出无底沼泽的魔法",
-    "DESCRIPTION": "抽 !M! 张 *魔力 。",
-    "UPGRADE_DESCRIPTION": "抽 !M! 张 *魔力 。"
+    "DESCRIPTION": "抽 !M! 张 *魔力 。"
   },
   "FrierenMod:MoldMagic": {
     "NAME": "消灭霉菌的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 ",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 "
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 "
   },
   "FrierenMod:Sustainability": {
     "NAME": "永续",
@@ -86,8 +75,7 @@
   },
   "FrierenMod:Flow": {
     "NAME": "流转",
-    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。"
+    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:FlightMagic": {
     "NAME": "飞行魔法",
@@ -115,23 +103,19 @@
   },
   "FrierenMod:DarkChant": {
     "NAME": "黑暗咏唱",
-    "DESCRIPTION": " 消耗 手牌中1张 *魔力 ， 给予所有敌人 !M! 层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）",
-    "UPGRADE_DESCRIPTION": " 消耗 手牌中1张 *魔力 , 给予所有敌人 !M! 层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）"
+    "DESCRIPTION": " 消耗 手牌中1张 *魔力 ， 给予所有敌人 !M! 层 易伤 。 NL （此牌不视为 frierenmod:咏唱 牌）"
   },
   "FrierenMod:NightDressForm": {
     "NAME": "睡衣形态",
-    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。",
-    "UPGRADE_DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。"
+    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。"
   },
   "FrierenMod:PreparePosture": {
     "NAME": "准备架势",
-    "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。",
-    "UPGRADE_DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
+    "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
   },
   "FrierenMod:Trick": {
     "NAME": "欺骗魔族的小把戏",
-    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。",
-    "UPGRADE_DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。"
+    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。"
   },
   "FrierenMod:FlowerFieldMagic": {
     "NAME": "开出花田的魔法",
@@ -145,13 +129,11 @@
   },
   "FrierenMod:JewelryMagic": {
     "NAME": "寻找遗失饰品的魔法",
-    "DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。",
-    "UPGRADE_DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。"
+    "DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  消耗 。 虚无 。"
   },
   "FrierenMod:OilMagic": {
     "NAME": "清除顽固油渍的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。"
   },
   "FrierenMod:VisionMagic": {
     "NAME": "视觉攻击魔法",
@@ -160,13 +142,11 @@
   },
   "FrierenMod:PancakeMagic": {
     "NAME": "翻薄饼时会很顺利的魔法",
-    "DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。",
-    "UPGRADE_DESCRIPTION": "从抽牌堆中选择1张牌和你手牌中的1张 *魔力 交换。"
+    "DESCRIPTION": "从抽牌堆中选择 !M! 张牌和你手牌中的1张 *魔力 交换。"
   },
   "FrierenMod:TwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。",
-    "UPGRADE_DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
+    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",
@@ -180,18 +160,15 @@
   },
   "FrierenMod:BoomMagic": {
     "NAME": "爆破魔法",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。",
-    "UPGRADE_DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。"
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。",
-    "UPGRADE_DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
-    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。",
-    "UPGRADE_DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。"
+    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。"
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
@@ -200,13 +177,11 @@
   },
   "FrierenMod:StatueMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，自身获得 金属化 3。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。"
   },
   "FrierenMod:RedAppleMagic": {
     "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": " 交换你的的 力量 和 敏捷 层数。在你的回合结束时，换回。",
-    "UPGRADE_DESCRIPTION": " 交换你的的 力量 和 敏捷 层数。在你的回合结束时，换回。"
+    "DESCRIPTION": " 交换你的的 力量 和 敏捷 层数。在你的回合结束时，换回。"
   },
   "FrierenMod:PoMieMoFa": {
     "NAME": "破灭之雷魔法",
@@ -215,8 +190,7 @@
   },
   "FrierenMod:Flower": {
     "NAME": "苍月草",
-    "DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。"
+    "DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。"
   },
   "FrierenMod:PuTaoMoFa": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
@@ -225,13 +199,11 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得!B!点格挡， 保留 一张手牌，结束回合。",
-    "UPGRADE_DESCRIPTION": "获得!B!点格挡， 保留 一张手牌，结束回合 。"
+    "DESCRIPTION": " 获得 !B! 点格挡， 保留 一张手牌，结束回合。"
   },
   "FrierenMod:ZeerieMagicBook": {
     "NAME": "赛莉耶的魔导书",
-    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。"
+    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。"
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
@@ -240,13 +212,11 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
-    "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。",
-    "UPGRADE_DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
+    "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
   },
   "FrierenMod:LockTarget": {
   "NAME": "定叫他有来无回",
-  "DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。",
-  "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。"
+  "DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。"
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "再睡五分钟",

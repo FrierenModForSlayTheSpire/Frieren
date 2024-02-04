@@ -35,9 +35,7 @@ public class FullAhead extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-            upgradeMagicNumber(2);
+            this.upgradeMagicNumber(2);
         }
     }
 

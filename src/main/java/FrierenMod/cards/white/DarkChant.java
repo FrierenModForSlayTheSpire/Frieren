@@ -40,9 +40,6 @@ public class DarkChant extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
-            this.tags.clear();
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     @Override

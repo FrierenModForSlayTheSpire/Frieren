@@ -5,11 +5,9 @@ import FrierenMod.helpers.ModHelper;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
@@ -28,13 +26,6 @@ public class Laziness extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
     }
-    @Override
-    public void upgrade() {
-    }
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-    }
-
     @Override
     public void triggerOnEndOfTurnForPlayingCard() {
         if(AbstractDungeon.player.hand.group.contains(this)){

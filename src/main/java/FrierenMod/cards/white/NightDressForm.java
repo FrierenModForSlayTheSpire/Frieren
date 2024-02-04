@@ -55,8 +55,6 @@ public class NightDressForm extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(2);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     @Override

@@ -32,8 +32,6 @@ public class BabySleeping extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBlock(3);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
     @Override

@@ -30,14 +30,13 @@ public class PancakeMagic extends AbstractFrierenCard {
     public PancakeMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
+        this.magicNumber = this.baseMagicNumber = 1;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeMagicNumber(1);
         }
     }
     @Override
