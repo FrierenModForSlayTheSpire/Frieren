@@ -11,8 +11,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
-
 public class CustomLegendMagic extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(CustomLegendMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -21,7 +19,7 @@ public class CustomLegendMagic extends AbstractFrierenCard {
     private static final int COST = -1;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = FRIEREN_CARD;
+    private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     public CustomLegendMagic() {
@@ -29,12 +27,8 @@ public class CustomLegendMagic extends AbstractFrierenCard {
         this.isLegendMagicCard = true;
     }
     @Override
-    public void upgrade() {}
     public boolean canUpgrade(){
         return false;
-    }
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
     }
 
     @Override
