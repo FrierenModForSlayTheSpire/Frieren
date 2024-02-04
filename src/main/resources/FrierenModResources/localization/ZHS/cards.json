@@ -154,7 +154,7 @@
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。",
     "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。"
   },
-  "FrierenMod:ShiJueMoFa": {
+  "FrierenMod:VisionMagic": {
     "NAME": "视觉攻击魔法",
     "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。"
