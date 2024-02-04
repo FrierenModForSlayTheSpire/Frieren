@@ -8,7 +8,6 @@ public class ZeerieMagicBookAction extends AbstractGameAction {
     @Override
     public void update() {
         CustomLegendMagic c = new CustomLegendMagic();
-//        this.addToBot(new CustomCardCostAction(new MakeTempCardInHandAction(c),c));
         this.addToBot(new CustomCardCostAction(new CustomCardLayer2Action(new CustomCardLayer3Action(new CustomCardLayer4Action(new MakeTempCardInHandAction(c),c),c),c),c));
         this.isDone = true;
     }

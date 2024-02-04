@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DestoryAllCardsInHandAction extends AbstractGameAction{
+public class DestroyAllCardsInHandAction extends AbstractGameAction{
     public void update() {
         if (this.duration == this.startDuration) {
             CardGroup hand = AbstractDungeon.player.hand;

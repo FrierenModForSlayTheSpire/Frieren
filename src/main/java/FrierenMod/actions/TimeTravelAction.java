@@ -15,17 +15,11 @@ import java.util.ArrayList;
 
 public class TimeTravelAction extends AbstractGameAction {
     private final Status status;
-    private AbstractCard excludeCard;
-    private final int hp = AbstractDungeon.player.currentHealth;
-    private final int maxHp = AbstractDungeon.player.maxHealth;
-    private final int gold = AbstractDungeon.player.gold;
-    private ArrayList<AbstractPotion> potions = new ArrayList<>();
-    private ArrayList<AbstractRelic> relics = new ArrayList<>();
-    private final int block = AbstractDungeon.player.currentBlock;
-    private ArrayList<AbstractPower> powers = new ArrayList<>();
-    private ArrayList<Integer> powerAmt = new ArrayList<>();
-    private final int energy = EnergyPanel.totalCount;
-    private final int maxEnergy = AbstractDungeon.player.maxOrbs;
+    private final AbstractCard excludeCard;
+    private final ArrayList<AbstractPotion> potions = new ArrayList<>();
+    private final ArrayList<AbstractRelic> relics = new ArrayList<>();
+    private final ArrayList<AbstractPower> powers = new ArrayList<>();
+    private final ArrayList<Integer> powerAmt = new ArrayList<>();
     private final ArrayList<AbstractCard> drawPile = new ArrayList<>();
     private final ArrayList<AbstractCard> hand = new ArrayList<>();
     private final ArrayList<AbstractCard> discardPile = new ArrayList<>();
@@ -35,7 +29,13 @@ public class TimeTravelAction extends AbstractGameAction {
         this.excludeCard = excludeCard;
         this.isChanged = isChanged;
         this.init();
-        status = new Status(hp,maxHp,gold,potions,relics,block,powers,powerAmt,energy,maxEnergy,drawPile,hand,discardPile,exhaustPile);
+        int hp = AbstractDungeon.player.currentHealth;
+        int maxHp = AbstractDungeon.player.maxHealth;
+        int gold = AbstractDungeon.player.gold;
+        int block = AbstractDungeon.player.currentBlock;
+        int energy = EnergyPanel.totalCount;
+        int maxEnergy = AbstractDungeon.player.maxOrbs;
+        status = new Status(hp, maxHp, gold,potions,relics, block,powers,powerAmt, energy, maxEnergy,drawPile,hand,discardPile,exhaustPile);
     }
     @Override
     public void update() {

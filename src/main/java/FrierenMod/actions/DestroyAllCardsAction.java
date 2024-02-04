@@ -10,7 +10,7 @@ public class DestroyAllCardsAction extends AbstractGameAction {
     @Override
     public void update() {
         this.addToBot(new DestroyAllCardsInDrawPileAction());
-        this.addToBot(new DestoryAllCardsInHandAction());
+        this.addToBot(new DestroyAllCardsInHandAction());
         this.addToBot(new DestroyAllCardsInDiscardPileAction());
         this.addToBot(new DestroyAllCardsInExhaustPileAction());
         this.addToBot(nextAction);
