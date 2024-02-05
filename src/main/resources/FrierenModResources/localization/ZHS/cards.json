@@ -342,5 +342,10 @@
     "NAME": "持续散射",
     "DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 NL  虚无 。"
+  },
+  "FrierenMod:CompleteDefendMagic": {
+    "NAME": "防御魔法完全体",
+    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 获得一层缓冲，获得 !B! 点护甲。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 获得一层缓冲，获得 !B! 点护甲。"
   }
 }

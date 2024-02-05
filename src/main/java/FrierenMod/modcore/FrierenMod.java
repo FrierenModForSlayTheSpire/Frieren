@@ -142,6 +142,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new UpgradeOption((AbstractCard) null));
         BaseMod.addCard(new VulnerableOption((AbstractCard) null,0));
         BaseMod.addCard(new ContinuousShooting());
+        BaseMod.addCard(new CompleteDefendMagic());
     }
     @Override
     public void receiveEditRelics() {
