@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer2;
 
-import FrierenMod.cardMods.DrawMod;
+import FrierenMod.cardMods.CostZeroMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DrawOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(DrawOption.class.getSimpleName());
+public class CostZeroOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(CostZeroOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class DrawOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int drawAmt;
+    private final int cardAmt;
 
 
-    public DrawOption(AbstractCard currentLegendMagic, int drawAmt) {
+    public CostZeroOption(AbstractCard currentLegendMagic, int cardAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.drawAmt = drawAmt;
-        this.magicNumber = this.baseMagicNumber = drawAmt;
+        this.cardAmt = cardAmt;
+        this.magicNumber = this.baseMagicNumber = cardAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class DrawOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DrawMod(drawAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new CostZeroMod(cardAmt));
     }
 }

@@ -1,17 +1,17 @@
 package FrierenMod.modcore;
 
 
-import FrierenMod.cards.optionCards.saiLiYe.layer2.*;
-import FrierenMod.cards.optionCards.saiLiYe.layer3.*;
+import FrierenMod.cards.optionCards.zeerie.layer2.*;
+import FrierenMod.cards.optionCards.zeerie.layer3.*;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
-import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost0;
-import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost1;
-import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost2;
-import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost3;
-import FrierenMod.cards.optionCards.saiLiYe.layer4.*;
+import FrierenMod.cards.optionCards.zeerie.layer1.Cost0;
+import FrierenMod.cards.optionCards.zeerie.layer1.Cost1;
+import FrierenMod.cards.optionCards.zeerie.layer1.Cost2;
+import FrierenMod.cards.optionCards.zeerie.layer1.Cost3;
+import FrierenMod.cards.optionCards.zeerie.layer4.*;
 import FrierenMod.cards.tempCards.*;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.*;

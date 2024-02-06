@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer4;
 
-import FrierenMod.cardMods.MagicPowerInHandMod;
+import FrierenMod.cardMods.DexterityMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MagicPowerInHandOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(MagicPowerInHandOption.class.getSimpleName());
+public class DexterityOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(DexterityOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class MagicPowerInHandOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int magicPowerAmt;
+    private final int dexterityAmt;
 
 
-    public MagicPowerInHandOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
+    public DexterityOption(AbstractCard currentLegendMagic, int dexterityAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.magicPowerAmt = magicPowerAmt;
-        this.magicNumber = this.baseMagicNumber = magicPowerAmt;
+        this.dexterityAmt = dexterityAmt;
+        this.magicNumber = this.baseMagicNumber = dexterityAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class MagicPowerInHandOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new MagicPowerInHandMod(magicPowerAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DexterityMod(this.dexterityAmt));
     }
 }

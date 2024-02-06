@@ -1,4 +1,4 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer4;
+package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.RemoveDebuffMod;
 import FrierenMod.cards.AbstractFrierenCard;

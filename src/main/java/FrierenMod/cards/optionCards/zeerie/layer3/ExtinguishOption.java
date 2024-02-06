@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer3;
+package FrierenMod.cards.optionCards.zeerie.layer3;
 
-import FrierenMod.cardMods.DamageMod;
+import FrierenMod.cardMods.ExtinguishMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DamageOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(DamageOption.class.getSimpleName());
+public class ExtinguishOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(ExtinguishOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class DamageOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int damageAmt;
+    private final int hpAmt;
 
 
-    public DamageOption(AbstractCard currentLegendMagic, int damageAmt) {
+    public ExtinguishOption(AbstractCard currentLegendMagic, int hpAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.damageAmt = damageAmt;
-        this.damage = this.baseDamage = damageAmt;
+        this.hpAmt = hpAmt;
+        this.magicNumber = this.baseMagicNumber = hpAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class DamageOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DamageMod(this.damageAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ExtinguishMod(this.hpAmt));
     }
 }

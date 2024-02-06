@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer4;
 
-import FrierenMod.cardMods.CostZeroMod;
+import FrierenMod.cardMods.StrengthMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class CostZeroOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(CostZeroOption.class.getSimpleName());
+public class StrengthOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(StrengthOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,11 @@ public class CostZeroOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int cardAmt;
 
 
-    public CostZeroOption(AbstractCard currentLegendMagic, int cardAmt) {
+    public StrengthOption(AbstractCard currentLegendMagic) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.cardAmt = cardAmt;
-        this.magicNumber = this.baseMagicNumber = cardAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +44,6 @@ public class CostZeroOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new CostZeroMod(cardAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new StrengthMod());
     }
 }

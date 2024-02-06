@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer3;
 
-import FrierenMod.cardMods.GainRandomCardMod;
+import FrierenMod.cardMods.DamageAllMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GainRandomCardOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(GainRandomCardOption.class.getSimpleName());
+public class DamageAllOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(DamageAllOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class GainRandomCardOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int cardAmt;
+    private final int damageAmt;
 
 
-    public GainRandomCardOption(AbstractCard currentLegendMagic, int cardAmt) {
+    public DamageAllOption(AbstractCard currentLegendMagic, int damageAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.cardAmt = cardAmt;
-        this.magicNumber = this.baseMagicNumber = cardAmt;
+        this.damageAmt = damageAmt;
+        this.damage = this.baseDamage = damageAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class GainRandomCardOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new GainRandomCardMod(this.cardAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DamageAllMod(this.damageAmt));
     }
 }

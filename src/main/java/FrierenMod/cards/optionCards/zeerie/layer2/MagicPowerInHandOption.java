@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer2;
 
-import FrierenMod.cardMods.MagicPowerMod;
+import FrierenMod.cardMods.MagicPowerInHandMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MagicPowerOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(MagicPowerOption.class.getSimpleName());
+public class MagicPowerInHandOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(MagicPowerInHandOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,11 +23,13 @@ public class MagicPowerOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
+    private final int magicPowerAmt;
 
 
-    public MagicPowerOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
+    public MagicPowerInHandOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
+        this.magicPowerAmt = magicPowerAmt;
         this.magicNumber = this.baseMagicNumber = magicPowerAmt;
     }
     @Override
@@ -45,6 +47,6 @@ public class MagicPowerOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new MagicPowerMod(this.magicNumber));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new MagicPowerInHandMod(magicPowerAmt));
     }
 }

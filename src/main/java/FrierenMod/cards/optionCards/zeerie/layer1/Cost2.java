@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer4;
+package FrierenMod.cards.optionCards.zeerie.layer1;
 
-import FrierenMod.cardMods.UpgradeMod;
+import FrierenMod.cardMods.CostMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class UpgradeOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(UpgradeOption.class.getSimpleName());
+public class Cost2 extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(Cost2.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -25,7 +25,7 @@ public class UpgradeOption extends AbstractFrierenCard {
     private final AbstractCard currentLegendMagic;
 
 
-    public UpgradeOption(AbstractCard currentLegendMagic) {
+    public Cost2(AbstractCard currentLegendMagic) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
     }
@@ -44,6 +44,6 @@ public class UpgradeOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new UpgradeMod());
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new CostMod(2));
     }
 }

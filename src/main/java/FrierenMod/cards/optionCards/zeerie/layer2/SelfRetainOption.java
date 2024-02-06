@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer2;
+package FrierenMod.cards.optionCards.zeerie.layer2;
 
-import FrierenMod.cardMods.ScryMod;
+import FrierenMod.cardMods.SelfRetainMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ScryOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(ScryOption.class.getSimpleName());
+public class SelfRetainOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(SelfRetainOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class ScryOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int scryAmt;
+    private final int selfRetainAmt;
 
 
-    public ScryOption(AbstractCard currentLegendMagic, int scryAmt) {
+    public SelfRetainOption(AbstractCard currentLegendMagic, int selfRetainAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.scryAmt = scryAmt;
-        this.magicNumber = this.baseMagicNumber = scryAmt;
+        this.selfRetainAmt = selfRetainAmt;
+        this.magicNumber = this.baseMagicNumber = selfRetainAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class ScryOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ScryMod(scryAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new SelfRetainMod(this.selfRetainAmt));
     }
 }

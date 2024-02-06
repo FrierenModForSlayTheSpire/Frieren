@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards.saiLiYe.layer4;
+package FrierenMod.cards.optionCards.zeerie.layer4;
 
-import FrierenMod.cardMods.DexterityMod;
+import FrierenMod.cardMods.IntangibleMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -11,8 +11,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DexterityOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(DexterityOption.class.getSimpleName());
+public class IntangibleOption extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(IntangibleOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -23,14 +23,14 @@ public class DexterityOption extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     private final AbstractCard currentLegendMagic;
-    private final int dexterityAmt;
+    private final int stackAmt;
 
 
-    public DexterityOption(AbstractCard currentLegendMagic, int dexterityAmt) {
+    public IntangibleOption(AbstractCard currentLegendMagic, int stackAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
-        this.dexterityAmt = dexterityAmt;
-        this.magicNumber = this.baseMagicNumber = dexterityAmt;
+        this.stackAmt = stackAmt;
+        this.magicNumber = this.baseMagicNumber = stackAmt;
     }
     @Override
     public void upgrade() {
@@ -47,6 +47,6 @@ public class DexterityOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DexterityMod(this.dexterityAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new IntangibleMod(this.stackAmt));
     }
 }

@@ -24,7 +24,7 @@
   },
   "FrierenMod:CostZeroMod": {
     "TEXT": [
-      " NL  你手牌中 ", " 张随机牌在本回合中耗能变为0。"
+      " NL 你手牌中 ", " 张随机牌在本回合中耗能变为0。"
     ]
   },
   "FrierenMod:GainRandomCardMod": {
@@ -59,18 +59,18 @@
   "FrierenMod:BlockMod": {
     "TEXT": [
       "获得 ", " 点 格挡。",
-      " NL  获得 ", " 点 格挡 。", " 点 格挡 。"
+      " NL 获得 ", " 点 格挡 。", " 点 格挡 。"
     ]
   },
   "FrierenMod:EnergyMod": {
     "TEXT": [
-      " NL  下一回合，获得 ", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
+      " NL 下一回合，获得 ", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
     ]
   },
   "FrierenMod:ExtinguishMod": {
     "TEXT": [
       "如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。",
-      " NL  如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。", " 点，则将其生命值变为0。"
+      " NL 如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。", " 点，则将其生命值变为0。"
     ]
   },
   "FrierenMod:ChantMod": {
