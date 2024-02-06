@@ -64,7 +64,7 @@
   },
   "FrierenMod:EnergyMod": {
     "TEXT": [
-      " NL 下一回合，获得 ", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
+      " NL 下一回合，获得", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
     ]
   },
   "FrierenMod:ExtinguishMod": {
