@@ -1,21 +1,20 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.unique.DamagePerAttackPlayedAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 public class MagicianFinisher extends CustomCard {
-    public static final String ID = ModHelper.makePath(MagicianFinisher.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(MagicianFinisher.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/MagicianFinisher_attack.png";
