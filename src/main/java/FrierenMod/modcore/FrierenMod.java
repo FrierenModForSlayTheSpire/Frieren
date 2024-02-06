@@ -3,7 +3,7 @@ package FrierenMod.modcore;
 
 import FrierenMod.cards.optionCards.saiLiYe.layer2.*;
 import FrierenMod.cards.optionCards.saiLiYe.layer3.*;
-import FrierenMod.characters.Frieren;
+import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
@@ -34,8 +34,8 @@ import com.megacrit.cardcrawl.localization.*;
 
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.characters.Frieren.Enums.FRIEREN;
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 

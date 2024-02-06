@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class OilMagic extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(OilMagic.class.getSimpleName());

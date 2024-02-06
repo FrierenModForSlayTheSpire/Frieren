@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class NormalAttackMagic extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(NormalAttackMagic.class.getSimpleName());

@@ -1,4 +1,4 @@
-package FrierenMod.characters;
+package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.DefendMagic;
@@ -24,7 +24,7 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import java.util.ArrayList;
 
-import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Frieren extends CustomPlayer {
     // 火堆的人物立绘（行动前）
