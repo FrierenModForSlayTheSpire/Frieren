@@ -26,19 +26,20 @@ public class MoldMagic extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     public MoldMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 2;
+        this.damage = this.baseDamage = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
         this.isLegendMagicCard = true;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            this.upgradeMagicNumber(1);
             this.upgradeName();
-            this.upgradeDamage(1);
         }
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < 5; ++i) {
+        for(int i = 0; i < this.magicNumber; ++i) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }

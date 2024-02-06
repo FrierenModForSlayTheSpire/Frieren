@@ -23,7 +23,7 @@
   "FrierenMod:HolyChant": {
     "NAME": "神圣咏唱",
     "DESCRIPTION": " frierenmod:咏唱  !CX! 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL  frierenmod:咏唱  !CX! 。"
+    "UPGRADE_DESCRIPTION": " 保留 。 NL frierenmod:咏唱  !CX! 。"
   },
   "FrierenMod:MagicPower": {
     "NAME": "魔力",
@@ -56,7 +56,7 @@
   },
   "FrierenMod:MoldMagic": {
     "NAME": "消灭霉菌的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害5次。 "
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害 !M! 次。 "
   },
   "FrierenMod:Sustainability": {
     "NAME": "永续",
