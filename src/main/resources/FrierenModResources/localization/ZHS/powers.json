@@ -1,23 +1,23 @@
 {
-  "FrierenMod:YongXuPower": {
+  "FrierenMod:SustainabilityPower": {
     "NAME": "永续",
     "DESCRIPTIONS": [
       "在你的回合开始时，将 #b%d 张 #y魔力 置入弃牌堆。 "
     ]
   },
-  "FrierenMod:QingXiePower": {
+  "FrierenMod:OutpouringPower": {
     "NAME": "倾泻",
     "DESCRIPTIONS": [
       "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y力量 。"
     ]
   },
-  "FrierenMod:ShuiYiXingTaiPower": {
+  "FrierenMod:NightDressPower": {
     "NAME": "睡衣形态",
     "DESCRIPTIONS": [
       "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的 #b%d 倍。 NL （将造成 #b%d 点伤害）。"
     ]
   },
-  "FrierenMod:QiPianMoZuDeXiaoBaXiPower": {
+  "FrierenMod:TrickPower": {
     "NAME": "欺骗魔族的小把戏",
     "DESCRIPTIONS": [
       "在你的回合开始时，将 #b%d 张 #y魔力隐藏 置入手牌。"
@@ -29,7 +29,7 @@
       "战斗结束时，获得 #b%d 件随机遗物。"
     ]
   },
-  "FrierenMod:YiShiZhunBeiPower": {
+  "FrierenMod:PrepareRitePower": {
     "NAME": "仪式准备",
     "DESCRIPTIONS": [
       "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"

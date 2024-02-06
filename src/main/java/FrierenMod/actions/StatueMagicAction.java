@@ -16,7 +16,7 @@ public class StatueMagicAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (!this.target.isDying && !this.target.isDead && this.duration == 0.25F && this.target.currentBlock > 0) {
+        if (!this.target.isDying && !this.target.isDead && this.target.currentBlock > 0) {
             if(this.target.currentBlock > this.magicNumber){
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new MetallicizePower(AbstractDungeon.player, 3),3));
             }

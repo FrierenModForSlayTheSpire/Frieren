@@ -4,6 +4,7 @@ import FrierenMod.cards.tempCards.HideMagic;
 import FrierenMod.helpers.ModInfo;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,9 +42,12 @@ public class TrickPower extends AbstractPower {
     public void atStartOfTurn() {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
-            if(!AbstractDungeon.player.hand.group.contains(new HideMagic())){
-                this.addToBot(new MakeTempCardInHandAction(new HideMagic(),1));
+            for(AbstractCard c:AbstractDungeon.player.hand.group){
+                if(c.cardID.matches("FrierenMod:Trick") ){
+                    return;
+                }
             }
+            this.addToBot(new MakeTempCardInHandAction(new HideMagic(),1));
         }
     }
 
