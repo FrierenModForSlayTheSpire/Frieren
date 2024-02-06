@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 public class MyRelic extends CustomRelic {
     public static final String ID = ModInfo.makeID("MyRelic");
     // 图片路径
-    private static final String IMG_PATH = "FrierenModResources/img/relics/MyRelic.png";
+    private static final String IMG_PATH = "FrierenModResources/img/relics/HolyEmblem.png";
     // 遗物类型
     private static final RelicTier RELIC_TIER = RelicTier.STARTER;
     // 点击音效
