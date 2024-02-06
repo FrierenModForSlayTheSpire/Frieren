@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.VulnerableMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +49,8 @@ public class VulnerableOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new VulnerableMod(this.stackAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new VulnerableOption(new CustomLegendMagic(),0);
     }
 }

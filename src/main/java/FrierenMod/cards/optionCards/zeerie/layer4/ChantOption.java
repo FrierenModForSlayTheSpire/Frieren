@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.ChantMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +49,8 @@ public class ChantOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ChantMod(this.chantAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new ChantOption(new CustomLegendMagic(),0);
     }
 }

@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.GainRandomCardMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +50,8 @@ public class GainRandomCardOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new GainRandomCardMod(this.cardAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new GainRandomCardOption(new CustomLegendMagic(),0);
     }
 }

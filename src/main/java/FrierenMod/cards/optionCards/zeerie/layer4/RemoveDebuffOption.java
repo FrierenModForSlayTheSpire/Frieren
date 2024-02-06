@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.RemoveDebuffMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -45,5 +46,8 @@ public class RemoveDebuffOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new RemoveDebuffMod());
+    }
+    public AbstractCard makeCopy() {
+        return new RemoveDebuffOption(new CustomLegendMagic());
     }
 }

@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.DexterityMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +49,8 @@ public class DexterityOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DexterityMod(this.dexterityAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new DexterityOption(new CustomLegendMagic(),0);
     }
 }

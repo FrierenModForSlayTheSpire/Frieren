@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.ScryMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +50,8 @@ public class ScryOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ScryMod(scryAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new ScryOption(new CustomLegendMagic(),0);
     }
 }

@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.ExtinguishMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +50,8 @@ public class ExtinguishOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ExtinguishMod(this.hpAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new ExtinguishOption(new CustomLegendMagic(),0);
     }
 }

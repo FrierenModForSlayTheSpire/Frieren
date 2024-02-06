@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.UpgradeAllMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer1.Cost0;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -45,5 +47,8 @@ public class UpgradeAllOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new UpgradeAllMod());
+    }
+    public AbstractCard makeCopy() {
+        return new UpgradeAllOption(new CustomLegendMagic());
     }
 }
