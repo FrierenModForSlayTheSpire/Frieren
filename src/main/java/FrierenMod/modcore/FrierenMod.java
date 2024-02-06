@@ -1,7 +1,7 @@
 package FrierenMod.modcore;
 
 
-import FrierenMod.Characters.Frieren;
+import FrierenMod.characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
@@ -20,24 +20,28 @@ import FrierenMod.cards.optionCards.saiLiYe.layer3.ExtinguishOption;
 import FrierenMod.cards.optionCards.saiLiYe.layer4.*;
 import FrierenMod.cards.tempCards.*;
 import FrierenMod.cards.white.*;
-import FrierenMod.cards.white.FangYuMoFa;
-import FrierenMod.cards.white.HolyChant;
+import FrierenMod.cards.white.chant.*;
+import FrierenMod.cards.white.FlightMagic;
+import FrierenMod.cards.white.JewelryMagic;
+import FrierenMod.cards.white.OilMagic;
 import FrierenMod.relics.MyRelic;
+import FrierenMod.variables.ChantXVariable;
+import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import basemod.BaseMod;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
-import com.badlogic.gdx.graphics.Color;
 
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.Characters.Frieren.Enums.*;
+import static FrierenMod.characters.Frieren.Enums.FRIEREN;
+import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 
@@ -63,11 +67,11 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
     // 在卡牌预览界面的能量图标
     private static final String BIG_ORB = "FrierenModResources/img/char/card_orb.png";
     // 小尺寸的能量图标（战斗中，牌堆预览）
-    private static final String ENEYGY_ORB = "FrierenModResources/img/char/cost_orb.png";
+    private static final String ENERGY_ORB = "FrierenModResources/img/char/cost_orb.png";
     public static final Color FRIEREN_WHITE = new Color(237.0F / 255.0F, 234.0F / 255.0F, 245.0F / 255.0F, 1.0F);
     public FrierenMod() {
         BaseMod.subscribe(this);
-        BaseMod.addColor(FRIEREN_CARD, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512,ENEYGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
+        BaseMod.addColor(FRIEREN_CARD, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE, FRIEREN_WHITE,BG_ATTACK_512,BG_SKILL_512,BG_POWER_512, ENERGY_ORB,BG_ATTACK_1024,BG_SKILL_1024,BG_POWER_1024,BIG_ORB,SMALL_ORB);
     }
 
     public static void initialize() {
@@ -76,51 +80,52 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receiveEditCards() {
+        BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new MagicPower());
-        BaseMod.addCard(new SaveMagic());
+        BaseMod.addCard(new IceCreamMagic());
         BaseMod.addCard(new HideMagic());
         BaseMod.addCard(new ChantFromDrawPile());
         BaseMod.addCard(new ChantFromHand());
         BaseMod.addCard(new ChantFromDiscardPile());
-        BaseMod.addCard(new FangYuMoFa());
+        BaseMod.addCard(new DefendMagic());
         BaseMod.addCard(new HolyChant());
-        BaseMod.addCard(new TransferMagic());
-        BaseMod.addCard(new YongXu());
-        BaseMod.addCard(new NiLiu());
-        BaseMod.addCard(new MeiJunMoFa());
-        BaseMod.addCard(new FenSan());
-        BaseMod.addCard(new LiuZhuan());
-        BaseMod.addCard(new PuGongMoFa());
-        BaseMod.addCard(new FeiXingMoFa());
-        BaseMod.addCard(new MoDaoShu());
-        BaseMod.addCard(new QingXie());
-        BaseMod.addCard(new LianHuanYongChang());
-        BaseMod.addCard(new HeiAnYongChang());
-        BaseMod.addCard(new ShuiYiXingTai());
-        BaseMod.addCard(new ZhunBei());
-        BaseMod.addCard(new QiPianMoZuDeXiaoBaXi());
-        BaseMod.addCard(new HuaTianMoFa());
+        BaseMod.addCard(new MarshMagic());
+        BaseMod.addCard(new Sustainability());
+        BaseMod.addCard(new ReverseFlow());
+        BaseMod.addCard(new MoldMagic());
+        BaseMod.addCard(new Disperse());
+        BaseMod.addCard(new Flow());
+        BaseMod.addCard(new NormalAttackMagic());
+        BaseMod.addCard(new FlightMagic());
+        BaseMod.addCard(new MagicBook());
+        BaseMod.addCard(new Outpouring());
+        BaseMod.addCard(new ContinualChant());
+        BaseMod.addCard(new DarkChant());
+        BaseMod.addCard(new NightDressForm());
+        BaseMod.addCard(new PreparePosture());
+        BaseMod.addCard(new Trick());
+        BaseMod.addCard(new FlowerFieldMagic());
         BaseMod.addCard(new Flower());
-        BaseMod.addCard(new ShiPingMoFa());
-        BaseMod.addCard(new YouZiMoFa());
-        BaseMod.addCard(new ShiJueMoFa());
-        BaseMod.addCard(new BaoBingMoFa());
-        BaseMod.addCard(new RaoKouLingMoFa());
-        BaseMod.addCard(new DuoChongMoFa());
-        BaseMod.addCard(new YiShiZhunBei());
-        BaseMod.addCard(new LanSan());
-        BaseMod.addCard(new BaoPoMoFa());
-        BaseMod.addCard(new ZhuiYi());
+        BaseMod.addCard(new JewelryMagic());
+        BaseMod.addCard(new OilMagic());
+        BaseMod.addCard(new VisionMagic());
+        BaseMod.addCard(new PancakeMagic());
+        BaseMod.addCard(new TwisterMagic());
+        BaseMod.addCard(new MultipleAttackMagic());
+        BaseMod.addCard(new PrepareRite());
+        BaseMod.addCard(new Laziness());
+        BaseMod.addCard(new BoomMagic());
+        BaseMod.addCard(new Recall());
         BaseMod.addCard(new BabySleeping());
         BaseMod.addCard(new LittleFire());
         BaseMod.addCard(new FullAhead());
-        BaseMod.addCard(new TongXiangMoFa());
-        BaseMod.addCard(new HongPingGuoMoFa());
+        BaseMod.addCard(new StatueMagic());
+        BaseMod.addCard(new RedAppleMagic());
         BaseMod.addCard(new LockTarget());
         BaseMod.addCard(new FiveMinutesMore());
-        BaseMod.addCard(new SaiLiYeDeMoDaoShu());
+        BaseMod.addCard(new ZeerieMagicBook());
         BaseMod.addCard(new CustomLegendMagic());
         BaseMod.addCard(new Cost0((AbstractCard) null));
         BaseMod.addCard(new Cost1((AbstractCard) null));
@@ -141,6 +146,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new StrengthOption((AbstractCard) null));
         BaseMod.addCard(new UpgradeOption((AbstractCard) null));
         BaseMod.addCard(new VulnerableOption((AbstractCard) null,0));
+        BaseMod.addCard(new TimeTravel());
         BaseMod.addCard(new ContinuousShooting());
         BaseMod.addCard(new CompleteDefendMagic());
         BaseMod.addCard(new MagicianFinisher());

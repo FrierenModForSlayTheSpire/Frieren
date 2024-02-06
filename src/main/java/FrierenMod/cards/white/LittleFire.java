@@ -1,23 +1,20 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.helpers.LegendMagicHelper;
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.actions.unique.ArmamentsAction;
 
-import basemod.abstracts.CustomCard;
+import static FrierenMod.characters.Frieren.Enums.FRIEREN_CARD;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-
-public class LittleFire extends CustomCard {
-    public static final String ID = ModHelper.makePath(LittleFire.class.getSimpleName());
+public class LittleFire extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(LittleFire.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/LittleFire_attack.png";
@@ -51,7 +48,7 @@ public class LittleFire extends CustomCard {
                 ),
                 AbstractGameAction.AttackEffect.FIRE,true
         ));
-        addToBot((AbstractGameAction)new ArmamentsAction(this.upgraded));
+        this.addToBot(new ArmamentsAction(this.upgraded));
     }
 
 }

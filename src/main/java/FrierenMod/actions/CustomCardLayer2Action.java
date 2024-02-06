@@ -11,9 +11,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.ArrayList;
 
 public class CustomCardLayer2Action extends AbstractGameAction {
-    private AbstractCard currenLegendMagic;
+    private final AbstractCard currentLegendMagic;
     private final AbstractGameAction nextAction;
-    private ArrayList<AbstractCard> layer2 = new ArrayList<>();
+    private final ArrayList<AbstractCard> layer = new ArrayList<>();
     private static final int DRAW0 = 2;
     private static final int DRAW1 = 3;
     private static final int DRAW2 = 4;
@@ -27,38 +27,38 @@ public class CustomCardLayer2Action extends AbstractGameAction {
     private static final int RETAIN2 = 1;
     private static final int RETAIN3 = 2;
 
-    public CustomCardLayer2Action(AbstractGameAction nextAction, AbstractCard currenLegendMagic){
+    public CustomCardLayer2Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic){
         this.nextAction = nextAction;
-        this.currenLegendMagic = currenLegendMagic;
+        this.currentLegendMagic = currentLegendMagic;
     }
     @Override
     public void update() {
-        this.initLayer(currenLegendMagic.cost);
-        this.addToBot(new ChooseOneAction(layer2));
+        this.initLayer(currentLegendMagic.cost);
+        this.addToBot(new ChooseOneAction(layer));
         this.addToBot(nextAction);
         this.isDone = true;
     }
     public void initLayer(int cost){
         switch (cost){
             case 0:
-                layer2.add(new DrawOption(currenLegendMagic,DRAW0));
-                layer2.add(new MagicPowerOption(currenLegendMagic,MAGIC0));
+                layer.add(new DrawOption(currentLegendMagic,DRAW0));
+                layer.add(new MagicPowerOption(currentLegendMagic,MAGIC0));
                 break;
             case 1:
-                layer2.add(new DrawOption(currenLegendMagic,DRAW1));
-                layer2.add(new MagicPowerOption(currenLegendMagic,MAGIC1));
+                layer.add(new DrawOption(currentLegendMagic,DRAW1));
+                layer.add(new MagicPowerOption(currentLegendMagic,MAGIC1));
                 break;
             case 2:
-                layer2.add(new DrawOption(currenLegendMagic,DRAW2));
-                layer2.add(new MagicPowerOption(currenLegendMagic,MAGIC2));
-                layer2.add(new GainRandomCardOption(currenLegendMagic,CARD2));
-                layer2.add(new SelfRetainOption(currenLegendMagic,RETAIN2));
+                layer.add(new DrawOption(currentLegendMagic,DRAW2));
+                layer.add(new MagicPowerOption(currentLegendMagic,MAGIC2));
+                layer.add(new GainRandomCardOption(currentLegendMagic,CARD2));
+                layer.add(new SelfRetainOption(currentLegendMagic,RETAIN2));
                 break;
             case 3:
-                layer2.add(new DrawOption(currenLegendMagic,DRAW3));
-                layer2.add(new MagicPowerOption(currenLegendMagic,MAGIC3));
-                layer2.add(new GainRandomCardOption(currenLegendMagic,CARD3));
-                layer2.add(new SelfRetainOption(currenLegendMagic,RETAIN3));
+                layer.add(new DrawOption(currentLegendMagic,DRAW3));
+                layer.add(new MagicPowerOption(currentLegendMagic,MAGIC3));
+                layer.add(new GainRandomCardOption(currentLegendMagic,CARD3));
+                layer.add(new SelfRetainOption(currentLegendMagic,RETAIN3));
                 break;
             default:
                 break;

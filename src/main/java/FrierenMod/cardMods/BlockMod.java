@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class BlockMod extends AbstractCardModifier {
-    public static final String ID = ModHelper.makePath(BlockMod.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(BlockMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

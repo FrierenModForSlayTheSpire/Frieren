@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -11,10 +11,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
 
 public class DexterityMod extends AbstractCardModifier {
-    public static final String ID = ModHelper.makePath(DexterityMod.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(DexterityMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

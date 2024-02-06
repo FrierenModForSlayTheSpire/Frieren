@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.helpers.ModHelper;
+import FrierenMod.helpers.ModInfo;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -9,12 +9,10 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 public class GainRelicPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModHelper.makePath(GainRelicPower.class.getSimpleName());
+    public static final String POWER_ID = ModInfo.makeID(GainRelicPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称

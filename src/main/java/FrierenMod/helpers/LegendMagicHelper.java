@@ -1,14 +1,18 @@
 package FrierenMod.helpers;
 
-import FrierenMod.cards.white.*;
+import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.white.FlightMagic;
+import FrierenMod.cards.white.JewelryMagic;
+import FrierenMod.cards.white.OilMagic;
+import FrierenMod.cards.white.chant.ContinualChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
-import static FrierenMod.tags.CustomTags.*;
+import static FrierenMod.tags.CustomTags.MAGIC_POWER;
+import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
 
@@ -16,7 +20,7 @@ public class LegendMagicHelper {
     public boolean cannotPlayLegendMagic(){
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.hasTag(CHANT)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
                 return false;
             }
         }
@@ -34,25 +38,15 @@ public class LegendMagicHelper {
 
     private ArrayList<AbstractCard> initLegendMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new FeiXingMoFa());
-        pool.add(new LianHuanYongChang());
-        pool.add(new ShiPingMoFa());
-        pool.add(new YouZiMoFa());
+        pool.add(new FlightMagic());
+        pool.add(new ContinualChant());
+        pool.add(new JewelryMagic());
+        pool.add(new OilMagic());
         return pool;
     }
-    public ArrayList<AbstractCard> getRandomCards(int amounts){
-        ArrayList<AbstractCard> pool = this.initLegendMagicCardPool();
-        if(pool.size() >= amounts){
-            Collections.shuffle(pool);
-            ArrayList<AbstractCard> cards = new ArrayList<>();
-            for (int i = 0; i < amounts; i++) {
-                cards.add(pool.get(i));
-            }
-            return cards;
-        }
-        else {
-            return null;
-        }
+    public AbstractCard getRandomCard(){
+        ArrayList<AbstractCard> list = initLegendMagicCardPool();
+        return (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
     }
     public boolean canLegendMagicUse(AbstractCard c, AbstractMonster m){
         if (c.type == AbstractCard.CardType.STATUS && c.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {

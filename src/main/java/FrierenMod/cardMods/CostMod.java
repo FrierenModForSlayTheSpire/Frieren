@@ -1,15 +1,13 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.FangYuMoFa2;
-import FrierenMod.helpers.ModHelper;
-import FrierenMod.modcore.FrierenMod;
+import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class CostMod extends AbstractCardModifier {
-    public static final String ID = ModHelper.makePath(CostMod.class.getSimpleName());
+    public static final String ID = ModInfo.makeID(CostMod.class.getSimpleName());
 
-    private int cost;
+    private final int cost;
 
     public CostMod(int cost) {
         this.cost = cost;
