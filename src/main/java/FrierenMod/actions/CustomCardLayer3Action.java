@@ -18,13 +18,17 @@ public class CustomCardLayer3Action extends CustomCardLayerAction {
     private static final int DAMAGE_ALL2 = 10;
     private static final int DAMAGE_ALL3 = 15;
     private static final int ENERGY1 = 1;
-    private static final int ENERGY2 = 3;
-    private static final int ENERGY3 = 2;
+    private static final int ENERGY2 = 2;
+    private static final int ENERGY3 = 3;
     private static final int EXTINGUISH_HP2 = 30;
     private static final int EXTINGUISH_HP3 = 40;
 
     public CustomCardLayer3Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic,boolean upgraded){
         super(nextAction,currentLegendMagic,upgraded);
+    }
+    @Override
+    public void update() {
+        super.update();
     }
     public void initLayer(int cost){
         super.initLayer(cost);

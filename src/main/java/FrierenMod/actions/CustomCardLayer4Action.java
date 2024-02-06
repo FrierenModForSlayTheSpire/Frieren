@@ -19,7 +19,12 @@ public class CustomCardLayer4Action extends CustomCardLayerAction {
     public CustomCardLayer4Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic,boolean upgraded){
         super(nextAction,currentLegendMagic,upgraded);
     }
+    @Override
+    public void update() {
+        super.update();
+    }
     public void initLayer(int cost){
+        super.initLayer(cost);
         switch (cost){
             case 0:
                 layer.add(new ChantOption(currentLegendMagic,CHANT0));

@@ -53,7 +53,7 @@ public abstract class CustomCardLayerAction extends AbstractGameAction {
                 }
             }
             if (!dupe) {
-                choices.add(tmp.makeCopy());
+                choices.add(tmp);
             }
         }
         return choices;

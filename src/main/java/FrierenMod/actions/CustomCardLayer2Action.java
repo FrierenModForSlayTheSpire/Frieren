@@ -30,6 +30,12 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
     public CustomCardLayer2Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic,boolean upgraded){
         super(nextAction,currentLegendMagic,upgraded);
     }
+
+    @Override
+    public void update() {
+        super.update();
+    }
+
     public void initLayer(int cost){
         super.initLayer(cost);
         switch (cost){
