@@ -30,8 +30,9 @@ public class HolyChant extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeChantX(1);
             this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m){
