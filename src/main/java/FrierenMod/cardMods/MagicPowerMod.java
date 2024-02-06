@@ -15,7 +15,7 @@ public class MagicPowerMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int magicPowerAmt;
+    private final int magicPowerAmt;
 
     public MagicPowerMod(int magicPowerAmt) {
         this.magicPowerAmt = magicPowerAmt;

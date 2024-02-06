@@ -6,7 +6,7 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class AbstractFrierenCard extends CustomCard {
+public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
     public boolean isLegendMagicCard;
     public int baseChantX = -1;

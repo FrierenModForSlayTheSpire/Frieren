@@ -203,7 +203,8 @@
   },
   "FrierenMod:ZeerieMagicBook": {
     "NAME": "赛莉耶的魔导书",
-    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。"
+    "DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "创建一张自定义 frierenmod:传说魔法 ，创建时你拥有更多选项。 NL  消耗 。"
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
@@ -249,7 +250,19 @@
   },
   "FrierenMod:MagicPowerOption": {
     "NAME": "月亮",
-    "DESCRIPTION": " 将 !M! 张魔力置入弃牌堆。"
+    "DESCRIPTION": " 将 !M! 张 *魔力 置入弃牌堆。"
+  },
+  "FrierenMod:MagicPowerInHandOption": {
+    "NAME": "太阳",
+    "DESCRIPTION": " 将 !M! 张 *魔力 置入手牌。"
+  },
+  "FrierenMod:ScryOption": {
+    "NAME": "女祭司",
+    "DESCRIPTION": " 预见 !M! 。"
+  },
+  "FrierenMod:CostZeroOption": {
+    "NAME": "星币",
+    "DESCRIPTION": " 你手牌中 !M! 张随机牌在本回合中耗能变为0。"
   },
   "FrierenMod:SelfRetainOption": {
     "NAME": "节制",
@@ -263,6 +276,10 @@
     "NAME": "正义",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
+  "FrierenMod:DamageThirdOption": {
+    "NAME": "恶魔",
+    "DESCRIPTION": "造成 !D! 点伤害三次。"
+  },
   "FrierenMod:DamageAllOption": {
     "NAME": "死神",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
@@ -270,6 +287,10 @@
   "FrierenMod:BlockOption": {
     "NAME": "隐者",
     "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "FrierenMod:EnergyOption": {
+    "NAME": "愚者",
+    "DESCRIPTION": "下一回合，获得 !M! 点 [E] 。"
   },
   "FrierenMod:ExtinguishOption": {
     "NAME": "审判",
@@ -296,8 +317,12 @@
     "DESCRIPTION": "给与所有敌人 !M! 层 易伤 。"
   },
   "FrierenMod:UpgradeOption": {
+    "NAME": "塔",
+    "DESCRIPTION": "在本场战斗中 升级 手牌中的所有牌。"
+  },
+  "FrierenMod:UpgradeAllOption": {
     "NAME": "世界",
-    "DESCRIPTION": "在本场战斗中升级手牌中的所有牌。 NL  消耗 。"
+    "DESCRIPTION": "在本场战斗中 升级 你的所有牌。 NL  消耗 。"
   },
   "FrierenMod:RemoveDebuffOption": {
     "NAME": "权杖",
@@ -329,7 +354,6 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "魔法&想象力",
-    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力。 NL  你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "将你当前的一切送入两回合后的未来，并使世界线发生变动。"
+    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力。 NL  你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。"
   }
 }

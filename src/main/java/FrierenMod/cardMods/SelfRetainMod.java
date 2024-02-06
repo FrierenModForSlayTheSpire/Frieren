@@ -15,7 +15,7 @@ public class SelfRetainMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int selfRetainAmt;
+    private final int selfRetainAmt;
 
     public SelfRetainMod(int selfRetainAmt) {
         this.selfRetainAmt = selfRetainAmt;

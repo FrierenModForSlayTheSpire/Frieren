@@ -1,6 +1,8 @@
 package FrierenMod.modcore;
 
 
+import FrierenMod.cards.optionCards.saiLiYe.layer2.*;
+import FrierenMod.cards.optionCards.saiLiYe.layer3.*;
 import FrierenMod.characters.Frieren;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
@@ -9,14 +11,6 @@ import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost0;
 import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost1;
 import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost2;
 import FrierenMod.cards.optionCards.saiLiYe.layer1.Cost3;
-import FrierenMod.cards.optionCards.saiLiYe.layer2.DrawOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer2.GainRandomCardOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer2.MagicPowerOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer2.SelfRetainOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer3.BlockOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer3.DamageAllOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer3.DamageOption;
-import FrierenMod.cards.optionCards.saiLiYe.layer3.ExtinguishOption;
 import FrierenMod.cards.optionCards.saiLiYe.layer4.*;
 import FrierenMod.cards.tempCards.*;
 import FrierenMod.cards.white.*;
@@ -135,9 +129,14 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new GainRandomCardOption((AbstractCard) null, 0));
         BaseMod.addCard(new MagicPowerOption((AbstractCard) null,0));
         BaseMod.addCard(new SelfRetainOption((AbstractCard) null,0));
+        BaseMod.addCard(new CostZeroOption((AbstractCard) null,0));
+        BaseMod.addCard(new MagicPowerInHandOption((AbstractCard) null, 0));
+        BaseMod.addCard(new ScryOption((AbstractCard) null,0));
         BaseMod.addCard(new BlockOption((AbstractCard) null,0));
         BaseMod.addCard(new DamageAllOption((AbstractCard) null,0));
         BaseMod.addCard(new DamageOption((AbstractCard) null,0));
+        BaseMod.addCard(new DamageThirdOption((AbstractCard) null, 0));
+        BaseMod.addCard(new EnergyOption((AbstractCard) null, 0));
         BaseMod.addCard(new ExtinguishOption((AbstractCard) null,0));
         BaseMod.addCard(new ChantOption((AbstractCard) null,0));
         BaseMod.addCard(new DexterityOption((AbstractCard) null,0));
@@ -145,6 +144,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new RemoveDebuffOption((AbstractCard) null));
         BaseMod.addCard(new StrengthOption((AbstractCard) null));
         BaseMod.addCard(new UpgradeOption((AbstractCard) null));
+        BaseMod.addCard(new UpgradeAllOption((AbstractCard) null));
         BaseMod.addCard(new VulnerableOption((AbstractCard) null,0));
         BaseMod.addCard(new TimeTravel());
     }
