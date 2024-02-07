@@ -17,7 +17,7 @@ public class DamageMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int damageAmt;
+    private final int damageAmt;
 
     public DamageMod(int damageAmt) {
         this.damageAmt = damageAmt;

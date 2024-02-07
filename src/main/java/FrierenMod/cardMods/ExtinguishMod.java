@@ -15,7 +15,7 @@ public class ExtinguishMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int hpAmt;
+    private final int hpAmt;
 
     public ExtinguishMod(int hpAmt) {
         this.hpAmt = hpAmt;
