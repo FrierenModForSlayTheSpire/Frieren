@@ -371,12 +371,12 @@
     "DESCRIPTION": "你在这个回合每打出过一张技能牌，就造成一次 !D! 点伤害。（已 打出  !M! 张）",
     "UPGRADE_DESCRIPTION": "你在这个回合每打出过一张技能牌，就造成一次 !D! 点伤害。（已 打出  !M! 张）"
   },
-  "FrierenMod:4": {
-    "NAME": "",
-    "DESCRIPTION": "你每 frierenmod:同调 1张 *魔力， 就获得1点格挡。"
-  },
   "FrierenMod:AnalysisMagic": {
     "NAME": "解析结界的魔法",
     "DESCRIPTION": " frierenmod:解析 3： frierenmod:同调 4张 *魔力 。 NL  *奖励 ： !B! 点格挡。 NL （当前进度0/4）。"
+  },
+  "FrierenMod:MagicBag": {
+    "NAME": "魔力包裹",
+    "DESCRIPTION": " 不能被打出 。 NL 当你抽到这张牌时，在你的手牌中加入 !M! 张 *魔力 ，然后 消耗 。"
   }
 }
