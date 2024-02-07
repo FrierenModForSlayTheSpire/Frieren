@@ -2,6 +2,7 @@ package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAllAction;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -35,6 +36,7 @@ public class FinalChant extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.chantX = this.baseChantX = new ChantHelper().getAllMagicPowerNum();
         this.addToBot(new ChantAllAction(this));
     }
 }
