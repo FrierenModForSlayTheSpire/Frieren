@@ -15,7 +15,7 @@ public class BlockMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int blockAmt;
+    private final int blockAmt;
 
     public BlockMod(int blockAmt) {
         this.blockAmt = blockAmt;
