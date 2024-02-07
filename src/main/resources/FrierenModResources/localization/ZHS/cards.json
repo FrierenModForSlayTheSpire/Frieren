@@ -181,7 +181,11 @@
   },
   "FrierenMod:RedAppleMagic": {
     "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": " 交换你的的 力量 和 敏捷 层数。在你的回合结束时，换回。"
+    "DESCRIPTION": " 交换你的的 力量 和 敏捷 层数， 将一张 *青苹果 放入手牌。 NL 在你的回合结束时，换回。"
+  },
+  "FrierenMod:Apple": {
+    "NAME": "青苹果",
+    "DESCRIPTION": " 获得 !B! 点格挡2次。 NL 消耗 。"
   },
   "FrierenMod:PoMieMoFa": {
     "NAME": "破灭之雷魔法",

@@ -1,40 +1,42 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.tempCards;
 
-import FrierenMod.actions.RedAppleMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.Apple;
 import FrierenMod.helpers.ModInfo;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-
-public class RedAppleMagic extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(RedAppleMagic.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
+public class Apple extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(Apple.class.getSimpleName());
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
-    private static final int COST = 1;
+    private static final int COST = 0;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
     private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
+    private static final CardColor COLOR = CardColor.COLORLESS;
+    private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public RedAppleMagic() {
+    public Apple() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.cardsToPreview = new Apple();
+        this.block = this.baseBlock = 3;
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBlock(2);
         }
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new RedAppleMagicAction());
+        for (int i = 0; i < 2; i++) {
+            this.addToBot(new GainBlockAction(AbstractDungeon.player,this.block));
+        }
     }
 }

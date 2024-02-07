@@ -117,6 +117,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new FullAhead());
         BaseMod.addCard(new StatueMagic());
         BaseMod.addCard(new RedAppleMagic());
+        BaseMod.addCard(new Apple());
         BaseMod.addCard(new LockTarget());
         BaseMod.addCard(new FiveMinutesMore());
         BaseMod.addCard(new ZeerieMagicBook());

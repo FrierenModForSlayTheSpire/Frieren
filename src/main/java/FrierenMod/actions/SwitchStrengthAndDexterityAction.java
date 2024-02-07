@@ -8,6 +8,16 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class SwitchStrengthAndDexterityAction extends AbstractGameAction {
+    private final boolean hasNextAction;
+    private final AbstractGameAction nextAction;
+    public SwitchStrengthAndDexterityAction(){
+        this.hasNextAction = false;
+        this.nextAction = null;
+    }
+    public SwitchStrengthAndDexterityAction(AbstractGameAction nextAction){
+        this.hasNextAction = true;
+        this.nextAction = nextAction;
+    }
     @Override
     public void update() {
         int strengthAmounts = 0;
@@ -28,6 +38,9 @@ public class SwitchStrengthAndDexterityAction extends AbstractGameAction {
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,dexterityAmounts * (-1)),dexterityAmounts * (-1)));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,dexterityAmounts),dexterityAmounts));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,strengthAmounts),strengthAmounts));
+        }
+        if(this.hasNextAction){
+            this.addToBot(nextAction);
         }
         this.isDone = true;
     }
