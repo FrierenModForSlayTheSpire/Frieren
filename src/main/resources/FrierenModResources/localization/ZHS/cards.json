@@ -384,5 +384,10 @@
     "NAME": "拘束魔法",
     "DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。"
+  },
+  "FrierenMod:SeeThroughPhantom": {
+    "NAME": "识破幻影",
+    "DESCRIPTION": "造成 !D! 点伤害，若敌方意图为攻击则给予 !M! 层 虚弱 ，否则给予 !M! 层 易伤 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，若敌方意图为攻击则给予 !M! 层 虚弱 ，否则给予 !M! 层 易伤 。"
   }
 }
