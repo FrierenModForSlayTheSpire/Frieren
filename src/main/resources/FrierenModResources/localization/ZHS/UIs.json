@@ -116,5 +116,13 @@
       "给与所有敌人 ", " 层 易伤 。",
       " NL 给与所有敌人 ", " 层 易伤 。", " 层 易伤 。"
     ]
+  },
+  "FrierenMod:AnalysisMod": {
+    "TEXT": [
+      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
+      " frierenmod:同调 4张 *魔力 。 NL "," !B! 点格挡。 NL ",
+      " frierenmod:咏唱 4张 *魔力 。 NL "," !M! 张本回合消耗为0的 frierenmod:传说魔法 。 NL ",
+      "打出 3 张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
+    ]
   }
 }
