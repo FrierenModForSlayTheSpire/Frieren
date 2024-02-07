@@ -33,10 +33,17 @@ public class SwitchStrengthAndDexterityAction extends AbstractGameAction {
                 break;
             }
         }
-        if(strengthAmounts != 0 || dexterityAmounts != 0){
+        if(strengthAmounts != 0 && dexterityAmounts != 0){
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,strengthAmounts * (-1)),strengthAmounts * (-1)));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,dexterityAmounts * (-1)),dexterityAmounts * (-1)));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,dexterityAmounts),dexterityAmounts));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,strengthAmounts),strengthAmounts));
+        }
+        else if(strengthAmounts == 0){
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,dexterityAmounts * (-1)),dexterityAmounts * (-1)));
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,dexterityAmounts),dexterityAmounts));
+        }else {
+            this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new StrengthPower(AbstractDungeon.player,strengthAmounts * (-1)),strengthAmounts * (-1)));
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,strengthAmounts),strengthAmounts));
         }
         if(this.hasNextAction){
