@@ -26,7 +26,7 @@ public class MoldMagic extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.ENEMY;
     public MoldMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.damage = this.baseDamage = 3;
+        this.damage = this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 5;
         this.isLegendMagicCard = true;
     }
