@@ -46,5 +46,11 @@
     "DESCRIPTIONS": [
       "将你当前的一切送入 #b%d 回合后的未来。"
     ]
+  },
+  "FrierenMod:ThunderPower": {
+    "NAME": "破灭之雷",
+    "DESCRIPTIONS": [
+      "本场战斗中你的 #y同调 变为 #y终极同调 。"
+    ]
   }
 }

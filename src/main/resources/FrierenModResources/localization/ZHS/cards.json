@@ -189,7 +189,7 @@
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "破灭之雷魔法",
-    "DESCRIPTION": " frierenmod:传说魔法。 NL 将抽牌堆和弃牌堆中的 *魔力 放入手牌直到上限，本场战斗中 frierenmod:同调 变为 frierenmod:终极同调 。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将抽牌堆和弃牌堆中的 *魔力 放入手牌直到上限，本场战斗中 frierenmod:同调 变为 frierenmod:终极同调 。"
   },
   "FrierenMod:Flower": {
     "NAME": "苍月草",

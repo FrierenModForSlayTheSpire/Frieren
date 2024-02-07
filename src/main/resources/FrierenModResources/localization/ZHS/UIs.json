@@ -124,5 +124,10 @@
       " frierenmod:咏唱 4张 *魔力 。 NL "," !M! 张本回合消耗为0的 frierenmod:传说魔法 。 NL ",
       "打出 3 张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
     ]
+  },
+  "FrierenMod:FinalMagicPowerMod": {
+    "TEXT": [
+      " frierenmod:终极同调 。"
+    ]
   }
 }
