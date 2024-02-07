@@ -1,10 +1,9 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ChantHelper;
 import FrierenMod.helpers.ModInfo;
-import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
