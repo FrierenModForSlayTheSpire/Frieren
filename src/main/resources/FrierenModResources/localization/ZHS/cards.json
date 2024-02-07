@@ -367,12 +367,17 @@
   },
   "FrierenMod:CompleteDefendMagic": {
     "NAME": "防御魔法完全体",
-    "DESCRIPTION": " frierenmod:咏唱 3 。 NL 获得一层缓冲，获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。 NL 获得一层缓冲，获得 !B! 点护甲。"
+    "DESCRIPTION": " frierenmod:咏唱 3 。获得 !B! 点护甲和一层 frierenmod:缓冲 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 3 。获得 !B! 点护甲和一层 frierenmod:缓冲 。"
   },
   "FrierenMod:MagicianFinisher": {
     "NAME": "魔法使流终结技",
     "DESCRIPTION": "你在这个回合每打出过一张技能牌，就造成一次 !D! 点伤害。（已 打出  !M! 张）",
     "UPGRADE_DESCRIPTION": "你在这个回合每打出过一张技能牌，就造成一次 !D! 点伤害。（已 打出  !M! 张）"
+  },
+  "FrierenMod:Kiss": {
+    "NAME": " 飞吻(杀伤力极强!)",
+    "DESCRIPTION": "给予99层 易伤 和99层 虚弱 。 NL  消耗 。 NL  虚无 。 ",
+    "UPGRADE_DESCRIPTION": "给予99层 易伤 和99层 虚弱 。 NL  消耗 。 NL  虚无 。 "
   }
 }
