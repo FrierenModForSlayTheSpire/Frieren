@@ -379,5 +379,10 @@
     "NAME": " 飞吻(杀伤力极强!)",
     "DESCRIPTION": "给予99层 易伤 和99层 虚弱 。 NL  消耗 。 NL  虚无 。 ",
     "UPGRADE_DESCRIPTION": "给予99层 易伤 和99层 虚弱 。 NL  消耗 。 NL  虚无 。 "
+  },
+  "FrierenMod:BindingMagic": {
+    "NAME": "拘束魔法",
+    "DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。"
   }
 }
