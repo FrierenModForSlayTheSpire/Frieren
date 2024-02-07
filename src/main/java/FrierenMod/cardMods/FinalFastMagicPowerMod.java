@@ -4,7 +4,7 @@ import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -13,17 +13,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static FrierenMod.tags.CustomTags.FINAL_MAGIC_POWER;
 
-public class FinalMagicPowerMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(FinalMagicPowerMod.class.getSimpleName());
+public class FinalFastMagicPowerMod extends AbstractCardModifier {
+    public static final String ID = ModInfo.makeID(FinalFastMagicPowerMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    public FinalMagicPowerMod() {
-        this.priority = -1;
+    public FinalFastMagicPowerMod() {
     }
 
     public AbstractCardModifier makeCopy() {
-        return new FinalMagicPowerMod();
+        return new FinalFastMagicPowerMod();
     }
 
     public void onInitialApplication(AbstractCard card) {
@@ -35,6 +34,7 @@ public class FinalMagicPowerMod extends AbstractCardModifier {
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.actions.clear();
+        this.addToBot(new DrawCardAction(2));
         this.addToBot(new AttackDamageRandomEnemyAction(card, AbstractGameAction.AttackEffect.LIGHTNING));
     }
 

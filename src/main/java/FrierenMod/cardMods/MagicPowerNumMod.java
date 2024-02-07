@@ -10,19 +10,19 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class MagicPowerMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(MagicPowerMod.class.getSimpleName());
+public class MagicPowerNumMod extends AbstractCardModifier {
+    public static final String ID = ModInfo.makeID(MagicPowerNumMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
     private final int magicPowerAmt;
 
-    public MagicPowerMod(int magicPowerAmt) {
+    public MagicPowerNumMod(int magicPowerAmt) {
         this.magicPowerAmt = magicPowerAmt;
     }
 
     public AbstractCardModifier makeCopy() {
-        return new MagicPowerMod(this.magicPowerAmt);
+        return new MagicPowerNumMod(this.magicPowerAmt);
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

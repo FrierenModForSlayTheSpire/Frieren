@@ -5,7 +5,7 @@
     " NL 抽 ", " 张牌。", " 张牌。"
     ]
   },
-  "FrierenMod:MagicPowerMod": {
+  "FrierenMod:MagicPowerNumMod": {
     "TEXT": [
       "将 ", " 张 *魔力 置入弃牌堆",
       " NL 将 ", " 张 *魔力 置入弃牌堆。", " 张 *魔力 置入弃牌堆。"
@@ -128,6 +128,16 @@
   "FrierenMod:FinalMagicPowerMod": {
     "TEXT": [
       " frierenmod:终极同调 。"
+    ]
+  },
+  "FrierenMod:FastMagicPowerMod": {
+    "TEXT": [
+      " frierenmod:加速同调 。"
+    ]
+  },
+  "FrierenMod:FinalFastMagicPowerMod": {
+    "TEXT": [
+      " frierenmod:终极加速同调 。"
     ]
   }
 }

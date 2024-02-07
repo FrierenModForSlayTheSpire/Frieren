@@ -1,11 +1,13 @@
 package FrierenMod.powers;
 
+import FrierenMod.cardMods.FastMagicPowerMod;
 import FrierenMod.cardMods.FinalFastMagicPowerMod;
 import FrierenMod.cardMods.FinalMagicPowerMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,13 +19,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static FrierenMod.tags.CustomTags.*;
 
-public class ThunderPower extends AbstractPower {
-    public static final String POWER_ID = ModInfo.makeID(ThunderPower.class.getSimpleName());
+public class ExpandPower extends AbstractPower {
+    public static final String POWER_ID = ModInfo.makeID(ExpandPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public ThunderPower(AbstractCreature owner) {
+    public ExpandPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -51,6 +53,9 @@ public class ThunderPower extends AbstractPower {
     public void onAfterCardPlayed(AbstractCard usedCard) {
         upgradeAllMagicPower();
     }
+    public void atEndOfTurn(boolean isPlayer) {
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    }
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }
@@ -61,9 +66,9 @@ public class ThunderPower extends AbstractPower {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
+                    CardModifierManager.addModifier(c, new FastMagicPowerMod());
                     c.applyPowers();
-                } else if (c.tags.contains(FAST_MAGIC_POWER) && !c.tags.contains(FINAL_MAGIC_POWER)) {
+                } else if (!c.tags.contains(FAST_MAGIC_POWER) && c.tags.contains(FINAL_MAGIC_POWER)) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
