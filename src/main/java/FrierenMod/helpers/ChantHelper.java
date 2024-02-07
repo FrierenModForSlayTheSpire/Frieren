@@ -11,9 +11,6 @@ import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class ChantHelper {
-
-
-
     public int getMagicPowerNumInDrawPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {

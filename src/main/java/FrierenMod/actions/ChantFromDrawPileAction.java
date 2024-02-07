@@ -16,10 +16,6 @@ public class ChantFromDrawPileAction extends AbstractGameAction {
         this.block = block;
         this.magicNumber = magicNumber;
     }
-    public ChantFromDrawPileAction(int magicNumber){
-        this.block = magicNumber;
-        this.magicNumber = magicNumber;
-    }
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
