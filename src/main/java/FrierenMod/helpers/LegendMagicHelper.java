@@ -4,6 +4,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.FlightMagic;
 import FrierenMod.cards.white.JewelryMagic;
 import FrierenMod.cards.white.OilMagic;
+import FrierenMod.cards.white.ThunderMagic;
 import FrierenMod.cards.white.chant.ContinualChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -41,6 +42,7 @@ public class LegendMagicHelper {
         pool.add(new ContinualChant());
         pool.add(new JewelryMagic());
         pool.add(new OilMagic());
+        pool.add(new ThunderMagic());
         return pool;
     }
     public AbstractCard getRandomCard(){
