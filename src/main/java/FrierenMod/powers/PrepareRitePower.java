@@ -1,5 +1,6 @@
 package FrierenMod.powers;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -11,8 +12,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class PrepareRitePower extends AbstractPower {
     public static final String POWER_ID = ModInfo.makeID(PrepareRitePower.class.getSimpleName());
@@ -41,7 +40,7 @@ public class PrepareRitePower extends AbstractPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         super.onAfterCardPlayed(usedCard);
-        if(usedCard.tags.contains(MAGIC_POWER)){
+        if(usedCard instanceof AbstractFrierenCard && ((AbstractFrierenCard) usedCard).isMagicPower){
             this.MagicPowerPlayedNum++;
         }
         if(this.MagicPowerPlayedNum == 3){

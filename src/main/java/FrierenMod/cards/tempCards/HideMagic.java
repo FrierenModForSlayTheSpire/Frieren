@@ -1,18 +1,12 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.actions.DrawPileToDiscardPileAction;
-import FrierenMod.actions.HandToDiscardPileAction;
+import FrierenMod.actions.HideMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import java.util.Iterator;
-
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class HideMagic extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(HideMagic.class.getSimpleName());
@@ -44,37 +38,6 @@ public class HideMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
-        if (!p.drawPile.isEmpty()) {
-            Iterator<AbstractCard> var1 = p.drawPile.group.iterator();
-            label21:
-            while(true) {
-                AbstractCard card;
-                do {
-                    if (!var1.hasNext()) {
-                        break label21;
-                    }
-                    card = (AbstractCard)var1.next();
-                } while(!card.tags.contains(MAGIC_POWER) && !card.freeToPlayOnce);
-                this.addToBot(new DrawPileToDiscardPileAction(card));
-            }
-        }
-        if (!p.hand.isEmpty()) {
-            Iterator<AbstractCard> var1 = p.hand.group.iterator();
-
-            label22:
-            while(true) {
-                AbstractCard card;
-                do {
-                    if (!var1.hasNext()) {
-                        break label22;
-                    }
-
-                    card = (AbstractCard)var1.next();
-                } while(!card.tags.contains(MAGIC_POWER) && !card.freeToPlayOnce);
-
-                this.addToBot(new HandToDiscardPileAction(card));
-            }
-        }
+       this.addToBot(new HideMagicAction());
     }
 }

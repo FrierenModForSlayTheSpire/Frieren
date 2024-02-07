@@ -9,8 +9,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
-
 public class Laziness extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(Laziness.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
@@ -35,7 +33,7 @@ public class Laziness extends AbstractFrierenCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c.hasTag(MAGIC_POWER)){
+        if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }

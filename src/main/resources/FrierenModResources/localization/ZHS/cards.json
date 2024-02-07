@@ -122,10 +122,9 @@
     "DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草 放入手牌。",
     "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草+ 放入手牌。"
   },
-  "FrierenMod:MoLiPengZhang": {
+  "FrierenMod:MagicExpand": {
     "NAME": "魔力膨胀",
-    "DESCRIPTION": "使你当前所有 frierenmod:同调 牌再获得 *同调 1次。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 使你当前所有 frierenmod:同调 牌再获得 *同调 1次。 NL 消耗 。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
   },
   "FrierenMod:JewelryMagic": {
     "NAME": "寻找遗失饰品的魔法",
@@ -189,7 +188,7 @@
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "破灭之雷魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将抽牌堆和弃牌堆中的 *魔力 放入手牌直到上限，本场战斗中 frierenmod:同调 变为 frierenmod:终极同调 。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 将抽牌堆和弃牌堆中的 *魔力 放入手牌直到上限。本场战斗中 frierenmod:同调 变为 frierenmod:终极同调 。"
   },
   "FrierenMod:Flower": {
     "NAME": "苍月草",

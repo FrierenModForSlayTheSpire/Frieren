@@ -1,8 +1,10 @@
 package FrierenMod.powers;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,8 +14,6 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
-
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class OutpouringPower extends AbstractPower {
     // 能力的ID
@@ -42,7 +42,7 @@ public class OutpouringPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.hasTag(MAGIC_POWER)) {
+        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMagicPower) {
             this.flash();
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), this.amount));
         }

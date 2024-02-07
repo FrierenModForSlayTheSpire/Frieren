@@ -1,5 +1,6 @@
 package FrierenMod.helpers;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.chant.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -7,14 +8,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class ChantHelper {
     public int getMagicPowerNumInDrawPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c.tags.contains(MAGIC_POWER)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
                 counts++;
             }
         }
@@ -23,7 +23,7 @@ public class ChantHelper {
     public int getMagicPowerNumInHand(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c.tags.contains(MAGIC_POWER)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
                 counts++;
             }
         }
@@ -32,7 +32,7 @@ public class ChantHelper {
     public int getMagicPowerNumInDiscardPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c.tags.contains(MAGIC_POWER)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
                 counts++;
             }
         }

@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
-
 public class MagicPower extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(MagicPower.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
@@ -24,7 +22,7 @@ public class MagicPower extends AbstractFrierenCard {
     public MagicPower() {
         // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.tags.add(MAGIC_POWER);
+        this.isMagicPower = true;
         this.exhaust = true;
     }
     @Override

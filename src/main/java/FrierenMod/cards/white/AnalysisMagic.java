@@ -21,7 +21,6 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class AnalysisMagic extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(AnalysisMagic.class.getSimpleName());
@@ -62,7 +61,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
         AbstractPlayer p = AbstractDungeon.player;
         switch (currentLevel){
             case 3:
-                if(c.hasTag(MAGIC_POWER)){
+                if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
                     this.flash(FLASH_COLOR);
                     currentInLevelProgressNumber++;
                     CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));

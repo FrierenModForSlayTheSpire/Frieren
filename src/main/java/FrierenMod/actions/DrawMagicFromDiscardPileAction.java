@@ -1,12 +1,11 @@
 package FrierenMod.actions;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.Iterator;
-
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 
 public class DrawMagicFromDiscardPileAction extends AbstractGameAction {
     private int drawNumber = 0;
@@ -24,7 +23,7 @@ public class DrawMagicFromDiscardPileAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if (c.tags.contains(MAGIC_POWER)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
                 counts++;
                 this.addToTop(new DiscardPileToHandAction(c));
             }

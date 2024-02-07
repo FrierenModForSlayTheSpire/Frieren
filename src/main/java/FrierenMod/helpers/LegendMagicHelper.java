@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
@@ -29,7 +28,7 @@ public class LegendMagicHelper {
     public int getExhaustedMagicPowerNumber(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c.hasTag(MAGIC_POWER)) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
                 counts++;
             }
         }

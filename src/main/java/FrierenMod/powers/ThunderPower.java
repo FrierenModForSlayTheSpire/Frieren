@@ -1,6 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.cardMods.FinalMagicPowerMod;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
@@ -13,8 +14,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import static FrierenMod.tags.CustomTags.FINAL_MAGIC_POWER;
-import static FrierenMod.tags.CustomTags.MAGIC_POWER;
+import static FrierenMod.tags.CustomTags.*;
 
 public class ThunderPower extends AbstractPower {
     public static final String POWER_ID = ModInfo.makeID(ThunderPower.class.getSimpleName());
@@ -55,12 +55,14 @@ public class ThunderPower extends AbstractPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if (c.tags.contains(MAGIC_POWER) && !c.tags.contains(FINAL_MAGIC_POWER)) {
-                if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                    c.superFlash();
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
+                if (!c.tags.contains(FINAL_MAGIC_POWER) && !c.tags.contains(FAST_MAGIC_POWER)) {
+                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
+                        c.superFlash();
+                    }
+                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
+                    c.applyPowers();
                 }
-                CardModifierManager.addModifier(c, new FinalMagicPowerMod());
-                c.applyPowers();
             }
         }
     }
