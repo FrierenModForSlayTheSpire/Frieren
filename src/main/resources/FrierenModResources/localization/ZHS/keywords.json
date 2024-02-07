@@ -11,7 +11,7 @@
     "NAMES": [
       "同调"
     ],
-    "DESCRIPTION": "抽1张牌。 #y消耗 。"
+    "DESCRIPTION": " #y魔力 从手中打出视为 #y同调 。 NL 抽1张牌。 #y消耗 。"
   },
   {
     "PROPER_NAME":"传说魔法",

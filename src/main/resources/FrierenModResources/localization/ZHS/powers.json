@@ -20,7 +20,7 @@
   "FrierenMod:TrickPower": {
     "NAME": "欺骗魔族的小把戏",
     "DESCRIPTIONS": [
-      "在你的回合开始时，将 #b%d 张 #y魔力隐藏 置入手牌。"
+      "在你的回合开始时，将一张 #y魔力隐藏 置入手牌。"
     ]
   },
   "FrierenMod:GainRelicPower": {

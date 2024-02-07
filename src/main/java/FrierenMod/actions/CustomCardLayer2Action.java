@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.optionCards.zeerie.layer2.*;
-import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.optionCards.zeerie.layer2.ChantOption;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

@@ -43,7 +43,7 @@ public class TrickPower extends AbstractPower {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             for(AbstractCard c:AbstractDungeon.player.hand.group){
-                if(c.cardID.matches("FrierenMod:Trick") ){
+                if(c.cardID.matches("FrierenMod:HideMagic") ){
                     return;
                 }
             }
@@ -53,7 +53,7 @@ public class TrickPower extends AbstractPower {
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0]);
+        this.description = DESCRIPTIONS[0];
     }
 
 }

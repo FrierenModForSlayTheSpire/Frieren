@@ -22,7 +22,7 @@ public class ChantMod extends AbstractCardModifier {
         this.chantAmt = chantAmt;
     }
     public void onInitialApplication(AbstractCard card) {
-        card.magicNumber = this.chantAmt;
+        ((AbstractFrierenCard) card).chantX = ((AbstractFrierenCard) card).baseChantX =this.chantAmt;
         ((AbstractFrierenCard) card).isChantCard = true;
     }
 
