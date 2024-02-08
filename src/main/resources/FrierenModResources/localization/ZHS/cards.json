@@ -396,5 +396,9 @@
   "FrierenMod:TrueFace": {
     "NAME": "真面目",
     "DESCRIPTION": " frierenmod:咏唱 6。 NL 获得 [E] [E] [E]，抽3张牌，在抽牌堆、手牌、弃牌堆各放入3张 *魔力 。 NL  消耗 。"
+  },
+  "FrierenMod:TimeDoor": {
+    "NAME": "打开时空之门",
+    "DESCRIPTION": " frierenmod:解析 1： frierenmod:同调 !M! 张 *魔力 。 NL  *奖励 ：在本回合结束后，额外获得一回合。 NL （当前进度 !SM! /7）。"
   }
 }

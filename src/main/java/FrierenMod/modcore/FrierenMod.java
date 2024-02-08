@@ -20,6 +20,7 @@ import FrierenMod.cards.white.JewelryMagic;
 import FrierenMod.cards.white.OilMagic;
 import FrierenMod.relics.MyRelic;
 import FrierenMod.variables.ChantXVariable;
+import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -75,6 +76,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receiveEditCards() {
         BaseMod.addDynamicVariable(new ChantXVariable());
+        BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
         BaseMod.addCard(new Strike());
         BaseMod.addCard(new Defend());
         BaseMod.addCard(new MagicPower());
@@ -162,6 +164,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new PreciseChant());
         BaseMod.addCard(new MagicDetect());
         BaseMod.addCard(new TrueFace());
+        BaseMod.addCard(new TimeDoor());
     }
     @Override
     public void receiveEditRelics() {
