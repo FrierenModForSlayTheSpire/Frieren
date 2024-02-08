@@ -77,6 +77,7 @@ public class ChantHelper {
         pool.add(new StatueMagic());
         pool.add(new CompleteDefendMagic());
         pool.add(new FinalChant());
+        pool.add(new PreciseChant());
         return pool;
     }
     public AbstractCard getRandomCard(){
