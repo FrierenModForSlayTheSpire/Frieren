@@ -58,5 +58,11 @@
     "DESCRIPTIONS": [
       "本回合中你的 #y同调 变为 #y加速同调 。"
     ]
+  },
+  "FrierenMod:MagicReturnPower": {
+    "NAME": "魔力返还",
+    "DESCRIPTIONS": [
+      "每当玩家攻击敌人时，将 #b%d 张 #y魔力 置入弃牌堆 。"
+    ]
   }
 }

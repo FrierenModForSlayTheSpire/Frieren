@@ -196,7 +196,7 @@
   },
   "FrierenMod:GrapeMagic": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
-    "DESCRIPTION": "选择手牌中的 !M! 张牌，使它们视为 *魔力 并额外获得 frierenmod:同调。 NL 消耗 。"
+    "DESCRIPTION": "选择手牌中的 !M! 张牌，使它们视为 *魔力 并获得 frierenmod:同调 （不会重复获得）。 NL 消耗 。"
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
@@ -340,8 +340,7 @@
   },
   "FrierenMod:MagicDetect": {
     "NAME": "魔力探知",
-    "DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当目标敌人受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。"
   },
   "FrierenMod:TimeTravel": {
     "NAME": "精灵的时间观念",
