@@ -2,7 +2,6 @@ package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.EnergyMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
 import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
