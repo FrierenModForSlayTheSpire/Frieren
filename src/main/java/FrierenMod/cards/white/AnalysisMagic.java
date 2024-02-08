@@ -76,10 +76,10 @@ public class AnalysisMagic extends AbstractFrierenCard {
                     break;
                 }
             case 2:
-                this.currentLevelRequiredNumber = 4;
+                this.currentLevelRequiredNumber = 3;
                 if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isChantCard){
                     this.flash(FLASH_COLOR);
-                    currentInLevelProgressNumber += ((AbstractFrierenCard) c).chantX;
+                    currentInLevelProgressNumber++;
                     CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
                     if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                         this.superFlash();
