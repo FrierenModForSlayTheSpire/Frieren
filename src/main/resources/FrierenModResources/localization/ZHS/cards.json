@@ -338,6 +338,18 @@
     "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆，将其中的 *魔力 数量翻倍。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪。 NL  消耗 。"
   },
+  "FrierenMod:DoubleMagicInDrawPile": {
+    "NAME": "从抽牌堆膨胀",
+    "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
+  },
+  "FrierenMod:DoubleMagicInHand": {
+    "NAME": "从手牌膨胀",
+    "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
+  },
+  "FrierenMod:DoubleMagicInDiscardPile": {
+    "NAME": "从弃牌堆膨胀",
+    "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
+  },
   "FrierenMod:MagicDetect": {
     "NAME": "魔力探知",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 每当目标敌人受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。"

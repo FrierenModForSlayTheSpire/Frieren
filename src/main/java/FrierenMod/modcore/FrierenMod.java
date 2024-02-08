@@ -1,12 +1,10 @@
 package FrierenMod.modcore;
 
 
+import FrierenMod.cards.optionCards.*;
 import FrierenMod.cards.optionCards.zeerie.layer2.*;
 import FrierenMod.cards.optionCards.zeerie.layer3.*;
 import FrierenMod.Characters.Frieren;
-import FrierenMod.cards.optionCards.ChantFromDiscardPile;
-import FrierenMod.cards.optionCards.ChantFromDrawPile;
-import FrierenMod.cards.optionCards.ChantFromHand;
 import FrierenMod.cards.optionCards.zeerie.layer1.Cost0;
 import FrierenMod.cards.optionCards.zeerie.layer1.Cost1;
 import FrierenMod.cards.optionCards.zeerie.layer1.Cost2;
@@ -163,6 +161,10 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new SeeThroughPhantom());
         BaseMod.addCard(new PreciseChant());
         BaseMod.addCard(new MagicDetect());
+        BaseMod.addCard(new MagicExpand());
+        BaseMod.addCard(new DoubleMagicInHand());
+        BaseMod.addCard(new DoubleMagicInDrawPile());
+        BaseMod.addCard(new DoubleMagicInDiscardPile());
         BaseMod.addCard(new TrueFace());
         BaseMod.addCard(new TimeDoor());
     }
