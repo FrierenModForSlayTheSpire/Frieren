@@ -194,10 +194,9 @@
     "NAME": "苍月草",
     "DESCRIPTION": " 保留 。 NL 抽 !M! 张牌。 NL  消耗 。"
   },
-  "FrierenMod:PuTaoMoFa": {
+  "FrierenMod:GrapeMagic": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
-    "DESCRIPTION": "选择手牌中的 !M! 张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "选择手牌中的 !M! 张牌，使其获得 frierenmod:同调 （不会重复获得）然后打出。 NL 消耗 。"
+    "DESCRIPTION": "选择手牌中的 !M! 张牌，使它们视为 *魔力 并额外获得 frierenmod:同调。 NL 消耗 。"
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
@@ -330,21 +329,16 @@
     "NAME": "权杖",
     "DESCRIPTION": "移除你身上的所有负面效果。"
   },
-  "FrierenMod:1": {
-    "NAME": "",
+  "FrierenMod:PreciseChant": {
+    "NAME": "精准咏唱",
     "DESCRIPTION": "选择 你的手牌、抽牌堆或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
   },
-  "FrierenMod:2": {
-    "NAME": "",
+  "FrierenMod:MagicExpand": {
+    "NAME": "魔力膨胀",
     "DESCRIPTION": "选择 你的手牌、抽牌堆或弃牌堆，将其中的 *魔力 数量翻倍。",
     "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪。"
   },
-  "FrierenMod:3": {
-    "NAME": "魔力探知",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，获得 !B! 点格挡。否则将 !M! 张 *魔力 放入弃牌堆。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图是攻击，获得 !B! 点格挡。否则将 !M! 张 *魔力 放入弃牌堆。"
-  },
-  "FrierenMod:MoLiTanZhi": {
+  "FrierenMod:MagicDetect": {
     "NAME": "魔力探知",
     "DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "选择1个目标。 NL 每当目标受到攻击时，将 !M! 张 *魔力 放入弃牌堆。 NL  消耗 。"
