@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.MagicExpandAction;
+import FrierenMod.actions.SpeedFlowAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
-public class MagicExpand extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(MagicExpand.class.getSimpleName());
+public class SpeedFlow extends AbstractFrierenCard {
+    public static final String ID = ModInfo.makeID(SpeedFlow.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
@@ -21,7 +21,7 @@ public class MagicExpand extends AbstractFrierenCard {
     private static final CardColor COLOR = FRIEREN_CARD;
     private static final CardRarity RARITY = CardRarity.UNCOMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
-    public MagicExpand() {
+    public SpeedFlow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
     }
@@ -34,6 +34,6 @@ public class MagicExpand extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MagicExpandAction(this.magicNumber));
+        this.addToBot(new SpeedFlowAction(this.magicNumber));
     }
 }

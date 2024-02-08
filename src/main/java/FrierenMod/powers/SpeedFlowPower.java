@@ -2,7 +2,6 @@ package FrierenMod.powers;
 
 import FrierenMod.cardMods.FastMagicPowerMod;
 import FrierenMod.cardMods.FinalFastMagicPowerMod;
-import FrierenMod.cardMods.FinalMagicPowerMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.helpers.CardModifierManager;
@@ -19,13 +18,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import static FrierenMod.tags.CustomTags.*;
 
-public class ExpandPower extends AbstractPower {
-    public static final String POWER_ID = ModInfo.makeID(ExpandPower.class.getSimpleName());
+public class SpeedFlowPower extends AbstractPower {
+    public static final String POWER_ID = ModInfo.makeID(SpeedFlowPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
-    public ExpandPower(AbstractCreature owner) {
+    public SpeedFlowPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;

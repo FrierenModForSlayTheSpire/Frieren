@@ -53,8 +53,8 @@
       "本场战斗中你的 #y同调 变为 #y终极同调 。"
     ]
   },
-  "FrierenMod:ExpandPower": {
-    "NAME": "魔力膨胀",
+  "FrierenMod:SpeedFlowPower": {
+    "NAME": "加速流动",
     "DESCRIPTIONS": [
       "本回合中你的 #y同调 变为 #y加速同调 。"
     ]

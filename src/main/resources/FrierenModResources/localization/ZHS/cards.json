@@ -122,8 +122,8 @@
     "DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草 放入手牌。",
     "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草+ 放入手牌。"
   },
-  "FrierenMod:MagicExpand": {
-    "NAME": "魔力膨胀",
+  "FrierenMod:SpeedFlow": {
+    "NAME": "加速流转",
     "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
   },
   "FrierenMod:JewelryMagic": {
