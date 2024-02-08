@@ -71,7 +71,7 @@ public class ChantHelper {
     private ArrayList<AbstractCard> initChantCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new DefendMagic());
-        pool.add(new HolyChant());
+        pool.add(new RapidChant());
         pool.add(new ContinualChant());
         pool.add(new FlowerFieldMagic());
         pool.add(new StatueMagic());

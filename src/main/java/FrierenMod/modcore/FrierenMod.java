@@ -84,7 +84,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new ChantFromHand());
         BaseMod.addCard(new ChantFromDiscardPile());
         BaseMod.addCard(new DefendMagic());
-        BaseMod.addCard(new HolyChant());
+        BaseMod.addCard(new RapidChant());
         BaseMod.addCard(new MarshMagic());
         BaseMod.addCard(new Sustainability());
         BaseMod.addCard(new ReverseFlow());
@@ -96,7 +96,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new MagicBook());
         BaseMod.addCard(new Outpouring());
         BaseMod.addCard(new ContinualChant());
-        BaseMod.addCard(new DarkChant());
+        BaseMod.addCard(new Simmering());
         BaseMod.addCard(new NightDressForm());
         BaseMod.addCard(new PreparePosture());
         BaseMod.addCard(new Trick());

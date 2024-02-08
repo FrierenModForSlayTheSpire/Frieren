@@ -2,7 +2,7 @@ package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.DefendMagic;
-import FrierenMod.cards.white.chant.HolyChant;
+import FrierenMod.cards.white.chant.RapidChant;
 import FrierenMod.modcore.FrierenMod;
 import FrierenMod.relics.MyRelic;
 import basemod.abstracts.CustomPlayer;
@@ -93,7 +93,7 @@ public class Frieren extends CustomPlayer {
         }
         retVal.add(Flow.ID);
         retVal.add(DefendMagic.ID);
-        retVal.add(HolyChant.ID);
+        retVal.add(RapidChant.ID);
         return retVal;
     }
 

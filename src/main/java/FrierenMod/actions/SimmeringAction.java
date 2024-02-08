@@ -6,10 +6,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 
-public class DarkChantAction extends AbstractGameAction {
+public class SimmeringAction extends AbstractGameAction {
     private final int magicNumber;
 
-    public DarkChantAction(int magicNumber) {
+    public SimmeringAction(int magicNumber) {
         this.magicNumber = magicNumber;
     }
 
