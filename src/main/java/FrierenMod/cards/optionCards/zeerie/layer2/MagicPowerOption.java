@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.MagicPowerNumMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -46,5 +48,8 @@ public class MagicPowerOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new MagicPowerNumMod(this.magicNumber));
+    }
+    public AbstractCard makeCopy() {
+        return new MagicPowerOption(new CustomLegendMagic(),0);
     }
 }

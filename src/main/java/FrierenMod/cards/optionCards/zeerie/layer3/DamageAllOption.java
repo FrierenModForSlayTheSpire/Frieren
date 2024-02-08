@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.DamageAllMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +50,8 @@ public class DamageAllOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new DamageAllMod(this.damageAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new DamageAllOption(new CustomLegendMagic(),0);
     }
 }

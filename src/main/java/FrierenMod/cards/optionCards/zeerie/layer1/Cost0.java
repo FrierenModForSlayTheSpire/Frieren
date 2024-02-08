@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer1;
 
 import FrierenMod.cardMods.CostMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -29,6 +31,7 @@ public class Cost0 extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
     }
+
     @Override
     public void upgrade() {
     }
@@ -44,6 +47,9 @@ public class Cost0 extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new CostMod(0));
+        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier) new CostMod(0));
+    }
+    public AbstractCard makeCopy() {
+        return new Cost0(new CustomLegendMagic());
     }
 }

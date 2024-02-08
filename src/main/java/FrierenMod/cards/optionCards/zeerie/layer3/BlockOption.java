@@ -2,6 +2,8 @@ package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.BlockMod;
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.optionCards.zeerie.layer4.ChantOption;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -48,5 +50,8 @@ public class BlockOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new BlockMod(this.blockAmt));
+    }
+    public AbstractCard makeCopy() {
+        return new BlockOption(new CustomLegendMagic(),0);
     }
 }
