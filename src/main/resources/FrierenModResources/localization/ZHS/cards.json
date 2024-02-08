@@ -40,15 +40,18 @@
   },
   "FrierenMod:ChantFromDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。",
+    "UPGRADE_DESCRIPTION":"获得 !B! 点格挡两次。"
   },
   "FrierenMod:ChantFromHand": {
     "NAME": "从手牌咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。"
+    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
+    "UPGRADE_DESCRIPTION":"获得 !M! 点 [E] 。"
   },
   "FrierenMod:ChantFromDiscardPile": {
     "NAME": "从弃牌堆咏唱",
-    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
+    "UPGRADE_DESCRIPTION":"获得 !M! 点 力量 。"
   },
   "FrierenMod:MarshMagic": {
     "NAME": "拔出无底沼泽的魔法",
@@ -91,11 +94,6 @@
     "NAME": "倾泻",
     "DESCRIPTION": "打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。"
-  },
-  "FrierenMod:GuiYi": {
-    "NAME": "归一",
-    "DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果） 。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "在本场战斗中， 使用 frierenmod:咏唱 消耗的 *魔力 也视为被 frierenmod:同调 （不触发同调效果）。 NL  消耗 。"
   },
   "FrierenMod:ContinualChant": {
     "NAME": "连环咏唱",
@@ -361,7 +359,7 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "魔法&想象力",
-    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力。 NL  你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。"
+    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力 。 NL 你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。"
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "持续散射",

@@ -26,12 +26,18 @@ public class ChantFromDiscardPile extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
     }
+    public void upgrade(){
+        if(!this.upgraded){
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
+        }
+    }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }
 
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromDiscardPileAction(this.magicNumber));
+        this.addToBot(new ChantFromDiscardPileAction(upgraded,this.magicNumber));
     }
 }

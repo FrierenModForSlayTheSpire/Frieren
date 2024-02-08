@@ -26,11 +26,17 @@ public class ChantFromHand extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
     }
+    public void upgrade(){
+        if(!this.upgraded){
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
+        }
+    }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromHandAction(this.magicNumber));
+        this.addToBot(new ChantFromHandAction(upgraded,this.magicNumber));
     }
 }

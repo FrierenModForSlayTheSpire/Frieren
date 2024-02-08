@@ -33,6 +33,6 @@ public class PreciseChant extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new PreciseChantAction());
+        this.addToBot(new PreciseChantAction(this.isChantUpgraded));
     }
 }
