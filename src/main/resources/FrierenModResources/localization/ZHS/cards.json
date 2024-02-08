@@ -331,12 +331,12 @@
   },
   "FrierenMod:PreciseChant": {
     "NAME": "精准咏唱",
-    "DESCRIPTION": "选择 你的手牌、抽牌堆或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
+    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
   },
   "FrierenMod:MagicExpand": {
     "NAME": "魔力膨胀",
-    "DESCRIPTION": "选择 你的手牌、抽牌堆或弃牌堆，将其中的 *魔力 数量翻倍。",
-    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪。"
+    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆，将其中的 *魔力 数量翻倍。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪。 NL  消耗 。"
   },
   "FrierenMod:MagicDetect": {
     "NAME": "魔力探知",
