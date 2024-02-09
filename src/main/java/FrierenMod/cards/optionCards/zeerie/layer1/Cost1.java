@@ -16,7 +16,7 @@ public class Cost1 extends AbstractFrierenCard {
     public static final String ID = ModInfo.makeID(Cost1.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "FrierenModResources/img/cards/Strike.png";
+    private static final String IMG_PATH = "FrierenModResources/img/cards/Cost1_skill.png";
     private static final int COST = -2;
     private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
     private static final CardType TYPE = CardType.SKILL;

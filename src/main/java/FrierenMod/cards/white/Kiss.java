@@ -1,6 +1,5 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.DarkChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
