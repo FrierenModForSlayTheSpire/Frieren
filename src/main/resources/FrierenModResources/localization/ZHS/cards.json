@@ -329,7 +329,8 @@
   },
   "FrierenMod:PreciseChant": {
     "NAME": "精准咏唱",
-    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
+    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION":"选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
   },
   "FrierenMod:MagicExpand": {
     "NAME": "魔力膨胀",

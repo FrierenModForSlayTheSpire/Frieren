@@ -24,11 +24,15 @@ public class PreciseChant extends AbstractFrierenCard {
     public PreciseChant() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.isChantCard = true;
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.exhaust = false;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     @Override
