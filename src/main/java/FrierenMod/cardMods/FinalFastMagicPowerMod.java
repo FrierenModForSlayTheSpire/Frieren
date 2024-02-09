@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,6 +32,8 @@ public class FinalFastMagicPowerMod extends AbstractCardModifier {
         card.type = AbstractCard.CardType.ATTACK;
         card.tags.add(FINAL_MAGIC_POWER);
         card.exhaust = true;
+        if (card instanceof MagicPower)
+            ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/Strike.png");
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
