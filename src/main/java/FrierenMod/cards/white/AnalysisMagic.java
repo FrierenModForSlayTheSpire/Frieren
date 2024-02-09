@@ -54,6 +54,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
             this.upgradeBlock(5);
             this.upgradeMagicNumber(1);
             this.upgradeDamage(5);
+            CardModifierManager.addModifier(this,new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
         }
     }
     @Override
@@ -64,14 +65,14 @@ public class AnalysisMagic extends AbstractFrierenCard {
                 if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
                     this.flash(FLASH_COLOR);
                     currentInLevelProgressNumber++;
-                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
+                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                     if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                         this.superFlash();
                         currentLevel--;
                         currentInLevelProgressNumber = 0;
                         currentLevelRequiredNumber = 4;
                         this.addToBot(new GainBlockAction(p,this.block));
-                        CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
+                        CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                     }
                     break;
                 }
@@ -80,7 +81,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
                 if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isChantCard){
                     this.flash(FLASH_COLOR);
                     currentInLevelProgressNumber++;
-                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
+                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                     if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                         this.superFlash();
                         currentLevel--;
@@ -91,7 +92,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
                             rewardCard.costForTurn = 0;
                             this.addToBot(new MakeTempCardInHandAction(rewardCard));
                         }
-                        CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
+                        CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                     }
                 }
                 break;
@@ -99,7 +100,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
                 if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isLegendMagicCard){
                     this.flash(FLASH_COLOR);
                     currentInLevelProgressNumber++;
-                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber,upgraded));
+                    CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                     if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                         this.superFlash();
                         currentInLevelProgressNumber = 0;

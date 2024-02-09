@@ -12,17 +12,15 @@ public class AnalysisMod extends AbstractCardModifier {
     private final int currentLevel;
     private final int currentLevelRequiredNumber;
     private final int currentInLevelProgressNumber;
-    private final boolean upgraded;
 
-    public AnalysisMod(int currentLevel, int currentLevelRequiredNumber, int currentInLevelProgressNumber, boolean upgraded) {
+    public AnalysisMod(int currentLevel, int currentLevelRequiredNumber, int currentInLevelProgressNumber) {
         this.currentLevel = currentLevel;
         this.currentLevelRequiredNumber = currentLevelRequiredNumber;
         this.currentInLevelProgressNumber = currentInLevelProgressNumber;
-        this.upgraded = upgraded;
     }
 
     public AbstractCardModifier makeCopy() {
-        return new AnalysisMod(this.currentLevel,this.currentLevelRequiredNumber,this.currentInLevelProgressNumber,this.upgraded);
+        return new AnalysisMod(this.currentLevel,this.currentLevelRequiredNumber,this.currentInLevelProgressNumber);
     }
 
     public void onInitialApplication(AbstractCard card) {
