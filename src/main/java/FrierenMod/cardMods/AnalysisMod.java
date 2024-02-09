@@ -1,5 +1,7 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendMagic;
+import FrierenMod.cards.white.AnalysisMagic;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,6 +26,21 @@ public class AnalysisMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
+        if (card instanceof AnalysisMagic)
+            switch (this.currentLevel){
+                case 3:
+                    ((CustomLegendMagic)card).loadCardImage("");
+                    break;
+                case 2:
+                    ((CustomLegendMagic)card).loadCardImage("");
+                    break;
+                case 1:
+                    ((CustomLegendMagic)card).loadCardImage("");
+                    break;
+                default:
+                    break;
+            }
+
     }
 
     public String identifier(AbstractCard card) {
