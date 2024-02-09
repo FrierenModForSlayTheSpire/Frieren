@@ -24,6 +24,7 @@ public class ImaginationPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
     public ImaginationPower(AbstractCreature owner) {
         this.name = NAME;
@@ -86,14 +87,12 @@ public class ImaginationPower extends AbstractPower {
         }
     }
     private void upgradeChantAction(){
-        AbstractPlayer p = AbstractDungeon.player;
         upgradeChantActionInGroup(p.drawPile);
         upgradeChantActionInGroup(p.hand);
         upgradeChantActionInGroup(p.discardPile);
         upgradeChantActionInGroup(p.exhaustPile);
     }
     private void degradeChantAction(){
-        AbstractPlayer p = AbstractDungeon.player;
         degradeChantActionInGroup(p.drawPile);
         degradeChantActionInGroup(p.hand);
         degradeChantActionInGroup(p.discardPile);
@@ -109,7 +108,6 @@ public class ImaginationPower extends AbstractPower {
         }
     }
     private void modifyCardCost(){
-        AbstractPlayer p = AbstractDungeon.player;
         modifyCardCostInGroup(p.drawPile);
         modifyCardCostInGroup(p.hand);
         modifyCardCostInGroup(p.discardPile);
@@ -124,7 +122,6 @@ public class ImaginationPower extends AbstractPower {
         }
     }
     private void initCards(){
-        AbstractPlayer p = AbstractDungeon.player;
         initCardsInGroup(p.drawPile);
         initCardsInGroup(p.hand);
         initCardsInGroup(p.drawPile);

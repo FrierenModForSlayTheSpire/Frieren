@@ -8,6 +8,7 @@ import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,6 +23,7 @@ public class ThunderPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
     public ThunderPower(AbstractCreature owner) {
         this.name = NAME;
@@ -74,9 +76,9 @@ public class ThunderPower extends AbstractPower {
         }
     }
     public void upgradeAllMagicPower(){
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.drawPile);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.hand);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.discardPile);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.exhaustPile);
+        upgradeAllMagicPowerInGroup(p.drawPile);
+        upgradeAllMagicPowerInGroup(p.hand);
+        upgradeAllMagicPowerInGroup(p.discardPile);
+        upgradeAllMagicPowerInGroup(p.exhaustPile);
     }
 }
