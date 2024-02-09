@@ -1,15 +1,12 @@
 package FrierenMod.powers;
 
 import FrierenMod.actions.ExhaustMagicPowerTakeTurnsAction;
-import FrierenMod.cardMods.CardDescriptionBackMod;
-import FrierenMod.cardMods.CostZeroMod;
+import FrierenMod.cardMods.RecoverCardDescriptionAfterImaginationPowerMod;
 import FrierenMod.cardMods.MagicExhaustTextMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,7 +18,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class ImaginationPower extends AbstractPower {
     public static final String POWER_ID = ModInfo.makeID(ImaginationPower.class.getSimpleName());
@@ -105,7 +101,7 @@ public class ImaginationPower extends AbstractPower {
     }
     private void modifyCardCostInGroup(CardGroup cardGroup){
         for(AbstractCard c:cardGroup.group){
-            if(c instanceof AbstractFrierenCard &&!((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard)c).isUsingMagicPower && c.cost >= 0){
+            if(c instanceof AbstractFrierenCard && !((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard)c).isUsingMagicPower && c.cost >= 0){
                 CardModifierManager.addModifier(c, new MagicExhaustTextMod(c.cost));
                 c.costForTurn = 0;
                 ((AbstractFrierenCard) c).isUsingMagicPower = true;
@@ -122,7 +118,7 @@ public class ImaginationPower extends AbstractPower {
     private void initCardsInGroup(CardGroup cardGroup){
         for(AbstractCard c:cardGroup.group){
             if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isUsingMagicPower){
-                CardModifierManager.addModifier(c, new CardDescriptionBackMod());
+                CardModifierManager.addModifier(c, new RecoverCardDescriptionAfterImaginationPowerMod());
                 ((AbstractFrierenCard) c).isUsingMagicPower =false;
             }
         }
