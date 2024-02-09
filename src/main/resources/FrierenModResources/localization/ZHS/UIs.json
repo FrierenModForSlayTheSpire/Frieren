@@ -125,6 +125,11 @@
       "打出3张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
     ]
   },
+  "FrierenMod:MagicPowerMod": {
+    "TEXT": [
+      " frierenmod:同调 。"
+    ]
+  },
   "FrierenMod:FinalMagicPowerMod": {
     "TEXT": [
       " frierenmod:终极同调 。"

@@ -30,6 +30,7 @@ public class FinalFastMagicPowerMod extends AbstractCardModifier {
         card.target = AbstractCard.CardTarget.ALL_ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
         card.tags.add(FINAL_MAGIC_POWER);
+        card.exhaust = true;
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

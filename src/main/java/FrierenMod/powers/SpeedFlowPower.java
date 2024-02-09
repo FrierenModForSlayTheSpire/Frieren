@@ -2,6 +2,8 @@ package FrierenMod.powers;
 
 import FrierenMod.cardMods.FastMagicPowerMod;
 import FrierenMod.cardMods.FinalFastMagicPowerMod;
+import FrierenMod.cardMods.FinalMagicPowerMod;
+import FrierenMod.cardMods.MagicPowerMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.helpers.CardModifierManager;
@@ -9,6 +11,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,6 +26,7 @@ public class SpeedFlowPower extends AbstractPower {
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private final AbstractPlayer p = AbstractDungeon.player;
 
     public SpeedFlowPower(AbstractCreature owner) {
         this.name = NAME;
@@ -53,6 +57,7 @@ public class SpeedFlowPower extends AbstractPower {
         upgradeAllMagicPower();
     }
     public void atEndOfTurn(boolean isPlayer) {
+        degradeMagicPower();
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
     public void updateDescription() {
@@ -77,10 +82,27 @@ public class SpeedFlowPower extends AbstractPower {
             }
         }
     }
-    public void upgradeAllMagicPower(){
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.drawPile);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.hand);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.discardPile);
-        upgradeAllMagicPowerInGroup(AbstractDungeon.player.exhaustPile);
+    private void upgradeAllMagicPower(){
+        upgradeAllMagicPowerInGroup(p.drawPile);
+        upgradeAllMagicPowerInGroup(p.hand);
+        upgradeAllMagicPowerInGroup(p.discardPile);
+        upgradeAllMagicPowerInGroup(p.exhaustPile);
+    }
+    private void degradeMagicPowerInGroup(CardGroup cardGroup){
+        for (AbstractCard c : cardGroup.group) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && c.tags.contains(FAST_MAGIC_POWER)){
+                if (c.tags.contains(FINAL_MAGIC_POWER)) {
+                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
+                }else {
+                    CardModifierManager.addModifier(c, new MagicPowerMod());
+                }
+            }
+        }
+    }
+    private void degradeMagicPower(){
+        degradeMagicPowerInGroup(p.drawPile);
+        degradeMagicPowerInGroup(p.hand);
+        degradeMagicPowerInGroup(p.discardPile);
+        degradeMagicPowerInGroup(p.exhaustPile);
     }
 }

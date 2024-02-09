@@ -29,6 +29,11 @@ public class FastMagicPowerMod extends AbstractCardModifier {
 
     public void onInitialApplication(AbstractCard card) {
         card.tags.add(FAST_MAGIC_POWER);
+        if(!card.tags.contains(FINAL_MAGIC_POWER)){
+            card.target = AbstractCard.CardTarget.NONE;
+            card.type = AbstractCard.CardType.SKILL;
+        }
+        card.exhaust = true;
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
