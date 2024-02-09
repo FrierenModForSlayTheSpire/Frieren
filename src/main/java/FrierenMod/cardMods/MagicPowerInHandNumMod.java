@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.actions.MakeMagicPowerInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.cards.tempCards.MagicPower;
@@ -32,7 +33,7 @@ public class MagicPowerInHandNumMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new MakeTempCardInHandAction(new MagicPower(),this.magicPowerAmt));
+        this.addToBot(new MakeMagicPowerInHandAction(magicPowerAmt,((AbstractFrierenCard) card).canGainMagic));
     }
 
     public String identifier(AbstractCard card) {
