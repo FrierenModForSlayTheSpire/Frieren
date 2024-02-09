@@ -26,6 +26,7 @@ public class StatueMagic extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 10;
         this.chantX = this.baseChantX = 1;
+        this.isChantCard = true;
     }
     @Override
     public void upgrade() {
