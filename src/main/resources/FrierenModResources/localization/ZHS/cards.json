@@ -165,7 +165,7 @@
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
-    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。"
+    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌，并将其 保留 。 NL 消耗 。"
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
