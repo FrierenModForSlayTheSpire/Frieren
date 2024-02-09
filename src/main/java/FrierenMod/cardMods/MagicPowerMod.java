@@ -1,5 +1,7 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.actions.AbstractFrierenAction;
+import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -30,10 +32,12 @@ public class MagicPowerMod extends AbstractCardModifier {
         card.target = AbstractCard.CardTarget.NONE;
         card.type = AbstractCard.CardType.SKILL;
         card.exhaust = true;
+        if (card instanceof MagicPower)
+            ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower_skill.png");
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.actions.clear();
+        AbstractDungeon.actionManager.actions.removeIf(action1 -> action1 instanceof AbstractFrierenAction && ((AbstractFrierenAction) action1).isMagicPowerAction);
         this.addToBot(new DrawCardAction(1));
     }
 

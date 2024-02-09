@@ -1,5 +1,6 @@
 package FrierenMod.cards.tempCards;
 
+import FrierenMod.actions.MagicPowerAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -20,13 +21,12 @@ public class MagicPower extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
     public MagicPower() {
-        // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.isMagicPower = true;
         this.exhaust = true;
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(1));
+        this.addToBot(new MagicPowerAction(1));
     }
 }
