@@ -1,6 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.AbstractFrierenAction;
+import FrierenMod.actions.MagicPowerAction;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -38,7 +39,7 @@ public class MagicPowerMod extends AbstractCardModifier {
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.actions.removeIf(action1 -> action1 instanceof AbstractFrierenAction && ((AbstractFrierenAction) action1).isMagicPowerAction);
-        this.addToBot(new DrawCardAction(1));
+        this.addToBot(new MagicPowerAction(1));
     }
 
     public String identifier(AbstractCard card) {
