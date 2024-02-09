@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 public class CardDescriptionBackMod extends AbstractCardModifier {
     public static final String ID = ModInfo.makeID(CardDescriptionBackMod.class.getSimpleName());
 
-    public static final String[] TEXT = null;
-
     public CardDescriptionBackMod() {
     }
 
@@ -25,6 +23,10 @@ public class CardDescriptionBackMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
+        String upgradeDescription = CardCrawlGame.languagePack.getCardStrings(card.cardID).UPGRADE_DESCRIPTION;
+        if(card.upgraded && upgradeDescription != null){
+            return upgradeDescription;
+        }
         return CardCrawlGame.languagePack.getCardStrings(card.cardID).DESCRIPTION;
     }
 }
