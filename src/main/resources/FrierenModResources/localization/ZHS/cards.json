@@ -165,7 +165,7 @@
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
-    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌并将其 保留 。"
+    "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌，并将其 保留 。 NL 消耗 。"
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火魔法",
@@ -406,7 +406,7 @@
   },
   "FrierenMod:TrueFace": {
     "NAME": "真面目",
-    "DESCRIPTION": " frierenmod:咏唱 6。 NL 获得 [E] [E] [E]，抽3张牌，在抽牌堆、手牌、弃牌堆各放入3张 *魔力 。 NL  消耗 。"
+    "DESCRIPTION": " frierenmod:咏唱 6。 NL 获得 [E] [E] [E] ，抽3张牌，在抽牌堆、手牌、弃牌堆各放入3张 *魔力 。 NL  消耗 。"
   },
   "FrierenMod:TimeDoor": {
     "NAME": "打开时空之门",
