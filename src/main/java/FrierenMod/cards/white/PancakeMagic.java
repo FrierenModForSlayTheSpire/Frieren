@@ -47,15 +47,11 @@ public class PancakeMagic extends AbstractFrierenCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (!new ChantHelper().canChantFromHand(1)){
+        if (!new ChantHelper().canChantFromHand(1)){
             return false;
         }
         else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
+            return super.upgradedCanUse(p,m);
         }
     }
 }

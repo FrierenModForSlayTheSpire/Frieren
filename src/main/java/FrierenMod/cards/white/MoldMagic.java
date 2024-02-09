@@ -43,8 +43,4 @@ public class MoldMagic extends AbstractFrierenCard {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
     }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
-    }
 }

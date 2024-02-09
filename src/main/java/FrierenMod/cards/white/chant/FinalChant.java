@@ -39,4 +39,7 @@ public class FinalChant extends AbstractFrierenCard {
         this.chantX = this.baseChantX = new ChantHelper().getAllMagicPowerNum();
         this.addToBot(new ChantAllAction(this.isChantUpgraded,this));
     }
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return super.upgradedCanUse(p,m);
+    }
 }

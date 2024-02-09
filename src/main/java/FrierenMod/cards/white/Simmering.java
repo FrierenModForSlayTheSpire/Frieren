@@ -42,16 +42,11 @@ public class Simmering extends AbstractFrierenCard {
         this.addToBot(new SimmeringAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        ChantHelper helper2 = new ChantHelper();
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (!helper2.canChantFromHand(1)){
+        if (!new ChantHelper().canChantFromHand(1)){
             return false;
         }
         else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
+            return this.upgradedCanUse(p,m);
         }
     }
 }

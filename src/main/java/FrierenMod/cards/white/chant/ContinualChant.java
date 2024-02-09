@@ -48,7 +48,4 @@ public class ContinualChant extends AbstractFrierenCard {
         }
         this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
-    }
 }

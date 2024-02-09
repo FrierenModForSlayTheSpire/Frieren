@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.OilMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.LegendMagicHelper;
 import FrierenMod.helpers.ModInfo;
@@ -42,24 +43,6 @@ public class OilMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new SFXAction("ATTACK_HEAVY"));
-        this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        int flag = 0;
-        for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
-            if(!mo.isDead && !mo.halfDead){
-                if (mo.currentHealth - this.damage <= 0) {
-                    flag = 1;
-                    break;
-                }
-            }
-        }
-        this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        if(flag == 0){
-            this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
-        }
-    }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
+        this.addToBot(new OilMagicAction(this));
     }
 }

@@ -41,7 +41,4 @@ public class FlightMagic extends AbstractFrierenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
     }
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
-    }
 }

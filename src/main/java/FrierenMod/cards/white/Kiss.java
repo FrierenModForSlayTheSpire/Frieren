@@ -41,6 +41,6 @@ public class Kiss extends AbstractFrierenCard {
         this.addToBot(new ApplyPowerAction(m, p, (AbstractPower)new VulnerablePower(m, 99, false), 99));
         this.addToBot(new ApplyPowerAction(m, p, (AbstractPower)new WeakPower(m, 99, false), 99));
     }
-    }
+}
 
 

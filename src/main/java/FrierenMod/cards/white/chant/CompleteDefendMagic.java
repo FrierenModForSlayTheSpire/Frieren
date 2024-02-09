@@ -49,8 +49,4 @@ public class CompleteDefendMagic extends AbstractFrierenCard {
         this.addToBot(new GainBlockAction(p,this.block));
         this.addToBot(new ApplyPowerAction(p, p, new BufferPower(p, this.magicNumber), this.magicNumber));
     }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new ChantHelper().canChantUse(this,m,3);
-    }
 }

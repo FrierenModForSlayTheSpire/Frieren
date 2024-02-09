@@ -41,8 +41,4 @@ public class JewelryMagic extends AbstractFrierenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p,p,new GainRelicPower(p,1)));
     }
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
-    }
 }
