@@ -1,10 +1,7 @@
 package FrierenMod.powers;
 
-import FrierenMod.actions.ExhaustMagicPowerTakeTurnsAction;
-import FrierenMod.cardMods.MagicExhaustTextMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
-import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
