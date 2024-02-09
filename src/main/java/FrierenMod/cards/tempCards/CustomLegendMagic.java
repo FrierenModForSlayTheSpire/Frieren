@@ -31,22 +31,4 @@ public class CustomLegendMagic extends AbstractFrierenCard {
         return false;
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(this.chantX != -1){
-            if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
-                return false;
-            } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-                return false;
-            } else if (new ChantHelper().cannotChant(this.chantX) || new LegendMagicHelper().cannotPlayLegendMagic()){
-                return false;
-            }
-            else {
-                return this.cardPlayable(m) && this.hasEnoughEnergy();
-            }
-        }
-        else {
-            return new LegendMagicHelper().canLegendMagicUse(this,m);
-        }
-    }
 }

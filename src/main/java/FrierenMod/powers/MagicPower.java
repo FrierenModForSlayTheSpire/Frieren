@@ -1,7 +1,6 @@
 package FrierenMod.powers;
 
 import FrierenMod.actions.ExhaustMagicPowerTakeTurnsAction;
-import FrierenMod.cardMods.RecoverCardDescriptionAfterImaginationPowerMod;
 import FrierenMod.cardMods.MagicExhaustTextMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
@@ -19,14 +18,14 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class ImaginationPower extends AbstractPower {
-    public static final String POWER_ID = ModInfo.makeID(ImaginationPower.class.getSimpleName());
+public class MagicPower extends AbstractPower {
+    public static final String POWER_ID = ModInfo.makeID(MagicPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
     private final AbstractPlayer p = AbstractDungeon.player;
 
-    public ImaginationPower(AbstractCreature owner) {
+    public MagicPower(AbstractCreature owner) {
         this.name = NAME;
         this.ID = POWER_ID;
         this.owner = owner;
@@ -40,31 +39,28 @@ public class ImaginationPower extends AbstractPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractFrierenCard && !((AbstractFrierenCard) card).isMagicPower) {
+        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isChantCard) {
             this.flash();
-            if(card.cost > 0){
-                this.addToBot(new ExhaustMagicPowerTakeTurnsAction(card.cost));
-            }
         }
     }
     @Override
     public void onInitialApplication() {
-        modifyCardCost();
+        upgradeChantAction();
     }
     @Override
     public void onDrawOrDiscard() {
-        modifyCardCost();
+        upgradeChantAction();
     }
     @Override
     public void atStartOfTurnPostDraw() {
-        modifyCardCost();
+        upgradeChantAction();
     }
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
-        modifyCardCost();
+        upgradeChantAction();
     }
     public void atEndOfTurn(boolean isPlayer) {
-        initCards();
+        degradeChantAction();
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
@@ -72,33 +68,30 @@ public class ImaginationPower extends AbstractPower {
         this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    private void modifyCardCostInGroup(CardGroup cardGroup){
-        for(AbstractCard c:cardGroup.group){
-            if(c instanceof AbstractFrierenCard && !((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard)c).isUsingMagicPower && c.cost >= 0){
-                CardModifierManager.addModifier(c, new MagicExhaustTextMod(c.cost));
-                c.costForTurn = 0;
-                ((AbstractFrierenCard) c).isUsingMagicPower = true;
+    private void upgradeChantActionInGroup(CardGroup cardGroup) {
+        for (AbstractCard c : cardGroup.group) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isChantCard && !((AbstractFrierenCard) c).isChantUpgraded){
+                ((AbstractFrierenCard) c).isChantUpgraded = true;
             }
         }
     }
-    private void modifyCardCost(){
-        modifyCardCostInGroup(p.drawPile);
-        modifyCardCostInGroup(p.hand);
-        modifyCardCostInGroup(p.discardPile);
-        modifyCardCostInGroup(p.exhaustPile);
-    }
-    private void initCardsInGroup(CardGroup cardGroup){
-        for(AbstractCard c:cardGroup.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isUsingMagicPower){
-                CardModifierManager.addModifier(c, new RecoverCardDescriptionAfterImaginationPowerMod());
-                ((AbstractFrierenCard) c).isUsingMagicPower =false;
+    private void degradeChantActionInGroup(CardGroup cardGroup) {
+        for (AbstractCard c : cardGroup.group) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isChantCard && ((AbstractFrierenCard) c).isChantUpgraded){
+                ((AbstractFrierenCard) c).isChantUpgraded = false;
             }
         }
     }
-    private void initCards(){
-        initCardsInGroup(p.drawPile);
-        initCardsInGroup(p.hand);
-        initCardsInGroup(p.discardPile);
-        initCardsInGroup(p.exhaustPile);
+    private void upgradeChantAction(){
+        upgradeChantActionInGroup(p.drawPile);
+        upgradeChantActionInGroup(p.hand);
+        upgradeChantActionInGroup(p.discardPile);
+        upgradeChantActionInGroup(p.exhaustPile);
+    }
+    private void degradeChantAction(){
+        degradeChantActionInGroup(p.drawPile);
+        degradeChantActionInGroup(p.hand);
+        degradeChantActionInGroup(p.discardPile);
+        degradeChantActionInGroup(p.exhaustPile);
     }
 }

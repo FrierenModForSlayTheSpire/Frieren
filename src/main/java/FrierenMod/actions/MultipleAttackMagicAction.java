@@ -19,12 +19,14 @@ public class MultipleAttackMagicAction extends AbstractGameAction {
     private final AbstractCard card;
     private final int energyOnUse;
     private final boolean isUpgraded;
+    private final boolean canGainMagic;
 
-    public MultipleAttackMagicAction(AbstractPlayer p, AbstractCard c, int energyOnUse, boolean isUpgraded) {
+    public MultipleAttackMagicAction(AbstractPlayer p, AbstractCard c, int energyOnUse, boolean isUpgraded, boolean canGainMagic) {
         this.p = p;
         this.card = c;
         this.energyOnUse = energyOnUse;
         this.isUpgraded = isUpgraded;
+        this.canGainMagic = canGainMagic;
     }
 
     public void update() {
@@ -47,7 +49,9 @@ public class MultipleAttackMagicAction extends AbstractGameAction {
                 this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.card.hb.cY)));
             }
         }
-        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),magicNum));
+        if(this.canGainMagic){
+            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),magicNum));
+        }
         this.p.energy.use(EnergyPanel.totalCount);
         this.isDone = true;
     }

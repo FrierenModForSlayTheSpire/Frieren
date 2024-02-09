@@ -25,6 +25,7 @@ public class MultipleAttackMagic extends AbstractFrierenCard {
     public MultipleAttackMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.cardsToPreview = new MagicPower();
+        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -37,6 +38,6 @@ public class MultipleAttackMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MultipleAttackMagicAction(p,this, this.energyOnUse,this.upgraded));
+        this.addToBot(new MultipleAttackMagicAction(p,this, this.energyOnUse,this.upgraded,this.canGainMagic));
     }
 }

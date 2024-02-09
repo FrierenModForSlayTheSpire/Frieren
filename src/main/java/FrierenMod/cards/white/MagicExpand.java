@@ -24,6 +24,7 @@ public class MagicExpand extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     public MagicExpand() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -35,6 +36,8 @@ public class MagicExpand extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MagicExpandAction(upgraded));
+        if(this.canGainMagic){
+            this.addToBot(new MagicExpandAction(upgraded));
+        }
     }
 }

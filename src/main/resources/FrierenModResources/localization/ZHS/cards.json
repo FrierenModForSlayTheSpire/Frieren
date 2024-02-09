@@ -359,7 +359,7 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "魔法&想象力",
-    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力 。 NL 你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。"
+    "DESCRIPTION": "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 *魔力 ，但无法再从卡牌中获取 *魔力 。你的 frierenmod:咏唱 不再 消耗 *魔力 。 NL  消耗 。"
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "持续散射",

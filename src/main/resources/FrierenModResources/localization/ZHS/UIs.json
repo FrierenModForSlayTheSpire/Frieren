@@ -11,7 +11,7 @@
       " NL 将 ", " 张 *魔力 置入弃牌堆。", " 张 *魔力 置入弃牌堆。"
     ]
   },
-  "FrierenMod:MagicPowerInHandMod": {
+  "FrierenMod:MagicPowerInHandNumMod": {
     "TEXT": [
       "将 ", " 张 *魔力 置入手牌",
       " NL 将 ", " 张 *魔力 置入手牌。"

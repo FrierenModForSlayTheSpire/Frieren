@@ -26,6 +26,7 @@ public class TrueFace extends AbstractFrierenCard {
     public TrueFace() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.chantX = this.baseChantX = 6;
+        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -37,11 +38,13 @@ public class TrueFace extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX));
+        this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
         this.addToBot(new GainEnergyAction(3));
         this.addToBot(new DrawCardAction(3));
-        this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
-        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),3));
-        this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),3,true,true));
+        if(this.canGainMagic){
+            this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
+            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),3));
+            this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),3,true,true));
+        }
     }
 }

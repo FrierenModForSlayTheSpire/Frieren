@@ -1,4 +1,5 @@
 package FrierenMod.cardMods;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
@@ -20,13 +21,16 @@ public class MagicPowerNumMod extends AbstractCardModifier {
     public MagicPowerNumMod(int magicPowerAmt) {
         this.magicPowerAmt = magicPowerAmt;
     }
+    public void onInitialApplication(AbstractCard card) {
+        ((AbstractFrierenCard)card).isMagicSource = true;
+    }
 
     public AbstractCardModifier makeCopy() {
         return new MagicPowerNumMod(this.magicPowerAmt);
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new MakeTempCardInDiscardAction(new MagicPower(),this.magicPowerAmt));
+        this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),this.magicPowerAmt));
     }
 
     public String identifier(AbstractCard card) {

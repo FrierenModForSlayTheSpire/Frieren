@@ -28,6 +28,7 @@ public class Disperse extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
         this.cardsToPreview = new MagicPower();
+        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -40,8 +41,10 @@ public class Disperse extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),1,true,true));
-        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),2));
-        this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
+        if(this.canGainMagic){
+            this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),1,true,true));
+            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),2));
+            this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
+        }
     }
 }

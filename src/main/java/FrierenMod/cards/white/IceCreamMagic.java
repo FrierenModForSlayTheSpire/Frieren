@@ -23,12 +23,11 @@ public class IceCreamMagic extends AbstractFrierenCard {
     private static final CardRarity RARITY = CardRarity.COMMON;
     private static final CardTarget TARGET = CardTarget.NONE;
     public IceCreamMagic() {
-        // 为了命名规范修改了变量名。这些参数具体的作用见下方
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.baseMagicNumber = this.magicNumber = 4;
+        this.isMagicSource= true;
         this.cardsToPreview = new MagicPower();
     }
-    // 这些方法怎么写，之后再讨论
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -38,6 +37,8 @@ public class IceCreamMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(),this.magicNumber,true,true));
+        if(this.canGainMagic){
+            this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(),this.magicNumber,true,true));
+        }
     }
 }

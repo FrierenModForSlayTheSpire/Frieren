@@ -31,7 +31,7 @@ public class ChantMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ChantAction(this.chantAmt));
+        this.addToBot(new ChantAction(((AbstractFrierenCard)card).isChantUpgraded, this.chantAmt));
     }
 
     public String identifier(AbstractCard card) {
