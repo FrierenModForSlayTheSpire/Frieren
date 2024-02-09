@@ -1,6 +1,9 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.actions.MakeMagicPowerInDiscardAction;
+import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
+import FrierenMod.actions.MakeMagicPowerInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
@@ -41,10 +44,8 @@ public class TrueFace extends AbstractFrierenCard {
         this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
         this.addToBot(new GainEnergyAction(3));
         this.addToBot(new DrawCardAction(3));
-        if(this.canGainMagic){
-            this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
-            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),3));
-            this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),3,true,true));
-        }
+        this.addToBot(new MakeMagicPowerInDrawPileAction(3,canGainMagic));
+        this.addToBot(new MakeMagicPowerInHandAction(3,canGainMagic));
+        this.addToBot(new MakeMagicPowerInDiscardAction(3,canGainMagic));
     }
 }

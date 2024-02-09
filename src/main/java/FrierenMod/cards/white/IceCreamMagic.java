@@ -1,5 +1,7 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.MakeMagicPowerInDiscardAction;
+import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
@@ -37,8 +39,6 @@ public class IceCreamMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.canGainMagic){
-            this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(),this.magicNumber,true,true));
-        }
+        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
     }
 }

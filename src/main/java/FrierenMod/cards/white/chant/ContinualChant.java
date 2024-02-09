@@ -1,6 +1,7 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.LegendMagicHelper;
@@ -43,9 +44,7 @@ public class ContinualChant extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.canGainMagic){
-            this.addToTop(new MakeTempCardInDrawPileAction(new MagicPower(),this.magicNumber,true,true));
-        }
+        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
         this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
     }
 

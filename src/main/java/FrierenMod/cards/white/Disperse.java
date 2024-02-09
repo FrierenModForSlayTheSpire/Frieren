@@ -1,5 +1,8 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.MakeMagicPowerInDiscardAction;
+import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
+import FrierenMod.actions.MakeMagicPowerInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
@@ -41,10 +44,8 @@ public class Disperse extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.canGainMagic){
-            this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),1,true,true));
-            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),2));
-            this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),3));
-        }
+        this.addToBot(new MakeMagicPowerInDrawPileAction(1,canGainMagic));
+        this.addToBot(new MakeMagicPowerInHandAction(2,canGainMagic));
+        this.addToBot(new MakeMagicPowerInDiscardAction(3,canGainMagic));
     }
 }

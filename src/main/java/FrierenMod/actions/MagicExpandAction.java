@@ -12,17 +12,19 @@ import java.util.ArrayList;
 
 public class MagicExpandAction extends AbstractGameAction {
     private final boolean upgraded;
+    private final boolean canGainMagic;
 
-    public MagicExpandAction(boolean upgraded) {
+    public MagicExpandAction(boolean upgraded, boolean canGainMagic) {
         this.upgraded = upgraded;
+        this.canGainMagic = canGainMagic;
     }
 
     @Override
     public void update() {
         if(this.upgraded){
-            this.addToBot(new DoubleMagicInHandAction());
-            this.addToBot(new DoubleMagicInDrawPileAction());
-            this.addToBot(new DoubleMagicInDiscardPileAction());
+            this.addToBot(new DoubleMagicInHandAction(canGainMagic));
+            this.addToBot(new DoubleMagicInDrawPileAction(canGainMagic));
+            this.addToBot(new DoubleMagicInDiscardPileAction(canGainMagic));
         }else {
             ArrayList<AbstractCard> choices = new ArrayList<>();
             choices.add(new DoubleMagicInDrawPile());

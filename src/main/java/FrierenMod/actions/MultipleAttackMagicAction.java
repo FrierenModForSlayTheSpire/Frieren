@@ -49,9 +49,7 @@ public class MultipleAttackMagicAction extends AbstractGameAction {
                 this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.card.hb.cY)));
             }
         }
-        if(this.canGainMagic){
-            this.addToBot(new MakeTempCardInHandAction(new MagicPower(),magicNum));
-        }
+        this.addToBot(new MakeMagicPowerInHandAction(magicNum,canGainMagic));
         this.p.energy.use(EnergyPanel.totalCount);
         this.isDone = true;
     }

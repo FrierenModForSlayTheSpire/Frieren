@@ -36,8 +36,6 @@ public class MagicExpand extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(this.canGainMagic){
-            this.addToBot(new MagicExpandAction(upgraded));
-        }
+        this.addToBot(new MagicExpandAction(upgraded,canGainMagic));
     }
 }
