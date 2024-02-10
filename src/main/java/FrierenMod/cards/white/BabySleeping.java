@@ -38,7 +38,6 @@ public class BabySleeping extends AbstractFrierenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p,p,this.block));
         this.addToBot(new RetainCardsAction(p, this.magicNumber));
-        this.addToBot(new PressEndTurnButtonAction());
     }
 }
 
