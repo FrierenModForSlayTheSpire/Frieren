@@ -194,7 +194,7 @@
   },
   "FrierenMod:GrapeMagic": {
     "NAME": "把甜葡萄变成酸葡萄的魔法",
-    "DESCRIPTION": "选择手牌中的 !M! 张牌，使它们视为 *魔力 并获得 frierenmod:同调 （不会重复获得）。 NL 消耗 。"
+    "DESCRIPTION": "从手牌中选择2张牌 消耗 并获得2张 *魔力 。 NL  消耗 。"
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",

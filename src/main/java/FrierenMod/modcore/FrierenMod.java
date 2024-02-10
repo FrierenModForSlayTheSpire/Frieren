@@ -168,6 +168,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCard(new TrueFace());
         BaseMod.addCard(new TimeDoor());
         BaseMod.addCard(new Imagination());
+        BaseMod.addCard(new GrapeMagic());
     }
     @Override
     public void receiveEditRelics() {
