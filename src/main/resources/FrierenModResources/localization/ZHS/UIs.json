@@ -127,21 +127,9 @@
   },
   "FrierenMod:MagicPowerMod": {
     "TEXT": [
-      " frierenmod:同调 。"
-    ]
-  },
-  "FrierenMod:FinalMagicPowerMod": {
-    "TEXT": [
-      " frierenmod:终极同调 。"
-    ]
-  },
-  "FrierenMod:FastMagicPowerMod": {
-    "TEXT": [
-      " frierenmod:加速同调 。"
-    ]
-  },
-  "FrierenMod:FinalFastMagicPowerMod": {
-    "TEXT": [
+      " frierenmod:同调 。",
+      " frierenmod:加速同调 。",
+      " frierenmod:终极同调 。",
       " frierenmod:终极加速同调 。"
     ]
   },

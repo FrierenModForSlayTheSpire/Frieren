@@ -1,7 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.FinalFastMagicPowerMod;
-import FrierenMod.cardMods.FinalMagicPowerMod;
+import FrierenMod.cardMods.MagicPowerMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
 import basemod.helpers.CardModifierManager;
@@ -15,8 +14,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static FrierenMod.tags.CustomTags.*;
 
 public class ThunderPower extends AbstractPower {
     public static final String POWER_ID = ModInfo.makeID(ThunderPower.class.getSimpleName());
@@ -63,13 +60,13 @@ public class ThunderPower extends AbstractPower {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new FinalFastMagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(4));
                     c.applyPowers();
                 } else{
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(3));
                     c.applyPowers();
                 }
             }

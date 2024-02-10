@@ -1,8 +1,5 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.FastMagicPowerMod;
-import FrierenMod.cardMods.FinalFastMagicPowerMod;
-import FrierenMod.cardMods.FinalMagicPowerMod;
 import FrierenMod.cardMods.MagicPowerMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
@@ -18,8 +15,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-
-import static FrierenMod.tags.CustomTags.*;
 
 public class SpeedFlowPower extends AbstractPower {
     public static final String POWER_ID = ModInfo.makeID(SpeedFlowPower.class.getSimpleName());
@@ -67,13 +62,13 @@ public class SpeedFlowPower extends AbstractPower {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new FinalFastMagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(4));
                     c.applyPowers();
                 } else{
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new FastMagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(2));
                     c.applyPowers();
                 }
             }
@@ -89,9 +84,9 @@ public class SpeedFlowPower extends AbstractPower {
         for (AbstractCard c : cardGroup.group) {
             if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && ((AbstractFrierenCard) c).isFastMagicPower){
                 if (((AbstractFrierenCard) c).isFinalMagicPower) {
-                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(3));
                 }else {
-                    CardModifierManager.addModifier(c, new MagicPowerMod());
+                    CardModifierManager.addModifier(c, new MagicPowerMod(1));
                 }
             }
         }

@@ -14,8 +14,8 @@ public class MagicPowerAction extends AbstractFrierenAction{
         this.isMagicPowerAction = true;
     }
     public MagicPowerAction(AbstractCard c,int type){
+        this(type);
         this.c = c;
-        this.type = type;
     }
     @Override
     public void update() {
