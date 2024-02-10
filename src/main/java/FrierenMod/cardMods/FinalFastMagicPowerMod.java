@@ -35,7 +35,7 @@ public class FinalFastMagicPowerMod extends AbstractCardModifier {
         card.tags.add(FINAL_MAGIC_POWER);
         card.exhaust = true;
         if (card instanceof MagicPower)
-            ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/Strike.png");
+            ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower4.png");
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
