@@ -42,7 +42,7 @@ public class MagicPowerMod extends AbstractCardModifier {
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.SKILL;
                 if (card instanceof MagicPower)
-                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/Strike.png");
+                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower2.png");
                 break;
             case 3:
                 ((AbstractFrierenCard)card).isFastMagicPower = false;
@@ -51,7 +51,7 @@ public class MagicPowerMod extends AbstractCardModifier {
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 if (card instanceof MagicPower)
-                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/Strike.png");
+                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower3.png");
                 break;
             case 4:
                 ((AbstractFrierenCard)card).isFastMagicPower = true;
@@ -61,7 +61,7 @@ public class MagicPowerMod extends AbstractCardModifier {
                 card.type = AbstractCard.CardType.ATTACK;
                 card.exhaust = true;
                 if (card instanceof MagicPower)
-                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/Strike.png");
+                    ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower4.png");
                 break;
             default:
                 break;
