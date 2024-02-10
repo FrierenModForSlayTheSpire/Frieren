@@ -50,7 +50,7 @@ public class TimeDoor extends AbstractFrierenCard {
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isMagicPower){
             this.flash(FLASH_COLOR);
-            this.secondMagicNumber = this.baseSecondMagicNumber++;
+            this.secondMagicNumber = ++this.baseSecondMagicNumber;
         }
         if(secondMagicNumber >= magicNumber){
             AbstractPlayer p = AbstractDungeon.player;
