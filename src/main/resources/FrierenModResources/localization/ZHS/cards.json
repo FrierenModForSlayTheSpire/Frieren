@@ -343,11 +343,11 @@
   },
   "FrierenMod:DoubleMagicInHand": {
     "NAME": "从手牌膨胀",
-    "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
+    "DESCRIPTION": " 翻倍手牌中的 *魔力 数量。"
   },
   "FrierenMod:DoubleMagicInDiscardPile": {
     "NAME": "从弃牌堆膨胀",
-    "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
+    "DESCRIPTION": " 翻倍弃牌堆中的 *魔力 数量。"
   },
   "FrierenMod:MagicDetect": {
     "NAME": "魔力探知",
