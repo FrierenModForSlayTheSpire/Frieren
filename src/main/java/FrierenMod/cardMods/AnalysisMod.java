@@ -29,17 +29,18 @@ public class AnalysisMod extends AbstractCardModifier {
         if (card instanceof AnalysisMagic)
             switch (this.currentLevel){
                 case 3:
-                    ((AnalysisMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("FrierenModResources/img/cards/AnalysisMagic1_skill.png");
                     break;
                 case 2:
-                    ((AnalysisMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("FrierenModResources/img/cards/AnalysisMagic2_skill.png");
                     break;
                 case 1:
-                    ((AnalysisMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("FrierenModResources/img/cards/AnalysisMagic3_skill.png");
                     break;
                 default:
                     break;
             }
+
     }
 
     public String identifier(AbstractCard card) {
