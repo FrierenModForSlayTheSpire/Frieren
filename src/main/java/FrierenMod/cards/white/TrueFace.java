@@ -30,6 +30,7 @@ public class TrueFace extends AbstractFrierenCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.chantX = this.baseChantX = 6;
         this.isMagicSource = true;
+        this.isChantCard = true;
     }
     @Override
     public void upgrade() {

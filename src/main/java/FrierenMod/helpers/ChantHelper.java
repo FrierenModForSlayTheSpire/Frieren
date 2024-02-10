@@ -1,6 +1,7 @@
 package FrierenMod.helpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.white.TrueFace;
 import FrierenMod.cards.white.chant.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -74,6 +75,7 @@ public class ChantHelper {
         pool.add(new CompleteDefendMagic());
         pool.add(new FinalChant());
         pool.add(new PreciseChant());
+        pool.add(new TrueFace());
         return pool;
     }
     public AbstractCard getRandomCard(){
