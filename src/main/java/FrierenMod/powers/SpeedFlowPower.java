@@ -34,6 +34,7 @@ public class SpeedFlowPower extends AbstractPower {
         this.owner = owner;
         this.type = PowerType.BUFF;
         this.amount = -1;
+        this.priority = -1;
         String path128 = "FrierenModResources/img/powers/Example84.png";
         String path48 = "FrierenModResources/img/powers/Example32.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
@@ -49,10 +50,6 @@ public class SpeedFlowPower extends AbstractPower {
         upgradeAllMagicPower();
     }
     @Override
-    public void atStartOfTurnPostDraw() {
-        upgradeAllMagicPower();
-    }
-    @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         upgradeAllMagicPower();
     }
@@ -65,18 +62,18 @@ public class SpeedFlowPower extends AbstractPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
-                if (!c.tags.contains(FINAL_MAGIC_POWER) && !c.tags.contains(FAST_MAGIC_POWER)) {
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new FastMagicPowerMod());
-                    c.applyPowers();
-                } else if (!c.tags.contains(FAST_MAGIC_POWER) && c.tags.contains(FINAL_MAGIC_POWER)) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard) c).isFastMagicPower){
+                if (((AbstractFrierenCard) c).isFinalMagicPower) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
                     CardModifierManager.addModifier(c, new FinalFastMagicPowerMod());
+                    c.applyPowers();
+                } else{
+                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
+                        c.superFlash();
+                    }
+                    CardModifierManager.addModifier(c, new FastMagicPowerMod());
                     c.applyPowers();
                 }
             }
@@ -90,8 +87,8 @@ public class SpeedFlowPower extends AbstractPower {
     }
     private void degradeMagicPowerInGroup(CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && c.tags.contains(FAST_MAGIC_POWER)){
-                if (c.tags.contains(FINAL_MAGIC_POWER)) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && ((AbstractFrierenCard) c).isFastMagicPower){
+                if (((AbstractFrierenCard) c).isFinalMagicPower) {
                     CardModifierManager.addModifier(c, new FinalMagicPowerMod());
                 }else {
                     CardModifierManager.addModifier(c, new MagicPowerMod());

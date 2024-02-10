@@ -2,20 +2,15 @@ package FrierenMod.cardMods;
 
 import FrierenMod.actions.AbstractFrierenAction;
 import FrierenMod.actions.MagicPowerAction;
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.helpers.ModInfo;
 import basemod.abstracts.AbstractCardModifier;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-
-import static FrierenMod.tags.CustomTags.FINAL_MAGIC_POWER;
 
 public class MagicPowerMod extends AbstractCardModifier {
     public static final String ID = ModInfo.makeID(MagicPowerMod.class.getSimpleName());
@@ -30,9 +25,10 @@ public class MagicPowerMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
+        ((AbstractFrierenCard)card).isFastMagicPower = false;
+        ((AbstractFrierenCard)card).isFinalMagicPower = false;
         card.target = AbstractCard.CardTarget.NONE;
         card.type = AbstractCard.CardType.SKILL;
-        card.exhaust = true;
         if (card instanceof MagicPower)
             ((MagicPower)card).loadCardImage("FrierenModResources/img/cards/MagicPower_skill.png");
     }

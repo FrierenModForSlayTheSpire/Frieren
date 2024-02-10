@@ -58,18 +58,18 @@ public class ThunderPower extends AbstractPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
-                if (!c.tags.contains(FINAL_MAGIC_POWER) && !c.tags.contains(FAST_MAGIC_POWER)) {
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
-                    c.applyPowers();
-                } else if (c.tags.contains(FAST_MAGIC_POWER) && !c.tags.contains(FINAL_MAGIC_POWER)) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard) c).isFinalMagicPower){
+                if (((AbstractFrierenCard) c).isFastMagicPower) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
                     CardModifierManager.addModifier(c, new FinalFastMagicPowerMod());
+                    c.applyPowers();
+                } else{
+                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
+                        c.superFlash();
+                    }
+                    CardModifierManager.addModifier(c, new FinalMagicPowerMod());
                     c.applyPowers();
                 }
             }

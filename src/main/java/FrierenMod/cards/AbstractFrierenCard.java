@@ -12,6 +12,8 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
     public boolean isChantUpgraded;
     public boolean isMagicPower;
+    public boolean isFinalMagicPower;
+    public boolean isFastMagicPower;
     public boolean isLegendMagicCard;
     public int baseChantX = -1;
     public int chantX = -1;
@@ -35,6 +37,8 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isLegendMagicCard = false;
         this.isChantXModified = false;
         this.isMagicPower = false;
+        this.isFinalMagicPower = false;
+        this.isFastMagicPower = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
         this.isChantUpgraded = false;
