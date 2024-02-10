@@ -26,7 +26,6 @@ public class JewelryMagic extends AbstractFrierenCard {
     public JewelryMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.isInnate = true;
-        this.exhaust = true;
         this.isEthereal = true;
         this.isLegendMagicCard = true;
     }
