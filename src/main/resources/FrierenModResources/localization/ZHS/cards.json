@@ -147,8 +147,8 @@
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",
-    "DESCRIPTION": " 随机造成X+3点伤害X次，将X张 *魔力 放入手牌。",
-    "UPGRADE_DESCRIPTION": "随机造成X+3点伤害X+1次，将X张 *魔力 放入手牌。"
+    "DESCRIPTION": " 随机造成X+4点伤害X次，将X张 *魔力 放入手牌。",
+    "UPGRADE_DESCRIPTION": "随机造成X+4点伤害X+1次，将X张 *魔力 放入手牌。"
   },
   "FrierenMod:PrepareRite": {
     "NAME": "仪式的准备",
