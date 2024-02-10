@@ -1,32 +1,35 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.tempCards.MagicPower;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDiscardEffect;
 
 public class MakeMagicPowerInDiscardAction extends AbstractGameAction {
-    private final int amt;
+    private final AbstractCard c;
     private final boolean canGainMagic;
-
-    public MakeMagicPowerInDiscardAction(int amt, boolean canGainMagic) {
-        this.amt = amt;
+    private final int numCards;
+    public MakeMagicPowerInDiscardAction(int amount,boolean canGainMagic) {
         this.canGainMagic = canGainMagic;
+        this.numCards = amount;
+        this.actionType = ActionType.CARD_MANIPULATION;
+        this.startDuration = Settings.FAST_MODE ? Settings.ACTION_DUR_FAST : 0.5F;
+        this.duration = this.startDuration;
+        this.c = new MagicPower();
     }
 
-    @Override
     public void update() {
-        if(canGainMagic){
-            if(amt < 6){
-                this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(), amt));
-            }else {
-                int counts = amt / 5;
-                int residue = amt % 5;
-                for (int i = 0; i < counts; i++) {
-                    this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),5));
+        if (this.duration == this.startDuration) {
+            if(canGainMagic){
+                for(int i = 0; i < this.numCards; ++i) {
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c.makeStatEquivalentCopy()));
                 }
-                this.addToBot(new MakeTempCardInDiscardAction(new MagicPower(),residue));
             }
+            this.duration -= Gdx.graphics.getDeltaTime();
         }
-        this.isDone = true;
+        this.tickDuration();
     }
 }

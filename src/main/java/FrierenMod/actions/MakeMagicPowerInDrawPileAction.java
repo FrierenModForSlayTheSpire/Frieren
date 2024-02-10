@@ -1,33 +1,37 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.tempCards.MagicPower;
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
 public class MakeMagicPowerInDrawPileAction extends AbstractGameAction {
-    private final int amt;
+    private final AbstractCard cardToMake;
     private final boolean canGainMagic;
+    private static final float x = Settings.WIDTH / 2.0F;
+    private static final float y = Settings.HEIGHT / 2.0F;
 
-    public MakeMagicPowerInDrawPileAction(int amt, boolean canGainMagic) {
-        this.amt = amt;
+    public MakeMagicPowerInDrawPileAction(int amount, boolean canGainMagic) {
         this.canGainMagic = canGainMagic;
+        setValues(this.target, this.source, amount);
+        this.actionType = AbstractGameAction.ActionType.CARD_MANIPULATION;
+        this.startDuration = Settings.FAST_MODE ? Settings.ACTION_DUR_FAST : 0.5F;
+        this.duration = this.startDuration;
+        this.cardToMake = new MagicPower();
     }
-
-    @Override
     public void update() {
-        if(canGainMagic){
-            if(amt < 6){
-                this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(), amt,true,true));
-            }else {
-                int counts = amt / 5;
-                int residue = amt % 5;
-                for (int i = 0; i < counts; i++) {
-                    this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),5,true,true));
+        if (this.duration == this.startDuration) {
+            if(this.canGainMagic){
+                for (int i = 0; i < this.amount; i++) {
+                    AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
+                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false));
                 }
-                this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),residue,true,true));
             }
+            this.duration -= Gdx.graphics.getDeltaTime();
         }
-        this.isDone = true;
+        tickDuration();
     }
 }

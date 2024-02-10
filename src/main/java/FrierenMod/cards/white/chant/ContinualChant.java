@@ -45,11 +45,14 @@ public class ContinualChant extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
-        this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
+        this.addToBot(new ChantAction(isChantUpgraded,this.chantX));
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if(!new LegendMagicHelper().canLegendMagicUse(this,m)){
+            return false;
+        }
         return super.upgradedCanUse(p, m);
     }
 }
