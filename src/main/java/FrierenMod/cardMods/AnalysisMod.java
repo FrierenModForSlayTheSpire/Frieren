@@ -29,18 +29,17 @@ public class AnalysisMod extends AbstractCardModifier {
         if (card instanceof AnalysisMagic)
             switch (this.currentLevel){
                 case 3:
-                    ((CustomLegendMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("");
                     break;
                 case 2:
-                    ((CustomLegendMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("");
                     break;
                 case 1:
-                    ((CustomLegendMagic)card).loadCardImage("");
+                    ((AnalysisMagic)card).loadCardImage("");
                     break;
                 default:
                     break;
             }
-
     }
 
     public String identifier(AbstractCard card) {
