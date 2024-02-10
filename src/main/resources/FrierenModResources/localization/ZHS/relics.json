@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "每个回合开始时，将 #b3 张 #y魔力 置入抽牌堆"
     ]
+  },
+  "FrierenMod:HairAccessory": {
+    "NAME": "菲伦的发饰",
+    "FLAVOR": "芙莉莲送给菲伦的16岁生日礼物",
+    "DESCRIPTIONS": [
+      "你每 #y同调 #b4 张 #y魔力 ，抽一张牌。"
+    ]
   }
 }
