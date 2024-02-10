@@ -32,9 +32,9 @@ public class OilMagicAction extends AbstractGameAction {
                 }
             }
         }
-        this.addToBot(new DamageAllEnemiesAction(p, c.multiDamage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new DamageAllEnemiesAction(p, c.damage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         if(flag == 0){
-            this.addToBot(new DamageAllEnemiesAction(p, c.multiDamage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new DamageAllEnemiesAction(p, c.damage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         }
         this.isDone = true;
     }
