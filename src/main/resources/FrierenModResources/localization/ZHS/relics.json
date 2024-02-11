@@ -1,16 +1,23 @@
 {
   "FrierenMod:MyRelic": {
     "NAME": "圣仗之证",
-    "FLAVOR": "这个人很懒，什么都没写",
+    "FLAVOR": "相当久远前的魔法使资格证明，但管理魔法的团体经常更换，芙莉莲对此头疼不已。",
     "DESCRIPTIONS": [
       "每个回合开始时，将 #b3 张 #y魔力 置入抽牌堆"
     ]
   },
   "FrierenMod:HairAccessory": {
     "NAME": "菲伦的发饰",
-    "FLAVOR": "芙莉莲送给菲伦的16岁生日礼物",
+    "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
     "DESCRIPTIONS": [
       "你每 #y同调 #b4 张 #y魔力 ，抽一张牌。"
+    ]
+  },
+  "FrierenMod:MercuryPudding": {
+    "NAME": "水星布丁",
+    "FLAVOR": "芙莉莲喜欢吃的甜点。",
+    "DESCRIPTIONS": [
+      "战斗结束时，若你的血量在10点及以下，回复你最大生命值的 #b50% （仅能起效一次）。"
     ]
   }
 }

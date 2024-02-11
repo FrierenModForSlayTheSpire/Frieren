@@ -17,6 +17,7 @@ import FrierenMod.cards.white.FlightMagic;
 import FrierenMod.cards.white.JewelryMagic;
 import FrierenMod.cards.white.OilMagic;
 import FrierenMod.relics.HairAccessory;
+import FrierenMod.relics.MercuryPudding;
 import FrierenMod.relics.MyRelic;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.SecondMagicNumberVariable;
@@ -175,7 +176,7 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
     public void receiveEditRelics() {
          BaseMod.addRelic(new MyRelic(), RelicType.SHARED);
          BaseMod.addRelic(new HairAccessory(), RelicType.SHARED);
-
+         BaseMod.addRelic(new MercuryPudding(), RelicType.SHARED);
     }
     @Override
     public void receiveEditCharacters() {
