@@ -30,7 +30,7 @@ public class MultipleAttackMagicAction extends AbstractGameAction {
     }
 
     public void update() {
-        int baseDamage = this.energyOnUse + 1;
+        int baseDamage = this.energyOnUse + 4;
         int counts = this.isUpgraded?this.energyOnUse+1:this.energyOnUse;
         int magicNum = this.energyOnUse;
         if (this.p.hasRelic("Chemical X")) {

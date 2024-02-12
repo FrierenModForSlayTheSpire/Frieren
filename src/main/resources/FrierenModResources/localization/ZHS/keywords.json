@@ -68,5 +68,12 @@
       "缠绕"
     ],
     "DESCRIPTION": "在回合结束时承受伤害。"
+  },
+  {
+    "PROPER_NAME":"变动",
+    "NAMES": [
+      "变动"
+    ],
+    "DESCRIPTION": "抽牌顺序将改变。"
   }
 ]
