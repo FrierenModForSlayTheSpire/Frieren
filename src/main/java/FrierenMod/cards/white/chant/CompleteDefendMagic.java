@@ -32,7 +32,7 @@ public class CompleteDefendMagic extends AbstractFrierenCard {
         this.block = this.baseBlock = 10;
         this.isChantCard = true;
         this.magicNumber = this.baseMagicNumber=1;
-        this.chantX = this.baseChantX = 3;
+        this.chantX = this.baseChantX = 4;
     }
     @Override
     public void upgrade() {
