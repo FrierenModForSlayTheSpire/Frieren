@@ -11,23 +11,12 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-
 
 public class CompleteDefendMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(CompleteDefendMagic.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
-    private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
-    private static final String IMG_PATH = "FrierenModResources/img/cards/CompleteDefendMagic_skill.png";
-    private static final int COST = 2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.NONE;
-
+    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public CompleteDefendMagic() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, 2, CardRarity.RARE);
         this.block = this.baseBlock = 10;
         this.isChantCard = true;
         this.magicNumber = this.baseMagicNumber=1;

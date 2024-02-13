@@ -18,17 +18,8 @@ import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class BoomMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(BoomMagic.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "FrierenModResources/img/cards/BoomMagic_attack.png";
-    private static final int COST = 2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE = CardType.ATTACK;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.UNCOMMON;
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public BoomMagic() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
         this.baseDamage = 18;
         this.isMultiDamage = true;
         this.cardsToPreview = new Laziness();

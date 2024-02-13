@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.ChantFromDiscardPile;
-import FrierenMod.cards.optionCards.ChantFromDrawPile;
-import FrierenMod.cards.optionCards.ChantFromHand;
+import FrierenMod.cards.optionCards.ChantDiscardPile;
+import FrierenMod.cards.optionCards.ChantDrawPile;
+import FrierenMod.cards.optionCards.ChantHand;
 import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
@@ -27,34 +27,34 @@ public class ChantAction extends AbstractGameAction {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         if(!this.upgraded){
             if (helper.canChantFromDrawPile(this.x)) {
-                ChantFromDrawPile c = new ChantFromDrawPile();
+                ChantDrawPile c = new ChantDrawPile();
                 c.block = c.baseBlock = x;
                 c.magicNumber = c.baseMagicNumber = x;
                 c.applyPowers();
                 stanceChoices.add(c);
             }
             if (helper.canChantFromHand(this.x)) {
-                ChantFromHand c = new ChantFromHand();
+                ChantHand c = new ChantHand();
                 c.magicNumber = c.baseMagicNumber = x;
                 stanceChoices.add(c);
             }
             if (helper.canChantFromDiscardPile(this.x)) {
-                ChantFromDiscardPile c = new ChantFromDiscardPile();
+                ChantDiscardPile c = new ChantDiscardPile();
                 c.magicNumber = c.baseMagicNumber = x;
                 stanceChoices.add(c);
             }
 
         }
         else {
-            ChantFromDrawPile c1 = new ChantFromDrawPile();
+            ChantDrawPile c1 = new ChantDrawPile();
             c1.block = c1.baseBlock = x;
             c1.magicNumber = c1.baseMagicNumber = x;
             c1.upgrade();
             c1.applyPowers();
-            ChantFromHand c2 = new ChantFromHand();
+            ChantHand c2 = new ChantHand();
             c2.magicNumber = c2.baseMagicNumber = x;
             c2.upgrade();
-            ChantFromDiscardPile c3 = new ChantFromDiscardPile();
+            ChantDiscardPile c3 = new ChantDiscardPile();
             c3.magicNumber = c3.baseMagicNumber = x;
             c3.upgrade();
             stanceChoices.add(c1);

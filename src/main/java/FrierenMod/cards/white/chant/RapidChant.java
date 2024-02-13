@@ -12,17 +12,8 @@ import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class RapidChant extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(RapidChant.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
-    private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
-    private static final String IMG_PATH = "FrierenModResources/img/cards/RapidChant_skill.png";
-    private static final int COST = 0;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.COMMON;
-    private static final CardTarget TARGET = CardTarget.NONE;
     public RapidChant() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, 0, CardRarity.COMMON);
         this.isChantCard = true;
         this.chantX = this.baseChantX = 3;
     }
@@ -31,7 +22,7 @@ public class RapidChant extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.selfRetain = true;
-            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }

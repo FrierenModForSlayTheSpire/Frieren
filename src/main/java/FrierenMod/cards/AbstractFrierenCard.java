@@ -2,11 +2,16 @@ package FrierenMod.cards;
 
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
@@ -28,6 +33,37 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean canGainMagic;
     public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
+        initSwitches();
+    }
+    public AbstractFrierenCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
+        initSwitches();
+    }
+    public AbstractFrierenCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
+        initSwitches();
+    }
+    public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, FRIEREN_CARD, rarity, target);
+        initSwitches();
+    }
+    public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, FRIEREN_CARD, rarity, CardTarget.NONE);
+        initSwitches();
+    }
+    public AbstractFrierenCard(String id, int cost, CardRarity rarity) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, FRIEREN_CARD, rarity, CardTarget.NONE);
+        initSwitches();
+    }
+    @Override
+    public void upgrade() {
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+
+    }
+    private void initSwitches(){
         this.isCostModified = false;
         this.isCostModifiedForTurn = false;
         this.isDamageModified = false;
@@ -45,14 +81,6 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isUsingMagicPower = false;
         this.isMagicSource = false;
         this.canGainMagic = true;
-    }
-    @Override
-    public void upgrade() {
-    }
-
-    @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-
     }
     public void upgradeChantX(int amount){
         this.baseChantX += amount;

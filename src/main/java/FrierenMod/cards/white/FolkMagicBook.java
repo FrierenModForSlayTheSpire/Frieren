@@ -1,16 +1,17 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.TimeTravelAction;
+import FrierenMod.actions.MagicBookAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TimeTravel extends AbstractFrierenCard {
-    public static final String ID = ModInformation.makeID(TimeTravel.class.getSimpleName());
-    public TimeTravel() {
-        super(ID, 2, CardRarity.RARE);
+public class FolkMagicBook extends AbstractFrierenCard {
+    public static final String ID = ModInformation.makeID(FolkMagicBook.class.getSimpleName());
+    public FolkMagicBook() {
+        super(ID, 2, CardRarity.UNCOMMON);
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
@@ -22,6 +23,6 @@ public class TimeTravel extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new TimeTravelAction(this,upgraded));
+        this.addToBot(new MagicBookAction(this.upgraded));
     }
 }

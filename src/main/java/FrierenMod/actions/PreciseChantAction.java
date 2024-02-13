@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.ChantFromDiscardPile;
-import FrierenMod.cards.optionCards.ChantFromDrawPile;
-import FrierenMod.cards.optionCards.ChantFromHand;
+import FrierenMod.cards.optionCards.ChantDiscardPile;
+import FrierenMod.cards.optionCards.ChantDrawPile;
+import FrierenMod.cards.optionCards.ChantHand;
 import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
@@ -25,7 +25,7 @@ public class PreciseChantAction extends AbstractGameAction {
         int discard = helper.getMagicPowerNumInDiscardPile();
         ArrayList<AbstractCard> choices = new ArrayList<>();
         if(draw > 0){
-            ChantFromDrawPile c = new ChantFromDrawPile();
+            ChantDrawPile c = new ChantDrawPile();
             c.magicNumber = c.baseMagicNumber = draw;
             c.block = c.baseBlock = draw;
             if(isChantUpgraded){
@@ -35,7 +35,7 @@ public class PreciseChantAction extends AbstractGameAction {
             choices.add(c);
         }
         if(hand > 0){
-            ChantFromHand c = new ChantFromHand();
+            ChantHand c = new ChantHand();
             c.magicNumber = c.baseMagicNumber = hand;
             if(isChantUpgraded){
                 c.upgrade();
@@ -43,7 +43,7 @@ public class PreciseChantAction extends AbstractGameAction {
             choices.add(c);
         }
         if(discard > 0){
-            ChantFromDiscardPile c = new ChantFromDiscardPile();
+            ChantDiscardPile c = new ChantDiscardPile();
             c.magicNumber = c.baseMagicNumber = discard;
             if(isChantUpgraded){
                 c.upgrade();

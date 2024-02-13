@@ -15,16 +15,8 @@ import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 public class NightDressForm extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(NightDressForm.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "FrierenModResources/img/cards/NightDressForm_power.png";
-    private static final int COST = 3;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION;
-    private static final CardType TYPE = CardType.POWER;
-    private static final CardColor COLOR = FRIEREN_CARD;
-    private static final CardRarity RARITY = CardRarity.RARE;
-    private static final CardTarget TARGET = CardTarget.NONE;
     public NightDressForm() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, 3, CardType.POWER, CardRarity.RARE);
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;

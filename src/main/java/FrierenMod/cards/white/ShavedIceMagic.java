@@ -1,28 +1,29 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.DrawMagicAction;
+import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MarshMagic extends AbstractFrierenCard {
-    public static final String ID = ModInformation.makeID(MarshMagic.class.getSimpleName());
-    public MarshMagic() {
-        super(ID, 1, CardRarity.COMMON);
-        this.magicNumber = this.baseMagicNumber = 3;
+public class ShavedIceMagic extends AbstractFrierenCard {
+    public static final String ID = ModInformation.makeID(ShavedIceMagic.class.getSimpleName());
+    public ShavedIceMagic() {
+        super(ID, 0, CardRarity.COMMON);
+        this.baseMagicNumber = this.magicNumber = 4;
+        this.isMagicSource= true;
         this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(2);
         }
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawMagicAction(this.magicNumber));
+        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
     }
 }

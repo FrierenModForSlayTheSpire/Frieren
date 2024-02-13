@@ -2,7 +2,7 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.FlightMagic;
-import FrierenMod.cards.white.JewelryMagic;
+import FrierenMod.cards.white.FindLostOrnamentMagic;
 import FrierenMod.cards.white.OilMagic;
 import FrierenMod.cards.white.ThunderMagic;
 import FrierenMod.cards.white.chant.ContinualChant;
@@ -40,7 +40,7 @@ public class LegendMagicHelper {
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FlightMagic());
         pool.add(new ContinualChant());
-        pool.add(new JewelryMagic());
+        pool.add(new FindLostOrnamentMagic());
         pool.add(new OilMagic());
         pool.add(new ThunderMagic());
         return pool;

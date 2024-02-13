@@ -71,7 +71,7 @@ public class ChantHelper {
         pool.add(new RapidChant());
         pool.add(new ContinualChant());
         pool.add(new FlowerFieldMagic());
-        pool.add(new StatueMagic());
+        pool.add(new RustCleanMagic());
         pool.add(new CompleteDefendMagic());
         pool.add(new FinalChant());
         pool.add(new PreciseChant());

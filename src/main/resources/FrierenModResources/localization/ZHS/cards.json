@@ -29,7 +29,7 @@
     "NAME": "魔力",
     "DESCRIPTION": " frierenmod:同调 。"
   },
-  "FrierenMod:IceCreamMagic": {
+  "FrierenMod:ShavedIceMagic": {
     "NAME": "变出刨冰的魔法",
     "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。"
   },
@@ -38,17 +38,17 @@
     "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。"
   },
-  "FrierenMod:ChantFromDrawPile": {
+  "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
     "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。",
     "UPGRADE_DESCRIPTION":"获得 !B! 点格挡两次。"
   },
-  "FrierenMod:ChantFromHand": {
+  "FrierenMod:ChantHand": {
     "NAME": "从手牌咏唱",
     "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
     "UPGRADE_DESCRIPTION":"获得 !M! 点 [E] 。"
   },
-  "FrierenMod:ChantFromDiscardPile": {
+  "FrierenMod:ChantDiscardPile": {
     "NAME": "从弃牌堆咏唱",
     "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
     "UPGRADE_DESCRIPTION":"获得 !M! 点 力量 。"
@@ -85,7 +85,7 @@
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。",
     "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。"
   },
-  "FrierenMod:MagicBook": {
+  "FrierenMod:FolkMagicBook": {
     "NAME": "民间的魔导书",
     "DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。这2张牌在本回合耗能-2。 NL  消耗 。"
@@ -107,11 +107,11 @@
     "NAME": "睡衣形态",
     "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的3倍。 NL （将造成 !M! 点伤害）。"
   },
-  "FrierenMod:PreparePosture": {
+  "FrierenMod:PreparedPosture": {
     "NAME": "准备架势",
     "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
   },
-  "FrierenMod:Trick": {
+  "FrierenMod:LittleTrick": {
     "NAME": "欺骗魔族的小把戏",
     "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。"
   },
@@ -120,11 +120,11 @@
     "DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草 放入手牌。",
     "UPGRADE_DESCRIPTION": " frierenmod:咏唱  !CX!  。 NL 将1张 *苍月草+ 放入手牌。"
   },
-  "FrierenMod:SpeedFlow": {
+  "FrierenMod:AccelerateFlow": {
     "NAME": "加速流转",
     "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
   },
-  "FrierenMod:JewelryMagic": {
+  "FrierenMod:FindLostOrnamentMagic": {
     "NAME": "寻找遗失饰品的魔法",
     "DESCRIPTION": " 固有 。 frierenmod:传说魔法 。 NL 战斗结束时，获得一件随机遗物。 NL  虚无 。"
   },
@@ -141,7 +141,7 @@
     "NAME": "翻薄饼时会很顺利的魔法",
     "DESCRIPTION": "从抽牌堆中选择 !M! 张牌和你手牌中的1张 *魔力 交换。"
   },
-  "FrierenMod:TwisterMagic": {
+  "FrierenMod:TongueTwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
     "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
   },
@@ -150,7 +150,7 @@
     "DESCRIPTION": " 随机造成X+4点伤害X次，将X张 *魔力 放入手牌。",
     "UPGRADE_DESCRIPTION": "随机造成X+4点伤害X+1次，将X张 *魔力 放入手牌。"
   },
-  "FrierenMod:PrepareRite": {
+  "FrierenMod:RitualPreparing": {
     "NAME": "仪式的准备",
     "DESCRIPTION": "你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。",
     "UPGRADE_DESCRIPTION": " 固有 。 NL 你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。"
@@ -172,7 +172,7 @@
     "DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。",
     "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。"
   },
-  "FrierenMod:StatueMagic": {
+  "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
     "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。"
   },

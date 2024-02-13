@@ -62,6 +62,9 @@ public class ModInformation {
     public static String makeCardOrbPath(String character, String type){
         return getCardStylesPath() + character + "/" + "orb/" + type + "_orb.png";
     }
+    public static String makeCardImgPath(String name){
+        return getImgPath() + "cards/" + name + ".png";
+    }
     public static String makeRelicImgPath(String id){
         return getImgPath() + "relics/" + id + ".png";
     }
