@@ -18,8 +18,8 @@ public class MagicBookAction extends AbstractGameAction {
         AbstractCard c1 = new ChantHelper().getRandomCard();
         AbstractCard c2 = new LegendMagicHelper().getRandomCard();
         if(this.upgraded){
-            c1.setCostForTurn(0);
-            c2.setCostForTurn(0);
+            c1.setCostForTurn(c1.cost-2);
+            c2.setCostForTurn(c2.cost-2);
         }
         this.addToBot(new MakeTempCardInHandAction(c1));
         this.addToBot(new MakeTempCardInHandAction(c2));
