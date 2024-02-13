@@ -24,14 +24,14 @@ public class MarshMagic extends AbstractFrierenCard {
     private static final CardTarget TARGET = CardTarget.NONE;
     public MarshMagic() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(0);
         }
     }
     @Override
