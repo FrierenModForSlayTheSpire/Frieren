@@ -33,6 +33,9 @@ public class Imagination extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.selfRetain = true;
+            this.rawDescription = CARD_STRINGS.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     @Override
