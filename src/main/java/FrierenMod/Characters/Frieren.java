@@ -4,7 +4,7 @@ import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.DefendMagic;
 import FrierenMod.cards.white.chant.RapidChant;
 import FrierenMod.modcore.FrierenMod;
-import FrierenMod.relics.MyRelic;
+import FrierenMod.relics.HolyEmblem;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -100,7 +100,7 @@ public class Frieren extends CustomPlayer {
     // 初始遗物的ID，可以先写个原版遗物凑数
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(MyRelic.ID);
+        retVal.add(HolyEmblem.ID);
         return retVal;
     }
 
@@ -228,10 +228,10 @@ public class Frieren extends CustomPlayer {
         @SpireEnum
         public static PlayerClass FRIEREN;
 
-        @SpireEnum(name = "EXAMPLE_RED")
+        @SpireEnum(name = "Frieren")
         public static AbstractCard.CardColor FRIEREN_CARD;
 
-        @SpireEnum(name = "EXAMPLE_RED")
-        public static CardLibrary.LibraryType EXAMPLE_LIBRARY;
+        @SpireEnum(name = "Frieren")
+        public static CardLibrary.LibraryType FRIEREN_LIBRARY;
     }
 }

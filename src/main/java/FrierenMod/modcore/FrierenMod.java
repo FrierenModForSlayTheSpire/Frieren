@@ -172,11 +172,11 @@ public class FrierenMod implements EditCardsSubscriber, EditStringsSubscriber, E
     }
     @Override
     public void receiveEditRelics() {
-         BaseMod.addRelic(new MyRelic(), RelicType.SHARED);
-         BaseMod.addRelic(new HairAccessory(), RelicType.SHARED);
-         BaseMod.addRelic(new MercuryPudding(), RelicType.SHARED);
-         BaseMod.addRelic(new ScaleOfObedience(), RelicType.SHARED);
-         BaseMod.addRelic(new MimicHead(), RelicType.SHARED);
+         BaseMod.addRelicToCustomPool(new HolyEmblem(), FRIEREN_CARD);
+         BaseMod.addRelicToCustomPool(new HairAccessory(), FRIEREN_CARD);
+         BaseMod.addRelicToCustomPool(new MercuryPudding(), FRIEREN_CARD);
+         BaseMod.addRelicToCustomPool(new ScaleOfObedience(), FRIEREN_CARD);
+         BaseMod.addRelicToCustomPool(new MimicHead(), FRIEREN_CARD);
     }
     @Override
     public void receiveEditCharacters() {

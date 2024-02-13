@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class MyRelic extends CustomRelic {
-    public static final String ID = ModInfo.makeID("MyRelic");
+public class HolyEmblem extends CustomRelic {
+    public static final String ID = ModInfo.makeID(HolyEmblem.class.getSimpleName());
     // 图片路径
     private static final String IMG_PATH = "FrierenModResources/img/relics/HolyEmblem.png";
     // 遗物类型
@@ -17,7 +17,7 @@ public class MyRelic extends CustomRelic {
     // 点击音效
     private static final LandingSound LANDING_SOUND = LandingSound.FLAT;
 
-    public MyRelic() {
+    public HolyEmblem() {
         super(ID, ImageMaster.loadImage(IMG_PATH), RELIC_TIER, LANDING_SOUND);
     }
 
@@ -26,7 +26,7 @@ public class MyRelic extends CustomRelic {
     }
 
     public AbstractRelic makeCopy() {
-        return new MyRelic();
+        return new HolyEmblem();
     }
     @Override
     public void atTurnStartPostDraw() {
