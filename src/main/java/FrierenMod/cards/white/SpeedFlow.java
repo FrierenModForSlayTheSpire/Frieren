@@ -1,8 +1,10 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.SpeedFlowAction;
+import FrierenMod.actions.MakeMagicPowerInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.helpers.ModInfo;
+import FrierenMod.powers.SpeedFlowPower;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -24,6 +26,7 @@ public class SpeedFlow extends AbstractFrierenCard {
     public SpeedFlow() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.magicNumber = this.baseMagicNumber = 2;
+        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -34,6 +37,7 @@ public class SpeedFlow extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new SpeedFlowAction(this.magicNumber));
+        this.addToBot(new MakeMagicPowerInHandAction(this.magicNumber,canGainMagic));
+        this.addToBot(new ApplyPowerAction(p,p,new SpeedFlowPower(p)));
     }
 }
