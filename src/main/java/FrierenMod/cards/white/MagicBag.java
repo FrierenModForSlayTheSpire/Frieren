@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class MagicBag extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(MagicBag.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(MagicBag.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/MagicBag_skill.png";

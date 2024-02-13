@@ -3,7 +3,7 @@ package FrierenMod.actions;
 import FrierenMod.cards.optionCards.ChantFromDiscardPile;
 import FrierenMod.cards.optionCards.ChantFromDrawPile;
 import FrierenMod.cards.optionCards.ChantFromHand;
-import FrierenMod.helpers.ChantHelper;
+import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

@@ -1,7 +1,7 @@
 package FrierenMod.relics;
 
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,9 +9,9 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class HolyEmblem extends CustomRelic {
-    public static final String ID = ModInfo.makeID(HolyEmblem.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(HolyEmblem.class.getSimpleName());
     // 图片路径
-    private static final String IMG_PATH = "FrierenModResources/img/relics/HolyEmblem.png";
+    private static final String IMG_PATH = ModInformation.makeRelicImgPath(HolyEmblem.class.getSimpleName());
     // 遗物类型
     private static final RelicTier RELIC_TIER = RelicTier.STARTER;
     // 点击音效

@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.ScryAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class ScryMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(ScryMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(ScryMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

@@ -2,14 +2,14 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.HideMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HideMagic extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(HideMagic.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(HideMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/HideMagic_skill.png";

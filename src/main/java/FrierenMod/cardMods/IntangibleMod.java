@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class IntangibleMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(IntangibleMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(IntangibleMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

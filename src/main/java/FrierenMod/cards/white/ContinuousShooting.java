@@ -1,8 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
-import basemod.abstracts.CustomCard;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,7 +16,7 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class ContinuousShooting extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(ContinuousShooting.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(ContinuousShooting.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/ContinuousShooting_attack.png";

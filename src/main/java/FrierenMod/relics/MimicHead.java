@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 
 public class MimicHead extends CustomRelic {
-    public static final String ID = ModInfo.makeID("MimicHead");
+    public static final String ID = ModInformation.makeID("MimicHead");
     // 图片路径
     private static final String IMG_PATH = "FrierenModResources/img/relics/MimicHead.png";
     // 遗物类型

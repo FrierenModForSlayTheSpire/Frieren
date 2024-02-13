@@ -1,7 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.actions.SwitchStrengthAndDexterityAction;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class SwitchStrengthAndDexterityPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModInfo.makeID(SwitchStrengthAndDexterityPower.class.getSimpleName());
+    public static final String POWER_ID = ModInformation.makeID(SwitchStrengthAndDexterityPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称

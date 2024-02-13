@@ -1,11 +1,9 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,12 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.watcher.VaultPower;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class TimeDoor extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(TimeDoor.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(TimeDoor.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/TimeDoor_skill.png";

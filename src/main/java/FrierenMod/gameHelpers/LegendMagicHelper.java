@@ -1,4 +1,4 @@
-package FrierenMod.helpers;
+package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.FlightMagic;

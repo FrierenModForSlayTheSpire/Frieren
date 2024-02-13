@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.ChantHelper;
+import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.powers.ThunderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

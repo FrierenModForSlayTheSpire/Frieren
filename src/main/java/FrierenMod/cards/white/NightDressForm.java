@@ -1,8 +1,8 @@
 package FrierenMod.cards.white;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.utils.ModInformation;
 import FrierenMod.powers.NightDressPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class NightDressForm extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(NightDressForm.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(NightDressForm.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/NightDressForm_power.png";

@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 
 
 public class MercuryPudding extends CustomRelic {
-    public static final String ID = ModInfo.makeID("MercuryPudding");
+    public static final String ID = ModInformation.makeID("MercuryPudding");
     // 图片路径
     private static final String IMG_PATH = "FrierenModResources/img/relics/MercuryPudding.png";
     // 遗物类型

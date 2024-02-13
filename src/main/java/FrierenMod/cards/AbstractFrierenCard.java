@@ -1,7 +1,7 @@
 package FrierenMod.cards;
 
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.LegendMagicHelper;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

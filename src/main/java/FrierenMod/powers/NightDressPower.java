@@ -3,8 +3,8 @@ package FrierenMod.powers;
 import FrierenMod.actions.ExhaustMagicPowerInDiscardPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInDrawPileAction;
 import FrierenMod.actions.ExhaustMagicPowerInHandAction;
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class NightDressPower extends AbstractPower {
     // 能力的ID
-    public static final String POWER_ID = ModInfo.makeID(NightDressPower.class.getSimpleName());
+    public static final String POWER_ID = ModInformation.makeID(NightDressPower.class.getSimpleName());
     // 能力的本地化字段
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     // 能力的名称

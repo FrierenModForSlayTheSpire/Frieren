@@ -4,9 +4,8 @@ import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.LegendMagicHelper;
-import FrierenMod.helpers.ModInfo;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -15,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class ContinualChant extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(ContinualChant.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(ContinualChant.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/ContinualChant_skill.png";

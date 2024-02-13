@@ -2,8 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.ExtinguishMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.CustomLegendMagic;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ExtinguishOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(ExtinguishOption.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(ExtinguishOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/ExtinguishOption_skill.png";
@@ -23,18 +22,16 @@ public class ExtinguishOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private final AbstractCard currentLegendMagic;
-    private final int hpAmt;
-
-
+    private AbstractCard currentLegendMagic;
+    private int hpAmt;
+    public ExtinguishOption() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+    }
     public ExtinguishOption(AbstractCard currentLegendMagic, int hpAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
         this.hpAmt = hpAmt;
         this.magicNumber = this.baseMagicNumber = hpAmt;
-    }
-    @Override
-    public void upgrade() {
     }
 
     @Override
@@ -49,8 +46,5 @@ public class ExtinguishOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new ExtinguishMod(this.hpAmt));
-    }
-    public AbstractCard makeCopy() {
-        return new ExtinguishOption(new CustomLegendMagic(),0);
     }
 }

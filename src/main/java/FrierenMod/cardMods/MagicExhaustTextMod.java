@@ -1,12 +1,12 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class MagicExhaustTextMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(MagicExhaustTextMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(MagicExhaustTextMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

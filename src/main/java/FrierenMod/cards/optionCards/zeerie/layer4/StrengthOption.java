@@ -2,8 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.StrengthMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.CustomLegendMagic;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class StrengthOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(StrengthOption.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(StrengthOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/StrengthOption_skill.png";
@@ -23,17 +22,14 @@ public class StrengthOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private final AbstractCard currentLegendMagic;
-
-
+    private AbstractCard currentLegendMagic;
+    public StrengthOption() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+    }
     public StrengthOption(AbstractCard currentLegendMagic) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
     }
-    @Override
-    public void upgrade() {
-    }
-
     @Override
     public boolean canUpgrade() {
         return false;
@@ -46,8 +42,5 @@ public class StrengthOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new StrengthMod());
-    }
-    public AbstractCard makeCopy() {
-        return new StrengthOption(new CustomLegendMagic());
     }
 }

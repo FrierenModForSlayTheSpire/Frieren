@@ -1,7 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ChantHelper;
+import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Strike extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(Strike.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(Strike.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/Strike_attack.png";

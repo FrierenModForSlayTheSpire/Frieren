@@ -4,7 +4,7 @@ import FrierenMod.actions.ExhaustMagicPowerTakeTurnsAction;
 import FrierenMod.cardMods.RecoverCardDescriptionAfterImaginationPowerMod;
 import FrierenMod.cardMods.MagicExhaustTextMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -20,7 +20,7 @@ import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ImaginationPower extends AbstractPower {
-    public static final String POWER_ID = ModInfo.makeID(ImaginationPower.class.getSimpleName());
+    public static final String POWER_ID = ModInformation.makeID(ImaginationPower.class.getSimpleName());
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;

@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.ChantHelper;
+import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class ExhaustMagicPowerTakeTurnsAction extends AbstractGameAction {

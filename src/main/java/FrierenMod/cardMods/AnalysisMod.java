@@ -1,14 +1,13 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.cards.white.AnalysisMagic;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 public class AnalysisMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(AnalysisMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(AnalysisMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
     private final int currentLevel;

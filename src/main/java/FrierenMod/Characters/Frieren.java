@@ -3,8 +3,9 @@ package FrierenMod.Characters;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.DefendMagic;
 import FrierenMod.cards.white.chant.RapidChant;
-import FrierenMod.modcore.FrierenMod;
 import FrierenMod.relics.HolyEmblem;
+import FrierenMod.utils.FrierenRes;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -27,34 +28,11 @@ import java.util.ArrayList;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Frieren extends CustomPlayer {
-    // 火堆的人物立绘（行动前）
-    private static final String FRIEREN_SHOULDER_1 = "FrierenModResources/img/char/shoulder.png";
-    // 火堆的人物立绘（行动后）
-    private static final String FRIEREN_SHOULDER_2 = "FrierenModResources/img/char/shoulder2.png";
-    // 人物死亡图像
-    private static final String CORPSE_IMAGE = "FrierenModResources/img/char/corpse_Frieren.png";
-    // 战斗界面左下角能量图标的每个图层
-    private static final String[] ORB_TEXTURES = new String[]{
-            "FrierenModResources/img/UI/orb/layer5.png",
-            "FrierenModResources/img/UI/orb/layer4.png",
-            "FrierenModResources/img/UI/orb/layer3.png",
-            "FrierenModResources/img/UI/orb/layer2.png",
-            "FrierenModResources/img/UI/orb/layer1.png",
-            "FrierenModResources/img/UI/orb/layer6.png",
-            "FrierenModResources/img/UI/orb/layer5d.png",
-            "FrierenModResources/img/UI/orb/layer4d.png",
-            "FrierenModResources/img/UI/orb/layer3d.png",
-            "FrierenModResources/img/UI/orb/layer2d.png",
-            "FrierenModResources/img/UI/orb/layer1d.png"
-    };
-    // 每个图层的旋转速度
-    private static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
     // 人物的本地化文本，如卡牌的本地化文本一样，如何书写见下
-    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("FrierenMod:Frieren");
+    private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ModInformation.MOD_NAME + ":" + FrierenRes.CHARACTER_NAME);
 
     public Frieren(String name) {
-        super(name, Enums.FRIEREN,ORB_TEXTURES,"FrierenModResources/img/UI/orb/vfx.png", LAYER_SPEED, null, null);
-
+        super(name, Enums.FRIEREN,FrierenRes.ORB_TEXTURES,FrierenRes.ORB_VFX,FrierenRes.LAYER_SPEED, null, null);
 
         // 人物对话气泡的大小，如果游戏中尺寸不对在这里修改（libgdx的坐标轴左下为原点）
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -63,9 +41,9 @@ public class Frieren extends CustomPlayer {
 
         // 初始化你的人物，如果你的人物只有一张图，那么第一个参数填写你人物图片的路径。
         this.initializeClass(
-                "FrierenModResources/img/char/character.png", // 人物图片
-                FRIEREN_SHOULDER_2, FRIEREN_SHOULDER_1,
-                CORPSE_IMAGE, // 人物死亡图像
+                FrierenRes.CHARACTER_IMG, // 人物图片
+                FrierenRes.SHOULDER_1, FrierenRes.SHOULDER_2,
+                FrierenRes.CORPSE_IMAGE, // 人物死亡图像
                 this.getLoadout(),
                 0.0F, 0.0F,
                 200.0F, 220.0F, // 人物碰撞箱大小，越大的人物模型这个越大
@@ -141,7 +119,7 @@ public class Frieren extends CustomPlayer {
     // 卡牌轨迹颜色
     @Override
     public Color getCardTrailColor() {
-        return FrierenMod.FRIEREN_WHITE;
+        return FrierenRes.RENDER_COLOR;
     }
 
     // 高进阶带来的生命值损失
@@ -167,9 +145,9 @@ public class Frieren extends CustomPlayer {
     public ArrayList<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
         // 有两个参数的，第二个参数表示出现图片时播放的音效
-        panels.add(new CutscenePanel("FrierenModResources/img/char/Victory1.png", "ATTACK_MAGIC_FAST_1"));
-        panels.add(new CutscenePanel("FrierenModResources/img/char/Victory2.png"));
-        panels.add(new CutscenePanel("FrierenModResources/img/char/Victory3.png"));
+        panels.add(new CutscenePanel(FrierenRes.VICTORY_1, "ATTACK_MAGIC_FAST_1"));
+        panels.add(new CutscenePanel(FrierenRes.VICTORY_2));
+        panels.add(new CutscenePanel(FrierenRes.VICTORY_3));
         return panels;
     }
 
@@ -200,7 +178,7 @@ public class Frieren extends CustomPlayer {
     // 打心脏的颜色，不是很明显
     @Override
     public Color getSlashAttackColor() {
-        return FrierenMod.FRIEREN_WHITE;
+        return FrierenRes.RENDER_COLOR;
     }
 
     // 吸血鬼事件文本，主要是他（索引为0）和她（索引为1）的区别（机器人另外）
@@ -212,7 +190,7 @@ public class Frieren extends CustomPlayer {
     // 卡牌选择界面选择该牌的颜色
     @Override
     public Color getCardRenderColor() {
-        return FrierenMod.FRIEREN_WHITE;
+        return FrierenRes.RENDER_COLOR;
     }
 
     // 第三章面对心脏造成伤害时的特效

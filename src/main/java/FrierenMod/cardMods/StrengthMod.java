@@ -1,5 +1,5 @@
 package FrierenMod.cardMods;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.unique.LimitBreakAction;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class StrengthMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(StrengthMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(StrengthMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 

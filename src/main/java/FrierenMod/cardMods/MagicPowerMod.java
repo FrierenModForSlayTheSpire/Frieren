@@ -4,7 +4,7 @@ import FrierenMod.actions.AbstractFrierenAction;
 import FrierenMod.actions.MagicPowerAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class MagicPowerMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(MagicPowerMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(MagicPowerMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
     private final int type;

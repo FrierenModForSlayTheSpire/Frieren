@@ -1,8 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.Status;
+import FrierenMod.gameHelpers.Status;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 
 public class ReceiveEverythingAction extends AbstractGameAction {
     private final Status status;

@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import FrierenMod.cards.AbstractFrierenCard;
 
 public class HairAccessory extends CustomRelic {
-    public static final String ID = ModInfo.makeID("HairAccessory");
+    public static final String ID = ModInformation.makeID("HairAccessory");
     // 图片路径
     private static final String IMG_PATH = "FrierenModResources/img/relics/HairAccessory.png";
     // 遗物类型

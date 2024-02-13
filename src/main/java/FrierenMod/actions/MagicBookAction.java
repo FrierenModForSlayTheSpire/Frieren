@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.LegendMagicHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

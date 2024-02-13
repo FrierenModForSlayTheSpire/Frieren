@@ -3,7 +3,7 @@ package FrierenMod.cards.white.chant;
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Flower;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class FlowerFieldMagic extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(FlowerFieldMagic.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(FlowerFieldMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/FlowerFieldMagic_skill.png";

@@ -1,4 +1,4 @@
-package FrierenMod.helpers;
+package FrierenMod.gameHelpers;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.potions.AbstractPotion;

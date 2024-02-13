@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.Status;
+import FrierenMod.gameHelpers.Status;
 import FrierenMod.powers.TimeTravelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

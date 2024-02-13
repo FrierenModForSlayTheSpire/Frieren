@@ -2,8 +2,7 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.VulnerableMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.CustomLegendMagic;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class VulnerableOption extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(VulnerableOption.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(VulnerableOption.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/VulnerableOption_skill.png";
@@ -23,18 +22,16 @@ public class VulnerableOption extends AbstractFrierenCard {
     private static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardRarity RARITY = CardRarity.SPECIAL;
     private static final CardTarget TARGET = CardTarget.NONE;
-    private final AbstractCard currentLegendMagic;
-    private final int stackAmt;
-
-
+    private AbstractCard currentLegendMagic;
+    private int stackAmt;
+    public VulnerableOption() {
+        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+    }
     public VulnerableOption(AbstractCard currentLegendMagic, int stackAmt) {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.currentLegendMagic = currentLegendMagic;
         this.stackAmt = stackAmt;
         this.magicNumber = this.baseMagicNumber = stackAmt;
-    }
-    @Override
-    public void upgrade() {
     }
 
     @Override
@@ -49,8 +46,5 @@ public class VulnerableOption extends AbstractFrierenCard {
 
     public void onChoseThisOption() {
         CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new VulnerableMod(this.stackAmt));
-    }
-    public AbstractCard makeCopy() {
-        return new VulnerableOption(new CustomLegendMagic(),0);
     }
 }

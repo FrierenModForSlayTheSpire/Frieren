@@ -2,8 +2,7 @@ package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -16,7 +15,7 @@ import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 
 public class CompleteDefendMagic extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(CompleteDefendMagic.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(CompleteDefendMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
     private static final String NAME = CARD_STRINGS.NAME; // 读取本地化的名字
     private static final String IMG_PATH = "FrierenModResources/img/cards/CompleteDefendMagic_skill.png";

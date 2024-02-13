@@ -1,8 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.helpers.LegendMagicHelper;
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,7 +12,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class FlightMagic extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(FlightMagic.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(FlightMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/FlyMagic_power.png";

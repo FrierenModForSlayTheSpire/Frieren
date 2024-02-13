@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.helpers.Status;
+import FrierenMod.gameHelpers.Status;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

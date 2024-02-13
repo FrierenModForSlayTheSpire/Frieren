@@ -3,19 +3,17 @@ package FrierenMod.cards.white;
 import FrierenMod.actions.SimmeringAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ChantHelper;
-import FrierenMod.helpers.ModInfo;
-import com.megacrit.cardcrawl.cards.AbstractCard;
+import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Simmering extends AbstractFrierenCard {
-    public static final String ID = ModInfo.makeID(Simmering.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(Simmering.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     private static final String NAME = CARD_STRINGS.NAME;
     private static final String IMG_PATH = "FrierenModResources/img/cards/Simmering_skill.png";

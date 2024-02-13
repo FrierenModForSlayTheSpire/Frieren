@@ -1,11 +1,11 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.helpers.ModInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class RecoverCardDescriptionAfterImaginationPowerMod extends AbstractCardModifier {
-    public static final String ID = ModInfo.makeID(RecoverCardDescriptionAfterImaginationPowerMod.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(RecoverCardDescriptionAfterImaginationPowerMod.class.getSimpleName());
 
     public RecoverCardDescriptionAfterImaginationPowerMod() {
     }

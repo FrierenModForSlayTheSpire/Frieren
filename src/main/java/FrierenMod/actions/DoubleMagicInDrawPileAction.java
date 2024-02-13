@@ -1,9 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.helpers.ChantHelper;
+import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 
 public class DoubleMagicInDrawPileAction extends AbstractGameAction {
     private final boolean canGainMagic;
