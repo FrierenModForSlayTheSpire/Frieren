@@ -143,7 +143,7 @@
   },
   "FrierenMod:TongueTwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "如果李的手牌中有 *魔力 ，抽 !M! 张牌， 否则额外再抽一张。"
+    "DESCRIPTION": "抽 !M! 张牌, 如果手牌中没有魔力，多抽1张。"
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",
@@ -161,7 +161,7 @@
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": " frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": " #y不能被打出。 NL  frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
@@ -352,7 +352,7 @@
   "FrierenMod:MagicExpand": {
     "NAME": "魔力膨胀",
     "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆，将其中的 *魔力 数量翻倍。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪。 NL  消耗 。"
+    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪（消耗堆除外）。 NL  消耗 。"
   },
   "FrierenMod:DoubleMagicInDrawPile": {
     "NAME": "从抽牌堆膨胀",
@@ -405,7 +405,7 @@
   },
   "FrierenMod:FinalChant": {
     "NAME": "终极咏唱",
-    "DESCRIPTION": " frierenmod:咏唱 你所有的 *魔力 ，无论它们在哪 。"
+    "DESCRIPTION": " frierenmod:咏唱 你所有的 *魔力 ，无论它们在哪（消耗堆除外）。"
   },
   "FrierenMod:Kiss": {
     "NAME": " 飞吻(杀伤力极强!)",
