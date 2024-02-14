@@ -1,9 +1,9 @@
 {
   "modid": "FrierenMod",
   "name": "葬送的芙莉莲Mod",
-  "author_list": ["Arkalin"],
-  "description": "test。",
-  "version": "0.0.1",
+  "author_list": ["Arkalin","Figure"],
+  "description": "绝赞更新中！",
+  "version": "0.1.0",
   "sts_version": "1-20-2024",
   "mts_version": "3.23.2",
   "dependencies": ["basemod"]
