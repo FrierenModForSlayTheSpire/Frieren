@@ -27,7 +27,7 @@ public class NormalAttackMagic extends AbstractFrierenCard {
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = new LegendMagicHelper().getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = LegendMagicHelper.getExhaustedMagicPowerNumber();
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -36,7 +36,7 @@ public class NormalAttackMagic extends AbstractFrierenCard {
         this.initializeDescription();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = new LegendMagicHelper().getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = LegendMagicHelper.getExhaustedMagicPowerNumber();
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);

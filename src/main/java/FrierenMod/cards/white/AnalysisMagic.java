@@ -76,7 +76,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
                             currentInLevelProgressNumber = 0;
                             this.currentLevelRequiredNumber = 3;
                             for (int i = 0; i < this.magicNumber; i++) {
-                                AbstractCard rewardCard = new LegendMagicHelper().getRandomCard();
+                                AbstractCard rewardCard = LegendMagicHelper.getRandomCard();
                                 rewardCard.costForTurn = 0;
                                 this.addToBot(new MakeTempCardInHandAction(rewardCard));
                             }

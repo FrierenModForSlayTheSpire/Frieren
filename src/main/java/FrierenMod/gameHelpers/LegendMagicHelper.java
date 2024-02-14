@@ -15,9 +15,7 @@ import java.util.ArrayList;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
-
-
-    public boolean cannotPlayLegendMagic(){
+    public static boolean cannotPlayLegendMagic(){
 
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
             if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
@@ -26,7 +24,7 @@ public class LegendMagicHelper {
         }
         return true;
     }
-    public int getExhaustedMagicPowerNumber(){
+    public static int getExhaustedMagicPowerNumber(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
             if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
@@ -36,7 +34,7 @@ public class LegendMagicHelper {
         return counts;
     }
 
-    private ArrayList<AbstractCard> initLegendMagicCardPool(){
+    private static ArrayList<AbstractCard> initLegendMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FlightMagic());
         pool.add(new ContinualChant());
@@ -45,12 +43,12 @@ public class LegendMagicHelper {
         pool.add(new ThunderMagic());
         return pool;
     }
-    public AbstractCard getRandomCard(){
+    public static AbstractCard getRandomCard(){
         ArrayList<AbstractCard> list = initLegendMagicCardPool();
         return (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
     }
-    public boolean canLegendMagicUse(AbstractCard c, AbstractMonster m){
-        if (this.cannotPlayLegendMagic()){
+    public static boolean canLegendMagicUse(AbstractCard c, AbstractMonster m){
+        if (cannotPlayLegendMagic()){
             return false;
         }
         else {

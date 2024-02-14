@@ -36,7 +36,7 @@ public class ContinualChant extends AbstractFrierenCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(!new LegendMagicHelper().canLegendMagicUse(this,m)){
+        if(!LegendMagicHelper.canLegendMagicUse(this,m)){
             return false;
         }
         return super.upgradedCanUse(p, m);

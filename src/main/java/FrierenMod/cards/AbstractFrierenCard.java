@@ -136,6 +136,6 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return ChantHelper.canChantUse(this,m,this.chantX);
     }
     private boolean canLegendMagicCardUse(AbstractMonster m){
-        return new LegendMagicHelper().canLegendMagicUse(this,m);
+        return LegendMagicHelper.canLegendMagicUse(this,m);
     }
 }
