@@ -93,17 +93,6 @@ public class MagicPowerMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        switch (type){
-            case 1:
-                return TEXT[0];
-            case 2:
-                return TEXT[1];
-            case 3:
-                return TEXT[2];
-            case 4:
-                return TEXT[3];
-            default:
-                return "ERROR";
-        }
+        return TEXT[type - 1];
     }
 }
