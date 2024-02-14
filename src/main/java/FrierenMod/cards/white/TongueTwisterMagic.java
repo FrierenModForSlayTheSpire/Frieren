@@ -11,14 +11,14 @@ public class TongueTwisterMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(TongueTwisterMagic.class.getSimpleName());
     public TongueTwisterMagic() {
         super(ID, 1, CardRarity.COMMON);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new MagicPower();
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(0);
         }
     }
     @Override
