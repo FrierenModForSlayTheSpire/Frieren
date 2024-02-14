@@ -1,31 +1,19 @@
 package FrierenMod.relics;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
-import basemod.abstracts.CustomRelic;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import FrierenMod.cards.AbstractFrierenCard;
 
-public class HairAccessory extends CustomRelic {
-    public static final String ID = ModInformation.makeID("HairAccessory");
-    // 图片路径
-    private static final String IMG_PATH = "FrierenModResources/img/relics/HairAccessory.png";
-    // 遗物类型
-    private static final RelicTier RELIC_TIER = RelicTier.RARE;
-    // 点击音效
-    private static final LandingSound LANDING_SOUND = LandingSound.FLAT;
-
+public class HairAccessory extends AbstractFrierenRelic {
+    public static final String ID = ModInformation.makeID(HairAccessory.class.getSimpleName());
     public HairAccessory() {
-        super(ID, ImageMaster.loadImage(IMG_PATH), RELIC_TIER, LANDING_SOUND);
+        super(ID, RelicTier.RARE);
     }
-
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }
@@ -44,8 +32,8 @@ public class HairAccessory extends CustomRelic {
             if (this.counter >= 4) {
                 this.counter = 0;
                 flash();
-                AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new RelicAboveCreatureAction((AbstractCreature)AbstractDungeon.player, (AbstractRelic)this));
-                AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DrawCardAction((AbstractCreature)AbstractDungeon.player, 1));
+                this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                this.addToBot(new DrawCardAction(AbstractDungeon.player, 1));
             }
         }
     }
