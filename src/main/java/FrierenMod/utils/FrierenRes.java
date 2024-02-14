@@ -18,7 +18,7 @@ public class FrierenRes {
     public static final String CHARACTER_BUTTON = ModInformation.makeCharResPath(CHARACTER_NAME,"Character_Button");
     public static final String CHARACTER_PORTRAIT = ModInformation.makeCharResPath(CHARACTER_NAME,"Character_Portrait");
     public static final String SHOULDER_1 = ModInformation.makeCharResPath(CHARACTER_NAME,"shoulder");
-    public static final String SHOULDER_2 = ModInformation.makeCharResPath(CHARACTER_NAME,"shoulder_2");
+    public static final String SHOULDER_2 = ModInformation.makeCharResPath(CHARACTER_NAME,"shoulder2");
     public static final String CORPSE_IMAGE = ModInformation.makeCharResPath(CHARACTER_NAME,"corpse_character");
     public static final String CHARACTER_IMG = ModInformation.makeCharResPath(CHARACTER_NAME,"character");
     public static final String VICTORY_1 = ModInformation.makeCharResPath(CHARACTER_NAME,"Victory1");
