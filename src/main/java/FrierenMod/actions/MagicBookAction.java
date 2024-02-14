@@ -15,7 +15,7 @@ public class MagicBookAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        AbstractCard c1 = new ChantHelper().getRandomCard();
+        AbstractCard c1 = ChantHelper.getRandomCard();
         AbstractCard c2 = new LegendMagicHelper().getRandomCard();
         if(this.upgraded){
             c1.setCostForTurn(c1.cost-2);

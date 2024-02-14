@@ -15,8 +15,7 @@ public class VisionMagicAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        ChantHelper helper = new ChantHelper();
-        if (helper.getMagicPowerNumInDrawPile() == 6 && helper.getMagicPowerNumInHand() == 6 && helper.getMagicPowerNumInDiscardPile() == 6){
+        if (ChantHelper.getMagicPowerNumInDrawPile() == 6 && ChantHelper.getMagicPowerNumInHand() == 6 && ChantHelper.getMagicPowerNumInDiscardPile() == 6){
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(999, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }else {
             this.addToBot(new DrawCardAction(this.magicNumber));

@@ -23,7 +23,7 @@ public class NightDressForm extends AbstractFrierenCard {
         this.cardsToPreview = new MagicPower();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *3;
+        this.baseMagicNumber = ChantHelper.getAllMagicPowerNum() *3;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -34,7 +34,7 @@ public class NightDressForm extends AbstractFrierenCard {
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = new ChantHelper().getAllMagicPowerNum() *3;
+        this.baseMagicNumber = ChantHelper.getAllMagicPowerNum() *3;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;

@@ -32,7 +32,7 @@ public class PancakeMagic extends AbstractFrierenCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!new ChantHelper().canChantFromHand(1)){
+        if (!ChantHelper.canChantFromHand(1)){
             return false;
         }
         else {

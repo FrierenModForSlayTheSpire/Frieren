@@ -1,7 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+
+import static FrierenMod.gameHelpers.ChantHelper.*;
 
 public class ExhaustMagicPowerTakeTurnsAction extends AbstractGameAction {
     private final int requiredAmt;
@@ -12,11 +13,9 @@ public class ExhaustMagicPowerTakeTurnsAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        ChantHelper helper = new ChantHelper();
-        if(helper.getAllMagicPowerNum() >= requiredAmt){
-            int draw = helper.getMagicPowerNumInDrawPile();
-            int hand = helper.getMagicPowerNumInHand();
-            int discard = helper.getMagicPowerNumInDiscardPile();
+        if(getAllMagicPowerNum() >= requiredAmt){
+            int draw = getMagicPowerNumInDrawPile();
+            int hand = getMagicPowerNumInHand();
             if(draw >= requiredAmt){
                 this.addToBot(new ExhaustMagicPowerInDrawPileAction(requiredAmt));
             }

@@ -34,7 +34,7 @@ public class NightDressPower extends AbstractPower {
         this.type = PowerType.BUFF;
         this.amount = amount;
         this.rate = this.amount * 3;
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * this.rate;
+        this.baseDamage = ChantHelper.getAllMagicPowerNum() * this.rate;
 
         String path128 = "FrierenModResources/img/powers/Example84.png";
         String path48 = "FrierenModResources/img/powers/Example32.png";
@@ -47,9 +47,9 @@ public class NightDressPower extends AbstractPower {
         if (isPlayer) {
             this.updateDescription();
             this.flash();
-            this.addToBot(new ExhaustMagicPowerInDrawPileAction(new ChantHelper().getMagicPowerNumInDrawPile()));
-            this.addToBot(new ExhaustMagicPowerInHandAction(new ChantHelper().getMagicPowerNumInHand()));
-            this.addToBot(new ExhaustMagicPowerInDiscardPileAction(new ChantHelper().getMagicPowerNumInDiscardPile()));
+            this.addToBot(new ExhaustMagicPowerInDrawPileAction(ChantHelper.getMagicPowerNumInDrawPile()));
+            this.addToBot(new ExhaustMagicPowerInHandAction(ChantHelper.getMagicPowerNumInHand()));
+            this.addToBot(new ExhaustMagicPowerInDiscardPileAction(ChantHelper.getMagicPowerNumInDiscardPile()));
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
 
@@ -62,7 +62,7 @@ public class NightDressPower extends AbstractPower {
 
     public void updateDescription() {
         this.rate = this.amount * 3;
-        this.baseDamage = new ChantHelper().getAllMagicPowerNum() * this.rate;
+        this.baseDamage = ChantHelper.getAllMagicPowerNum() * this.rate;
         this.description = String.format(DESCRIPTIONS[0], this.rate, this.baseDamage);
     }
 

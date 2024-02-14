@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class ThunderMagicAction extends AbstractGameAction {
     @Override
     public void update() {
-        int draw = new ChantHelper().getMagicPowerNumInDrawPile();
-        int discard = new ChantHelper().getMagicPowerNumInDiscardPile();
+        int draw = ChantHelper.getMagicPowerNumInDrawPile();
+        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         if(draw > 0){
             this.addToBot(new DrawMagicAction(draw));
         }

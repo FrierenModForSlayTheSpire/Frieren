@@ -23,22 +23,21 @@ public class ChantAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        ChantHelper helper = new ChantHelper();
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         if(!this.upgraded){
-            if (helper.canChantFromDrawPile(this.x)) {
+            if (ChantHelper.canChantFromDrawPile(this.x)) {
                 ChantDrawPile c = new ChantDrawPile();
                 c.block = c.baseBlock = x;
                 c.magicNumber = c.baseMagicNumber = x;
                 c.applyPowers();
                 stanceChoices.add(c);
             }
-            if (helper.canChantFromHand(this.x)) {
+            if (ChantHelper.canChantFromHand(this.x)) {
                 ChantHand c = new ChantHand();
                 c.magicNumber = c.baseMagicNumber = x;
                 stanceChoices.add(c);
             }
-            if (helper.canChantFromDiscardPile(this.x)) {
+            if (ChantHelper.canChantFromDiscardPile(this.x)) {
                 ChantDiscardPile c = new ChantDiscardPile();
                 c.magicNumber = c.baseMagicNumber = x;
                 stanceChoices.add(c);

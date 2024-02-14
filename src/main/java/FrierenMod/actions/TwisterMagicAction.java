@@ -13,7 +13,7 @@ public class TwisterMagicAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(new ChantHelper().getMagicPowerNumInHand() > 0){
+        if(ChantHelper.getMagicPowerNumInHand() > 0){
             this.addToBot(new DrawCardAction(this.magicNumber));
         }
         else {

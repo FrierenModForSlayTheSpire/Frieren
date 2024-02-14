@@ -13,10 +13,9 @@ public class ChantAllAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        ChantHelper helper = new ChantHelper();
-        int hand = helper.getMagicPowerNumInHand();
-        int draw = helper.getMagicPowerNumInDrawPile();
-        int discard = helper.getMagicPowerNumInDiscardPile();
+        int hand = ChantHelper.getMagicPowerNumInHand();
+        int draw = ChantHelper.getMagicPowerNumInDrawPile();
+        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         if(hand > 0){
             this.addToBot(new ChantFromHandAction(isChantUpgraded,hand));
         }

@@ -19,10 +19,9 @@ public class PreciseChantAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        ChantHelper helper = new ChantHelper();
-        int hand = helper.getMagicPowerNumInHand();
-        int draw = helper.getMagicPowerNumInDrawPile();
-        int discard = helper.getMagicPowerNumInDiscardPile();
+        int hand = ChantHelper.getMagicPowerNumInHand();
+        int draw = ChantHelper.getMagicPowerNumInDrawPile();
+        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         ArrayList<AbstractCard> choices = new ArrayList<>();
         if(draw > 0){
             ChantDrawPile c = new ChantDrawPile();

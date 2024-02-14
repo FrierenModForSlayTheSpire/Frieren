@@ -27,7 +27,7 @@ public class Simmering extends AbstractFrierenCard {
         this.addToBot(new SimmeringAction(this.magicNumber));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!new ChantHelper().canChantFromHand(1)){
+        if (!ChantHelper.canChantFromHand(1)){
             return false;
         }
         else {

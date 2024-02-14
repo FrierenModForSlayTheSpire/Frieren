@@ -51,9 +51,9 @@ public class MagicShowPower extends AbstractPower {
         this.updateDescription();
     }
     public void updateDescription() {
-        int hand = new ChantHelper().getMagicPowerNumInHand();
-        int draw = new ChantHelper().getMagicPowerNumInDrawPile();
-        int discard = new ChantHelper().getMagicPowerNumInDiscardPile();
+        int hand = ChantHelper.getMagicPowerNumInHand();
+        int draw = ChantHelper.getMagicPowerNumInDrawPile();
+        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         this.description = String.format(DESCRIPTIONS[0], draw, hand ,discard);
     }
 }

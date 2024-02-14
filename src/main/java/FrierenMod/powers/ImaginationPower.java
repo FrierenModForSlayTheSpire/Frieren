@@ -38,67 +38,68 @@ public class ImaginationPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         this.updateDescription();
     }
-
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractFrierenCard && !((AbstractFrierenCard) card).isMagicPower) {
-            this.flash();
-            if(card.cost > 0){
-                this.addToBot(new ExhaustMagicPowerTakeTurnsAction(card.cost));
-            }
-        }
-    }
-    @Override
-    public void onInitialApplication() {
-        modifyCardCost();
-    }
-    @Override
-    public void onDrawOrDiscard() {
-        modifyCardCost();
-    }
-    @Override
-    public void atStartOfTurnPostDraw() {
-        modifyCardCost();
-    }
-    @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
-        modifyCardCost();
-    }
-    public void atEndOfTurn(boolean isPlayer) {
-        initCards();
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-    }
-
-    public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
-    }
-
-    private void modifyCardCostInGroup(CardGroup cardGroup){
-        for(AbstractCard c:cardGroup.group){
-            if(c instanceof AbstractFrierenCard && !((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard)c).isUsingMagicPower && c.cost >= 0){
-                CardModifierManager.addModifier(c, new MagicExhaustTextMod(c.cost));
-                c.costForTurn = 0;
-                ((AbstractFrierenCard) c).isUsingMagicPower = true;
-            }
-        }
-    }
-    private void modifyCardCost(){
-        modifyCardCostInGroup(p.drawPile);
-        modifyCardCostInGroup(p.hand);
-        modifyCardCostInGroup(p.discardPile);
-        modifyCardCostInGroup(p.exhaustPile);
-    }
-    private void initCardsInGroup(CardGroup cardGroup){
-        for(AbstractCard c:cardGroup.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isUsingMagicPower){
-                CardModifierManager.addModifier(c, new RecoverCardDescriptionAfterImaginationPowerMod());
-                ((AbstractFrierenCard) c).isUsingMagicPower =false;
-            }
-        }
-    }
-    private void initCards(){
-        initCardsInGroup(p.drawPile);
-        initCardsInGroup(p.hand);
-        initCardsInGroup(p.discardPile);
-        initCardsInGroup(p.exhaustPile);
-    }
 }
+
+//    public void onUseCard(AbstractCard card, UseCardAction action) {
+//        if (card instanceof AbstractFrierenCard && !((AbstractFrierenCard) card).isMagicPower) {
+//            this.flash();
+//            if(card.cost > 0){
+//                this.addToBot(new ExhaustMagicPowerTakeTurnsAction(card.cost));
+//            }
+//        }
+//    }
+//    @Override
+//    public void onInitialApplication() {
+//        modifyCardCost();
+//    }
+//    @Override
+//    public void onDrawOrDiscard() {
+//        modifyCardCost();
+//    }
+//    @Override
+//    public void atStartOfTurnPostDraw() {
+//        modifyCardCost();
+//    }
+//    @Override
+//    public void onAfterCardPlayed(AbstractCard usedCard) {
+//        modifyCardCost();
+//    }
+//    public void atEndOfTurn(boolean isPlayer) {
+//        initCards();
+//        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+//    }
+//
+//    public void updateDescription() {
+//        this.description = String.format(DESCRIPTIONS[0], this.amount);
+//    }
+//
+//    private void modifyCardCostInGroup(CardGroup cardGroup){
+//        for(AbstractCard c:cardGroup.group){
+//            if(c instanceof AbstractFrierenCard && !((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard)c).isUsingMagicPower && c.cost >= 0){
+//                CardModifierManager.addModifier(c, new MagicExhaustTextMod(c.cost));
+//                c.costForTurn = 0;
+//                ((AbstractFrierenCard) c).isUsingMagicPower = true;
+//            }
+//        }
+//    }
+//    private void modifyCardCost(){
+//        modifyCardCostInGroup(p.drawPile);
+//        modifyCardCostInGroup(p.hand);
+//        modifyCardCostInGroup(p.discardPile);
+//        modifyCardCostInGroup(p.exhaustPile);
+//    }
+//    private void initCardsInGroup(CardGroup cardGroup){
+//        for(AbstractCard c:cardGroup.group){
+//            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isUsingMagicPower){
+//                CardModifierManager.addModifier(c, new RecoverCardDescriptionAfterImaginationPowerMod());
+//                ((AbstractFrierenCard) c).isUsingMagicPower =false;
+//            }
+//        }
+//    }
+//    private void initCards(){
+//        initCardsInGroup(p.drawPile);
+//        initCardsInGroup(p.hand);
+//        initCardsInGroup(p.discardPile);
+//        initCardsInGroup(p.exhaustPile);
+//    }
+//}
