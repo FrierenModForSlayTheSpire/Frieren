@@ -121,7 +121,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         }
     }
     public boolean upgradedCanUse(AbstractPlayer p, AbstractMonster m){
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit")) {
+        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit") && !this.isMagicPower) {
             return false;
         } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;

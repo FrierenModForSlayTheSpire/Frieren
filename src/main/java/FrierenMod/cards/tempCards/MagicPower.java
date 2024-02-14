@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class MagicPower extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(MagicPower.class.getSimpleName());
     public MagicPower() {
-        super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(ID, -2, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.isMagicPower = true;
         this.exhaust = true;
     }
