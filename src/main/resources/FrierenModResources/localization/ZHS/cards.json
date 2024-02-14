@@ -161,7 +161,7 @@
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": " #y不能被打出。 NL  frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": "不能被打出 。 NL  frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
