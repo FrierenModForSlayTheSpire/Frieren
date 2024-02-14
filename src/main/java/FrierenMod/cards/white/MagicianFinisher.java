@@ -23,7 +23,6 @@ public class MagicianFinisher extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(2);
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
     }
@@ -32,7 +31,7 @@ public class MagicianFinisher extends AbstractFrierenCard {
         super.applyPowers();
         this.baseMagicNumber=0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c.type == AbstractCard.CardType.SKILL)
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower)
                 this.baseMagicNumber++;
         }
         initializeDescription();
