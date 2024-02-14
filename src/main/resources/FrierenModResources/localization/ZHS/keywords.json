@@ -11,21 +11,21 @@
     "NAMES": [
       "同调"
     ],
-    "DESCRIPTION": " #y魔力 从手中打出视为 #y同调 。 NL 抽1张牌。 #y消耗 。"
+    "DESCRIPTION": "抽1张牌。 #y消耗 。"
   },
   {
     "PROPER_NAME":"终极同调",
     "NAMES": [
       "终极同调"
     ],
-    "DESCRIPTION": " 随机对1个敌人造成20点伤害。 #y消耗 。"
+    "DESCRIPTION": "随机对1个敌人造成20点伤害。 #y消耗 。"
   },
   {
     "PROPER_NAME":"加速同调",
     "NAMES": [
       "加速同调"
     ],
-    "DESCRIPTION": " 抽2张牌。 #y消耗 。"
+    "DESCRIPTION": "抽2张牌。 #y消耗 。"
   },
   {
     "PROPER_NAME":"终极加速同调",
