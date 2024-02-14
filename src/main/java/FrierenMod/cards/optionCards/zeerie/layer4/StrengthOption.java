@@ -3,31 +3,20 @@ package FrierenMod.cards.optionCards.zeerie.layer4;
 import FrierenMod.cardMods.StrengthMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class StrengthOption extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(StrengthOption.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "FrierenModResources/img/cards/StrengthOption_skill.png";
-    private static final int COST = -2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = CardColor.COLORLESS;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.NONE;
     private AbstractCard currentLegendMagic;
     public StrengthOption() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
     }
     public StrengthOption(AbstractCard currentLegendMagic) {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
         this.currentLegendMagic = currentLegendMagic;
     }
     @Override
@@ -41,6 +30,6 @@ public class StrengthOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new StrengthMod());
+        CardModifierManager.addModifier(this.currentLegendMagic, new StrengthMod());
     }
 }

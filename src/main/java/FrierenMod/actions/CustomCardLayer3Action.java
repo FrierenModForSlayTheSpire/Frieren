@@ -15,8 +15,8 @@ public class CustomCardLayer3Action extends CustomCardLayerAction {
     private static final int DAMAGE_THIRD3 = 7;
     private static final int DAMAGE_ALL0 = 4;
     private static final int DAMAGE_ALL1 = 8;
-    private static final int DAMAGE_ALL2 = 10;
-    private static final int DAMAGE_ALL3 = 15;
+    private static final int DAMAGE_ALL2 = 12;
+    private static final int DAMAGE_ALL3 = 16;
     private static final int ENERGY1 = 1;
     private static final int ENERGY2 = 2;
     private static final int ENERGY3 = 3;

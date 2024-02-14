@@ -35,6 +35,10 @@ public abstract class AbstractFrierenCard extends CustomCard {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         initSwitches();
     }
+    public AbstractFrierenCard(String id, String rawDescription, CardType type, CardTarget target) {
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
+        initSwitches();
+    }
     public AbstractFrierenCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initSwitches();

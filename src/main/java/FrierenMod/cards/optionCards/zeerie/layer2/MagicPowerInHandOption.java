@@ -3,32 +3,21 @@ package FrierenMod.cards.optionCards.zeerie.layer2;
 import FrierenMod.cardMods.MagicPowerInHandNumMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class MagicPowerInHandOption extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(MagicPowerInHandOption.class.getSimpleName());
-    private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID); // 从游戏系统读取本地化资源
-    private static final String NAME = CARD_STRINGS.NAME;
-    private static final String IMG_PATH = "FrierenModResources/img/cards/MagicPowerInHandOption_skill.png";
-    private static final int COST = -2;
-    private static final String DESCRIPTION = CARD_STRINGS.DESCRIPTION; // 读取本地化的描述
-    private static final CardType TYPE = CardType.SKILL;
-    private static final CardColor COLOR = CardColor.COLORLESS;
-    private static final CardRarity RARITY = CardRarity.SPECIAL;
-    private static final CardTarget TARGET = CardTarget.NONE;
     private AbstractCard currentLegendMagic;
     private int magicPowerAmt;
     public MagicPowerInHandOption() {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     }
     public MagicPowerInHandOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
-        super(ID, NAME, IMG_PATH, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
         this.currentLegendMagic = currentLegendMagic;
         this.magicPowerAmt = magicPowerAmt;
         this.magicNumber = this.baseMagicNumber = magicPowerAmt;
@@ -45,6 +34,6 @@ public class MagicPowerInHandOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, (AbstractCardModifier)new MagicPowerInHandNumMod(magicPowerAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, new MagicPowerInHandNumMod(magicPowerAmt));
     }
 }

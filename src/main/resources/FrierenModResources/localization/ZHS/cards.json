@@ -245,68 +245,83 @@
   },
   "FrierenMod:DrawOption": {
     "NAME": "星星",
-    "DESCRIPTION": " 抽 !M! 张牌。 ",
+    "DESCRIPTION": "抽 !M! 张牌。",
     "EXTENDED_DESCRIPTION": ["抽1/2/3张牌。"]
   },
   "FrierenMod:MagicPowerOption": {
     "NAME": "月亮",
-    "DESCRIPTION": " 将 !M! 张 *魔力 置入弃牌堆。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入弃牌堆。",
+    "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入弃牌堆。"]
   },
   "FrierenMod:MagicPowerInHandOption": {
     "NAME": "太阳",
-    "DESCRIPTION": " 将 !M! 张 *魔力 置入手牌。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。",
+    "EXTENDED_DESCRIPTION": ["将2/3/4/5张 *魔力 放入手牌。"]
   },
   "FrierenMod:ScryOption": {
     "NAME": "女祭司",
-    "DESCRIPTION": " 预见 !M! 。"
+    "DESCRIPTION": " 预见 !M! 。",
+    "EXTENDED_DESCRIPTION": [" 预见 2/3/4。"]
   },
   "FrierenMod:CostZeroOption": {
     "NAME": "星币",
-    "DESCRIPTION": " 你手牌中 !M! 张随机牌在本回合中耗能变为0。"
+    "DESCRIPTION": " 你手牌中 !M! 张随机牌在本回合中耗能变为0。",
+    "EXTENDED_DESCRIPTION": ["你手牌中1/2张随机牌在本回合中耗能变为0。"]
   },
   "FrierenMod:SelfRetainOption": {
     "NAME": "节制",
-    "DESCRIPTION": " 保留手牌中的 !M! 张牌。"
+    "DESCRIPTION": " 保留 手牌中的 !M! 张牌。",
+    "EXTENDED_DESCRIPTION": [" 保留 手牌中的1/2张牌。"]
   },
   "FrierenMod:GainRandomCardOption": {
     "NAME": "命运之轮",
-    "DESCRIPTION": "将 !M! 张随机普通牌放入手中。 NL 其在本回合耗能变为0。"
+    "DESCRIPTION": "将 !M! 张随机普通牌放入手中。 NL 其在本回合耗能变为0。",
+    "EXTENDED_DESCRIPTION": ["将1/2张随机普通牌放入手中。 NL 其在本回合耗能变为0。"]
   },
   "FrierenMod:DamageOption": {
     "NAME": "正义",
-    "DESCRIPTION": "造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": ["造成6/10点伤害。"]
   },
   "FrierenMod:DamageThirdOption": {
     "NAME": "恶魔",
-    "DESCRIPTION": "造成 !D! 点伤害三次。"
+    "DESCRIPTION": "造成 !D! 点伤害三次。",
+    "EXTENDED_DESCRIPTION": ["造成5/7点伤害三次。"]
   },
   "FrierenMod:DamageAllOption": {
     "NAME": "死神",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": ["对所有敌人造成4/8/12/16点伤害。"]
   },
   "FrierenMod:BlockOption": {
     "NAME": "隐者",
-    "DESCRIPTION": "获得 !B! 点 格挡 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": ["获得4/8/12/16点 格挡 。"]
   },
   "FrierenMod:EnergyOption": {
     "NAME": "恋人",
-    "DESCRIPTION": "下一回合，获得 !M! 点 [E] 。"
+    "DESCRIPTION": "下一回合，获得 !M! 点 [E] 。",
+    "EXTENDED_DESCRIPTION": ["下一回合，获得1/2/3点 [E] 。"]
   },
   "FrierenMod:ExtinguishOption": {
     "NAME": "审判",
-    "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，则将其生命值变为0。"
+    "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，则将其生命值变为0。",
+    "EXTENDED_DESCRIPTION": ["如果目标敌人的生命值小于等于30/40点，则将其生命值变为0。"]
   },
   "FrierenMod:DexterityOption": {
     "NAME": "魔术师",
-    "DESCRIPTION": "获得 !M! 点 敏捷 。"
+    "DESCRIPTION": "获得 !M! 点 敏捷 。",
+    "EXTENDED_DESCRIPTION": ["获得2/3/4点 敏捷 。"]
   },
   "FrierenMod:ChantOption": {
     "NAME": "圣杯",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。",
+    "EXTENDED_DESCRIPTION": [" frierenmod:咏唱 2/3/4。"]
   },
   "FrierenMod:IntangibleOption": {
     "NAME": "倒吊者",
-    "DESCRIPTION": "获得 !M! 层 无实体 。 NL  消耗 。"
+    "DESCRIPTION": "获得 !M! 层 无实体 。 NL  消耗 。",
+    "EXTENDED_DESCRIPTION": ["获得1/2层 无实体 。 NL  消耗 。"]
   },
   "FrierenMod:StrengthOption": {
     "NAME": "女皇",
@@ -314,7 +329,8 @@
   },
   "FrierenMod:VulnerableOption": {
     "NAME": "教皇",
-    "DESCRIPTION": "给与所有敌人 !M! 层 易伤 。"
+    "DESCRIPTION": "给与所有敌人 !M! 层 易伤 。",
+    "EXTENDED_DESCRIPTION": ["给与所有敌人1/2/3层 易伤 。"]
   },
   "FrierenMod:UpgradeOption": {
     "NAME": "塔",
