@@ -40,5 +40,12 @@
     "DESCRIPTIONS": [
       "战斗开始时获得 #b2 点敏捷,在第三回合结束时失去2点敏捷。"
     ]
+  },
+  "FrierenMod:EarAccessory": {
+    "NAME": "精美的耳饰",
+    "FLAVOR": "芙莉莲一直带着的耳饰，似乎和师傅伏拉梅的款式一样。",
+    "DESCRIPTIONS": [
+      "战斗开始时，将 #b2 张 #y魔力 加入你的手牌。"
+    ]
   }
 }
