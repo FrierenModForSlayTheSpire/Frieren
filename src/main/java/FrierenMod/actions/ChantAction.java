@@ -50,13 +50,16 @@ public class ChantAction extends AbstractGameAction {
             c1.block = c1.baseBlock = x;
             c1.magicNumber = c1.baseMagicNumber = x;
             c1.upgrade();
+            c1.upgraded = true;
             c1.applyPowers();
             ChantHand c2 = new ChantHand();
             c2.magicNumber = c2.baseMagicNumber = x;
             c2.upgrade();
+            c2.upgraded = true;
             ChantDiscardPile c3 = new ChantDiscardPile();
             c3.magicNumber = c3.baseMagicNumber = x;
             c3.upgrade();
+            c3.upgraded = true;
             stanceChoices.add(c1);
             stanceChoices.add(c2);
             stanceChoices.add(c3);
