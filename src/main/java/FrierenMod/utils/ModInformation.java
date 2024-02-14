@@ -1,7 +1,5 @@
 package FrierenMod.utils;
 
-import java.util.Locale;
-
 public class ModInformation {
     public final static String MOD_NAME = "FrierenMod";
     public final static String KEY_WORD = MOD_NAME.toLowerCase();
@@ -34,15 +32,11 @@ public class ModInformation {
     }
     public static String[] makeOrbTexturePath(String character){
         return new String[]{
-                getOrbPath() + character + "/" + "layer5.png",
                 getOrbPath() + character + "/" + "layer4.png",
-                getOrbPath() + character + "/" + "layer3.png",
                 getOrbPath() + character + "/" + "layer2.png",
                 getOrbPath() + character + "/" + "layer1.png",
                 getOrbPath() + character + "/" + "layer6.png",
-                getOrbPath() + character + "/" + "layer5d.png",
                 getOrbPath() + character + "/" + "layer4d.png",
-                getOrbPath() + character + "/" + "layer3d.png",
                 getOrbPath() + character + "/" + "layer2d.png",
                 getOrbPath() + character + "/" + "layer1d.png"
         };
