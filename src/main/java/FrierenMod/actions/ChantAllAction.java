@@ -5,10 +5,8 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 public class ChantAllAction extends AbstractGameAction {
-    private final boolean isChantUpgraded;
     private final AbstractCard c;
-    public ChantAllAction(boolean isChantUpgraded, AbstractCard c){
-        this.isChantUpgraded = isChantUpgraded;
+    public ChantAllAction(AbstractCard c){
         this.c = c;
     }
     @Override
@@ -17,15 +15,15 @@ public class ChantAllAction extends AbstractGameAction {
         int draw = ChantHelper.getMagicPowerNumInDrawPile();
         int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         if(hand > 0){
-            this.addToBot(new ChantFromHandAction(isChantUpgraded,hand));
+            this.addToBot(new ChantFromHandAction(hand));
         }
         if(draw > 0){
             c.block = c.baseBlock = draw;
             c.applyPowers();
-            this.addToBot(new ChantFromDrawPileAction(isChantUpgraded,c.block,draw));
+            this.addToBot(new ChantFromDrawPileAction(c.block,draw));
         }
         if(discard > 0){
-            this.addToBot(new ChantFromDiscardPileAction(isChantUpgraded,discard));
+            this.addToBot(new ChantFromDiscardPileAction(discard));
         }
         this.isDone = true;
     }

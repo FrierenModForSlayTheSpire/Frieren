@@ -26,6 +26,6 @@ public class ChantDiscardPile extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromDiscardPileAction(upgraded,this.magicNumber));
+        this.addToBot(new ChantFromDiscardPileAction(this.magicNumber));
     }
 }

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class PatchCanUse{
     @SpirePrefixPatch
     public static SpireReturn<Boolean> ImaginationCanUse(AbstractCard _inst){
-        if(AbstractDungeon.player.hasPower("FrierenMod:ImaginationPower") && ChantHelper.getAllMagicPowerNum() < _inst.cost){
+        if(AbstractDungeon.player.hasPower("FrierenMod:MagicInsteadOfCostPower") && ChantHelper.getAllMagicPowerNum() < _inst.cost){
             return SpireReturn.Return(false);
         }else {
             return SpireReturn.Continue();

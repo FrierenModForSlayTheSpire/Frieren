@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.powers.BanMagicGainPower;
+import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -13,7 +13,6 @@ public class MakeMagicPowerInDrawPileAction extends AbstractGameAction {
     private final AbstractCard cardToMake;
     private static final float x = Settings.WIDTH / 2.0F;
     private static final float y = Settings.HEIGHT / 2.0F;
-    private static final String POWER_ID = BanMagicGainPower.POWER_ID;
 
     public MakeMagicPowerInDrawPileAction(int amount) {
         setValues(this.target, this.source, amount);
@@ -24,7 +23,7 @@ public class MakeMagicPowerInDrawPileAction extends AbstractGameAction {
     }
     public void update() {
         if (this.duration == this.startDuration) {
-            if(!AbstractDungeon.player.hasPower(POWER_ID)){
+            if(HardCodedPowerHelper.dontHaveBanMagicGainPower()){
                 for (int i = 0; i < this.amount; i++) {
                     AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false));

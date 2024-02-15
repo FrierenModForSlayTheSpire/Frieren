@@ -25,6 +25,6 @@ public class ChantHand extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromHandAction(upgraded,this.magicNumber));
+        this.addToBot(new ChantFromHandAction(this.magicNumber));
     }
 }

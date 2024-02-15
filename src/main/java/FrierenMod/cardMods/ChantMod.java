@@ -29,7 +29,7 @@ public class ChantMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        this.addToBot(new ChantAction(((AbstractFrierenCard)card).isChantUpgraded, this.chantAmt));
+        this.addToBot(new ChantAction(this.chantAmt));
     }
 
     public String identifier(AbstractCard card) {

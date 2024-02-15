@@ -32,6 +32,6 @@ public class DefendMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DefendMagicAction(this.chantX,this.block,this.upgraded,this.cardsToPreview,this.isChantUpgraded));
+        this.addToBot(new DefendMagicAction(this.chantX,this.block,this.upgraded,this.cardsToPreview));
     }
 }

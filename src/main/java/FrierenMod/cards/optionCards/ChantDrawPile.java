@@ -25,6 +25,6 @@ public class ChantDrawPile extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromDrawPileAction(upgraded,this.block,this.magicNumber));
+        this.addToBot(new ChantFromDrawPileAction(this.block,this.magicNumber));
     }
 }

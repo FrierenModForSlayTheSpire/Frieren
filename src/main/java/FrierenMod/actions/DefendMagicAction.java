@@ -12,17 +12,15 @@ public class DefendMagicAction extends AbstractGameAction {
     private final int block;
     private final boolean upgraded;
     private final AbstractCard cardsToPreview;
-    private final boolean isChantUpgraded;
-    public DefendMagicAction(int chantX, int block, boolean upgraded, AbstractCard cardsToPreview, boolean isChantUpgraded){
+    public DefendMagicAction(int chantX, int block, boolean upgraded, AbstractCard cardsToPreview){
         this.chantX = chantX;
         this.block = block;
         this.upgraded = upgraded;
         this.cardsToPreview = cardsToPreview;
-        this.isChantUpgraded = isChantUpgraded;
     }
     @Override
     public void update() {
-        this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
+        this.addToBot(new ChantAction(this.chantX));
         this.addToBot(new GainBlockAction(AbstractDungeon.player,this.block));
         if(this.upgraded){
             AbstractCard c = new SecondDefendMagic();

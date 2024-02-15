@@ -27,6 +27,6 @@ public class RapidChant extends AbstractFrierenCard {
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m){
-        this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
+        this.addToBot(new ChantAction(this.chantX));
     }
 }

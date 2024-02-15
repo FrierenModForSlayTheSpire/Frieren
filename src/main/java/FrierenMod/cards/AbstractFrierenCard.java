@@ -8,14 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
 
 public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
-    public boolean isChantUpgraded;
     public boolean isMagicPower;
     public boolean isFinalMagicPower;
     public boolean isFastMagicPower;
@@ -78,7 +78,6 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isFastMagicPower = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
-        this.isChantUpgraded = false;
     }
     public void upgradeChantX(int amount){
         this.baseChantX += amount;
@@ -103,12 +102,12 @@ public abstract class AbstractFrierenCard extends CustomCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(this.isChantCard && !this.isLegendMagicCard && !isChantUpgraded){
+        if(this.isChantCard && !this.isLegendMagicCard && !p.hasPower(CHANT_WITHOUT_MAGIC)){
             return canChantCardUse(m);
         }
         else if(this.isLegendMagicCard && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if (this.isChantCard && this.isLegendMagicCard && !isChantUpgraded) {
+        } else if (this.isChantCard && this.isLegendMagicCard && !p.hasPower(CHANT_WITHOUT_MAGIC)) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
             return upgradedCanUse(p,m);
@@ -119,7 +118,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
             return false;
         } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;
-        } else if (p.hasPower("FrierenMod:ImaginationPower") && ChantHelper.getAllMagicPowerNum() < this.cost){
+        } else if (p.hasPower(MAGIC_INSTEAD_OF_COST) && ChantHelper.getAllMagicPowerNum() < this.cost){
             return false;
         }
         else {

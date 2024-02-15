@@ -65,7 +65,7 @@
       "每当玩家攻击敌人时，将 #b%d 张 #y魔力 置入弃牌堆 。"
     ]
   },
-  "FrierenMod:MagicPower": {
+  "FrierenMod:ChantWithoutMagicPower": {
     "NAME": "魔法",
     "DESCRIPTIONS": [
       "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
@@ -77,7 +77,7 @@
       "在本回合中，你无法从卡牌中获取 #y魔力 。"
     ]
   },
-  "FrierenMod:ImaginationPower": {
+  "FrierenMod:MagicInsteadOfCostPower": {
     "NAME": "想象力",
     "DESCRIPTIONS": [
       "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"

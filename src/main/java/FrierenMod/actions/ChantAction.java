@@ -4,6 +4,7 @@ import FrierenMod.cards.optionCards.ChantDiscardPile;
 import FrierenMod.cards.optionCards.ChantDrawPile;
 import FrierenMod.cards.optionCards.ChantHand;
 import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,19 +13,13 @@ import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
     private final int x;
-    private final boolean upgraded;
     public ChantAction(int x) {
-        this.x = x;
-        this.upgraded = false;
-    }
-    public ChantAction(boolean upgraded,int x) {
-        this.upgraded = upgraded;
         this.x = x;
     }
     @Override
     public void update() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        if(!this.upgraded){
+        if(!HardCodedPowerHelper.hasChantWithoutMagicPower()){
             if (ChantHelper.canChantFromDrawPile(this.x)) {
                 ChantDrawPile c = new ChantDrawPile();
                 c.block = c.baseBlock = x;

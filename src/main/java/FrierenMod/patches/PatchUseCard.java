@@ -22,7 +22,7 @@ public class PatchUseCard{
                 if(isMethodCalled(m)){
 
                     m.replace("{" +
-                            "if(" + PatchUseCard.class.getName() + ".check($0) && this.hasPower(\"FrierenMod:ImaginationPower\")){"+
+                            "if(" + PatchUseCard.class.getName() + ".check($0) && this.hasPower(\"FrierenMod:MagicInsteadOfCostPower\")){"+
                             PatchUseCard.class.getName() + ".cal(c);" +
                             "}else{"+
                             "$_=$proceed($$);" +

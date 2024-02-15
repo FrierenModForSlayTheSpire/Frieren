@@ -34,7 +34,7 @@ public class MagicPowerMod extends AbstractCardModifier {
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.SKILL;
                 if (card instanceof MagicPower)
-                    ((MagicPower)card).loadCardImage(ModInformation.makeCardImgPath("MagicPower"));
+                    ((MagicPower)card).loadCardImage(ModInformation.makeCardImgPath("ChantWithoutMagicPower"));
                 break;
             case 2:
                 ((AbstractFrierenCard)card).isFastMagicPower = true;
