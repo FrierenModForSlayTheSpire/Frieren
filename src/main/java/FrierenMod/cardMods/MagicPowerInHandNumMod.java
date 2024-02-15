@@ -23,12 +23,9 @@ public class MagicPowerInHandNumMod extends AbstractCardModifier {
     public AbstractCardModifier makeCopy() {
         return new MagicPowerInHandNumMod(this.magicPowerAmt);
     }
-    public void onInitialApplication(AbstractCard card) {
-        ((AbstractFrierenCard)card).isMagicSource = true;
-    }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        this.addToBot(new MakeMagicPowerInHandAction(magicPowerAmt,((AbstractFrierenCard) card).canGainMagic));
+        this.addToBot(new MakeMagicPowerInHandAction(magicPowerAmt));
     }
 
     public String identifier(AbstractCard card) {

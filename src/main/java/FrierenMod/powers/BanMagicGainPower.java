@@ -33,54 +33,54 @@ public class BanMagicGainPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         this.updateDescription();
     }
-    @Override
-    public void onInitialApplication() {
-        modifyCanGainMagic();
-    }
-    @Override
-    public void onDrawOrDiscard() {
-        modifyCanGainMagic();
-    }
-    @Override
-    public void atStartOfTurnPostDraw() {
-        modifyCanGainMagic();
-    }
-    @Override
-    public void onAfterCardPlayed(AbstractCard usedCard) {
-        modifyCanGainMagic();
-    }
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        modifyBackCanGainMagic();
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-    }
+//    @Override
+//    public void onInitialApplication() {
+//        modifyCanGainMagic();
+//    }
+//    @Override
+//    public void onDrawOrDiscard() {
+//        modifyCanGainMagic();
+//    }
+//    @Override
+//    public void atStartOfTurnPostDraw() {
+//        modifyCanGainMagic();
+//    }
+//    @Override
+//    public void onAfterCardPlayed(AbstractCard usedCard) {
+//        modifyCanGainMagic();
+//    }
+//    @Override
+//    public void atEndOfTurn(boolean isPlayer) {
+//        modifyBackCanGainMagic();
+//        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+//    }
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
     }
-    private void modifyCanGainMagicInGroup(CardGroup cardGroup) {
-        for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicSource && ((AbstractFrierenCard) c).canGainMagic){
-                ((AbstractFrierenCard) c).canGainMagic = false;
-            }
-        }
-    }
-    public void modifyCanGainMagic(){
-        modifyCanGainMagicInGroup(p.drawPile);
-        modifyCanGainMagicInGroup(p.hand);
-        modifyCanGainMagicInGroup(p.discardPile);
-        modifyCanGainMagicInGroup(p.exhaustPile);
-    }
-    private void modifyBackCanGainMagicInGroup(CardGroup cardGroup) {
-        for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicSource && !((AbstractFrierenCard) c).canGainMagic){
-                ((AbstractFrierenCard) c).canGainMagic = true;
-            }
-        }
-    }
-    public void modifyBackCanGainMagic(){
-        modifyBackCanGainMagicInGroup(p.drawPile);
-        modifyBackCanGainMagicInGroup(p.hand);
-        modifyBackCanGainMagicInGroup(p.discardPile);
-        modifyBackCanGainMagicInGroup(p.exhaustPile);
-    }
+//    private void modifyCanGainMagicInGroup(CardGroup cardGroup) {
+//        for (AbstractCard c : cardGroup.group) {
+//            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicSource && ((AbstractFrierenCard) c).canGainMagic){
+//                ((AbstractFrierenCard) c).canGainMagic = false;
+//            }
+//        }
+//    }
+//    public void modifyCanGainMagic(){
+//        modifyCanGainMagicInGroup(p.drawPile);
+//        modifyCanGainMagicInGroup(p.hand);
+//        modifyCanGainMagicInGroup(p.discardPile);
+//        modifyCanGainMagicInGroup(p.exhaustPile);
+//    }
+//    private void modifyBackCanGainMagicInGroup(CardGroup cardGroup) {
+//        for (AbstractCard c : cardGroup.group) {
+//            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicSource && !((AbstractFrierenCard) c).canGainMagic){
+//                ((AbstractFrierenCard) c).canGainMagic = true;
+//            }
+//        }
+//    }
+//    public void modifyBackCanGainMagic(){
+//        modifyBackCanGainMagicInGroup(p.drawPile);
+//        modifyBackCanGainMagicInGroup(p.hand);
+//        modifyBackCanGainMagicInGroup(p.discardPile);
+//        modifyBackCanGainMagicInGroup(p.exhaustPile);
+//    }
 }

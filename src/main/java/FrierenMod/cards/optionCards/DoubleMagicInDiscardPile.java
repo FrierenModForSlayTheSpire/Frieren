@@ -18,6 +18,6 @@ public class DoubleMagicInDiscardPile extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new DoubleMagicInDiscardPileAction(canGainMagic));
+        this.addToBot(new DoubleMagicInDiscardPileAction());
     }
 }

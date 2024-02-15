@@ -16,7 +16,6 @@ public class TrueFace extends AbstractFrierenCard {
     public TrueFace() {
         super(ID, 1, CardRarity.RARE);
         this.chantX = this.baseChantX = 6;
-        this.isMagicSource = true;
         this.isChantCard = true;
     }
     @Override
@@ -32,8 +31,8 @@ public class TrueFace extends AbstractFrierenCard {
         this.addToBot(new ChantAction(this.isChantUpgraded,this.chantX));
         this.addToBot(new GainEnergyAction(3));
         this.addToBot(new DrawCardAction(3));
-        this.addToBot(new MakeMagicPowerInDrawPileAction(3,canGainMagic));
-        this.addToBot(new MakeMagicPowerInHandAction(3,canGainMagic));
-        this.addToBot(new MakeMagicPowerInDiscardAction(3,canGainMagic));
+        this.addToBot(new MakeMagicPowerInDrawPileAction(3));
+        this.addToBot(new MakeMagicPowerInHandAction(3));
+        this.addToBot(new MakeMagicPowerInDiscardAction(3));
     }
 }

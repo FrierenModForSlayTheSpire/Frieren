@@ -13,7 +13,6 @@ public class MultipleAttackMagic extends AbstractFrierenCard {
     public MultipleAttackMagic() {
         super(ID, -1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.cardsToPreview = new MagicPower();
-        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -26,6 +25,6 @@ public class MultipleAttackMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MultipleAttackMagicAction(p,this, this.energyOnUse,this.upgraded,this.canGainMagic));
+        this.addToBot(new MultipleAttackMagicAction(p,this, this.energyOnUse,this.upgraded));
     }
 }

@@ -18,7 +18,6 @@ public class ContinualChant extends AbstractFrierenCard {
         this.cardsToPreview = new MagicPower();
         this.isChantCard = true;
         this.isLegendMagicCard = true;
-        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -30,7 +29,7 @@ public class ContinualChant extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
+        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber));
         this.addToBot(new ChantAction(isChantUpgraded,this.chantX));
     }
 

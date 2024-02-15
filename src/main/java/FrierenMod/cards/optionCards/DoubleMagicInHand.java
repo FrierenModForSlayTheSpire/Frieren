@@ -18,6 +18,6 @@ public class DoubleMagicInHand extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new DoubleMagicInHandAction(canGainMagic));
+        this.addToBot(new DoubleMagicInHandAction());
     }
 }

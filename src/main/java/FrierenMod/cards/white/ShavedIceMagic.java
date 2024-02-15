@@ -12,7 +12,6 @@ public class ShavedIceMagic extends AbstractFrierenCard {
     public ShavedIceMagic() {
         super(ID, 0, CardRarity.COMMON);
         this.baseMagicNumber = this.magicNumber = 4;
-        this.isMagicSource= true;
         this.cardsToPreview = new MagicPower();
     }
     @Override
@@ -24,6 +23,6 @@ public class ShavedIceMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber,canGainMagic));
+        this.addToBot(new MakeMagicPowerInDrawPileAction(this.magicNumber));
     }
 }

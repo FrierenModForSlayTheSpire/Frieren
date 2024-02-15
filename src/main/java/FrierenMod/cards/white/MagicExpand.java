@@ -11,7 +11,6 @@ public class MagicExpand extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(MagicExpand.class.getSimpleName());
     public MagicExpand() {
         super(ID, 1, CardRarity.RARE);
-        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -23,6 +22,6 @@ public class MagicExpand extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MagicExpandAction(upgraded,canGainMagic));
+        this.addToBot(new MagicExpandAction(upgraded));
     }
 }

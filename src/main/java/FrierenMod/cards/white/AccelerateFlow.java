@@ -13,7 +13,6 @@ public class AccelerateFlow extends AbstractFrierenCard {
     public AccelerateFlow() {
         super(ID,2, CardRarity.UNCOMMON);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.isMagicSource = true;
     }
     @Override
     public void upgrade() {
@@ -24,7 +23,7 @@ public class AccelerateFlow extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeMagicPowerInHandAction(this.magicNumber,canGainMagic));
+        this.addToBot(new MakeMagicPowerInHandAction(this.magicNumber));
         this.addToBot(new ApplyPowerAction(p,p,new SpeedFlowPower(p)));
     }
 }
