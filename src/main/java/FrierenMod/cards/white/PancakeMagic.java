@@ -36,7 +36,7 @@ public class PancakeMagic extends AbstractFrierenCard {
             return false;
         }
         else {
-            return super.upgradedCanUse(p,m);
+            return super.canUseOriginally(p,m);
         }
     }
 }

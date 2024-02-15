@@ -31,7 +31,7 @@ public class Simmering extends AbstractFrierenCard {
             return false;
         }
         else {
-            return this.upgradedCanUse(p,m);
+            return super.canUseOriginally(p,m);
         }
     }
 }
