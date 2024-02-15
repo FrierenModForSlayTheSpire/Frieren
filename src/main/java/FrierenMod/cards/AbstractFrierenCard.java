@@ -125,7 +125,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
             return false;
         } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
             return false;
-        } else if (p.hasPower("FrierenMod:Imagination") && ChantHelper.getAllMagicPowerNum() < this.cost){
+        } else if (p.hasPower("FrierenMod:ImaginationPower") && ChantHelper.getAllMagicPowerNum() < this.cost){
             return false;
         }
         else {
