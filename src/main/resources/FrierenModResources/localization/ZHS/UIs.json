@@ -137,5 +137,10 @@
     "TEXT": [
       " （消耗 %d张 *魔力 ） NL "
     ]
+  },
+  "FrierenMod:PatchHasEnoughEnergy": {
+    "TEXT": [
+      "你没有足够 #r魔力 。"
+    ]
   }
 }

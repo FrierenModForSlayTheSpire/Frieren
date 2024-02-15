@@ -1,18 +1,15 @@
 package FrierenMod.cards;
 
 import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
 
 public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
@@ -102,27 +99,18 @@ public abstract class AbstractFrierenCard extends CustomCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(this.isChantCard && !this.isLegendMagicCard && !p.hasPower(CHANT_WITHOUT_MAGIC)){
+        if(this.isMagicPower){
+            return true;
+        }
+        if((this.isChantCard && !HardCodedPowerHelper.hasChantWithoutMagicPower()) && !this.isLegendMagicCard ){
             return canChantCardUse(m);
         }
         else if(this.isLegendMagicCard && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if (this.isChantCard && this.isLegendMagicCard && !p.hasPower(CHANT_WITHOUT_MAGIC)) {
+        } else if ((this.isChantCard && !HardCodedPowerHelper.hasChantWithoutMagicPower() ) && this.isLegendMagicCard) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
-            return upgradedCanUse(p,m);
-        }
-    }
-    public boolean upgradedCanUse(AbstractPlayer p, AbstractMonster m){
-        if (this.type == AbstractCard.CardType.STATUS && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Medical Kit") && !this.isMagicPower) {
-            return false;
-        } else if (this.type == AbstractCard.CardType.CURSE && this.costForTurn < -1 && !AbstractDungeon.player.hasRelic("Blue Candle")) {
-            return false;
-        } else if (p.hasPower(MAGIC_INSTEAD_OF_COST) && ChantHelper.getAllMagicPowerNum() < this.cost){
-            return false;
-        }
-        else {
-            return this.cardPlayable(m) && this.hasEnoughEnergy();
+            return super.canUse(p,m);
         }
     }
     private boolean canChantCardUse(AbstractMonster m){
