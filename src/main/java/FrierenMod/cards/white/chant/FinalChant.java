@@ -27,6 +27,6 @@ public class FinalChant extends AbstractFrierenCard {
         this.addToBot(new ChantAllAction(this));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return super.upgradedCanUse(p,m);
+        return super.canUseOriginally(p,m);
     }
 }

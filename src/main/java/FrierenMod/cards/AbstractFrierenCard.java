@@ -113,6 +113,9 @@ public abstract class AbstractFrierenCard extends CustomCard {
             return super.canUse(p,m);
         }
     }
+    public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m){
+        return super.canUse(p,m);
+    }
     private boolean canChantCardUse(AbstractMonster m){
         return ChantHelper.canChantUse(this,m,this.chantX);
     }

@@ -6,6 +6,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -38,6 +39,6 @@ public class ContinualChant extends AbstractFrierenCard {
         if(!LegendMagicHelper.canLegendMagicUse(this,m)){
             return false;
         }
-        return super.upgradedCanUse(p, m);
+        return super.canUseOriginally(p,m);
     }
 }
