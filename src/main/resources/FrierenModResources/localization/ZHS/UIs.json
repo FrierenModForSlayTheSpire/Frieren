@@ -140,7 +140,7 @@
   },
   "FrierenMod:PatchHasEnoughEnergy": {
     "TEXT": [
-      "你没有足够 #r魔力 。"
+      "没有足够 #r魔力 。"
     ]
   }
 }
