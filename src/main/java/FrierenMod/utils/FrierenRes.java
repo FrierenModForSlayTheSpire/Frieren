@@ -8,9 +8,11 @@ public class FrierenRes {
     public static final String BG_ATTACK_512 = ModInformation.makeCardBgPath(CHARACTER_NAME,"attack",512);
     public static final String BG_SKILL_512 = ModInformation.makeCardBgPath(CHARACTER_NAME,"skill",512);
     public static final String BG_POWER_512 = ModInformation.makeCardBgPath(CHARACTER_NAME,"power",512);
+    public static final String BG_MAGIC_512 = ModInformation.makeCardBgPath(CHARACTER_NAME,"magic",512);
     public static final String BG_ATTACK_1024 = ModInformation.makeCardBgPath(CHARACTER_NAME,"attack",1024);
     public static final String BG_SKILL_1024 = ModInformation.makeCardBgPath(CHARACTER_NAME,"skill",1024);
     public static final String BG_POWER_1024 = ModInformation.makeCardBgPath(CHARACTER_NAME,"power",1024);
+    public static final String BG_MAGIC_1024 = ModInformation.makeCardBgPath(CHARACTER_NAME,"magic",1024);
     public static final String ENERGY_ORB = ModInformation.makeCardOrbPath(CHARACTER_NAME,"cost");
     public static final String BIG_ORB = ModInformation.makeCardOrbPath(CHARACTER_NAME,"card");
     public static final String SMALL_ORB = ModInformation.makeCardOrbPath(CHARACTER_NAME,"small");
