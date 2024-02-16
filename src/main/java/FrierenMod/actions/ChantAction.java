@@ -8,8 +8,11 @@ import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
+
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
 public class ChantAction extends AbstractGameAction {
     private final int x;
@@ -19,7 +22,7 @@ public class ChantAction extends AbstractGameAction {
     @Override
     public void update() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        if(!HardCodedPowerHelper.hasChantWithoutMagicPower()){
+        if(!AbstractDungeon.player.hasPower(CHANT_WITHOUT_MAGIC)){
             if (ChantHelper.canChantFromDrawPile(this.x)) {
                 ChantDrawPile c = new ChantDrawPile();
                 c.block = c.baseBlock = x;

@@ -1,6 +1,5 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -9,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
+
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
 public class ChantFromDrawPileAction extends AbstractGameAction {
     private final int block;
@@ -22,7 +23,7 @@ public class ChantFromDrawPileAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        if(!HardCodedPowerHelper.hasChantWithoutMagicPower()){
+        if(!p.hasPower(CHANT_WITHOUT_MAGIC)){
             this.addToBot(new ExhaustMagicPowerInDrawPileAction(this.magicNumber));
         }
         for (int i = 0; i < 2; i++) {
