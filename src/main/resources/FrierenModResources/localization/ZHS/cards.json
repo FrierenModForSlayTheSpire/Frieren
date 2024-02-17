@@ -428,5 +428,9 @@
   "FrierenMod:TimeDoor": {
     "NAME": "打开时空之门",
     "DESCRIPTION": " frierenmod:解析 1： frierenmod:同调 !M! 张 *魔力 。 NL  *奖励 ：在本回合结束后，额外获得一回合。 NL （当前进度 !SM! /7）。"
+  },
+  "FrierenMod:BigCross": {
+    "NAME": "大十字",
+    "DESCRIPTION": " 造成!D!点伤害。如果你本回合打出过 frierenmod:咏唱 牌，这张牌在本回合耗能变为0。"
   }
 }
