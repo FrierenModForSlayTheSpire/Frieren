@@ -433,5 +433,9 @@
   "FrierenMod:AirSlash": {
     "NAME": "空气斩",
     "DESCRIPTION": "造成 !D! 点伤害。本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
+  },
+  "FrierenMod:Apprehend": {
+    "NAME": "无情铁手",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。 NL 丢弃其中的 *魔力 。"
   }
 }
