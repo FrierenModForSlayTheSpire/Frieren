@@ -437,5 +437,9 @@
   "FrierenMod:Apprehend": {
     "NAME": "无情铁手",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 抽 !M! 张牌。 NL 丢弃其中的 *魔力 。"
+  },
+  "FrierenMod:Free": {
+    "NAME": "物理超度",
+    "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，将其生命值变为0。否则造成 !D! 点伤害。"
   }
 }
