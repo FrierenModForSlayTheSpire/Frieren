@@ -441,5 +441,9 @@
   "FrierenMod:Free": {
     "NAME": "物理超度",
     "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，将其生命值变为0。否则造成 !D! 点伤害。"
+  },
+  "FrierenMod:MagicianChoke": {
+    "NAME": "魔法使流勒脖",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你在这个回合每 frierenmod:同调 一次，该名敌人失去 !M! 点生命"
   }
 }
