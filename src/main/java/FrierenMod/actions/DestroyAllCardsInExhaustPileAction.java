@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class DestroyAllCardsInExhaustPileAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
-            CardGroup exhaustPile = AbstractDungeon.player.exhaustPile;
             AbstractDungeon.player.exhaustPile.clear();
             this.isDone = true;
         }
