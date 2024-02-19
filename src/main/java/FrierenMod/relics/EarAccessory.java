@@ -26,7 +26,7 @@ public class EarAccessory extends AbstractFrierenRelic {
     public void atBattleStart() {
         flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new MakeMagicPowerInHandAction(2,true));
+        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),2));
     }
 }
 
