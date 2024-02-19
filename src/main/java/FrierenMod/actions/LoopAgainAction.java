@@ -15,7 +15,7 @@ public class LoopAgainAction extends AbstractGameAction {
     @Override
     public void update() {
         int exhaust = 0;
-        for(AbstractCard c: AbstractDungeon.player.exhaustPile.group){
+        for(AbstractCard c: AbstractDungeon.player.discardPile.group){
             if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower)
                 exhaust++;
         }

@@ -10,7 +10,7 @@ public class LoopAgain extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(LoopAgain.class.getSimpleName());
     public LoopAgain() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
     @Override
     public void upgrade() {
