@@ -7,9 +7,12 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 public class NormalAttackMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(NormalAttackMagic.class.getSimpleName());
     public NormalAttackMagic() {
@@ -49,6 +52,7 @@ public class NormalAttackMagic extends AbstractFrierenCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.damage += this.magicNumber;
         this.calculateCardDamage(m);
+        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         for (int i = 0; i < 2; i++) {
             this.addToBot(new DamageAction(
                     m,
@@ -56,8 +60,7 @@ public class NormalAttackMagic extends AbstractFrierenCard {
                             p,
                             this.damage,
                             this.damageTypeForTurn
-                    ),
-                   AbstractGameAction.AttackEffect.FIRE,true
+                    )
             ));
         }
     }

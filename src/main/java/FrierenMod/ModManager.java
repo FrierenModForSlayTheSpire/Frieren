@@ -88,8 +88,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         String cardsClassPath = getModID() + ".cards";
         (new AutoAdd(getModID())).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
             BaseMod.addCard(card);
-//            if (info.seen)
-//                UnlockTracker.unlockCard(card.cardID);
+            if (info.seen)
+                UnlockTracker.unlockCard(card.cardID);
         });
         Log.logger.info("Done adding cards!");
     }

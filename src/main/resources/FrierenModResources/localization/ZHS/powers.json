@@ -88,5 +88,11 @@
     "DESCRIPTIONS": [
       "抽牌堆中有 #b%d 张 #y魔力  NL 手中有 #b%d 张 #y魔力  NL 弃牌中有 #b%d 张 #y魔力 "
     ]
+  },
+  "FrierenMod:MagicianChokePower": {
+    "NAME": "魔法使流勒脖",
+    "DESCRIPTIONS": [
+      "每当玩家同调 #y魔力 时，受到 #b%d 点伤害 。"
+    ]
   }
 }
