@@ -431,6 +431,18 @@
   },
   "FrierenMod:BigCross": {
     "NAME": "大十字",
-    "DESCRIPTION": " 造成!D!点伤害。如果你本回合打出过 frierenmod:咏唱 牌，这张牌在本回合耗能变为0。"
+    "DESCRIPTION": " 造成!D!点伤害。如果你本回合 frierenmod:咏唱 过，这张牌在本回合耗能变为0。"
+  },
+  "FrierenMod:YouWin": {
+    "NAME": "一眼盯砧，鉴定为芙了",
+    "DESCRIPTION": " 造成!D!点伤害。你每次 frierenmod:咏唱 时， 将这张牌从弃牌堆放回你的手牌。"
+  },
+  "FrierenMod:LoopAgain": {
+    "NAME": "再循环",
+    "DESCRIPTION": "你的弃牌堆中每有!M!张 *魔力 ，将1张魔力放入抽牌堆。"
+  },
+  "FrierenMod:PerfectChant": {
+    "NAME": "完美咏唱",
+    "DESCRIPTION": "造成!D!点伤害。 frierenmod:咏唱 !CX! "
   }
 }

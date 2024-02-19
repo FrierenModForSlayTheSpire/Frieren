@@ -1,8 +1,10 @@
 package FrierenMod.actions;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.optionCards.ChantDiscardPile;
 import FrierenMod.cards.optionCards.ChantDrawPile;
 import FrierenMod.cards.optionCards.ChantHand;
+import FrierenMod.cards.white.YouWin;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -63,6 +65,10 @@ public class ChantAction extends AbstractGameAction {
         }
         if (!stanceChoices.isEmpty()) {
             this.addToTop(new ChooseOneAction(stanceChoices));
+            for(AbstractCard c: AbstractDungeon.player.discardPile.group){
+                if(c instanceof AbstractFrierenCard)
+                    ((AbstractFrierenCard) c).triggerExhaustedCardsOnChant();
+            }
         }
         this.isDone = true;
     }

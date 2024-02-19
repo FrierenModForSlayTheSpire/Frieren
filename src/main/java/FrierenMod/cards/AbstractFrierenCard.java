@@ -5,9 +5,11 @@ import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.stances.AbstractStance;
 
 import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
@@ -122,4 +124,5 @@ public abstract class AbstractFrierenCard extends CustomCard {
     private boolean canLegendMagicCardUse(AbstractMonster m){
         return LegendMagicHelper.canLegendMagicUse(this,m);
     }
+    public void triggerExhaustedCardsOnChant(){}
 }
