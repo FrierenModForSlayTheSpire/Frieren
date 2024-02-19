@@ -440,9 +440,5 @@
   "FrierenMod:LoopAgain": {
     "NAME": "再循环",
     "DESCRIPTION": "你的弃牌堆中每有!M!张 *魔力 ，将1张魔力放入抽牌堆。"
-  },
-  "FrierenMod:PerfectChant": {
-    "NAME": "完美咏唱",
-    "DESCRIPTION": "造成!D!点伤害。 frierenmod:咏唱 !CX! "
   }
 }
