@@ -22,7 +22,7 @@ import FrierenMod.utils.ModInformation;
 public class Free extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(Free.class.getSimpleName());
     public Free() {
-        super(ID, 2, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseMagicNumber = this.magicNumber = 30;
         this.damage = this.baseDamage=20;
     }
@@ -35,9 +35,8 @@ public class Free extends AbstractFrierenCard {
             if (m.currentHealth <= 30)
                 this.addToBot((AbstractGameAction) new JudgementAction((AbstractCreature) m, this.magicNumber));
             else this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
-
         }
-            }
+    }
 
     public void upgrade() {
         if (!this.upgraded) {

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class LoopAgain extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(LoopAgain.class.getSimpleName());
     public LoopAgain() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = 2;
     }
     @Override
