@@ -62,8 +62,8 @@ public class AnalysisMagic extends AbstractFrierenCard {
                             this.addToBot(new GainBlockAction(p,this.block));
                             CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                         }
-                        break;
                     }
+                    break;
                 case 2:
                     this.currentLevelRequiredNumber = 3;
                     if (((AbstractFrierenCard) c).isChantCard){
