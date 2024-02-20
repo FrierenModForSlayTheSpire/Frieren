@@ -14,6 +14,7 @@ import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -138,6 +139,8 @@ public class Frieren extends CustomPlayer {
     // 人物选择界面点击你的人物按钮时触发的方法，这里为屏幕轻微震动
     @Override
     public void doCharSelectScreenSelectEffect() {
+        CardCrawlGame.sound.stop("I_am_frieren.mp3");
+        CardCrawlGame.sound.play("I_am_frieren.mp3");
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 

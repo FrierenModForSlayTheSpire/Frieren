@@ -12,6 +12,12 @@ public class ModInformation {
     public static String getImgPath(){
         return getResPath() + "img/";
     }
+    public static String getAudioPath() {
+        return getResPath() + "audio/";
+    }
+    public static String makeAudioPath(String content) {
+        return getAudioPath() + content;
+    }
     public static String makeLocalizationPath(String lang, String content){
         return getResPath() + "localization/" + lang + "/" + content + ".json";
     }
