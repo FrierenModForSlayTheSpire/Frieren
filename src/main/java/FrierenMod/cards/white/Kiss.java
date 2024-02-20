@@ -4,6 +4,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
@@ -25,8 +26,10 @@ public class Kiss extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(m, p, (AbstractPower)new VulnerablePower(m, 99, false), 99));
-        this.addToBot(new ApplyPowerAction(m, p, (AbstractPower)new WeakPower(m, 99, false), 99));
+        CardCrawlGame.sound.stop("kiss.mp3");
+        CardCrawlGame.sound.play("kiss.mp3");
+        this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, 99, false), 99));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, 99, false), 99));
     }
 }
 

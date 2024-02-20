@@ -11,6 +11,9 @@ public class AudioPatch {
     public static class SoundPatch {
         public static void Postfix(SoundMaster instance, HashMap<String, Sfx> ___map) {
             AudioPatch.load(instance, ___map, "I_am_frieren.mp3");
+            AudioPatch.load(instance, ___map, "kiss.mp3");
+            AudioPatch.load(instance, ___map, "normal_attack.mp3");
+            AudioPatch.load(instance, ___map, "win.mp3");
         }
     }
 

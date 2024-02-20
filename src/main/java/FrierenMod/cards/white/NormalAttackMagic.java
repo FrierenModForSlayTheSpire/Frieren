@@ -50,6 +50,8 @@ public class NormalAttackMagic extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        CardCrawlGame.sound.stop("normal_attack.mp3");
+        CardCrawlGame.sound.play("normal_attack.mp3");
         this.damage += this.magicNumber;
         this.calculateCardDamage(m);
         addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));

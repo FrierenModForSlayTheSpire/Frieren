@@ -149,7 +149,7 @@ public class Frieren extends CustomPlayer {
     public ArrayList<CutscenePanel> getCutscenePanels() {
         ArrayList<CutscenePanel> panels = new ArrayList<>();
         // 有两个参数的，第二个参数表示出现图片时播放的音效
-        panels.add(new CutscenePanel(FrierenRes.VICTORY_1, "ATTACK_MAGIC_FAST_1"));
+        panels.add(new CutscenePanel(FrierenRes.VICTORY_1, "win.mp3"));
         panels.add(new CutscenePanel(FrierenRes.VICTORY_2));
         panels.add(new CutscenePanel(FrierenRes.VICTORY_3));
         return panels;
