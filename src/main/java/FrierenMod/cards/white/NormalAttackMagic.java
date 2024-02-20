@@ -54,16 +54,9 @@ public class NormalAttackMagic extends AbstractFrierenCard {
         CardCrawlGame.sound.play("normal_attack.mp3");
         this.damage += this.magicNumber;
         this.calculateCardDamage(m);
-        addToBot((AbstractGameAction)new VFXAction((AbstractCreature)p, (AbstractGameEffect)new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
+        this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         for (int i = 0; i < 2; i++) {
-            this.addToBot(new DamageAction(
-                    m,
-                    new DamageInfo(
-                            p,
-                            this.damage,
-                            this.damageTypeForTurn
-                    )
-            ));
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
         }
     }
 }

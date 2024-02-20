@@ -24,7 +24,7 @@ public class NightDressPower extends AbstractFrierenPower {
             this.addToBot(new ExhaustMagicPowerInDrawPileAction(ChantHelper.getMagicPowerNumInDrawPile()));
             this.addToBot(new ExhaustMagicPowerInHandAction(ChantHelper.getMagicPowerNumInHand()));
             this.addToBot(new ExhaustMagicPowerInDiscardPileAction(ChantHelper.getMagicPowerNumInDiscardPile()));
-            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
 

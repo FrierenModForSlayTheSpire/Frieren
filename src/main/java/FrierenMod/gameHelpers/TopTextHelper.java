@@ -1,6 +1,5 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.white.NormalAttackMagic;
 import FrierenMod.cards.white.ThunderMagic;
 
