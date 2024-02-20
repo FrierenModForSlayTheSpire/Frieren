@@ -142,5 +142,11 @@
     "TEXT": [
       "没有足够 #r魔力 。"
     ]
+  },
+  "FrierenMod:MagicPanel": {
+    "TEXT": [
+      "魔力",
+      "上：抽牌堆 NL 中：手牌 NL 下：弃牌堆"
+    ]
   }
 }
