@@ -33,6 +33,9 @@ public class ModInformation {
     public static String getUIPath(){
         return getImgPath() + "UI/";
     }
+    public static String makeUIPath(String content){
+        return getUIPath() + content + ".png";
+    }
     public static String getOrbPath() {
         return getUIPath() + "orb/";
     }
