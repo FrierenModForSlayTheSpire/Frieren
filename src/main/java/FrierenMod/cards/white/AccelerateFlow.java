@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.MakeMagicPowerInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.powers.SpeedFlowPower;
+import FrierenMod.powers.AccelerateFlowPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -24,6 +24,6 @@ public class AccelerateFlow extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeMagicPowerInHandAction(this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p,p,new SpeedFlowPower(p)));
+        this.addToBot(new ApplyPowerAction(p,p,new AccelerateFlowPower(p)));
     }
 }

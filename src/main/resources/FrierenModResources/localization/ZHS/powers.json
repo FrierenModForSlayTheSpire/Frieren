@@ -53,7 +53,7 @@
       "本场战斗中你的 #y同调 变为 #y终极同调 。"
     ]
   },
-  "FrierenMod:SpeedFlowPower": {
+  "FrierenMod:AccelerateFlowPower": {
     "NAME": "加速流动",
     "DESCRIPTIONS": [
       "本回合中你的 #y同调 变为 #y加速同调 。"
@@ -81,12 +81,6 @@
     "NAME": "想象力",
     "DESCRIPTIONS": [
       "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"
-    ]
-  },
-  "FrierenMod:MagicShowPower": {
-    "NAME": "魔法使",
-    "DESCRIPTIONS": [
-      "抽牌堆中有 #b%d 张 #y魔力  NL 手中有 #b%d 张 #y魔力  NL 弃牌中有 #b%d 张 #y魔力 "
     ]
   },
   "FrierenMod:MagicianChokePower": {

@@ -74,4 +74,12 @@ public class ModInformation {
     public static String makeRelicImgPath(String id){
         return getImgPath() + "relics/" + id + ".png";
     }
+    public static String makePowerPath(String id, int size){
+        if(size == 84)
+            return getImgPath() + "powers/" + id + "_84.png";
+        else if (size == 32)
+            return getImgPath() + "powers/" + id + "_32.png";
+        else
+            return "ERROR!";
+    }
 }

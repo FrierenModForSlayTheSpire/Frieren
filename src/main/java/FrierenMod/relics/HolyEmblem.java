@@ -1,9 +1,7 @@
 package FrierenMod.relics;
 
 import FrierenMod.cards.tempCards.MagicPower;
-import FrierenMod.powers.MagicShowPower;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
