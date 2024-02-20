@@ -9,7 +9,7 @@
   },
   "FrierenMod:NormalAttackMagic": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。"
+    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。 NL （已 消耗 !M! 张魔力） NL （将造成 !D! 点伤害）"
   },
   "FrierenMod:DefendMagic": {
     "NAME": "防御魔法",
