@@ -2,6 +2,8 @@ package FrierenMod;
 
 
 import FrierenMod.Characters.Frieren;
+import FrierenMod.enums.CardEnums;
+import FrierenMod.enums.CharacterEnums;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.IDCheckDontTouchPls;
 import FrierenMod.utils.Log;
@@ -28,8 +30,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN;
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static basemod.BaseMod.logger;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
@@ -40,8 +40,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     public ModManager() {
         BaseMod.subscribe(this);
         setModID(ModInformation.MOD_NAME);
-        Log.logger.info("Creating the color " + FRIEREN_CARD.toString());
-        BaseMod.addColor(FRIEREN_CARD, FrierenRes.RENDER_COLOR.cpy(),
+        Log.logger.info("Creating the color " + CardEnums.FRIEREN_CARD.toString());
+        BaseMod.addColor(CardEnums.FRIEREN_CARD, FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
@@ -100,7 +100,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         for (ModInfo info : Loader.MODINFOS)
             Log.logger.info(info.ID);
         (new AutoAdd(getModID())).packageFilter(relicClassPath).any(CustomRelic.class, (info, relic) -> {
-            BaseMod.addRelicToCustomPool(relic, FRIEREN_CARD);
+            BaseMod.addRelicToCustomPool(relic, CardEnums.FRIEREN_CARD);
             UnlockTracker.markRelicAsSeen(relic.relicId);
             Log.logger.info("Adding relics: " + relic.relicId);
         });
@@ -108,7 +108,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     }
     @Override
     public void receiveEditCharacters() {
-        BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, FRIEREN);
+        BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
 
     }
     @Override

@@ -29,4 +29,8 @@ public class FrierenRes {
     public static final String[] ORB_TEXTURES = ModInformation.makeOrbTexturePath(CHARACTER_NAME);
     public static final String ORB_VFX = ModInformation.makeOrbVfxPath(CHARACTER_NAME);
     public static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
+    public static final String MP_LAYER = ModInformation.makeMagicPanelPath("MPLayer0");
+    public static final String MP_DARK_LAYER = ModInformation.makeMagicPanelPath("MPLayerDark0");
+    public static final String MP_WRAP_LAYER = ModInformation.makeMagicPanelPath("MPWrap");
+    public static final String GAIN_MP_VFX = ModInformation.makeMagicPanelPath("GainMPVFX");
 }

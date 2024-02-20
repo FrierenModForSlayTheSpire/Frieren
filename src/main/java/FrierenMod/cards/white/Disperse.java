@@ -8,10 +8,7 @@ import FrierenMod.cards.tempCards.MagicPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class Disperse extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(Disperse.class.getSimpleName());

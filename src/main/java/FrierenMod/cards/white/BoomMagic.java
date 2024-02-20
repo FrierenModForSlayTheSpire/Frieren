@@ -9,12 +9,8 @@ import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
-
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 
 public class BoomMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(BoomMagic.class.getSimpleName());

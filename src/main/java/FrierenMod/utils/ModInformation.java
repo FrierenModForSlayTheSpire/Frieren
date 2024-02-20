@@ -30,6 +30,12 @@ public class ModInformation {
     public static String getOrbPath() {
         return getUIPath() + "orb/";
     }
+    public static String getMagicPanelPath() {
+        return getUIPath() + "magicPanel/";
+    }
+    public static String makeMagicPanelPath(String content){
+        return getMagicPanelPath() + content + ".png";
+    }
     public static String[] makeOrbTexturePath(String character){
         return new String[]{
                 getOrbPath() + character + "/" + "layer4.png",

@@ -1,15 +1,18 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.white.*;
+import FrierenMod.cards.white.Defend;
+import FrierenMod.cards.white.Flow;
+import FrierenMod.cards.white.Strike;
 import FrierenMod.cards.white.chant.DefendMagic;
 import FrierenMod.cards.white.chant.RapidChant;
+import FrierenMod.enums.CardEnums;
+import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HolyEmblem;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,21 +21,19 @@ import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.events.city.Vampires;
-import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import java.util.ArrayList;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
+import java.util.ArrayList;
 
 public class Frieren extends CustomPlayer {
     // 人物的本地化文本，如卡牌的本地化文本一样，如何书写见下
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ModInformation.MOD_NAME + ":" + FrierenRes.CHARACTER_NAME);
 
     public Frieren(String name) {
-        super(name, Enums.FRIEREN,FrierenRes.ORB_TEXTURES,FrierenRes.ORB_VFX,FrierenRes.LAYER_SPEED, null, null);
+        super(name, CharacterEnums.FRIEREN,FrierenRes.ORB_TEXTURES,FrierenRes.ORB_VFX,FrierenRes.LAYER_SPEED, null, null);
 
         // 人物对话气泡的大小，如果游戏中尺寸不对在这里修改（libgdx的坐标轴左下为原点）
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -107,7 +108,7 @@ public class Frieren extends CustomPlayer {
     // 你的卡牌颜色（这个枚举在最下方创建）
     @Override
     public AbstractCard.CardColor getCardColor() {
-        return FRIEREN_CARD;
+        return CardEnums.FRIEREN_CARD;
     }
 
     // 翻牌事件出现的你的职业牌（一般设为打击）
@@ -197,19 +198,5 @@ public class Frieren extends CustomPlayer {
     @Override
     public AbstractGameAction.AttackEffect[] getSpireHeartSlashEffect() {
         return new AbstractGameAction.AttackEffect[]{AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.SLASH_DIAGONAL, AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.FIRE, AbstractGameAction.AttackEffect.SLASH_DIAGONAL};
-    }
-
-
-    // 为原版人物枚举、卡牌颜色枚举扩展的枚举，需要写，接下来要用
-    // ***填在SpireEnum中的name需要一致***
-    public static class Enums {
-        @SpireEnum
-        public static PlayerClass FRIEREN;
-
-        @SpireEnum(name = "Frieren")
-        public static AbstractCard.CardColor FRIEREN_CARD;
-
-        @SpireEnum(name = "Frieren")
-        public static CardLibrary.LibraryType FRIEREN_LIBRARY;
     }
 }

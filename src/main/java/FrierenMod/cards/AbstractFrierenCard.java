@@ -1,17 +1,14 @@
 package FrierenMod.cards;
 
+import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
-import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.stances.AbstractStance;
 
-import static FrierenMod.Characters.Frieren.Enums.FRIEREN_CARD;
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
 public abstract class AbstractFrierenCard extends CustomCard {
@@ -45,15 +42,15 @@ public abstract class AbstractFrierenCard extends CustomCard {
         initSwitches();
     }
     public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, FRIEREN_CARD, rarity, target);
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, target);
         initSwitches();
     }
     public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, FRIEREN_CARD, rarity, CardTarget.NONE);
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
         initSwitches();
     }
     public AbstractFrierenCard(String id, int cost, CardRarity rarity) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, FRIEREN_CARD, rarity, CardTarget.NONE);
+        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
         initSwitches();
     }
     @Override

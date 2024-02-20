@@ -29,6 +29,5 @@ public class HolyEmblem extends AbstractFrierenRelic {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new RelicAboveCreatureAction(p, this));
         this.addToBot(new MakeTempCardInDrawPileAction(new MagicPower(),3,true,true));
-        this.addToBot(new ApplyPowerAction(p,p,new MagicShowPower(p)));
     }
 }
