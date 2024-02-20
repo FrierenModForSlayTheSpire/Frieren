@@ -27,10 +27,10 @@ public class MercuryPudding extends AbstractFrierenRelic {
     }
 
     public void onVictory() {
-        flash();
         addToTop((AbstractGameAction) new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
         AbstractPlayer p = AbstractDungeon.player;
         if (p.currentHealth <= 10) {
+            flash();
             int healAmt =p.maxHealth/2;
             AbstractDungeon.player.heal(healAmt, true);
             this.setCounter(-2);
