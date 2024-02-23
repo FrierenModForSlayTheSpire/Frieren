@@ -16,15 +16,9 @@ public class HideMagic extends AbstractFrierenCard {
         this.selfRetain = true;
     }
     @Override
-    public void upgrade() {
-        if (!this.upgraded) {
-            this.upgradeName();
-            this.exhaust = false;
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-        }
+    public boolean canUpgrade() {
+        return false;
     }
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
        this.addToBot(new HideMagicAction());
     }
