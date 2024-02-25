@@ -142,7 +142,7 @@
   },
   "FrierenMod:TongueTwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "抽 !M! 张牌, 如果手牌中没有魔力，多抽1张。"
+    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有魔力，多抽1张。"
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",
