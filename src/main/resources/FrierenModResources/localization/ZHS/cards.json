@@ -35,7 +35,7 @@
   },
   "FrierenMod:HideMagic": {
     "NAME": "魔力隐藏",
-    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。",
+    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。"
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",

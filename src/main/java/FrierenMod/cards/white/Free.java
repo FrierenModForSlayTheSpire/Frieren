@@ -30,7 +30,7 @@ public class Free extends AbstractFrierenCard {
             this.addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY, Color.GOLD.cpy())));
             this.addToBot(new WaitAction(0.8F));
             this.addToBot(new VFXAction(new GiantTextEffect(m.hb.cX, m.hb.cY)));
-            if (m.currentHealth <= 30)
+            if (m.currentHealth <= this.magicNumber)
                 this.addToBot(new JudgementAction(m, this.magicNumber));
             else this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
