@@ -62,8 +62,8 @@ public class AnalysisMagic extends AbstractFrierenCard {
                             this.addToBot(new GainBlockAction(p,this.block));
                             CardModifierManager.addModifier(this, new AnalysisMod(currentLevel,currentLevelRequiredNumber,currentInLevelProgressNumber));
                         }
-                        break;
                     }
+                    break;
                 case 2:
                     this.currentLevelRequiredNumber = 3;
                     if (((AbstractFrierenCard) c).isChantCard){
@@ -95,7 +95,7 @@ public class AnalysisMagic extends AbstractFrierenCard {
                             currentLevel = 3;
                             currentLevelRequiredNumber = 4;
                             this.initializeDescription();
-                            this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
+                            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));
                             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
                         }
                     }

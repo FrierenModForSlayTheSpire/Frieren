@@ -1,0 +1,79 @@
+[
+  {
+    "PROPER_NAME":"咏唱X",
+    "NAMES": [
+      "咏唱X","咏唱"
+    ],
+    "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得X点 #y格挡 两次。 NL 消耗手牌中X张 #y魔力 ，获得X点 [E] 。 NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量 。"
+  },
+  {
+    "PROPER_NAME":"Synchron",
+    "NAMES": [
+      "Synchron"
+    ],
+    "DESCRIPTION": "抽1张牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME":"终极同调",
+    "NAMES": [
+      "终极同调"
+    ],
+    "DESCRIPTION": "随机对1个敌人造成20点伤害。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME":"加速同调",
+    "NAMES": [
+      "加速同调"
+    ],
+    "DESCRIPTION": "抽2张牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME":"终极加速同调",
+    "NAMES": [
+      "终极加速同调"
+    ],
+    "DESCRIPTION": "随机对1个敌人造成20点伤害，抽2张牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME":"传说魔法",
+    "NAMES": [
+      "传说魔法"
+    ],
+    "DESCRIPTION": "本回合中打出过 #y咏唱 牌后才可打出。"
+  },
+  {
+    "PROPER_NAME":"解析X",
+    "NAMES": [
+      "解析","解析X","奖励"
+    ],
+    "DESCRIPTION": " #y保留 且 #y无法被打出 。 NL 在手牌中完成解析条件会使X-1，获得相应 #y奖励 并刷新。 NL  X为0时会使此牌 #y消耗 。"
+  },
+  {
+    "PROPER_NAME":"临时力量",
+    "NAMES": [
+      "临时力量"
+    ],
+    "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
+  },
+  {
+    "PROPER_NAME":"缓冲",
+    "NAMES": [
+      "缓冲"
+    ],
+    "DESCRIPTION": "阻止你下一次受到的生命值损伤。"
+  },
+  {
+    "PROPER_NAME":"缠绕",
+    "NAMES": [
+      "缠绕"
+    ],
+    "DESCRIPTION": "在回合结束时承受伤害。"
+  },
+  {
+    "PROPER_NAME":"变动",
+    "NAMES": [
+      "变动"
+    ],
+    "DESCRIPTION": "抽牌顺序将改变。"
+  }
+]

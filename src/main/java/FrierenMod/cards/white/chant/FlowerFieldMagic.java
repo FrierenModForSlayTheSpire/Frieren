@@ -32,6 +32,10 @@ public class FlowerFieldMagic extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChantAction(this.chantX));
-        this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(),1));
+        Flower c = new Flower();
+        if(this.upgraded){
+            c.upgrade();
+        }
+        this.addToBot(new MakeTempCardInHandAction(c,1));
     }
 }

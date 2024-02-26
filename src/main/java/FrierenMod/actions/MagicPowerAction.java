@@ -1,17 +1,15 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.MagicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public class MagicPowerAction extends AbstractFrierenAction{
+public class MagicPowerAction extends AbstractGameAction{
     private final int type;
     private AbstractCard c;
     public MagicPowerAction(int type){
         this.type = type;
-        this.isMagicPowerAction = true;
     }
     public MagicPowerAction(AbstractCard c,int type){
         this(type);

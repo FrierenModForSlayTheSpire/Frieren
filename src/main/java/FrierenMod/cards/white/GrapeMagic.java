@@ -11,6 +11,7 @@ public class GrapeMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(GrapeMagic.class.getSimpleName());
     public GrapeMagic() {
         super(ID, 1, CardRarity.UNCOMMON);
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {

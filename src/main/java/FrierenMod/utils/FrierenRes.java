@@ -32,5 +32,6 @@ public class FrierenRes {
     public static final String MP_LAYER = ModInformation.makeMagicPanelPath("MPLayer0");
     public static final String MP_DARK_LAYER = ModInformation.makeMagicPanelPath("MPLayerDark0");
     public static final String MP_WRAP_LAYER = ModInformation.makeMagicPanelPath("MPWrap");
+    public static final String MP_WRAP_GOLDEN_LAYER = ModInformation.makeMagicPanelPath("MPWrapGolden");
     public static final String GAIN_MP_VFX = ModInformation.makeMagicPanelPath("GainMPVFX");
 }

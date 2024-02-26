@@ -118,7 +118,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-            lang = "ENG";
+            lang = "ZHS";
+//            lang = "ENG";
         }
         String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang,"keywords"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
@@ -134,7 +135,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-            lang = "ENG";
+            lang = "ZHS";
+//            lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang,"cards"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang,"characters"));

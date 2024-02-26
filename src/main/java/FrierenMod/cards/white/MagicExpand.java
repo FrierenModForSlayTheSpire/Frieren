@@ -11,6 +11,7 @@ public class MagicExpand extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(MagicExpand.class.getSimpleName());
     public MagicExpand() {
         super(ID, 1, CardRarity.RARE);
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {

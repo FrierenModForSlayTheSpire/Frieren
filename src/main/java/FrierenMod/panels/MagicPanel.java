@@ -4,6 +4,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.Gdx;
@@ -15,10 +16,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.*;
+import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.Hitbox;
+import com.megacrit.cardcrawl.helpers.MathHelper;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
-import FrierenMod.utils.Log;
 
 public class MagicPanel extends AbstractPanel {
     public static final String ID = ModInformation.makeID(MagicPanel.class.getSimpleName());
@@ -32,6 +35,7 @@ public class MagicPanel extends AbstractPanel {
     private static final Texture MPDarkImage = new Texture(FrierenRes.MP_DARK_LAYER);
 
     private static final Texture MPWrapImage = new Texture(FrierenRes.MP_WRAP_LAYER);
+    private static final Texture MPWrapGoldenImage = new Texture(FrierenRes.MP_WRAP_GOLDEN_LAYER);
 
     private static final Texture GainMPImage = new Texture(FrierenRes.GAIN_MP_VFX);
 
@@ -171,7 +175,7 @@ public class MagicPanel extends AbstractPanel {
     private void renderOrb(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
         sb.draw((this.isEmpty()) ? MPDarkImage : MPImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, this.OrbAngle, 0, 0, 256, 256, false, false);
-        sb.draw(MPWrapImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
+        sb.draw((LegendMagicHelper.cannotPlayLegendMagic()) ? MPWrapImage : MPWrapGoldenImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
     }
 
     private void renderVFX(SpriteBatch sb) {

@@ -9,7 +9,7 @@
   },
   "FrierenMod:NormalAttackMagic": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。（已 消耗  !M! 张魔力）。"
+    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。 NL （已 消耗 !M! 张魔力） NL （将造成 !D! 点伤害）"
   },
   "FrierenMod:DefendMagic": {
     "NAME": "防御魔法",
@@ -35,8 +35,7 @@
   },
   "FrierenMod:HideMagic": {
     "NAME": "魔力隐藏",
-    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。"
+    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。"
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
@@ -143,7 +142,7 @@
   },
   "FrierenMod:TongueTwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "抽 !M! 张牌, 如果手牌中没有魔力，多抽1张。"
+    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有魔力，多抽1张。"
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",

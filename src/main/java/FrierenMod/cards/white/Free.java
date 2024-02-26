@@ -1,22 +1,20 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.JudgementAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.GiantTextEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.utils.ModInformation;
 
 
 public class Free extends AbstractFrierenCard {
@@ -32,8 +30,8 @@ public class Free extends AbstractFrierenCard {
             this.addToBot(new VFXAction(new WeightyImpactEffect(m.hb.cX, m.hb.cY, Color.GOLD.cpy())));
             this.addToBot(new WaitAction(0.8F));
             this.addToBot(new VFXAction(new GiantTextEffect(m.hb.cX, m.hb.cY)));
-            if (m.currentHealth <= 30)
-                this.addToBot((AbstractGameAction) new JudgementAction((AbstractCreature) m, this.magicNumber));
+            if (m.currentHealth <= this.magicNumber)
+                this.addToBot(new JudgementAction(m, this.magicNumber));
             else this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
     }

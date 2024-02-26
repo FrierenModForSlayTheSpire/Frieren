@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class YouWin extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(YouWin.class.getSimpleName());
     public YouWin() {
-        super(ID, 1, CardType.ATTACK, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 4;
     }
     @Override
