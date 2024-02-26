@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.optionCards.ChantDiscardPile;
 import FrierenMod.cards.optionCards.ChantDrawPile;
 import FrierenMod.cards.optionCards.ChantHand;
@@ -49,6 +50,10 @@ public class PreciseChantAction extends AbstractGameAction {
                 }
             }
             this.addToTop(new ChooseOneAction(choices));
+            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+                if (c instanceof AbstractFrierenCard)
+                    ((AbstractFrierenCard) c).triggerExhaustedCardsOnChant();
+            }
         }
         this.isDone = true;
     }
