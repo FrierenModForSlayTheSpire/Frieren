@@ -39,8 +39,8 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡两次。",
-    "UPGRADE_DESCRIPTION":"获得 !B! 点格挡两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 两次。",
+    "UPGRADE_DESCRIPTION":"获得 !B! 点 格挡 两次。"
   },
   "FrierenMod:ChantHand": {
     "NAME": "从手牌咏唱",
@@ -181,7 +181,7 @@
   },
   "FrierenMod:Apple": {
     "NAME": "青苹果",
-    "DESCRIPTION": " 获得 !B! 点格挡2次。 NL 消耗 。"
+    "DESCRIPTION": " 获得 !B! 点 格挡 2次。 NL 消耗 。"
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "破灭之雷魔法",
@@ -197,7 +197,7 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得 !B! 点格挡， 保留 一张手牌一回合。"
+    "DESCRIPTION": " 获得 !B! 点 格挡 。 NL  保留 一张手牌一回合。"
   },
   "FrierenMod:ZeerieMagicBook": {
     "NAME": "赛莉耶的魔导书",
@@ -206,12 +206,12 @@
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
-    "DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 一张手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，在本场战斗中 升级 你的所有手牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中 升级 一张手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中 升级 你的所有手牌。"
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
-    "DESCRIPTION": "获得 !M! 点敏捷，你的回合结束时，失去 !M! 点敏捷。"
+    "DESCRIPTION": "获得 !M! 点 敏捷 ，你的回合结束时，失去 !M! 点 敏捷 。"
   },
   "FrierenMod:LockTarget": {
   "NAME": "定叫他有来无回",
@@ -395,7 +395,7 @@
   },
   "FrierenMod:AnalysisMagic": {
     "NAME": "解析结界的魔法",
-    "DESCRIPTION": " frierenmod:解析 3： frierenmod:同调 4张 *魔力 。 NL  *奖励 ： !B! 点格挡。 NL （当前进度0/4）。"
+    "DESCRIPTION": " frierenmod:解析 3： frierenmod:同调 4张 *魔力 。 NL  *奖励 ： !B! 点 格挡 。 NL （当前进度0/4）。"
   },
   "FrierenMod:MagicBag": {
     "NAME": "魔力包裹",
@@ -442,7 +442,7 @@
   },
   "FrierenMod:AirSlash": {
     "NAME": "空气斩",
-    "DESCRIPTION": "造成 !D! 点伤害。本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
   },
   "FrierenMod:Apprehend": {
     "NAME": "无情铁手",
