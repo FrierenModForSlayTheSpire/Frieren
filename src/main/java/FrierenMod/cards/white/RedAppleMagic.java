@@ -12,6 +12,7 @@ public class RedAppleMagic extends AbstractFrierenCard {
     public RedAppleMagic() {
         super(ID, 1, CardRarity.UNCOMMON);
         this.cardsToPreview = new Apple();
+        this.selfRetain = true;
     }
     @Override
     public void upgrade() {
