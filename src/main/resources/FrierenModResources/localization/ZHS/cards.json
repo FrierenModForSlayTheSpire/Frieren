@@ -72,8 +72,8 @@
   },
   "FrierenMod:Disperse": {
     "NAME": "分散",
-    "DESCRIPTION": "将1张 *魔力 放入抽牌堆。 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆。 消耗 。",
-    "UPGRADE_DESCRIPTION": "将1张 *魔力 放入抽牌堆。 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆。"
+    "DESCRIPTION": "将1张 *魔力 放入抽牌堆。 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将1张 *魔力 放入抽牌堆 NL 将2张 *魔力 放入手牌。 NL 将3张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:Flow": {
     "NAME": "流转",
@@ -142,7 +142,7 @@
   },
   "FrierenMod:TongueTwisterMagic": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有魔力，多抽1张。"
+    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有 *魔力 ，多抽1张。"
   },
   "FrierenMod:MultipleAttackMagic": {
     "NAME": "多重攻击魔法",
