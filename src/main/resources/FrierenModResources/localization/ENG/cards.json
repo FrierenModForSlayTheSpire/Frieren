@@ -125,7 +125,7 @@
   },
   "FrierenMod:FindLostOrnamentMagic": {
     "NAME": "Spell for Finding Lost Accessories",
-    "DESCRIPTION": "Innate. Ethereal. NL frierenmod:LegendarySpell. NL At the end of combat, get a random relic."
+    "DESCRIPTION": "Innate. Ethereal. NL frierenmod:LegendarySpell. NL At the end of combat, obtain a random relic."
   },
   "FrierenMod:OilMagic": {
     "NAME": "Spell to Remove Tough Oil Stains",
@@ -165,8 +165,8 @@
   },
   "FrierenMod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
+    "DESCRIPTION": "Put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火Magic",
@@ -187,7 +187,7 @@
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "Destructive Lightning Magic",
-    "DESCRIPTION": "frierenmod:LegendarySpell. NL Darw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:UltimateSynchro in the rest of the combat."
+    "DESCRIPTION": "frierenmod:LegendarySpell. NL Draw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:UltimateSynchro in the rest of the combat."
   },
   "FrierenMod:Flower": {
     "NAME": "BlueMoonWeed",
@@ -337,7 +337,7 @@
     "NAME": "The Tower",
     "DESCRIPTION": "Upgrade all cards in your hand for the rest of the combat."
   },
-  "FrierenMod:Upgrade DexterityOption": {
+  "FrierenMod:UpgradeALLOption": {
     "NAME": "The World",
     "DESCRIPTION": "Upgrade ALL cards for the rest of the combat. NL Exhaust."
   },

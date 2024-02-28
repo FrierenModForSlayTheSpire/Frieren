@@ -26,7 +26,7 @@
   "FrierenMod:GainRelicPower": {
     "NAME": "Spell for Finding Lost Accessories",
     "DESCRIPTIONS": [
-      "At the end of combat, get a random relic."
+      "At the end of combat, obtain a random relic."
     ]
   },
   "FrierenMod:PrepareRitePower": {
