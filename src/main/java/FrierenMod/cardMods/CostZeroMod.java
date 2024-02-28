@@ -36,6 +36,8 @@ public class CostZeroMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + this.cardAmt + TEXT[1];
+        if(this.cardAmt == 1)
+            return rawDescription + TEXT[0] + this.cardAmt + TEXT[1];
+        return rawDescription + TEXT[0] + this.cardAmt + TEXT[2];
     }
 }

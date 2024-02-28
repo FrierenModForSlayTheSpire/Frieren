@@ -1,165 +1,147 @@
 {
   "FrierenMod:DrawMod": {
-  "TEXT": [
-    "抽 ", " 张牌",
-    " NL 抽 ", " 张牌。", " 张牌。"
+    "TEXT": [
+      " NL Draw ", " card.", " cards."
     ]
   },
   "FrierenMod:MagicPowerNumMod": {
     "TEXT": [
-      "将 ", " 张 *魔力 置入弃牌堆",
-      " NL 将 ", " 张 *魔力 置入弃牌堆。", " 张 *魔力 置入弃牌堆。"
+      " NL Shuffle ", " *Mana into discard pile."
     ]
   },
   "FrierenMod:MagicPowerInHandNumMod": {
     "TEXT": [
-      "将 ", " 张 *魔力 置入手牌",
-      " NL 将 ", " 张 *魔力 置入手牌。"
+      " NL Add ", " *Mana into your hand."
     ]
   },
   "FrierenMod:ScryMod": {
     "TEXT": [
-      " NL  预见 ", "。"
+      " NL  Scry ", "."
     ]
   },
   "FrierenMod:CostZeroMod": {
     "TEXT": [
-      " NL 你手牌中 ", " 张随机牌在本回合中耗能变为0。"
+      " NL Reduce the cost of ", " random card in your hand to 0 this turn."," random cards in your hand to 0 this turn."
     ]
   },
   "FrierenMod:GainRandomCardMod": {
     "TEXT": [
-      "获得 ", " 张在本回合耗能为0的随机普通牌。",
-      " NL 获得 ", " 张在本回合耗能为0的随机普通牌。", " 张在本回合耗能为0的随机普通牌。"
+      " NL Add ", " random common card into your hand.It costs 0 this turn.", " random common cards into your hand.They cost 0 this turn."
     ]
   },
   "FrierenMod:SelfRetainMod": {
     "TEXT": [
-      " 保留 手中的 ", " 张牌。",
-      " NL  保留 手中的 ", " 张牌。"
+      " NL  Retain  ", " card in your hand."," cards in your hand."
     ]
   },
   "FrierenMod:DamageAllMod": {
     "TEXT": [
-      "对所有敌人造成 ", " 点伤害。",
-      " NL  对所有敌人造成 ", " 点伤害。", " 点伤害。"
+      " NL  Deal ", " damage to ALL enemies."
     ]
   },
   "FrierenMod:DamageMod": {
     "TEXT": [
-      "造成 ", " 点伤害。",
-      " NL  造成 ", " 点伤害。", " 点伤害。"
+      " NL  Deal ", " damage."
     ]
   },
   "FrierenMod:DamageThirdMod": {
     "TEXT": [
-      " NL  造成 ", " 点伤害三次。"
+      " NL  Deal ", " damage 3 times."
     ]
   },
   "FrierenMod:BlockMod": {
     "TEXT": [
-      "获得 ", " 点 格挡。",
-      " NL 获得 ", " 点 格挡 。", " 点 格挡 。"
+      " NL Gain ", " Block ."
     ]
   },
   "FrierenMod:EnergyMod": {
     "TEXT": [
-      " NL 下一回合，获得", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
+      " NL Next turn, gain ", " [E] ", " [E] [E] "," [E] [E] [E] ", "."
     ]
   },
   "FrierenMod:ExtinguishMod": {
     "TEXT": [
-      "如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。",
-      " NL 如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。", " 点，则将其生命值变为0。"
+      " NL If the enemy has ", " or less HP, set their HP to 0."
     ]
   },
   "FrierenMod:ChantMod": {
     "TEXT": [
-      " frierenmod:咏唱 ", " 。",
-      " NL  frierenmod:咏唱 ", " 。", " 。"
+      " NL  frierenmod:Chant ", " ."
     ]
   },
   "FrierenMod:DexterityMod": {
     "TEXT": [
-      "获得 ", " 点 敏捷 。",
-      " NL 获得 ", " 点 敏捷 。", " 点 敏捷 。"
+      " NL Gain ", " Dexterity ."
     ]
   },
   "FrierenMod:IntangibleMod": {
     "TEXT": [
-      "获得 ", " 层 无实体 。 NL 消耗 。",
-      " NL 获得", " 层 无实体 。 NL 消耗 。"
+      " NL Gain ", " Intangible . NL Exhaust ."
     ]
   },
   "FrierenMod:RemoveDebuffMod": {
     "TEXT": [
-      " NL 移除你身上的所有负面效果。"
+      " NL Remove all of your debuffs."
     ]
   },
   "FrierenMod:StrengthMod": {
     "TEXT": [
-      " NL 将你的 力量 翻倍。 NL  消耗 。"
+      " NL Double your Strength . NL  Exhaust ."
     ]
   },
   "FrierenMod:UpgradeMod": {
     "TEXT": [
-      " NL 在本场战斗中 升级 手牌中的所有牌。"
+      " NL Upgrade all cards in your hand for the rest of combat."
     ]
   },
   "FrierenMod:UpgradeAllMod": {
     "TEXT": [
-      " NL 在本场战斗中 升级 你的所有牌。 NL  消耗 。"
+      " NL Upgrade ALL your cards for the rest of combat. NL  Exhaust ."
     ]
   },
   "FrierenMod:VulnerableMod": {
     "TEXT": [
-      "给与所有敌人 ", " 层 易伤 。",
-      " NL 给与所有敌人 ", " 层 易伤 。", " 层 易伤 。"
+      " NL Apply ", " Vulnerable to ALL enemies."
     ]
   },
   "FrierenMod:AnalysisMod": {
     "TEXT": [
-      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
-      " frierenmod:同调 4张 *魔力 。 NL "," !B! 点格挡。 NL ",
-      " 打出3张 frierenmod:咏唱 牌 。 NL "," !M! 张本回合消耗为0的 frierenmod:传说魔法 。 NL ",
-      "打出3张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
+      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）.",
+      " frierenmod:同调 4张 *魔力 . NL "," !B! 点格挡. NL ",
+      " 打出3张 frierenmod:咏唱 牌 . NL "," !M! 张本回合Exhaust为0的 frierenmod:传说魔法 . NL ",
+      "打出3张 frierenmod:传说魔法 . NL "," 对所有敌人造成 !D! 点伤害. NL "
     ]
   },
   "FrierenMod:MagicPowerMod": {
     "TEXT": [
-      " frierenmod:同调 。",
-      " frierenmod:加速同调 。",
-      " frierenmod:终极同调 。",
-      " frierenmod:终极加速同调 。"
-    ]
-  },
-  "FrierenMod:MagicExhaustTextMod": {
-    "TEXT": [
-      " （消耗 %d张 *魔力 ） NL "
+      " frierenmod:同调 .",
+      " frierenmod:加速同调 .",
+      " frierenmod:终极同调 .",
+      " frierenmod:终极加速同调 ."
     ]
   },
   "FrierenMod:PatchHasEnoughEnergy": {
     "TEXT": [
-      "没有足够 #r魔力 。"
+      "Not enough #rMana ."
     ]
   },
   "FrierenMod:MagicPanel": {
     "TEXT": [
-      "魔力",
-      "上：抽牌堆 NL 中：手牌 NL 下：弃牌堆"
+      "Mana",
+      "Up：draw pile NL Middle：hand NL Down：discard pile"
     ]
   },
   "FrierenMod:FTUE": {
     "TEXT": [
-      "芙莉莲作为魔法使，擅长操控 #y魔力 ，因此 #y魔力 的获取和在牌堆中的流动是获胜的基础。",
-      "而消耗 #y魔力 方式的选择是获胜的关键！"
+      "As a mage, Frieren is good at manipulating #yMana, so the gain of #yMana and the flow through plies are the foundation of win.",
+      "Further more, the way to Exhaust #yMana is the key to win!"
     ],
     "EXTRA_TEXT": [
-      "下一条",
-      "我准备好了！",
-      "教程",
-      "（页数：",
-      "/2）"
+      "Next",
+      "I'm ready!",
+      "Tutorial",
+      "(Page:",
+      "/2)"
     ],
     "TEXT_DICT": {}
   }

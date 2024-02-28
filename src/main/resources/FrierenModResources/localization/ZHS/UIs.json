@@ -21,7 +21,7 @@
   },
   "FrierenMod:CostZeroMod": {
     "TEXT": [
-      " NL 你手牌中 ", " 张随机牌在本回合中耗能变为0。"
+      " NL 你手牌中 ", " 张随机牌在本回合中耗能变为0。", " 张随机牌在本回合中耗能变为0。"
     ]
   },
   "FrierenMod:GainRandomCardMod": {
