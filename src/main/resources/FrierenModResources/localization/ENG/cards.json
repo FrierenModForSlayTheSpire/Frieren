@@ -91,8 +91,8 @@
   },
   "FrierenMod:Outpouring": {
     "NAME": "Outpouring",
-    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Whenever you play a *Mana this turn, gain !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you Play a *Mana this turn, gain !M! Strength. NL Exhaust."
   },
   "FrierenMod:ContinualChant": {
     "NAME": "ContinualChant",
@@ -152,8 +152,8 @@
   },
   "FrierenMod:RitualPreparing": {
     "NAME": "Preparation of Rites",
-    "DESCRIPTION": "Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies."
+    "DESCRIPTION": "Whenever you play #b3 #yMana, deal 8 damage to All enemies.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Whenever you play #b3 #yMana, deal 8 damage to All enemies."
   },
   "FrierenMod:BoomMagic": {
     "NAME": "Spell That Starts a Fire",
@@ -187,7 +187,7 @@
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "Destructive Lightning Magic",
-    "DESCRIPTION": "frierenmod:LegendarySpell. NL Darw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:Ultimate Synchro in the rest of the combat."
+    "DESCRIPTION": "frierenmod:LegendarySpell. NL Darw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:UltimateSynchro in the rest of the combat."
   },
   "FrierenMod:Flower": {
     "NAME": "BlueMoonWeed",
@@ -377,9 +377,9 @@
     "UPGRADE_DESCRIPTION": "Send your everything 2 turns into the future, and frierenmod:world-line will change."
   },
   "FrierenMod:Imagination": {
-    "NAME": "Magic & Imagination",
-    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "NAME": "Mana & Imagination",
+    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
@@ -397,7 +397,7 @@
   },
   "FrierenMod:AnalysisMagic": {
     "NAME": "Spell That Breaks Barriers",
-    "DESCRIPTION": " frierenmod:Analyze 3： frierenmod:Synchro 4 *Mana . NL  *Reward : !B! Block. NL (Progress:0/4)."
+    "DESCRIPTION": "frierenmod:Analyze 3: Play 4 *Mana . NL  *Reward: !B! Block. NL (Progress:0/4)."
   },
   "FrierenMod:MagicBag": {
     "NAME": "Mana Parcel",
@@ -425,7 +425,7 @@
   },
   "FrierenMod:TimeDoor": {
     "NAME": "Open The Waygate",
-    "DESCRIPTION": " frierenmod:Analyze 1： frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
+    "DESCRIPTION": " frierenmod:Analyze 1: Play !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
   },
   "FrierenMod:BigCross": {
     "NAME": "Grand Cross",
@@ -453,10 +453,10 @@
   },
   "FrierenMod:MagicianChoke": {
     "NAME": "Mage Style Choke",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you frierenmod:Synchro a *Mana this turn, the enemy loses !M! HP"
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you Play a *Mana this turn, the enemy loses !M! HP"
   },
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",
-    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block ."
+    "DESCRIPTION": "Whenever you play a *Mana, gain !M! Block."
   }
 }
