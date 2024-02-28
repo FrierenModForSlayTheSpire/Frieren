@@ -1,92 +1,98 @@
 {
   "FrierenMod:SustainabilityPower": {
-    "NAME": "永续",
+    "NAME": "Perpetual",
     "DESCRIPTIONS": [
-      "在你的回合开始时，将 #b%d 张 #y魔力 置入弃牌堆。 "
+      "At the start of the turn, shuffle #b2 #yMana in your discard pile."
     ]
   },
   "FrierenMod:OutpouringPower": {
-    "NAME": "倾泻",
+    "NAME": "Outpouring",
     "DESCRIPTIONS": [
-      "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y力量 。"
+      "Whenever you play a #yMana this turn, gain #b1 Strength."
     ]
   },
   "FrierenMod:NightDressPower": {
-    "NAME": "睡衣形态",
+    "NAME": "Pajamas Form",
     "DESCRIPTIONS": [
-      "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的 #b%d 倍。 NL （将造成 #b%d 点伤害）。"
+      "At the end of your turn, Exhaust ALL #yMana and deal damage equal to #b3 times the amount you Exhaust to ALL enemies. NL (Deal #b%d damage.)."
     ]
   },
   "FrierenMod:TrickPower": {
-    "NAME": "欺骗魔族的小把戏",
+    "NAME": "Trick",
     "DESCRIPTIONS": [
-      "在你的回合开始时，将一张 #y魔力隐藏 置入手牌。"
+      "At the start of your turn, if you don't have #yManaConcealment in your hand, add a #yManaConcealment into your hand."
     ]
   },
   "FrierenMod:GainRelicPower": {
-    "NAME": "寻找遗失饰品的魔法",
+    "NAME": "Spell for Finding Lost Accessories",
     "DESCRIPTIONS": [
-      "战斗结束时，获得 #b%d 件随机遗物。"
+      "At the end of combat, get a random relic."
     ]
   },
   "FrierenMod:PrepareRitePower": {
-    "NAME": "仪式准备",
+    "NAME": "Preparation of Rites",
     "DESCRIPTIONS": [
-      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
+      "Whenever you play #b3 #yMana, deal #b8 damage to All enemies.(Already play #b%d)"
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {
-    "NAME": "交换",
+    "NAME": "Switch",
     "DESCRIPTIONS": [
-      "在你的回合结束时，交换你的 #y力量 和 #y敏捷 层数。"
+      "At the end of your turn, switch the amount of your #yStrength and #yDexterity."
     ]
   },
   "FrierenMod:TimeTravelPower": {
-    "NAME": "精灵的时间观念",
+    "NAME": "Time Concept of Elf",
     "DESCRIPTIONS": [
-      "将你当前的一切送入 #b%d 回合后的未来。"
+      "Send your everything #b%d turns into the future."
     ]
   },
   "FrierenMod:ThunderPower": {
-    "NAME": "破灭之雷",
+    "NAME": "Destructive Lightning Magic",
     "DESCRIPTIONS": [
-      "本场战斗中你的 #y同调 变为 #y终极同调 。"
+      "Change #ySynchro change into #yUltimateSynchro in the rest of the combat."
     ]
   },
   "FrierenMod:AccelerateFlowPower": {
-    "NAME": "加速流动",
+    "NAME": "Clear Mind",
     "DESCRIPTIONS": [
-      "本回合中你的 #y同调 变为 #y加速同调 。"
+      "Change #ySynchro into #yAccelSynchro this turn."
     ]
   },
   "FrierenMod:MagicReturnPower": {
-    "NAME": "魔力返还",
+    "NAME": "Mana Return",
     "DESCRIPTIONS": [
-      "每当玩家攻击敌人时，将 #b%d 张 #y魔力 置入弃牌堆 。"
+      "Whenever it is attacked, shuffle #b%d #yMana into your discard pile."
     ]
   },
   "FrierenMod:ChantWithoutMagicPower": {
-    "NAME": "魔法",
+    "NAME": "Mana",
     "DESCRIPTIONS": [
-      "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
+      "This turn, #yChant can be activated without #yExhaust #yMana."
     ]
   },
   "FrierenMod:BanMagicGainPower": {
     "NAME": "&",
     "DESCRIPTIONS": [
-      "在本回合中，你无法从卡牌中获取 #y魔力 。"
+      "This turn, you CANNOT get new #yMana from cards."
     ]
   },
   "FrierenMod:MagicInsteadOfCostPower": {
-    "NAME": "想象力",
+    "NAME": "Imagination",
     "DESCRIPTIONS": [
-      "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"
+      "This turn, your cards don't cost [E], cost the same amount of #yMana instead,."
     ]
   },
   "FrierenMod:MagicianChokePower": {
-    "NAME": "魔法使流勒脖",
+    "NAME": "Mage Style Choke",
     "DESCRIPTIONS": [
-      "每当玩家同调 #y魔力 时，受到 #b%d 点伤害 。"
+      "Whenever you play a #yMana this turn, loses #b%d HP"
+    ]
+  },
+  "FrierenMod:RingletFormPower": {
+    "NAME": "Ringlet Form",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yMana, gain #b%d #yBlock."
     ]
   }
 }
