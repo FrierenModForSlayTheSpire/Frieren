@@ -187,7 +187,7 @@
   },
   "FrierenMod:ThunderMagic": {
     "NAME": "Destructive Lightning Magic",
-    "DESCRIPTION": "frierenmod:LegendaryMagic. NL Darw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:LimitedOverSynchro in the rest of the combat."
+    "DESCRIPTION": "frierenmod:LegendaryMagic. NL Draw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:LimitedOverSynchro in the rest of the combat."
   },
   "FrierenMod:Flower": {
     "NAME": "BlueMoonWeed",

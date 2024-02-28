@@ -106,18 +106,18 @@
   },
   "FrierenMod:AnalysisMod": {
     "TEXT": [
-      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）.",
-      " frierenmod:同调 4张 *魔力 . NL "," !B! 点格挡. NL ",
-      " 打出3张 frierenmod:咏唱 牌 . NL "," !M! 张本回合Exhaust为0的 frierenmod:传说魔法 . NL ",
-      "打出3张 frierenmod:传说魔法 . NL "," 对所有敌人造成 !D! 点伤害. NL "
+      " frierenmod:Analyze %d："," *Reward ：","(Progress:%d/%d).",
+      " frierenmod:Synchro 4 *Mana . NL "," !B! Block . NL ",
+      "Play 3 frierenmod:Chant cards . NL "," !M! frierenmod:LegendaryMagic with 0 cost this turn . NL ",
+      "Play 3 frierenmod:LegendaryMagic . NL "," Deal !D! damage to ALL enemies. NL "
     ]
   },
   "FrierenMod:MagicPowerMod": {
     "TEXT": [
-      " frierenmod:同调 .",
-      " frierenmod:加速同调 .",
-      " frierenmod:终极同调 .",
-      " frierenmod:终极加速同调 ."
+      " frierenmod:Synchro .",
+      " frierenmod:AccelSynchro .",
+      " frierenmod:LimitedOverSynchro .",
+      " frierenmod:LimitOverAccelSynchro ."
     ]
   },
   "FrierenMod:PatchHasEnoughEnergy": {
