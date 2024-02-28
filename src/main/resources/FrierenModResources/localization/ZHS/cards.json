@@ -177,7 +177,7 @@
   },
   "FrierenMod:RedAppleMagic": {
     "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": " 交换你的的 力量 和 敏捷 层数， 将一张 *青苹果 放入手牌。 NL 在你的回合结束时，换回。"
+    "DESCRIPTION": " 保留 。 NL 交换你的的 力量 和 敏捷 层数， 将一张 *青苹果 放入手牌。 NL 在你的回合结束时，换回。 NL 。"
   },
   "FrierenMod:Apple": {
     "NAME": "青苹果",
@@ -412,8 +412,7 @@
   },
   "FrierenMod:BindingMagic": {
     "NAME": "拘束魔法",
-    "DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "给予 !M! 层 frierenmod:缠绕 ，并使其失去3点力量。 NL  消耗 。"
+    "DESCRIPTION": "给予 frierenmod:缓慢 ，并使其失去3点力量。 NL  消耗 。"
   },
   "FrierenMod:SeeThroughPhantom": {
     "NAME": "识破幻影",
@@ -455,5 +454,9 @@
   "FrierenMod:MagicianChoke": {
     "NAME": "魔法使流勒脖",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 你在这个回合每 frierenmod:同调 一次，该名敌人失去 !M! 点生命"
+  },
+  "FrierenMod:RingletForm": {
+    "NAME": "卷发形态",
+    "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
   }
 }

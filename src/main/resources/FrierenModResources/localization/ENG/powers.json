@@ -88,5 +88,11 @@
     "DESCRIPTIONS": [
       "每当玩家同调 #y魔力 时，受到 #b%d 点伤害 。"
     ]
+  },
+  "FrierenMod:RingletFormPower": {
+    "NAME": "卷发形态",
+    "DESCRIPTIONS": [
+      "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y格挡 。"
+    ]
   }
 }

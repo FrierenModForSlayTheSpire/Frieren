@@ -1,58 +1,58 @@
 {
   "FrierenMod:HolyEmblem": {
-    "NAME": "圣杖之证",
-    "FLAVOR": "相当久远前的魔法使资格证明，但管理魔法的团体经常更换，芙莉莲对此头疼不已。",
+    "NAME": "Holy Emblem",
+    "FLAVOR": "A certification used long long time ago. However, the organization that manage magic change all the time, which bothers Frieren.",
     "DESCRIPTIONS": [
-      "每个回合开始时，将 #b3 张 #y魔力 置入抽牌堆"
+      "At the start of your turn, Shuffle #b3 #yMana into your draw pile."
     ]
   },
   "FrierenMod:HairAccessory": {
-    "NAME": "菲伦的发饰",
-    "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
+    "NAME": "Fern's Hair Ornament",
+    "FLAVOR": "It is the 16 years old Birthday present Frieren give to Fern, her apprentice.",
     "DESCRIPTIONS": [
-      "你每 #y同调 #b4 张 #y魔力 ，抽 #b1 张牌。"
+      "Every #b4 *Mana you #ySynchro,Draw #b1 card."
     ]
   },
   "FrierenMod:MercuryPudding": {
-    "NAME": "水星布丁",
-    "FLAVOR": "芙莉莲喜欢吃的甜点。",
+    "NAME": "Mercury Pudding",
+    "FLAVOR": "The dessert Frieren often ordered. It is also one of the trigger Frieren wants to know about human.",
     "DESCRIPTIONS": [
-      "战斗结束时，若你的血量在10点及以下，回复你最大生命值的 #b50% （仅能起效一次）。"
+      "At the end of combat, if your HP is 10 or lower than 10, heal HP as the #b50% amount of your MAX HP (works once)."
     ]
   },
   "FrierenMod:ScaleOfObedience": {
-    "NAME": "服从的天平",
-    "FLAVOR": "七崩贤之一“断头台阿乌拉”所拥有的强大魔法道具，能将自己与对手的灵魂放在天平上，魔力弱的一方将被完全支配。",
+    "NAME": "Scale Of Obedience",
+    "FLAVOR": "Magic item owned by One of the Seven Sages of Destruction, Aura the Guillotine, she weighs the mana of her opponent's soul on it, the weak one will be completely controlled by the strong one.",
     "DESCRIPTIONS": [
-      "在普通战斗中，你在每回合开始时获得 [E] ，抽 #b1 张牌。"
+      "During Normal combats, gain [E] and draw #b1 card at the start of your turn."
     ]
   },
   "FrierenMod:MimicHead": {
-    "NAME": "宝箱怪的头",
-    "FLAVOR": "某个黑暗的地方有这么一个传言：戴上宝箱怪的头就会掉落更多奖励。wuxiu~~芙莉莲又一次边唱边跳地落入宝箱怪的嘴里。",
+    "NAME": "Mimic's Head",
+    "FLAVOR": "There is a rumor in some dark place that wearing mimic's head will drop more rewards. Yippee! Frieren fell into the mimic's mouth once again.",
     "DESCRIPTIONS": [
-      "你每次打开一个非boss宝箱，里面都会有额外的 #b100 金币!"
+      "Whenever you open a non-Boss chest, find additional #b100 coins!"
     ]
   },
   "FrierenMod:Stille": {
-    "NAME": "陨铁鸟",
-    "FLAVOR": "最大飞行速度可以超过音速，对魔力很敏感。在魔法使资格考试时，芙莉莲使用捕鸟魔法成功抓获一只。",
+    "NAME": "Stille",
+    "FLAVOR": "Its maximum flight speed can exceed the speed of sound and is very sensitive to mana. Frieren successfully captured one by bird catching magic during the exam.",
     "DESCRIPTIONS": [
-      "战斗开始时获得 #b2 点敏捷,在第三回合结束时失去2点敏捷。"
+      "At the start of combat, gain #b2 #yDexterity, at the end of turn #b3, lose #b2 #yDexterity."
     ]
   },
   "FrierenMod:EarAccessory": {
-    "NAME": "精美的耳饰",
-    "FLAVOR": "芙莉莲一直带着的耳饰，似乎和师傅伏拉梅的款式一样。",
+    "NAME": "Elegant Ear Ornament",
+    "FLAVOR": "The ornament Frieren has been wearing all along, it seems to match the style of the one worn by her master, Flamme.",
     "DESCRIPTIONS": [
-      "战斗开始时，将 #b2 张 #y魔力 加入你的手牌。"
+      "At the start of combat, Add #b2 #yMana into your hand."
     ]
   },
   "FrierenMod:ComfortableBed": {
-    "NAME": "舒适的床",
-    "FLAVOR": "连活了千年以上的大魔法使芙莉莲都无法挣脱它的束缚，可见其强大。",
+    "NAME": "Comfortable Bed",
+    "FLAVOR": "Even the great mage who has lived for over a thousand years makes it impossible for to break free from its constraints, indicating its great power.",
     "DESCRIPTIONS": [
-      "每回合开始时获得 [E] 。在战斗开始时，将一张 #r懒懒散散 放入你的抽牌堆和弃牌堆。"
+      "Gain [E] at the start of your turn. At the start of combat, shuffle #b1 #rLaziness into your draw pile and discard pile."
     ]
   }
 }
