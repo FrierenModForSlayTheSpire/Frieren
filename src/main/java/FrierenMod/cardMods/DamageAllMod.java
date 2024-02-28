@@ -33,7 +33,7 @@ public class DamageAllMod extends AbstractCardModifier {
         card.target = AbstractCard.CardTarget.ALL_ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
         if (card instanceof CustomLegendMagic)
-            ((CustomLegendMagic)card).loadCardImage("FrierenModResources/img/cards/CustomLegendMagic_attack.png");
+            ((CustomLegendMagic)card).loadCardImage("FrierenModResources/img/cards/CustomLegendMagic (2).png");
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

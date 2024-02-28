@@ -337,7 +337,7 @@
     "NAME": "The Tower",
     "DESCRIPTION": "Upgrade all cards in your hand for the rest of the combat."
   },
-  "FrierenMod:UpgradeALLOption": {
+  "FrierenMod:UpgradeAllOption": {
     "NAME": "The World",
     "DESCRIPTION": "Upgrade ALL cards for the rest of the combat. NL Exhaust."
   },
