@@ -7,9 +7,9 @@
     "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得X点 #y格挡 两次。 NL 消耗手牌中X张 #y魔力 ，获得X点 [E] 。 NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量 。"
   },
   {
-    "PROPER_NAME":"同调",
+    "PROPER_NAME":"Synchron",
     "NAMES": [
-      "同调"
+      "Synchron"
     ],
     "DESCRIPTION": "抽1张牌。 #y消耗 。"
   },
@@ -75,12 +75,5 @@
       "变动"
     ],
     "DESCRIPTION": "抽牌顺序将改变。"
-  },
-  {
-    "PROPER_NAME":"缓慢",
-    "NAMES": [
-      "缓慢"
-    ],
-    "DESCRIPTION": "你在这个回合每打出一张卡牌，该敌人本回合受到的伤害增加 10% 。"
   }
 ]

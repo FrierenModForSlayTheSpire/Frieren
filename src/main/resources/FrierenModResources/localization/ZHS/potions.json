@@ -1,0 +1,20 @@
+{
+  "BottledMagicPower": {
+    "NAME": "瓶装魔力",
+    "DESCRIPTIONS": [
+      " 将 #b3 张 #y魔力 加入手牌。"
+    ]
+  },
+  "DissolveClothPotion": {
+    "NAME": "只溶解衣服的药水",
+    "DESCRIPTIONS": [
+      "去除对象的格挡并给予 #b3 层 #y易伤 和 #y脆弱。"
+    ]
+  },
+  "EmperorWine": {
+    "NAME": "皇帝酒",
+    "DESCRIPTIONS": [
+      "从 #b3 张随机的稀有牌中选择 #b1 张加入你的手牌。这张牌在本回合耗能变为 #b0 。"
+    ]
+  }
+}
