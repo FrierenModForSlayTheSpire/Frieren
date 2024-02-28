@@ -15,7 +15,7 @@ public class GainRandomCardMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int cardAmt;
+    private final int cardAmt;
 
     public GainRandomCardMod(int cardAmt) {
         this.cardAmt = cardAmt;
@@ -39,7 +39,7 @@ public class GainRandomCardMod extends AbstractCardModifier {
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
         if (this.cardAmt == 1)
-            return rawDescription + TEXT[2] + this.cardAmt + TEXT[3];
-        return rawDescription + TEXT[2] + this.cardAmt + TEXT[4];
+            return rawDescription + TEXT[0] + this.cardAmt + TEXT[1];
+        return rawDescription + TEXT[0] + this.cardAmt + TEXT[2];
     }
 }

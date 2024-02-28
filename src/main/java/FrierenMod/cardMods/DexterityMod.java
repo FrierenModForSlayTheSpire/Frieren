@@ -17,7 +17,7 @@ public class DexterityMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int dexterityAmt;
+    private final int dexterityAmt;
 
     public DexterityMod(int dexterityAmt) {
         this.dexterityAmt = dexterityAmt;
@@ -42,6 +42,6 @@ public class DexterityMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + this.dexterityAmt + TEXT[3];
+        return rawDescription + TEXT[0] + this.dexterityAmt + TEXT[1];
     }
 }

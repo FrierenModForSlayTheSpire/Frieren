@@ -34,6 +34,8 @@ public class SelfRetainMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + this.selfRetainAmt + TEXT[3];
+        if(this.selfRetainAmt == 1)
+            return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[1];
+        return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[2];
     }
 }

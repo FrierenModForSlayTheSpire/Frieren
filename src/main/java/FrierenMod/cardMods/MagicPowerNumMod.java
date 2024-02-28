@@ -31,6 +31,6 @@ public class MagicPowerNumMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + this.magicPowerAmt + TEXT[4];
+        return rawDescription + TEXT[0] + this.magicPowerAmt + TEXT[1];
     }
 }

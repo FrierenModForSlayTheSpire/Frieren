@@ -45,6 +45,6 @@ public class DamageMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + card.baseDamage + TEXT[3];
+        return rawDescription + TEXT[0] + card.baseDamage + TEXT[1];
     }
 }

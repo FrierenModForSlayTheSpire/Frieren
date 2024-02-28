@@ -40,6 +40,6 @@ public class IntangibleMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[2] + this.stackAmt + TEXT[3];
+        return rawDescription + TEXT[0] + this.stackAmt + TEXT[1];
     }
 }

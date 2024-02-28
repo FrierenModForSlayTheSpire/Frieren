@@ -14,7 +14,7 @@ public class DrawMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int drawAmt;
+    private final int drawAmt;
 
     public DrawMod(int drawAmt) {
         this.drawAmt = drawAmt;
@@ -34,7 +34,7 @@ public class DrawMod extends AbstractCardModifier {
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
         if (this.drawAmt == 1)
-            return rawDescription + TEXT[2] + this.drawAmt + TEXT[3];
-        return rawDescription + TEXT[2] + this.drawAmt + TEXT[4];
+            return rawDescription + TEXT[0] + this.drawAmt + TEXT[1];
+        return rawDescription + TEXT[0] + this.drawAmt + TEXT[2];
     }
 }
