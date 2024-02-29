@@ -17,13 +17,13 @@ public class TrueColours extends AbstractFrierenCard {
         super(ID, 1, CardRarity.RARE);
         this.chantX = this.baseChantX = 6;
         this.isChantCard = true;
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeBaseCost(0);
-            this.exhaust = true;
         }
     }
     @Override

@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -32,8 +32,8 @@ public class DamageMod extends AbstractCardModifier {
         card.baseDamage = this.damageAmt;
         card.target = AbstractCard.CardTarget.ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
-        if (card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic)card).loadCardImage("FrierenModResources/img/cards/CustomLegendMagic_attack.png");
+        if (card instanceof CustomLegendMagic)
+            ((CustomLegendMagic)card).loadCardImage("FrierenModResources/img/cards/CustomLegendMagic (2).png");
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

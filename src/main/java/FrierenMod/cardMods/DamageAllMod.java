@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.tempCards.CustomLegendMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
