@@ -9,7 +9,7 @@ public class DoubleMagicInHandAction extends AbstractGameAction {
     public void update() {
         int hand = ChantHelper.getMagicPowerNumInHand();
         if(hand > 0){
-            this.addToBot(new MakeMagicPowerInHandAction(hand));
+            this.addToBot(new MakeManaInHandAction(hand));
         }
         this.isDone = true;
     }

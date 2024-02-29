@@ -4,12 +4,12 @@
     " NL 抽 ", " 张牌。", " 张牌。"
     ]
   },
-  "FrierenMod:MagicPowerNumMod": {
+  "FrierenMod:ManaNumMod": {
     "TEXT": [
       " NL 将 ", " 张 *魔力 置入弃牌堆。"
     ]
   },
-  "FrierenMod:MagicPowerInHandNumMod": {
+  "FrierenMod:ManaInHandNumMod": {
     "TEXT": [
       " NL 将 ", " 张 *魔力 置入手牌。"
     ]
@@ -104,7 +104,7 @@
       " NL 给与所有敌人 ", " 层 易伤 。"
     ]
   },
-  "FrierenMod:AnalysisMod": {
+  "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
       " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
       " frierenmod:同调 4张 *魔力 。 NL "," !B! 点格挡。 NL ",
@@ -112,7 +112,7 @@
       "打出3张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
     ]
   },
-  "FrierenMod:MagicPowerMod": {
+  "FrierenMod:ManaMod": {
     "TEXT": [
       " frierenmod:同调 。",
       " frierenmod:加速同调 。",

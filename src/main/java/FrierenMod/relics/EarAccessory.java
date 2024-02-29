@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -24,7 +24,7 @@ public class EarAccessory extends AbstractFrierenRelic {
     public void atBattleStart() {
         flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new MakeTempCardInHandAction(new MagicPower(),2));
+        this.addToBot(new MakeTempCardInHandAction(new Mana(),2));
     }
 }
 

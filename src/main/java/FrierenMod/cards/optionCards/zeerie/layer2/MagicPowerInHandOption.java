@@ -1,6 +1,6 @@
 package FrierenMod.cards.optionCards.zeerie.layer2;
 
-import FrierenMod.cardMods.MagicPowerInHandNumMod;
+import FrierenMod.cardMods.ManaInHandNumMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -34,6 +34,6 @@ public class MagicPowerInHandOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, new MagicPowerInHandNumMod(magicPowerAmt));
+        CardModifierManager.addModifier(this.currentLegendMagic, new ManaInHandNumMod(magicPowerAmt));
     }
 }

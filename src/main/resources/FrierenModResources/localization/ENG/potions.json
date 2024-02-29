@@ -1,0 +1,21 @@
+{
+  "FrierenMod:BottledMana": {
+    "NAME": "Bottled Mana",
+    "DESCRIPTIONS": [
+      " Put #b%d #yMana into your hand."
+    ]
+  },
+  "FrierenMod:DissolveClothPotion": {
+    "NAME": "Dissolve Cloth Potion",
+    "DESCRIPTIONS": [
+      "Remove all Block from the enemy.Give it #b%d #yVulnerable and #yWeak . "
+    ]
+  },
+  "FrierenMod:EmperorWine": {
+    "NAME": "Emperor Wine",
+    "DESCRIPTIONS": [
+      "Choose #b1 of #b3 random #yRare cards to add to your hand, it costs #b0 this turn.",
+      "Choose #b1 of #b3 random #yRare cards and add #b2 copies to your hand, they cost #b0 this turn."
+    ]
+  }
+}

@@ -24,7 +24,7 @@ public class ChantFromHandAction extends AbstractGameAction {
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
         if(!p.hasPower(CHANT_WITHOUT_MAGIC)){
-            this.addToBot(new ExhaustMagicPowerInHandAction(this.magicNumber));
+            this.addToBot(new ExhaustManaInHandAction(this.magicNumber));
         }
         this.addToBot(new VFXAction(new BorderFlashEffect(Color.GOLDENROD, true)));
         this.addToBot(new VFXAction(new MiracleEffect()));

@@ -1,98 +1,98 @@
 {
-  "FrierenMod:SustainabilityPower": {
-    "NAME": "永续",
+  "FrierenMod:PerpetualPower": {
+    "NAME": "Perpetual",
     "DESCRIPTIONS": [
-      "在你的回合开始时，将 #b%d 张 #y魔力 置入弃牌堆。 "
+      "At the start of the turn, shuffle #b%d #yMana in your discard pile."
     ]
   },
   "FrierenMod:OutpouringPower": {
-    "NAME": "倾泻",
+    "NAME": "Outpouring",
     "DESCRIPTIONS": [
-      "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y力量 。"
+      "Whenever you #ySynchro a #yMana this turn, gain #b%d #yStrength ."
     ]
   },
-  "FrierenMod:NightDressPower": {
-    "NAME": "睡衣形态",
+  "FrierenMod:PajamasFormPower": {
+    "NAME": "Pajamas Form",
     "DESCRIPTIONS": [
-      "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的 #b%d 倍。 NL （将造成 #b%d 点伤害）。"
+      "At the end of your turn, Exhaust ALL #yMana and deal damage equal to #b%d times the amount you Exhaust to ALL enemies. NL (Deal #b%d damage)"
     ]
   },
   "FrierenMod:TrickPower": {
-    "NAME": "欺骗魔族的小把戏",
+    "NAME": "Trick",
     "DESCRIPTIONS": [
-      "在你的回合开始时，将一张 #y魔力隐藏 置入手牌。"
+      "At the start of your turn, if you don't have #yManaConcealment in your hand, add it into your hand."
     ]
   },
   "FrierenMod:GainRelicPower": {
-    "NAME": "寻找遗失饰品的魔法",
+    "NAME": "Find Lost Accessories",
     "DESCRIPTIONS": [
-      "战斗结束时，获得 #b%d 件随机遗物。"
+      "At the end of combat, get #b%d random relic."
     ]
   },
-  "FrierenMod:PrepareRitePower": {
-    "NAME": "仪式准备",
+  "FrierenMod:RitesPreparationPower": {
+    "NAME": "Preparation of Rites",
     "DESCRIPTIONS": [
-      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
+      "Every 3 #yMana you #ySynchro, deal #b%d damage to All enemies. NL (Already played #b%d)"
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {
-    "NAME": "交换",
+    "NAME": "Exchange",
     "DESCRIPTIONS": [
-      "在你的回合结束时，交换你的 #y力量 和 #y敏捷 层数。"
+      "At the end of your turn, Switch the amount of your #yStrength and #yDexterity ."
     ]
   },
   "FrierenMod:TimeTravelPower": {
-    "NAME": "精灵的时间观念",
+    "NAME": "Time Concept",
     "DESCRIPTIONS": [
-      "将你当前的一切送入 #b%d 回合后的未来。"
+      "Send your everything #b%d turns into the future."
     ]
   },
   "FrierenMod:ThunderPower": {
-    "NAME": "破灭之雷",
+    "NAME": "Destructive Lightning",
     "DESCRIPTIONS": [
-      "本场战斗中你的 #y同调 变为 #y终极同调 。"
+      " #ySynchro change into #yLimit_Over_Synchro in the rest of the combat."
     ]
   },
   "FrierenMod:AccelerateFlowPower": {
-    "NAME": "加速流动",
+    "NAME": "Clear Mind",
     "DESCRIPTIONS": [
-      "本回合中你的 #y同调 变为 #y加速同调 。"
+      " This turn, #ySynchro changes into #yAccel_Synchro ."
     ]
   },
-  "FrierenMod:MagicReturnPower": {
-    "NAME": "魔力返还",
+  "FrierenMod:ManaReturnPower": {
+    "NAME": "Mana Return",
     "DESCRIPTIONS": [
-      "每当玩家攻击敌人时，将 #b%d 张 #y魔力 置入弃牌堆 。"
+      "Whenever it is attacked, shuffle #b%d *Mana into your discard pile."
     ]
   },
-  "FrierenMod:ChantWithoutMagicPower": {
-    "NAME": "魔法",
+  "FrierenMod:ChantWithoutManaPower": {
+    "NAME": "Magic",
     "DESCRIPTIONS": [
-      "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
+      "This turn, #yChant can be FREELY activated."
     ]
   },
-  "FrierenMod:BanMagicGainPower": {
+  "FrierenMod:BanManaGainPower": {
     "NAME": "&",
     "DESCRIPTIONS": [
-      "在本回合中，你无法从卡牌中获取 #y魔力 。"
+      "This turn, You CANNOT get new #yMana by cards."
     ]
   },
-  "FrierenMod:MagicInsteadOfCostPower": {
-    "NAME": "想象力",
+  "FrierenMod:ManaInsteadOfEnergyPower": {
+    "NAME": "Imagination",
     "DESCRIPTIONS": [
-      "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"
+      "This turn, Your cards don't Cost [E] , Cost the same amount of #yMana instead."
     ]
   },
-  "FrierenMod:MagicianChokePower": {
-    "NAME": "魔法使流勒脖",
+  "FrierenMod:MageStyleChokePower": {
+    "NAME": "Mage Style Choke",
     "DESCRIPTIONS": [
-      "每当玩家同调 #y魔力 时，受到 #b%d 点伤害 。"
+      "Whenever you #ySynchro a #yMana this turn, the enemy loses #b%d HP."
     ]
   },
   "FrierenMod:RingletFormPower": {
-    "NAME": "卷发形态",
+    "NAME": "Ringlet Form",
     "DESCRIPTIONS": [
-      "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y格挡 。"
+      "Whenever you Synchro a *Mana, gain #b%d #yBlock ."
     ]
   }
 }

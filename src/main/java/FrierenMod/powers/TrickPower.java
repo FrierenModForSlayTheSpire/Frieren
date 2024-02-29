@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.tempCards.HideMagic;
+import FrierenMod.cards.tempCards.ManaConcealment;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,11 +17,11 @@ public class TrickPower extends AbstractFrierenPower {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flash();
             for(AbstractCard c:AbstractDungeon.player.hand.group){
-                if(c.cardID.matches(HideMagic.ID) ){
+                if(c.cardID.matches(ManaConcealment.ID) ){
                     return;
                 }
             }
-            this.addToBot(new MakeTempCardInHandAction(new HideMagic(),1));
+            this.addToBot(new MakeTempCardInHandAction(new ManaConcealment(),1));
         }
     }
     public void updateDescription() {

@@ -24,7 +24,7 @@ public class ChantFromDrawPileAction extends AbstractGameAction {
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
         if(!p.hasPower(CHANT_WITHOUT_MAGIC)){
-            this.addToBot(new ExhaustMagicPowerInDrawPileAction(this.magicNumber));
+            this.addToBot(new ExhaustManaInDrawPileAction(this.magicNumber));
         }
         for (int i = 0; i < 2; i++) {
             this.addToBot(new GainBlockAction(p,p,this.block));

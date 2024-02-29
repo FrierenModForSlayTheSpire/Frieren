@@ -27,7 +27,7 @@ public class HairAccessory extends AbstractFrierenRelic {
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMagicPower){
+        if(card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMana){
             this.counter++;
             if (this.counter >= 4) {
                 this.counter = 0;

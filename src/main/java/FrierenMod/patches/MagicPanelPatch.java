@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.panels.MagicPanel;
+import FrierenMod.panels.ManaPanel;
 import FrierenMod.utils.GlobalConfig;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
@@ -26,7 +26,7 @@ public class MagicPanelPatch {
         public static void ClearMP() {
             if (GlobalConfig.ActivatePatchMPField &&
                     AbstractDungeon.player != null) {
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).clearMP();
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).clearMP();
             }
         }
 
@@ -44,7 +44,7 @@ public class MagicPanelPatch {
         public static void Show() {
             if (GlobalConfig.ActivatePatchMPField &&
                     AbstractDungeon.player != null)
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).show();
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).show();
         }
 
         public static class ShowPanelLocator extends SpireInsertLocator {
@@ -61,7 +61,7 @@ public class MagicPanelPatch {
         public static void Hide() {
             if (GlobalConfig.ActivatePatchMPField &&
                     AbstractDungeon.player != null)
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).hide();
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).hide();
         }
 
         public static class HidePanelLocator extends SpireInsertLocator {
@@ -78,7 +78,7 @@ public class MagicPanelPatch {
         public static void Render(SpriteBatch sb) {
             if (GlobalConfig.ActivatePatchMPField &&
                     AbstractDungeon.player != null)
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).render(sb);
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).render(sb);
         }
 
         public static class RenderPanelLocator extends SpireInsertLocator {
@@ -95,8 +95,8 @@ public class MagicPanelPatch {
         public static void Update() {
             if (GlobalConfig.ActivatePatchMPField &&
                     AbstractDungeon.player != null) {
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).updatePositions();
-                ((MagicPanel)MPField.Panel.get(AbstractDungeon.player)).update();
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).updatePositions();
+                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).update();
             }
         }
 

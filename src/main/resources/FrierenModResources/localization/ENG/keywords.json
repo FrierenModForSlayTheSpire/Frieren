@@ -2,72 +2,58 @@
   {
     "PROPER_NAME":"ChantX",
     "NAMES": [
-      "ChantX","Chant","Chanted"
+      "ChantX","chant","chanted"
     ],
-    "DESCRIPTION": "Choose one: Exhaust X #yMana from your draw pile, gain X #yBlock twice. NL Exhaust X #yMana from your hand, gain X [E] . NL Exhaust X #yMana from your discard pile, gain X #yStrength."
+    "DESCRIPTION": "Choose: Exhaust X #yMana from your draw pile, gain X #yBlock twice. NL Exhaust X #yMana from your hand, gain X [E] . NL Exhaust X #yMana from your discard pile, gain X #yStrength."
   },
   {
     "PROPER_NAME":"Synchro",
     "NAMES": [
-      "Synchro"
+      "Synchro","synchro"
     ],
     "DESCRIPTION": "Draw 1 card. #yExhaust ."
   },
   {
     "PROPER_NAME":"Limit Over Synchro",
     "NAMES": [
-      "Limit Over Synchro"
+      "Limit Over Synchro","limit_over_synchro"
     ],
-    "DESCRIPTION": "Deal 20 damage to a random enemy. #yExhaust."
+    "DESCRIPTION": "Deal 20 damage to a random enemy. #yExhaust ."
   },
   {
     "PROPER_NAME":"Accel Synchro",
     "NAMES": [
-      "Accel Synchro"
+      "Accel Synchro","accel_synchro"
     ],
-    "DESCRIPTION": "Draw 2 cards. #yExhaust."
+    "DESCRIPTION": "Draw 2 cards. #yExhaust ."
   },
   {
     "PROPER_NAME":"Limit Over Accel Synchro",
     "NAMES": [
-      "Limit Over Accel Synchro"
+      "Limit Over Accel Synchro","limit_over_accel_synchro"
     ],
-    "DESCRIPTION": "Deal 20 damage to a random enemy. Draw 2 cards. #yExhaust."
+    "DESCRIPTION": "Deal 20 damage to a random enemy. Draw 2 cards. #yExhaust ."
   },
   {
     "PROPER_NAME":"Legendary Magic",
     "NAMES": [
-      "Legendary Magic"
+      "Legendary Magic","legendary_magic"
     ],
     "DESCRIPTION": "Can only be played if you have #yChanted this turn."
   },
   {
     "PROPER_NAME":"AnalyzeX",
     "NAMES": [
-      "Analyze","AnalyzeX","Reward"
+      "AnalyzeX","analyze","analyzeX","reward"
     ],
     "DESCRIPTION": "#yRetain and #yUnplayable . NL If you complete the request, then X-1 and get #yReward and update the request. NL This card #yExhaust when X=0."
   },
   {
-    "PROPER_NAME":"临时力量(not used)",
-    "NAMES": [
-      "临时力量"
-    ],
-    "DESCRIPTION": "获得力量.在你的回合结束时,失去相等数量的力量."
-  },
-  {
     "PROPER_NAME":"Buffer",
     "NAMES": [
-      "Buffer"
+      "Buffer","buffer"
     ],
     "DESCRIPTION": "Prevent the next time you would lose HP."
-  },
-  {
-    "PROPER_NAME":"缠绕(not used)",
-    "NAMES": [
-      "缠绕"
-    ],
-    "DESCRIPTION": "在回合结束时承受伤害."
   },
   {
     "PROPER_NAME":"world-line",
@@ -79,7 +65,7 @@
   {
     "PROPER_NAME":"Slow",
     "NAMES": [
-      "Slow"
+      "Slow","slow"
     ],
     "DESCRIPTION": "Whenever you play a card, receives 10% more damage from Attacks this turn."
   }

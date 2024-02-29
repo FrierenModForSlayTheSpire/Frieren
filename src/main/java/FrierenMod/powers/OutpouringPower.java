@@ -18,7 +18,7 @@ public class OutpouringPower extends AbstractFrierenPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMagicPower) {
+        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMana) {
             this.flash();
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), this.amount));
         }

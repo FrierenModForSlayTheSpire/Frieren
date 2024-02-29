@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.MagicPowerMod;
+import FrierenMod.cardMods.ManaMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -38,18 +38,18 @@ public class ThunderPower extends AbstractFrierenPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard) c).isFinalMagicPower){
-                if (((AbstractFrierenCard) c).isFastMagicPower) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana && !((AbstractFrierenCard) c).isLimitedOverMana){
+                if (((AbstractFrierenCard) c).isAccelMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new MagicPowerMod(4));
+                    CardModifierManager.addModifier(c, new ManaMod(4));
                     c.applyPowers();
                 } else{
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new MagicPowerMod(3));
+                    CardModifierManager.addModifier(c, new ManaMod(3));
                     c.applyPowers();
                 }
             }

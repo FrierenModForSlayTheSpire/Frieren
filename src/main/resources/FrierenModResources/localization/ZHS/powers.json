@@ -1,5 +1,5 @@
 {
-  "FrierenMod:SustainabilityPower": {
+  "FrierenMod:PerpetualPower": {
     "NAME": "永续",
     "DESCRIPTIONS": [
       "在你的回合开始时，将 #b%d 张 #y魔力 置入弃牌堆。 "
@@ -11,7 +11,7 @@
       "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y力量 。"
     ]
   },
-  "FrierenMod:NightDressPower": {
+  "FrierenMod:PajamasFormPower": {
     "NAME": "睡衣形态",
     "DESCRIPTIONS": [
       "在每回合结束时，消耗所有 #y魔力 ，对所有敌人造成消耗的 #y魔力 数量的伤害的 #b%d 倍。 NL （将造成 #b%d 点伤害）。"
@@ -29,7 +29,7 @@
       "战斗结束时，获得 #b%d 件随机遗物。"
     ]
   },
-  "FrierenMod:PrepareRitePower": {
+  "FrierenMod:RitesPreparationPower": {
     "NAME": "仪式准备",
     "DESCRIPTIONS": [
       "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
@@ -59,13 +59,13 @@
       "本回合中你的 #y同调 变为 #y加速同调 。"
     ]
   },
-  "FrierenMod:MagicReturnPower": {
+  "FrierenMod:ManaReturnPower": {
     "NAME": "魔力返还",
     "DESCRIPTIONS": [
       "每当玩家攻击敌人时，将 #b%d 张 #y魔力 置入弃牌堆 。"
     ]
   },
-  "FrierenMod:ChantWithoutMagicPower": {
+  "FrierenMod:ChantWithoutManaPower": {
     "NAME": "魔法",
     "DESCRIPTIONS": [
       "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
@@ -77,7 +77,7 @@
       "在本回合中，你无法从卡牌中获取 #y魔力 。"
     ]
   },
-  "FrierenMod:MagicInsteadOfCostPower": {
+  "FrierenMod:ManaInsteadOfEnergyPower": {
     "NAME": "想象力",
     "DESCRIPTIONS": [
       "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"

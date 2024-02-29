@@ -1,6 +1,5 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -24,7 +23,7 @@ public class ChantFromDiscardPileAction extends AbstractGameAction {
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
         if(!p.hasPower(CHANT_WITHOUT_MAGIC)){
-            this.addToBot(new ExhaustMagicPowerInDiscardPileAction(this.magicNumber));
+            this.addToBot(new ExhaustManaInDiscardPileAction(this.magicNumber));
         }
         this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
         this.isDone = true;

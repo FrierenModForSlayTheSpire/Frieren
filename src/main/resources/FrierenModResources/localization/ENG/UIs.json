@@ -4,12 +4,12 @@
       " NL Draw ", " card.", " cards."
     ]
   },
-  "FrierenMod:MagicPowerNumMod": {
+  "FrierenMod:ManaNumMod": {
     "TEXT": [
       " NL Shuffle ", " *Mana into discard pile."
     ]
   },
-  "FrierenMod:MagicPowerInHandNumMod": {
+  "FrierenMod:ManaInHandNumMod": {
     "TEXT": [
       " NL Add ", " *Mana into your hand."
     ]
@@ -104,7 +104,7 @@
       " NL Apply ", " Vulnerable to ALL enemies."
     ]
   },
-  "FrierenMod:AnalysisMod": {
+  "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
       " frierenmod:Analyze %d："," *Reward ：","(Progress:%d/%d).",
       " frierenmod:Synchro 4 *Mana . NL "," !B! Block . NL ",
@@ -112,12 +112,12 @@
       "Play 3 frierenmod:LegendaryMagic . NL "," Deal !D! damage to ALL enemies. NL "
     ]
   },
-  "FrierenMod:MagicPowerMod": {
+  "FrierenMod:ManaMod": {
     "TEXT": [
       " frierenmod:Synchro .",
-      " frierenmod:AccelSynchro .",
-      " frierenmod:LimitedOverSynchro .",
-      " frierenmod:LimitOverAccelSynchro ."
+      " frierenmod:Accel_Synchro .",
+      " frierenmod:Limit_Over_Synchro .",
+      " frierenmod:Limit_Over_Accel_Synchro ."
     ]
   },
   "FrierenMod:PatchHasEnoughEnergy": {
@@ -125,7 +125,7 @@
       "Not enough #rMana ."
     ]
   },
-  "FrierenMod:MagicPanel": {
+  "FrierenMod:ManaPanel": {
     "TEXT": [
       "Mana",
       "Up：draw pile NL Middle：hand NL Down：discard pile"

@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.CustomLegendMagic;
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 
@@ -13,7 +13,7 @@ public class ZeerieMagicBookAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        CustomLegendMagic c = new CustomLegendMagic();
+        CustomLegendaryMagic c = new CustomLegendaryMagic();
         this.addToBot(new CustomCardCostAction(new CustomCardLayer2Action(new CustomCardLayer3Action(new CustomCardLayer4Action(new MakeTempCardInHandAction(c),c,upgraded),c,upgraded),c,upgraded),c));
         this.isDone = true;
     }

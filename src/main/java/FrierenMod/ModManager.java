@@ -4,6 +4,9 @@ package FrierenMod;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.potions.BottledMana;
+import FrierenMod.potions.DissolveClothPotion;
+import FrierenMod.potions.EmperorWine;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.IDCheckDontTouchPls;
 import FrierenMod.utils.Log;
@@ -108,8 +111,14 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     }
     @Override
     public void receiveEditCharacters() {
+        Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FRIEREN.toString());
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
-
+        Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
+        Log.logger.info("Beginning to add potions.");
+        BaseMod.addPotion(BottledMana.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), BottledMana.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(DissolveClothPotion.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(),FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
+        Log.logger.info("Added potions.");
     }
     @Override
     public void receiveEditKeywords() {
@@ -118,8 +127,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-            lang = "ZHS";
-//            lang = "ENG";
+//            lang = "ZHS";
+            lang = "ENG";
         }
         String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang,"keywords"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
@@ -127,6 +136,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(ModInformation.KEY_WORD, keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
+                Log.logger.info("-----------------add keyword: " + keyword.NAMES[0]);
             }
         }
     }
@@ -135,12 +145,13 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-            lang = "ZHS";
-//            lang = "ENG";
+//            lang = "ZHS";
+            lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang,"cards"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang,"characters"));
         BaseMod.loadCustomStringsFile(RelicStrings.class, ModInformation.makeLocalizationPath(lang,"relics"));
+        BaseMod.loadCustomStringsFile(PotionStrings.class, ModInformation.makeLocalizationPath(lang,"potions"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang,"powers"));
         BaseMod.loadCustomStringsFile(UIStrings.class,ModInformation.makeLocalizationPath(lang,"UIs"));
     }

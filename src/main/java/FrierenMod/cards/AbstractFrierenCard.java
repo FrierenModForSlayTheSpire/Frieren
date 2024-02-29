@@ -13,10 +13,10 @@ import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
 public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
-    public boolean isMagicPower;
-    public boolean isFinalMagicPower;
-    public boolean isFastMagicPower;
-    public boolean isLegendMagicCard;
+    public boolean isMana;
+    public boolean isLimitedOverMana;
+    public boolean isAccelMana;
+    public boolean isLegendaryMagic;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -68,11 +68,11 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isBlockModified = false;
         this.isMagicNumberModified = false;
         this.isChantCard = false;
-        this.isLegendMagicCard = false;
+        this.isLegendaryMagic = false;
         this.isChantXModified = false;
-        this.isMagicPower = false;
-        this.isFinalMagicPower = false;
-        this.isFastMagicPower = false;
+        this.isMana = false;
+        this.isLimitedOverMana = false;
+        this.isAccelMana = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
     }
@@ -99,14 +99,14 @@ public abstract class AbstractFrierenCard extends CustomCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(this.isMagicPower){
+        if(this.isMana){
             return true;
         }
-        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) && !this.isLegendMagicCard )){
+        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) && !this.isLegendaryMagic)){
             return canChantCardUse(m);
-        } else if(this.isLegendMagicCard && !this.isChantCard){
+        } else if(this.isLegendaryMagic && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) ) && this.isLegendMagicCard) {
+        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) ) && this.isLegendaryMagic) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
             return super.canUse(p,m);

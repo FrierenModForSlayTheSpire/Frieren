@@ -23,7 +23,7 @@ public class DrawMagicFromDiscardPileAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
                 counts++;
                 this.addToTop(new DiscardPileToHandAction(c));
             }

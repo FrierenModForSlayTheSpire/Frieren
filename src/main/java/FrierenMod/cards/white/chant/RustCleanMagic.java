@@ -1,7 +1,7 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.actions.StatueMagicAction;
+import FrierenMod.actions.RustCleanMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -25,6 +25,6 @@ public class RustCleanMagic extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChantAction(this.chantX));
-        this.addToBot(new StatueMagicAction(m,p,this.magicNumber));
+        this.addToBot(new RustCleanMagicAction(m,p,this.magicNumber));
     }
 }

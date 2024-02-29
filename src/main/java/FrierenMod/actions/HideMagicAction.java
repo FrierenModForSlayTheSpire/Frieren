@@ -9,12 +9,12 @@ public class HideMagicAction extends AbstractGameAction {
     @Override
     public void update() {
         for(AbstractCard c: AbstractDungeon.player.drawPile.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
                 this.addToBot(new DrawPileToDiscardPileAction(c));
             }
         }
         for(AbstractCard c: AbstractDungeon.player.hand.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
                 this.addToBot(new HandToDiscardPileAction(c));
             }
         }

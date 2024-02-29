@@ -14,7 +14,7 @@ public class ApprehendAction extends AbstractGameAction {
         tickDuration();
         if (this.isDone)
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                if(c instanceof AbstractFrierenCard && ( (AbstractFrierenCard) c).isMagicPower){
+                if(c instanceof AbstractFrierenCard && ( (AbstractFrierenCard) c).isMana){
                     AbstractDungeon.player.hand.moveToDiscardPile(c);
                     c.triggerOnManualDiscard();
                     GameActionManager.incrementDiscard(false);

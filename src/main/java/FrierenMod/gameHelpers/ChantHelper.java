@@ -14,7 +14,7 @@ public class ChantHelper {
     public static int getMagicPowerNumInDrawPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
                 counts++;
             }
         }
@@ -23,7 +23,7 @@ public class ChantHelper {
     public static int getMagicPowerNumInHand(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
                 counts++;
             }
         }
@@ -32,7 +32,7 @@ public class ChantHelper {
     public static int getMagicPowerNumInDiscardPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
                 counts++;
             }
         }
@@ -66,15 +66,15 @@ public class ChantHelper {
     }
     private static ArrayList<AbstractCard> initChantCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new DefendMagic());
+        pool.add(new DefensiveMagic());
         pool.add(new RapidChant());
         pool.add(new ContinualChant());
-        pool.add(new FlowerFieldMagic());
+        pool.add(new FlowerFieldSpell());
         pool.add(new RustCleanMagic());
-        pool.add(new CompleteDefendMagic());
+        pool.add(new PerfectDefensiveMagic());
         pool.add(new FinalChant());
         pool.add(new PreciseChant());
-        pool.add(new TrueFace());
+        pool.add(new TrueColours());
         return pool;
     }
     public static AbstractCard getRandomCard(){

@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.FlowAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,7 +12,7 @@ public class Flow extends AbstractFrierenCard {
     public Flow() {
         super(ID, 0, CardRarity.COMMON);
         this.magicNumber = this.baseMagicNumber = 3;
-        this.cardsToPreview = new MagicPower();
+        this.cardsToPreview = new Mana();
     }
     @Override
     public void upgrade() {

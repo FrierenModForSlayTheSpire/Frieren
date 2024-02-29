@@ -3,7 +3,7 @@ package FrierenMod.Characters;
 import FrierenMod.cards.white.Defend;
 import FrierenMod.cards.white.Flow;
 import FrierenMod.cards.white.Strike;
-import FrierenMod.cards.white.chant.DefendMagic;
+import FrierenMod.cards.white.chant.DefensiveMagic;
 import FrierenMod.cards.white.chant.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
@@ -71,7 +71,7 @@ public class Frieren extends CustomPlayer {
             retVal.add(Defend.ID);
         }
         retVal.add(Flow.ID);
-        retVal.add(DefendMagic.ID);
+        retVal.add(DefensiveMagic.ID);
         retVal.add(RapidChant.ID);
         return retVal;
     }

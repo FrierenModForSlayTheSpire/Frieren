@@ -1,10 +1,10 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.white.FlightMagic;
-import FrierenMod.cards.white.FindLostOrnamentMagic;
-import FrierenMod.cards.white.OilMagic;
-import FrierenMod.cards.white.ThunderMagic;
+import FrierenMod.cards.white.FlyingMagic;
+import FrierenMod.cards.white.AccessoriesSpell;
+import FrierenMod.cards.white.OilSpell;
+import FrierenMod.cards.white.LightningMagic;
 import FrierenMod.cards.white.chant.ContinualChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -27,7 +27,7 @@ public class LegendMagicHelper {
     public static int getExhaustedMagicPowerNumber(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
                 counts++;
             }
         }
@@ -36,11 +36,11 @@ public class LegendMagicHelper {
 
     private static ArrayList<AbstractCard> initLegendMagicCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new FlightMagic());
+        pool.add(new FlyingMagic());
         pool.add(new ContinualChant());
-        pool.add(new FindLostOrnamentMagic());
-        pool.add(new OilMagic());
-        pool.add(new ThunderMagic());
+        pool.add(new AccessoriesSpell());
+        pool.add(new OilSpell());
+        pool.add(new LightningMagic());
         return pool;
     }
     public static AbstractCard getRandomCard(){

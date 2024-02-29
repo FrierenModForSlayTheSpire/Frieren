@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.MagicPowerMod;
+import FrierenMod.cardMods.ManaMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -38,18 +38,18 @@ public class AccelerateFlowPower extends AbstractFrierenPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && !((AbstractFrierenCard) c).isFastMagicPower){
-                if (((AbstractFrierenCard) c).isFinalMagicPower) {
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana && !((AbstractFrierenCard) c).isAccelMana){
+                if (((AbstractFrierenCard) c).isLimitedOverMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new MagicPowerMod(4));
+                    CardModifierManager.addModifier(c, new ManaMod(4));
                     c.applyPowers();
                 } else{
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new MagicPowerMod(2));
+                    CardModifierManager.addModifier(c, new ManaMod(2));
                     c.applyPowers();
                 }
             }
@@ -63,11 +63,11 @@ public class AccelerateFlowPower extends AbstractFrierenPower {
     }
     private void degradeMagicPowerInGroup(CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower && ((AbstractFrierenCard) c).isFastMagicPower){
-                if (((AbstractFrierenCard) c).isFinalMagicPower) {
-                    CardModifierManager.addModifier(c, new MagicPowerMod(3));
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana && ((AbstractFrierenCard) c).isAccelMana){
+                if (((AbstractFrierenCard) c).isLimitedOverMana) {
+                    CardModifierManager.addModifier(c, new ManaMod(3));
                 }else {
-                    CardModifierManager.addModifier(c, new MagicPowerMod(1));
+                    CardModifierManager.addModifier(c, new ManaMod(1));
                 }
             }
         }

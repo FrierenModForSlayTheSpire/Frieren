@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -20,7 +20,7 @@ public class PatchRenderSkillBg {
     public static TextureAtlas.AtlasRegion MAGIC_POWER_BG = getImg(ImageMaster.loadImage(ModInformation.makeCardBgPath(CHARACTER_NAME,"magic",512)));
     @SpireInsertPatch(rloc = 0,localvars = {"sb","renderColor","x","y"})
     public static SpireReturn renderMagicPower(AbstractCard _inst,SpriteBatch sb,Color renderColor,float x,float y){
-        if(_inst instanceof MagicPower){
+        if(_inst instanceof Mana){
             renderHelper(_inst,sb,renderColor,MAGIC_POWER_BG,x,y);
             return SpireReturn.Return();
         }

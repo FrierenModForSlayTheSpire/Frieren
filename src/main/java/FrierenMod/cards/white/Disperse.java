@@ -1,10 +1,10 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.MakeMagicPowerInDiscardAction;
-import FrierenMod.actions.MakeMagicPowerInDrawPileAction;
-import FrierenMod.actions.MakeMagicPowerInHandAction;
+import FrierenMod.actions.MakeManaInDiscardAction;
+import FrierenMod.actions.MakeManaInDrawPileAction;
+import FrierenMod.actions.MakeManaInHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +15,7 @@ public class Disperse extends AbstractFrierenCard {
     public Disperse() {
         super(ID, 1, CardRarity.COMMON);
         this.exhaust = true;
-        this.cardsToPreview = new MagicPower();
+        this.cardsToPreview = new Mana();
     }
     @Override
     public void upgrade() {
@@ -28,8 +28,8 @@ public class Disperse extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeMagicPowerInDrawPileAction(1));
-        this.addToBot(new MakeMagicPowerInHandAction(2));
-        this.addToBot(new MakeMagicPowerInDiscardAction(3));
+        this.addToBot(new MakeManaInDrawPileAction(1));
+        this.addToBot(new MakeManaInHandAction(2));
+        this.addToBot(new MakeManaInDiscardAction(3));
     }
 }

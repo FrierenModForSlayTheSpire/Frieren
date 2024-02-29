@@ -8,7 +8,7 @@ public class DoubleMagicInDrawPileAction extends AbstractGameAction {
     public void update() {
         int draw = ChantHelper.getMagicPowerNumInDrawPile();
         if(draw > 0){
-            this.addToBot(new MakeMagicPowerInDrawPileAction(draw));
+            this.addToBot(new MakeManaInDrawPileAction(draw));
         }
         this.isDone = true;
     }

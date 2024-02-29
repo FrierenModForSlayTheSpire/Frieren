@@ -20,7 +20,7 @@ public class FlowAction extends AbstractGameAction {
                 if(counts >= this.magicNumber){
                     break;
                 }
-                if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
+                if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
                     counts++;
                     this.addToBot(new DrawPileToDiscardPileAction(c));
                 }

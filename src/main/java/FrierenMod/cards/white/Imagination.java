@@ -1,9 +1,9 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.powers.BanMagicGainPower;
-import FrierenMod.powers.MagicInsteadOfCostPower;
-import FrierenMod.powers.ChantWithoutMagicPower;
+import FrierenMod.powers.BanManaGainPower;
+import FrierenMod.powers.ManaInsteadOfEnergyPower;
+import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -27,8 +27,8 @@ public class Imagination extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p,p,new ChantWithoutMagicPower(p)));
-        this.addToBot(new ApplyPowerAction(p,p,new BanMagicGainPower(p)));
-        this.addToBot(new ApplyPowerAction(p,p,new MagicInsteadOfCostPower(p)));
+        this.addToBot(new ApplyPowerAction(p,p,new ChantWithoutManaPower(p)));
+        this.addToBot(new ApplyPowerAction(p,p,new BanManaGainPower(p)));
+        this.addToBot(new ApplyPowerAction(p,p,new ManaInsteadOfEnergyPower(p)));
     }
 }

@@ -8,7 +8,7 @@ public class DoubleMagicInDiscardPileAction extends AbstractGameAction {
     public void update() {
         int discard = ChantHelper.getMagicPowerNumInDiscardPile();
         if(discard > 0){
-            this.addToBot(new MakeMagicPowerInDiscardAction(discard));
+            this.addToBot(new MakeManaInDiscardAction(discard));
         }
         this.isDone = true;
     }

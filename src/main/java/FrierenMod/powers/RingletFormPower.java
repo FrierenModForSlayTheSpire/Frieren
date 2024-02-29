@@ -16,7 +16,7 @@ public class RingletFormPower extends AbstractFrierenPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMagicPower) {
+        if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMana) {
             this.flash();
             this.addToBot(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player,this.amount));
         }

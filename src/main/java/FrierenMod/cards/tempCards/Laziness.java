@@ -22,7 +22,7 @@ public class Laziness extends AbstractFrierenCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMagicPower){
+        if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }

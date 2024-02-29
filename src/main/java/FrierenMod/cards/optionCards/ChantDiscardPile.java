@@ -2,7 +2,7 @@ package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.ChantFromDiscardPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.MagicPower;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -12,7 +12,7 @@ public class ChantDiscardPile extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(ChantDiscardPile.class.getSimpleName());
     public ChantDiscardPile() {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.cardsToPreview = new MagicPower();
+        this.cardsToPreview = new Mana();
     }
     public void upgrade(){
         if(!this.upgraded){

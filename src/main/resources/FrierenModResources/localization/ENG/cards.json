@@ -5,37 +5,37 @@
   },
   "FrierenMod:Defend": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block ."
   },
-  "FrierenMod:NormalAttackMagic": {
+  "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "Ordinary Offensive Magic",
     "DESCRIPTION": "Deal damage twice as the amount of *Mana you have Exhausted. NL (Deal !D! damage.)"
   },
-  "FrierenMod:DefendMagic": {
+  "FrierenMod:DefensiveMagic": {
     "NAME": "Defensive Magic",
-    "DESCRIPTION": " Chant  !CX! .Gain !B! Block. NL Add another *Defensive Magic into your hand.",
-    "UPGRADE_DESCRIPTION": " Chant  !CX! .Gain !B! Block. NL Add another *Defensive Magic+ into your hand."
+    "DESCRIPTION": " frierenmod:Chant !CX! .Gain !B! Block . NL Add another *Defensive Magic into your hand.",
+    "UPGRADE_DESCRIPTION": " frierenmod:Chant !CX! .Gain !B! Block . NL Add another *Defensive Magic+ into your hand."
   },
-  "FrierenMod:SecondDefendMagic": {
+  "FrierenMod:SecondDefensiveMagic": {
     "NAME": "Defensive Magic",
-    "DESCRIPTION": " frierenmod:Chant !CX!.Gain !B! Block. NL Exhaust."
+    "DESCRIPTION": " frierenmod:Chant !CX!.Gain !B! Block . NL  Exhaust ."
   },
   "FrierenMod:RapidChant": {
     "NAME": "Rapid Chant",
     "DESCRIPTION": " frierenmod:Chant !CX! .",
     "UPGRADE_DESCRIPTION": " Retain . NL frierenmod:Chant !CX!."
   },
-  "FrierenMod:MagicPower": {
+  "FrierenMod:Mana": {
     "NAME": "Mana",
     "DESCRIPTION": " frierenmod:Synchro ."
   },
-  "FrierenMod:ShavedIceMagic": {
+  "FrierenMod:ShavedIceSpell": {
     "NAME": "Spell that Makes Shaved Ice",
     "DESCRIPTION": "Shuffle !M! *Mana into your draw pile."
   },
-  "FrierenMod:HideMagic": {
+  "FrierenMod:ManaConcealment": {
     "NAME":"ManaConcealment",
-    "DESCRIPTION": "Retain . NL Shuffle ALL *Mana in your hand and draw pile into your discard pile. NL Exhaust."
+    "DESCRIPTION": " Retain . NL Shuffle ALL *Mana in your hand and draw pile into your discard pile. NL  Exhaust ."
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "Chant From Draw Pile",
@@ -52,121 +52,121 @@
     "DESCRIPTION": "Exhaust !M! *Mana in your discard pile, Gain !M! Strength.",
     "UPGRADE_DESCRIPTION":"Gain !M! Strength."
   },
-  "FrierenMod:MarshMagic": {
+  "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Bottomless Swamp",
     "DESCRIPTION": "Draw !M! *Mana."
   },
-  "FrierenMod:MoldMagic": {
+  "FrierenMod:MoldSpell": {
     "NAME": "Spell to Get Rid of Mold",
-    "DESCRIPTION": " frierenmod:LegendaryMagic . NL Deal !D! damage !M! times. "
+    "DESCRIPTION": " frierenmod:Legendary_Magic . NL Deal !D! damage !M! times. "
   },
-  "FrierenMod:Sustainability": {
+  "FrierenMod:Perpetual": {
     "NAME": "Perpetual",
     "DESCRIPTION": "At the start of the turn, shuffle 2 *Mana in your discard pile.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of the turn, shuffle 2 *Mana in your discard pile."
+    "UPGRADE_DESCRIPTION": " Innate . NL At the start of the turn, shuffle 2 *Mana in your discard pile."
   },
-  "FrierenMod:ReverseFlow": {
-    "NAME": "Backflow",
+  "FrierenMod:BackFlow": {
+    "NAME": "Back flow",
     "DESCRIPTION": "Draw !M! *Mana from your discard pile.",
     "UPGRADE_DESCRIPTION": "Draw !M! *Mana from your discard pile."
   },
   "FrierenMod:Disperse": {
     "NAME": "Disperse",
-    "DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL Exhaust."
+    "DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL  Exhaust ."
   },
   "FrierenMod:Flow": {
     "NAME": "Flow",
     "DESCRIPTION": "Put !M! *Mana from your draw pile into your discard pile."
   },
-  "FrierenMod:FlightMagic": {
+  "FrierenMod:FlyingMagic": {
     "NAME": "Flying Magic",
-    "DESCRIPTION": "frierenmod:LegendaryMagic. NL Gain !M! Intangible.",
-    "UPGRADE_DESCRIPTION": "frierenmod:LegendaryMagic. NL Gain !M! Intangible."
+    "DESCRIPTION": " frierenmod:Legendary_Magic . NL Gain !M! Intangible.",
+    "UPGRADE_DESCRIPTION": " frierenmod:Legendary_Magic . NL Gain !M! Intangible."
   },
-  "FrierenMod:FolkMagicBook": {
+  "FrierenMod:FolkGrimoire": {
     "NAME": "Folk Grimoire",
-    "DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:LegendaryMagic into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:LegendaryMagic into your hand, they cost 2 less [E]. NL Exhaust."
+    "DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:Legendary_Magic into your hand. NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:Legendary_Magic into your hand, they cost 2 less [E]. NL  Exhaust ."
   },
   "FrierenMod:Outpouring": {
     "NAME": "Outpouring",
-    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust."
+    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength . NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": " Retain . NL Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength . NL  Exhaust ."
   },
   "FrierenMod:ContinualChant": {
-    "NAME": "ContinualChant",
-    "DESCRIPTION": "frierenmod:LegendaryMagic. NL Shuffle !M! *Mana into your draw pile. NL frierenmod:Chant !CX!."
+    "NAME": "Continual Chant",
+    "DESCRIPTION": " frierenmod:Legendary_Magic . NL Shuffle !M! *Mana into your draw pile. NL frierenmod:Chant !CX!."
   },
   "FrierenMod:Simmering": {
     "NAME": "Simmering",
     "DESCRIPTION": "Exhaust a *Mana in your hand, Apply !M! Vulnerable to All enemies."
   },
-  "FrierenMod:NightDressForm": {
+  "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",
-    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 3 times the amount you Exhaust to ALL enemies. NL (Deal !M! damage.)"
+    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 3 times the amount you Exhaust to ALL enemies. NL (Deal !M! damage)"
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "Prepared Posture",
     "DESCRIPTION": "Draw a frierenmod:Chant card."
   },
-  "FrierenMod:LittleTrick": {
+  "FrierenMod:Trick": {
     "NAME": "Trick",
-    "DESCRIPTION": "At the start of your turn, if you don't have *ManaConcealment in your hand, add a *ManaConcealment into your hand."
+    "DESCRIPTION": "At the start of your turn, if you don't have *ManaConcealment in your hand, add it into your hand."
   },
-  "FrierenMod:FlowerFieldMagic": {
+  "FrierenMod:FlowerFieldSpell": {
     "NAME": "Spell to Produce a Field of Flowers",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Add a *BlueMoonWeed into your hand.",
+    "DESCRIPTION": " frierenmod:Chant !CX!. NL Add a *BlueMoonWeed into your hand.",
     "UPGRADE_DESCRIPTION": " frierenmod:Chant !CX!. NL Add a *BlueMoonWeed+ into your hand."
   },
-  "FrierenMod:AccelerateFlow": {
+  "FrierenMod:ClearMind": {
     "NAME": "Clear Mind",
-    "DESCRIPTION": "Add !M! *Mana into your hand. This turn, frierenmod:Synchro changes into frierenmod:AccelSynchro."
+    "DESCRIPTION": "Add !M! *Mana into your hand. This turn, frierenmod:Synchro changes into frierenmod:Accel_Synchro ."
   },
-  "FrierenMod:FindLostOrnamentMagic": {
+  "FrierenMod:AccessoriesSpell": {
     "NAME": "Spell for Finding Lost Accessories",
-    "DESCRIPTION": "Innate. Ethereal. NL frierenmod:LegendaryMagic. NL At the end of combat, get a random relic."
+    "DESCRIPTION": " Innate . Ethereal. NL  frierenmod:Legendary_Magic . NL At the end of combat, get a random relic."
   },
-  "FrierenMod:OilMagic": {
+  "FrierenMod:OilSpell": {
     "NAME": "Spell to Remove Tough Oil Stains",
-    "DESCRIPTION": " frierenmod:LegendaryMagic. NL Deal !D! damage to ALL enemies. If no one get killed by this, deal !D! damage once more."
+    "DESCRIPTION": " frierenmod:Legendary_Magic . NL Deal !D! damage to ALL enemies. If no one get killed by this, deal !D! damage once more."
   },
-  "FrierenMod:VisionMagic": {
+  "FrierenMod:ApexMagic": {
     "NAME": "The Apex of Magic",
-    "DESCRIPTION": "If your hand, draw pile, and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! cards."
+    "DESCRIPTION": "If your hand, draw pile and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! card.",
+    "UPGRADE_DESCRIPTION": " Retain . NL If your hand, draw pile, and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! cards."
   },
-  "FrierenMod:PancakeMagic": {
+  "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
     "DESCRIPTION": "Exchange a *Mana in your hand with !M! card in your draw pile.",
     "UPGRADE_DESCRIPTION": "Exchange a *Mana in your hand with !M! cards in your draw pile."
   },
-  "FrierenMod:TongueTwisterMagic": {
+  "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Without Tripping Over Words",
-    "DESCRIPTION": "draw !M! card. NL If you don't have *Mana in your hand, draw an extra one."
+    "DESCRIPTION": "Draw !M! card. NL If you don't have *Mana in your hand, draw an extra one."
   },
-  "FrierenMod:MultipleAttackMagic": {
+  "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "Multiple Offensive Magic",
     "DESCRIPTION": "Deal X+4 damage to a random enemy X times, add X *Mana into your hand.",
     "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand."
   },
-  "FrierenMod:RitualPreparing": {
+  "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
     "DESCRIPTION": "Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies."
+    "UPGRADE_DESCRIPTION": " Innate . NL Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies."
   },
-  "FrierenMod:BoomMagic": {
+  "FrierenMod:FireSpell": {
     "NAME": "Spell That Starts a Fire",
     "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *laziness into your hand."
   },
   "FrierenMod:Laziness": {
     "NAME": "Laziness",
-    "DESCRIPTION": "Unplayable. NL Play a *Mana to Exhaust this card. NL At the end of your turn, shuffle a copy of this card into your discard pile."
+    "DESCRIPTION": " Unplayable . NL Play a *Mana to Exhaust this card. NL At the end of your turn, shuffle a copy of this card into your discard pile."
   },
   "FrierenMod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
+    "DESCRIPTION": "put a card from Exhaust pile into your hand and  Retain  it. NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and  Retain  them. NL  Exhaust ."
   },
   "FrierenMod:DiYuMoFa": {
     "NAME": "地狱业火Magic",
@@ -175,36 +175,36 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Spell to Remove Rust from Bronze Statues",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Remove all Block from the enemy. If the Block amount is more than !M!, gain Metallicize 3."
+    "DESCRIPTION": " frierenmod:Chant !CX!. NL Remove all Block from the enemy. If the Block amount is more than !M!, gain Metallicize 3."
   },
-  "FrierenMod:RedAppleMagic": {
+  "FrierenMod:RedAppleSpell": {
     "NAME": "Spell to Turn Red Apple into Green Apple",
-    "DESCRIPTION": "Retain. NL Switch the amount of your Strength and Dexterity, add a *Apple into hand. NL At the end of your turn, switch back."
+    "DESCRIPTION": " Retain . NL Switch the amount of your Strength and Dexterity, add an *Apple into hand. NL At the end of your turn, switch back."
   },
-  "FrierenMod:Apple": {
+  "FrierenMod:GreenApple": {
     "NAME": "Green Apple",
-    "DESCRIPTION": "Gain !B! Block twice. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block twice. NL  Exhaust ."
   },
-  "FrierenMod:ThunderMagic": {
+  "FrierenMod:LightningMagic": {
     "NAME": "Destructive Lightning Magic",
-    "DESCRIPTION": "frierenmod:LegendaryMagic. NL Draw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:LimitedOverSynchro in the rest of the combat."
+    "DESCRIPTION": " frierenmod:Legendary_Magic . NL Draw *Mana from draw pile and discard pile until your hand is full. frierenmod:Synchro change into frierenmod:Limit_Over_Synchro in the rest of the combat."
   },
-  "FrierenMod:Flower": {
+  "FrierenMod:BlueMoonWeed": {
     "NAME": "BlueMoonWeed",
-    "DESCRIPTION": "Retain. NL draw !M! cards. NL Exhaust."
+    "DESCRIPTION": " Retain . NL draw !M! cards. NL  Exhaust ."
   },
-  "FrierenMod:GrapeMagic": {
+  "FrierenMod:GrapeSpell": {
     "NAME": "Spell to Turn Sweet Grapes Into Sour Ones",
-    "DESCRIPTION": "Choose 2 cards in your hand and Exhaust them, then add 2 *Mana in your hand. NL Exhaust."
+    "DESCRIPTION": "Choose 2 cards in your hand and Exhaust them, then add 2 *Mana in your hand. NL  Exhaust ."
   },
   "FrierenMod:BabySleeping": {
     "NAME": "Sleeping Like a Baby",
     "DESCRIPTION": " Gain !B! Block, Retain 1 card in your hand."
   },
-  "FrierenMod:ZeerieMagicBook": {
+  "FrierenMod:SerieGrimoire": {
     "NAME": "Serie's Grimoire",
-    "DESCRIPTION": "Create a Custom frierenmod:LegendaryMagic. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Create a Custom frierenmod:LegendaryMagic. You will have more choices. NL Exhaust."
+    "DESCRIPTION": "Create a Custom frierenmod:Legendary_Magic . NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": "Create a Custom frierenmod:Legendary_Magic . You will have more choices. NL  Exhaust ."
   },
   "FrierenMod:LittleFire": {
     "NAME": "Little Fire",
@@ -221,12 +221,12 @@
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
-    "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL Exhaust.",
+    "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL  Exhaust .",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] , Add a *Laziness into your hand."
   },
-  "FrierenMod:CustomLegendMagic": {
+  "FrierenMod:CustomLegendary_Magic": {
     "NAME": "Custom Magic",
-    "DESCRIPTION": " frierenmod:LegendaryMagic ."
+    "DESCRIPTION": " frierenmod:Legendary_Magic ."
   },
   "FrierenMod:Cost0": {
     "NAME": "Short Size",
@@ -272,7 +272,7 @@
   "FrierenMod:SelfRetainOption": {
     "NAME": "Temperance",
     "DESCRIPTION": " Retain !M! card in your hand.",
-    "EXTENDED_DESCRIPTION": [" Retain !M! cards in your hand."]
+    "EXTENDED_DESCRIPTION": [" Retain 1/2 cards in your hand."]
   },
   "FrierenMod:GainRandomCardOption": {
     "NAME": "The Wheel of Fortune",
@@ -296,8 +296,8 @@
   },
   "FrierenMod:BlockOption": {
     "NAME": "The Hermit",
-    "DESCRIPTION": "Gain !B! Block.",
-    "EXTENDED_DESCRIPTION": ["Gain 4/8/12/16 Block."]
+    "DESCRIPTION": "Gain !B! Block .",
+    "EXTENDED_DESCRIPTION": ["Gain 4/8/12/16 Block ."]
   },
   "FrierenMod:EnergyOption": {
     "NAME": "The Lovers",
@@ -321,12 +321,12 @@
   },
   "FrierenMod:IntangibleOption": {
     "NAME": "The Hanged Man",
-    "DESCRIPTION": "Gain !M! Intangible. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Gain 1/2 Intangible. NL Exhaust."]
+    "DESCRIPTION": "Gain !M! Intangible. NL  Exhaust .",
+    "EXTENDED_DESCRIPTION": ["Gain 1/2 Intangible. NL  Exhaust ."]
   },
   "FrierenMod:StrengthOption": {
     "NAME": "The Empress",
-    "DESCRIPTION": "Double your Strength. NL Exhaust."
+    "DESCRIPTION": "Double your Strength. NL  Exhaust ."
   },
   "FrierenMod:VulnerableOption": {
     "NAME": "The Hierophant",
@@ -337,9 +337,9 @@
     "NAME": "The Tower",
     "DESCRIPTION": "Upgrade all cards in your hand for the rest of the combat."
   },
-  "FrierenMod:Upgrade DexterityOption": {
+  "FrierenMod:UpgradeAllOption": {
     "NAME": "The World",
-    "DESCRIPTION": "Upgrade ALL cards for the rest of the combat. NL Exhaust."
+    "DESCRIPTION": "Upgrade ALL cards for the rest of the combat. NL  Exhaust ."
   },
   "FrierenMod:RemoveDebuffOption": {
     "NAME": "The Wands",
@@ -347,13 +347,13 @@
   },
   "FrierenMod:PreciseChant": {
     "NAME": "Precise Chant",
-    "DESCRIPTION": "Choose one:Draw pile, hand or discard pile, Chant the amount as the *Mana amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION":"Choose one:Draw pile, hand or discard pile, Chant the amount as the *Mana amount."
+    "DESCRIPTION": "Choose:Draw pile, hand or discard pile, Chant the amount as the *Mana amount. NL  Exhaust .",
+    "UPGRADE_DESCRIPTION":"Choose:Draw pile, hand or discard pile, Chant the amount as the *Mana amount."
   },
-  "FrierenMod:MagicExpand": {
+  "FrierenMod:ManaExpansion": {
     "NAME": "Mana Expansion",
-    "DESCRIPTION": "Choose one:Draw pile,hand or discard pile, DOUBLE the *Mana . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "DOUBLE the *Mana WHEREVER are they (except exhaust pile). NL Exhaust."
+    "DESCRIPTION": "Choose:Draw pile,hand or discard pile, DOUBLE the *Mana . NL  Exhaust .",
+    "UPGRADE_DESCRIPTION": "DOUBLE the *Mana WHEREVER are they (except exhaust pile). NL  Exhaust ."
   },
   "FrierenMod:DoubleMagicInDrawPile": {
     "NAME": "Double From Draw Pile",
@@ -367,81 +367,81 @@
     "NAME": "Double From Discard Pile",
     "DESCRIPTION": " Double *Mana in your discard pile."
   },
-  "FrierenMod:MagicDetect": {
+  "FrierenMod:ManaDetection": {
     "NAME": "Mana Detection",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever it is attacked, shuffle !M! *Mana into your discard pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Whenever it is attacked, shuffle !M! *Mana into your discard pile. NL  Exhaust ."
   },
-  "FrierenMod:TimeTravel": {
+  "FrierenMod:TimeConcept": {
     "NAME": "Time Concept of Elf",
     "DESCRIPTION": "Send your everything 2 turns into the future.",
     "UPGRADE_DESCRIPTION": "Send your everything 2 turns into the future, and frierenmod:world-line will change."
   },
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",
-    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead, You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL   Exhaust .",
+    "UPGRADE_DESCRIPTION": " Retain . This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL   Exhaust ."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
-    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. NL  Exhaust .",
     "UPGRADE_DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. NL Ethereal."
   },
-  "FrierenMod:CompleteDefendMagic": {
+  "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "Perfect Defensive Magic",
-    "DESCRIPTION": " frierenmod:Chant !CX! . NL Gain 1 frierenmod:buffer, then gain !B! Block.",
-    "UPGRADE_DESCRIPTION": " frierenmod:Chant !CX! . NL Gain 1 frierenmod:buffer, then gain !B! Block."
+    "DESCRIPTION": " frierenmod:Chant !CX! . NL Gain 1 frierenmod:buffer, then gain !B! Block .",
+    "UPGRADE_DESCRIPTION": " frierenmod:Chant !CX! . NL Gain 1 frierenmod:buffer, then gain !B! Block ."
   },
-  "FrierenMod:MagicianFinisher": {
+  "FrierenMod:MageStyleFinisher": {
     "NAME": "Mage Style Finisher",
-    "DESCRIPTION": "Deal !D! damage for each *Mana you played.(already played !M!)"
+    "DESCRIPTION": "Deal !D! damage for each *Mana you played. NL (Already played !M!)"
   },
-  "FrierenMod:AnalysisMagic": {
+  "FrierenMod:BreaksBarriersSpell": {
     "NAME": "Spell That Breaks Barriers",
-    "DESCRIPTION": " frierenmod:Analyze 3： frierenmod:Synchro 4 *Mana . NL  *Reward : !B! Block. NL (Progress:0/4)."
+    "DESCRIPTION": " frierenmod:Analyze 3： frierenmod:Synchro 4 *Mana . NL  *Reward : !B! Block . NL (Progress:0/4)."
   },
-  "FrierenMod:MagicBag": {
+  "FrierenMod:ManaParcel": {
     "NAME": "Mana Parcel",
-    "DESCRIPTION": "Unplayable. NL When you draw this card, add !M! *Mana to your hand and Exhaust."
+    "DESCRIPTION": " Unplayable . NL When you draw this card, add !M! *Mana to your hand and  Exhaust ."
   },
   "FrierenMod:FinalChant": {
     "NAME": "Final Chant",
-    "DESCRIPTION": "frierenmod:Chant ALL  *Mana, WHEREVER are they ."
+    "DESCRIPTION": " frierenmod:Chant ALL  *Mana, WHEREVER are they ."
   },
   "FrierenMod:Kiss": {
     "NAME": "Kiss(very lethal!)",
-    "DESCRIPTION": "Apply 99 Vulnerable and 99 Weak. NL Exhaust. NL Ethereal. "
+    "DESCRIPTION": "Apply 99 Vulnerable and 99 Weak. NL  Exhaust . NL Ethereal. "
   },
-  "FrierenMod:BindingMagic": {
+  "FrierenMod:RestraintMagic": {
     "NAME": "Restraint magic",
-    "DESCRIPTION": "Apply Slow and the target loses 3 Strength. NL Exhaust."
+    "DESCRIPTION": "Apply Slow and the target loses 3 Strength. NL  Exhaust ."
   },
   "FrierenMod:SeeThroughPhantom": {
     "NAME": "See Through Phantom",
     "DESCRIPTION": "Deal !D! damage, If the enemy intends to attack, Apply !M! Weak, otherwise, apply !M! Vulnerable."
   },
-  "FrierenMod:TrueFace": {
+  "FrierenMod:TrueColours": {
     "NAME": "True Colours",
-    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
+    "DESCRIPTION": " frierenmod:Chant 6. NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL  Exhaust ."
   },
-  "FrierenMod:TimeDoor": {
+  "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",
     "DESCRIPTION": " frierenmod:Analyze 1： frierenmod:Synchro !M! *Mana . NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
   },
-  "FrierenMod:BigCross": {
+  "FrierenMod:GrandCross": {
     "NAME": "Grand Cross",
     "DESCRIPTION": " Deal !D! damage. NL Costs 0 if you have activated a frierenmod:Chant effect this turn,"
   },
-  "FrierenMod:YouWin": {
+  "FrierenMod:HalfTheSky": {
     "NAME": "Half The Sky",
     "DESCRIPTION": " Deal !D! damage. NL Whenever you frierenmod:Chant , return this discard pile to your hand."
   },
-  "FrierenMod:LoopAgain": {
+  "FrierenMod:Recycle": {
     "NAME": "Recycle",
     "DESCRIPTION": "For every !M! *Mana  in your discard pile, shuffle a *Mana into your draw pile ."
   },
   "FrierenMod:AirSlash": {
     "NAME": "Air Slash",
-    "DESCRIPTION": "Deal !D! damage. NL this turn, frierenmod:Synchro changes into frierenmod:AccelSynchro."
+    "DESCRIPTION": "Deal !D! damage. NL this turn, frierenmod:Synchro changes into frierenmod:Accel_Synchro ."
   },
   "FrierenMod:Apprehend": {
     "NAME": "Apprehend",
@@ -451,9 +451,9 @@
     "NAME": "Free",
     "DESCRIPTION": "If the enemy has !M! or less HP, set HP 0, otherwise, deal !D! damage."
   },
-  "FrierenMod:MagicianChoke": {
+  "FrierenMod:MageStyleChoke": {
     "NAME": "Mage Style Choke",
-    "DESCRIPTION": "Deal !D! damage. NL Whenever you frierenmod:Synchro a *Mana this turn, the enemy loses !M! HP"
+    "DESCRIPTION": "Deal !D! damage. NL Whenever you frierenmod:Synchro a *Mana this turn, the enemy loses !M! HP."
   },
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",

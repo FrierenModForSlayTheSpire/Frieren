@@ -1,10 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.MagicPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -47,7 +45,7 @@ public class MultipleAttackMagicAction extends AbstractGameAction {
                 this.addToTop(new VFXAction(new LightningEffect(this.target.hb.cX, this.card.hb.cY)));
             }
         }
-        this.addToBot(new MakeMagicPowerInHandAction(magicNum));
+        this.addToBot(new MakeManaInHandAction(magicNum));
         this.p.energy.use(EnergyPanel.totalCount);
         this.isDone = true;
     }

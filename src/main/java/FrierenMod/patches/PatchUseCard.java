@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.actions.ExhaustMagicPowerTakeTurnsAction;
+import FrierenMod.actions.ExhaustManaTakeTurnsAction;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,7 +22,7 @@ public class PatchUseCard{
                 if(isMethodCalled(m)){
 
                     m.replace("{" +
-                            "if(" + PatchUseCard.class.getName() + ".check($0) && this.hasPower(\"FrierenMod:MagicInsteadOfCostPower\")){"+
+                            "if(" + PatchUseCard.class.getName() + ".check($0) && this.hasPower(\"FrierenMod:ManaInsteadOfEnergyPower\")){"+
                             PatchUseCard.class.getName() + ".cal(c);" +
                             "}else{"+
                             "$_=$proceed($$);" +
@@ -41,7 +41,7 @@ public class PatchUseCard{
     }
     public static void cal(AbstractCard c){
         if(c.cost >= 0){
-            AbstractDungeon.actionManager.addToBottom(new ExhaustMagicPowerTakeTurnsAction(c.cost));
+            AbstractDungeon.actionManager.addToBottom(new ExhaustManaTakeTurnsAction(c.cost));
         }
     }
 }
