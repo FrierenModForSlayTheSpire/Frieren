@@ -37,7 +37,7 @@
   {
     "PROPER_NAME":"Legendary Magic",
     "NAMES": [
-      "Legendary Magic","legendary_magic"
+      "Legendary Magic","legendary_magic","legendary_spell","Legendary Spell"
     ],
     "DESCRIPTION": "Can only be played if you have #yChanted this turn."
   },
