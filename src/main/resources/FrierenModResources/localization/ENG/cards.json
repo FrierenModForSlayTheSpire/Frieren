@@ -13,17 +13,17 @@
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "Defensive Magic",
-    "DESCRIPTION": "frierenmod:Chant !CX!.Gain !B! Block. NL Add another *Defensive Magic into your hand.",
-    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!.Gain !B! Block. NL Add another *Defensive Magic+ into your hand."
+    "DESCRIPTION": "frierenmod:Chant !CX!. Gain !B! Block. NL Add another *Defensive Magic into your hand.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. Gain !B! Block. NL Add another *Defensive Magic+ into your hand."
   },
   "FrierenMod:SecondDefensiveMagic": {
     "NAME": "Defensive Magic",
-    "DESCRIPTION": "frierenmod:Chant !CX!.Gain !B! Block. NL Exhaust."
+    "DESCRIPTION": "frierenmod:Chant !CX!. Gain !B! Block. NL Exhaust."
   },
   "FrierenMod:RapidChant": {
     "NAME": "Rapid Chant",
     "DESCRIPTION": "frierenmod:Chant !CX!.",
-    "UPGRADE_DESCRIPTION": "Retain. NLfrierenmod:Chant !CX!."
+    "UPGRADE_DESCRIPTION": "Retain. NL frierenmod:Chant !CX!."
   },
   "FrierenMod:Mana": {
     "NAME": "Mana",
@@ -58,7 +58,7 @@
   },
   "FrierenMod:MoldSpell": {
     "NAME": "Spell to Get Rid of Mold",
-    "DESCRIPTION": " frierenmod:Legendary_Spell . NL Deal !D! damage !M! times. "
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Deal !D! damage !M! times. "
   },
   "FrierenMod:Perpetual": {
     "NAME": "Perpetual",
@@ -100,7 +100,7 @@
   },
   "FrierenMod:Simmering": {
     "NAME": "Simmering",
-    "DESCRIPTION": "Exhaust a *Mana in your hand, Apply !M! Vulnerable to All enemies."
+    "DESCRIPTION": "Exhaust a *Mana in your hand, apply !M! Vulnerable to All enemies."
   },
   "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",
@@ -133,8 +133,8 @@
   },
   "FrierenMod:ApexMagic": {
     "NAME": "The Apex of Magic",
-    "DESCRIPTION": "If your hand, draw pile and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile all have just 6 *Mana , deal 999 damage to all enemies, otherwise draw !M! cards."
+    "DESCRIPTION": "If your hand, draw pile and discard pile all have just 6 *Mana, deal 999 damage to all enemies, otherwise draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile all have just 6 *Mana, deal 999 damage to all enemies, otherwise draw !M! cards."
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
@@ -204,7 +204,7 @@
   "FrierenMod:SerieGrimoire": {
     "NAME": "Serie's Grimoire",
     "DESCRIPTION": "Craft a frierenmod:Legendary_Spell! NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Craft a frierenmod:Legendary_Spell! You will have more choices. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Craft a frierenmod:Legendary_Spell! You will have more options. NL Exhaust."
   },
   "FrierenMod:LittleFire": {
     "NAME": "Little Fire",
@@ -217,12 +217,12 @@
   },
   "FrierenMod:LockTarget": {
   "NAME": "Lock Target",
-  "DESCRIPTION": "Deal !D! damage,draw a card, if your HP is more than the target, attack 1 more time."
+  "DESCRIPTION": "Deal !D! damage, draw a card, if your HP is more than the target, attack 1 more time."
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
-    "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] , Add a *Laziness into your hand."
+    "DESCRIPTION": "Gain [E] [E], Add a *Laziness into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E], Add a *Laziness into your hand."
   },
   "FrierenMod:CustomLegendaryMagic": {
     "NAME": "Craft Spell",
@@ -311,7 +311,7 @@
   },
   "FrierenMod:DexterityOption": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Gain !M!  Dexterity.",
+    "DESCRIPTION": "Gain !M! Dexterity.",
     "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity."]
   },
   "FrierenMod:ChantOption": {
@@ -378,8 +378,8 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",
-    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "DESCRIPTION": "This turn, Your cards don't Cost [E], Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E], Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
@@ -401,7 +401,7 @@
   },
   "FrierenMod:ManaParcel": {
     "NAME": "Mana Parcel",
-    "DESCRIPTION": " Unplayable. NL When you draw this card, add !M! *Mana to your hand and  Exhaust."
+    "DESCRIPTION": " Unplayable. NL When you draw this card, add !M! *Mana to your hand and Exhaust."
   },
   "FrierenMod:FinalChant": {
     "NAME": "Final Chant",
@@ -413,7 +413,7 @@
   },
   "FrierenMod:RestraintMagic": {
     "NAME": "Restraint magic",
-    "DESCRIPTION": "Apply Slow and the target loses 3 Strength. NL Exhaust."
+    "DESCRIPTION": "Apply frierenmod:Slow and the target loses 3 Strength. NL Exhaust."
   },
   "FrierenMod:SeeThroughPhantom": {
     "NAME": "See Through Phantom",
@@ -421,7 +421,7 @@
   },
   "FrierenMod:TrueColours": {
     "NAME": "True Colours",
-    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
+    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E],draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",
@@ -433,7 +433,7 @@
   },
   "FrierenMod:HalfTheSky": {
     "NAME": "Envy",
-    "DESCRIPTION": " Deal !D! damage. NL Whenever you frierenmod:Chant , return this discard pile to your hand."
+    "DESCRIPTION": " Deal !D! damage. NL Whenever you frierenmod:Chant, return this discard pile to your hand."
   },
   "FrierenMod:Recycle": {
     "NAME": "Recycle",
