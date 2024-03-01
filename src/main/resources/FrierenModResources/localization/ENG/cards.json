@@ -224,7 +224,7 @@
     "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL  Exhaust .",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] , Add a *Laziness into your hand."
   },
-  "FrierenMod:CustomLegendary_Magic": {
+  "FrierenMod:CustomLegendaryMagic": {
     "NAME": "Custom Magic",
     "DESCRIPTION": " frierenmod:Legendary_Magic ."
   },
