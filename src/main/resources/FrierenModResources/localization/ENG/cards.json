@@ -221,8 +221,8 @@
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
-    "DESCRIPTION": "Gain [E] [E], Add a *Laziness into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E], Add a *Laziness into your hand."
+    "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] , Add a *Laziness into your hand."
   },
   "FrierenMod:CustomLegendaryMagic": {
     "NAME": "Craft Spell",
@@ -378,8 +378,8 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",
-    "DESCRIPTION": "This turn, Your cards don't Cost [E], Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E], Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
@@ -397,7 +397,7 @@
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "Spell That Breaks Barriers",
-    "DESCRIPTION": "frierenmod:Analyze 3： frierenmod:Synchro 4 *Mana. NL *Reward : !B! Block. NL (Progress:0/4)."
+    "DESCRIPTION": "frierenmod:Analyze 3: frierenmod:Synchro 4 *Mana. NL *Reward : !B! Block. NL (Progress:0/4)."
   },
   "FrierenMod:ManaParcel": {
     "NAME": "Mana Parcel",
@@ -421,11 +421,11 @@
   },
   "FrierenMod:TrueColours": {
     "NAME": "True Colours",
-    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E],draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
+    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",
-    "DESCRIPTION": "frierenmod:Analyze 1： frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
+    "DESCRIPTION": "frierenmod:Analyze 1: frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
   },
   "FrierenMod:GrandCross": {
     "NAME": "Grand Cross",
