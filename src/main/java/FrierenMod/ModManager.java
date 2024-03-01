@@ -19,6 +19,7 @@ import basemod.abstracts.CustomRelic;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
+import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -116,7 +117,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(BottledMana.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), BottledMana.POTION_ID, CharacterEnums.FRIEREN);
-        BaseMod.addPotion(DissolveClothPotion.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
         BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(),FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
         Log.logger.info("Added potions.");
     }
