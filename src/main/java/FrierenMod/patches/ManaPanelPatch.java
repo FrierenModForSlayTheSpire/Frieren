@@ -1,13 +1,8 @@
 package FrierenMod.patches;
 
 import FrierenMod.panels.ManaPanel;
-import FrierenMod.utils.GlobalConfig;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.evacipated.cardcrawl.modthespire.lib.LineFinder;
-import com.evacipated.cardcrawl.modthespire.lib.Matcher;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertLocator;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -19,13 +14,12 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 
-public class MagicPanelPatch {
+public class ManaPanelPatch {
     @SpirePatch2(clz = GameActionManager.class, method = "clear")
     public static class ClearMPAfterCombat {
         @SpireInsertPatch(locator = ClearMPAfterCombatLocator.class)
         public static void ClearMP() {
-            if (GlobalConfig.ActivatePatchMPField &&
-                    AbstractDungeon.player != null) {
+            if (AbstractDungeon.player != null) {
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).clearMP();
             }
         }
@@ -42,8 +36,7 @@ public class MagicPanelPatch {
     public static class ShowPanel {
         @SpireInsertPatch(locator = ShowPanelLocator.class)
         public static void Show() {
-            if (GlobalConfig.ActivatePatchMPField &&
-                    AbstractDungeon.player != null)
+            if (AbstractDungeon.player != null)
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).show();
         }
 
@@ -59,8 +52,7 @@ public class MagicPanelPatch {
     public static class HidePanel {
         @SpireInsertPatch(locator = HidePanelLocator.class)
         public static void Hide() {
-            if (GlobalConfig.ActivatePatchMPField &&
-                    AbstractDungeon.player != null)
+            if (AbstractDungeon.player != null)
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).hide();
         }
 
@@ -76,8 +68,7 @@ public class MagicPanelPatch {
     public static class RenderPanel {
         @SpireInsertPatch(locator = RenderPanelLocator.class)
         public static void Render(SpriteBatch sb) {
-            if (GlobalConfig.ActivatePatchMPField &&
-                    AbstractDungeon.player != null)
+            if (AbstractDungeon.player != null)
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).render(sb);
         }
 
@@ -93,8 +84,7 @@ public class MagicPanelPatch {
     public static class UpdatePanel {
         @SpireInsertPatch(locator = UpdatePanelLocator.class)
         public static void Update() {
-            if (GlobalConfig.ActivatePatchMPField &&
-                    AbstractDungeon.player != null) {
+            if (AbstractDungeon.player != null) {
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).updatePositions();
                 ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).update();
             }
