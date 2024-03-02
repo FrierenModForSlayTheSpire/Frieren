@@ -12,7 +12,7 @@ public class TongueTwisterSpell extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(TongueTwisterSpell.class.getSimpleName());
     public TongueTwisterSpell() {
         super(ID, 1, CardRarity.COMMON);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.cardsToPreview = new Mana();
     }
     @Override
@@ -28,7 +28,7 @@ public class TongueTwisterSpell extends AbstractFrierenCard {
             this.addToBot(new DrawCardAction(p, this.magicNumber));
         }
         else {
-            this.addToBot(new DrawCardAction(p, this.magicNumber + 1));
+            this.addToBot(new DrawCardAction(p, this.magicNumber + 2));
         }
     }
 }

@@ -11,7 +11,7 @@ public class RingletForm extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(RingletForm.class.getSimpleName());
     public RingletForm() {
         super(ID, 2, CardType.POWER, CardRarity.RARE);
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
     @Override
     public void upgrade() {
