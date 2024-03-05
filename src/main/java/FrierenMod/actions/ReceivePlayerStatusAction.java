@@ -2,7 +2,6 @@ package FrierenMod.actions;
 
 import FrierenMod.gameHelpers.Status;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
@@ -34,7 +33,7 @@ public class ReceivePlayerStatusAction extends AbstractGameAction {
         p.reorganizeRelics();
         p.updatePowers();
         for(AbstractPotion potion: status.potions){
-            this.addToBot(new ObtainPotionAction(potion));
+            AbstractDungeon.player.obtainPotion(potion);
         }
         this.isDone = true;
     }
