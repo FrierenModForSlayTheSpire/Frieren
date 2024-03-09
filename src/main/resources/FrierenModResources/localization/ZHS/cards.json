@@ -458,5 +458,13 @@
   "FrierenMod:RingletForm": {
     "NAME": "卷发形态",
     "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
+  },
+  "FrierenMod:Himmel": {
+    "NAME": "辛美尔",
+    "DESCRIPTION": "芙莉莲... NL  虚无 "
+  },
+  "FrierenMod:Repent": {
+    "NAME": "后悔莫及",
+    "DESCRIPTION": " 保留 。 NL 选择弃牌堆的两张牌放入你的手牌，它们在本回合的耗能变为0。 NL 消耗 。"
   }
 }

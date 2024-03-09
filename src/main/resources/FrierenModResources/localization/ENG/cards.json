@@ -458,5 +458,13 @@
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",
     "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block."
+  },
+  "FrierenMod:Himmel": {
+    "NAME": "Himmel",
+    "DESCRIPTION": "Frieren... NL Ethereal "
+  },
+  "FrierenMod:Repent": {
+    "NAME": "Too Late to Repent",
+    "DESCRIPTION": "Retain. NL Choose !M! cards in your discard pile and return them to your hand. They cost 0 this turn. NL Exhaust."
   }
 }

@@ -54,5 +54,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, shuffle #b1 #rLaziness into your draw pile and discard pile."
     ]
+  },
+  "FrierenMod:MirroredLotusRing": {
+    "NAME": "Mirrored-Lotus Ring",
+    "FLAVOR": "The ring Himmel put on Frieren which is casually chosen by her, after Himmel's death did she realize that the language of mirrored-lotus is Eternal Love.",
+    "DESCRIPTIONS": [
+      "At the start of turn #b7 , add a #yHimmel to your hand."
+    ]
   }
 }
