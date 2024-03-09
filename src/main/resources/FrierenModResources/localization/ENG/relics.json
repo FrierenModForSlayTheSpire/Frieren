@@ -68,5 +68,12 @@
     "DESCRIPTIONS": [
       "At the start of your turn, draw #b1 additional card, until you lose HP during this combat."
     ]
+  },
+  "FrierenMod:StatueOfHimmel": {
+    "NAME": "Statue Of Himmel",
+    "FLAVOR": "Himmel built his statue in various places to make the world and Frieren remember him. His statues are still cherished by people, even after a hundred years.",
+    "DESCRIPTIONS": [
+      "At the start of your first #b3 turn, gain #b1 #yArtifact if you don't have it."
+    ]
   }
 }
