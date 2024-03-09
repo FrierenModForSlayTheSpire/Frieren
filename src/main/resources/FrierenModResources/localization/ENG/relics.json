@@ -61,5 +61,12 @@
     "DESCRIPTIONS": [
       "At the start of turn #b7 , add a #yHimmel to your hand."
     ]
+  },
+  "FrierenMod:ImmovableCloak": {
+    "NAME": "Immovable Cloak",
+    "FLAVOR": "Worn by First-class Mage Burg, a specialist in defensive magic, the defense techniques layered on it were so powerful that ordinary students can't even make him move.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b1 additional card, until you lose HP during this combat."
+    ]
   }
 }
