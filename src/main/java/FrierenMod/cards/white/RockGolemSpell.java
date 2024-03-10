@@ -21,7 +21,7 @@ public class RockGolemSpell extends AbstractFrierenCard {
     private int currentInLevelProgressNumber;
     private static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
     public RockGolemSpell() {
-        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
+        super(ID, -2, CardRarity.UNCOMMON);
         this.block = this.baseBlock = 5;
         this.damage = this.baseDamage = 6;
         this.initTask();
