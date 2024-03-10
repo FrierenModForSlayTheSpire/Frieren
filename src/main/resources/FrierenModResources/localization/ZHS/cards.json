@@ -465,5 +465,14 @@
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "诱敌深入",
     "DESCRIPTION": "咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
+  },
+  "FrierenMod:ManaCollapse": {
+    "NAME": "离别的馈赠",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将 !M! 张 *魔力 放入手中。 NL 将这张牌放入你的抽牌堆。"
+  },
+  "FrierenMod:Elegance": {
+    "NAME": "英姿",
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加3，如果 斩杀 的是精英或boss，抽牌数永久性增加1。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加3，如果 斩杀 的是精英或boss，抽牌数永久性增加1。"
   }
 }
