@@ -458,5 +458,9 @@
   "FrierenMod:RingletForm": {
     "NAME": "卷发形态",
     "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
+  },
+  "FrierenMod:RockGolemSpell": {
+    "NAME": "操纵石像的魔法",
+    "DESCRIPTION": "解析10： frierenmod:同调 2张魔力 NL *奖励：随机造成 !D! 点伤害，切换至防御形态。NL (当前进度0/2)。"
   }
 }

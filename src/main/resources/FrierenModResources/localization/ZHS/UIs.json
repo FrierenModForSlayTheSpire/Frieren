@@ -112,6 +112,13 @@
       "打出3张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
     ]
   },
+  "FrierenMod:RockGolemSpellMod": {
+    "TEXT": [
+      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
+      " frierenmod:同调 2张 *魔力 。 NL "," 随机造成 !D! 点伤害，切换至防御形态。 NL ",
+      " 打出1张 frierenmod:咏唱 牌 。 NL "," !B! 点 格挡 ，切换至攻击形态。 NL "
+    ]
+  },
   "FrierenMod:ManaMod": {
     "TEXT": [
       " frierenmod:同调 。",

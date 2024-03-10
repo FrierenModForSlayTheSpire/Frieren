@@ -458,5 +458,9 @@
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",
     "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block."
+  },
+  "FrierenMod:RockGolemSpell": {
+    "NAME": "操纵石像的魔法",
+    "DESCRIPTION": "解析10： frierenmod:同调 2张魔力 NL *奖励：随机造成 !D! 点伤害，切换至防御形态。NL (当前进度0/2)。"
   }
 }
