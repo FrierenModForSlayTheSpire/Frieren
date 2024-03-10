@@ -94,5 +94,11 @@
     "DESCRIPTIONS": [
       "你每 #y同调 一张 #y魔力，获得 #b%d 点 #y格挡 。"
     ]
+  },
+  "FrierenMod:SealPower": {
+    "NAME": "封印",
+    "DESCRIPTIONS": [
+      "一回合内打出%d张 #y咏唱 牌后将 #y地狱业火魔法 加入你的手牌。"
+    ]
   }
 }

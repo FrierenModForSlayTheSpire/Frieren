@@ -68,5 +68,12 @@
       "Slow","slow"
     ],
     "DESCRIPTION": "Whenever you play a card, receives 10% more damage from Attacks this turn."
+  },
+  {
+    "PROPER_NAME":"封印",
+    "NAMES": [
+      "封印"
+    ],
+    "DESCRIPTION": "战斗开始时此牌位于所有牌堆之外，一回合内打出5张咏唱牌后加入你的手牌。"
   }
 ]

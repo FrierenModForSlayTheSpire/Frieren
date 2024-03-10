@@ -16,13 +16,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
     public static boolean cannotPlayLegendMagic(){
-
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
-                return false;
-            }
-        }
-        return true;
+        return getChantCardUsedThisTurn() > 0;
     }
     public static int getExhaustedMagicPowerNumber(){
         int counts = 0;
@@ -54,5 +48,14 @@ public class LegendMagicHelper {
         else {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
         }
+    }
+    public static int getChantCardUsedThisTurn(){
+        int amounts = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
+                amounts++;
+            }
+        }
+        return amounts;
     }
 }

@@ -166,10 +166,9 @@
     "NAME": "追忆",
     "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌，并将其 保留 。 NL 消耗 。"
   },
-  "FrierenMod:DiYuMoFa": {
+  "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。本回合你每打出一次 *魔力 ，耗能-1。"
+    "DESCRIPTION": " frierenmod:封印 。 NL 造成 !D! 点伤害X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",

@@ -122,4 +122,5 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return LegendMagicHelper.canLegendMagicUse(this,m);
     }
     public void triggerExhaustedCardsOnChant(){}
+    public void atBattleStart(){}
 }

@@ -168,10 +168,9 @@
     "DESCRIPTION": "put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
   },
-  "FrierenMod:DiYuMoFa": {
-    "NAME": "地狱业火Magic",
-    "DESCRIPTION": "Deal !D! damage.本回合你每打出一次 *Mana ,耗能-1.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage.本回合你每打出一次 *Mana ,耗能-1."
+  "FrierenMod:HellFireSummoning": {
+    "NAME": "地狱业火魔法",
+    "DESCRIPTION": " frierenmod:封印 。 NL 造成 !D! 点伤害X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Anti-Corrosion Spell",
