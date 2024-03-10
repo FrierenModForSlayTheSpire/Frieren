@@ -16,8 +16,14 @@ import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
 public class ChantAction extends AbstractGameAction {
     private final int x;
+    private final boolean giveCard;
     public ChantAction(int x) {
         this.x = x;
+        this.giveCard = false;
+    }
+    public ChantAction(int x, boolean giveCard) {
+        this.x = x;
+        this.giveCard = giveCard;
     }
     @Override
     public void update() {
@@ -31,7 +37,7 @@ public class ChantAction extends AbstractGameAction {
                 stanceChoices.add(c);
             }
             if (ChantHelper.canChantFromHand(this.x)) {
-                ChantHand c = new ChantHand();
+                ChantHand c = new ChantHand(giveCard);
                 c.magicNumber = c.baseMagicNumber = x;
                 stanceChoices.add(c);
             }
@@ -49,7 +55,7 @@ public class ChantAction extends AbstractGameAction {
             c1.upgrade();
             c1.upgraded = true;
             c1.applyPowers();
-            ChantHand c2 = new ChantHand();
+            ChantHand c2 = new ChantHand(giveCard);
             c2.magicNumber = c2.baseMagicNumber = x;
             c2.upgrade();
             c2.upgraded = true;

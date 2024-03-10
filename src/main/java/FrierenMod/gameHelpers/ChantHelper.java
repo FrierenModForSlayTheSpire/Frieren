@@ -75,6 +75,7 @@ public class ChantHelper {
         pool.add(new FinalChant());
         pool.add(new PreciseChant());
         pool.add(new TrueColours());
+        pool.add(new LureTheEnemyInDeep());
         return pool;
     }
     public static AbstractCard getRandomCard(){

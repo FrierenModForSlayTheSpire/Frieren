@@ -461,5 +461,9 @@
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",
     "DESCRIPTION": "解析10： frierenmod:同调 2张魔力 NL *奖励：随机造成 !D! 点伤害，切换至防御形态。NL (当前进度0/2)。"
+  },
+  "FrierenMod:LureTheEnemyInDeep": {
+    "NAME": "诱敌深入",
+    "DESCRIPTION": "咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
   }
 }
