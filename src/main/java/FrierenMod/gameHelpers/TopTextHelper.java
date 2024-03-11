@@ -1,5 +1,6 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.cards.white.HellFireSummoning;
 import FrierenMod.cards.white.OrdinaryOffensiveMagic;
 import FrierenMod.cards.white.LightningMagic;
 
@@ -11,6 +12,7 @@ public class TopTextHelper {
         Map<String,String> map = new HashMap<>();
         map.put(OrdinaryOffensiveMagic.ID,"Zoltraak");
         map.put(LightningMagic.ID,"Jutragerme");
+        map.put(HellFireSummoning.ID,"Volzanbell");
         return map;
     }
     public static String getTopTextById(String id){
