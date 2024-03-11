@@ -5,6 +5,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Elegance extends AbstractFrierenCard {
@@ -23,6 +24,8 @@ public class Elegance extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.exhaust = false;
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
     @Override

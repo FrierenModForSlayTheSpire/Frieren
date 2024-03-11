@@ -34,7 +34,7 @@ public class EleganceAction extends AbstractGameAction {
                 this.addToBot(new DrawCardAction(c.magicNumber));
             if ((((AbstractMonster)this.target).isDying || this.target.currentHealth <= 0) && !this.target.halfDead &&
                     !this.target.hasPower("Minion")) {
-                this.addToBot(new IncreaseEleganceMiscAction(c.uuid,c.misc,3));
+                this.addToBot(new IncreaseEleganceMiscAction(c.uuid,c.misc,2));
                 if(((AbstractMonster) this.target).type == AbstractMonster.EnemyType.ELITE || ((AbstractMonster) this.target).type == AbstractMonster.EnemyType.BOSS)
                     this.addToBot(new IncreaseEleganceSecondMiscAction(c.uuid,c.secondMisc,1));
             }

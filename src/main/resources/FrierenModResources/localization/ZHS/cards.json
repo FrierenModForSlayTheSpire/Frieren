@@ -460,11 +460,11 @@
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",
-    "DESCRIPTION": "解析10： frierenmod:同调 2张魔力 NL *奖励：随机造成 !D! 点伤害，切换至防御形态。NL (当前进度0/2)。"
+    "DESCRIPTION": " frierenmod:解析 10： frierenmod:同调 2张魔力 NL *奖励： 随机造成 !D! 点伤害，切换至防御形态。 NL (当前进度0/2)。"
   },
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "诱敌深入",
-    "DESCRIPTION": "咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "离别的馈赠",
@@ -472,8 +472,8 @@
   },
   "FrierenMod:Elegance": {
     "NAME": "英姿",
-    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加3，如果 斩杀 的是精英或boss，抽牌数永久性增加1。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加3，如果 斩杀 的是精英或boss，抽牌数永久性增加1。"
+    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加2，如果 斩杀 的是精英或boss，抽牌数永久性增加1。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加2，如果 斩杀 的是精英或boss，抽牌数永久性增加1。"
   },
   "FrierenMod:Confrontation": {
     "NAME": "对峙",
