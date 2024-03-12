@@ -168,10 +168,6 @@
     "DESCRIPTION": "put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
   },
-  "FrierenMod:HellFireSummoning": {
-    "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 NL 造成 !D! 点伤害X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
-  },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Anti-Corrosion Spell",
     "DESCRIPTION": "frierenmod:Chant !CX!. NL Remove all Block from the enemy. If the Block amount is more than !M!, gain Metallicize 3."
@@ -457,6 +453,10 @@
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",
     "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block."
+  },
+  "FrierenMod:HellFireSummoning": {
+    "NAME": "地狱业火魔法",
+    "DESCRIPTION": " frierenmod:封印 。 NL frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",

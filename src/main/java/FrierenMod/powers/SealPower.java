@@ -1,24 +1,31 @@
 package FrierenMod.powers;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.white.HellFireSummoning;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+
+import java.util.ArrayList;
 
 public class SealPower extends AbstractFrierenPower {
     public static final String POWER_ID = ModInformation.makeID(SealPower.class.getSimpleName());
-    public SealPower(AbstractCreature owner, int amount) {
-        super(POWER_ID, owner, amount, PowerType.BUFF);
+    public final ArrayList<AbstractCard> cardsToSeal;
+    public SealPower(AbstractCreature owner, ArrayList<AbstractCard> cardsToSeal) {
+        super(POWER_ID, owner, PowerType.BUFF);
+        this.cardsToSeal = cardsToSeal;
         this.updateDescription();
     }
     public void updateDescription() {
-        this.description = String.format(descriptions[0], 5 - LegendMagicHelper.getChantCardUsedThisTurn());
+        int cardsAmt;
+        try {
+            cardsAmt = cardsToSeal.size();
+        }catch (NullPointerException e){
+            cardsAmt = 0;
+        }
+        this.description = String.format(descriptions[0], 5 - LegendMagicHelper.getChantCardUsedThisTurn(),cardsAmt);
     }
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
@@ -26,12 +33,19 @@ public class SealPower extends AbstractFrierenPower {
             this.flash();
             this.updateDescription();
             if(LegendMagicHelper.getChantCardUsedThisTurn() >= 5){
-                for (int i = 0; i < this.amount; i++) {
-                    this.addToBot(new MakeTempCardInHandAction(new HellFireSummoning()));
-                    AbstractPlayer p = AbstractDungeon.player;
+                for(AbstractCard c:this.cardsToSeal){
+                    this.addToBot(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
                 }
                 this.addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
             }
         }
+    }
+    @Override
+    public void onDrawOrDiscard() {
+        this.updateDescription();
+    }
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        this.updateDescription();
     }
 }
