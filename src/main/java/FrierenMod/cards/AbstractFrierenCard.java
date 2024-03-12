@@ -5,6 +5,7 @@ import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,6 +18,8 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isLimitedOverMana;
     public boolean isAccelMana;
     public boolean isLegendaryMagic;
+    public boolean isBackFireCard;
+    public boolean isSealCard;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -76,6 +79,8 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isAccelMana = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
+        this.isBackFireCard = false;
+        this.isSealCard = false;
     }
     public void upgradeChantX(int amount){
         this.baseChantX += amount;
@@ -97,6 +102,50 @@ public abstract class AbstractFrierenCard extends CustomCard {
             this.secondMagicNumber = this.baseSecondMagicNumber;
             this.isSecondMagicNumberModified = true;
         }
+    }
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard card = this.makeCopy();
+        for(int i = 0; i < this.timesUpgraded; ++i) {
+            card.upgrade();
+        }
+        card.name = this.name;
+        card.target = this.target;
+        card.upgraded = this.upgraded;
+        card.timesUpgraded = this.timesUpgraded;
+        card.baseDamage = this.baseDamage;
+        card.baseBlock = this.baseBlock;
+        card.baseMagicNumber = this.baseMagicNumber;
+        card.cost = this.cost;
+        card.costForTurn = this.costForTurn;
+        card.isCostModified = this.isCostModified;
+        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
+        card.inBottleLightning = this.inBottleLightning;
+        card.inBottleFlame = this.inBottleFlame;
+        card.inBottleTornado = this.inBottleTornado;
+        card.isSeen = this.isSeen;
+        card.isLocked = this.isLocked;
+        card.misc = this.misc;
+        card.freeToPlayOnce = this.freeToPlayOnce;
+        if(card instanceof AbstractFrierenCard){
+            ((AbstractFrierenCard) card).isChantCard = this.isChantCard;
+            ((AbstractFrierenCard) card).isMana = this.isMana;
+            ((AbstractFrierenCard) card).isLimitedOverMana = this.isLimitedOverMana;
+            ((AbstractFrierenCard) card).isAccelMana = this.isAccelMana;
+            ((AbstractFrierenCard) card).isLegendaryMagic = this.isLegendaryMagic;
+            ((AbstractFrierenCard) card).isBackFireCard = this.isBackFireCard;
+            ((AbstractFrierenCard) card).isSealCard = this.isSealCard;
+            ((AbstractFrierenCard) card).baseChantX = this.baseChantX;
+            ((AbstractFrierenCard) card).chantX = this.chantX;
+            ((AbstractFrierenCard) card).isChantXModified = this.isChantXModified;
+            ((AbstractFrierenCard) card).upgradedChantX = this.upgradedChantX;
+            ((AbstractFrierenCard) card).secondMagicNumber = this.secondMagicNumber;
+            ((AbstractFrierenCard) card).baseSecondMagicNumber = this.baseSecondMagicNumber;
+            ((AbstractFrierenCard) card).secondMisc = this.secondMisc;
+            ((AbstractFrierenCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
+            ((AbstractFrierenCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
+        }
+        return card;
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
@@ -123,5 +172,4 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return LegendMagicHelper.canLegendMagicUse(this,m);
     }
     public void triggerExhaustedCardsOnChant(){}
-    public void atBattleStart(){}
 }

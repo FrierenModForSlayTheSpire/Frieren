@@ -6,12 +6,12 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class FastMoveSpecificCardToExhaustAction extends AbstractGameAction {
+public class DestroySpecifiedCardAction extends AbstractGameAction {
     private final AbstractCard targetCard;
     private final CardGroup group;
     private final float startingDuration;
 
-    public FastMoveSpecificCardToExhaustAction(AbstractCard targetCard, CardGroup group) {
+    public DestroySpecifiedCardAction(AbstractCard targetCard, CardGroup group) {
         this.targetCard = targetCard;
         this.setValues(AbstractDungeon.player, AbstractDungeon.player, this.amount);
         this.group = group;
@@ -20,15 +20,11 @@ public class FastMoveSpecificCardToExhaustAction extends AbstractGameAction {
     }
     public void update() {
         if (this.duration == this.startingDuration && this.group.contains(this.targetCard)) {
-            this.moveToExhaustPile(this.targetCard);
+            this.resetCardBeforeMoving(this.targetCard);
             this.targetCard.exhaustOnUseOnce = false;
             this.targetCard.freeToPlayOnce = false;
         }
         this.tickDuration();
-    }
-    public void moveToExhaustPile(AbstractCard c) {
-        this.resetCardBeforeMoving(c);
-        AbstractDungeon.player.exhaustPile.addToTop(c);
     }
     private void resetCardBeforeMoving(AbstractCard c) {
         if (AbstractDungeon.player.hoveredCard == c) {

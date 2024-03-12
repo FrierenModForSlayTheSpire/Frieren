@@ -166,10 +166,6 @@
     "NAME": "追忆",
     "DESCRIPTION": "将消耗牌堆中的 !M! 张牌放入你的手牌，并将其 保留 。 NL 消耗 。"
   },
-  "FrierenMod:HellFireSummoning": {
-    "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 NL 造成 !D! 点伤害X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
-  },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
     "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。"
@@ -457,6 +453,10 @@
   "FrierenMod:RingletForm": {
     "NAME": "卷发形态",
     "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
+  },
+  "FrierenMod:HellFireSummoning": {
+    "NAME": "地狱业火魔法",
+    "DESCRIPTION": " frierenmod:封印 。 NL frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",

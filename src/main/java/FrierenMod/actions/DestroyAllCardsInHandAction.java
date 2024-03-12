@@ -11,7 +11,7 @@ public class DestroyAllCardsInHandAction extends AbstractGameAction{
             CardGroup hand = AbstractDungeon.player.hand;
             for (int i = 0; i < hand.size(); i++) {
                 AbstractCard card = hand.group.get(i);
-                this.addToTop(new FastMoveSpecificCardToExhaustAction(card,hand));
+                this.addToTop(new DestroySpecifiedCardAction(card,hand));
             }
             this.isDone = true;
         }

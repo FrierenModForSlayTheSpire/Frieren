@@ -11,7 +11,7 @@ public class DestroyAllCardsInDiscardPileAction extends AbstractGameAction {
             CardGroup discardPile = AbstractDungeon.player.discardPile;
             for (int i = 0; i < discardPile.size(); i++) {
                 AbstractCard card = discardPile.group.get(i);
-                this.addToTop(new FastMoveSpecificCardToExhaustAction(card,discardPile));
+                this.addToTop(new DestroySpecifiedCardAction(card,discardPile));
             }
             this.isDone = true;
         }

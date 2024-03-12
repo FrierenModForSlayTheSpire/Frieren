@@ -11,7 +11,7 @@ public class DestroyAllCardsInDrawPileAction extends AbstractGameAction {
             CardGroup drawPile = AbstractDungeon.player.drawPile;
             for (int i = 0; i < drawPile.size(); i++) {
                 AbstractCard card = drawPile.group.get(i);
-                this.addToTop(new FastMoveSpecificCardToExhaustAction(card,drawPile));
+                this.addToTop(new DestroySpecifiedCardAction(card,drawPile));
             }
             this.isDone = true;
         }

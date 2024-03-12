@@ -22,9 +22,6 @@ public class ReceivePlayerStatusAction extends AbstractGameAction {
         p.relics.addAll(status.relics);
         p.powers.clear();
         p.powers.addAll(status.powers);
-        for (int i = 0; i < p.powers.size(); i++) {
-            p.powers.get(i).amount = status.powerAmt.get(i);
-        }
         for(AbstractPotion potion:p.potions){
             p.removePotion(potion);
         }
@@ -35,6 +32,7 @@ public class ReceivePlayerStatusAction extends AbstractGameAction {
         for(AbstractPotion potion: status.potions){
             AbstractDungeon.player.obtainPotion(potion);
         }
+        AbstractDungeon.actionManager.cardsPlayedThisTurn.addAll(status.cardsPlayedThisTurn);
         this.isDone = true;
     }
 }

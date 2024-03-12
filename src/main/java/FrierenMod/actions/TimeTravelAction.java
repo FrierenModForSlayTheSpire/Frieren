@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import FrierenMod.gameHelpers.ObjectCloner;
 import FrierenMod.gameHelpers.Status;
 import FrierenMod.powers.TimeTravelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -19,11 +20,11 @@ public class TimeTravelAction extends AbstractGameAction {
     private final ArrayList<AbstractPotion> potions = new ArrayList<>();
     private final ArrayList<AbstractRelic> relics = new ArrayList<>();
     private final ArrayList<AbstractPower> powers = new ArrayList<>();
-    private final ArrayList<Integer> powerAmt = new ArrayList<>();
     private final ArrayList<AbstractCard> drawPile = new ArrayList<>();
     private final ArrayList<AbstractCard> hand = new ArrayList<>();
     private final ArrayList<AbstractCard> discardPile = new ArrayList<>();
     private final ArrayList<AbstractCard> exhaustPile = new ArrayList<>();
+    private final ArrayList<AbstractCard> cardsPlayedThisTurn = new ArrayList<>();
     private boolean isChanged = false;
     public TimeTravelAction(AbstractCard excludeCard, boolean isChanged){
         this.excludeCard = excludeCard;
@@ -35,7 +36,7 @@ public class TimeTravelAction extends AbstractGameAction {
         int block = AbstractDungeon.player.currentBlock;
         int energy = EnergyPanel.totalCount;
         int maxEnergy = AbstractDungeon.player.maxOrbs;
-        status = new Status(hp, maxHp, gold,potions,relics, block,powers,powerAmt, energy, maxEnergy,drawPile,hand,discardPile,exhaustPile);
+        status = new Status(hp, maxHp, gold, potions, relics, block, powers, energy, maxEnergy, drawPile, hand, discardPile, exhaustPile, cardsPlayedThisTurn);
     }
     @Override
     public void update() {
@@ -50,13 +51,13 @@ public class TimeTravelAction extends AbstractGameAction {
             relics.add(tmpRelic);
         }
         for(AbstractPower power:AbstractDungeon.player.powers){
-            powers.add(power);
-            powerAmt.add(power.amount);
+            powers.add(ObjectCloner.copyObject(power));
         }
         drawPile.addAll(AbstractDungeon.player.drawPile.group);
         hand.addAll(AbstractDungeon.player.hand.group);
         hand.remove(excludeCard);
         discardPile.addAll(AbstractDungeon.player.discardPile.group);
         exhaustPile.addAll(AbstractDungeon.player.exhaustPile.group);
+        cardsPlayedThisTurn.addAll(AbstractDungeon.actionManager.cardsPlayedThisTurn);
     }
 }
