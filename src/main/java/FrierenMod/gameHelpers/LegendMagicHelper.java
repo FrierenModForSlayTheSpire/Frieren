@@ -16,7 +16,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class LegendMagicHelper {
     public static boolean cannotPlayLegendMagic(){
-        return getChantCardUsedThisTurn() > 0;
+        return getChantCardUsedThisTurn() == 0;
     }
     public static int getExhaustedMagicPowerNumber(){
         int counts = 0;
