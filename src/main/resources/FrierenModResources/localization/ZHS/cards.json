@@ -464,7 +464,7 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 NL frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
+    "DESCRIPTION": " frierenmod:封印 。frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",

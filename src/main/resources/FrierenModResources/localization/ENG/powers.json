@@ -96,9 +96,9 @@
     ]
   },
   "FrierenMod:SealPower": {
-    "NAME": "封印",
+    "NAME": "Seal",
     "DESCRIPTIONS": [
-      "一回合内打出 #b%d 张 #y咏唱 牌后将 #b%d 张 #y地狱业火魔法 加入你的手牌。"
+      "Play #b%d #yChant cards in one turn to break the seal and add #b%d #yHellFireSummoning into your hand."
     ]
   }
 }
