@@ -29,7 +29,7 @@ public class RockGolemSpellMod extends AbstractCardModifier {
             if(this.currentLevel % 2 == 0){
                 ((RockGolemSpell)card).loadCardImage(ModInformation.makeCardImgPath("RockGolemSpell"));
             }else {
-                ((RockGolemSpell)card).loadCardImage(ModInformation.makeCardImgPath("RockGolemSpell2"));
+                ((RockGolemSpell)card).loadCardImage(ModInformation.makeCardImgPath("RockGolemSpell1"));
             }
         }
     }

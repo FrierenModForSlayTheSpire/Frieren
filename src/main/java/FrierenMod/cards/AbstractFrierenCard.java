@@ -5,9 +5,12 @@ import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
@@ -29,6 +32,10 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public int secondMisc = 0;
     public boolean isSecondMagicNumberModified;
     public boolean upgradedSecondMagicNumber;
+    public int currentLevel = -1;
+    public int currentLevelRequiredNumber = -1;
+    public int currentInLevelProgressNumber = -1;
+    public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
     public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         initSwitches();
@@ -144,6 +151,9 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).secondMisc = this.secondMisc;
             ((AbstractFrierenCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
             ((AbstractFrierenCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
+            ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
+            ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
+            ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
         }
         return card;
     }
@@ -172,4 +182,24 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return LegendMagicHelper.canLegendMagicUse(this,m);
     }
     public void triggerExhaustedCardsOnChant(){}
+    public void taskProgressIncrease(){
+        this.flash(FLASH_COLOR);
+        currentInLevelProgressNumber++;
+        this.updateDescriptionAndCardImg();
+    }
+    public void updateDescriptionAndCardImg(){}
+    public void continueToNextLevel(int currentLevelRequiredNumber){
+        this.superFlash();
+        this.currentLevel--;
+        this.currentInLevelProgressNumber = 0;
+        this.currentLevelRequiredNumber = currentLevelRequiredNumber;
+        this.updateDescriptionAndCardImg();
+    }
+    public void initTask(){}
+    public void endTask(){
+        this.superFlash();
+        this.initTask();
+        this.initializeDescription();
+        this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    }
 }
