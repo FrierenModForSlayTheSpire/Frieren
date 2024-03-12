@@ -133,8 +133,8 @@
   },
   "FrierenMod:ApexMagic": {
     "NAME": "视觉攻击魔法",
-    "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 6 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。"
+    "DESCRIPTION": "如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 4 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 如果你的手牌、抽牌堆、弃牌堆各自的 *魔力 数量都为 4 ， 对所有敌人造成999点伤害。 否则抽 !M! 张牌。"
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "翻薄饼时会很顺利的魔法",
@@ -142,7 +142,7 @@
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",
-    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有 *魔力 ，多抽2张。"
+    "DESCRIPTION": "抽 !M! 张牌, 如果李的手牌中没有 *魔力 ，多抽1张。"
   },
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "多重攻击魔法",
@@ -215,7 +215,7 @@
   "FrierenMod:FiveMinutesMore": {
     "NAME": "再睡五分钟",
     "DESCRIPTION": "获得 [E] [E] ，将一张 *懒懒散散 放入手牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] ，将一张 *懒懒散散 放入手牌。"
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] ，将一张 *懒懒散散 放入手牌。"
   },
   "FrierenMod:CustomLegendaryMagic": {
     "NAME": "自定义魔法",
@@ -453,6 +453,14 @@
   "FrierenMod:RingletForm": {
     "NAME": "卷发形态",
     "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
+  },
+  "FrierenMod:Himmel": {
+    "NAME": "辛美尔",
+    "DESCRIPTION": "芙莉莲... NL  虚无 "
+  },
+  "FrierenMod:Repent": {
+    "NAME": "后悔莫及",
+    "DESCRIPTION": " 保留 。 NL 选择弃牌堆的两张牌放入你的手牌，它们在本回合的耗能变为0。 NL 消耗 。"
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",

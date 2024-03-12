@@ -19,7 +19,7 @@ public class TongueTwisterSpell extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(1);
         }
     }
     @Override
@@ -28,7 +28,7 @@ public class TongueTwisterSpell extends AbstractFrierenCard {
             this.addToBot(new DrawCardAction(p, this.magicNumber));
         }
         else {
-            this.addToBot(new DrawCardAction(p, this.magicNumber + 2));
+            this.addToBot(new DrawCardAction(p, this.magicNumber + 1));
         }
     }
 }
