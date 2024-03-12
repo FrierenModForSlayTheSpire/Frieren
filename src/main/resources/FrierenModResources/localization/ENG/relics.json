@@ -54,5 +54,26 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of combat, shuffle #b1 #rLaziness into your draw pile and discard pile."
     ]
+  },
+  "FrierenMod:MirroredLotusRing": {
+    "NAME": "Mirrored-Lotus Ring",
+    "FLAVOR": "The ring Himmel put on Frieren which is casually chosen by her, after Himmel's death did she realize that the language of mirrored-lotus is Eternal Love.",
+    "DESCRIPTIONS": [
+      "At the start of turn #b7 , add a #yHimmel to your hand."
+    ]
+  },
+  "FrierenMod:ImmovableCloak": {
+    "NAME": "Immovable Cloak",
+    "FLAVOR": "Worn by First-class Mage Burg, a specialist in defensive magic, the defense techniques layered on it were so powerful that ordinary students can't even make him move.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b1 additional card, until you lose HP during this combat."
+    ]
+  },
+  "FrierenMod:StatueOfHimmel": {
+    "NAME": "Statue Of Himmel",
+    "FLAVOR": "Himmel built his statue in various places to make the world and Frieren remember him. His statues are still cherished by people, even after a hundred years.",
+    "DESCRIPTIONS": [
+      "At the start of your first #b3 turn, gain #b1 #yArtifact if you don't have it."
+    ]
   }
 }

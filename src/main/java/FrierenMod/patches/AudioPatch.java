@@ -14,6 +14,7 @@ public class AudioPatch {
             AudioPatch.load(instance, ___map, "kiss.mp3");
             AudioPatch.load(instance, ___map, "normal_attack.mp3");
             AudioPatch.load(instance, ___map, "win.mp3");
+            AudioPatch.load(instance, ___map, "Himmel.mp3");
         }
     }
 
