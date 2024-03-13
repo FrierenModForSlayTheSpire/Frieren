@@ -5,6 +5,7 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
+import FrierenMod.gameHelpers.OnStartBattleHelper;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
@@ -65,7 +66,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
         BaseMod.subscribe(new OnPlayerTurnStartHelper());
-//        BaseMod.subscribe(new OnStartBattleHelper());
+        BaseMod.subscribe(new OnStartBattleHelper());
         Log.logger.info("Done adding hooks");
     }
 
