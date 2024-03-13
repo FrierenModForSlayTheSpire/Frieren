@@ -20,18 +20,21 @@ public class SealCardsAction extends AbstractGameAction {
         ArrayList<CardGroup> groups = initManipulateCardGroups();
         ArrayList<AbstractCard> sealCards = new ArrayList<>();
         for(CardGroup group:groups){
-            this.StoreSealCardsInCardGroup(sealCards,group);
+            this.storeSealCardsInCardGroup(sealCards,group);
         }
-        for(AbstractCard c:sealCards){
-            for(CardGroup group:groups){
-                this.addToBot(new DestroySpecifiedCardAction(c,group));
+        if(!sealCards.isEmpty()){
+            for(AbstractCard c:sealCards){
+                for(CardGroup group:groups){
+                    this.addToBot(new DestroySpecifiedCardAction(c,group));
+                }
             }
+            this.addToBot(new ApplyPowerAction(p,p,new SealPower(p,sealCards),1));
+            if(drawAmt > 0)
+                this.addToBot(new DrawCardAction(this.drawAmt));
         }
-        this.addToBot(new ApplyPowerAction(p,p,new SealPower(p,sealCards),1));
-        this.addToBot(new DrawCardAction(this.drawAmt));
         this.isDone = true;
     }
-    private void StoreSealCardsInCardGroup(ArrayList<AbstractCard> sealCards, CardGroup cardGroup){
+    private void storeSealCardsInCardGroup(ArrayList<AbstractCard> sealCards, CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
             if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isSealCard){
                 sealCards.add(c);

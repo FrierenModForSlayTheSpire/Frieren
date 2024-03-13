@@ -1,5 +1,6 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,13 +9,17 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class OnPlayerTurnStartHelper implements OnPlayerTurnStartSubscriber {
+    private int turnCounts = 1;
     @Override
     public void receiveOnPlayerTurnStart() {
+        if(turnCounts == 1)
+            AbstractDungeon.actionManager.addToBottom(new SealCardsAction());
         try {
             ResetBackFireCardCost();
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+        turnCounts++;
     }
     private void ResetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
         AbstractPlayer p = AbstractDungeon.player;
