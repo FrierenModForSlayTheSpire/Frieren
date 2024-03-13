@@ -16,6 +16,7 @@ public class OpenTheWaygate extends AbstractFrierenCard {
         this.magicNumber = this.baseMagicNumber = 7;
         this.secondMagicNumber = this.baseSecondMagicNumber = 0;
         this.selfRetain =true;
+        this.isTaskCard = true;
     }
     @Override
     public void upgrade() {

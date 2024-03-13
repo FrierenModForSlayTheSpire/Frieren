@@ -24,6 +24,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
         this.damage = this.baseDamage = 40;
         this.initTask();
         this.selfRetain = true;
+        this.isTaskCard = true;
     }
     @Override
     public void upgrade() {

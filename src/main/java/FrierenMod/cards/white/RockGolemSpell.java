@@ -20,6 +20,7 @@ public class RockGolemSpell extends AbstractFrierenCard {
         this.damage = this.baseDamage = 6;
         this.initTask();
         this.selfRetain = true;
+        this.isTaskCard = true;
     }
     @Override
     public void upgrade() {

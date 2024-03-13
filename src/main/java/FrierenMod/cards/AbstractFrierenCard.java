@@ -23,6 +23,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isLegendaryMagic;
     public boolean isBackFireCard;
     public boolean isSealCard;
+    public boolean isTaskCard;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -88,6 +89,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.upgradedSecondMagicNumber = false;
         this.isBackFireCard = false;
         this.isSealCard = false;
+        this.isTaskCard = false;
     }
     public void upgradeChantX(int amount){
         this.baseChantX += amount;
@@ -154,6 +156,8 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
             ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
             ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
+            if(this.isTaskCard)
+                ((AbstractFrierenCard) card).updateDescriptionAndCardImg();
         }
         return card;
     }
