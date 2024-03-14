@@ -3,7 +3,9 @@ package FrierenMod.cards.white;
 import FrierenMod.actions.ApexMagicAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -27,5 +29,12 @@ public class ApexMagic extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApexMagicAction(this.magicNumber));
+    }
+    public void triggerOnGlowCheck() {
+        if(ChantHelper.getMagicPowerNumInDrawPile() == 4 && ChantHelper.getMagicPowerNumInHand() == 4 && ChantHelper.getMagicPowerNumInDiscardPile() == 4)
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        else {
+            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        }
     }
 }
