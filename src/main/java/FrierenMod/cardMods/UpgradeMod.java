@@ -1,6 +1,7 @@
 package FrierenMod.cardMods;
 
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -19,6 +20,10 @@ public class UpgradeMod extends AbstractCardModifier {
 
     public UpgradeMod() {
     }
+    public void onInitialApplication(AbstractCard card) {
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0];
+    }
 
     public AbstractCardModifier makeCopy() {
         return new UpgradeMod();
@@ -32,7 +37,7 @@ public class UpgradeMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0];
+//    }
 }

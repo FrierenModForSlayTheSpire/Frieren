@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,6 +21,14 @@ public class SelfRetainMod extends AbstractCardModifier {
     public SelfRetainMod(int selfRetainAmt) {
         this.selfRetainAmt = selfRetainAmt;
     }
+    public void onInitialApplication(AbstractCard card) {
+        if(card instanceof CustomLegendaryMagic){
+            if(this.selfRetainAmt == 1)
+                ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.selfRetainAmt + TEXT[1];
+            else
+                ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.selfRetainAmt + TEXT[2];
+        }
+    }
 
     public AbstractCardModifier makeCopy() {
         return new SelfRetainMod(this.selfRetainAmt);
@@ -33,9 +42,9 @@ public class SelfRetainMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        if(this.selfRetainAmt == 1)
-            return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[1];
-        return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[2];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        if(this.selfRetainAmt == 1)
+//            return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[1];
+//        return rawDescription + TEXT[0] + this.selfRetainAmt + TEXT[2];
+//    }
 }

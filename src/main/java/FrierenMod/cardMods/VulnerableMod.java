@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,6 +22,10 @@ public class VulnerableMod extends AbstractCardModifier {
     public VulnerableMod(int stackAmt) {
         this.stackAmt = stackAmt;
     }
+    public void onInitialApplication(AbstractCard card) {
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.stackAmt + TEXT[1];
+    }
 
     public AbstractCardModifier makeCopy() {
         return new VulnerableMod(this.stackAmt);
@@ -36,7 +41,7 @@ public class VulnerableMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + this.stackAmt + TEXT[1];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0] + this.stackAmt + TEXT[1];
+//    }
 }

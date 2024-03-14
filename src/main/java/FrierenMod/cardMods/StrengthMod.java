@@ -1,4 +1,5 @@
 package FrierenMod.cardMods;
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,6 +27,8 @@ public class StrengthMod extends AbstractCardModifier {
         if(!card.exhaust){
             card.exhaust = true;
         }
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0];
     }
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new LimitBreakAction());
@@ -35,7 +38,7 @@ public class StrengthMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0];
+//    }
 }

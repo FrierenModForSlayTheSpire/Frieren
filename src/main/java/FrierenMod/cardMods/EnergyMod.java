@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -21,6 +22,10 @@ public class EnergyMod extends AbstractCardModifier {
     public EnergyMod(int energyAmt) {
         this.energyAmt = energyAmt;
     }
+    public void onInitialApplication(AbstractCard card) {
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + TEXT[this.energyAmt] + TEXT[4];
+    }
 
     public AbstractCardModifier makeCopy() {
         return new EnergyMod(this.energyAmt);
@@ -34,7 +39,7 @@ public class EnergyMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + TEXT[this.energyAmt] + TEXT[4];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0] + TEXT[this.energyAmt] + TEXT[4];
+//    }
 }

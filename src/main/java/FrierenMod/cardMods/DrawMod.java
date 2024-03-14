@@ -1,4 +1,6 @@
 package FrierenMod.cardMods;
+
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -19,6 +21,12 @@ public class DrawMod extends AbstractCardModifier {
     public DrawMod(int drawAmt) {
         this.drawAmt = drawAmt;
     }
+    public void onInitialApplication(AbstractCard card) {
+        if(this.drawAmt == 1)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
+        else
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
+    }
 
     public AbstractCardModifier makeCopy() {
         return new DrawMod(this.drawAmt);
@@ -32,9 +40,9 @@ public class DrawMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        if (this.drawAmt == 1)
-            return rawDescription + TEXT[0] + this.drawAmt + TEXT[1];
-        return rawDescription + TEXT[0] + this.drawAmt + TEXT[2];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        if (this.drawAmt == 1)
+//            return rawDescription + TEXT[0] + this.drawAmt + TEXT[1];
+//        return rawDescription + TEXT[0] + this.drawAmt + TEXT[2];
+//    }
 }

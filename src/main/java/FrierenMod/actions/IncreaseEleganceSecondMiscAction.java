@@ -23,16 +23,16 @@ public class IncreaseEleganceSecondMiscAction extends AbstractGameAction {
                 if (!c.uuid.equals(this.uuid))
                     continue;
                 ((AbstractFrierenCard) c).secondMisc += this.miscIncrease;
-                c.applyPowers();
-                c.baseMagicNumber = c.misc;
+                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
                 c.isMagicNumberModified = false;
+                c.applyPowers();
             }
         }
         for (AbstractCard c : GetAllInBattleInstances.get(this.uuid)) {
             if(c instanceof AbstractFrierenCard){
                 ((AbstractFrierenCard) c).secondMisc += this.miscIncrease;
+                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
                 c.applyPowers();
-                c.baseMagicNumber = c.misc;
             }
         }
         this.isDone = true;

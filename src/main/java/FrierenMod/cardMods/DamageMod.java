@@ -29,11 +29,13 @@ public class DamageMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
-        card.baseDamage = this.damageAmt;
+        card.damage = card.baseDamage = this.damageAmt;
         card.target = AbstractCard.CardTarget.ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
-        if (card instanceof CustomLegendaryMagic)
+        if (card instanceof CustomLegendaryMagic){
             ((CustomLegendaryMagic)card).loadCardImage("FrierenModResources/img/cards/CustomLegendaryMagic (2).png");
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + "!D!" + TEXT[1];
+        }
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
@@ -44,7 +46,7 @@ public class DamageMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + card.baseDamage + TEXT[1];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0] + card.damage + TEXT[1];
+//    }
 }

@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -16,7 +17,7 @@ public class IntangibleMod extends AbstractCardModifier {
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private int stackAmt;
+    private final int stackAmt;
 
     public IntangibleMod(int stackAmt) {
         this.stackAmt = stackAmt;
@@ -25,6 +26,8 @@ public class IntangibleMod extends AbstractCardModifier {
         if(!card.exhaust){
             card.exhaust = true;
         }
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.stackAmt + TEXT[1];
     }
 
     public AbstractCardModifier makeCopy() {
@@ -39,7 +42,7 @@ public class IntangibleMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + this.stackAmt + TEXT[1];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0] + this.stackAmt + TEXT[1];
+//    }
 }

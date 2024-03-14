@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -28,6 +29,8 @@ public class BlockMod extends AbstractCardModifier {
 
     public void onInitialApplication(AbstractCard card) {
         card.block = card.baseBlock = this.blockAmt;
+        if(card instanceof CustomLegendaryMagic)
+            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + "!B!" + TEXT[1];
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
@@ -38,7 +41,7 @@ public class BlockMod extends AbstractCardModifier {
         return ID;
     }
 
-    public String modifyDescription(String rawDescription, AbstractCard card) {
-        return rawDescription + TEXT[0] + card.block + TEXT[1];
-    }
+//    public String modifyDescription(String rawDescription, AbstractCard card) {
+//        return rawDescription + TEXT[0] + card.block + TEXT[1];
+//    }
 }
