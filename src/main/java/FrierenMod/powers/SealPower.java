@@ -34,7 +34,7 @@ public class SealPower extends AbstractFrierenPower {
             this.updateDescription();
             if(LegendMagicHelper.getChantCardUsedThisTurn() >= 5){
                 for(AbstractCard c:this.cardsToSeal){
-                    this.addToBot(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+                    this.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
                 }
                 this.addToBot(new RemoveSpecificPowerAction(this.owner,this.owner,POWER_ID));
             }
