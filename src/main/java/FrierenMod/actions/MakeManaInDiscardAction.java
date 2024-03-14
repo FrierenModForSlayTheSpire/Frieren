@@ -14,18 +14,28 @@ import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MAGIC_GAIN;
 public class MakeManaInDiscardAction extends AbstractGameAction {
     private final AbstractCard c;
     private final int numCards;
+    private final boolean sourceIsNotCard;
     public MakeManaInDiscardAction(int amount) {
         this.numCards = amount;
         this.actionType = ActionType.CARD_MANIPULATION;
         this.startDuration = Settings.FAST_MODE ? Settings.ACTION_DUR_FAST : 0.5F;
         this.duration = this.startDuration;
         this.c = new Mana();
+        this.sourceIsNotCard = false;
+    }
+    public MakeManaInDiscardAction(int amount,boolean sourceIsNotCard) {
+        this.numCards = amount;
+        this.actionType = ActionType.CARD_MANIPULATION;
+        this.startDuration = Settings.FAST_MODE ? Settings.ACTION_DUR_FAST : 0.5F;
+        this.duration = this.startDuration;
+        this.c = new Mana();
+        this.sourceIsNotCard = sourceIsNotCard;
     }
 
     public void update() {
         if (this.duration == this.startDuration) {
             AbstractPlayer p = AbstractDungeon.player;
-            if(!p.hasPower(BAN_MAGIC_GAIN)){
+            if(!p.hasPower(BAN_MAGIC_GAIN) || sourceIsNotCard){
                 for(int i = 0; i < this.numCards; ++i) {
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDiscardEffect(c.makeStatEquivalentCopy()));
                 }

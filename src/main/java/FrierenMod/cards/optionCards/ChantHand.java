@@ -34,12 +34,12 @@ public class ChantHand extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new ChantFromHandAction(this.magicNumber));
         if(this.giveCard){
             LureTheEnemyInDeep c = new LureTheEnemyInDeep();
             c.upgrade();
             c.upgraded = true;
-            this.addToBot(new MakeTempCardInHandAction(c));
+            this.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
         }
+        this.addToBot(new ChantFromHandAction(this.magicNumber));
     }
 }
