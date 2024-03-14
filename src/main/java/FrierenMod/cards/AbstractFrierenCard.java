@@ -1,5 +1,6 @@
 package FrierenMod.cards;
 
+import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.LegendMagicHelper;
@@ -114,10 +115,9 @@ public abstract class AbstractFrierenCard extends CustomCard {
     }
     @Override
     public AbstractCard makeStatEquivalentCopy() {
+        if(this instanceof CustomLegendaryMagic)
+            return super.makeStatEquivalentCopy();
         AbstractCard card = this.makeCopy();
-        for(int i = 0; i < this.timesUpgraded; ++i) {
-            card.upgrade();
-        }
         card.name = this.name;
         card.target = this.target;
         card.upgraded = this.upgraded;
@@ -153,13 +153,14 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).secondMisc = this.secondMisc;
             ((AbstractFrierenCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
             ((AbstractFrierenCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
-            ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
-            ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
-            ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
-            if(this.isTaskCard)
+            if(this.isTaskCard){
                 ((AbstractFrierenCard) card).updateDescriptionAndCardImg();
+                ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
+                ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
+                ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
+            }
         }
-        return card;
+        return super.makeStatEquivalentCopy();
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
