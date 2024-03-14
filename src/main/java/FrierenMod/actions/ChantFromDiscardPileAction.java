@@ -12,10 +12,20 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
 
-public class ChantFromDiscardPileAction extends AbstractGameAction {
+public class ChantFromDiscardPileAction extends ChantFromCardGroupAction {
     private final int magicNumber;
     public ChantFromDiscardPileAction(int magicNumber){
         this.magicNumber = magicNumber;
+        this.haveNotTriggered = true;
+    }
+    public ChantFromDiscardPileAction(int magicNumber,boolean haveNotTriggered){
+        this.magicNumber = magicNumber;
+        this.haveNotTriggered = haveNotTriggered;
+    }
+    public ChantFromDiscardPileAction(int magicNumber, AbstractGameAction... nextAction){
+        this.magicNumber = magicNumber;
+        this.nextAction = nextAction;
+        this.haveNotTriggered = true;
     }
     @Override
     public void update() {
@@ -26,6 +36,9 @@ public class ChantFromDiscardPileAction extends AbstractGameAction {
             this.addToBot(new ExhaustManaInDiscardPileAction(this.magicNumber));
         }
         this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
+        this.triggerPowers();
+        this.triggerCards();
+        this.addNextAction();
         this.isDone = true;
     }
 }

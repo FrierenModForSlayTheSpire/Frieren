@@ -33,4 +33,5 @@ public abstract class AbstractFrierenPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ModInformation.makePowerPath(id.split(":")[1],32)), 0, 0, 32, 32);
         this.updateDescription();
     }
+    public void afterChant(){}
 }

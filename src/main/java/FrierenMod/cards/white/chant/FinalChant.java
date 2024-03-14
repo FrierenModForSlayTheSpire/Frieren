@@ -1,6 +1,6 @@
 package FrierenMod.cards.white.chant;
 
-import FrierenMod.actions.ChantAllAction;
+import FrierenMod.actions.FinalChantAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.utils.ModInformation;
@@ -24,7 +24,7 @@ public class FinalChant extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.chantX = this.baseChantX = ChantHelper.getAllMagicPowerNum();
-        this.addToBot(new ChantAllAction(this));
+        this.addToBot(new FinalChantAction(this));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return super.canUseOriginally(p,m);

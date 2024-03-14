@@ -29,7 +29,7 @@ public class HalfTheSky extends AbstractFrierenCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
     @Override
-    public void triggerExhaustedCardsOnChant(){
+    public void afterChant(){
         this.addToBot(new DiscardToHandAction(this));
     }
 }

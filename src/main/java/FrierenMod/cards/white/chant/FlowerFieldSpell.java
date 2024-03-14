@@ -31,11 +31,10 @@ public class FlowerFieldSpell extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX));
         BlueMoonWeed c = new BlueMoonWeed();
         if(this.upgraded){
             c.upgrade();
         }
-        this.addToBot(new MakeTempCardInHandAction(c,1));
+        this.addToBot(new ChantAction(this.chantX,false,new MakeTempCardInHandAction(c,1)));
     }
 }

@@ -5,6 +5,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.cards.white.chant.LureTheEnemyInDeep;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class ChantHand extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
     private final boolean giveCard;
+    private AbstractGameAction[] nextAction;
     public ChantHand() {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.cardsToPreview = new Mana();
@@ -22,6 +24,12 @@ public class ChantHand extends AbstractFrierenCard {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.cardsToPreview = new Mana();
         this.giveCard = giveCard;
+    }
+    public ChantHand(boolean giveCard, AbstractGameAction... nextAction) {
+        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        this.cardsToPreview = new Mana();
+        this.giveCard = giveCard;
+        this.nextAction = nextAction;
     }
     public void upgrade(){
         if(!this.upgraded){
@@ -40,6 +48,10 @@ public class ChantHand extends AbstractFrierenCard {
             c.upgraded = true;
             this.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
         }
-        this.addToBot(new ChantFromHandAction(this.magicNumber));
+        if(nextAction != null)
+            this.addToBot(new ChantFromHandAction(this.magicNumber,nextAction));
+        else {
+            this.addToBot(new ChantFromHandAction(this.magicNumber));
+        }
     }
 }

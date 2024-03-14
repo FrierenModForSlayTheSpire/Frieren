@@ -28,11 +28,9 @@ public class TrueColours extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX));
+        this.addToBot(new ChantAction(this.chantX,false, new DrawCardAction(3),new MakeManaInHandAction(3)));
         this.addToBot(new GainEnergyAction(3));
-        this.addToBot(new DrawCardAction(3));
         this.addToBot(new MakeManaInDrawPileAction(3));
-        this.addToBot(new MakeManaInHandAction(3));
         this.addToBot(new MakeManaInDiscardAction(3));
     }
 }

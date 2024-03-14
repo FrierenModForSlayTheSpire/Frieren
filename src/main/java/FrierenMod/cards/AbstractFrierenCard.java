@@ -185,7 +185,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
     private boolean canLegendMagicCardUse(AbstractMonster m){
         return LegendMagicHelper.canLegendMagicUse(this,m);
     }
-    public void triggerExhaustedCardsOnChant(){}
+    public void afterChant(){}
     public void taskProgressIncrease(){
         this.flash(FLASH_COLOR);
         currentInLevelProgressNumber++;

@@ -1,17 +1,14 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.optionCards.ChantDiscardPile;
 import FrierenMod.cards.optionCards.ChantDrawPile;
 import FrierenMod.cards.optionCards.ChantHand;
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 
@@ -50,10 +47,6 @@ public class PreciseChantAction extends AbstractGameAction {
                 }
             }
             this.addToTop(new ChooseOneAction(choices));
-            for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-                if (c instanceof AbstractFrierenCard)
-                    ((AbstractFrierenCard) c).triggerExhaustedCardsOnChant();
-            }
         }
         this.isDone = true;
     }

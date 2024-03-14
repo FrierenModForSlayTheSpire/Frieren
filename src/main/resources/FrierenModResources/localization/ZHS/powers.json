@@ -98,7 +98,7 @@
   "FrierenMod:SealPower": {
     "NAME": "封印",
     "DESCRIPTIONS": [
-      "一回合内打出 #b%d 张 #y咏唱 牌后将 #b%d 张 #y地狱业火魔法 加入你的手牌。"
+      "一回合内 #y咏唱 #b%d 次后将 #b%d 张 #y地狱业火魔法 加入你的手牌。"
     ]
   }
 }

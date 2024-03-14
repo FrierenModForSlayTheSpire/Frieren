@@ -25,7 +25,6 @@ public class LureTheEnemyInDeep extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX,true));
-        this.addToBot(new DrawCardAction(this.magicNumber));
+        this.addToBot(new ChantAction(this.chantX,true,new DrawCardAction(this.magicNumber)));
     }
 }
