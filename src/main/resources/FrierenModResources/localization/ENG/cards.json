@@ -472,8 +472,7 @@
   },
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "Lure The Enemy In Deep",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, add *LureTheEnemyInDeep+ into your hand.",
-    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, add *LureTheEnemyInDeep+ into your hand. NL Exhaust."
+    "DESCRIPTION": "Retain. NL frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, Upgrade this for the rest of the combat and return it to your hand."
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
