@@ -20,7 +20,6 @@ public class ApexMagic extends AbstractFrierenCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.selfRetain = true;
-            this.upgradeMagicNumber(1);
             this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
