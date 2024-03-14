@@ -5,6 +5,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LureTheEnemyInDeep extends AbstractFrierenCard {
@@ -18,9 +19,12 @@ public class LureTheEnemyInDeep extends AbstractFrierenCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            this.initializeDescription();
             this.upgradeName();
             this.upgradeChantX(1);
             this.upgradeMagicNumber(1);
+            this.exhaust=true;
         }
     }
     @Override

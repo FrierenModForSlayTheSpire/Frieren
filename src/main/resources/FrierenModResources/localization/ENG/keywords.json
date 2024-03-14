@@ -70,17 +70,17 @@
     "DESCRIPTION": "Whenever you play a card, receives 10% more damage from Attacks this turn."
   },
   {
-    "PROPER_NAME":"封印",
+    "PROPER_NAME":"Seal",
     "NAMES": [
-      "封印"
+      "Seal","seal"
     ],
-    "DESCRIPTION": "战斗开始时此牌位于所有牌堆之外，一回合内打出5张咏唱牌后加入你的手牌。"
+    "DESCRIPTION": "This card will not emerge in any piles at the start of combat, play 5 #yChant cards in one turn to add it to your hand."
   },
   {
-    "PROPER_NAME":"回火",
+    "PROPER_NAME":"Backfire",
     "NAMES": [
-      "回火"
+      "Backfire","backfire"
     ],
-    "DESCRIPTION": "这张牌本回合中每被打出1次，耗能+1，下回合开始时重置耗能。"
+    "DESCRIPTION": "Increase the card's cost when it is played, the cost will be reset to 0 next turn."
   }
 ]

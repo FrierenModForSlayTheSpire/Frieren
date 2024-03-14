@@ -73,7 +73,7 @@
   "FrierenMod:Disperse": {
     "NAME": "Disperse",
     "DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Shuffle a *Mana in your draw pile. NL Add 2 *Mana in your hand. NL Shuffle 3 *Mana in your discard pile."
   },
   "FrierenMod:Flow": {
     "NAME": "Flow",
@@ -133,8 +133,8 @@
   },
   "FrierenMod:ApexMagic": {
     "NAME": "The Apex of Magic",
-    "DESCRIPTION": "If your hand, draw pile and discard pile all have just 6 *Mana, deal 999 damage to all enemies, otherwise draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile all have just 6 *Mana, deal 999 damage to all enemies, otherwise draw !M! cards."
+    "DESCRIPTION": "If your hand, draw pile and discard pile all have just 4 *Mana, deal 999 damage to all enemies, otherwise draw !M! card.",
+    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile all have just 4 *Mana, deal 999 damage to all enemies, otherwise draw !M! cards."
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
@@ -143,7 +143,7 @@
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Successfully",
-    "DESCRIPTION": "Traw !M! card. NL If you don't have *Mana in your hand, traw 2 extra ones."
+    "DESCRIPTION": "Traw !M! card. NL If you don't have *Mana in your hand, traw an extra one."
   },
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "Multiple Offensive Magic",
@@ -216,8 +216,8 @@
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
-    "DESCRIPTION": "Gain [E] [E] , Add a *Laziness into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain [E] [E] [E] , Add a *Laziness into your hand."
+    "DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand."
   },
   "FrierenMod:CustomLegendaryMagic": {
     "NAME": "Craft Spell",
@@ -428,7 +428,7 @@
   },
   "FrierenMod:HalfTheSky": {
     "NAME": "Envy",
-    "DESCRIPTION": " Deal !D! damage. NL Whenever you frierenmod:Chant, return this discard pile to your hand."
+    "DESCRIPTION": " Deal !D! damage. NL Whenever you frierenmod:Chant, return this from your discard pile to your hand."
   },
   "FrierenMod:Recycle": {
     "NAME": "Recycle",
@@ -454,28 +454,42 @@
     "NAME": "Ringlet Form",
     "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block."
   },
+  "FrierenMod:Himmel": {
+    "NAME": "Himmel",
+    "DESCRIPTION": "Frieren... NL Ethereal "
+  },
+  "FrierenMod:Repent": {
+    "NAME": "Too Late to Repent",
+    "DESCRIPTION": "Retain. NL Choose !M! cards in your discard pile and return them to your hand. They cost 0 this turn. NL Exhaust."
+  },
   "FrierenMod:HellFireSummoning": {
-    "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 NL frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
+    "NAME": "Hellfire Summoning",
+    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! Damage to a random enemy 2X times, X equal to the amount of frierenmod:Chant card you played this turn. NL (Already played !M! )"
   },
   "FrierenMod:RockGolemSpell": {
-    "NAME": "操纵石像的魔法",
-    "DESCRIPTION": "解析10： frierenmod:同调 2张魔力 NL *奖励：随机造成 !D! 点伤害，切换至防御形态。NL (当前进度0/2)。"
+    "NAME": "Spell to Manipulate A Rock Golem",
+    "DESCRIPTION": "frierenmod:Analyze 10: frierenmod:Synchro 2 *Mana NL *Reward: Deal !D! damage to a random enemy and switch to Defend Mode. NL (Progress:0/2)."
   },
   "FrierenMod:LureTheEnemyInDeep": {
-    "NAME": "诱敌深入",
-    "DESCRIPTION": "咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
+    "NAME": "Lure The Enemy In Deep",
+    "DESCRIPTION": "frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, add *LureTheEnemyInDeep+ into your hand.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, add *LureTheEnemyInDeep+ into your hand. NL Exhaust."
   },
   "FrierenMod:ManaCollapse": {
-    "NAME": "离别的馈赠",
-    "DESCRIPTION": "造成 !D! 点伤害。将 !M! 张 *魔力 放入手中。将这张牌放入你的抽牌堆。 NL 本回合打出10张牌以上时，改为造成 !SM! 点伤害。"
+    "NAME": "Mana Collapse",
+    "DESCRIPTION": "Deal !D! damage. NL Add !M! *Mana into your hand. NL Put this card back to your draw pile. If you have played over 10 cards, change to deal !SM! damage."
   },
   "FrierenMod:Elegance": {
-    "NAME": "英姿",
-    "DESCRIPTION": "造成 !D! 点伤害，获得 !B! 点 格挡 ，抽 !M! 张牌 。 NL 斩杀 时，这张牌在本局游戏中的伤害值、格挡值永久性增加3，如果 斩杀 的是精英或boss，抽牌数永久性增加1。"
+    "NAME": "Elegance",
+    "DESCRIPTION": "Deal !D! damage, Gain !B! Block, draw !M! card. NL If Fatal, increase its damage and Block by 2, and if you Fatal a Elite or Boss, increase draw amount by 1. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage, Gain !B! Block, draw !M! card. NL If Fatal, increase its damage and Block by 2, and if you Fatal a Elite or Boss, increase draw amount by 1."
   },
   "FrierenMod:Confrontation": {
-    "NAME": "对峙",
-    "DESCRIPTION": "获得 !B! 点格挡，抽1张牌。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础格挡增加3。"
+    "NAME": "Confrontation",
+    "DESCRIPTION": "Gain !B! Block and draw a card. NL If you frierenmod:Chant when this card is in your hand, increase its Block by 3 this combat."
+  },
+  "FrierenMod:Famehameha": {
+    "NAME": "Famehameha Wave",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Costs 1 less [E] for each time you frierenmod:Chant this turn. NL Deal !D! damage. NL [#A4EBFA]KA-ME-HA-ME-HA![]"
   }
 }

@@ -1,10 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.white.FlyingMagic;
-import FrierenMod.cards.white.AccessoriesSpell;
-import FrierenMod.cards.white.OilSpell;
-import FrierenMod.cards.white.LightningMagic;
+import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.ContinualChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -35,6 +32,7 @@ public class LegendMagicHelper {
         pool.add(new AccessoriesSpell());
         pool.add(new OilSpell());
         pool.add(new LightningMagic());
+        pool.add(new Famehameha());
         return pool;
     }
     public static AbstractCard getRandomCard(){
