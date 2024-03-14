@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
 public class PreciseChantAction extends AbstractGameAction {
 
@@ -41,9 +41,10 @@ public class PreciseChantAction extends AbstractGameAction {
             choices.add(c);
         }
         if(!choices.isEmpty()){
-            if(p.hasPower(CHANT_WITHOUT_MAGIC)){
+            if(p.hasPower(CHANT_WITHOUT_MANA)){
                 for(AbstractCard c:choices){
                     c.upgrade();
+                    c.upgraded = true;
                 }
             }
             this.addToTop(new ChooseOneAction(choices));

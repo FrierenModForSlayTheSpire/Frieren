@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
 public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isChantCard;
@@ -167,11 +167,11 @@ public abstract class AbstractFrierenCard extends CustomCard {
         if(this.isMana){
             return true;
         }
-        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) && !this.isLegendaryMagic)){
+        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendaryMagic)){
             return canChantCardUse(m);
         } else if(this.isLegendaryMagic && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MAGIC) ) && this.isLegendaryMagic) {
+        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendaryMagic) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
             return super.canUse(p,m);

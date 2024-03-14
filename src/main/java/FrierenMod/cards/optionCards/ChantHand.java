@@ -3,32 +3,30 @@ package FrierenMod.cards.optionCards;
 import FrierenMod.actions.ChantFromHandAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Mana;
-import FrierenMod.cards.white.chant.LureTheEnemyInDeep;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantHand extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
-    private final boolean giveCard;
+    private AbstractCard cardToReturn;
     private AbstractGameAction[] nextAction;
     public ChantHand() {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.cardsToPreview = new Mana();
-        this.giveCard = false;
     }
-    public ChantHand(boolean giveCard) {
+    public ChantHand(AbstractCard cardToReturn) {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.cardsToPreview = new Mana();
-        this.giveCard = giveCard;
+        this.cardToReturn = cardToReturn;
     }
-    public ChantHand(boolean giveCard, AbstractGameAction... nextAction) {
+    public ChantHand(AbstractCard cardToReturn, AbstractGameAction... nextAction) {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.cardsToPreview = new Mana();
-        this.giveCard = giveCard;
+        this.cardToReturn = cardToReturn;
         this.nextAction = nextAction;
     }
     public void upgrade(){
@@ -42,11 +40,9 @@ public class ChantHand extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        if(this.giveCard){
-            LureTheEnemyInDeep c = new LureTheEnemyInDeep();
-            c.upgrade();
-            c.upgraded = true;
-            this.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
+        if(cardToReturn != null){
+            cardToReturn.returnToHand = true;
+            cardToReturn.upgrade();
         }
         if(nextAction != null)
             this.addToBot(new ChantFromHandAction(this.magicNumber,nextAction));

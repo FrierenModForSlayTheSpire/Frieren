@@ -35,6 +35,6 @@ public class FlowerFieldSpell extends AbstractFrierenCard {
         if(this.upgraded){
             c.upgrade();
         }
-        this.addToBot(new ChantAction(this.chantX,false,new MakeTempCardInHandAction(c,1)));
+        this.addToBot(new ChantAction(this.chantX,new MakeTempCardInHandAction(c,1)));
     }
 }

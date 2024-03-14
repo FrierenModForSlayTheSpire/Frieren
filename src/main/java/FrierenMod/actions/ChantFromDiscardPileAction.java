@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MAGIC;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
 public class ChantFromDiscardPileAction extends ChantFromCardGroupAction {
     private final int magicNumber;
@@ -32,13 +32,15 @@ public class ChantFromDiscardPileAction extends ChantFromCardGroupAction {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        if(!p.hasPower(CHANT_WITHOUT_MAGIC)){
+        if(!p.hasPower(CHANT_WITHOUT_MANA)){
             this.addToBot(new ExhaustManaInDiscardPileAction(this.magicNumber));
         }
         this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,this.magicNumber)));
-        this.triggerPowers();
-        this.triggerCards();
-        this.addNextAction();
+        if(haveNotTriggered){
+            this.triggerPowers();
+            this.triggerCards();
+            this.addNextAction();
+        }
         this.isDone = true;
     }
 }
