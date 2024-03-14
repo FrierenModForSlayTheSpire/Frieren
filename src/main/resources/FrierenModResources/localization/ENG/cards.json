@@ -468,7 +468,7 @@
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "离别的馈赠",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将 !M! 张 *魔力 放入手中。 NL 将这张牌放入你的抽牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。将 !M! 张 *魔力 放入手中。将这张牌放入你的抽牌堆。 NL 本回合打出10张牌以上时，改为造成 !SM! 点伤害。"
   },
   "FrierenMod:Elegance": {
     "NAME": "英姿",
