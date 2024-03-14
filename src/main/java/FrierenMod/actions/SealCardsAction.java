@@ -1,8 +1,10 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.effects.SealEffect;
 import FrierenMod.powers.SealPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -24,6 +26,7 @@ public class SealCardsAction extends AbstractGameAction {
             for(AbstractCard c:sealCards){
                 for(CardGroup group:groups){
                     this.addToBot(new DestroySpecifiedCardAction(c,group,true));
+                    this.addToBot(new VFXAction(new SealEffect(c)));
                 }
             }
             this.addToBot(new ApplyPowerAction(p,p,new SealPower(p,sealCards),1));
