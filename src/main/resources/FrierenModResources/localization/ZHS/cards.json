@@ -464,7 +464,7 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
+    "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 随机造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",
@@ -472,7 +472,8 @@
   },
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "诱敌深入",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，将 *诱敌深入+ 加入手牌。 NL 消耗 。"
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "离别的馈赠",
@@ -486,5 +487,9 @@
   "FrierenMod:Confrontation": {
     "NAME": "对峙",
     "DESCRIPTION": "获得 !B! 点格挡，抽1张牌。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础格挡增加3。"
+  },
+  "FrierenMod:Famehameha": {
+    "NAME": "芙派气功",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 你在本回合每 frierenmod:咏唱 一次，此牌耗能-1。 NL 造成 !D! 点伤害。"
   }
 }

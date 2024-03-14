@@ -106,7 +106,7 @@
   },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
-      " frierenmod:Analyze %d："," *Reward ：","(Progress:%d/%d).",
+      " frierenmod:Analyze %d:"," *Reward ：","(Progress:%d/%d).",
       " frierenmod:Synchro 4 *Mana . NL "," !B! Block . NL ",
       "Play 3 frierenmod:Chant cards . NL "," !M! frierenmod:LegendaryMagic with 0 cost this turn . NL ",
       "Play 3 frierenmod:LegendaryMagic . NL "," Deal !D! damage to ALL enemies. NL "
@@ -114,7 +114,7 @@
   },
   "FrierenMod:RockGolemSpellMod": {
     "TEXT": [
-      " frierenmod:Analyze %d："," *Reward ：","(Progress:%d/%d).",
+      " frierenmod:Analyze %d:"," *Reward ：","(Progress:%d/%d).",
       " frierenmod:Synchro 2 *Mana . NL "," Deal !D! damage to a random enemy and switch to Defend Mode. NL ",
       " Play a frierenmod:Chant card. NL "," !B! Block, switch to Attack Mode. NL "
     ]
