@@ -1,10 +1,9 @@
 package FrierenMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
@@ -24,18 +23,20 @@ public class MakeCardsAction extends AbstractGameAction {
     }
     @Override
     public void update() {
+        AbstractPlayer p = AbstractDungeon.player;
         for(AbstractCard c: this.drawPile){
-            this.addToBot(new MakeTempCardInDrawPileAction(c,1,false,false,isChanged));
+            if(isChanged)
+                p.drawPile.addToRandomSpot(c);
+            else
+                p.drawPile.addToTop(c);
         }
         for(AbstractCard c: this.hand){
             this.addToBot(new MakeTempCardInHandAction(c));
         }
         for(AbstractCard c: this.discardPile){
-            this.addToBot(new MakeTempCardInDiscardAction(c,1));
+            p.discardPile.addToTop(c);
         }
-        for(AbstractCard c: this.exhaustPile){
-            AbstractDungeon.player.exhaustPile.addToHand(c);
-        }
+        AbstractDungeon.player.exhaustPile.group.addAll(this.exhaustPile);
         this.isDone = true;
     }
 }
