@@ -5,8 +5,9 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class HellFireSummoning extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(HellFireSummoning.class.getSimpleName());
     public HellFireSummoning() {
-        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ALL_ENEMY);
+        super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         this.damage = this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 0;
         this.isBackFireCard = true;
@@ -35,7 +36,7 @@ public class HellFireSummoning extends AbstractFrierenCard {
             p.getRelic("Chemical X").flash();
         }
         for (int i = 0; i < times * 2; i++) {
-            this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.FIRE));
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         }
         this.addToBot(new ModifyCostAction(this.uuid,1));
     }
