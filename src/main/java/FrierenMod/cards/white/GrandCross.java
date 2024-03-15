@@ -24,7 +24,7 @@ public class GrandCross extends AbstractFrierenCard {
     }
     public void applyPowers() {
         super.applyPowers();
-        if(LegendMagicHelper.cannotPlayLegendMagic())
+        if(!LegendMagicHelper.cannotPlayLegendMagic())
             this.costForTurn = 0;
     }
     public void triggerOnGlowCheck() {
