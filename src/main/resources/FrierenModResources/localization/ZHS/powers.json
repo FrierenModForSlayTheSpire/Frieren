@@ -71,7 +71,7 @@
       "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
     ]
   },
-  "FrierenMod:BanMagicGainPower": {
+  "FrierenMod:BanManaGainPower": {
     "NAME": "&",
     "DESCRIPTIONS": [
       "在本回合中，你无法从卡牌中获取 #y魔力 。"
