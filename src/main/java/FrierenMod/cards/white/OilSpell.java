@@ -12,7 +12,6 @@ public class OilSpell extends AbstractFrierenCard {
     public OilSpell() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = 12;
-        this.isMultiDamage = true;
         this.isLegendaryMagic = true;
     }
     @Override

@@ -22,7 +22,6 @@ public class OilSpellAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
-        c.applyPowers();
         int flag = 0;
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if(!mo.isDead && !mo.halfDead){
@@ -32,9 +31,9 @@ public class OilSpellAction extends AbstractGameAction {
                 }
             }
         }
-        this.addToBot(new DamageAllEnemiesAction(p, c.damage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new DamageAllEnemiesAction(p, c.baseDamage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         if(flag == 0){
-            this.addToBot(new DamageAllEnemiesAction(p, c.damage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+            this.addToBot(new DamageAllEnemiesAction(p, c.baseDamage, c.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         }
         this.isDone = true;
     }
