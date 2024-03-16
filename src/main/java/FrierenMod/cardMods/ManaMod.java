@@ -31,7 +31,7 @@ public class ManaMod extends AbstractCardModifier {
                 ((AbstractFrierenCard)card).isAccelMana = false;
                 ((AbstractFrierenCard)card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
-                card.type = AbstractCard.CardType.SKILL;
+                card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
                     ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
                 break;
@@ -39,7 +39,7 @@ public class ManaMod extends AbstractCardModifier {
                 ((AbstractFrierenCard)card).isAccelMana = true;
                 ((AbstractFrierenCard)card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
-                card.type = AbstractCard.CardType.SKILL;
+                card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
                     ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
                 break;
