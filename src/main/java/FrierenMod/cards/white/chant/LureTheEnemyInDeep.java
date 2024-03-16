@@ -14,7 +14,6 @@ public class LureTheEnemyInDeep extends AbstractFrierenCard {
         this.isChantCard = true;
         this.chantX = this.baseChantX = 1;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.selfRetain = true;
     }
     @Override
     public void upgrade() {
