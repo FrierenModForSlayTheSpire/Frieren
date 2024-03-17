@@ -1,14 +1,12 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
@@ -18,18 +16,10 @@ public class Famehameha extends AbstractFrierenCard {
         super(ID, 4, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 25;
         this.isLegendaryMagic = true;
+        this.isCostResetCard = true;
     }
-    public void applyPowers() {
-        super.applyPowers();
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isChantCard) {
-                this.costForTurn = (4-LegendMagicHelper.getChantCardUsedThisTurn());
-                if(this.costForTurn<=0)
-                    this.costForTurn=0;
-                break;
-            }
-        }
-        initializeDescription();
+    public void afterChant(){
+        this.addToBot(new ModifyCostAction(this.uuid,-1));
     }
     @Override
     public void upgrade() {

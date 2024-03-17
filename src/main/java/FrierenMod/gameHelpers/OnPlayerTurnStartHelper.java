@@ -11,15 +11,14 @@ public class OnPlayerTurnStartHelper implements OnPlayerTurnStartSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
-            ResetBackFireCardCost();
+            ResetCardCost();
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }
     private void ResetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
-        AbstractPlayer p = AbstractDungeon.player;
         for(AbstractCard c:group.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isBackFireCard){
+            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isCostResetCard){
                 Class<? extends AbstractFrierenCard> cardClass = (Class<? extends AbstractFrierenCard>) c.getClass();
                 c.cost = cardClass.newInstance().cost;
                 c.costForTurn = c.cost;
@@ -27,7 +26,7 @@ public class OnPlayerTurnStartHelper implements OnPlayerTurnStartSubscriber {
             }
         }
     }
-    private void ResetBackFireCardCost() throws InstantiationException, IllegalAccessException {
+    private void ResetCardCost() throws InstantiationException, IllegalAccessException {
         AbstractPlayer p = AbstractDungeon.player;
         ResetBackFireCardCostInCardGroup(p.hand);
         ResetBackFireCardCostInCardGroup(p.discardPile);

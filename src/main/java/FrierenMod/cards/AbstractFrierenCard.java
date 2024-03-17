@@ -22,7 +22,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isLimitedOverMana;
     public boolean isAccelMana;
     public boolean isLegendaryMagic;
-    public boolean isBackFireCard;
+    public boolean isCostResetCard;
     public boolean isSealCard;
     public boolean isTaskCard;
     public int baseChantX = -1;
@@ -88,7 +88,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isAccelMana = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
-        this.isBackFireCard = false;
+        this.isCostResetCard = false;
         this.isSealCard = false;
         this.isTaskCard = false;
     }
@@ -142,7 +142,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).isLimitedOverMana = this.isLimitedOverMana;
             ((AbstractFrierenCard) card).isAccelMana = this.isAccelMana;
             ((AbstractFrierenCard) card).isLegendaryMagic = this.isLegendaryMagic;
-            ((AbstractFrierenCard) card).isBackFireCard = this.isBackFireCard;
+            ((AbstractFrierenCard) card).isCostResetCard = this.isCostResetCard;
             ((AbstractFrierenCard) card).isSealCard = this.isSealCard;
             ((AbstractFrierenCard) card).baseChantX = this.baseChantX;
             ((AbstractFrierenCard) card).chantX = this.chantX;

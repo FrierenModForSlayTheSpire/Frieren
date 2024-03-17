@@ -18,7 +18,7 @@ public class HellFireSummoning extends AbstractFrierenCard {
         super(ID, 0, CardType.ATTACK, CardRarity.RARE, CardTarget.ENEMY);
         this.damage = this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 0;
-        this.isBackFireCard = true;
+        this.isCostResetCard = true;
         this.isSealCard = true;
     }
     @Override
