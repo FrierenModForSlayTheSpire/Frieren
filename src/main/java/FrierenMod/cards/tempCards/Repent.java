@@ -11,7 +11,7 @@ public class Repent extends AbstractFrierenCard {
     public Repent() {
         super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.exhaust = true;
-        this.retain =true;
+        this.selfRetain = true;
         this.baseMagicNumber = this.magicNumber = 2;
     }
     @Override
