@@ -1,4 +1,4 @@
-package FrierenMod.events;
+/*package FrierenMod.events;
 
 import FrierenMod.Characters.Frieren;
 import FrierenMod.relics.MimicHead;
@@ -141,3 +141,4 @@ public class MimicFight extends AbstractImageEvent {
         POST_COMBAT;
     }
 }
+*/
