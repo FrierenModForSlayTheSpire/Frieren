@@ -15,7 +15,7 @@ public class PajamasForm extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(PajamasForm.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public PajamasForm() {
-        super(ID, 3, CardType.POWER, CardRarity.RARE);
+        super(ID, 3, CardType.POWER, CardRarity.UNCOMMON);
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
