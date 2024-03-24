@@ -82,5 +82,12 @@
       "Backfire","backfire"
     ],
     "DESCRIPTION": "Increase the card's cost when it is played, the cost will be reset to 0 next turn."
+  },
+  {
+    "PROPER_NAME":"Barricade",
+    "NAMES": [
+      "Barricade","barricade"
+    ],
+    "DESCRIPTION": "Block is not removed at the start of your turn."
   }
 ]

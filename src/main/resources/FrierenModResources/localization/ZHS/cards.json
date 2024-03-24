@@ -490,5 +490,9 @@
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 你在本回合每 frierenmod:咏唱 一次，此牌耗能-1。 NL 造成 !D! 点伤害。"
+  },
+  "FrierenMod:ManaBarricade": {
+    "NAME": "魔力壁垒",
+    "DESCRIPTION": "你的回合结束时，若你的 *魔力 总数大于等于5，获得 frierenmod:壁垒 。否则失去 frierenmod:壁垒 。"
   }
 }

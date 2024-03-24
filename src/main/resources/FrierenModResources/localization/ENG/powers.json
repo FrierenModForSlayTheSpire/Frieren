@@ -100,5 +100,11 @@
     "DESCRIPTIONS": [
       " #yChant #b%d times in one turn to break the seal and add #b%d #yHellFireSummoning into your hand."
     ]
+  },
+  "FrierenMod:ManaBarricadePower": {
+    "NAME": "Mana Barricade",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you have 5 #yMana or more, gain #yBarricade, otherwise, lose #yBarricade."
+    ]
   }
 }

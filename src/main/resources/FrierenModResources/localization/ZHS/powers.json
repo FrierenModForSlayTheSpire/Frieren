@@ -100,5 +100,11 @@
     "DESCRIPTIONS": [
       "一回合内 #y咏唱 #b%d 次后打破封印，将 #b%d 张 #y地狱业火魔法 加入你的手牌。"
     ]
+  },
+  "FrierenMod:ManaBarricadePower": {
+    "NAME": "魔力壁垒",
+    "DESCRIPTIONS": [
+      "你的回合结束时，若你的 #y魔力 总数大于等于5，获得 #y壁垒 。否则失去 #y壁垒 。"
+    ]
   }
 }
