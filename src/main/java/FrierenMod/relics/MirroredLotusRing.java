@@ -43,5 +43,7 @@ public class MirroredLotusRing extends AbstractFrierenRelic {
     public AbstractRelic makeCopy() {
         return new MirroredLotusRing();
     }
-
+    public void onVictory() {
+        this.counter = -1;
+    }
 }
