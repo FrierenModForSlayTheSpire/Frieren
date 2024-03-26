@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import java.util.ArrayList;
-
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class ElementsBombingAction extends AbstractGameAction {
@@ -41,29 +39,19 @@ public class ElementsBombingAction extends AbstractGameAction {
         }
         this.isDone = true;
     }
-    private static ArrayList<AbstractCard> initChantCardPool(){
-        ArrayList<AbstractCard> pool = new ArrayList<>();
-        pool.add(new Ice());
-        pool.add(new Fire());
-        pool.add(new Thunder());
-        pool.add(new Dark());
-        pool.add(new Light());
-        return pool;
-    }
     public static AbstractCard getRandomCard(){
-        ArrayList<AbstractCard> list = initChantCardPool();
         int randomNumber = cardRandomRng.random(100);
         AbstractCard returnCard;
         if (randomNumber < 25) {
-            returnCard = list.get(0);
+            returnCard = new Ice();
         } else if (randomNumber < 50) {
-            returnCard = list.get(1);
+            returnCard = new Fire();
         } else if (randomNumber < 75) {
-            returnCard = list.get(2);
+            returnCard = new Thunder();
         } else if (randomNumber < 90) {
-            returnCard = list.get(3);
+            returnCard = new Dark();
         } else {
-            returnCard = list.get(4);
+            returnCard = new Light();
         }
         return returnCard;
     }
