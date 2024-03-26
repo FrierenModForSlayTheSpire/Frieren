@@ -20,21 +20,24 @@ public class ElementsBombingAction extends AbstractGameAction {
     @Override
     public void update() {
         int theSize = AbstractDungeon.player.hand.size();
+        int i;
         if (this.upgraded) {
-            for (int i = 0; i < theSize; i++) {
+            for (i = 0; i < theSize; i++) {
                 AbstractCard s = getRandomCard().makeCopy();
                 s.upgrade();
                 addToTop(new MakeTempCardInHandAction(s, 1));
             }
         } else {
-            for (int i = 0; i < theSize; i++) {
+            for (i = 0; i < theSize; i++) {
                 addToTop(new MakeTempCardInHandAction(getRandomCard(), 1));
             }
         }
-        if (Settings.FAST_MODE) {
-            addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
-        } else {
-            addToTop(new ExhaustAction(1, true, true));
+        for(i = 0; i < theSize; ++i) {
+            if (Settings.FAST_MODE) {
+                addToTop(new ExhaustAction(1, true, true, false, Settings.ACTION_DUR_XFAST));
+            } else {
+                addToTop(new ExhaustAction(1, true, true));
+            }
         }
         this.isDone = true;
     }
