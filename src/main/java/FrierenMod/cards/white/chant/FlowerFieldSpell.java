@@ -15,16 +15,13 @@ public class FlowerFieldSpell extends AbstractFrierenCard {
         super(ID, 1, CardRarity.COMMON);
         this.isChantCard = true;
         this.chantX = this.baseChantX =3;
-        BlueMoonWeed c = new BlueMoonWeed();
-        if(this.upgraded){
-            c.upgrade();
-        }
-        this.cardsToPreview = c;
+        this.cardsToPreview = new BlueMoonWeed();
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.cardsToPreview.upgrade();
             this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
