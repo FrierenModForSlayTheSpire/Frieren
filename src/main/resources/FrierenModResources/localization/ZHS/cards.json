@@ -502,22 +502,22 @@
   },
   "FrierenMod:Fire": {
     "NAME": "火元素",
-    "DESCRIPTION": "造成 !D! 点伤害两次。"
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 消耗 。"
   },
   "FrierenMod:Ice": {
     "NAME": "冰元素",
-    "DESCRIPTION": "获得 !B! 点格挡。"
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 消耗 。"
   },
   "FrierenMod:Light": {
     "NAME": "光元素",
-    "DESCRIPTION": "回复 !M! 点生命。"
+    "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。"
   },
   "FrierenMod:Thunder ": {
     "NAME": "雷元素",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 消耗 。"
   },
   "FrierenMod:Dark": {
     "NAME": "暗元素",
-    "DESCRIPTION": "抽 !M! 张牌。"
+    "DESCRIPTION": "抽 !M! 张牌。NL 消耗 。"
   }
 }

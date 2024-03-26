@@ -502,22 +502,22 @@
   },
   "FrierenMod:Fire": {
     "NAME": "Fire Elemental",
-    "DESCRIPTION": "Deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! Damage twice. NL Exhaust."
   },
   "FrierenMod:Ice": {
     "NAME": "Ice Elemental",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
   },
   "FrierenMod:Light": {
     "NAME": "Light Elemental",
-    "DESCRIPTION": "Heal !M! HP"
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
   },
   "FrierenMod:Thunder": {
     "NAME": "Thunder Elemental",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust."
   },
   "FrierenMod:Dark": {
     "NAME": "Dark Elemental",
-    "DESCRIPTION": "Draw !M! cards."
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
   }
 }
