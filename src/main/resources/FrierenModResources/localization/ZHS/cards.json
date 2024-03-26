@@ -490,5 +490,10 @@
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 你在本回合每 frierenmod:咏唱 一次，此牌耗能-1。 NL 造成 !D! 点伤害。"
+  },
+  "FrierenMod:ElementsBombing": {
+    "NAME": "元素轰炸",
+    "DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张随机 *元素 牌 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张 升级 的随机 *元素 牌 。 NL 消耗 。"
   }
 }

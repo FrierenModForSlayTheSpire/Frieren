@@ -490,5 +490,10 @@
   "FrierenMod:Famehameha": {
     "NAME": "Famehameha Wave",
     "DESCRIPTION": "frierenmod:Legendary_Spell. NL Costs 1 less [E] for each time you frierenmod:Chant this turn. NL Deal !D! damage. NL [#A4EBFA]KA-ME-HA-ME-HA![]"
+  },
+  "FrierenMod:ElementsBombing": {
+    "NAME": "元素轰炸",
+    "DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张随机 *元素 牌 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张 升级 的随机 *元素 牌 。 NL 消耗 。"
   }
 }
