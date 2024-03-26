@@ -494,5 +494,30 @@
   "FrierenMod:ManaBarricade": {
     "NAME": "Mana Barricade",
     "DESCRIPTION": "At the end of your turn, if you have 5 *Mana or more, gain frierenmod:Barricade, otherwise, lose frierenmod:Barricade."
+  },
+  "FrierenMod:ElementsBombing": {
+    "NAME": "Elemental Bombing",
+    "DESCRIPTION": "Exhaust your hand, add a random *Elemental card to your hand for each card you Exhausted. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Exhaust your hand, add a random upgraded *Elemental card to your hand for each card you Exhausted. NL Exhaust."
+  },
+  "FrierenMod:Fire": {
+    "NAME": "Fire Elemental",
+    "DESCRIPTION": "Deal !D! Damage twice."
+  },
+  "FrierenMod:Ice": {
+    "NAME": "Ice Elemental",
+    "DESCRIPTION": "Gain !B! Block."
+  },
+  "FrierenMod:Light": {
+    "NAME": "Light Elemental",
+    "DESCRIPTION": "Heal !M! HP"
+  },
+  "FrierenMod:Thunder": {
+    "NAME": "Thunder Elemental",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+  },
+  "FrierenMod:Dark": {
+    "NAME": "Dark Elemental",
+    "DESCRIPTION": "Draw !M! cards."
   }
 }

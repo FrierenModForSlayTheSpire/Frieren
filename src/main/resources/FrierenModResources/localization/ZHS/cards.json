@@ -494,5 +494,30 @@
   "FrierenMod:ManaBarricade": {
     "NAME": "魔力壁垒",
     "DESCRIPTION": "你的回合结束时，若你的 *魔力 总数大于等于5，获得 frierenmod:壁垒 。否则失去 frierenmod:壁垒 。"
+  },
+  "FrierenMod:ElementsBombing": {
+    "NAME": "元素轰炸",
+    "DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张随机 *元素 牌 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 消耗 所有手牌。每 消耗 一张牌，在你的手牌中增加一张 升级 的随机 *元素 牌 。 NL 消耗 。"
+  },
+  "FrierenMod:Fire": {
+    "NAME": "火元素",
+    "DESCRIPTION": "造成 !D! 点伤害两次。"
+  },
+  "FrierenMod:Ice": {
+    "NAME": "冰元素",
+    "DESCRIPTION": "获得 !B! 点格挡。"
+  },
+  "FrierenMod:Light": {
+    "NAME": "光元素",
+    "DESCRIPTION": "回复 !M! 点生命。"
+  },
+  "FrierenMod:Thunder ": {
+    "NAME": "雷元素",
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。"
+  },
+  "FrierenMod:Dark": {
+    "NAME": "暗元素",
+    "DESCRIPTION": "抽 !M! 张牌。"
   }
 }
