@@ -7,10 +7,12 @@ import FrierenMod.gameHelpers.LegendMagicHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -38,6 +40,11 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public int currentLevelRequiredNumber = -1;
     public int currentInLevelProgressNumber = -1;
     public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
+    public AbstractCard prev1;
+    public AbstractCard prev2;
+    public AbstractCard prev3;
+    public AbstractCard prev4;
+    public AbstractCard prev5;
     public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         initSwitches();
@@ -206,5 +213,47 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.initTask();
         this.initializeDescription();
         this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
+    }
+    public void renderCardTip(SpriteBatch sb) {
+        super.renderCardTip(sb);
+        if (!this.hb.hovered || this.isLocked || (AbstractDungeon.player != null && (AbstractDungeon.player.isDraggingCard || AbstractDungeon.player.inSingleTargetMode)))
+            return;
+        float drawScale = 0.5F;
+        float yPosition1 = Settings.HEIGHT * 0.2F;
+        float xPosition1 = Settings.WIDTH * 0.10F;
+        float xPosition2 = Settings.WIDTH * 0.25F;
+        float xPosition3 = Settings.WIDTH * 0.40F;
+        float xPosition4 = Settings.WIDTH * 0.55F;
+        float xPosition5 = Settings.WIDTH * 0.70F;
+        if (this.prev1 != null) {
+            this.prev1.drawScale = drawScale;
+            this.prev1.current_x = xPosition1;
+            this.prev1.current_y = yPosition1;
+            this.prev1.render(sb);
+        }
+        if (this.prev2 != null) {
+            this.prev2.drawScale = drawScale;
+            this.prev2.current_x = xPosition2;
+            this.prev2.current_y = yPosition1;
+            this.prev2.render(sb);
+        }
+        if (this.prev3 != null) {
+            this.prev3.drawScale = drawScale;
+            this.prev3.current_x = xPosition3;
+            this.prev3.current_y = yPosition1;
+            this.prev3.render(sb);
+        }
+        if (this.prev4 != null) {
+            this.prev4.drawScale = drawScale;
+            this.prev4.current_x = xPosition4;
+            this.prev4.current_y = yPosition1;
+            this.prev4.render(sb);
+        }
+        if (this.prev5 != null) {
+            this.prev5.drawScale = drawScale;
+            this.prev5.current_x = xPosition5;
+            this.prev5.current_y = yPosition1;
+            this.prev5.render(sb);
+        }
     }
 }
