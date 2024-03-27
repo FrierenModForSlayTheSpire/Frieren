@@ -512,7 +512,7 @@
     "NAME": "光元素",
     "DESCRIPTION": "回复 !M! 点生命。 NL 消耗 。"
   },
-  "FrierenMod:Thunder ": {
+  "FrierenMod:Thunder": {
     "NAME": "雷元素",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 NL 消耗 。"
   },
