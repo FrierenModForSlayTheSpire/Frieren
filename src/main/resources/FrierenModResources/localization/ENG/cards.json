@@ -202,7 +202,7 @@
     "UPGRADE_DESCRIPTION": "Craft a frierenmod:Legendary_Spell! You will have more options. NL Exhaust."
   },
   "FrierenMod:LittleFire": {
-    "NAME": "Little Fire",
+    "NAME": "Little Spark",
     "DESCRIPTION": "Deal !D! damage. NL Upgrade a card in your hand for the rest of the combat.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Upgrade all cards in your hand for the rest of the combat."
   },
@@ -407,7 +407,7 @@
     "DESCRIPTION": "Apply 99 Vulnerable and 99 Weak. NL Exhaust. NL Ethereal. "
   },
   "FrierenMod:RestraintMagic": {
-    "NAME": "Restraint magic",
+    "NAME": "Restraint Magic",
     "DESCRIPTION": "Apply frierenmod:Slow and the target loses 3 Strength. NL Exhaust."
   },
   "FrierenMod:SeeThroughPhantom": {
