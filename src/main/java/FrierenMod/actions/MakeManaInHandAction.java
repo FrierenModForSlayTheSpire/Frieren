@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MAGIC_GAIN;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MANA_GAIN;
 
 public class MakeManaInHandAction extends AbstractGameAction {
     private final int amt;
@@ -18,7 +18,7 @@ public class MakeManaInHandAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        if(!p.hasPower(BAN_MAGIC_GAIN)){
+        if(!p.hasPower(BAN_MANA_GAIN)){
             this.addToBot(new MakeTempCardInHandAction(new Mana(),this.amt));
         }
         this.isDone = true;

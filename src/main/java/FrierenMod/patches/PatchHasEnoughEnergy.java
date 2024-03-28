@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.MANA_INSTEAD_OF_COST;
 
 @SpirePatch(clz = AbstractCard.class,method = "hasEnoughEnergy")
 public class PatchHasEnoughEnergy {
@@ -20,7 +20,7 @@ public class PatchHasEnoughEnergy {
     @SpireInsertPatch(rloc = 35)
     public static SpireReturn<Boolean> Insert(AbstractCard _inst){
         AbstractPlayer p = AbstractDungeon.player;
-        if(p.hasPower(MAGIC_INSTEAD_OF_COST)){
+        if(p.hasPower(MANA_INSTEAD_OF_COST)){
             if(ChantHelper.getAllManaNum() >= _inst.costForTurn)
                 return SpireReturn.Return(true);
             else {

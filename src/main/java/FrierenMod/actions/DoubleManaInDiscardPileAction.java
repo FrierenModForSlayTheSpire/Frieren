@@ -3,7 +3,7 @@ package FrierenMod.actions;
 import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-public class DoubleMagicInDiscardPileAction extends AbstractGameAction {
+public class DoubleManaInDiscardPileAction extends AbstractGameAction {
     @Override
     public void update() {
         int discard = ChantHelper.getManaNumInDiscardPile();
