@@ -16,7 +16,7 @@ public class PatchGetRewardCards {
         if (AbstractDungeon.player.hasRelic(IcicleCherryBlossom.ID))
             for (int i = 0; i < retVal2.size(); i++) {
                 int rng = AbstractDungeon.cardRng.random(100);
-                if (rng <= 70) {
+                if (rng <= 60) {
                     retVal2.set(i, new Mana());
                 }
             }
