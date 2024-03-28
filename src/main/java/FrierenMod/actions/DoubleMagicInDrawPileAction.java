@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 public class DoubleMagicInDrawPileAction extends AbstractGameAction {
     @Override
     public void update() {
-        int draw = ChantHelper.getMagicPowerNumInDrawPile();
+        int draw = ChantHelper.getManaNumInDrawPile();
         if(draw > 0){
             this.addToBot(new MakeManaInDrawPileAction(draw));
         }

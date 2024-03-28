@@ -4,7 +4,7 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.Gdx;
@@ -109,9 +109,9 @@ public class ManaPanel extends AbstractPanel {
         return false;
     }
     public void updateMP(){
-        int draw = ChantHelper.getMagicPowerNumInDrawPile();
-        int hand = ChantHelper.getMagicPowerNumInHand();
-        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
+        int draw = ChantHelper.getManaNumInDrawPile();
+        int hand = ChantHelper.getManaNumInHand();
+        int discard = ChantHelper.getManaNumInDiscardPile();
         boolean isIncreased = discard - this.discardPileCounter > 0 || draw - this.drawPileCounter > 0 || hand - this.handCounter > 0;
         if(isIncreased){
             this.FontScale = 2.0F;
@@ -175,7 +175,7 @@ public class ManaPanel extends AbstractPanel {
     private void renderOrb(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
         sb.draw((this.isEmpty()) ? MPDarkImage : MPImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, this.OrbAngle, 0, 0, 256, 256, false, false);
-        sb.draw((LegendMagicHelper.cannotPlayLegendMagic()) ? MPWrapImage : MPWrapGoldenImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
+        sb.draw((LegendarySpellHelper.cannotPlayLegendarySpell()) ? MPWrapImage : MPWrapGoldenImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
     }
 
     private void renderVFX(SpriteBatch sb) {

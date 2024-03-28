@@ -14,7 +14,7 @@ public class MoldSpell extends AbstractFrierenCard {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 5;
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public void upgrade() {

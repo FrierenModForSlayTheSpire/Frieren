@@ -1,12 +1,9 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.white.ManaBarricade;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,7 +19,7 @@ public class ManaBarricadePower extends AbstractFrierenPower {
 
     private final AbstractPlayer p = AbstractDungeon.player;
     public void atEndOfTurn(boolean isPlayer) {
-        if (ChantHelper.getAllMagicPowerNum() >= 5) {
+        if (ChantHelper.getAllManaNum() >= 5) {
             boolean powerExists = false;
             for (AbstractPower pow : p.powers) {
                 if (pow.ID.equals("Barricade")) {

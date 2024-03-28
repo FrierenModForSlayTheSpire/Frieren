@@ -3,7 +3,7 @@ package FrierenMod.cards;
 import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
 import com.badlogic.gdx.Gdx;
@@ -24,7 +24,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isMana;
     public boolean isLimitedOverMana;
     public boolean isAccelMana;
-    public boolean isLegendaryMagic;
+    public boolean isLegendarySpell;
     public boolean isCostResetCard;
     public boolean isSealCard;
     public boolean isTaskCard;
@@ -86,7 +86,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isBlockModified = false;
         this.isMagicNumberModified = false;
         this.isChantCard = false;
-        this.isLegendaryMagic = false;
+        this.isLegendarySpell = false;
         this.isChantXModified = false;
         this.isMana = false;
         this.isLimitedOverMana = false;
@@ -146,7 +146,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).isMana = this.isMana;
             ((AbstractFrierenCard) card).isLimitedOverMana = this.isLimitedOverMana;
             ((AbstractFrierenCard) card).isAccelMana = this.isAccelMana;
-            ((AbstractFrierenCard) card).isLegendaryMagic = this.isLegendaryMagic;
+            ((AbstractFrierenCard) card).isLegendarySpell = this.isLegendarySpell;
             ((AbstractFrierenCard) card).isCostResetCard = this.isCostResetCard;
             ((AbstractFrierenCard) card).isSealCard = this.isSealCard;
             ((AbstractFrierenCard) card).baseChantX = this.baseChantX;
@@ -172,11 +172,11 @@ public abstract class AbstractFrierenCard extends CustomCard {
         if(this.isMana){
             return true;
         }
-        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendaryMagic)){
+        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendarySpell)){
             return canChantCardUse(m);
-        } else if(this.isLegendaryMagic && !this.isChantCard){
+        } else if(this.isLegendarySpell && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendaryMagic) {
+        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendarySpell) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
             return super.canUse(p,m);
@@ -189,7 +189,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return ChantHelper.canChantUse(this,m,this.chantX);
     }
     private boolean canLegendMagicCardUse(AbstractMonster m){
-        return LegendMagicHelper.canLegendMagicUse(this,m);
+        return LegendarySpellHelper.canLegendarySpellUse(this,m);
     }
     public void afterChant(){}
     public void taskProgressIncrease(){

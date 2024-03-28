@@ -7,7 +7,7 @@ public class DoubleMagicInHandAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int hand = ChantHelper.getMagicPowerNumInHand();
+        int hand = ChantHelper.getManaNumInHand();
         if(hand > 0){
             this.addToBot(new MakeManaInHandAction(hand));
         }

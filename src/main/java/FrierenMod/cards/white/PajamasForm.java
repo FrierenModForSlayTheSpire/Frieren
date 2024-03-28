@@ -22,7 +22,7 @@ public class PajamasForm extends AbstractFrierenCard {
         this.cardsToPreview = new Mana();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = ChantHelper.getAllMagicPowerNum() *3;
+        this.baseMagicNumber = ChantHelper.getAllManaNum() *3;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -33,7 +33,7 @@ public class PajamasForm extends AbstractFrierenCard {
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = ChantHelper.getAllMagicPowerNum() *3;
+        this.baseMagicNumber = ChantHelper.getAllManaNum() *3;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;

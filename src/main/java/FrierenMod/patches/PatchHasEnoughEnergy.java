@@ -1,7 +1,6 @@
 package FrierenMod.patches;
 
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import FrierenMod.utils.ModInformation;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -22,7 +21,7 @@ public class PatchHasEnoughEnergy {
     public static SpireReturn<Boolean> Insert(AbstractCard _inst){
         AbstractPlayer p = AbstractDungeon.player;
         if(p.hasPower(MAGIC_INSTEAD_OF_COST)){
-            if(ChantHelper.getAllMagicPowerNum() >= _inst.costForTurn)
+            if(ChantHelper.getAllManaNum() >= _inst.costForTurn)
                 return SpireReturn.Return(true);
             else {
                 _inst.cantUseMessage = TEXT[0];

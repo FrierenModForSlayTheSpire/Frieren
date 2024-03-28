@@ -15,7 +15,7 @@ public class Famehameha extends AbstractFrierenCard {
     public Famehameha() {
         super(ID, 4, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.damage = this.baseDamage = 25;
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
         this.isCostResetCard = true;
     }
     public void afterChant(){

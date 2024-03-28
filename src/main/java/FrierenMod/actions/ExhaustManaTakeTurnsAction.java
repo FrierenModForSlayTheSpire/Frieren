@@ -13,9 +13,9 @@ public class ExhaustManaTakeTurnsAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(getAllMagicPowerNum() >= requiredAmt){
-            int draw = getMagicPowerNumInDrawPile();
-            int hand = getMagicPowerNumInHand();
+        if(getAllManaNum() >= requiredAmt){
+            int draw = getManaNumInDrawPile();
+            int hand = getManaNumInHand();
             if(draw >= requiredAmt){
                 this.addToBot(new ExhaustManaInDrawPileAction(requiredAmt));
             }

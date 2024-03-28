@@ -4,7 +4,7 @@ import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Mana;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -17,7 +17,7 @@ public class ContinualChant extends AbstractFrierenCard {
         this.magicNumber = this.baseMagicNumber = 4;
         this.cardsToPreview = new Mana();
         this.isChantCard = true;
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public void upgrade() {
@@ -35,7 +35,7 @@ public class ContinualChant extends AbstractFrierenCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(!LegendMagicHelper.canLegendMagicUse(this,m)){
+        if(!LegendarySpellHelper.canLegendarySpellUse(this,m)){
             return false;
         }
         return super.canUseOriginally(p,m);

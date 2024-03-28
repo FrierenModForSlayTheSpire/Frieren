@@ -24,7 +24,7 @@ public class SayThinkingSpell extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int amt = ChantHelper.getMagicPowerNumInHand();
+        int amt = ChantHelper.getManaNumInHand();
         this.addToBot(new ExhaustManaInHandAction(amt));
         for (int i = 0; i < amt * magicNumber; i++)
             addToBot(new PlayRandomCardAction(
