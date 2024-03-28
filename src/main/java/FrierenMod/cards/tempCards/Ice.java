@@ -4,7 +4,6 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Ice extends AbstractFrierenCard {
@@ -13,6 +12,7 @@ public class Ice extends AbstractFrierenCard {
         super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.block = this.baseBlock = 10;
         this.exhaust = true;
+        this.isEthereal = true;
     }
     @Override
     public void upgrade() {
