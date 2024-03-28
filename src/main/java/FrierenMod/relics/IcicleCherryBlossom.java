@@ -6,10 +6,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class Sakura extends AbstractFrierenRelic {
-    public static final String ID = ModInformation.makeID(Sakura.class.getSimpleName());
+public class IcicleCherryBlossom extends AbstractFrierenRelic {
+    public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
 
-    public Sakura() {
+    public IcicleCherryBlossom() {
         super(ID, RelicTier.BOSS);
     }
 
@@ -18,7 +18,7 @@ public class Sakura extends AbstractFrierenRelic {
     }
 
     public AbstractRelic makeCopy() {
-        return new Sakura();
+        return new IcicleCherryBlossom();
     }
 
     public boolean isNormal() {
