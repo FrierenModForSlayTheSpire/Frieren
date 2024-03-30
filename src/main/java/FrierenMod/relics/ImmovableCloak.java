@@ -1,15 +1,12 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class ImmovableCloak extends AbstractFrierenRelic {
+public class ImmovableCloak extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(ImmovableCloak.class.getSimpleName());
     public ImmovableCloak() {
         super(ID, RelicTier.UNCOMMON);

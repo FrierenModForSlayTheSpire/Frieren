@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class HairAccessory extends AbstractFrierenRelic {
+public class HairAccessory extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(HairAccessory.class.getSimpleName());
     public HairAccessory() {
         super(ID, RelicTier.RARE);

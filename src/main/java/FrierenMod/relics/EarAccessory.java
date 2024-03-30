@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class EarAccessory extends AbstractFrierenRelic {
+public class EarAccessory extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(EarAccessory.class.getSimpleName());
     public EarAccessory() {
         super(ID, RelicTier.COMMON);

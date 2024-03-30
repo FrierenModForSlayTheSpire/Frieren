@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class HolyEmblem extends AbstractFrierenRelic {
+public class HolyEmblem extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(HolyEmblem.class.getSimpleName());
     public HolyEmblem() {
         super(ID, RelicTier.STARTER);

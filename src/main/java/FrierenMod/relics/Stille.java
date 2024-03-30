@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 
-public class Stille extends AbstractFrierenRelic {
+public class Stille extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(Stille.class.getSimpleName());
 
     public Stille() {
