@@ -106,5 +106,11 @@
     "DESCRIPTIONS": [
       "At the end of your turn, if you have 5 #yMana or more, gain #yBarricade, otherwise, lose #yBarricade."
     ]
+  },
+  "FrierenMod:ConcentrationPower": {
+    "NAME": "专注",
+    "DESCRIPTIONS": [
+      "在打出 #y咏唱 牌时，如果 #y咏唱值 小于等于能力层数 ，则 #y咏唱 不会消耗 #y魔力 。 NL 你每打出 #b1 张牌后失去 #b1 层能力层数 。"
+    ]
   }
 }
