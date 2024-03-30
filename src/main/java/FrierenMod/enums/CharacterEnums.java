@@ -6,4 +6,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 public class CharacterEnums {
     @SpireEnum
     public static AbstractPlayer.PlayerClass FRIEREN;
+    @SpireEnum
+    public static AbstractPlayer.PlayerClass FERN;
 }

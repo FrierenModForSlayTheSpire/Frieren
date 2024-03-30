@@ -1,6 +1,7 @@
 package FrierenMod;
 
 
+import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
@@ -9,10 +10,7 @@ import FrierenMod.gameHelpers.OnStartBattleHelper;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
-import FrierenMod.utils.FrierenRes;
-import FrierenMod.utils.IDCheckDontTouchPls;
-import FrierenMod.utils.Log;
-import FrierenMod.utils.ModInformation;
+import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
@@ -64,6 +62,23 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 FrierenRes.BG_POWER_1024,
                 FrierenRes.BIG_ORB,
                 FrierenRes.SMALL_ORB);
+        BaseMod.addColor(CardEnums.FERN_CARD,
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.RENDER_COLOR.cpy(),
+                FernRes.BG_ATTACK_512,
+                FernRes.BG_SKILL_512,
+                FernRes.BG_POWER_512,
+                FernRes.ENERGY_ORB,
+                FernRes.BG_ATTACK_1024,
+                FernRes.BG_SKILL_1024,
+                FernRes.BG_POWER_1024,
+                FernRes.BIG_ORB,
+                FernRes.SMALL_ORB);
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
         BaseMod.subscribe(new OnPlayerTurnStartHelper());
@@ -121,7 +136,10 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     public void receiveEditCharacters() {
         Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FRIEREN.toString());
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
+        Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FERN.toString());
+        BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
         Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
+        Log.logger.info("Added " + CharacterEnums.FERN.toString());
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(BottledMana.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), BottledMana.POTION_ID, CharacterEnums.FRIEREN);
         BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
