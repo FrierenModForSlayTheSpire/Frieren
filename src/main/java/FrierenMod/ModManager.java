@@ -122,7 +122,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
         Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
         Log.logger.info("Beginning to add potions.");
-        BaseMod.addPotion(BottledMana.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), BottledMana.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(BottledMana.class, Color.BLUE.cpy(), Color.ROYAL.cpy(), Color.ROYAL, BottledMana.POTION_ID, CharacterEnums.FRIEREN);
         BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
         BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(),FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
         Log.logger.info("Added potions.");

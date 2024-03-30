@@ -20,7 +20,7 @@ public class BottledMana extends AbstractFrierenPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public BottledMana() {
-        super(potionStrings.NAME, POTION_ID, AbstractPotion.PotionRarity.COMMON, PotionSize.FAIRY, AbstractPotion.PotionColor.BLUE);
+        super(potionStrings.NAME, POTION_ID, AbstractPotion.PotionRarity.COMMON, PotionSize.HEART, PotionColor.SWIFT);
     }
     public void initializeData() {
         this.isThrown = false;
