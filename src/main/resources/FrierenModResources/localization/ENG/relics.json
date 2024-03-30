@@ -76,6 +76,13 @@
       "At the start of your first #b3 turn, gain #b1 #yArtifact if you don't have it."
     ]
   },
+  "FrierenMod:IcicleCherryBlossom": {
+    "NAME": "冰柱樱",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "在卡牌奖励画面，可供选择的牌有 #b60 %的概率被替换为 #y魔力 。在每回合开始时获得1点能量。"
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "海塔留下的法杖",
     "FLAVOR": "",

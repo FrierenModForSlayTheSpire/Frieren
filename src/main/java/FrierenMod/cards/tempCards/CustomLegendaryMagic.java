@@ -8,7 +8,7 @@ public class CustomLegendaryMagic extends AbstractFrierenCard {
     public String usedModifierText = this.rawDescription;
     public CustomLegendaryMagic() {
         super(ID, -1, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public boolean canUpgrade(){

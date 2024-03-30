@@ -202,7 +202,7 @@
     "UPGRADE_DESCRIPTION": "Craft a frierenmod:Legendary_Spell! You will have more options. NL Exhaust."
   },
   "FrierenMod:LittleFire": {
-    "NAME": "Little Fire",
+    "NAME": "Little Spark",
     "DESCRIPTION": "Deal !D! damage. NL Upgrade a card in your hand for the rest of the combat.",
     "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Upgrade all cards in your hand for the rest of the combat."
   },
@@ -407,7 +407,7 @@
     "DESCRIPTION": "Apply 99 Vulnerable and 99 Weak. NL Exhaust. NL Ethereal. "
   },
   "FrierenMod:RestraintMagic": {
-    "NAME": "Restraint magic",
+    "NAME": "Restraint Magic",
     "DESCRIPTION": "Apply frierenmod:Slow and the target loses 3 Strength. NL Exhaust."
   },
   "FrierenMod:SeeThroughPhantom": {
@@ -502,22 +502,26 @@
   },
   "FrierenMod:Fire": {
     "NAME": "Fire Elemental",
-    "DESCRIPTION": "Deal !D! Damage twice."
+    "DESCRIPTION": "Deal !D! Damage twice. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Ice": {
     "NAME": "Ice Elemental",
-    "DESCRIPTION": "Gain !B! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Light": {
     "NAME": "Light Elemental",
-    "DESCRIPTION": "Heal !M! HP"
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Thunder": {
     "NAME": "Thunder Elemental",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Dark": {
     "NAME": "Dark Elemental",
-    "DESCRIPTION": "Draw !M! cards."
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust. NL Ethereal."
+  },
+  "FrierenMod:SayThinkingSpell": {
+    "NAME": "把思考的事情说出来的魔法",
+    "DESCRIPTION": "消耗手中所有的 *魔力 ，每消耗1张就打出你抽牌堆随机位置的 !M! 张牌。"
   }
 }

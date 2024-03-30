@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.MANA_INSTEAD_OF_COST;
 
 @SpirePatch(clz = AbstractCard.class, method = "renderEnergy")
 public class PatchRenderEnergy {
@@ -21,7 +21,7 @@ public class PatchRenderEnergy {
     @SpireInsertPatch(rloc = 25, localvars = {"sb","renderColor"})
     public static void Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor){
         AbstractPlayer p = AbstractDungeon.player;
-        if(p != null && p.hasPower(MAGIC_INSTEAD_OF_COST) && _inst.cost >= 0)
+        if(p != null && p.hasPower(MANA_INSTEAD_OF_COST) && _inst.cost >= 0)
             renderHelper2(_inst, sb, renderColor, MAGIC_ORB, _inst.current_x, _inst.current_y);
     }
     private static void renderHelper2(AbstractCard c, SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY) {

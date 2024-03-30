@@ -3,18 +3,19 @@ package FrierenMod.cards;
 import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
@@ -23,7 +24,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public boolean isMana;
     public boolean isLimitedOverMana;
     public boolean isAccelMana;
-    public boolean isLegendaryMagic;
+    public boolean isLegendarySpell;
     public boolean isCostResetCard;
     public boolean isSealCard;
     public boolean isTaskCard;
@@ -39,12 +40,9 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public int currentLevel = -1;
     public int currentLevelRequiredNumber = -1;
     public int currentInLevelProgressNumber = -1;
+    public float rotationTimer;
+    public int previewIndex;
     public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
-    public AbstractCard prev1;
-    public AbstractCard prev2;
-    public AbstractCard prev3;
-    public AbstractCard prev4;
-    public AbstractCard prev5;
     public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         initSwitches();
@@ -88,7 +86,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.isBlockModified = false;
         this.isMagicNumberModified = false;
         this.isChantCard = false;
-        this.isLegendaryMagic = false;
+        this.isLegendarySpell = false;
         this.isChantXModified = false;
         this.isMana = false;
         this.isLimitedOverMana = false;
@@ -148,7 +146,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).isMana = this.isMana;
             ((AbstractFrierenCard) card).isLimitedOverMana = this.isLimitedOverMana;
             ((AbstractFrierenCard) card).isAccelMana = this.isAccelMana;
-            ((AbstractFrierenCard) card).isLegendaryMagic = this.isLegendaryMagic;
+            ((AbstractFrierenCard) card).isLegendarySpell = this.isLegendarySpell;
             ((AbstractFrierenCard) card).isCostResetCard = this.isCostResetCard;
             ((AbstractFrierenCard) card).isSealCard = this.isSealCard;
             ((AbstractFrierenCard) card).baseChantX = this.baseChantX;
@@ -174,11 +172,11 @@ public abstract class AbstractFrierenCard extends CustomCard {
         if(this.isMana){
             return true;
         }
-        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendaryMagic)){
+        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendarySpell)){
             return canChantCardUse(m);
-        } else if(this.isLegendaryMagic && !this.isChantCard){
+        } else if(this.isLegendarySpell && !this.isChantCard){
             return canLegendMagicCardUse(m);
-        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendaryMagic) {
+        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendarySpell) {
             return canLegendMagicCardUse(m) && canChantCardUse(m);
         }else {
             return super.canUse(p,m);
@@ -191,7 +189,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return ChantHelper.canChantUse(this,m,this.chantX);
     }
     private boolean canLegendMagicCardUse(AbstractMonster m){
-        return LegendMagicHelper.canLegendMagicUse(this,m);
+        return LegendarySpellHelper.canLegendarySpellUse(this,m);
     }
     public void afterChant(){}
     public void taskProgressIncrease(){
@@ -214,46 +212,25 @@ public abstract class AbstractFrierenCard extends CustomCard {
         this.initializeDescription();
         this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
-    public void renderCardTip(SpriteBatch sb) {
-        super.renderCardTip(sb);
-        if (!this.hb.hovered || this.isLocked || (AbstractDungeon.player != null && (AbstractDungeon.player.isDraggingCard || AbstractDungeon.player.inSingleTargetMode)))
-            return;
-        float drawScale = 0.5F;
-        float yPosition1 = Settings.HEIGHT * 0.2F;
-        float xPosition1 = Settings.WIDTH * 0.10F;
-        float xPosition2 = Settings.WIDTH * 0.25F;
-        float xPosition3 = Settings.WIDTH * 0.40F;
-        float xPosition4 = Settings.WIDTH * 0.55F;
-        float xPosition5 = Settings.WIDTH * 0.70F;
-        if (this.prev1 != null) {
-            this.prev1.drawScale = drawScale;
-            this.prev1.current_x = xPosition1;
-            this.prev1.current_y = yPosition1;
-            this.prev1.render(sb);
-        }
-        if (this.prev2 != null) {
-            this.prev2.drawScale = drawScale;
-            this.prev2.current_x = xPosition2;
-            this.prev2.current_y = yPosition1;
-            this.prev2.render(sb);
-        }
-        if (this.prev3 != null) {
-            this.prev3.drawScale = drawScale;
-            this.prev3.current_x = xPosition3;
-            this.prev3.current_y = yPosition1;
-            this.prev3.render(sb);
-        }
-        if (this.prev4 != null) {
-            this.prev4.drawScale = drawScale;
-            this.prev4.current_x = xPosition4;
-            this.prev4.current_y = yPosition1;
-            this.prev4.render(sb);
-        }
-        if (this.prev5 != null) {
-            this.prev5.drawScale = drawScale;
-            this.prev5.current_x = xPosition5;
-            this.prev5.current_y = yPosition1;
-            this.prev5.render(sb);
-        }
+    public ArrayList<AbstractCard> getCardsToPreview() {
+        return null;
+    }
+    public void update(){
+        super.update();
+        if (this.getCardsToPreview() != null && this.hb.hovered)
+            if (this.rotationTimer <= 0.0F) {
+                this.rotationTimer = 2.0F;
+                AbstractCard c = (this.getCardsToPreview().get(this.previewIndex)).makeCopy();
+                if(this.upgraded)
+                    c.upgrade();
+                this.cardsToPreview = c;
+                if (this.previewIndex == this.getCardsToPreview().size() - 1) {
+                    this.previewIndex = 0;
+                } else {
+                    this.previewIndex++;
+                }
+            } else {
+                this.rotationTimer -= Gdx.graphics.getDeltaTime();
+            }
     }
 }

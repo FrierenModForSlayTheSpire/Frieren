@@ -10,9 +10,9 @@ public class ExhaustAllManaAction extends AbstractGameAction {
 
     public ExhaustAllManaAction() {
         this.actionType = ActionType.WAIT;
-        this.exhaustNumberInDrawPile = ChantHelper.getMagicPowerNumInDiscardPile();
-        this.exhaustNumberInHand = ChantHelper.getMagicPowerNumInHand();
-        this.exhaustNumberInDiscardPile = ChantHelper.getMagicPowerNumInDiscardPile();
+        this.exhaustNumberInDrawPile = ChantHelper.getManaNumInDiscardPile();
+        this.exhaustNumberInHand = ChantHelper.getManaNumInHand();
+        this.exhaustNumberInDiscardPile = ChantHelper.getManaNumInDiscardPile();
     }
 
     public void update() {

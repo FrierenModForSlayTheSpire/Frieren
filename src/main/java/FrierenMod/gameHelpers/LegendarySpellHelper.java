@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
-public class LegendMagicHelper {
-    public static boolean cannotPlayLegendMagic(){
+public class LegendarySpellHelper {
+    public static boolean cannotPlayLegendarySpell(){
         return getChantCardUsedThisTurn() == 0;
     }
-    public static int getExhaustedMagicPowerNumber(){
+    public static int getExhaustedManaNumber(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
             if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
@@ -25,7 +25,7 @@ public class LegendMagicHelper {
         return counts;
     }
 
-    private static ArrayList<AbstractCard> initLegendMagicCardPool(){
+    private static ArrayList<AbstractCard> initLegendarySpellCardPool(){
         ArrayList<AbstractCard> pool = new ArrayList<>();
         pool.add(new FlyingMagic());
         pool.add(new ContinualChant());
@@ -36,11 +36,11 @@ public class LegendMagicHelper {
         return pool;
     }
     public static AbstractCard getRandomCard(){
-        ArrayList<AbstractCard> list = initLegendMagicCardPool();
+        ArrayList<AbstractCard> list = initLegendarySpellCardPool();
         return (AbstractCard)list.get(cardRandomRng.random(list.size() - 1));
     }
-    public static boolean canLegendMagicUse(AbstractCard c, AbstractMonster m){
-        if (cannotPlayLegendMagic()){
+    public static boolean canLegendarySpellUse(AbstractCard c, AbstractMonster m){
+        if (cannotPlayLegendarySpell()){
             return false;
         }
         else {

@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MAGIC_GAIN;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MANA_GAIN;
 
 public class MakeManaInDrawPileAction extends AbstractGameAction {
     private final AbstractCard cardToMake;
@@ -26,7 +26,7 @@ public class MakeManaInDrawPileAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             AbstractPlayer p = AbstractDungeon.player;
-            if(!p.hasPower(BAN_MAGIC_GAIN)){
+            if(!p.hasPower(BAN_MANA_GAIN)){
                 for (int i = 0; i < this.amount; i++) {
                     AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false));

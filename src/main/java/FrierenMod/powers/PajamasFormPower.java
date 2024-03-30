@@ -21,9 +21,9 @@ public class PajamasFormPower extends AbstractFrierenPower {
         if (isPlayer) {
             this.updateDescription();
             this.flash();
-            this.addToBot(new ExhaustManaInDrawPileAction(ChantHelper.getMagicPowerNumInDrawPile()));
-            this.addToBot(new ExhaustManaInHandAction(ChantHelper.getMagicPowerNumInHand()));
-            this.addToBot(new ExhaustManaInDiscardPileAction(ChantHelper.getMagicPowerNumInDiscardPile()));
+            this.addToBot(new ExhaustManaInDrawPileAction(ChantHelper.getManaNumInDrawPile()));
+            this.addToBot(new ExhaustManaInHandAction(ChantHelper.getManaNumInHand()));
+            this.addToBot(new ExhaustManaInDiscardPileAction(ChantHelper.getManaNumInDiscardPile()));
             this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
@@ -39,7 +39,7 @@ public class PajamasFormPower extends AbstractFrierenPower {
 
     public void updateDescription() {
         int rate = this.amount * 3;
-        this.baseDamage = ChantHelper.getAllMagicPowerNum() * rate;
+        this.baseDamage = ChantHelper.getAllManaNum() * rate;
         this.description = String.format(descriptions[0], rate, this.baseDamage);
     }
 

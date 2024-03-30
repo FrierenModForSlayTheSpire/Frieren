@@ -15,7 +15,7 @@ public class ApexMagicAction extends AbstractGameAction {
     }
     @Override
     public void update() {
-        if (ChantHelper.getMagicPowerNumInDrawPile() == 4 && ChantHelper.getMagicPowerNumInHand() == 4 && ChantHelper.getMagicPowerNumInDiscardPile() == 4){
+        if (ChantHelper.getManaNumInDrawPile() == 4 && ChantHelper.getManaNumInHand() == 4 && ChantHelper.getManaNumInDiscardPile() == 4){
             this.addToBot(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(999, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }else {
             this.addToBot(new DrawCardAction(this.magicNumber));

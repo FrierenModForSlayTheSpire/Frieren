@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -24,13 +24,13 @@ public class SealPower extends AbstractFrierenPower {
         }catch (NullPointerException e){
             cardsAmt = 0;
         }
-        this.description = String.format(descriptions[0], 5 - LegendMagicHelper.getChantCardUsedThisTurn(),cardsAmt);
+        this.description = String.format(descriptions[0], 5 - LegendarySpellHelper.getChantCardUsedThisTurn(),cardsAmt);
     }
     @Override
     public void afterChant() {
         this.flash();
         this.updateDescription();
-        if(LegendMagicHelper.getChantCardUsedThisTurn() >= 5){
+        if(LegendarySpellHelper.getChantCardUsedThisTurn() >= 5){
             for(AbstractCard c:this.cardsToSeal){
                 this.addToBot(new MakeTempCardInHandAction(c.makeStatEquivalentCopy()));
             }
