@@ -39,21 +39,21 @@ public class ModInformation {
     public static String getOrbPath() {
         return getUIPath() + "orb/";
     }
-    public static String getMagicPanelPath() {
+    public static String getManaPanelPath() {
         return getUIPath() + "magicPanel/";
     }
-    public static String makeMagicPanelPath(String content){
-        return getMagicPanelPath() + content + ".png";
+    public static String makeManaPanelPath(String content){
+        return getManaPanelPath() + content + ".png";
     }
     public static String[] makeOrbTexturePath(String character){
         return new String[]{
-                getOrbPath() + character + "/" + "layer4.png",
-                getOrbPath() + character + "/" + "layer2.png",
                 getOrbPath() + character + "/" + "layer1.png",
-                getOrbPath() + character + "/" + "layer6.png",
-                getOrbPath() + character + "/" + "layer4d.png",
+                getOrbPath() + character + "/" + "layer2.png",
+                getOrbPath() + character + "/" + "layer3.png",
+                getOrbPath() + character + "/" + "layer4.png",
+                getOrbPath() + character + "/" + "layer1d.png",
                 getOrbPath() + character + "/" + "layer2d.png",
-                getOrbPath() + character + "/" + "layer1d.png"
+                getOrbPath() + character + "/" + "layer3d.png"
         };
     }
     public static String makeOrbVfxPath(String character){
@@ -84,5 +84,12 @@ public class ModInformation {
             return getImgPath() + "powers/" + id + "_32.png";
         else
             return "ERROR!";
+    }
+    public static String makeTipImgPath(String character, String tipNum){
+//        if (language == Settings.GameLanguage.ZHS) {
+            return makeUIPath("tip/ZHS/"+ character +"/tip" + tipNum + ".png");
+//        } else {
+//            return makeUIPath("tip/ENG/"+ character +"/tip" + tipNum + ".png");
+//        }
     }
 }

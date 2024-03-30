@@ -1,4 +1,4 @@
-package FrierenMod;
+package FrierenMod.utils;
 
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomMultiPageFtue;
@@ -15,8 +15,8 @@ public class FTUEUtils {
 
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("FTUE"));
 
-    private static final Texture[] TEXTURES = new Texture[] { ImageMaster.loadImage(ModInformation.makeUIPath("tip01")),
-            ImageMaster.loadImage(ModInformation.makeUIPath("tip02")) };
+    private static final Texture[] TEXTURES = new Texture[] { ImageMaster.loadImage(FrierenRes.TIP_01),
+            ImageMaster.loadImage(FrierenRes.TIP_02) };
 
     public static void openCombatTip() {
         if (!(Boolean) TipTracker.tips.get(COMBAT_TIP_KEY)) {

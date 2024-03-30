@@ -2,7 +2,7 @@ package FrierenMod.patches;
 
 
 import FrierenMod.Characters.Frieren;
-import FrierenMod.FTUEUtils;
+import FrierenMod.utils.FTUEUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;

@@ -47,7 +47,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.subscribe(this);
         setModID(ModInformation.MOD_NAME);
         Log.logger.info("Creating the color " + CardEnums.FRIEREN_CARD.toString());
-        BaseMod.addColor(CardEnums.FRIEREN_CARD, FrierenRes.RENDER_COLOR.cpy(),
+        BaseMod.addColor(CardEnums.FRIEREN_CARD,
+                FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),

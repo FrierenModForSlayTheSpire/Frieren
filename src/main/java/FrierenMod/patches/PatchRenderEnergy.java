@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.utils.ModInformation;
+import FrierenMod.utils.FrierenRes;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -14,11 +14,10 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
-import static FrierenMod.utils.FrierenRes.CHARACTER_NAME;
 
 @SpirePatch(clz = AbstractCard.class, method = "renderEnergy")
 public class PatchRenderEnergy {
-    public static TextureAtlas.AtlasRegion MAGIC_ORB = getImg(ImageMaster.loadImage(ModInformation.makeCardOrbPath(CHARACTER_NAME,"magic")));
+    public static TextureAtlas.AtlasRegion MAGIC_ORB = getImg(ImageMaster.loadImage(FrierenRes.MAGIC_ORB));
     @SpireInsertPatch(rloc = 25, localvars = {"sb","renderColor"})
     public static void Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor){
         AbstractPlayer p = AbstractDungeon.player;
