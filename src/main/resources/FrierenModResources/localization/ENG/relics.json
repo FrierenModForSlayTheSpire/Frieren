@@ -75,5 +75,12 @@
     "DESCRIPTIONS": [
       "At the start of your first #b3 turn, gain #b1 #yArtifact if you don't have it."
     ]
+  },
+  "FrierenMod:HaitaaWand": {
+    "NAME": "海塔留下的法杖",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "在每个回合结束时，消耗所有魔力，每消耗 #b1 张就获得 #b1 层 #y专注 。"
+    ]
   }
 }

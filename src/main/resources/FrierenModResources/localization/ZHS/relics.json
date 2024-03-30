@@ -75,5 +75,12 @@
     "DESCRIPTIONS": [
       "在前三个回合开始时，若你没有 #y人工制品 ，则获得 #b1 层 #y人工制品 。"
     ]
+  },
+  "FrierenMod:HaitaaWand": {
+    "NAME": "海塔留下的法杖",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "在每个回合结束时，消耗所有魔力，每消耗 #b1 张就获得 #b1 层 #y专注 。"
+    ]
   }
 }
