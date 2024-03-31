@@ -31,7 +31,8 @@
   },
   "FrierenMod:ShavedIceSpell": {
     "NAME": "变出刨冰的魔法",
-    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
+    "EXTENDED_DESCRIPTION":["芙莉莲和菲伦的双职业卡。"]
   },
   "FrierenMod:ManaConcealment": {
     "NAME": "魔力隐藏",
@@ -523,5 +524,13 @@
   "FrierenMod:SayThinkingSpell": {
     "NAME": "把思考的事情说出来的魔法",
     "DESCRIPTION": " 消耗 手中所有的 *魔力 ，每 消耗 1张就打出你抽牌堆随机位置的 !M! 张牌。"
+  },
+  "FrierenMod:Strike_Fern": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "FrierenMod:Defend_Fern": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   }
 }

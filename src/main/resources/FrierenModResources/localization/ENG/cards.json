@@ -523,5 +523,13 @@
   "FrierenMod:SayThinkingSpell": {
     "NAME": "把思考的事情说出来的魔法",
     "DESCRIPTION": "消耗手中所有的 *魔力 ，每消耗1张就打出你抽牌堆随机位置的 !M! 张牌。"
+  },
+  "FrierenMod:Strike_Fern": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "FrierenMod:Defend_Fern": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   }
 }
