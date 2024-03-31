@@ -2,6 +2,7 @@ package FrierenMod.cards.canAutoAdd.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.StrengthMod;
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,12 +12,13 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class StrengthOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(StrengthOption.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
     private AbstractCard currentLegendMagic;
     public StrengthOption() {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
+        super(info);
     }
     public StrengthOption(AbstractCard currentLegendMagic) {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
+        super(info);
         this.currentLegendMagic = currentLegendMagic;
     }
     @Override

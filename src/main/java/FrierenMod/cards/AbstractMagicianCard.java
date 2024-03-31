@@ -50,22 +50,27 @@ public abstract class AbstractMagicianCard extends CustomCard {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
         initCards();
     }
+    @Deprecated
     public AbstractMagicianCard(String id, String rawDescription, CardType type, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
         initCards();
     }
+    @Deprecated
     public AbstractMagicianCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initCards();
     }
+    @Deprecated
     public AbstractMagicianCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initCards();
     }
+    @Deprecated
     public AbstractMagicianCard(String id, int cost, CardType type, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, CardTarget.NONE);
         initCards();
     }
+    @Deprecated
     public AbstractMagicianCard(String id, int cost, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, color, rarity, CardTarget.NONE);
         initCards();

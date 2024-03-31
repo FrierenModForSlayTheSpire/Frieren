@@ -1,6 +1,7 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -15,8 +16,9 @@ import java.util.Iterator;
 
 public class Thunder extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Thunder.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
     public Thunder() {
-        super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(info);
         this.damage = this.baseDamage = 8;
         this.exhaust = true;
         this.isEthereal = true;

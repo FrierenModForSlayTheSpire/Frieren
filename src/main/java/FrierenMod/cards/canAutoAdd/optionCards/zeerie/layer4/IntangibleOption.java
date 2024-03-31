@@ -2,6 +2,7 @@ package FrierenMod.cards.canAutoAdd.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.IntangibleMod;
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,13 +12,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class IntangibleOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(IntangibleOption.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.POWER, CardTarget.NONE);
+    public static final CardInfo info2 = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.POWER, CardTarget.NONE);
     private AbstractCard currentLegendMagic;
     private int stackAmt;
     public IntangibleOption() {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.POWER, CardTarget.NONE);
+        super(info);
     }
     public IntangibleOption(AbstractCard currentLegendMagic, int stackAmt) {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.POWER, CardTarget.NONE);
+        super(info2);
         this.currentLegendMagic = currentLegendMagic;
         this.stackAmt = stackAmt;
         this.magicNumber = this.baseMagicNumber = stackAmt;

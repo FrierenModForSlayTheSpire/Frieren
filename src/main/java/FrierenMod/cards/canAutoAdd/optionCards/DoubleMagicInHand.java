@@ -3,14 +3,16 @@ package FrierenMod.cards.canAutoAdd.optionCards;
 import FrierenMod.actions.DoubleManaInHandAction;
 import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class DoubleMagicInHand extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(DoubleMagicInHand.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public DoubleMagicInHand() {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
     }
     @Override

@@ -1,6 +1,7 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,8 +9,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Repent extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Repent.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public Repent() {
-        super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.exhaust = true;
         this.selfRetain = true;
         this.baseMagicNumber = this.magicNumber = 2;

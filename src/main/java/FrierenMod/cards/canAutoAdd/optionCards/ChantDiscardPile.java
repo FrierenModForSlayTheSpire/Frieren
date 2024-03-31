@@ -3,6 +3,7 @@ package FrierenMod.cards.canAutoAdd.optionCards;
 import FrierenMod.actions.ChantFromDiscardPileAction;
 import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -11,13 +12,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantDiscardPile extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantDiscardPile.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     private AbstractGameAction[] nextAction;
     public ChantDiscardPile() {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
     }
     public ChantDiscardPile(AbstractGameAction... nextAction) {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
         this.nextAction = nextAction;
     }

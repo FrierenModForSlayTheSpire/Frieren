@@ -2,6 +2,7 @@ package FrierenMod.cards.canAutoAdd.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.ChantMod;
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -12,13 +13,15 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantOption.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
+    public static final CardInfo info2 = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
     private AbstractCard currentLegendMagic;
     private int chantAmt;
     public ChantOption() {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
+        super(info);
     }
     public ChantOption(AbstractCard currentLegendMagic, int chantAmt) {
-        super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
+        super(info2);
         this.currentLegendMagic = currentLegendMagic;
         this.chantAmt = chantAmt;
         this.chantX = this.baseChantX = this.chantAmt;

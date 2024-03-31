@@ -3,6 +3,7 @@ package FrierenMod.cards.canAutoAdd.optionCards;
 import FrierenMod.actions.ChantFromHandAction;
 import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,19 +13,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantHand extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     private AbstractCard cardToReturn;
     private AbstractGameAction[] nextAction;
     public ChantHand() {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
     }
     public ChantHand(AbstractCard cardToReturn) {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
         this.cardToReturn = cardToReturn;
     }
     public ChantHand(AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.cardsToPreview = new Mana();
         this.cardToReturn = cardToReturn;
         this.nextAction = nextAction;

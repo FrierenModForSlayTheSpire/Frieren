@@ -1,6 +1,7 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -9,8 +10,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Himmel extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Himmel.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public Himmel() {
-        super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+        super(info);
         this.isEthereal = true;
     }
     @Override
