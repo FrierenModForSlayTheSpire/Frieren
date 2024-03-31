@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.actions.DrawMagicAction;
+import FrierenMod.actions.DrawManaAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
@@ -37,6 +37,6 @@ public class SwampSpell extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawMagicAction(this.magicNumber));
+        this.addToBot(new DrawManaAction(this.magicNumber));
     }
 }

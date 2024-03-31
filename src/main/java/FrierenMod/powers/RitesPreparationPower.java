@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractMageCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,7 +17,7 @@ public class RitesPreparationPower extends AbstractFrierenPower {
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         super.onAfterCardPlayed(usedCard);
-        if(usedCard instanceof AbstractMageCard && ((AbstractMageCard) usedCard).isMana){
+        if(usedCard instanceof AbstractBaseCard && ((AbstractBaseCard) usedCard).isMana){
             this.MagicPowerPlayedNum++;
         }
         if(this.MagicPowerPlayedNum == 3){

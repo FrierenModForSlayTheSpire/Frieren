@@ -13,7 +13,7 @@ public class LightningMagicAction extends AbstractGameAction {
         int draw = ChantHelper.getManaNumInDrawPile();
         int discard = ChantHelper.getManaNumInDiscardPile();
         if(draw > 0){
-            this.addToBot(new DrawMagicAction(draw));
+            this.addToBot(new DrawManaAction(draw));
         }
         if(discard > 0){
             this.addToBot(new DrawManaFromDiscardPileAction(discard));
