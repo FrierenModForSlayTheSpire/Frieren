@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class RitesPreparationPower extends AbstractFrierenPower {
+public class RitesPreparationPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(RitesPreparationPower.class.getSimpleName());
     private int MagicPowerPlayedNum = 0;
     public RitesPreparationPower(AbstractCreature owner, int amount) {

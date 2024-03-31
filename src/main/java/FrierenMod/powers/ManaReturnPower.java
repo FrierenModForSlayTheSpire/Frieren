@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class ManaReturnPower extends AbstractFrierenPower {
+public class ManaReturnPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ManaReturnPower.class.getSimpleName());
 
     public ManaReturnPower(AbstractCreature owner, int amount) {

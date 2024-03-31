@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.powers.AbstractFrierenPower;
+import FrierenMod.powers.AbstractBasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -15,8 +15,8 @@ public abstract class ChantFromCardGroupAction extends AbstractGameAction {
     public void triggerPowers(){
         if(haveNotTriggered)
             for(AbstractPower po: AbstractDungeon.player.powers)
-                if(po instanceof AbstractFrierenPower)
-                    ((AbstractFrierenPower) po).afterChant();
+                if(po instanceof AbstractBasePower)
+                    ((AbstractBasePower) po).afterChant();
     }
     public void triggerCards(){
         AbstractPlayer p = AbstractDungeon.player;

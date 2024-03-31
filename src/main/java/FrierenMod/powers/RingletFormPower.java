@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
-public class RingletFormPower extends AbstractFrierenPower {
+public class RingletFormPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(RingletFormPower.class.getSimpleName());
 
     public RingletFormPower(AbstractCreature owner, int amount) {

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
-public class BottledMana extends AbstractFrierenPotion {
+public class BottledMana extends AbstractBasePotion {
     public static final String POTION_ID = ModInformation.makeID(BottledMana.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 

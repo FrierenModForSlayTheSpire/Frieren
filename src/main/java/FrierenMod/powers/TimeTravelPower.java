@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 
-public class TimeTravelPower extends AbstractFrierenPower {
+public class TimeTravelPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(TimeTravelPower.class.getSimpleName());
     private final Status status;
     private final boolean isChanged;

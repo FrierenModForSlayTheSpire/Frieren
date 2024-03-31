@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class AccelerateFlowPower extends AbstractFrierenPower {
+public class AccelerateFlowPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(AccelerateFlowPower.class.getSimpleName());
     private final AbstractPlayer p = AbstractDungeon.player;
     public AccelerateFlowPower(AbstractCreature owner) {

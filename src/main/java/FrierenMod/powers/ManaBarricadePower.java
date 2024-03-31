@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.BarricadePower;
 
 
-public class ManaBarricadePower extends AbstractFrierenPower {
+public class ManaBarricadePower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ManaBarricadePower.class.getSimpleName());
     public ManaBarricadePower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);

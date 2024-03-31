@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class OutpouringPower extends AbstractFrierenPower {
+public class OutpouringPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(OutpouringPower.class.getSimpleName());
 
     public OutpouringPower(AbstractCreature owner, int amount) {

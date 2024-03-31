@@ -4,7 +4,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class BanManaGainPower extends AbstractFrierenPower {
+public class BanManaGainPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(BanManaGainPower.class.getSimpleName());
     public BanManaGainPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.DEBUFF);

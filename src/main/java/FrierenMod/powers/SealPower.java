@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 import java.util.ArrayList;
 
-public class SealPower extends AbstractFrierenPower {
+public class SealPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(SealPower.class.getSimpleName());
     public final ArrayList<AbstractCard> cardsToSeal;
     public SealPower(AbstractCreature owner, ArrayList<AbstractCard> cardsToSeal) {

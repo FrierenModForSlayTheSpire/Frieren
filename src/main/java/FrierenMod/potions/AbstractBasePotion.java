@@ -9,15 +9,15 @@ import java.util.ArrayList;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public abstract class AbstractFrierenPotion extends AbstractPotion {
-    public static final Logger logger = LogManager.getLogger(AbstractFrierenPotion.class.getName());
+public abstract class AbstractBasePotion extends AbstractPotion {
+    public static final Logger logger = LogManager.getLogger(AbstractBasePotion.class.getName());
 
-    public AbstractFrierenPotion(String name, String id, AbstractPotion.PotionRarity rarity, AbstractPotion.PotionSize size, AbstractPotion.PotionColor color) {
+    public AbstractBasePotion(String name, String id, AbstractPotion.PotionRarity rarity, AbstractPotion.PotionSize size, AbstractPotion.PotionColor color) {
         super(name, id, rarity, size, color);
         logger.info("new base potion:" + getClass().getName() + " id: " + id);
     }
 
-    public AbstractFrierenPotion(String name, String id, AbstractPotion.PotionRarity rarity, AbstractPotion.PotionSize size, AbstractPotion.PotionEffect effect, Color liquidColor, Color hybridColor, Color spotsColor) {
+    public AbstractBasePotion(String name, String id, AbstractPotion.PotionRarity rarity, AbstractPotion.PotionSize size, AbstractPotion.PotionEffect effect, Color liquidColor, Color hybridColor, Color spotsColor) {
         super(name, id, rarity, size, effect, liquidColor, hybridColor, spotsColor);
         logger.info("new base potion:" + getClass().getName() + " id: " + id);
     }

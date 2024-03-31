@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class MageStyleChokePower extends AbstractFrierenPower {
+public class MageStyleChokePower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(MageStyleChokePower.class.getSimpleName());
 
     public MageStyleChokePower(AbstractCreature owner, int amount) {

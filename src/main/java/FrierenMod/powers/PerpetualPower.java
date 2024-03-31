@@ -5,7 +5,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class PerpetualPower extends AbstractFrierenPower {
+public class PerpetualPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(PerpetualPower.class.getSimpleName());
 
     public PerpetualPower(AbstractCreature owner, int amount) {

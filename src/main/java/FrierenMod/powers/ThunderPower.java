@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class ThunderPower extends AbstractFrierenPower {
+public class ThunderPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ThunderPower.class.getSimpleName());
     private final AbstractPlayer p = AbstractDungeon.player;
 

@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class PajamasFormPower extends AbstractFrierenPower {
+public class PajamasFormPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(PajamasFormPower.class.getSimpleName());
     private int baseDamage;
     public PajamasFormPower(AbstractCreature owner, int amount) {
