@@ -1,10 +1,9 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.white.Defend_Frieren;
-import FrierenMod.cards.white.Flow;
-import FrierenMod.cards.white.Strike_Frieren;
-import FrierenMod.cards.white.DefensiveMagic;
-import FrierenMod.cards.white.RapidChant;
+import FrierenMod.cards.canAutoAdd.purple.Defend_Fern;
+import FrierenMod.cards.canAutoAdd.purple.Strike_Fern;
+import FrierenMod.cards.whitePurple.RapidChant;
+import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HaitaaWand;
@@ -65,13 +64,12 @@ public class Fern extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         for(int x = 0; x<4; x++) {
-            retVal.add(Strike_Frieren.ID);
+            retVal.add(Strike_Fern.ID);
         }
         for(int x = 0; x<4; x++) {
-            retVal.add(Defend_Frieren.ID);
+            retVal.add(Defend_Fern.ID);
         }
-        retVal.add(Flow.ID);
-        retVal.add(DefensiveMagic.ID);
+        retVal.add(ShavedIceSpell.ID);
         retVal.add(RapidChant.ID);
         return retVal;
     }
@@ -114,7 +112,7 @@ public class Fern extends CustomPlayer {
     // 翻牌事件出现的你的职业牌（一般设为打击）
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike_Frieren();
+        return new Strike_Fern();
     }
 
     // 卡牌轨迹颜色
