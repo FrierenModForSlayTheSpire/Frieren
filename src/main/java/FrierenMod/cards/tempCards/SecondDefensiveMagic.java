@@ -1,13 +1,13 @@
 package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SecondDefensiveMagic extends AbstractFrierenCard {
+public class SecondDefensiveMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(SecondDefensiveMagic.class.getSimpleName());
     public SecondDefensiveMagic() {
         super(ID, ModInformation.makeCardImgPath("DefendMagic"), 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);

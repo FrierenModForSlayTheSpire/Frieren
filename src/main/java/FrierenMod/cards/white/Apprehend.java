@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ApprehendAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.ScrapeEffect;
 
-public class Apprehend extends AbstractFrierenCard {
+public class Apprehend extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Apprehend.class.getSimpleName());
     public Apprehend() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

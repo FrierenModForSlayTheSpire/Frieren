@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.powers.RingletFormPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RingletForm extends AbstractFrierenCard {
+public class RingletForm extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(RingletForm.class.getSimpleName());
     public RingletForm() {
         super(ID, 2, CardType.POWER, CardRarity.RARE);

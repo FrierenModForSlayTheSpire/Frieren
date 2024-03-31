@@ -1,12 +1,12 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Dark extends AbstractFrierenCard {
+public class Dark extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Dark.class.getSimpleName());
     public Dark() {
         super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);

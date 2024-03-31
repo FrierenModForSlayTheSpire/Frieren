@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.ChantFromHandAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChantHand extends AbstractFrierenCard {
+public class ChantHand extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
     private AbstractCard cardToReturn;
     private AbstractGameAction[] nextAction;

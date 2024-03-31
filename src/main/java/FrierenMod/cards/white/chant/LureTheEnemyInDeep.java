@@ -1,13 +1,13 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LureTheEnemyInDeep extends AbstractFrierenCard {
+public class LureTheEnemyInDeep extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(LureTheEnemyInDeep.class.getSimpleName());
     public LureTheEnemyInDeep() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);

@@ -1,13 +1,13 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class Laziness extends AbstractFrierenCard {
+public class Laziness extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Laziness.class.getSimpleName());
     public Laziness() {
         super(ID, -2, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
@@ -22,7 +22,7 @@ public class Laziness extends AbstractFrierenCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
+        if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana){
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }

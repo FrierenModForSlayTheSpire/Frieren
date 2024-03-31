@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Confrontation extends AbstractFrierenCard {
+public class Confrontation extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Confrontation.class.getSimpleName());
     public Confrontation() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.NONE);
@@ -30,7 +30,7 @@ public class Confrontation extends AbstractFrierenCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if(cardPlayed instanceof AbstractFrierenCard && ((AbstractFrierenCard) cardPlayed).isChantCard)
+        if(cardPlayed instanceof AbstractMagicianCard && ((AbstractMagicianCard) cardPlayed).isChantCard)
             this.addToBot(new ModifyBlockAction(this.uuid,3));
     }
 }

@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.utils.ModInformation;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TongueTwisterSpell extends AbstractFrierenCard {
+public class TongueTwisterSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(TongueTwisterSpell.class.getSimpleName());
     public TongueTwisterSpell() {
         super(ID, 1, CardRarity.COMMON);

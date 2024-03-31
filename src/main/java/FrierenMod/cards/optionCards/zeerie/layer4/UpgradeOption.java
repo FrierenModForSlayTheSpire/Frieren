@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards.zeerie.layer4;
 
 import FrierenMod.cardMods.UpgradeMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class UpgradeOption extends AbstractFrierenCard {
+public class UpgradeOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(UpgradeOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     public UpgradeOption() {

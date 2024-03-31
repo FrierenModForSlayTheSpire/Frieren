@@ -1,12 +1,12 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Light extends AbstractFrierenCard {
+public class Light extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Light.class.getSimpleName());
     public Light() {
         super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);

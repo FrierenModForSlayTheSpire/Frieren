@@ -1,7 +1,7 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.BufferPower;
 
 
-public class PerfectDefensiveMagic extends AbstractFrierenCard {
+public class PerfectDefensiveMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(PerfectDefensiveMagic.class.getSimpleName());
     private static final CardStrings CARD_STRINGS = CardCrawlGame.languagePack.getCardStrings(ID);
     public PerfectDefensiveMagic() {

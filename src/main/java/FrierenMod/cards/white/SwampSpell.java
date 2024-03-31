@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.DrawMagicAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SwampSpell extends AbstractFrierenCard {
+public class SwampSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(SwampSpell.class.getSimpleName());
     public SwampSpell() {
         super(ID, 1, CardRarity.COMMON);

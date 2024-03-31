@@ -2,12 +2,12 @@ package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.RustCleanMagicAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RustCleanMagic extends AbstractFrierenCard {
+public class RustCleanMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(RustCleanMagic.class.getSimpleName());
     public RustCleanMagic() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);

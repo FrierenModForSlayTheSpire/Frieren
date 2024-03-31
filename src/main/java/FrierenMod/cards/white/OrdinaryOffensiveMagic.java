@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.effects.NormalAttackEffect;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-public class OrdinaryOffensiveMagic extends AbstractFrierenCard {
+public class OrdinaryOffensiveMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(OrdinaryOffensiveMagic.class.getSimpleName());
     public OrdinaryOffensiveMagic() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

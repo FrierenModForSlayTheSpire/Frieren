@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.TopTextHelper;
@@ -57,7 +57,7 @@ public class RenderTopTextPatches {
 
     public static boolean shouldShowTopText(AbstractCard c) {
         if (!Settings.hideCards && (isInFrierenRun() || isInFrierenCardLibraryScreen())) {
-            if (c instanceof AbstractFrierenCard)
+            if (c instanceof AbstractMagicianCard)
                 return true;
             for (Class<?> clazz : allowedCardClasses) {
                 if (clazz.isAssignableFrom(c.getClass()))

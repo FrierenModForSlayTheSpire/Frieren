@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.ManaConcealment;
 import FrierenMod.powers.TrickPower;
 import FrierenMod.utils.ModInformation;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Trick extends AbstractFrierenCard {
+public class Trick extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Trick.class.getSimpleName());
     public Trick() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.NONE);

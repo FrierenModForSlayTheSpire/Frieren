@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ZeerieMagicBookAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SerieGrimoire extends AbstractFrierenCard {
+public class SerieGrimoire extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(SerieGrimoire.class.getSimpleName());
     public SerieGrimoire() {
         super(ID, 0, CardRarity.RARE);

@@ -2,14 +2,14 @@ package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.MakeManaInDrawPileAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ContinualChant extends AbstractFrierenCard {
+public class ContinualChant extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ContinualChant.class.getSimpleName());
     public ContinualChant() {
         super(ID, 0, CardRarity.UNCOMMON);

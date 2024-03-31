@@ -1,16 +1,15 @@
 package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.DamageThirdMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DamageThirdOption extends AbstractFrierenCard {
+public class DamageThirdOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(DamageThirdOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     private int damageAmt;

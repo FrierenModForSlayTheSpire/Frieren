@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.ChantFromDrawPileAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChantDrawPile extends AbstractFrierenCard {
+public class ChantDrawPile extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantDrawPile.class.getSimpleName());
     private AbstractGameAction[] nextAction;
     public ChantDrawPile() {

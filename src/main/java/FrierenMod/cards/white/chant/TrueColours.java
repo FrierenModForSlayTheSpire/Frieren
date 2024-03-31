@@ -4,14 +4,14 @@ import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.MakeManaInDiscardAction;
 import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.actions.MakeManaInHandAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class TrueColours extends AbstractFrierenCard {
+public class TrueColours extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(TrueColours.class.getSimpleName());
     public TrueColours() {
         super(ID, 1, CardRarity.RARE);

@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GrandCross extends AbstractFrierenCard {
+public class GrandCross extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(GrandCross.class.getSimpleName());
     public GrandCross() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);

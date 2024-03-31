@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.GainRandomCardMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class GainRandomCardOption extends AbstractFrierenCard {
+public class GainRandomCardOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(GainRandomCardOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     private int cardAmt;

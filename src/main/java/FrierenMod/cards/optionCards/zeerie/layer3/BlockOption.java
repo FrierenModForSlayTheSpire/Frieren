@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards.zeerie.layer3;
 
 import FrierenMod.cardMods.BlockMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BlockOption extends AbstractFrierenCard {
+public class BlockOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(BlockOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     private int blockAmt;

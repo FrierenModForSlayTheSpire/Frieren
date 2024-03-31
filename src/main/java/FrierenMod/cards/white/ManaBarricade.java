@@ -1,18 +1,14 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.powers.ManaBarricadePower;
-import FrierenMod.powers.RingletFormPower;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class ManaBarricade extends AbstractFrierenCard {
+public class ManaBarricade extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ManaBarricade.class.getSimpleName());
     public ManaBarricade() {
         super(ID, 2, CardType.POWER, CardRarity.RARE);

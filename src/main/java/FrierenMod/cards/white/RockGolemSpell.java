@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cardMods.RockGolemSpellMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RockGolemSpell extends AbstractFrierenCard {
+public class RockGolemSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(RockGolemSpell.class.getSimpleName());
     public RockGolemSpell() {
         super(ID, -2, CardRarity.UNCOMMON);
@@ -37,10 +37,10 @@ public class RockGolemSpell extends AbstractFrierenCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         AbstractPlayer p = AbstractDungeon.player;
-        if(c instanceof AbstractFrierenCard &&(((AbstractFrierenCard) c).isMana || ((AbstractFrierenCard) c).isChantCard)){
+        if(c instanceof AbstractMagicianCard &&(((AbstractMagicianCard) c).isMana || ((AbstractMagicianCard) c).isChantCard)){
             if(currentLevel > 0){
                 if(currentLevel % 2 == 0){
-                    if(((AbstractFrierenCard) c).isMana){
+                    if(((AbstractMagicianCard) c).isMana){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
@@ -49,7 +49,7 @@ public class RockGolemSpell extends AbstractFrierenCard {
                     }
                 }
                 else {
-                    if (((AbstractFrierenCard) c).isChantCard){
+                    if (((AbstractMagicianCard) c).isChantCard){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             this.addToBot(new GainBlockAction(p,this.block));

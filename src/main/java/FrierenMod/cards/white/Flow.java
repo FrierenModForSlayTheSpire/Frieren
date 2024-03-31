@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.FlowAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Flow extends AbstractFrierenCard {
+public class Flow extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Flow.class.getSimpleName());
     public Flow() {
         super(ID, 0, CardRarity.COMMON);

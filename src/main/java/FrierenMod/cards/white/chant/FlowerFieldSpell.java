@@ -1,7 +1,7 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.BlueMoonWeed;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FlowerFieldSpell extends AbstractFrierenCard {
+public class FlowerFieldSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(FlowerFieldSpell.class.getSimpleName());
     public FlowerFieldSpell() {
         super(ID, 1, CardRarity.COMMON);

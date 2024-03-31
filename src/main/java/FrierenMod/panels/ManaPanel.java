@@ -1,6 +1,6 @@
 package FrierenMod.panels;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.CombatHelper;
@@ -79,28 +79,28 @@ public class ManaPanel extends AbstractPanel {
             if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
                 return true;
             for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-                if (card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMana)
+                if (card instanceof AbstractMagicianCard && ((AbstractMagicianCard) card).isMana)
                     return true;
             }
             if (CombatHelper.isInCombat()) {
                 for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                    if (card instanceof AbstractFrierenCard)
+                    if (card instanceof AbstractMagicianCard)
                         return true;
                 }
                 for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-                    if (card instanceof AbstractFrierenCard)
+                    if (card instanceof AbstractMagicianCard)
                         return true;
                 }
                 for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                    if (card instanceof AbstractFrierenCard)
+                    if (card instanceof AbstractMagicianCard)
                         return true;
                 }
                 for (AbstractCard card : AbstractDungeon.player.exhaustPile.group) {
-                    if (card instanceof AbstractFrierenCard)
+                    if (card instanceof AbstractMagicianCard)
                         return true;
                 }
                 for (AbstractCard card : AbstractDungeon.player.limbo.group) {
-                    if (card instanceof AbstractFrierenCard)
+                    if (card instanceof AbstractMagicianCard)
                         return true;
                 }
             }

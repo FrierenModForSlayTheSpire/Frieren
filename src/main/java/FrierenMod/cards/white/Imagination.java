@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.powers.BanManaGainPower;
 import FrierenMod.powers.ManaInsteadOfEnergyPower;
 import FrierenMod.powers.ChantWithoutManaPower;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Imagination extends AbstractFrierenCard {
+public class Imagination extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Imagination.class.getSimpleName());
     public Imagination() {
         super(ID, 2, CardRarity.RARE);

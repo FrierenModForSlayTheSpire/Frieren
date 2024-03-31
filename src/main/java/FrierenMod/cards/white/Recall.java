@@ -1,12 +1,12 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.RecallAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Recall extends AbstractFrierenCard {
+public class Recall extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Recall.class.getSimpleName());
     public Recall() {
         super(ID, 1, CardRarity.RARE);

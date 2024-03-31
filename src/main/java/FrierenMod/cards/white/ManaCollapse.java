@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.MakeManaInHandAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ManaCollapse extends AbstractFrierenCard {
+public class ManaCollapse extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ManaCollapse.class.getSimpleName());
     public ManaCollapse() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

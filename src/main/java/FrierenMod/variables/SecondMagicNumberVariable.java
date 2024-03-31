@@ -1,6 +1,6 @@
 package FrierenMod.variables;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -12,21 +12,21 @@ public class SecondMagicNumberVariable extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard abstractCard) {
-        return ((AbstractFrierenCard)abstractCard).isSecondMagicNumberModified;
+        return ((AbstractMagicianCard)abstractCard).isSecondMagicNumberModified;
     }
 
     @Override
     public int value(AbstractCard abstractCard) {
-        return ((AbstractFrierenCard)abstractCard).secondMagicNumber;
+        return ((AbstractMagicianCard)abstractCard).secondMagicNumber;
     }
 
     @Override
     public int baseValue(AbstractCard abstractCard) {
-        return ((AbstractFrierenCard)abstractCard).baseSecondMagicNumber;
+        return ((AbstractMagicianCard)abstractCard).baseSecondMagicNumber;
     }
 
     @Override
     public boolean upgraded(AbstractCard abstractCard) {
-        return ((AbstractFrierenCard)abstractCard).upgradedSecondMagicNumber;
+        return ((AbstractMagicianCard)abstractCard).upgradedSecondMagicNumber;
     }
 }

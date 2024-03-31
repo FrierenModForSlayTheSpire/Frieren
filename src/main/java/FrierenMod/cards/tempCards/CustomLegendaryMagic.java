@@ -1,9 +1,9 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 
-public class CustomLegendaryMagic extends AbstractFrierenCard {
+public class CustomLegendaryMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(CustomLegendaryMagic.class.getSimpleName());
     public String usedModifierText = this.rawDescription;
     public CustomLegendaryMagic() {

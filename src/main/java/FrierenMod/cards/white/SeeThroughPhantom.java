@@ -1,12 +1,12 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.SeeThroughPhantomAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SeeThroughPhantom extends AbstractFrierenCard {
+public class SeeThroughPhantom extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(SeeThroughPhantom.class.getSimpleName());
     public SeeThroughPhantom() {
         super(ID, 1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);

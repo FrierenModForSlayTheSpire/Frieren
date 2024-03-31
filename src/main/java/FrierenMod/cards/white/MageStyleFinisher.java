@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-public class MageStyleFinisher extends AbstractFrierenCard {
+public class MageStyleFinisher extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(MageStyleFinisher.class.getSimpleName());
     public MageStyleFinisher() {
         super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -30,7 +30,7 @@ public class MageStyleFinisher extends AbstractFrierenCard {
         super.applyPowers();
         this.baseMagicNumber=0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana)
+            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana)
                 this.baseMagicNumber++;
         }
         initializeDescription();

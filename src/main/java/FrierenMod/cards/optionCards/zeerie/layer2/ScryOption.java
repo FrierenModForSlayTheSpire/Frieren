@@ -1,16 +1,15 @@
 package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.ScryMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
-import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ScryOption extends AbstractFrierenCard {
+public class ScryOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ScryOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     private int scryAmt;

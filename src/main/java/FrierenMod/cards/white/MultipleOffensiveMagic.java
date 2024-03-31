@@ -1,14 +1,14 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.MultipleAttackMagicAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MultipleOffensiveMagic extends AbstractFrierenCard {
+public class MultipleOffensiveMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(MultipleOffensiveMagic.class.getSimpleName());
     public MultipleOffensiveMagic() {
         super(ID, -1, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);

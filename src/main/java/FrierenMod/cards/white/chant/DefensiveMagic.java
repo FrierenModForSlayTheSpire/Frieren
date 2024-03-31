@@ -1,14 +1,14 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.DefensiveMagicAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.SecondDefensiveMagic;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DefensiveMagic extends AbstractFrierenCard {
+public class DefensiveMagic extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(DefensiveMagic.class.getSimpleName());
     public DefensiveMagic() {
         super(ID, 1, CardRarity.COMMON);

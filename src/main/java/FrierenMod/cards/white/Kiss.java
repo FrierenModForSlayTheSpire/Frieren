@@ -1,19 +1,16 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.effects.KissEffect;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import com.megacrit.cardcrawl.vfx.combat.ViolentAttackEffect;
 
-public class Kiss extends AbstractFrierenCard {
+public class Kiss extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Kiss.class.getSimpleName());
     public Kiss() {
         super(ID, 3, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);

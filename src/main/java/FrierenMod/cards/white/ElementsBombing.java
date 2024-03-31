@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ElementsBombingAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.*;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class ElementsBombing extends AbstractFrierenCard {
+public class ElementsBombing extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ElementsBombing.class.getSimpleName());
     public ElementsBombing() {
         super(ID, 3, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);

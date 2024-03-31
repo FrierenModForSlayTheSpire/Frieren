@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ManaExpandAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ManaExpansion extends AbstractFrierenCard {
+public class ManaExpansion extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ManaExpansion.class.getSimpleName());
     public ManaExpansion() {
         super(ID, 1, CardRarity.RARE);

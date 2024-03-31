@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,19 +19,19 @@ public class IncreaseEleganceSecondMiscAction extends AbstractGameAction {
 
     public void update() {
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if(c instanceof AbstractFrierenCard){
+            if(c instanceof AbstractMagicianCard){
                 if (!c.uuid.equals(this.uuid))
                     continue;
-                ((AbstractFrierenCard) c).secondMisc += this.miscIncrease;
-                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
+                ((AbstractMagicianCard) c).secondMisc += this.miscIncrease;
+                c.baseMagicNumber = ((AbstractMagicianCard) c).secondMisc;
                 c.isMagicNumberModified = false;
                 c.applyPowers();
             }
         }
         for (AbstractCard c : GetAllInBattleInstances.get(this.uuid)) {
-            if(c instanceof AbstractFrierenCard){
-                ((AbstractFrierenCard) c).secondMisc += this.miscIncrease;
-                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
+            if(c instanceof AbstractMagicianCard){
+                ((AbstractMagicianCard) c).secondMisc += this.miscIncrease;
+                c.baseMagicNumber = ((AbstractMagicianCard) c).secondMisc;
                 c.applyPowers();
             }
         }

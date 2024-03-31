@@ -1,12 +1,12 @@
 package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.HideMagicAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ManaConcealment extends AbstractFrierenCard {
+public class ManaConcealment extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ManaConcealment.class.getSimpleName());
     public ManaConcealment() {
         super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);

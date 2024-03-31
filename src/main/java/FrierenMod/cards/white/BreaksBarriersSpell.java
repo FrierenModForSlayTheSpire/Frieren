@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cardMods.BreaksBarriersSpellMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BreaksBarriersSpell extends AbstractFrierenCard {
+public class BreaksBarriersSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(BreaksBarriersSpell.class.getSimpleName());
     public BreaksBarriersSpell() {
         super(ID, -2, CardRarity.RARE);
@@ -39,10 +39,10 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         AbstractPlayer p = AbstractDungeon.player;
-        if(c instanceof AbstractFrierenCard &&(((AbstractFrierenCard) c).isMana || ((AbstractFrierenCard) c).isChantCard || ((AbstractFrierenCard) c).isLegendarySpell)){
+        if(c instanceof AbstractMagicianCard &&(((AbstractMagicianCard) c).isMana || ((AbstractMagicianCard) c).isChantCard || ((AbstractMagicianCard) c).isLegendarySpell)){
             switch (currentLevel){
                 case 3:
-                    if(((AbstractFrierenCard) c).isMana){
+                    if(((AbstractMagicianCard) c).isMana){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             this.addToBot(new GainBlockAction(p,this.block));
@@ -51,7 +51,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
                     }
                     break;
                 case 2:
-                    if (((AbstractFrierenCard) c).isChantCard){
+                    if (((AbstractMagicianCard) c).isChantCard){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             for (int i = 0; i < this.magicNumber; i++) {
@@ -64,7 +64,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
                     }
                     break;
                 case 1:
-                    if (((AbstractFrierenCard) c).isLegendarySpell){
+                    if (((AbstractMagicianCard) c).isLegendarySpell){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));

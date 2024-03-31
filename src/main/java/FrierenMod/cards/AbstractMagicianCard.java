@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
-public abstract class AbstractFrierenCard extends CustomCard {
+public abstract class AbstractMagicianCard extends CustomCard {
     public boolean isChantCard;
     public boolean isMana;
     public boolean isLimitedOverMana;
@@ -43,31 +43,31 @@ public abstract class AbstractFrierenCard extends CustomCard {
     public float rotationTimer;
     public int previewIndex;
     public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
-    public AbstractFrierenCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    public AbstractMagicianCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, String rawDescription, CardType type, CardTarget target) {
+    public AbstractMagicianCard(String id, String rawDescription, CardType type, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    public AbstractMagicianCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
+    public AbstractMagicianCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target) {
+    public AbstractMagicianCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, target);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, int cost, CardType type, CardRarity rarity) {
+    public AbstractMagicianCard(String id, int cost, CardType type, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
         initSwitches();
     }
-    public AbstractFrierenCard(String id, int cost, CardRarity rarity) {
+    public AbstractMagicianCard(String id, int cost, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
         initSwitches();
     }
@@ -141,28 +141,28 @@ public abstract class AbstractFrierenCard extends CustomCard {
         card.isLocked = this.isLocked;
         card.misc = this.misc;
         card.freeToPlayOnce = this.freeToPlayOnce;
-        if(card instanceof AbstractFrierenCard){
-            ((AbstractFrierenCard) card).isChantCard = this.isChantCard;
-            ((AbstractFrierenCard) card).isMana = this.isMana;
-            ((AbstractFrierenCard) card).isLimitedOverMana = this.isLimitedOverMana;
-            ((AbstractFrierenCard) card).isAccelMana = this.isAccelMana;
-            ((AbstractFrierenCard) card).isLegendarySpell = this.isLegendarySpell;
-            ((AbstractFrierenCard) card).isCostResetCard = this.isCostResetCard;
-            ((AbstractFrierenCard) card).isSealCard = this.isSealCard;
-            ((AbstractFrierenCard) card).baseChantX = this.baseChantX;
-            ((AbstractFrierenCard) card).chantX = this.chantX;
-            ((AbstractFrierenCard) card).isChantXModified = this.isChantXModified;
-            ((AbstractFrierenCard) card).upgradedChantX = this.upgradedChantX;
-            ((AbstractFrierenCard) card).secondMagicNumber = this.secondMagicNumber;
-            ((AbstractFrierenCard) card).baseSecondMagicNumber = this.baseSecondMagicNumber;
-            ((AbstractFrierenCard) card).secondMisc = this.secondMisc;
-            ((AbstractFrierenCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
-            ((AbstractFrierenCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
+        if(card instanceof AbstractMagicianCard){
+            ((AbstractMagicianCard) card).isChantCard = this.isChantCard;
+            ((AbstractMagicianCard) card).isMana = this.isMana;
+            ((AbstractMagicianCard) card).isLimitedOverMana = this.isLimitedOverMana;
+            ((AbstractMagicianCard) card).isAccelMana = this.isAccelMana;
+            ((AbstractMagicianCard) card).isLegendarySpell = this.isLegendarySpell;
+            ((AbstractMagicianCard) card).isCostResetCard = this.isCostResetCard;
+            ((AbstractMagicianCard) card).isSealCard = this.isSealCard;
+            ((AbstractMagicianCard) card).baseChantX = this.baseChantX;
+            ((AbstractMagicianCard) card).chantX = this.chantX;
+            ((AbstractMagicianCard) card).isChantXModified = this.isChantXModified;
+            ((AbstractMagicianCard) card).upgradedChantX = this.upgradedChantX;
+            ((AbstractMagicianCard) card).secondMagicNumber = this.secondMagicNumber;
+            ((AbstractMagicianCard) card).baseSecondMagicNumber = this.baseSecondMagicNumber;
+            ((AbstractMagicianCard) card).secondMisc = this.secondMisc;
+            ((AbstractMagicianCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
+            ((AbstractMagicianCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
             if(this.isTaskCard){
-                ((AbstractFrierenCard) card).updateDescriptionAndCardImg();
-                ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
-                ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
-                ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
+                ((AbstractMagicianCard) card).updateDescriptionAndCardImg();
+                ((AbstractMagicianCard) card).currentLevel = this.currentLevel;
+                ((AbstractMagicianCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
+                ((AbstractMagicianCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
             }
         }
         return super.makeStatEquivalentCopy();

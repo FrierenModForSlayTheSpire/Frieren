@@ -1,7 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
@@ -21,8 +21,8 @@ public class ChantMod extends AbstractCardModifier {
         this.chantAmt = chantAmt;
     }
     public void onInitialApplication(AbstractCard card) {
-        ((AbstractFrierenCard) card).chantX = ((AbstractFrierenCard) card).baseChantX =this.chantAmt;
-        ((AbstractFrierenCard) card).isChantCard = true;
+        ((AbstractMagicianCard) card).chantX = ((AbstractMagicianCard) card).baseChantX =this.chantAmt;
+        ((AbstractMagicianCard) card).isChantCard = true;
         if(card instanceof CustomLegendaryMagic)
             ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + "!CX!" + TEXT[1];
     }

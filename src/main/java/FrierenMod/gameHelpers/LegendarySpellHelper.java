@@ -1,6 +1,6 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.white.chant.ContinualChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -18,7 +18,7 @@ public class LegendarySpellHelper {
     public static int getExhaustedManaNumber(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana) {
+            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana) {
                 counts++;
             }
         }
@@ -50,7 +50,7 @@ public class LegendarySpellHelper {
     public static int getChantCardUsedThisTurn(){
         int amounts = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractFrierenCard && ((AbstractFrierenCard)c).isChantCard) {
+            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard)c).isChantCard) {
                 amounts++;
             }
         }

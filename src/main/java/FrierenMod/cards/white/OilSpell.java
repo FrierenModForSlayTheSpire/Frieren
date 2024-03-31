@@ -1,12 +1,12 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.OilSpellAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class OilSpell extends AbstractFrierenCard {
+public class OilSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(OilSpell.class.getSimpleName());
     private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public OilSpell() {

@@ -1,7 +1,7 @@
 package FrierenMod.cards.optionCards.zeerie.layer2;
 
 import FrierenMod.cardMods.ChantMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import basemod.helpers.CardModifierManager;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChantOption extends AbstractFrierenCard {
+public class ChantOption extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ChantOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
     private int chantAmt;

@@ -1,13 +1,13 @@
 package FrierenMod.cards.optionCards;
 
 import FrierenMod.actions.DoubleManaInDiscardPileAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class DoubleMagicInDiscardPile extends AbstractFrierenCard {
+public class DoubleMagicInDiscardPile extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(DoubleMagicInDiscardPile.class.getSimpleName());
     public DoubleMagicInDiscardPile() {
         super(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);

@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -14,7 +14,7 @@ public class ApprehendAction extends AbstractGameAction {
         tickDuration();
         if (this.isDone)
             for (AbstractCard c : DrawCardAction.drawnCards) {
-                if(c instanceof AbstractFrierenCard && ( (AbstractFrierenCard) c).isMana){
+                if(c instanceof AbstractMagicianCard && ( (AbstractMagicianCard) c).isMana){
                     AbstractDungeon.player.hand.moveToDiscardPile(c);
                     c.triggerOnManualDiscard();
                     GameActionManager.incrementDiscard(false);

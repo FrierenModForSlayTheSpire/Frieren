@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.powers.OutpouringPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Outpouring extends AbstractFrierenCard {
+public class Outpouring extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Outpouring.class.getSimpleName());
     public Outpouring() {
         super(ID, 1, CardRarity.UNCOMMON);

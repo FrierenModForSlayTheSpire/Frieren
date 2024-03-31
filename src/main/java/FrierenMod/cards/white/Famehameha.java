@@ -1,7 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ModifyCostAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
-public class Famehameha extends AbstractFrierenCard {
+public class Famehameha extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Famehameha.class.getSimpleName());
     public Famehameha() {
         super(ID, 4, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);

@@ -2,14 +2,14 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.ExhaustManaInHandAction;
 import FrierenMod.actions.PlayRandomCardAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SayThinkingSpell extends AbstractFrierenCard {
+public class SayThinkingSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(SayThinkingSpell.class.getSimpleName());
     public SayThinkingSpell() {
         super(ID, 2, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);

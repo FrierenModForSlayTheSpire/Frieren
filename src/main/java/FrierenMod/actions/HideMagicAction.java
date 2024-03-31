@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -9,12 +9,12 @@ public class HideMagicAction extends AbstractGameAction {
     @Override
     public void update() {
         for(AbstractCard c: AbstractDungeon.player.drawPile.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
+            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana){
                 this.addToBot(new DrawPileToDiscardPileAction(c));
             }
         }
         for(AbstractCard c: AbstractDungeon.player.hand.group){
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana){
+            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana){
                 this.addToBot(new HandToDiscardPileAction(c));
             }
         }

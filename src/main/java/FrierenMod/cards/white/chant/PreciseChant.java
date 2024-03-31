@@ -1,13 +1,13 @@
 package FrierenMod.cards.white.chant;
 
 import FrierenMod.actions.PreciseChantAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PreciseChant extends AbstractFrierenCard {
+public class PreciseChant extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(PreciseChant.class.getSimpleName());
     public PreciseChant() {
         super(ID, 1, CardRarity.UNCOMMON);

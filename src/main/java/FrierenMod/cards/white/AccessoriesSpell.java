@@ -1,13 +1,13 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractMagicianCard;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.powers.GainRelicPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class AccessoriesSpell extends AbstractFrierenCard {
+public class AccessoriesSpell extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(AccessoriesSpell.class.getSimpleName());
     public AccessoriesSpell() {
         super(ID, 4, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
