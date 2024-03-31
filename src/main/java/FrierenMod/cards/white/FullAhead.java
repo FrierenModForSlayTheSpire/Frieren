@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,10 +11,20 @@ import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 
 public class FullAhead extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(FullAhead.class.getSimpleName());
+
     public FullAhead() {
-        super(ID, 0, CardRarity.COMMON);
+        super(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+    }
+
+    public FullAhead(CardColor color) {
+        super(ID, 0, color, CardRarity.COMMON);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {

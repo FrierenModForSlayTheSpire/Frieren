@@ -2,6 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.TimeTravelAction;
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -10,7 +11,10 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TimeConcept extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(TimeConcept.class.getSimpleName());
     public TimeConcept() {
-        super(ID, 2, CardRarity.RARE);
+        super(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+    }
+    public TimeConcept(CardColor color) {
+        super(ID, 2, color, CardRarity.RARE);
     }
     @Override
     public void upgrade() {

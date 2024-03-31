@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -8,7 +9,6 @@ import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.actions.watcher.JudgementAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,10 +18,19 @@ import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 public class Free extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Free.class.getSimpleName());
+
     public Free() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    }
+
+    public Free(CardColor color) {
+        super(ID, 2, CardType.ATTACK, color, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.baseMagicNumber = this.magicNumber = 30;
-        this.damage = this.baseDamage=20;
+        this.damage = this.baseDamage = 20;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -31,7 +40,8 @@ public class Free extends AbstractMagicianCard {
             this.addToBot(new VFXAction(new GiantTextEffect(m.hb.cX, m.hb.cY)));
             if (m.currentHealth <= this.magicNumber)
                 this.addToBot(new JudgementAction(m, this.magicNumber));
-            else this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+            else
+                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
         }
     }
 
@@ -41,9 +51,5 @@ public class Free extends AbstractMagicianCard {
             upgradeMagicNumber(10);
             upgradeDamage(5);
         }
-    }
-
-    public AbstractCard makeCopy() {
-        return new Free();
     }
 }

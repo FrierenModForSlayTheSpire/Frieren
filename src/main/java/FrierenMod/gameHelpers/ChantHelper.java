@@ -1,7 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractMagicianCard;
-import FrierenMod.cards.white.chant.*;
+import FrierenMod.cards.white.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;

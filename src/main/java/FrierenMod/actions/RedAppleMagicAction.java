@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.GreenApple;
+import FrierenMod.cards.canAutoAdd.tempCards.GreenApple;
 import FrierenMod.powers.SwitchStrengthAndDexterityPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

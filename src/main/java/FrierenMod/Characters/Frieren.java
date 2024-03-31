@@ -1,10 +1,10 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.white.Defend;
+import FrierenMod.cards.white.Defend_Frieren;
 import FrierenMod.cards.white.Flow;
-import FrierenMod.cards.white.Strike;
-import FrierenMod.cards.white.chant.DefensiveMagic;
-import FrierenMod.cards.white.chant.RapidChant;
+import FrierenMod.cards.white.Strike_Frieren;
+import FrierenMod.cards.white.DefensiveMagic;
+import FrierenMod.cards.white.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HolyEmblem;
@@ -65,10 +65,10 @@ public class Frieren extends CustomPlayer {
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
         for(int x = 0; x<4; x++) {
-            retVal.add(Strike.ID);
+            retVal.add(Strike_Frieren.ID);
         }
         for(int x = 0; x<4; x++) {
-            retVal.add(Defend.ID);
+            retVal.add(Defend_Frieren.ID);
         }
         retVal.add(Flow.ID);
         retVal.add(DefensiveMagic.ID);
@@ -114,7 +114,7 @@ public class Frieren extends CustomPlayer {
     // 翻牌事件出现的你的职业牌（一般设为打击）
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Strike_Frieren();
     }
 
     // 卡牌轨迹颜色

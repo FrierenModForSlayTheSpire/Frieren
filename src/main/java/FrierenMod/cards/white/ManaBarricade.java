@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.ManaBarricadePower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,9 +11,19 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ManaBarricade extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ManaBarricade.class.getSimpleName());
+
     public ManaBarricade() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE);
+        super(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
     }
+
+    public ManaBarricade(CardColor color) {
+        super(ID, 2, CardType.POWER, color, CardRarity.RARE);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
+    }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -20,6 +31,7 @@ public class ManaBarricade extends AbstractMagicianCard {
             this.upgradeBaseCost(1);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean powerExists = false;
@@ -32,5 +44,4 @@ public class ManaBarricade extends AbstractMagicianCard {
         if (!powerExists)
             this.addToBot(new ApplyPowerAction(p, p, new ManaBarricadePower(p)));
     }
-
 }

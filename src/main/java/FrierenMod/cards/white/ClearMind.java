@@ -2,6 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.MakeManaInHandAction;
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.AccelerateFlowPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,10 +11,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ClearMind extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ClearMind.class.getSimpleName());
+
     public ClearMind() {
-        super(ID,2, CardRarity.UNCOMMON);
+        super(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
+    }
+
+    public ClearMind(CardColor color) {
+        super(ID, 2, color, CardRarity.UNCOMMON);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -21,9 +32,10 @@ public class ClearMind extends AbstractMagicianCard {
             this.upgradeMagicNumber(1);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeManaInHandAction(this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p,p,new AccelerateFlowPower(p)));
+        this.addToBot(new ApplyPowerAction(p, p, new AccelerateFlowPower(p)));
     }
 }

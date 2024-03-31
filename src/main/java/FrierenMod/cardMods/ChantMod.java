@@ -2,7 +2,7 @@ package FrierenMod.cardMods;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractMagicianCard;
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

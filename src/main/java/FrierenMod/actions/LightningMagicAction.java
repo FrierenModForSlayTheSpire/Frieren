@@ -16,7 +16,7 @@ public class LightningMagicAction extends AbstractGameAction {
             this.addToBot(new DrawMagicAction(draw));
         }
         if(discard > 0){
-            this.addToBot(new DrawMagicFromDiscardPileAction(discard));
+            this.addToBot(new DrawManaFromDiscardPileAction(discard));
         }
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new ApplyPowerAction(p,p,new ThunderPower(p)));

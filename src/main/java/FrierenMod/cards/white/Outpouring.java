@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.OutpouringPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,11 +11,21 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Outpouring extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Outpouring.class.getSimpleName());
+
     public Outpouring() {
-        super(ID, 1, CardRarity.UNCOMMON);
+        super(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
+    }
+
+    public Outpouring(CardColor color) {
+        super(ID, 1, color, CardRarity.UNCOMMON);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -24,8 +35,9 @@ public class Outpouring extends AbstractMagicianCard {
             this.initializeDescription();
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new OutpouringPower(p,this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new OutpouringPower(p, this.magicNumber)));
     }
 }

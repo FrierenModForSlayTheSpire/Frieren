@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.RingletFormPower;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -9,10 +10,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RingletForm extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(RingletForm.class.getSimpleName());
+
     public RingletForm() {
-        super(ID, 2, CardType.POWER, CardRarity.RARE);
+        super(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+    }
+
+    public RingletForm(CardColor color) {
+        super(ID, 2, CardType.POWER, color, CardRarity.RARE);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -20,8 +31,9 @@ public class RingletForm extends AbstractMagicianCard {
             this.upgradeMagicNumber(1);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new RingletFormPower(p,this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new RingletFormPower(p, this.magicNumber)));
     }
 }

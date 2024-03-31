@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Himmel;
+import FrierenMod.cards.canAutoAdd.tempCards.Himmel;
 import FrierenMod.effects.HimmelEffect;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;

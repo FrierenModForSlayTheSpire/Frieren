@@ -2,18 +2,29 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.FlowAction;
 import FrierenMod.cards.AbstractMagicianCard;
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Flow extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(Flow.class.getSimpleName());
+
     public Flow() {
-        super(ID, 0, CardRarity.COMMON);
+        super(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+    }
+
+    public Flow(CardColor color) {
+        super(ID, 0, color, CardRarity.COMMON);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new Mana();
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -21,6 +32,7 @@ public class Flow extends AbstractMagicianCard {
             this.upgradeMagicNumber(2);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new FlowAction(this.magicNumber));

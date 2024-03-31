@@ -1,6 +1,6 @@
 package FrierenMod.cards;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
+import static FrierenMod.utils.PublicRes.*;
 
 public abstract class AbstractMagicianCard extends CustomCard {
     public boolean isChantCard;
@@ -42,34 +43,31 @@ public abstract class AbstractMagicianCard extends CustomCard {
     public int currentInLevelProgressNumber = -1;
     public float rotationTimer;
     public int previewIndex;
+    public boolean isFrierenFernCard;
     public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
     public AbstractMagicianCard(String id, String name, String img, int cost, String rawDescription, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, name, img, cost, rawDescription, type, color, rarity, target);
-        initSwitches();
+        initCards();
     }
     public AbstractMagicianCard(String id, String rawDescription, CardType type, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
-        initSwitches();
+        initCards();
     }
     public AbstractMagicianCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-        initSwitches();
+        initCards();
     }
     public AbstractMagicianCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-        initSwitches();
+        initCards();
     }
-    public AbstractMagicianCard(String id, int cost, CardType type, CardRarity rarity, CardTarget target) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, target);
-        initSwitches();
-    }
-    public AbstractMagicianCard(String id, int cost, CardType type, CardRarity rarity) {
+    public AbstractMagicianCard(String id, int cost, CardType type, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
-        initSwitches();
+        initCards();
     }
-    public AbstractMagicianCard(String id, int cost, CardRarity rarity) {
+    public AbstractMagicianCard(String id, int cost, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, CardEnums.FRIEREN_CARD, rarity, CardTarget.NONE);
-        initSwitches();
+        initCards();
     }
     @Override
     public void upgrade() {
@@ -79,7 +77,12 @@ public abstract class AbstractMagicianCard extends CustomCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
     }
-    private void initSwitches(){
+    private void initCards(){
+        this.initBaseSwitches();
+        this.initSpecifiedAttributes();
+        this.loadSpecifiedCardBg();
+    }
+    private void initBaseSwitches(){
         this.isCostModified = false;
         this.isCostModifiedForTurn = false;
         this.isDamageModified = false;
@@ -96,6 +99,37 @@ public abstract class AbstractMagicianCard extends CustomCard {
         this.isCostResetCard = false;
         this.isSealCard = false;
         this.isTaskCard = false;
+        this.isFrierenFernCard = false;
+    }
+
+    public void initSpecifiedAttributes() {
+
+    }
+
+    public void loadSpecifiedCardBg(){
+        if(this.isFrierenFernCard){
+            String img512, img1024;
+            switch(this.type){
+                case ATTACK:
+                    img512 = BG_ATTACK_FRIEREN_FERN_512;
+                    img1024 = BG_ATTACK_FRIEREN_FERN_1024;
+                    break;
+                case SKILL:
+                    img512 = BG_SKILL_FRIEREN_FERN_512;
+                    img1024 = BG_SKILL_FRIEREN_FERN_1024;
+                    break;
+                case POWER:
+                    img512 = BG_POWER_FRIEREN_FERN_512;
+                    img1024 = BG_POWER_FRIEREN_FERN_1024;
+                    break;
+                default:
+                    img512 = BG_SKILL_FRIEREN_FERN_512;
+                    img1024 = BG_SKILL_FRIEREN_FERN_1024;
+                    System.out.println("?");
+                    break;
+            }
+            this.setBackgroundTexture(img512, img1024);
+        }
     }
     public void upgradeChantX(int amount){
         this.baseChantX += amount;

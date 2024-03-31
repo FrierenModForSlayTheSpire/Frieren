@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,10 +12,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class GrandCross extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(GrandCross.class.getSimpleName());
+
     public GrandCross() {
-        super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
+    }
+
+    public GrandCross(CardColor color) {
+        super(ID, 2, CardType.ATTACK, color, CardRarity.COMMON, CardTarget.ENEMY);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.baseDamage = this.damage = 12;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -22,13 +33,15 @@ public class GrandCross extends AbstractMagicianCard {
             this.upgradeDamage(4);
         }
     }
+
     public void applyPowers() {
         super.applyPowers();
-        if(!LegendarySpellHelper.cannotPlayLegendarySpell())
+        if (!LegendarySpellHelper.cannotPlayLegendarySpell())
             this.costForTurn = 0;
     }
+
     public void triggerOnGlowCheck() {
-        if(LegendarySpellHelper.cannotPlayLegendarySpell())
+        if (LegendarySpellHelper.cannotPlayLegendarySpell())
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         else {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();

@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -11,10 +12,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HalfTheSky extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(HalfTheSky.class.getSimpleName());
+
     public HalfTheSky() {
-        super(ID, 0, CardType.ATTACK, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, 0, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
+    }
+
+    public HalfTheSky(CardColor color) {
+        super(ID, 0, CardType.ATTACK, color, CardRarity.COMMON, CardTarget.ENEMY);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 4;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -22,12 +33,14 @@ public class HalfTheSky extends AbstractMagicianCard {
             this.upgradeDamage(2);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
+
     @Override
-    public void afterChant(){
+    public void afterChant() {
         this.addToBot(new DiscardToHandAction(this));
     }
 }

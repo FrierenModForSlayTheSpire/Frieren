@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -14,11 +15,21 @@ import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
 public class ContinuousShooting extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(ContinuousShooting.class.getSimpleName());
+
     public ContinuousShooting() {
-        super(ID, 1, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+        super(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+    }
+
+    public ContinuousShooting(CardColor color) {
+        super(ID, 1, CardType.ATTACK, color, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 3;
         this.exhaust = true;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -29,6 +40,7 @@ public class ContinuousShooting extends AbstractMagicianCard {
             this.isEthereal = true;
         }
     }
+
     public void triggerOnEndOfPlayerTurn() {
         this.addToTop(new ExhaustAllEtherealAction());
     }

@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,10 +13,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LittleFire extends AbstractMagicianCard {
     public static final String ID = ModInformation.makeID(LittleFire.class.getSimpleName());
-    public  LittleFire(){
-     super(ID,1,CardType.ATTACK,CardRarity.COMMON,CardTarget.ENEMY);
-     this.damage = this.baseDamage = 6;
+
+    public LittleFire() {
+        super(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
     }
+
+    public LittleFire(CardColor color) {
+        super(ID, 1, CardType.ATTACK, color, CardRarity.COMMON, CardTarget.ENEMY);
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
+        this.damage = this.baseDamage = 6;
+    }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -24,6 +35,7 @@ public class LittleFire extends AbstractMagicianCard {
             this.initializeDescription();
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(
@@ -33,7 +45,7 @@ public class LittleFire extends AbstractMagicianCard {
                         this.damage,
                         this.damageTypeForTurn
                 ),
-                AbstractGameAction.AttackEffect.FIRE,true
+                AbstractGameAction.AttackEffect.FIRE, true
         ));
         this.addToBot(new ArmamentsAction(this.upgraded));
     }
