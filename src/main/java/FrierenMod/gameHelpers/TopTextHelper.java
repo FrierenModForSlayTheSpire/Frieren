@@ -1,8 +1,8 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.white.HellFireSummoning;
-import FrierenMod.cards.white.OrdinaryOffensiveMagic;
-import FrierenMod.cards.white.LightningMagic;
+import FrierenMod.cards.canAutoAdd.white.HellFireSummoning;
+import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
+import FrierenMod.cards.canAutoAdd.white.LightningMagic;
 
 import java.util.HashMap;
 import java.util.Map;
