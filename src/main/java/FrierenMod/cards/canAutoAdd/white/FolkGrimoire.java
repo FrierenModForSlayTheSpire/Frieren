@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.actions.MagicBookAction;
+import FrierenMod.actions.FolkGrimoireAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -37,6 +37,6 @@ public class FolkGrimoire extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MagicBookAction(this.upgraded));
+        this.addToBot(new FolkGrimoireAction(this.upgraded));
     }
 }

@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
-import FrierenMod.actions.HideMagicAction;
+import FrierenMod.actions.HideManaAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -21,6 +21,6 @@ public class ManaConcealment extends AbstractBaseCard {
         return false;
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-       this.addToBot(new HideMagicAction());
+       this.addToBot(new HideManaAction());
     }
 }

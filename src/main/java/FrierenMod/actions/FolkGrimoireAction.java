@@ -6,10 +6,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
-public class MagicBookAction extends AbstractGameAction {
+public class FolkGrimoireAction extends AbstractGameAction {
     private final boolean upgraded;
 
-    public MagicBookAction(boolean upgraded) {
+    public FolkGrimoireAction(boolean upgraded) {
         this.upgraded = upgraded;
     }
 

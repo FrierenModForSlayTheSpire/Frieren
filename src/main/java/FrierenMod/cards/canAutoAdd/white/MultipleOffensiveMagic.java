@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.actions.MultipleAttackMagicAction;
+import FrierenMod.actions.MultipleOffensiveMagicAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
@@ -39,6 +39,6 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MultipleAttackMagicAction(p, this, this.energyOnUse, this.upgraded));
+        this.addToBot(new MultipleOffensiveMagicAction(p, this, this.energyOnUse, this.upgraded));
     }
 }

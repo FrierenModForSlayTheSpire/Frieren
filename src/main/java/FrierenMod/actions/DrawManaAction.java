@@ -5,10 +5,10 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DrawMagicAction extends AbstractGameAction {
-    private int drawNumber = 0;
+public class DrawManaAction extends AbstractGameAction {
+    private final int drawNumber;
 
-    public DrawMagicAction(int drawNumber) {
+    public DrawManaAction(int drawNumber) {
         this.drawNumber = drawNumber;
     }
 
