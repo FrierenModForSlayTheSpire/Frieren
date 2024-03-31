@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.MakeManaInHandAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.AccelerateFlowPower;
 import FrierenMod.utils.CardInfo;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ClearMind extends AbstractMagicianCard {
+public class ClearMind extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ClearMind.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

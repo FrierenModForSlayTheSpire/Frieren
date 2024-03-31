@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.ElementsBombingAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.*;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
-public class ElementsBombing extends AbstractMagicianCard {
+public class ElementsBombing extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ElementsBombing.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 3, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.NONE);
 

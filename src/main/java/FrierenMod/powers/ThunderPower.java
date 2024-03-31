@@ -1,7 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.cardMods.ManaMod;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -38,8 +38,8 @@ public class ThunderPower extends AbstractFrierenPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana && !((AbstractMagicianCard) c).isLimitedOverMana){
-                if (((AbstractMagicianCard) c).isAccelMana) {
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && !((AbstractBaseCard) c).isLimitedOverMana){
+                if (((AbstractBaseCard) c).isAccelMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }

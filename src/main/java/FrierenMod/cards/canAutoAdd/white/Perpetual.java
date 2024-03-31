@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.PerpetualPower;
 import FrierenMod.utils.CardInfo;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Perpetual extends AbstractMagicianCard {
+public class Perpetual extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Perpetual.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
 

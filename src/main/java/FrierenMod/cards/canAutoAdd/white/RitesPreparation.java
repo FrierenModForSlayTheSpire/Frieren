@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.RitesPreparationPower;
 import FrierenMod.utils.CardInfo;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RitesPreparation extends AbstractMagicianCard {
+public class RitesPreparation extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RitesPreparation.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
 

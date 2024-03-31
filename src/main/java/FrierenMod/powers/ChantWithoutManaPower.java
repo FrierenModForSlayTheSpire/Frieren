@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractMageCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -13,7 +13,7 @@ public class ChantWithoutManaPower extends AbstractFrierenPower {
         super(POWER_ID, owner, PowerType.BUFF);
     }
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractMagicianCard && ((AbstractMagicianCard) card).isChantCard) {
+        if (card instanceof AbstractMageCard && ((AbstractMageCard) card).isChantCard) {
             this.flash();
         }
     }

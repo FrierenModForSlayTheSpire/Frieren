@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.ApexMagicAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ApexMagic extends AbstractMagicianCard {
+public class ApexMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ApexMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.ALL_ENEMY);
 

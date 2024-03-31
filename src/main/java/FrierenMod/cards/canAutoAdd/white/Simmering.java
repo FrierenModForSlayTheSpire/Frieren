@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.SimmeringAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
@@ -10,7 +10,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Simmering extends AbstractMagicianCard {
+public class Simmering extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Simmering.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

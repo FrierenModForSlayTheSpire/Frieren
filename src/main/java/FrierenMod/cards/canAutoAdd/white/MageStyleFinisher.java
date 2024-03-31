@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MageStyleFinisher extends AbstractMagicianCard {
+public class MageStyleFinisher extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(MageStyleFinisher.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
@@ -44,7 +44,7 @@ public class MageStyleFinisher extends AbstractMagicianCard {
         super.applyPowers();
         this.baseMagicNumber = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana)
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana)
                 this.baseMagicNumber++;
         }
         initializeDescription();

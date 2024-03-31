@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.MagicBookAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FolkGrimoire extends AbstractMagicianCard {
+public class FolkGrimoire extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FolkGrimoire.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

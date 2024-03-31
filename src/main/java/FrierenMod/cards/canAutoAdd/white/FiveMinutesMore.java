@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Laziness;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FiveMinutesMore extends AbstractMagicianCard {
+public class FiveMinutesMore extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FiveMinutesMore.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

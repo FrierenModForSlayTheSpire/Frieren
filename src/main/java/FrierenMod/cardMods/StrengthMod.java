@@ -1,5 +1,5 @@
 package FrierenMod.cardMods;
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -27,8 +27,8 @@ public class StrengthMod extends AbstractCardModifier {
         if(!card.exhaust){
             card.exhaust = true;
         }
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0];
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0];
     }
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new LimitBreakAction());

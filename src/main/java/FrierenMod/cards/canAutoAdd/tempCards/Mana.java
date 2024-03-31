@@ -1,13 +1,13 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
 import FrierenMod.actions.ManaAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Mana extends AbstractMagicianCard {
+public class Mana extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Mana.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, -2, CardType.STATUS, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public Mana() {

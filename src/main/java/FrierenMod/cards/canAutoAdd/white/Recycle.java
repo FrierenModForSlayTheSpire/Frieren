@@ -1,14 +1,14 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.RecycleAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Recycle extends AbstractMagicianCard {
+public class Recycle extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Recycle.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.NONE);
 

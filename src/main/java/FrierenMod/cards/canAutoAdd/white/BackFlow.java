@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.DrawManaFromDiscardPileAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -9,7 +9,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class BackFlow extends AbstractMagicianCard {
+public class BackFlow extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(BackFlow.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
 

@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -17,7 +17,7 @@ import com.megacrit.cardcrawl.vfx.combat.GiantTextEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 
 
-public class Free extends AbstractMagicianCard {
+public class Free extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Free.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 

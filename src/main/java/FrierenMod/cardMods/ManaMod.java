@@ -1,7 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.ManaAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
@@ -28,24 +28,24 @@ public class ManaMod extends AbstractCardModifier {
     public void onInitialApplication(AbstractCard card) {
         switch (type){
             case 1:
-                ((AbstractMagicianCard)card).isAccelMana = false;
-                ((AbstractMagicianCard)card).isLimitedOverMana = false;
+                ((AbstractBaseCard)card).isAccelMana = false;
+                ((AbstractBaseCard)card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
                     ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
                 break;
             case 2:
-                ((AbstractMagicianCard)card).isAccelMana = true;
-                ((AbstractMagicianCard)card).isLimitedOverMana = false;
+                ((AbstractBaseCard)card).isAccelMana = true;
+                ((AbstractBaseCard)card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
                     ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
                 break;
             case 3:
-                ((AbstractMagicianCard)card).isAccelMana = false;
-                ((AbstractMagicianCard)card).isLimitedOverMana = true;
+                ((AbstractBaseCard)card).isAccelMana = false;
+                ((AbstractBaseCard)card).isLimitedOverMana = true;
                 card.baseDamage = 20;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
@@ -53,8 +53,8 @@ public class ManaMod extends AbstractCardModifier {
                     ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana3"));
                 break;
             case 4:
-                ((AbstractMagicianCard)card).isAccelMana = true;
-                ((AbstractMagicianCard)card).isLimitedOverMana = true;
+                ((AbstractBaseCard)card).isAccelMana = true;
+                ((AbstractBaseCard)card).isLimitedOverMana = true;
                 card.baseDamage = 20;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;

@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Confrontation extends AbstractMagicianCard {
+public class Confrontation extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Confrontation.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.NONE);
 
@@ -44,7 +44,7 @@ public class Confrontation extends AbstractMagicianCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if (cardPlayed instanceof AbstractMagicianCard && ((AbstractMagicianCard) cardPlayed).isChantCard)
+        if (cardPlayed instanceof AbstractBaseCard && ((AbstractBaseCard) cardPlayed).isChantCard)
             this.addToBot(new ModifyBlockAction(this.uuid, 3));
     }
 }

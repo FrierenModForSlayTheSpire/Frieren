@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.RedAppleMagicAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.GreenApple;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -9,7 +9,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RedAppleSpell extends AbstractMagicianCard {
+public class RedAppleSpell extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RedAppleSpell.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

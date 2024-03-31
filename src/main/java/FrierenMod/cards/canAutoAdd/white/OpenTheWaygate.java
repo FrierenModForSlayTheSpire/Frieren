@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class OpenTheWaygate extends AbstractMagicianCard {
+public class OpenTheWaygate extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(OpenTheWaygate.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, -2, CardEnums.FRIEREN_CARD, CardRarity.RARE);
 
@@ -45,7 +45,7 @@ public class OpenTheWaygate extends AbstractMagicianCard {
     }
 
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana) {
+        if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
             this.flash(FLASH_COLOR);
             this.secondMagicNumber = ++this.baseSecondMagicNumber;
         }

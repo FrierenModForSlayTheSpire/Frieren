@@ -1,6 +1,6 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.white.*;
 import FrierenMod.cards.whitePurple.RapidChant;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -15,7 +15,7 @@ public class ChantHelper {
     public static int getManaNumInDrawPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
                 counts++;
             }
         }
@@ -24,7 +24,7 @@ public class ChantHelper {
     public static int getManaNumInHand(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
                 counts++;
             }
         }
@@ -33,7 +33,7 @@ public class ChantHelper {
     public static int getManaNumInDiscardPile(){
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
                 counts++;
             }
         }

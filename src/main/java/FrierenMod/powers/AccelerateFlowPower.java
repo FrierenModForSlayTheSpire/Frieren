@@ -1,7 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.cardMods.ManaMod;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -38,8 +38,8 @@ public class AccelerateFlowPower extends AbstractFrierenPower {
     }
     private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana && !((AbstractMagicianCard) c).isAccelMana){
-                if (((AbstractMagicianCard) c).isLimitedOverMana) {
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && !((AbstractBaseCard) c).isAccelMana){
+                if (((AbstractBaseCard) c).isLimitedOverMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
@@ -63,8 +63,8 @@ public class AccelerateFlowPower extends AbstractFrierenPower {
     }
     private void degradeMagicPowerInGroup(CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana && ((AbstractMagicianCard) c).isAccelMana){
-                if (((AbstractMagicianCard) c).isLimitedOverMana) {
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && ((AbstractBaseCard) c).isAccelMana){
+                if (((AbstractBaseCard) c).isLimitedOverMana) {
                     CardModifierManager.addModifier(c, new ManaMod(3));
                 }else {
                     CardModifierManager.addModifier(c, new ManaMod(1));

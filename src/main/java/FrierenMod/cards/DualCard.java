@@ -14,7 +14,7 @@ import java.util.List;
 import static FrierenMod.utils.PublicRes.*;
 import static FrierenMod.utils.PublicRes.BG_SKILL_FRIEREN_FERN_1024;
 
-public abstract class DualCard extends AbstractMagicianCard{
+public abstract class DualCard extends AbstractBaseCard {
     public boolean isFrierenFernCard;
     public DualCard(CardInfo info) {
         super(info);

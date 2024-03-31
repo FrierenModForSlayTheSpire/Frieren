@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.actions.ZeerieMagicBookAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.actions.SerieGrimoireAction;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class SerieGrimoire extends AbstractMagicianCard {
+public class SerieGrimoire extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SerieGrimoire.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.RARE);
     public SerieGrimoire() {
@@ -34,6 +34,6 @@ public class SerieGrimoire extends AbstractMagicianCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ZeerieMagicBookAction(this.upgraded));
+        this.addToBot(new SerieGrimoireAction(this.upgraded));
     }
 }

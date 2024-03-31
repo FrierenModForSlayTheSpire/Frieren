@@ -2,14 +2,14 @@ package FrierenMod.cards.canAutoAdd.white;
 
 
 import FrierenMod.actions.LockTargetAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LockTarget extends AbstractMagicianCard {
+public class LockTarget extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(LockTarget.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 

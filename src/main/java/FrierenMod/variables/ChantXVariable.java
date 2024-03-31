@@ -1,6 +1,6 @@
 package FrierenMod.variables;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -12,21 +12,21 @@ public class ChantXVariable extends DynamicVariable {
 
     @Override
     public boolean isModified(AbstractCard abstractCard) {
-        return ((AbstractMagicianCard)abstractCard).isChantXModified;
+        return ((AbstractBaseCard)abstractCard).isChantXModified;
     }
 
     @Override
     public int value(AbstractCard abstractCard) {
-        return ((AbstractMagicianCard)abstractCard).chantX;
+        return ((AbstractBaseCard)abstractCard).chantX;
     }
 
     @Override
     public int baseValue(AbstractCard abstractCard) {
-        return ((AbstractMagicianCard)abstractCard).baseChantX;
+        return ((AbstractBaseCard)abstractCard).baseChantX;
     }
 
     @Override
     public boolean upgraded(AbstractCard abstractCard) {
-        return ((AbstractMagicianCard)abstractCard).upgradedChantX;
+        return ((AbstractBaseCard)abstractCard).upgradedChantX;
     }
 }

@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ChantHelper;
@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PajamasForm extends AbstractMagicianCard {
+public class PajamasForm extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(PajamasForm.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 3, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 

@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -20,8 +20,8 @@ public class RemoveDebuffMod extends AbstractCardModifier {
     public RemoveDebuffMod() {
     }
     public void onInitialApplication(AbstractCard card) {
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0];
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0];
     }
 
     public AbstractCardModifier makeCopy() {

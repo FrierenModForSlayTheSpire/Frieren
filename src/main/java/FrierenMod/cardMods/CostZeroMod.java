@@ -1,7 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.RandomCostZeroForTurnAction;
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -22,11 +22,11 @@ public class CostZeroMod extends AbstractCardModifier {
         this.cardAmt = cardAmt;
     }
     public void onInitialApplication(AbstractCard card) {
-        if(card instanceof CustomLegendaryMagic){
+        if(card instanceof CustomLegendarySpell){
             if(this.cardAmt == 1)
-                ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.cardAmt + TEXT[1];
+                ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.cardAmt + TEXT[1];
             else
-                ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.cardAmt + TEXT[2];
+                ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.cardAmt + TEXT[2];
         }
     }
 

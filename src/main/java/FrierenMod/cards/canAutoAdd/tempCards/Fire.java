@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.tempCards;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Fire extends AbstractMagicianCard {
+public class Fire extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Fire.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
     public Fire() {

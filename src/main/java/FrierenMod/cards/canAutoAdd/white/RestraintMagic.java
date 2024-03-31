@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.white;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.SlowPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class RestraintMagic extends AbstractMagicianCard {
+public class RestraintMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RestraintMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 3, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 

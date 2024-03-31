@@ -1,6 +1,6 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -18,8 +18,8 @@ public class OnPlayerTurnStartHelper implements OnPlayerTurnStartSubscriber {
     }
     private void ResetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
         for(AbstractCard c:group.group){
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isCostResetCard){
-                Class<? extends AbstractMagicianCard> cardClass = (Class<? extends AbstractMagicianCard>) c.getClass();
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isCostResetCard){
+                Class<? extends AbstractBaseCard> cardClass = (Class<? extends AbstractBaseCard>) c.getClass();
                 c.cost = cardClass.newInstance().cost;
                 c.costForTurn = c.cost;
                 c.isCostModified = false;

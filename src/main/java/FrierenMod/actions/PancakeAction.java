@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.BetterDrawPileToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,7 +16,7 @@ public class PancakeAction extends AbstractGameAction {
     @Override
     public void update() {
         for(AbstractCard c:AbstractDungeon.player.hand.group){
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard) c).isMana){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
                 this.addToBot(new HandToDrawPileAction(c));
                 break;
             }

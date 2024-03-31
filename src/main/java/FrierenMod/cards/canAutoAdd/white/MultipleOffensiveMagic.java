@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.MultipleAttackMagicAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MultipleOffensiveMagic extends AbstractMagicianCard {
+public class MultipleOffensiveMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(MultipleOffensiveMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, -1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ALL_ENEMY);
 

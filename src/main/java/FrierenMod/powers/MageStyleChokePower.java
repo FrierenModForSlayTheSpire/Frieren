@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -20,7 +20,7 @@ public class MageStyleChokePower extends AbstractFrierenPower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractMagicianCard && ((AbstractMagicianCard) card).isMana) {
+        if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana) {
             flash();
             this.addToBot(new LoseHPAction(this.owner, null, this.amount));
         }

@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.purple;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class Defend_Fern extends AbstractMagicianCard {
+public class Defend_Fern extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FrierenMod.cards.canAutoAdd.purple.Defend_Fern.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.BASIC, CardTarget.SELF);
 

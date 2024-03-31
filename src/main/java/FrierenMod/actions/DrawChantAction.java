@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,7 +19,7 @@ public class DrawChantAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if(c instanceof AbstractMagicianCard && ((AbstractMagicianCard)c).isChantCard){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard)c).isChantCard){
                 counts++;
                 this.addToBot(new DrawPileToHandAction(c));
             }

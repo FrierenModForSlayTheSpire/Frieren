@@ -1,7 +1,7 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.ModifyCostAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.CardInfo;
@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class HellFireSummoning extends AbstractMagicianCard {
+public class HellFireSummoning extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(HellFireSummoning.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.ENEMY);
 
@@ -71,7 +71,7 @@ public class HellFireSummoning extends AbstractMagicianCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if (cardPlayed instanceof AbstractMagicianCard && ((AbstractMagicianCard) cardPlayed).isChantCard)
+        if (cardPlayed instanceof AbstractBaseCard && ((AbstractBaseCard) cardPlayed).isChantCard)
             this.superFlash();
     }
 }

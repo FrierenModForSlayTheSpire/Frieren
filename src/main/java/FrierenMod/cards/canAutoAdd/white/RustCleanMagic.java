@@ -2,14 +2,14 @@ package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.RustCleanMagicAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class RustCleanMagic extends AbstractMagicianCard {
+public class RustCleanMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RustCleanMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 

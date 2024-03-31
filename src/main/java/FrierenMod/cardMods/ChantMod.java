@@ -1,8 +1,8 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.cards.AbstractMagicianCard;
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -21,10 +21,10 @@ public class ChantMod extends AbstractCardModifier {
         this.chantAmt = chantAmt;
     }
     public void onInitialApplication(AbstractCard card) {
-        ((AbstractMagicianCard) card).chantX = ((AbstractMagicianCard) card).baseChantX =this.chantAmt;
-        ((AbstractMagicianCard) card).isChantCard = true;
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + "!CX!" + TEXT[1];
+        ((AbstractBaseCard) card).chantX = ((AbstractBaseCard) card).baseChantX =this.chantAmt;
+        ((AbstractBaseCard) card).isChantCard = true;
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + "!CX!" + TEXT[1];
     }
 
     public AbstractCardModifier makeCopy() {

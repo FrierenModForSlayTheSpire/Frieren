@@ -1,14 +1,14 @@
 package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.actions.LightningMagicAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class LightningMagic extends AbstractMagicianCard {
+public class LightningMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(LightningMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 3, CardEnums.FRIEREN_CARD, CardRarity.RARE);
 
