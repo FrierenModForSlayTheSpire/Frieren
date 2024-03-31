@@ -75,6 +75,8 @@ public class ManaPanel extends AbstractPanel {
     }
 
     public static boolean canShowThisPanel() {
+        if(AbstractDungeon.player.chosenClass == CharacterEnums.FERN)
+            return false;
         if (CardCrawlGame.isInARun()) {
             if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
                 return true;
