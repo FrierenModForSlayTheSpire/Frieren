@@ -5,6 +5,7 @@ import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
 import FrierenMod.gameHelpers.OnStartBattleHelper;
 import FrierenMod.potions.BottledMana;
@@ -111,12 +112,18 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
-        String cardsClassPath = getModID() + ".cards";
+        String cardsClassPath = getModID() + ".cards.canAutoAdd";
         (new AutoAdd(getModID())).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
             BaseMod.addCard(card);
             if (info.seen)
                 UnlockTracker.unlockCard(card.cardID);
         });
+//        for (AbstractCard c: CardPoolHelper.getFrierenCardPool())
+//            BaseMod.addCard(c);
+//        for (AbstractCard c: CardPoolHelper.getFernCardPool())
+//            BaseMod.addCard(c);
+        for (AbstractCard c: CardPoolHelper.getFrierenFernCardPool())
+            BaseMod.addCard(c);
         Log.logger.info("Done adding cards!");
     }
     @Override

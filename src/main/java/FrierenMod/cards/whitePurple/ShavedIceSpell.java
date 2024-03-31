@@ -1,30 +1,32 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.whitePurple;
 
 import FrierenMod.actions.MakeManaInDrawPileAction;
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.DualCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ShavedIceSpell extends AbstractMagicianCard {
+public class ShavedIceSpell extends DualCard {
     public static final String ID = ModInformation.makeID(ShavedIceSpell.class.getSimpleName());
-
+    public static final CardInfo info = new CardInfo(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+    public static final CardInfo info2 = new CardInfo(ID, 0, CardEnums.FERN_CARD, CardRarity.COMMON,true);
     public ShavedIceSpell() {
-        super(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+        super(info);
     }
 
-    public ShavedIceSpell(CardColor color) {
-        super(ID, 0, color, CardRarity.COMMON);
+    public ShavedIceSpell(CardInfo info) {
+        super(info);
     }
 
     @Override
     public void initSpecifiedAttributes() {
+        this.isFrierenFernCard = true;
         this.baseMagicNumber = this.magicNumber = 4;
         this.cardsToPreview = new Mana();
     }
-
     @Override
     public void upgrade() {
         if (!this.upgraded) {

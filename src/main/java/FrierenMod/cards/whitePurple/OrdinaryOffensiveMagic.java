@@ -1,31 +1,33 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.whitePurple;
 
-import FrierenMod.cards.AbstractMagicianCard;
+import FrierenMod.cards.DualCard;
 import FrierenMod.effects.NormalAttackEffect;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 
-public class OrdinaryOffensiveMagic extends AbstractMagicianCard {
+public class OrdinaryOffensiveMagic extends DualCard {
     public static final String ID = ModInformation.makeID(OrdinaryOffensiveMagic.class.getSimpleName());
+    public static CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static CardInfo info2 = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY,true);
 
     public OrdinaryOffensiveMagic() {
-        super(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(info);
     }
-
-    public OrdinaryOffensiveMagic(CardColor color) {
-        super(ID, 2, CardType.ATTACK, color, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public OrdinaryOffensiveMagic(CardInfo info) {
+        super(info);
     }
-
     @Override
     public void initSpecifiedAttributes() {
+        this.isFrierenFernCard = true;
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;

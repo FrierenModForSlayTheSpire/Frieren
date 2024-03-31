@@ -151,5 +151,11 @@
       "/2)"
     ],
     "TEXT_DICT": {}
+  },
+  "FrierenMod:DoubleOccupationTip": {
+    "TEXT": [
+      "双职业卡",
+      " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
+    ]
   }
 }
