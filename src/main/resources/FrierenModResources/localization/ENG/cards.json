@@ -1,9 +1,9 @@
 {
-  "FrierenMod:Strike": {
+  "FrierenMod:Strike_Frieren": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "FrierenMod:Defend": {
+  "FrierenMod:Defend_Frieren": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },

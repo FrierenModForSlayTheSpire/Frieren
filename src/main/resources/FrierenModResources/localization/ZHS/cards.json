@@ -1,9 +1,9 @@
 {
-  "FrierenMod:Strike": {
+  "FrierenMod:Strike_Frieren": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
-  "FrierenMod:Defend": {
+  "FrierenMod:Defend_Frieren": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
