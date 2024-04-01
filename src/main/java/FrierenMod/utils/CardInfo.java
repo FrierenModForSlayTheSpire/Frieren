@@ -31,7 +31,7 @@ public class CardInfo {
     public CardInfo(String baseId, String rawDescription, AbstractCard.CardType type, AbstractCard.CardTarget target) {
         this.baseId = baseId;
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = -2;
         this.rawDescription = rawDescription;
         this.cardType = type;
@@ -53,7 +53,7 @@ public class CardInfo {
     public CardInfo(String baseId, int cost, AbstractCard.CardType type, AbstractCard.CardColor color, AbstractCard.CardRarity rarity, AbstractCard.CardTarget target){
         this.baseId = baseId;
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = cost;
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(baseId).DESCRIPTION;
         this.cardType = type;
@@ -67,7 +67,7 @@ public class CardInfo {
         else
             this.baseId = baseId;
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = cost;
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(baseId).DESCRIPTION;
         this.cardType = type;
@@ -78,7 +78,7 @@ public class CardInfo {
     public CardInfo(String baseId, int cost, AbstractCard.CardType type, AbstractCard.CardColor color, AbstractCard.CardRarity rarity){
         this.baseId = baseId;
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = cost;
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(baseId).DESCRIPTION;
         this.cardType = type;
@@ -89,7 +89,7 @@ public class CardInfo {
     public CardInfo(String baseId, int cost, AbstractCard.CardColor color, AbstractCard.CardRarity rarity){
         this.baseId = baseId;
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = cost;
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(baseId).DESCRIPTION;
         this.cardType = AbstractCard.CardType.SKILL;
@@ -104,7 +104,7 @@ public class CardInfo {
             this.baseId = baseId;
         }
         this.name = CardCrawlGame.languagePack.getCardStrings(baseId).NAME;
-        this.img = ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        this.img = getImgPath(baseId);
         this.baseCost = cost;
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(baseId).DESCRIPTION;
         this.cardType = AbstractCard.CardType.SKILL;
@@ -114,5 +114,8 @@ public class CardInfo {
     }
     private static String dualCardIdMaker(String id){
         return id + "$";
+    }
+    private static String getImgPath(String baseId){
+        return Config.IN_DEV ? PublicRes.DEV_CARD_IMG : ModInformation.makeCardImgPath(baseId.split(":")[1]);
     }
 }
