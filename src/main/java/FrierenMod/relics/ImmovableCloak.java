@@ -44,4 +44,7 @@ public int onLoseHpLast(int damageAmount) {
 public AbstractRelic makeCopy() {
     return new ImmovableCloak();
 }
+    public void onVictory() {
+        stopPulse();
+    }
 }
