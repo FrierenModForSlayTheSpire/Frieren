@@ -1,4 +1,4 @@
-package FrierenMod.gameHelpers;
+package FrierenMod.utils;
 
 import FrierenMod.cards.canAutoAdd.white.HellFireSummoning;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;

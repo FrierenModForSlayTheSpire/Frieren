@@ -3,7 +3,7 @@ package FrierenMod.patches;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.TopTextHelper;
+import FrierenMod.utils.TopTextHelper;
 import FrierenMod.utils.FrierenRes;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix;

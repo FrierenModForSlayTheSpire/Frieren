@@ -1,4 +1,4 @@
-package FrierenMod.gameHelpers;
+package FrierenMod.utils;
 import org.objenesis.Objenesis;
 import org.objenesis.ObjenesisStd;
 
