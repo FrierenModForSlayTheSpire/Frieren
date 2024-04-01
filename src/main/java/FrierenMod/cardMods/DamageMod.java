@@ -33,7 +33,7 @@ public class DamageMod extends AbstractCardModifier {
         card.target = AbstractCard.CardTarget.ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
         if (card instanceof CustomLegendarySpell){
-            ((CustomLegendarySpell)card).loadCardImage("FrierenModResources/img/cards/CustomLegendaryMagic (2).png");
+            ((CustomLegendarySpell)card).loadCardImage("FrierenModResources/img/cards/CustomLegendarySpell (2).png");
             ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + "!D!" + TEXT[1];
         }
     }
