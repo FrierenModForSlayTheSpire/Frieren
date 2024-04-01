@@ -58,7 +58,7 @@ public abstract class DualCard extends AbstractBaseCard {
     public List<TooltipInfo> getCustomTooltips() {
         if(this.isFrierenFernCard){
             this.tips.clear();
-            this.tips.add(new TooltipInfo(CardCrawlGame.languagePack.getUIString("FrierenMod:DoubleOccupationTip").TEXT[0], CardCrawlGame.languagePack.getUIString("FrierenMod:DoubleOccupationTip").TEXT[1]));
+            this.tips.add(new TooltipInfo(CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[0], CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[1]));
         }
         return this.tips;
     }
