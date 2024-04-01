@@ -3,7 +3,7 @@ package FrierenMod.cards.canAutoAdd.white;
 import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -44,7 +44,7 @@ public class HellFireSummoning extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int times = LegendarySpellHelper.getChantCardUsedThisTurn();
+        int times = CombatHelper.getChantCardUsedThisTurn();
         if (p.hasRelic("Chemical X")) {
             times += 2;
             p.getRelic("Chemical X").flash();
@@ -56,14 +56,14 @@ public class HellFireSummoning extends AbstractBaseCard {
     }
 
     public void applyPowers() {
-        this.baseMagicNumber = LegendarySpellHelper.getChantCardUsedThisTurn();
+        this.baseMagicNumber = CombatHelper.getChantCardUsedThisTurn();
         super.applyPowers();
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
         this.initializeDescription();
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = LegendarySpellHelper.getChantCardUsedThisTurn();
+        this.baseMagicNumber = CombatHelper.getChantCardUsedThisTurn();
         super.calculateCardDamage(mo);
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
         this.initializeDescription();

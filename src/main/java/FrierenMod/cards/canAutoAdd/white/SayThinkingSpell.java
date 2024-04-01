@@ -4,7 +4,7 @@ import FrierenMod.actions.ExhaustManaInHandAction;
 import FrierenMod.actions.PlayRandomCardAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -38,7 +38,7 @@ public class SayThinkingSpell extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int amt = ChantHelper.getManaNumInHand();
+        int amt = CombatHelper.getManaNumInHand();
         this.addToBot(new ExhaustManaInHandAction(amt));
         for (int i = 0; i < amt * magicNumber; i++)
             addToBot(new PlayRandomCardAction(

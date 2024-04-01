@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class ExhaustAllManaAction extends AbstractGameAction {
@@ -10,9 +10,9 @@ public class ExhaustAllManaAction extends AbstractGameAction {
 
     public ExhaustAllManaAction() {
         this.actionType = ActionType.WAIT;
-        this.exhaustNumberInDrawPile = ChantHelper.getManaNumInDiscardPile();
-        this.exhaustNumberInHand = ChantHelper.getManaNumInHand();
-        this.exhaustNumberInDiscardPile = ChantHelper.getManaNumInDiscardPile();
+        this.exhaustNumberInDrawPile = CombatHelper.getManaNumInDiscardPile();
+        this.exhaustNumberInHand = CombatHelper.getManaNumInHand();
+        this.exhaustNumberInDiscardPile = CombatHelper.getManaNumInDiscardPile();
     }
 
     public void update() {

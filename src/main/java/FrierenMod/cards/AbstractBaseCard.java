@@ -1,8 +1,7 @@
 package FrierenMod.cards;
 
 import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
-import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
@@ -201,10 +200,10 @@ public abstract class AbstractBaseCard extends CustomCard {
         return super.canUse(p,m);
     }
     private boolean canChantCardUse(AbstractMonster m){
-        return ChantHelper.canChantUse(this,m,this.chantX);
+        return CombatHelper.canChantUse(this,m,this.chantX);
     }
     private boolean canLegendarySpellUse(AbstractMonster m){
-        return LegendarySpellHelper.canLegendarySpellUse(this,m);
+        return CombatHelper.canLegendarySpellUse(this,m);
     }
     public void afterChant(){}
     public void taskProgressIncrease(){

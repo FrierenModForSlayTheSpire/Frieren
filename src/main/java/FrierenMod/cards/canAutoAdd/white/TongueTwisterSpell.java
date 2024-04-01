@@ -3,7 +3,7 @@ package FrierenMod.cards.canAutoAdd.white;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -38,7 +38,7 @@ public class TongueTwisterSpell extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (ChantHelper.getManaNumInHand() > 0) {
+        if (CombatHelper.getManaNumInHand() > 0) {
             this.addToBot(new DrawCardAction(p, this.magicNumber));
         } else {
             this.addToBot(new DrawCardAction(p, this.magicNumber + 1));

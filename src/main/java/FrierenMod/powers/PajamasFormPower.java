@@ -3,7 +3,8 @@ package FrierenMod.powers;
 import FrierenMod.actions.ExhaustManaInDiscardPileAction;
 import FrierenMod.actions.ExhaustManaInDrawPileAction;
 import FrierenMod.actions.ExhaustManaInHandAction;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -21,9 +22,9 @@ public class PajamasFormPower extends AbstractBasePower {
         if (isPlayer) {
             this.updateDescription();
             this.flash();
-            this.addToBot(new ExhaustManaInDrawPileAction(ChantHelper.getManaNumInDrawPile()));
-            this.addToBot(new ExhaustManaInHandAction(ChantHelper.getManaNumInHand()));
-            this.addToBot(new ExhaustManaInDiscardPileAction(ChantHelper.getManaNumInDiscardPile()));
+            this.addToBot(new ExhaustManaInDrawPileAction(CombatHelper.getManaNumInDrawPile()));
+            this.addToBot(new ExhaustManaInHandAction(CombatHelper.getManaNumInHand()));
+            this.addToBot(new ExhaustManaInDiscardPileAction(CombatHelper.getManaNumInDiscardPile()));
             this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
@@ -39,7 +40,7 @@ public class PajamasFormPower extends AbstractBasePower {
 
     public void updateDescription() {
         int rate = this.amount * 3;
-        this.baseDamage = ChantHelper.getAllManaNum() * rate;
+        this.baseDamage = CombatHelper.getAllManaNum() * rate;
         this.description = String.format(descriptions[0], rate, this.baseDamage);
     }
 

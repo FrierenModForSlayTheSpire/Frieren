@@ -3,7 +3,7 @@ package FrierenMod.actions;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDiscardPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDrawPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantHand;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -18,9 +18,9 @@ public class PreciseChantAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int hand = ChantHelper.getManaNumInHand();
-        int draw = ChantHelper.getManaNumInDrawPile();
-        int discard = ChantHelper.getManaNumInDiscardPile();
+        int hand = CombatHelper.getManaNumInHand();
+        int draw = CombatHelper.getManaNumInDrawPile();
+        int discard = CombatHelper.getManaNumInDiscardPile();
         AbstractPlayer p = AbstractDungeon.player;
         ArrayList<AbstractCard> choices = new ArrayList<>();
         if(draw > 0){

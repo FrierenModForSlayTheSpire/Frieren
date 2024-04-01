@@ -3,7 +3,7 @@ package FrierenMod.actions;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDiscardPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDrawPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantHand;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,13 +46,13 @@ public class ChantAction extends AbstractGameAction {
         AbstractCard c2 = initChoiceCard(2);
         AbstractCard c3 = initChoiceCard(3);
         if(!AbstractDungeon.player.hasPower(CHANT_WITHOUT_MANA)){
-            if (ChantHelper.canChantFromDrawPile(this.x)) {
+            if (CombatHelper.canChantFromDrawPile(this.x)) {
                 stanceChoices.add(c1);
             }
-            if (ChantHelper.canChantFromHand(this.x)) {
+            if (CombatHelper.canChantFromHand(this.x)) {
                 stanceChoices.add(c2);
             }
-            if (ChantHelper.canChantFromDiscardPile(this.x)) {
+            if (CombatHelper.canChantFromDiscardPile(this.x)) {
                 stanceChoices.add(c3);
             }
         }

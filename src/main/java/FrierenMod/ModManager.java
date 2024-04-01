@@ -122,7 +122,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 //            BaseMod.addCard(c);
 //        for (AbstractCard c: CardPoolHelper.getFernCardPool())
 //            BaseMod.addCard(c);
-        for (AbstractCard c: CardPoolHelper.getFrierenFernCardPool())
+        for (AbstractCard c: CardPoolHelper.getBaseFrierenFernCardPool())
             BaseMod.addCard(c);
         Log.logger.info("Done adding cards!");
     }

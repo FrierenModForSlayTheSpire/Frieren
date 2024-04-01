@@ -4,7 +4,7 @@ import FrierenMod.actions.ApexMagicAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -46,7 +46,7 @@ public class ApexMagic extends AbstractBaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        if (ChantHelper.getManaNumInDrawPile() == 4 && ChantHelper.getManaNumInHand() == 4 && ChantHelper.getManaNumInDiscardPile() == 4)
+        if (CombatHelper.getManaNumInDrawPile() == 4 && CombatHelper.getManaNumInHand() == 4 && CombatHelper.getManaNumInDiscardPile() == 4)
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         else {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();

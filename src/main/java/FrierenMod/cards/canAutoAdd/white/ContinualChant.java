@@ -5,7 +5,7 @@ import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -45,7 +45,7 @@ public class ContinualChant extends AbstractBaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(!LegendarySpellHelper.canLegendarySpellUse(this,m)){
+        if(!CombatHelper.canLegendarySpellUse(this,m)){
             return false;
         }
         return super.canUseOriginally(p,m);

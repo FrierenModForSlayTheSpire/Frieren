@@ -1,13 +1,15 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.cards.canAutoAdd.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
+import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
 import java.util.ArrayList;
 
-;
+;import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 public class CardPoolHelper {
 //    public static ArrayList<AbstractCard> getFrierenCardPool(){
@@ -90,7 +92,7 @@ public class CardPoolHelper {
 //        retVal.add(new Defend_Fern());
 //        return retVal;
 //    }
-    public static ArrayList<AbstractCard> getFrierenFernCardPool(){
+    public static ArrayList<AbstractCard> getBaseFrierenFernCardPool(){
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info));
         retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info2));
@@ -99,5 +101,49 @@ public class CardPoolHelper {
         retVal.add(new ShavedIceSpell(ShavedIceSpell.info));
         retVal.add(new ShavedIceSpell(ShavedIceSpell.info2));
         return retVal;
+    }
+    public static ArrayList<AbstractCard> getChantCardPool(){
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        retVal.add(new DefensiveMagic());
+        retVal.add(new RapidChant());
+        retVal.add(new ContinualChant());
+        retVal.add(new FlowerFieldSpell());
+        retVal.add(new RustCleanMagic());
+        retVal.add(new PerfectDefensiveMagic());
+        retVal.add(new FinalChant());
+        retVal.add(new PreciseChant());
+        retVal.add(new TrueColours());
+        retVal.add(new LureTheEnemyInDeep());
+        return retVal;
+    }
+    public static ArrayList<AbstractCard> getLegendarySpellCardPool(){
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        retVal.add(new FlyingMagic());
+        retVal.add(new ContinualChant());
+        retVal.add(new AccessoriesSpell());
+        retVal.add(new OilSpell());
+        retVal.add(new LightningMagic());
+        retVal.add(new Famehameha());
+        return retVal;
+    }
+    public static AbstractCard getRandomCard(PoolType type) {
+        ArrayList<AbstractCard> list;
+        switch (type){
+            case CHANT:
+                list = getChantCardPool();
+                break;
+            case LEGENDARY_SPELL:
+                list = getLegendarySpellCardPool();
+                break;
+            default:
+                list = null;
+                Log.logger.info("WTF?");
+                break;
+        }
+        return list.get(cardRandomRng.random(list.size() - 1));
+    }
+    public enum PoolType{
+        CHANT,
+        LEGENDARY_SPELL
     }
 }

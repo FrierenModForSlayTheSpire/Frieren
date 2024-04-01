@@ -3,7 +3,7 @@ package FrierenMod.cards.canAutoAdd.white;
 import FrierenMod.cardMods.BreaksBarriersSpellMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -69,7 +69,7 @@ public class BreaksBarriersSpell extends AbstractBaseCard {
                         this.taskProgressIncrease();
                         if (currentInLevelProgressNumber >= currentLevelRequiredNumber) {
                             for (int i = 0; i < this.magicNumber; i++) {
-                                AbstractCard rewardCard = LegendarySpellHelper.getRandomCard();
+                                AbstractCard rewardCard = CardPoolHelper.getRandomCard(CardPoolHelper.PoolType.LEGENDARY_SPELL);
                                 rewardCard.costForTurn = 0;
                                 this.addToBot(new MakeTempCardInHandAction(rewardCard));
                             }

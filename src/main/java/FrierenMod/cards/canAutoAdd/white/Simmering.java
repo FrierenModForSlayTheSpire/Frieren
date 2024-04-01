@@ -4,7 +4,7 @@ import FrierenMod.actions.SimmeringAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -42,7 +42,7 @@ public class Simmering extends AbstractBaseCard {
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!ChantHelper.canChantFromHand(1)) {
+        if (!CombatHelper.canChantFromHand(1)) {
             return false;
         } else {
             return super.canUseOriginally(p, m);

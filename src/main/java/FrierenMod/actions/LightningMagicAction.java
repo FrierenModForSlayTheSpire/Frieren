@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.ThunderPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -10,8 +10,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class LightningMagicAction extends AbstractGameAction {
     @Override
     public void update() {
-        int draw = ChantHelper.getManaNumInDrawPile();
-        int discard = ChantHelper.getManaNumInDiscardPile();
+        int draw = CombatHelper.getManaNumInDrawPile();
+        int discard = CombatHelper.getManaNumInDiscardPile();
         if(draw > 0){
             this.addToBot(new DrawManaAction(draw));
         }

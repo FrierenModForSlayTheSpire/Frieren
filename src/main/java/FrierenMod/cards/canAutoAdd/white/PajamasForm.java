@@ -3,7 +3,7 @@ package FrierenMod.cards.canAutoAdd.white;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.PajamasFormPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -33,7 +33,7 @@ public class PajamasForm extends AbstractBaseCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = ChantHelper.getAllManaNum() * 3;
+        this.baseMagicNumber = CombatHelper.getAllManaNum() * 3;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -45,7 +45,7 @@ public class PajamasForm extends AbstractBaseCard {
 
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = ChantHelper.getAllManaNum() * 3;
+        this.baseMagicNumber = CombatHelper.getAllManaNum() * 3;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;

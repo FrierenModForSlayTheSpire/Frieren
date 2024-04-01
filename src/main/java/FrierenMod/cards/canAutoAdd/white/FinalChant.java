@@ -3,7 +3,7 @@ package FrierenMod.cards.canAutoAdd.white;
 import FrierenMod.actions.FinalChantAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -37,7 +37,7 @@ public class FinalChant extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.chantX = this.baseChantX = ChantHelper.getAllManaNum();
+        this.chantX = this.baseChantX = CombatHelper.getAllManaNum();
         this.addToBot(new FinalChantAction(this));
     }
 

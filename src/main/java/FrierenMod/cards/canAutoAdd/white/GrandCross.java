@@ -2,7 +2,7 @@ package FrierenMod.cards.canAutoAdd.white;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.LegendarySpellHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -38,12 +38,12 @@ public class GrandCross extends AbstractBaseCard {
 
     public void applyPowers() {
         super.applyPowers();
-        if (!LegendarySpellHelper.cannotPlayLegendarySpell())
+        if (!CombatHelper.cannotPlayLegendarySpell())
             this.costForTurn = 0;
     }
 
     public void triggerOnGlowCheck() {
-        if (LegendarySpellHelper.cannotPlayLegendarySpell())
+        if (CombatHelper.cannotPlayLegendarySpell())
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         else {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
