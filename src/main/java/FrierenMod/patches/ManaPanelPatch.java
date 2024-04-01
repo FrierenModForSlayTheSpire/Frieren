@@ -1,6 +1,5 @@
 package FrierenMod.patches;
 
-import FrierenMod.panels.ManaPanel;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.evacipated.cardcrawl.modthespire.patcher.PatchingException;
@@ -20,7 +19,8 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = ClearMPAfterCombatLocator.class)
         public static void ClearMP() {
             if (AbstractDungeon.player != null) {
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).clearMP();
+                (MPField.ManaPanel.get(AbstractDungeon.player)).clearMP();
+                (MPField.FernPanel.get(AbstractDungeon.player)).clearMP();
             }
         }
 
@@ -36,8 +36,10 @@ public class ManaPanelPatch {
     public static class ShowPanel {
         @SpireInsertPatch(locator = ShowPanelLocator.class)
         public static void Show() {
-            if (AbstractDungeon.player != null)
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).show();
+            if (AbstractDungeon.player != null){
+                (MPField.ManaPanel.get(AbstractDungeon.player)).show();
+                (MPField.FernPanel.get(AbstractDungeon.player)).show();
+            }
         }
 
         public static class ShowPanelLocator extends SpireInsertLocator {
@@ -52,8 +54,10 @@ public class ManaPanelPatch {
     public static class HidePanel {
         @SpireInsertPatch(locator = HidePanelLocator.class)
         public static void Hide() {
-            if (AbstractDungeon.player != null)
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).hide();
+            if (AbstractDungeon.player != null){
+                (MPField.ManaPanel.get(AbstractDungeon.player)).hide();
+                (MPField.FernPanel.get(AbstractDungeon.player)).hide();
+            }
         }
 
         public static class HidePanelLocator extends SpireInsertLocator {
@@ -68,8 +72,10 @@ public class ManaPanelPatch {
     public static class RenderPanel {
         @SpireInsertPatch(locator = RenderPanelLocator.class)
         public static void Render(SpriteBatch sb) {
-            if (AbstractDungeon.player != null)
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).render(sb);
+            if (AbstractDungeon.player != null){
+                (MPField.ManaPanel.get(AbstractDungeon.player)).render(sb);
+                (MPField.FernPanel.get(AbstractDungeon.player)).render(sb);
+            }
         }
 
         public static class RenderPanelLocator extends SpireInsertLocator {
@@ -85,8 +91,10 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = UpdatePanelLocator.class)
         public static void Update() {
             if (AbstractDungeon.player != null) {
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).updatePositions();
-                ((ManaPanel)MPField.Panel.get(AbstractDungeon.player)).update();
+                (MPField.ManaPanel.get(AbstractDungeon.player)).updatePositions();
+                (MPField.ManaPanel.get(AbstractDungeon.player)).update();
+                (MPField.FernPanel.get(AbstractDungeon.player)).updatePositions();
+                (MPField.FernPanel.get(AbstractDungeon.player)).update();
             }
         }
 

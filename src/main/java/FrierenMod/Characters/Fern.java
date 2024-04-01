@@ -1,13 +1,13 @@
 package FrierenMod.Characters;
 
+import FrierenMod.cards.canAutoAdd.purple.CriticalStrike;
 import FrierenMod.cards.canAutoAdd.purple.Defend_Fern;
 import FrierenMod.cards.canAutoAdd.purple.Strike_Fern;
-import FrierenMod.cards.whitePurple.RapidChant;
+import FrierenMod.cards.canAutoAdd.purple.WaitingInTheWings;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HaitaaWand;
-import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
@@ -71,7 +71,8 @@ public class Fern extends CustomPlayer {
             retVal.add(Defend_Fern.ID);
         }
         retVal.add(ShavedIceSpell.info2.baseId);
-        retVal.add(RapidChant.info2.baseId);
+        retVal.add(CriticalStrike.ID);
+        retVal.add(WaitingInTheWings.ID);
         return retVal;
     }
 

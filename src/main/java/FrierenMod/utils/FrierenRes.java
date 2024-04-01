@@ -28,11 +28,11 @@ public class FrierenRes {
     public static final String[] ORB_TEXTURES = ModInformation.makeOrbTexturePath(CHARACTER_NAME);
     public static final String ORB_VFX = ModInformation.makeOrbVfxPath(CHARACTER_NAME);
     public static final float[] LAYER_SPEED = new float[]{-40.0F, -32.0F, 20.0F, -20.0F, 0.0F, -10.0F, -8.0F, 5.0F, -5.0F, 0.0F};
-    public static final String MP_LAYER = ModInformation.makeManaPanelPath("MPLayer0");
-    public static final String MP_DARK_LAYER = ModInformation.makeManaPanelPath("MPLayerDark0");
-    public static final String MP_WRAP_LAYER = ModInformation.makeManaPanelPath("MPWrap");
-    public static final String MP_WRAP_GOLDEN_LAYER = ModInformation.makeManaPanelPath("MPWrapGolden");
-    public static final String GAIN_MP_VFX = ModInformation.makeManaPanelPath("GainMPVFX");
+    public static final String MP_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPLayer0");
+    public static final String MP_DARK_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPLayerDark0");
+    public static final String MP_WRAP_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPWrap");
+    public static final String MP_WRAP_GOLDEN_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPWrapGolden");
+    public static final String GAIN_MP_VFX = ModInformation.makeUIPanelPath("manaPanel/GainMPVFX");
     public static final String TIP_01 = ModInformation.makeTipImgPath(CHARACTER_NAME,"01");
     public static final String TIP_02 = ModInformation.makeTipImgPath(CHARACTER_NAME, "02");
 }

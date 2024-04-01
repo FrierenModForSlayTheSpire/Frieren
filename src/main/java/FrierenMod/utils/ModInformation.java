@@ -39,11 +39,8 @@ public class ModInformation {
     public static String getOrbPath() {
         return getUIPath() + "orb/";
     }
-    public static String getManaPanelPath() {
-        return getUIPath() + "magicPanel/";
-    }
-    public static String makeManaPanelPath(String content){
-        return getManaPanelPath() + content + ".png";
+    public static String makeUIPanelPath(String content){
+        return getUIPath() + content + ".png";
     }
     public static String[] makeOrbTexturePath(String character){
         return new String[]{
