@@ -1,6 +1,12 @@
 package FrierenMod.relics;
 
+import FrierenMod.actions.ExhaustAllManaAction;
+import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class HaitaaWand extends AbstractBaseRelic{
@@ -17,7 +23,20 @@ public class HaitaaWand extends AbstractBaseRelic{
         return new HaitaaWand();
     }
     @Override
-    public void onPlayerEndTurn() {
+    public void atTurnStart() {
+        AbstractPlayer p = AbstractDungeon.player;
+        this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(p,1)));
         this.flash();
+    }
+
+    @Override
+    public void onPlayerEndTurn(){
+        int amt = CombatHelper.getAllManaNum();
+        if(amt > 0){
+            this.flash();
+            AbstractPlayer p = AbstractDungeon.player;
+            this.addToBot(new ExhaustAllManaAction());
+            this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(p,amt)));
+        }
     }
 }

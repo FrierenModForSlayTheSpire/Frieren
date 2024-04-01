@@ -110,7 +110,7 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
-      "打出 #y咏唱 值 小于等于 #b%d 的 #y咏唱 牌不会消耗 #y魔力 。 NL 你每打出 #b1 张牌后失去 #b1 层能力层数 。"
+      "打出 #y咏唱 值 小于等于 #b%d 的 #y咏唱 牌时不会消耗 #y魔力 。 NL 你每使用 #b1 张牌后失去 #b1 层该能力层数 。"
     ]
   }
 }

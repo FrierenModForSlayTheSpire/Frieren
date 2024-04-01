@@ -2,15 +2,16 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 public class CombatHelper {
     public static boolean isInCombat() {
         return (AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT);
     }
+
     public static int getManaNumInDrawPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
@@ -20,6 +21,7 @@ public class CombatHelper {
         }
         return counts;
     }
+
     public static int getManaNumInHand() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
@@ -40,7 +42,7 @@ public class CombatHelper {
         return counts;
     }
 
-    public static int getManaNumInExhaustPile(){
+    public static int getManaNumInExhaustPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
             if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
@@ -77,24 +79,43 @@ public class CombatHelper {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
         }
     }
-    public static boolean cannotPlayLegendarySpell(){
+
+    public static boolean cannotPlayLegendarySpell() {
         return getChantCardUsedThisTurn() == 0;
     }
-    public static boolean canLegendarySpellUse(AbstractCard c, AbstractMonster m){
-        if (cannotPlayLegendarySpell()){
+
+    public static boolean canLegendarySpellUse(AbstractCard c, AbstractMonster m) {
+        if (cannotPlayLegendarySpell()) {
             return false;
-        }
-        else {
+        } else {
             return c.cardPlayable(m) && c.hasEnoughEnergy();
         }
     }
-    public static int getChantCardUsedThisTurn(){
+
+    public static int getChantCardUsedThisTurn() {
         int amounts = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard)c).isChantCard) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard) {
                 amounts++;
             }
         }
         return amounts;
+    }
+
+    public static int getCardsUsedThisTurnSize(boolean isInUsingCard) {
+        int cardsPlayedThisTurnSize = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        return isInUsingCard ? cardsPlayedThisTurnSize - 1: cardsPlayedThisTurnSize;
+    }
+
+    public static int getConcentrationPowerAmt() {
+        AbstractPower po = AbstractDungeon.player.getPower(HardCodedPowerHelper.CONCENTRATION);
+        return po == null ? 0 : po.amount;
+    }
+
+    public static int getDeviationAmt(boolean isUsingCard) {
+        return Math.abs(getCardsUsedThisTurnSize(isUsingCard) - getConcentrationPowerAmt());
+    }
+    public static boolean isDeviationEven(boolean isUsingCard){
+        return getDeviationAmt(isUsingCard) % 2 == 0;
     }
 }

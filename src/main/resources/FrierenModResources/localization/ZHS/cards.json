@@ -532,5 +532,13 @@
   "FrierenMod:Defend_Fern": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "FrierenMod:WaitingInTheWings": {
+    "NAME": "伺机待发",
+    "DESCRIPTION": " frierenmod:离差 为奇数时，获得1层 frierenmod:专注 和 !B! 点 格挡 ，将其返回手牌。 NL  *离差 为偶数时，造成 !D! 点伤害。"
+  },
+  "FrierenMod:CriticalStrike": {
+    "NAME": "会心一击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 2:再造成 !D! 点。"
   }
 }
