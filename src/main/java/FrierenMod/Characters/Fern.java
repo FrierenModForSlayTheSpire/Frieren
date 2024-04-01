@@ -7,6 +7,7 @@ import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HaitaaWand;
+import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
@@ -69,8 +70,8 @@ public class Fern extends CustomPlayer {
         for(int x = 0; x<4; x++) {
             retVal.add(Defend_Fern.ID);
         }
-        retVal.add(ShavedIceSpell.ID);
-        retVal.add(RapidChant.ID);
+        retVal.add(ShavedIceSpell.info2.baseId);
+        retVal.add(RapidChant.info2.baseId);
         return retVal;
     }
 
