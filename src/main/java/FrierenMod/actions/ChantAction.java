@@ -12,13 +12,13 @@ import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
     private final int chantX;
-    private final int manaExhaust;
+    private final int manaNeed;
     private final AbstractGameAction[] nextAction;
     private final AbstractCard cardToReturn;
 
     public ChantAction(int chantX) {
         this.chantX = chantX;
-        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
         this.cardToReturn = null;
         this.nextAction = null;
@@ -26,7 +26,7 @@ public class ChantAction extends AbstractGameAction {
 
     public ChantAction(int chantX, AbstractGameAction... nextAction) {
         this.chantX = chantX;
-        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
         this.cardToReturn = null;
         this.nextAction = nextAction;
@@ -34,7 +34,7 @@ public class ChantAction extends AbstractGameAction {
 
     public ChantAction(int chantX, AbstractCard cardToReturn) {
         this.chantX = chantX;
-        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
         this.cardToReturn = cardToReturn;
         this.nextAction = null;
@@ -42,7 +42,7 @@ public class ChantAction extends AbstractGameAction {
 
     public ChantAction(int chantX, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
         this.chantX = chantX;
-        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
         this.cardToReturn = cardToReturn;
         this.nextAction = nextAction;
@@ -51,17 +51,14 @@ public class ChantAction extends AbstractGameAction {
     @Override
     public void update() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        ChantDrawPile c1 = new ChantDrawPile(this.manaExhaust, this.chantX, this.nextAction);
-        ChantHand c2 = new ChantHand(this.manaExhaust, this.chantX, this.cardToReturn, this.nextAction);
-        ChantDiscardPile c3 = new ChantDiscardPile(this.manaExhaust, this.chantX, this.nextAction);
-        if (CombatHelper.canChantFromDrawPile(this.manaExhaust)) {
-            stanceChoices.add(c1);
+        if (CombatHelper.canChantFromDrawPile(this.manaNeed)) {
+            stanceChoices.add(new ChantDrawPile(this.manaNeed, this.chantX, this.nextAction));
         }
-        if (CombatHelper.canChantFromHand(this.manaExhaust)) {
-            stanceChoices.add(c2);
+        if (CombatHelper.canChantFromHand(this.manaNeed)) {
+            stanceChoices.add(new ChantHand(this.manaNeed, this.chantX, this.cardToReturn, this.nextAction));
         }
-        if (CombatHelper.canChantFromDiscardPile(this.manaExhaust)) {
-            stanceChoices.add(c3);
+        if (CombatHelper.canChantFromDiscardPile(this.manaNeed)) {
+            stanceChoices.add(new ChantDiscardPile(this.manaNeed, this.chantX, this.nextAction));
         }
         if (!stanceChoices.isEmpty()) {
             this.addToTop(new ChooseOneAction(stanceChoices));

@@ -19,15 +19,15 @@ public class PreciseChantAction extends AbstractGameAction {
         int discard = CombatHelper.getManaNumInDiscardPile();
         ArrayList<AbstractCard> choices = new ArrayList<>();
         if (draw > 0) {
-            ChantDrawPile c = new ChantDrawPile(CombatHelper.getManaExhaustForChantCard(draw), draw);
+            ChantDrawPile c = new ChantDrawPile(CombatHelper.getManaNeedWhenChant(draw), draw);
             choices.add(c);
         }
         if (hand > 0) {
-            ChantHand c = new ChantHand(CombatHelper.getManaExhaustForChantCard(hand), hand);
+            ChantHand c = new ChantHand(CombatHelper.getManaNeedWhenChant(hand), hand);
             choices.add(c);
         }
         if (discard > 0) {
-            ChantDiscardPile c = new ChantDiscardPile(CombatHelper.getManaExhaustForChantCard(discard), discard);
+            ChantDiscardPile c = new ChantDiscardPile(CombatHelper.getManaNeedWhenChant(discard), discard);
             choices.add(c);
         }
         if (!choices.isEmpty()) {

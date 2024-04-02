@@ -18,17 +18,17 @@ public class FinalChantAction extends AbstractGameAction {
         int draw = CombatHelper.getManaNumInDrawPile();
         int discard = CombatHelper.getManaNumInDiscardPile();
         if (hand > 0) {
-            this.addToBot(new ChantFromHandAction(CombatHelper.getManaExhaustForChantCard(hand), hand, haveNotTriggered));
+            this.addToBot(new ChantFromHandAction(CombatHelper.getManaNeedWhenChant(hand), hand, haveNotTriggered));
             haveNotTriggered = false;
         }
         if (draw > 0) {
             c.block = c.baseBlock = draw;
             c.applyPowers();
-            this.addToBot(new ChantFromDrawPileAction(CombatHelper.getManaExhaustForChantCard(draw), c.block, haveNotTriggered));
+            this.addToBot(new ChantFromDrawPileAction(CombatHelper.getManaNeedWhenChant(draw), c.block, haveNotTriggered));
             haveNotTriggered = false;
         }
         if (discard > 0) {
-            this.addToBot(new ChantFromDiscardPileAction(CombatHelper.getManaExhaustForChantCard(discard), discard, haveNotTriggered));
+            this.addToBot(new ChantFromDiscardPileAction(CombatHelper.getManaNeedWhenChant(discard), discard, haveNotTriggered));
         }
         this.isDone = true;
     }

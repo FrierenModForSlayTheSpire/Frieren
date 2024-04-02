@@ -58,20 +58,20 @@ public class CombatHelper {
         return getManaNumInDrawPile() + getManaNumInHand() + getManaNumInDiscardPile();
     }
 
-    public static boolean cannotChant(int x) {
-        return !canChantFromDrawPile(x) && !canChantFromHand(x) && !canChantFromDiscardPile(x);
+    public static boolean cannotChant(int manaNeed) {
+        return !canChantFromDrawPile(manaNeed) && !canChantFromHand(manaNeed) && !canChantFromDiscardPile(manaNeed);
     }
 
-    public static boolean canChantFromDrawPile(int x) {
-        return x <= getManaNumInDrawPile();
+    public static boolean canChantFromDrawPile(int manaNeed) {
+        return manaNeed <= getManaNumInDrawPile();
     }
 
-    public static boolean canChantFromHand(int x) {
-        return x <= getManaNumInHand();
+    public static boolean canChantFromHand(int manaNeed) {
+        return manaNeed <= getManaNumInHand();
     }
 
-    public static boolean canChantFromDiscardPile(int x) {
-        return x <= getManaNumInDiscardPile();
+    public static boolean canChantFromDiscardPile(int manaNeed) {
+        return manaNeed <= getManaNumInDiscardPile();
     }
 
     public static boolean canChantUse(AbstractCard c, AbstractMonster m, int x) {
@@ -125,7 +125,7 @@ public class CombatHelper {
     public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
         return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
     }
-    public static int getManaExhaustForChantCard(int chantX) {
+    public static int getManaNeedWhenChant(int chantX) {
         return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - CombatHelper.getConcentrationPowerAmt()), 0);
     }
     public static boolean isRaidReversed(){
