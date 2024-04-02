@@ -112,5 +112,11 @@
     "DESCRIPTIONS": [
       "使用 #b1 张牌后失去 #b1 层该能力 ， #y咏唱 #b%d 及以下不消耗 #y魔力。"
     ]
+  },
+  "FrierenMod:SuperSeriousPower": {
+    "NAME": "超级认真",
+    "DESCRIPTIONS": [
+      "使用下 #b%d 张牌后不会失去 #y专注 ，而是获得1点 #y专注 。"
+    ]
   }
 }
