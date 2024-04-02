@@ -74,12 +74,8 @@ public class CombatHelper {
         return manaNeed <= getManaNumInDiscardPile();
     }
 
-    public static boolean canChantUse(AbstractCard c, AbstractMonster m, int x) {
-        if (cannotChant(x)) {
-            return false;
-        } else {
-            return c.cardPlayable(m) && c.hasEnoughEnergy();
-        }
+    public static boolean canChantUse(AbstractCard c, AbstractMonster m, int chantX) {
+        return !cannotChant(getManaNeedWhenChant(chantX)) && c.cardPlayable(m) && c.hasEnoughEnergy();
     }
 
     public static boolean cannotPlayLegendarySpell() {

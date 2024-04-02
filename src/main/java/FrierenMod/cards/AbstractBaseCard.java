@@ -2,7 +2,6 @@ package FrierenMod.cards;
 
 import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
@@ -47,37 +46,44 @@ public abstract class AbstractBaseCard extends CustomCard {
     public float rotationTimer;
     public int previewIndex;
 
-    public static final Color FLASH_COLOR = new Color(123.0F/255.0F,236.0F/255.0F,232.0F/255.0F,1.0F);
+    public static final Color FLASH_COLOR = new Color(123.0F / 255.0F, 236.0F / 255.0F, 232.0F / 255.0F, 1.0F);
     public ArrayList<TooltipInfo> tips = new ArrayList<>();
+
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
         initCards();
     }
+
     @Deprecated
     public AbstractBaseCard(String id, String rawDescription, CardType type, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
         initCards();
     }
+
     @Deprecated
     public AbstractBaseCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initCards();
     }
+
     @Deprecated
     public AbstractBaseCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
         initCards();
     }
+
     @Deprecated
     public AbstractBaseCard(String id, int cost, CardType type, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, CardTarget.NONE);
         initCards();
     }
+
     @Deprecated
     public AbstractBaseCard(String id, int cost, CardColor color, CardRarity rarity) {
         super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, color, rarity, CardTarget.NONE);
         initCards();
     }
+
     @Override
     public void upgrade() {
     }
@@ -86,12 +92,14 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
 
     }
-    private void initCards(){
+
+    private void initCards() {
         this.initBaseSwitches();
         this.initSpecifiedAttributes();
         this.loadSpecifiedCardStyle();
     }
-    private void initBaseSwitches(){
+
+    private void initBaseSwitches() {
         this.isCostModified = false;
         this.isCostModifiedForTurn = false;
         this.isDamageModified = false;
@@ -114,41 +122,46 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void initSpecifiedAttributes() {
     }
 
-    public void loadSpecifiedCardStyle(){
+    public void loadSpecifiedCardStyle() {
     }
-    public void upgradeChantX(int amount){
+
+    public void upgradeChantX(int amount) {
         this.baseChantX += amount;
         this.chantX = this.baseChantX;
         this.upgradedChantX = true;
     }
-    public void upgradeSecondMagicNumber(int amount){
+
+    public void upgradeSecondMagicNumber(int amount) {
         this.baseSecondMagicNumber += amount;
         this.secondMagicNumber = this.baseSecondMagicNumber;
         this.upgradedSecondMagicNumber = true;
     }
-    public void upgradeRaidNumber(int amount){
+
+    public void upgradeRaidNumber(int amount) {
         this.baseRaidNumber += amount;
         this.raidNumber = this.baseRaidNumber;
         this.upgradedRaidNumber = true;
     }
+
     public void displayUpgrades() {
         super.displayUpgrades();
-        if(this.upgradedChantX){
+        if (this.upgradedChantX) {
             this.chantX = this.baseChantX;
             this.isChantXModified = true;
         }
-        if(this.upgradedSecondMagicNumber){
+        if (this.upgradedSecondMagicNumber) {
             this.secondMagicNumber = this.baseSecondMagicNumber;
             this.isSecondMagicNumberModified = true;
         }
-        if(this.upgradedRaidNumber){
+        if (this.upgradedRaidNumber) {
             this.raidNumber = this.baseRaidNumber;
             this.isRaidNumberModified = true;
         }
     }
+
     @Override
     public AbstractCard makeStatEquivalentCopy() {
-        if(this instanceof CustomLegendarySpell)
+        if (this instanceof CustomLegendarySpell)
             return super.makeStatEquivalentCopy();
         AbstractCard card = this.makeCopy();
         card.name = this.name;
@@ -169,7 +182,7 @@ public abstract class AbstractBaseCard extends CustomCard {
         card.isLocked = this.isLocked;
         card.misc = this.misc;
         card.freeToPlayOnce = this.freeToPlayOnce;
-        if(card instanceof AbstractBaseCard){
+        if (card instanceof AbstractBaseCard) {
             ((AbstractBaseCard) card).isChantCard = this.isChantCard;
             ((AbstractBaseCard) card).isMana = this.isMana;
             ((AbstractBaseCard) card).isLimitedOverMana = this.isLimitedOverMana;
@@ -189,7 +202,7 @@ public abstract class AbstractBaseCard extends CustomCard {
             ((AbstractBaseCard) card).raidNumber = this.raidNumber;
             ((AbstractBaseCard) card).upgradedRaidNumber = this.upgradedRaidNumber;
             ((AbstractBaseCard) card).isRaidNumberModified = this.isRaidNumberModified;
-            if(this.isTaskCard){
+            if (this.isTaskCard) {
                 ((AbstractBaseCard) card).updateDescriptionAndCardImg();
                 ((AbstractBaseCard) card).currentLevel = this.currentLevel;
                 ((AbstractBaseCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
@@ -198,58 +211,72 @@ public abstract class AbstractBaseCard extends CustomCard {
         }
         return super.makeStatEquivalentCopy();
     }
+
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if((this.isChantCard && !p.hasPower(ChantWithoutManaPower.POWER_ID) && !this.isLegendarySpell)){
-            return canChantCardUse(m);
-        } else if(this.isLegendarySpell && !this.isChantCard){
-            return canLegendarySpellUse(m);
-        } else if ((this.isChantCard && !p.hasPower(ChantWithoutManaPower.POWER_ID) ) && this.isLegendarySpell) {
+        if (this.isLegendarySpell && this.isChantCard)
             return canLegendarySpellUse(m) && canChantCardUse(m);
-        }else {
-            return super.canUse(p,m);
-        }
+        if (this.isLegendarySpell)
+            return canLegendarySpellUse(m);
+        if (this.isChantCard)
+            return canChantCardUse(m);
+        super.canUse(p, m);
+        return true;
     }
-    public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m){
-        return super.canUse(p,m);
+
+    public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m) {
+        return super.canUse(p, m);
     }
-    private boolean canChantCardUse(AbstractMonster m){
-        return CombatHelper.canChantUse(this,m,this.chantX);
+
+    private boolean canChantCardUse(AbstractMonster m) {
+        return CombatHelper.canChantUse(this, m, this.chantX);
     }
-    private boolean canLegendarySpellUse(AbstractMonster m){
-        return CombatHelper.canLegendarySpellUse(this,m);
+
+    private boolean canLegendarySpellUse(AbstractMonster m) {
+        return CombatHelper.canLegendarySpellUse(this, m);
     }
-    public void afterChant(){}
-    public void taskProgressIncrease(){
+
+    public void afterChant() {
+    }
+
+    public void taskProgressIncrease() {
         this.flash(FLASH_COLOR);
         currentInLevelProgressNumber++;
         this.updateDescriptionAndCardImg();
     }
-    public void updateDescriptionAndCardImg(){}
-    public void continueToNextLevel(int currentLevelRequiredNumber){
+
+    public void updateDescriptionAndCardImg() {
+    }
+
+    public void continueToNextLevel(int currentLevelRequiredNumber) {
         this.superFlash();
         this.currentLevel--;
         this.currentInLevelProgressNumber = 0;
         this.currentLevelRequiredNumber = currentLevelRequiredNumber;
         this.updateDescriptionAndCardImg();
     }
-    public void initTask(){}
-    public void endTask(){
+
+    public void initTask() {
+    }
+
+    public void endTask() {
         this.superFlash();
         this.initTask();
         this.initializeDescription();
         this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
+
     public ArrayList<AbstractCard> getCardsToPreview() {
         return null;
     }
-    public void update(){
+
+    public void update() {
         super.update();
         if (this.getCardsToPreview() != null && this.hb.hovered)
             if (this.rotationTimer <= 0.0F) {
                 this.rotationTimer = 2.0F;
                 AbstractCard c = (this.getCardsToPreview().get(this.previewIndex)).makeCopy();
-                if(this.upgraded)
+                if (this.upgraded)
                     c.upgrade();
                 this.cardsToPreview = c;
                 if (this.previewIndex == this.getCardsToPreview().size() - 1) {
