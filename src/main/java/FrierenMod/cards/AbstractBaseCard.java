@@ -17,7 +17,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public abstract class AbstractBaseCard extends CustomCard {
     public boolean isChantCard;
@@ -184,7 +183,6 @@ public abstract class AbstractBaseCard extends CustomCard {
             ((AbstractBaseCard) card).upgradedChantX = this.upgradedChantX;
             ((AbstractBaseCard) card).secondMagicNumber = this.secondMagicNumber;
             ((AbstractBaseCard) card).baseSecondMagicNumber = this.baseSecondMagicNumber;
-            ((AbstractBaseCard) card).secondMisc = this.secondMisc;
             ((AbstractBaseCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
             ((AbstractBaseCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
             ((AbstractBaseCard) card).baseRaidNumber = this.baseRaidNumber;
