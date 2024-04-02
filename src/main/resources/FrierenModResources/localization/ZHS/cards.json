@@ -540,6 +540,6 @@
   },
   "FrierenMod:SuperSerious": {
     "NAME": "超级认真",
-    "DESCRIPTION": "使用下 !M! 张牌后不会失去 frierenmod:专注 ，而是获得1点 *专注 。"
+    "DESCRIPTION": "使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
   }
 }
