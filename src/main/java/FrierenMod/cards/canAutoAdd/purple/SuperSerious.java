@@ -6,7 +6,6 @@ import FrierenMod.powers.SuperSeriousPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -20,7 +19,7 @@ public class SuperSerious extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.magicNumber = this.baseSecondMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
