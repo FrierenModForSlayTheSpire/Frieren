@@ -19,4 +19,9 @@ public class Mana extends AbstractBaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ManaAction(1));
     }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return true;
+    }
 }

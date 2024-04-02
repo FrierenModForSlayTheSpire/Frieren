@@ -200,9 +200,6 @@ public abstract class AbstractBaseCard extends CustomCard {
     }
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if(this.isMana){
-            return true;
-        }
         if((this.isChantCard && !p.hasPower(ChantWithoutManaPower.POWER_ID) && !this.isLegendarySpell)){
             return canChantCardUse(m);
         } else if(this.isLegendarySpell && !this.isChantCard){
