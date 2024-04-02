@@ -1,7 +1,7 @@
 package FrierenMod.powers;
 
+import FrierenMod.actions.ModifyPowerStackAmtAction;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,23 +18,14 @@ public class ConcentrationPower extends AbstractBasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        this.flash();
         AbstractPlayer p = AbstractDungeon.player;
         AbstractPower po = p.getPower(SuperSeriousPower.POWER_ID);
         if (po != null) {
-            this.amount++;
-            po.amount--;
-            po.flash();
-            po.updateDescription();
-            if (po.amount == 0)
-                this.addToBot(new RemoveSpecificPowerAction(p, p, po));
+            this.addToBot(new ModifyPowerStackAmtAction(this, 1));
+            this.addToBot(new ModifyPowerStackAmtAction(po, -1));
         } else {
-            this.amount--;
+            this.addToBot(new ModifyPowerStackAmtAction(this, -1));
         }
-        if (this.amount == 0) {
-            this.addToBot(new RemoveSpecificPowerAction(p, p, this));
-        }
-        this.updateDescription();
     }
 
     public void updateDescription() {
