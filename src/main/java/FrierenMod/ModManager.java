@@ -13,6 +13,7 @@ import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
+import FrierenMod.variables.RaidVariable;
 import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
@@ -110,6 +111,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         Log.logger.info("Adding variables");
         BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
+        BaseMod.addDynamicVariable(new RaidVariable());
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
         String cardsClassPath = getModID() + ".cards.canAutoAdd";

@@ -34,9 +34,14 @@ public abstract class AbstractBaseCard extends CustomCard {
     public boolean upgradedChantX;
     public int secondMagicNumber = -1;
     public int baseSecondMagicNumber = -1;
+    @Deprecated
     public int secondMisc = 0;
     public boolean isSecondMagicNumberModified;
     public boolean upgradedSecondMagicNumber;
+    public int raidNumber = -1;
+    public int baseRaidNumber = -1;
+    public boolean upgradedRaidNumber;
+    public boolean isRaidNumberModified;
     public int currentLevel = -1;
     public int currentLevelRequiredNumber = -1;
     public int currentInLevelProgressNumber = -1;
@@ -93,6 +98,7 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isDamageModified = false;
         this.isBlockModified = false;
         this.isMagicNumberModified = false;
+        this.isRaidNumberModified = false;
         this.isChantCard = false;
         this.isLegendarySpell = false;
         this.isChantXModified = false;
@@ -121,6 +127,11 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.secondMagicNumber = this.baseSecondMagicNumber;
         this.upgradedSecondMagicNumber = true;
     }
+    public void upgradeRaidNumber(int amount){
+        this.baseRaidNumber += amount;
+        this.raidNumber = this.baseRaidNumber;
+        this.upgradedRaidNumber = true;
+    }
     public void displayUpgrades() {
         super.displayUpgrades();
         if(this.upgradedChantX){
@@ -130,6 +141,10 @@ public abstract class AbstractBaseCard extends CustomCard {
         if(this.upgradedSecondMagicNumber){
             this.secondMagicNumber = this.baseSecondMagicNumber;
             this.isSecondMagicNumberModified = true;
+        }
+        if(this.upgradedRaidNumber){
+            this.raidNumber = this.baseRaidNumber;
+            this.isRaidNumberModified = true;
         }
     }
     @Override
@@ -172,6 +187,10 @@ public abstract class AbstractBaseCard extends CustomCard {
             ((AbstractBaseCard) card).secondMisc = this.secondMisc;
             ((AbstractBaseCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
             ((AbstractBaseCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
+            ((AbstractBaseCard) card).baseRaidNumber = this.baseRaidNumber;
+            ((AbstractBaseCard) card).raidNumber = this.raidNumber;
+            ((AbstractBaseCard) card).upgradedRaidNumber = this.upgradedRaidNumber;
+            ((AbstractBaseCard) card).isRaidNumberModified = this.isRaidNumberModified;
             if(this.isTaskCard){
                 ((AbstractBaseCard) card).updateDescriptionAndCardImg();
                 ((AbstractBaseCard) card).currentLevel = this.currentLevel;
