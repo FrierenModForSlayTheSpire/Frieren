@@ -540,6 +540,7 @@
   },
   "FrierenMod:SuperSerious": {
     "NAME": "超级认真",
-    "DESCRIPTION": "使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
+    "DESCRIPTION": "使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
   }
 }

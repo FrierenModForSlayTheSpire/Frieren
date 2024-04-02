@@ -7,11 +7,12 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SuperSerious extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SuperSerious.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
 
     public SuperSerious() {
         super(info);
@@ -26,7 +27,9 @@ public class SuperSerious extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.selfRetain = true;
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
