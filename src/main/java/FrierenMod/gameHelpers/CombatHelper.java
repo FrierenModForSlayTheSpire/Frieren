@@ -123,4 +123,8 @@ public class CombatHelper {
     public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
         return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
     }
+
+    public static boolean canFreeChant(int chantX) {
+        return AbstractDungeon.player.hasPower(HardCodedPowerHelper.CHANT_WITHOUT_MANA) || chantX <= getConcentrationPowerAmt();
+    }
 }
