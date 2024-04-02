@@ -4,6 +4,7 @@ import FrierenMod.cards.canAutoAdd.optionCards.ChantDiscardPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDrawPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantHand;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.ChantWithoutManaPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,8 +12,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
-
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
 public class PreciseChantAction extends AbstractGameAction {
 
@@ -41,7 +40,7 @@ public class PreciseChantAction extends AbstractGameAction {
             choices.add(c);
         }
         if(!choices.isEmpty()){
-            if(p.hasPower(CHANT_WITHOUT_MANA)){
+            if(p.hasPower(ChantWithoutManaPower.POWER_ID)){
                 for(AbstractCard c:choices){
                     c.upgrade();
                     c.upgraded = true;

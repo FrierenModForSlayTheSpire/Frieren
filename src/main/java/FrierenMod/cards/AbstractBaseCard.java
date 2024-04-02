@@ -2,6 +2,7 @@ package FrierenMod.cards;
 
 import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
@@ -16,8 +17,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
-
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
 
 public abstract class AbstractBaseCard extends CustomCard {
     public boolean isChantCard;
@@ -207,11 +206,11 @@ public abstract class AbstractBaseCard extends CustomCard {
         if(this.isMana){
             return true;
         }
-        if((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) && !this.isLegendarySpell)){
+        if((this.isChantCard && !p.hasPower(ChantWithoutManaPower.POWER_ID) && !this.isLegendarySpell)){
             return canChantCardUse(m);
         } else if(this.isLegendarySpell && !this.isChantCard){
             return canLegendarySpellUse(m);
-        } else if ((this.isChantCard && !p.hasPower(CHANT_WITHOUT_MANA) ) && this.isLegendarySpell) {
+        } else if ((this.isChantCard && !p.hasPower(ChantWithoutManaPower.POWER_ID) ) && this.isLegendarySpell) {
             return canLegendarySpellUse(m) && canChantCardUse(m);
         }else {
             return super.canUse(p,m);

@@ -1,6 +1,8 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.powers.ChantWithoutManaPower;
+import FrierenMod.powers.ConcentrationPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -108,7 +110,7 @@ public class CombatHelper {
     }
 
     public static int getConcentrationPowerAmt() {
-        AbstractPower po = AbstractDungeon.player.getPower(HardCodedPowerHelper.CONCENTRATION);
+        AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
         return po == null ? 0 : po.amount;
     }
 
@@ -125,6 +127,6 @@ public class CombatHelper {
     }
 
     public static boolean canFreeChant(int chantX) {
-        return AbstractDungeon.player.hasPower(HardCodedPowerHelper.CHANT_WITHOUT_MANA) || chantX <= getConcentrationPowerAmt();
+        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) || chantX <= getConcentrationPowerAmt();
     }
 }
