@@ -129,4 +129,7 @@ public class CombatHelper {
     public static int getManaExhaustForChantCard(int chantX) {
         return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - CombatHelper.getConcentrationPowerAmt()), 0);
     }
+    public static boolean isRaidReversed(){
+        return false;
+    }
 }

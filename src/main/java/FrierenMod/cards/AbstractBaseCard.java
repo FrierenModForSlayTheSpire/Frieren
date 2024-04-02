@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class AbstractBaseCard extends CustomCard {
     public boolean isChantCard;
@@ -27,7 +28,6 @@ public abstract class AbstractBaseCard extends CustomCard {
     public boolean isCostResetCard;
     public boolean isSealCard;
     public boolean isTaskCard;
-    public boolean isRaidReversed;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -110,7 +110,6 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isCostResetCard = false;
         this.isSealCard = false;
         this.isTaskCard = false;
-        this.isRaidReversed = false;
     }
 
     public void initSpecifiedAttributes() {
