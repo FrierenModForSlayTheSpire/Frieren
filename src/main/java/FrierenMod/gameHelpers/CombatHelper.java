@@ -83,11 +83,7 @@ public class CombatHelper {
     }
 
     public static boolean canLegendarySpellUse(AbstractCard c, AbstractMonster m) {
-        if (cannotPlayLegendarySpell()) {
-            return false;
-        } else {
-            return c.cardPlayable(m) && c.hasEnoughEnergy();
-        }
+        return !cannotPlayLegendarySpell() && c.cardPlayable(m) && c.hasEnoughEnergy();
     }
 
     public static int getChantCardUsedThisTurn() {
