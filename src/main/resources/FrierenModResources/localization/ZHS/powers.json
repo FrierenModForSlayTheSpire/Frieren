@@ -110,7 +110,7 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
-      "使用 #b1 张牌后失去 #b1 层该能力 ， #y咏唱 #b%d 及以下不消耗 #y魔力。"
+      "使用 #b1 张牌后失去 #b1 层该能力， #y咏唱 消耗 的 #y魔力 减少 #b%d 张。"
     ]
   },
   "FrierenMod:SuperSeriousPower": {

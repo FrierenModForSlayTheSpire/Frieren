@@ -116,14 +116,14 @@
     "NAMES": [
       "专注"
     ],
-    "DESCRIPTION": "使用 #b1 张牌后失去 #b1 层该能力 ，#y咏唱X 在层数及以下不消耗 #y魔力 。"
+    "DESCRIPTION": "使用 #b1 张牌后失去 #b1 层该能力 ，#y咏唱 消耗 的 #y魔力 减少（该能力层数）张。"
   },
   {
     "PROPER_NAME":"奇袭X",
     "NAMES": [
       "奇袭X","奇袭"
     ],
-    "DESCRIPTION": "当 #y离差 小于等于X时触发。"
+    "DESCRIPTION": " #y离差 小于等于X时触发。"
   },
   {
     "PROPER_NAME":"凝聚",
