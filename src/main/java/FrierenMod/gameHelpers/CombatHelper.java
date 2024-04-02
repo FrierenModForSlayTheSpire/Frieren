@@ -4,6 +4,7 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ConcentrationPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -125,8 +126,7 @@ public class CombatHelper {
     public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
         return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
     }
-
-    public static boolean canFreeChant(int chantX) {
-        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) || chantX <= getConcentrationPowerAmt();
+    public static int getManaExhaustForChantCard(int chantX) {
+        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - CombatHelper.getConcentrationPowerAmt()), 0);
     }
 }

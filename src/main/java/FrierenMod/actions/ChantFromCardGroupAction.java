@@ -12,28 +12,51 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public abstract class ChantFromCardGroupAction extends AbstractGameAction {
     public AbstractGameAction[] nextAction;
     public boolean haveNotTriggered;
-    public void triggerPowers(){
-        if(haveNotTriggered)
-            for(AbstractPower po: AbstractDungeon.player.powers)
-                if(po instanceof AbstractBasePower)
+    public int manaExhaust;
+    public int reward;
+
+    public ChantFromCardGroupAction(int manaExhaust, int reward) {
+        this.manaExhaust = manaExhaust;
+        this.reward = reward;
+        this.haveNotTriggered = true;
+        this.nextAction = null;
+    }
+
+    @Override
+    public void update() {
+        if (haveNotTriggered) {
+            this.triggerPowers();
+            this.triggerCards();
+            this.addNextAction();
+        }
+        this.isDone = true;
+    }
+
+    public void triggerPowers() {
+        if (haveNotTriggered)
+            for (AbstractPower po : AbstractDungeon.player.powers)
+                if (po instanceof AbstractBasePower)
                     ((AbstractBasePower) po).afterChant();
     }
-    public void triggerCards(){
+
+    public void triggerCards() {
         AbstractPlayer p = AbstractDungeon.player;
         triggerCardsInCardGroup(p.drawPile);
         triggerCardsInCardGroup(p.hand);
         triggerCardsInCardGroup(p.discardPile);
     }
-    private void triggerCardsInCardGroup(CardGroup group){
-        if(haveNotTriggered)
-            for(AbstractCard c:group.group)
-                if(c instanceof AbstractBaseCard)
+
+    private void triggerCardsInCardGroup(CardGroup group) {
+        if (haveNotTriggered)
+            for (AbstractCard c : group.group)
+                if (c instanceof AbstractBaseCard)
                     ((AbstractBaseCard) c).afterChant();
     }
-    public void addNextAction(){
-        if(haveNotTriggered)
-            if(nextAction != null)
-                for(AbstractGameAction action:nextAction)
+
+    public void addNextAction() {
+        if (haveNotTriggered)
+            if (nextAction != null)
+                for (AbstractGameAction action : nextAction)
                     this.addToBot(action);
     }
 }

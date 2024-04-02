@@ -40,18 +40,15 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 两次。",
-    "UPGRADE_DESCRIPTION":"获得 !B! 点 格挡 两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。"
   },
   "FrierenMod:ChantHand": {
     "NAME": "从手牌咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
-    "UPGRADE_DESCRIPTION":"获得 !M! 点 [E] 。"
+    "DESCRIPTION": " 消耗 手牌中 !SM! 张 *魔力 ，获得 !M! 点 [E] 。"
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "从弃牌堆咏唱",
-    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
-    "UPGRADE_DESCRIPTION":"获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !SM! 张 *魔力 ，获得 !M! 点 力量 。"
   },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",

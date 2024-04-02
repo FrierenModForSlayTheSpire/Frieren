@@ -4,7 +4,6 @@ import FrierenMod.cards.canAutoAdd.optionCards.ChantDiscardPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantDrawPile;
 import FrierenMod.cards.canAutoAdd.optionCards.ChantHand;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -12,100 +11,61 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
-    private final int x;
-    private AbstractGameAction[] nextAction;
+    private final int chantX;
+    private final int manaExhaust;
+    private final AbstractGameAction[] nextAction;
     private final AbstractCard cardToReturn;
 
-    public ChantAction(int x) {
-        this.x = x;
+    public ChantAction(int chantX) {
+        this.chantX = chantX;
+        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
         this.actionType = ActionType.WAIT;
         this.cardToReturn = null;
+        this.nextAction = null;
     }
 
-    public ChantAction(int x, AbstractGameAction... nextAction) {
-        this.x = x;
+    public ChantAction(int chantX, AbstractGameAction... nextAction) {
+        this.chantX = chantX;
+        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
         this.actionType = ActionType.WAIT;
-        this.nextAction = nextAction;
         this.cardToReturn = null;
-    }
-
-    public ChantAction(int x, AbstractCard cardToReturn) {
-        this.x = x;
-        this.cardToReturn = cardToReturn;
-        this.actionType = ActionType.WAIT;
-    }
-
-    public ChantAction(int x, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        this.x = x;
-        this.actionType = ActionType.WAIT;
         this.nextAction = nextAction;
+    }
+
+    public ChantAction(int chantX, AbstractCard cardToReturn) {
+        this.chantX = chantX;
+        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.actionType = ActionType.WAIT;
         this.cardToReturn = cardToReturn;
+        this.nextAction = null;
+    }
+
+    public ChantAction(int chantX, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
+        this.chantX = chantX;
+        this.manaExhaust = CombatHelper.getManaExhaustForChantCard(chantX);
+        this.actionType = ActionType.WAIT;
+        this.cardToReturn = cardToReturn;
+        this.nextAction = nextAction;
     }
 
     @Override
     public void update() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        AbstractCard c1 = initChoiceCard(CardType.DRAW_PILE);
-        AbstractCard c2 = initChoiceCard(CardType.HAND);
-        AbstractCard c3 = initChoiceCard(CardType.DISCARD_PILE);
-        if (!CombatHelper.canFreeChant(this.x)) {
-            if (CombatHelper.canChantFromDrawPile(this.x)) {
-                stanceChoices.add(c1);
-            }
-            if (CombatHelper.canChantFromHand(this.x)) {
-                stanceChoices.add(c2);
-            }
-            if (CombatHelper.canChantFromDiscardPile(this.x)) {
-                stanceChoices.add(c3);
-            }
-        } else {
+        ChantDrawPile c1 = new ChantDrawPile(this.manaExhaust, this.chantX, this.nextAction);
+        ChantHand c2 = new ChantHand(this.manaExhaust, this.chantX, this.cardToReturn, this.nextAction);
+        ChantDiscardPile c3 = new ChantDiscardPile(this.manaExhaust, this.chantX, this.nextAction);
+        if (CombatHelper.canChantFromDrawPile(this.manaExhaust)) {
             stanceChoices.add(c1);
+        }
+        if (CombatHelper.canChantFromHand(this.manaExhaust)) {
             stanceChoices.add(c2);
+        }
+        if (CombatHelper.canChantFromDiscardPile(this.manaExhaust)) {
             stanceChoices.add(c3);
         }
         if (!stanceChoices.isEmpty()) {
             this.addToTop(new ChooseOneAction(stanceChoices));
         }
         this.isDone = true;
-    }
-
-    private AbstractCard initChoiceCard(CardType type) {
-        switch (type) {
-            case DRAW_PILE:
-                ChantDrawPile c1 = (nextAction == null ? new ChantDrawPile() : new ChantDrawPile(nextAction));
-                c1.block = c1.baseBlock = x;
-                c1.magicNumber = c1.baseMagicNumber = x;
-                if (CombatHelper.canFreeChant(x)) {
-                    c1.upgrade();
-                    c1.upgraded = true;
-                }
-                c1.applyPowers();
-                return c1;
-            case HAND:
-                ChantHand c2 = (nextAction == null ? new ChantHand(cardToReturn) : new ChantHand(cardToReturn, nextAction));
-                c2.magicNumber = c2.baseMagicNumber = x;
-                if (CombatHelper.canFreeChant(x)) {
-                    c2.upgrade();
-                    c2.upgraded = true;
-                }
-                return c2;
-            case DISCARD_PILE:
-                ChantDiscardPile c3 = (nextAction == null ? new ChantDiscardPile() : new ChantDiscardPile(nextAction));
-                c3.magicNumber = c3.baseMagicNumber = x;
-                if (CombatHelper.canFreeChant(x)) {
-                    c3.upgrade();
-                    c3.upgraded = true;
-                }
-                return c3;
-            default:
-                Log.logger.info("WTF?");
-                return null;
-        }
-    }
-
-    private enum CardType {
-        DRAW_PILE,
-        HAND,
-        DISCARD_PILE
     }
 }
