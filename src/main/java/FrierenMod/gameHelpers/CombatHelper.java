@@ -104,7 +104,7 @@ public class CombatHelper {
 
     public static int getCardsUsedThisTurnSize(boolean isInUsingCard) {
         int cardsPlayedThisTurnSize = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
-        return isInUsingCard ? cardsPlayedThisTurnSize - 1: cardsPlayedThisTurnSize;
+        return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
     }
 
     public static int getConcentrationPowerAmt() {
@@ -115,7 +115,12 @@ public class CombatHelper {
     public static int getDeviationAmt(boolean isUsingCard) {
         return Math.abs(getCardsUsedThisTurnSize(isUsingCard) - getConcentrationPowerAmt());
     }
-    public static boolean isDeviationEven(boolean isUsingCard){
+
+    public static boolean isDeviationEven(boolean isUsingCard) {
         return getDeviationAmt(isUsingCard) % 2 == 0;
+    }
+
+    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
+        return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 }

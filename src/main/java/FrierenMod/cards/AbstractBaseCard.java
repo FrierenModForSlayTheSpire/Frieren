@@ -28,6 +28,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public boolean isCostResetCard;
     public boolean isSealCard;
     public boolean isTaskCard;
+    public boolean isRaidReversed;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -110,6 +111,7 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isCostResetCard = false;
         this.isSealCard = false;
         this.isTaskCard = false;
+        this.isRaidReversed = false;
     }
 
     public void initSpecifiedAttributes() {

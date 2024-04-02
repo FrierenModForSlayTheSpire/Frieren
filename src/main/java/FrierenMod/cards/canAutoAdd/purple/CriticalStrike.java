@@ -23,24 +23,25 @@ public class CriticalStrike extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
+        this.raidNumber = this.baseRaidNumber = 2;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeRaidNumber(1);
         }
     }
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = (CombatHelper.getDeviationAmt(false) == 0) ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
+        this.glowColor = (CombatHelper.canRaidTakeEffect(this.raidNumber,false,this.isRaidReversed)) ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i = 0; i < ((CombatHelper.getDeviationAmt(true) <= 2)? 2 : 1); i++) {
+        for (int i = 0; i < ((CombatHelper.canRaidTakeEffect(this.raidNumber,true,this.isRaidReversed))? 2 : 1); i++) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
