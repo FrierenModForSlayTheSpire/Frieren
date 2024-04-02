@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CriticalStrike extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(FrierenMod.cards.canAutoAdd.purple.CriticalStrike.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(CriticalStrike.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 
     public CriticalStrike() {

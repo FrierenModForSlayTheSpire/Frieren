@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class WaitingInTheWings extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(FrierenMod.cards.canAutoAdd.purple.WaitingInTheWings.class.getSimpleName());
+    public static final String ID = ModInformation.makeID(WaitingInTheWings.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 
     public WaitingInTheWings() {
