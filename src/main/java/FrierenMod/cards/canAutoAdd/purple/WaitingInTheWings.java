@@ -45,7 +45,14 @@ public class WaitingInTheWings extends AbstractBaseCard {
 
     @Override
     public void applyPowers() {
-        this.returnToHand = !(CombatHelper.isDeviationEven(false));
+        if(!CombatHelper.isDeviationEven(false)){
+            this.returnToHand = true;
+            this.target = CardTarget.NONE;
+        }
+        else {
+            this.returnToHand = false;
+            this.target = info.cardTarget;
+        }
         super.applyPowers();
     }
 
