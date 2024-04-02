@@ -116,7 +116,7 @@
   "FrierenMod:SuperSeriousPower": {
     "NAME": "超级认真",
     "DESCRIPTIONS": [
-      "使用的 #b%d 张牌不会失去 #y专注 ，而是获得1点 #y专注 。"
+      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1点 #y专注 。"
     ]
   }
 }
