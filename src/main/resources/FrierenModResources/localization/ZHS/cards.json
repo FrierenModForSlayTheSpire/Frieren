@@ -545,7 +545,7 @@
   },
   "FrierenMod:DancingForm": {
     "NAME": "舞姿形态",
-    "DESCRIPTION": "使用卡牌后，随机获得或失去获得 frierenmod:专注 ，使 frierenmod:离差 永恒为2。"
+    "DESCRIPTION": "使用卡牌后，获得或失去 frierenmod:专注 ，使 frierenmod:离差 永恒为2。"
   },
   "FrierenMod:1": {
     "NAME": "",
