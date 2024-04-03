@@ -542,5 +542,45 @@
     "NAME": "超级认真",
     "DESCRIPTION": "使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。",
     "UPGRADE_DESCRIPTION": " 保留 。 NL 使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
+  },
+  "FrierenMod:DancingForm": {
+    "NAME": "舞姿形态",
+    "DESCRIPTION": "使用卡牌后，随机获得或失去获得 frierenmod:专注 ，使 frierenmod:离差 永恒为2。"
+  },
+  "FrierenMod:1": {
+    "NAME": "",
+    "DESCRIPTION": "在本场战斗中提高你当前所有卡牌的 frierenmod:奇袭 值1点。 NL 消耗 。"
+  },
+  "FrierenMod:2": {
+    "NAME": "",
+    "DESCRIPTION": "在本回合中，反转 frierenmod:奇袭 判定条件 。"
+  },
+  "FrierenMod:3": {
+    "NAME": "",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果你 *咏唱 的是手牌，失去 !CX! 层专注。"
+  },
+  "FrierenMod:4": {
+    "NAME": "",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果 *咏唱 值为6，消耗 。在本场战斗中提高 *咏唱 值1点。将这张牌放入你的抽牌堆。"
+  },
+  "FrierenMod:Moody": {
+    "NAME": "喜怒无常",
+    "DESCRIPTION": "造成本回合 frierenmod:专注 层数变化次数的伤害。 NL （将造成 !D! 点）。"
+  },
+  "FrierenMod:WashingClothesSpell": {
+    "NAME": "彻底清除衣服污渍的魔法",
+    "DESCRIPTION": "frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] 。"
+  },
+  "FrierenMod:5": {
+    "NAME": "",
+    "DESCRIPTION": "frierenmod:咏唱 !CX! 。 随机使1个敌人生命值变为0。 NL  消耗 。"
+  },
+  "FrierenMod:6": {
+    "NAME": "",
+    "DESCRIPTION": "抽 !M! 张牌，丢弃不为 *魔力 的牌，获得弃牌数的 frierenmod:专注 。"
+  },
+  "FrierenMod:7": {
+    "NAME": "",
+    "DESCRIPTION": "获得或失去至多 !M! 层 frierenmod:专注 ，使离差尽可能小。"
   }
 }
