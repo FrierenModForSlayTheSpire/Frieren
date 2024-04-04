@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -30,7 +30,7 @@ public class HellFireSummoning extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int times = LegendMagicHelper.getChantCardUsedThisTurn();
+        int times = LegendarySpellHelper.getChantCardUsedThisTurn();
         if (p.hasRelic("Chemical X")) {
             times += 2;
             p.getRelic("Chemical X").flash();
@@ -41,13 +41,13 @@ public class HellFireSummoning extends AbstractFrierenCard {
         this.addToBot(new ModifyCostAction(this.uuid,1));
     }
     public void applyPowers() {
-        this.baseMagicNumber = LegendMagicHelper.getChantCardUsedThisTurn();
+        this.baseMagicNumber = LegendarySpellHelper.getChantCardUsedThisTurn();
         super.applyPowers();
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
         this.initializeDescription();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = LegendMagicHelper.getChantCardUsedThisTurn();
+        this.baseMagicNumber = LegendarySpellHelper.getChantCardUsedThisTurn();
         super.calculateCardDamage(mo);
         this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
         this.initializeDescription();

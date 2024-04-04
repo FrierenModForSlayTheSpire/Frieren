@@ -1,16 +1,15 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Laziness;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class ComfortableBed extends AbstractFrierenRelic {
-    public static final String ID = ModInformation.makeID(ComfortableBed.class.getSimpleName());
+public class IcicleCherryBlossom extends AbstractFrierenRelic {
+    public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
 
-    public ComfortableBed() {
+    public IcicleCherryBlossom() {
         super(ID, RelicTier.BOSS);
     }
 
@@ -19,7 +18,7 @@ public class ComfortableBed extends AbstractFrierenRelic {
     }
 
     public AbstractRelic makeCopy() {
-        return new ComfortableBed();
+        return new IcicleCherryBlossom();
     }
 
     public boolean isNormal() {
@@ -33,7 +32,6 @@ public class ComfortableBed extends AbstractFrierenRelic {
     public void atBattleStart() {
         flash();
         this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        this.addToBot(new MakeTempCardInDiscardAndDeckAction(new Laziness().makeCopy()));
     }
 
     public void onEquip() {

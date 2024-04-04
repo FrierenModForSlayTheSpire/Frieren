@@ -19,9 +19,9 @@ public class ManaExpandAction extends AbstractGameAction {
     @Override
     public void update() {
         if(this.upgraded){
-            this.addToBot(new DoubleMagicInHandAction());
-            this.addToBot(new DoubleMagicInDrawPileAction());
-            this.addToBot(new DoubleMagicInDiscardPileAction());
+            this.addToBot(new DoubleManaInHandAction());
+            this.addToBot(new DoubleManaInDrawPileAction());
+            this.addToBot(new DoubleManaInDiscardPileAction());
         }else {
             ArrayList<AbstractCard> choices = new ArrayList<>();
             choices.add(new DoubleMagicInDrawPile());

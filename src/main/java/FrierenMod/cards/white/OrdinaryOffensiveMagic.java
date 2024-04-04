@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.effects.NormalAttackEffect;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -28,7 +28,7 @@ public class OrdinaryOffensiveMagic extends AbstractFrierenCard {
     }
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = LegendMagicHelper.getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = LegendarySpellHelper.getExhaustedManaNumber();
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;
@@ -37,7 +37,7 @@ public class OrdinaryOffensiveMagic extends AbstractFrierenCard {
         this.initializeDescription();
     }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = LegendMagicHelper.getExhaustedMagicPowerNumber();
+        this.baseMagicNumber = LegendarySpellHelper.getExhaustedManaNumber();
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);

@@ -10,7 +10,7 @@ public class LightningMagic extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(LightningMagic.class.getSimpleName());
     public LightningMagic() {
         super(ID, 3, CardRarity.RARE);
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public void upgrade() {

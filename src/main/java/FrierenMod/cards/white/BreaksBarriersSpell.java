@@ -2,7 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cardMods.BreaksBarriersSpellMod;
 import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.gameHelpers.LegendMagicHelper;
+import FrierenMod.gameHelpers.LegendarySpellHelper;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -39,7 +39,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         AbstractPlayer p = AbstractDungeon.player;
-        if(c instanceof AbstractFrierenCard &&(((AbstractFrierenCard) c).isMana || ((AbstractFrierenCard) c).isChantCard || ((AbstractFrierenCard) c).isLegendaryMagic)){
+        if(c instanceof AbstractFrierenCard &&(((AbstractFrierenCard) c).isMana || ((AbstractFrierenCard) c).isChantCard || ((AbstractFrierenCard) c).isLegendarySpell)){
             switch (currentLevel){
                 case 3:
                     if(((AbstractFrierenCard) c).isMana){
@@ -55,7 +55,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             for (int i = 0; i < this.magicNumber; i++) {
-                                AbstractCard rewardCard = LegendMagicHelper.getRandomCard();
+                                AbstractCard rewardCard = LegendarySpellHelper.getRandomCard();
                                 rewardCard.costForTurn = 0;
                                 this.addToBot(new MakeTempCardInHandAction(rewardCard));
                             }
@@ -64,7 +64,7 @@ public class BreaksBarriersSpell extends AbstractFrierenCard {
                     }
                     break;
                 case 1:
-                    if (((AbstractFrierenCard) c).isLegendaryMagic){
+                    if (((AbstractFrierenCard) c).isLegendarySpell){
                         this.taskProgressIncrease();
                         if(currentInLevelProgressNumber >= currentLevelRequiredNumber){
                             this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.damage, true), DamageInfo.DamageType.NORMAL, AbstractGameAction.AttackEffect.FIRE, true));

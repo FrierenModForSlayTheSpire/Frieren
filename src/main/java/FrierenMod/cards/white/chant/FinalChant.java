@@ -23,7 +23,7 @@ public class FinalChant extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.chantX = this.baseChantX = ChantHelper.getAllMagicPowerNum();
+        this.chantX = this.baseChantX = ChantHelper.getAllManaNum();
         this.addToBot(new FinalChantAction(this));
     }
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

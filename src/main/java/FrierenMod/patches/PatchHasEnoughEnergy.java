@@ -1,7 +1,6 @@
 package FrierenMod.patches;
 
 import FrierenMod.gameHelpers.ChantHelper;
-import FrierenMod.gameHelpers.HardCodedPowerHelper;
 import FrierenMod.utils.ModInformation;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -11,7 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.MAGIC_INSTEAD_OF_COST;
+import static FrierenMod.gameHelpers.HardCodedPowerHelper.MANA_INSTEAD_OF_COST;
 
 @SpirePatch(clz = AbstractCard.class,method = "hasEnoughEnergy")
 public class PatchHasEnoughEnergy {
@@ -21,8 +20,8 @@ public class PatchHasEnoughEnergy {
     @SpireInsertPatch(rloc = 35)
     public static SpireReturn<Boolean> Insert(AbstractCard _inst){
         AbstractPlayer p = AbstractDungeon.player;
-        if(p.hasPower(MAGIC_INSTEAD_OF_COST)){
-            if(ChantHelper.getAllMagicPowerNum() >= _inst.costForTurn)
+        if(p.hasPower(MANA_INSTEAD_OF_COST)){
+            if(ChantHelper.getAllManaNum() >= _inst.costForTurn)
                 return SpireReturn.Return(true);
             else {
                 _inst.cantUseMessage = TEXT[0];

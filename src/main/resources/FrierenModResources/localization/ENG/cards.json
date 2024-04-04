@@ -501,22 +501,26 @@
   },
   "FrierenMod:Fire": {
     "NAME": "Fire Elemental",
-    "DESCRIPTION": "Deal !D! Damage twice. NL Exhaust."
+    "DESCRIPTION": "Deal !D! Damage twice. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Ice": {
     "NAME": "Ice Elemental",
-    "DESCRIPTION": "Gain !B! Block. NL Exhaust."
+    "DESCRIPTION": "Gain !B! Block. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Light": {
     "NAME": "Light Elemental",
-    "DESCRIPTION": "Heal !M! HP. NL Exhaust."
+    "DESCRIPTION": "Heal !M! HP. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Thunder": {
     "NAME": "Thunder Elemental",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:Dark": {
     "NAME": "Dark Elemental",
-    "DESCRIPTION": "Draw !M! cards. NL Exhaust."
+    "DESCRIPTION": "Draw !M! cards. NL Exhaust. NL Ethereal."
+  },
+  "FrierenMod:SayThinkingSpell": {
+    "NAME": "把思考的事情说出来的魔法",
+    "DESCRIPTION": "消耗手中所有的 *魔力 ，每消耗1张就打出你抽牌堆随机位置的 !M! 张牌。"
   }
 }

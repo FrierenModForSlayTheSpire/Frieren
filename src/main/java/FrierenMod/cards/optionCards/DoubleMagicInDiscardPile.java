@@ -1,6 +1,6 @@
 package FrierenMod.cards.optionCards;
 
-import FrierenMod.actions.DoubleMagicInDiscardPileAction;
+import FrierenMod.actions.DoubleManaInDiscardPileAction;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
@@ -18,6 +18,6 @@ public class DoubleMagicInDiscardPile extends AbstractFrierenCard {
         this.onChoseThisOption();
     }
     public void onChoseThisOption() {
-        this.addToBot(new DoubleMagicInDiscardPileAction());
+        this.addToBot(new DoubleManaInDiscardPileAction());
     }
 }

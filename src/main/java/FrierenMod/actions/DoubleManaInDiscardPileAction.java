@@ -3,10 +3,10 @@ package FrierenMod.actions;
 import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-public class DoubleMagicInDiscardPileAction extends AbstractGameAction {
+public class DoubleManaInDiscardPileAction extends AbstractGameAction {
     @Override
     public void update() {
-        int discard = ChantHelper.getMagicPowerNumInDiscardPile();
+        int discard = ChantHelper.getManaNumInDiscardPile();
         if(discard > 0){
             this.addToBot(new MakeManaInDiscardAction(discard));
         }

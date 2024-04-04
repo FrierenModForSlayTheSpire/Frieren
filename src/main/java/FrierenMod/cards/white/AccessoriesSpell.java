@@ -13,7 +13,7 @@ public class AccessoriesSpell extends AbstractFrierenCard {
         super(ID, 4, CardType.POWER, CardRarity.RARE, CardTarget.NONE);
         this.isInnate = true;
         this.isEthereal = true;
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public void upgrade() {

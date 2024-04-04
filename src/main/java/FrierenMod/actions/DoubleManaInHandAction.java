@@ -3,12 +3,13 @@ package FrierenMod.actions;
 import FrierenMod.gameHelpers.ChantHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
-public class DoubleMagicInDrawPileAction extends AbstractGameAction {
+public class DoubleManaInHandAction extends AbstractGameAction {
+
     @Override
     public void update() {
-        int draw = ChantHelper.getMagicPowerNumInDrawPile();
-        if(draw > 0){
-            this.addToBot(new MakeManaInDrawPileAction(draw));
+        int hand = ChantHelper.getManaNumInHand();
+        if(hand > 0){
+            this.addToBot(new MakeManaInHandAction(hand));
         }
         this.isDone = true;
     }

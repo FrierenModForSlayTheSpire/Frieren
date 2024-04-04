@@ -4,10 +4,8 @@ import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Fire extends AbstractFrierenCard {
@@ -16,6 +14,7 @@ public class Fire extends AbstractFrierenCard {
         super(ID, 0, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.damage = this.baseDamage = 5;
         this.exhaust = true;
+        this.isEthereal = true;
     }
     @Override
     public void upgrade() {

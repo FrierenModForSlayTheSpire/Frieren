@@ -13,7 +13,7 @@ public class FlyingMagic extends AbstractFrierenCard {
     public FlyingMagic() {
         super(ID, 2, CardType.POWER, CardRarity.RARE);
         this.magicNumber = this.baseMagicNumber = 2;
-        this.isLegendaryMagic = true;
+        this.isLegendarySpell = true;
     }
     @Override
     public void upgrade() {
