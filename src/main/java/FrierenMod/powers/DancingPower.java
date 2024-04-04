@@ -18,9 +18,9 @@ public class DancingPower extends AbstractBasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (CombatHelper.getConcentrationPowerAmt() == 0){
+        if (CombatHelper.getConcentrationPowerAmt() == 0) {
             AbstractPlayer p = AbstractDungeon.player;
-            this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(p, 2)));
+            this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(p, CombatHelper.getCardsUsedThisTurnSize(false) + 2)));
         }
     }
 

@@ -113,10 +113,10 @@
       "使用 #b1 张牌后失去 #b1 层该能力， #y咏唱 消耗 的 #y魔力 减少 #b%d 张。"
     ]
   },
-  "FrierenMod:SuperSeriousPower": {
-    "NAME": "超级认真",
+  "FrierenMod:DancingPower": {
+    "NAME": "舞姿形态",
     "DESCRIPTIONS": [
-      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1点 #y专注 。"
+      "使用卡牌后，获得或失去 #专注 ，使 #离差 永恒为 #b2 。"
     ]
   }
 }

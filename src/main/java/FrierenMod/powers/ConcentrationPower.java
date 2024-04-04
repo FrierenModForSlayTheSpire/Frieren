@@ -22,15 +22,16 @@ public class ConcentrationPower extends AbstractBasePower {
         AbstractPlayer p = AbstractDungeon.player;
         AbstractPower superSerious = p.getPower(SuperSeriousPower.POWER_ID);
         AbstractPower dancing = p.getPower(DancingPower.POWER_ID);
+        if (dancing != null) {
+            int amt = CombatHelper.getCardsUsedThisTurnSize(false) + 2;
+            this.addToBot(new ModifyPowerStackAmtAction(this, amt, true));
+            return;
+        }
         if (superSerious != null) {
             this.addToBot(new ModifyPowerStackAmtAction(this, 1));
             this.addToBot(new ModifyPowerStackAmtAction(superSerious, -1));
         } else {
             this.addToBot(new ModifyPowerStackAmtAction(this, -1));
-        }
-        if (dancing != null) {
-            int diff = CombatHelper.getDeviationAmt(false) - 2;
-            this.addToBot(new ModifyPowerStackAmtAction(this, diff));
         }
     }
 

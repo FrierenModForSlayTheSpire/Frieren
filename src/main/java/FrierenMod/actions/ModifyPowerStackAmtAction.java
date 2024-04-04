@@ -9,17 +9,28 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class ModifyPowerStackAmtAction extends AbstractGameAction {
     private final AbstractPower power;
     private final int amt;
+    private final boolean isNewAmt;
 
     public ModifyPowerStackAmtAction(AbstractPower power, int amt) {
         this.power = power;
         this.amt = amt;
+        this.isNewAmt = false;
+    }
+    public ModifyPowerStackAmtAction(AbstractPower power, int amt, boolean newAmt) {
+        this.power = power;
+        this.amt = amt;
+        this.isNewAmt = newAmt;
     }
 
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         if(this.amt != 0){
-            this.power.amount += this.amt;
+            if(this.isNewAmt)
+                this.power.amount = amt;
+            else {
+                this.power.amount += this.amt;
+            }
             this.power.flash();
             this.power.updateDescription();
             if (this.power.amount == 0)
