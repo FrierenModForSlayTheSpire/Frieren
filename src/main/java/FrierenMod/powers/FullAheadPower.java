@@ -9,8 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDiscardPile;
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDrawPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDiscardPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDrawPile;
 
 public class FullAheadPower extends AbstractFrierenPower {
     public static final String POWER_ID = ModInformation.makeID(FullAheadPower.class.getSimpleName());
@@ -20,7 +20,7 @@ public class FullAheadPower extends AbstractFrierenPower {
 
     public void afterChant() {
         this.flash();
-        if (getMagicPowerNumInDrawPile()==getMagicPowerNumInDiscardPile()) {
+        if (getManaNumInDrawPile()==getManaNumInDiscardPile()) {
             this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, amount), amount));
         }
         else this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount*2), this.amount*2));
