@@ -557,7 +557,7 @@
   },
   "FrierenMod:3": {
     "NAME": "",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果你 *咏唱 的是手牌，失去 !CX! 层专注。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果你 *咏唱 的是手牌，失去 !CX! 层 frierenmod:专注 。"
   },
   "FrierenMod:4": {
     "NAME": "",
@@ -572,9 +572,9 @@
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] 。",
     "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] ，抽2张牌。"
   },
-  "FrierenMod:5": {
-    "NAME": "",
-    "DESCRIPTION": "frierenmod:咏唱 !CX! 。 随机使1个敌人生命值变为0。 NL  消耗 。"
+  "FrierenMod:OneShot": {
+    "NAME": "一击毙命",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 使所有非boss敌人生命值变为0。 失去所有 frierenmod:专注 层数。"
   },
   "FrierenMod:6": {
     "NAME": "",

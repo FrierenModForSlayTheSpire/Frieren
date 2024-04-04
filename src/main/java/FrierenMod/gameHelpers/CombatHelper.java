@@ -101,6 +101,10 @@ public class CombatHelper {
         return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
     }
 
+    public static ConcentrationPower getConcentrationPower() {
+        return (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
+    }
+
     public static int getConcentrationPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
         return po == null ? 0 : po.amount;
@@ -117,10 +121,12 @@ public class CombatHelper {
     public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
         return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
     }
+
     public static int getManaNeedWhenChant(int chantX) {
         return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - CombatHelper.getConcentrationPowerAmt()), 0);
     }
-    public static boolean isRaidReversed(){
+
+    public static boolean isRaidReversed() {
         return false;
     }
 }
