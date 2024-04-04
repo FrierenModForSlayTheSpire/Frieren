@@ -124,5 +124,12 @@
     "DESCRIPTIONS": [
       "使用卡牌后，获得或失去 #专注 ，使 #离差 永恒为 #b2 。"
     ]
+  },
+  "FrierenMod:WashingClothesPower": {
+    "NAME": "彻底清除衣服污渍的魔法",
+    "DESCRIPTIONS": [
+      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] 。",
+      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] ，抽 #b%d 张牌。"
+    ]
   }
 }

@@ -569,7 +569,8 @@
   },
   "FrierenMod:WashingClothesSpell": {
     "NAME": "彻底清除衣服污渍的魔法",
-    "DESCRIPTION": "frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] 。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] ，抽2张牌。"
   },
   "FrierenMod:5": {
     "NAME": "",
