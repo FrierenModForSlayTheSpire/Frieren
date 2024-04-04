@@ -12,9 +12,11 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ConcentrationPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ConcentrationPower.class.getSimpleName());
+    public int changeTimes;
 
     public ConcentrationPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.changeTimes = 0;
     }
 
     @Override
@@ -24,14 +26,14 @@ public class ConcentrationPower extends AbstractBasePower {
         AbstractPower dancing = p.getPower(DancingPower.POWER_ID);
         if (dancing != null) {
             int amt = CombatHelper.getCardsUsedThisTurnSize(false) + 2;
-            this.addToBot(new ModifyPowerStackAmtAction(this, amt, true));
+            this.addToBot(new ModifyPowerStackAmtAction(this, amt, false, true));
             return;
         }
         if (superSerious != null) {
-            this.addToBot(new ModifyPowerStackAmtAction(this, 1));
-            this.addToBot(new ModifyPowerStackAmtAction(superSerious, -1));
+            this.addToBot(new ModifyPowerStackAmtAction(this, 1, false));
+            this.addToBot(new ModifyPowerStackAmtAction(superSerious, -1, true));
         } else {
-            this.addToBot(new ModifyPowerStackAmtAction(this, -1));
+            this.addToBot(new ModifyPowerStackAmtAction(this, -1, false));
         }
     }
 

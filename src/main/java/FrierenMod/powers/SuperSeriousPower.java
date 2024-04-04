@@ -22,7 +22,7 @@ public class SuperSeriousPower extends AbstractBasePower {
         if (CombatHelper.getConcentrationPowerAmt() == 0){
             AbstractPlayer p = AbstractDungeon.player;
             this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(p, 1)));
-            this.addToBot(new ModifyPowerStackAmtAction(this, -1));
+            this.addToBot(new ModifyPowerStackAmtAction(this, -1,true));
         }
     }
 

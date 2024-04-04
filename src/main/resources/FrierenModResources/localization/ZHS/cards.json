@@ -565,7 +565,7 @@
   },
   "FrierenMod:Moody": {
     "NAME": "喜怒无常",
-    "DESCRIPTION": "造成本回合 frierenmod:专注 层数变化次数的伤害。 NL （将造成 !D! 点）。"
+    "DESCRIPTION": "造成本场战斗 frierenmod:专注 层数变化次数的伤害。 NL （将造成 !D! 点）。"
   },
   "FrierenMod:WashingClothesSpell": {
     "NAME": "彻底清除衣服污渍的魔法",
