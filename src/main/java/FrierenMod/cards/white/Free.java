@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.gameHelpers.ChantHelper.getAllMagicPowerNum;
+import static FrierenMod.gameHelpers.ChantHelper.getAllManaNum;
 
 
 public class Free extends AbstractFrierenCard {
@@ -19,11 +19,10 @@ public class Free extends AbstractFrierenCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        //this.addToBot(new FreeAction(this.magicNumber,this.damage,this.damageTypeForTurn,m));
-        if(getAllMagicPowerNum()%2==0)
+        if(getAllManaNum()%2==0)
         {
             this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            if(getAllMagicPowerNum()%3==0)
+            if(getAllManaNum()%3==0)
                 this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         }
         else

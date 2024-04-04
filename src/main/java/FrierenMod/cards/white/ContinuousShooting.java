@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDrawPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDrawPile;
 
 public class ContinuousShooting extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(ContinuousShooting.class.getSimpleName());
@@ -30,7 +30,7 @@ public class ContinuousShooting extends AbstractFrierenCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if(getMagicPowerNumInDrawPile()<3) this.exhaust=false;
+        if(getManaNumInDrawPile()<3) this.exhaust=false;
         else  this.exhaust=true;
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));

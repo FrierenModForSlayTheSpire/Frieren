@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDiscardPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDiscardPile;
 
 public class BabySleeping extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(BabySleeping.class.getSimpleName());
@@ -27,7 +27,7 @@ public class BabySleeping extends AbstractFrierenCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p,p,this.block));
-        if(getMagicPowerNumInDiscardPile()%3==0&&getMagicPowerNumInDiscardPile()>1) this.addToBot(new ApplyPowerAction(p, p,new EquilibriumPower(p, 1), 1));
+        if(getManaNumInDiscardPile()%3==0&&getManaNumInDiscardPile()>1) this.addToBot(new ApplyPowerAction(p, p,new EquilibriumPower(p, 1), 1));
         else this.addToBot(new RetainCardsAction(p, this.magicNumber));
     }
 }

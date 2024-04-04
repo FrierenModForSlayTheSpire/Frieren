@@ -8,8 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDiscardPile;
-import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDrawPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDiscardPile;
+import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDrawPile;
 
 public class LockTargetAction extends AbstractGameAction {
     private final int magicNumber;
@@ -29,7 +29,7 @@ public class LockTargetAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToBot(new DrawCardAction(this.magicNumber));
-        if (getMagicPowerNumInDrawPile()>=getMagicPowerNumInDiscardPile()) {
+        if (getManaNumInDrawPile()>=getManaNumInDiscardPile()) {
             this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             this.addToBot(new DrawCardAction(this.magicNumber));
         }
