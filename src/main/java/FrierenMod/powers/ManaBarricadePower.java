@@ -15,6 +15,7 @@ public class ManaBarricadePower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ManaBarricadePower.class.getSimpleName());
     public ManaBarricadePower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
 
     private final AbstractPlayer p = AbstractDungeon.player;

@@ -16,6 +16,7 @@ public class ThunderPower extends AbstractBasePower {
 
     public ThunderPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
     @Override
     public void onInitialApplication() {

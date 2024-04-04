@@ -9,6 +9,7 @@ public class SwitchStrengthAndDexterityPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(SwitchStrengthAndDexterityPower.class.getSimpleName());
     public SwitchStrengthAndDexterityPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void atEndOfTurn(boolean isPlayer) {

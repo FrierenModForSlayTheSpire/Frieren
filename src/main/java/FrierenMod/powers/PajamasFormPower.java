@@ -4,7 +4,6 @@ import FrierenMod.actions.ExhaustManaInDiscardPileAction;
 import FrierenMod.actions.ExhaustManaInDrawPileAction;
 import FrierenMod.actions.ExhaustManaInHandAction;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -17,6 +16,7 @@ public class PajamasFormPower extends AbstractBasePower {
     private int baseDamage;
     public PajamasFormPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {

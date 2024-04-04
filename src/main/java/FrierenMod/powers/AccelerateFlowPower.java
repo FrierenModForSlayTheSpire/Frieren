@@ -16,6 +16,7 @@ public class AccelerateFlowPower extends AbstractBasePower {
     private final AbstractPlayer p = AbstractDungeon.player;
     public AccelerateFlowPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
     @Override
     public void onInitialApplication() {

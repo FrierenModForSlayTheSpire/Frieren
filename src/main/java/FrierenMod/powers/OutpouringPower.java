@@ -15,6 +15,7 @@ public class OutpouringPower extends AbstractBasePower {
 
     public OutpouringPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {

@@ -15,6 +15,7 @@ public class SuperSeriousPower extends AbstractBasePower {
 
     public SuperSeriousPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
 
     @Override

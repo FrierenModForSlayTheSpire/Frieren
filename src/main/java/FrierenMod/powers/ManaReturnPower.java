@@ -11,6 +11,7 @@ public class ManaReturnPower extends AbstractBasePower {
 
     public ManaReturnPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.DEBUFF);
+        this.updateDescription();
     }
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner) {

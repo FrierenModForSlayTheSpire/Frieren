@@ -13,6 +13,7 @@ public class RitesPreparationPower extends AbstractBasePower {
     private int MagicPowerPlayedNum = 0;
     public RitesPreparationPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {

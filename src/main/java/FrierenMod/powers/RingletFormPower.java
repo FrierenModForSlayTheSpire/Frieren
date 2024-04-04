@@ -13,6 +13,7 @@ public class RingletFormPower extends AbstractBasePower {
 
     public RingletFormPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {

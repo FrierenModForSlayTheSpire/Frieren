@@ -17,6 +17,7 @@ public class ConcentrationPower extends AbstractBasePower {
     public ConcentrationPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
         this.changeTimes = 0;
+        this.updateDescription();
     }
 
     @Override

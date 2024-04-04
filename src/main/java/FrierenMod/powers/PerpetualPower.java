@@ -10,6 +10,7 @@ public class PerpetualPower extends AbstractBasePower {
 
     public PerpetualPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void atStartOfTurn() {

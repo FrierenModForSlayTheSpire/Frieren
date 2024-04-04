@@ -13,6 +13,7 @@ public class MageStyleChokePower extends AbstractBasePower {
 
     public MageStyleChokePower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.DEBUFF);
+        this.updateDescription();
     }
 
     public void atStartOfTurn() {

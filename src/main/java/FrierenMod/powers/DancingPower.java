@@ -14,6 +14,7 @@ public class DancingPower extends AbstractBasePower {
 
     public DancingPower(AbstractCreature owner) {
         super(POWER_ID, owner, -1, PowerType.BUFF);
+        this.updateDescription();
     }
 
     @Override

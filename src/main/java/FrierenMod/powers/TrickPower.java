@@ -11,6 +11,7 @@ public class TrickPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(TrickPower.class.getSimpleName());
     public TrickPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void atStartOfTurn() {

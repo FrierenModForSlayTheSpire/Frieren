@@ -11,6 +11,7 @@ public class ChantWithoutManaPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ChantWithoutManaPower.class.getSimpleName());
     public ChantWithoutManaPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isChantCard) {

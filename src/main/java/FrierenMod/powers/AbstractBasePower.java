@@ -22,7 +22,6 @@ public abstract class AbstractBasePower extends AbstractPower {
         this.descriptions = CardCrawlGame.languagePack.getPowerStrings(id).DESCRIPTIONS;
         this.region128 = getImgTexture(id, 84);
         this.region48 = getImgTexture(id, 32);
-        this.updateDescription();
     }
 
     public AbstractBasePower(String id, AbstractCreature owner, PowerType type) {
@@ -35,7 +34,6 @@ public abstract class AbstractBasePower extends AbstractPower {
         this.descriptions = CardCrawlGame.languagePack.getPowerStrings(id).DESCRIPTIONS;
         this.region128 = getImgTexture(id, 84);
         this.region48 = getImgTexture(id, 32);
-        this.updateDescription();
     }
 
     private static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
