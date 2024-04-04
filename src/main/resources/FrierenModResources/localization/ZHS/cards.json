@@ -156,7 +156,8 @@
   },
   "FrierenMod:FireSpell": {
     "NAME": "放出火焰的魔法",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，将一张 *懒懒散散 放入手牌。"
+    "DESCRIPTION": "当前每有一个敌人，将1张 *小小火花 放入你的手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "当前每有一个敌人，将1张 *小小火花+ 放入你的手牌。 NL 消耗 。"
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
@@ -192,7 +193,7 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": " 获得 !B! 点 格挡 。 NL  保留 一张手牌一回合。"
+    "DESCRIPTION": "获得 !B! 点格挡。 保留 1张手牌。 NL 若弃牌堆 *魔力 数量为3的倍数， 保留 所有手牌。"
   },
   "FrierenMod:SerieGrimoire": {
     "NAME": "赛莉耶的魔导书",
@@ -201,16 +202,15 @@
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中 升级 一张手牌。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 在本场战斗中 升级 你的所有手牌。"
+    "DESCRIPTION": " frierenmod:回火 。造成 !D! 点伤害，本场战斗所有 *小小火花 伤害加2。 NL 你每次 frierenmod:同调 时，将这张牌从弃牌堆放回手牌。"
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
-    "DESCRIPTION": "获得 !M! 点 敏捷 ，你的回合结束时，失去 !M! 点 敏捷 。"
+    "DESCRIPTION": "每次 frierenmod:咏唱 后，若抽牌堆和弃牌堆的 *魔力 数量相同，获得 1 敏捷 ，否则获得 2 力量 。"
   },
   "FrierenMod:LockTarget": {
   "NAME": "定叫他有来无回",
-  "DESCRIPTION": "造成 !D! 点伤害，抽 !M! 张牌，如果你的血量高于目标，则触发两次。"
+  "DESCRIPTION": "造成 !D! 点伤害，抽1张牌。 如果抽牌堆 *魔力 数量大于等于弃牌堆 *魔力 数量，再触发一次。"
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "再睡五分钟",
@@ -376,8 +376,7 @@
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "持续散射",
-    "DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 对所有敌人造成 !D! 点伤害3次。 NL  虚无 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。若抽牌堆的 *魔力 数量大于等于3， 消耗 此牌"
   },
   "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "防御魔法完全体",
@@ -437,7 +436,7 @@
   },
   "FrierenMod:AirSlash": {
     "NAME": "空气斩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 本回合中， frierenmod:同调 变为 frierenmod:加速同调 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本回合中， frierenmod:同调 变为 frierenmod:加速同调 ，但无法从卡牌中获取 *魔力 。"
   },
   "FrierenMod:Apprehend": {
     "NAME": "无情铁手",
@@ -445,7 +444,7 @@
   },
   "FrierenMod:Free": {
     "NAME": "物理超度",
-    "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，将其生命值变为0。否则造成 !D! 点伤害。"
+    "DESCRIPTION": "对所有敌人造成10点伤害。如果你的 *魔力 总量为2的倍数，改为对所有敌人造成 !D! 点伤害，并且若你的 *魔力 总量为3的倍数，再触发一次。"
   },
   "FrierenMod:MageStyleChoke": {
     "NAME": "魔法使流勒脖",

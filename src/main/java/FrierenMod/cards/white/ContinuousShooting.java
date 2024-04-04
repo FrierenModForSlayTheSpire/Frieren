@@ -12,6 +12,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.CleaveEffect;
 
+import static FrierenMod.gameHelpers.ChantHelper.getMagicPowerNumInDrawPile;
+
 public class ContinuousShooting extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(ContinuousShooting.class.getSimpleName());
     public ContinuousShooting() {
@@ -23,18 +25,13 @@ public class ContinuousShooting extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
-            this.initializeDescription();
-            this.exhaust = false;
-            this.isEthereal = true;
         }
+            this.upgradeDamage(1);
     }
-    public void triggerOnEndOfPlayerTurn() {
-        this.addToTop(new ExhaustAllEtherealAction());
-    }
-
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        if(getMagicPowerNumInDrawPile()<3) this.exhaust=false;
+        else  this.exhaust=true;
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));

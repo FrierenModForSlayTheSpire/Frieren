@@ -106,5 +106,11 @@
     "DESCRIPTIONS": [
       "At the end of your turn, if you have 5 #yMana or more, gain #yBarricade, otherwise, lose #yBarricade."
     ]
+  },
+  "FrierenMod:FullAheadPower": {
+    "NAME": "Full Ahead",
+    "DESCRIPTIONS": [
+      "Whenever you have #yChanted , if your draw pile and discard pile has same #yMana amount, gain #b%d #yDexterity , otherwise, gain #b%d #yStrength ."
+    ]
   }
 }

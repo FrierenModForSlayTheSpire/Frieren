@@ -106,5 +106,11 @@
     "DESCRIPTIONS": [
       "你的回合结束时，若你的 #y魔力 总数大于等于5，获得 #y壁垒 。否则失去 #y壁垒 。"
     ]
+  },
+  "FrierenMod:FullAheadPower": {
+    "NAME": "全速前进",
+    "DESCRIPTIONS": [
+      "每次 #y咏唱 后，若抽牌堆和弃牌堆的 #y魔力 数量相同，获得 #b%d #y敏捷 ，否则获得 #b%d #y力量 。"
+    ]
   }
 }

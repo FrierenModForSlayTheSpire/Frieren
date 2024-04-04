@@ -157,7 +157,8 @@
   },
   "FrierenMod:FireSpell": {
     "NAME": "Spell That Starts a Fire",
-    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Add a *laziness into your hand."
+    "DESCRIPTION": "Add a *LittleSpark into your hand for every enemy in the room. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a *LittleSpark+ into your hand for every enemy in the room. NL Exhaust."
   },
   "FrierenMod:Laziness": {
     "NAME": "Laziness",
@@ -194,7 +195,7 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "Sleeping Like a Baby",
-    "DESCRIPTION": " Gain !B! Block, Retain 1 card in your hand."
+    "DESCRIPTION": "Gain !B! Block, Retain 1 card in your hand. If your *Mana amount is a multiple of 3, Retain your hand."
   },
   "FrierenMod:SerieGrimoire": {
     "NAME": "Serie's Grimoire",
@@ -203,16 +204,15 @@
   },
   "FrierenMod:LittleFire": {
     "NAME": "Little Spark",
-    "DESCRIPTION": "Deal !D! damage. NL Upgrade a card in your hand for the rest of the combat.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Upgrade all cards in your hand for the rest of the combat."
+    "DESCRIPTION": "frierenmod:Backfire. Deal !D! damage and increase damage of ALL *LittleSpark by !M! this combat. NL Whenever you frierenmod:Synchro, return this back to hand from discard pile."
   },
   "FrierenMod:FullAhead": {
     "NAME": "Full Ahead",
-    "DESCRIPTION": "Gain !M! Dexterity, at the end of your turn, lose !M! Dexterity."
+    "DESCRIPTION": "Whenever you have frierenmod:Chanted, if your draw pile and discard pile has same *Mana amount, gain 1 Dexterity, otherwise, gain 2 Strength."
   },
   "FrierenMod:LockTarget": {
   "NAME": "Lock Target",
-  "DESCRIPTION": "Deal !D! damage, draw a card, if your HP is more than the target, attack 1 more time."
+  "DESCRIPTION": "Deal !D! damage, draw a card. NL If draw pile's *Mana amount equals or more than discard pile's, attack once more."
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
@@ -373,13 +373,12 @@
   },
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",
-    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana by cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
-    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. NL Ethereal."
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. Exhaust this when your draw pile has 3 or more *Mana."
   },
   "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "Perfect Defensive Magic",
@@ -436,7 +435,7 @@
   },
   "FrierenMod:AirSlash": {
     "NAME": "Air Slash",
-    "DESCRIPTION": "Deal !D! damage. NL this turn, frierenmod:Synchro changes into frierenmod:Accel_Synchro."
+    "DESCRIPTION": "Deal !D! damage. This turn, frierenmod:Synchro changes into frierenmod:Accel_Synchro. NL You CANNOT get new *Mana from cards."
   },
   "FrierenMod:Apprehend": {
     "NAME": "Apprehend",
@@ -444,7 +443,7 @@
   },
   "FrierenMod:Free": {
     "NAME": "Free",
-    "DESCRIPTION": "If the enemy has !M! or less HP, set HP 0, otherwise, deal !D! damage."
+    "DESCRIPTION": "Deal 10 damage to ALL enemies. If your *Mana amount is multiple of 2, change to deal !D! damage to ALL enemies, and if your *Mana amount is multiple of 3, attack once more."
   },
   "FrierenMod:MageStyleChoke": {
     "NAME": "Mage Style Choke",
