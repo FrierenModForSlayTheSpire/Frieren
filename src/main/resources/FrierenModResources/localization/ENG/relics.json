@@ -77,10 +77,10 @@
     ]
   },
   "FrierenMod:IcicleCherryBlossom": {
-    "NAME": "冰柱樱",
-    "FLAVOR": "",
+    "NAME": "Icicle Cherry Blossom",
+    "FLAVOR": "Icicle Cherry Blossom blooms in winter, although their flowers are poisonous, they are very beautiful. It is also Frieren's favorite winter flower.",
     "DESCRIPTIONS": [
-      "在卡牌奖励画面，可供选择的牌有 #b60 %的概率被替换为 #y魔力 。在每回合开始时获得1点能量。"
+      "Future card rewards have #b60 % to be replaced by #yMana .Gain [E] at the start of your turn. "
     ]
   }
 }
