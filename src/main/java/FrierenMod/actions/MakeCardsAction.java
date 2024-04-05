@@ -26,17 +26,16 @@ public class MakeCardsAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         for(AbstractCard c: this.drawPile){
             if(isChanged)
-                p.drawPile.addToRandomSpot(c);
+                p.drawPile.addToRandomSpot(c.makeSameInstanceOf());
             else
-                p.drawPile.addToTop(c);
+                p.drawPile.addToTop(c.makeSameInstanceOf());
         }
-        for(AbstractCard c: this.hand){
-            this.addToBot(new MakeTempCardInHandAction(c));
-        }
-        for(AbstractCard c: this.discardPile){
-            p.discardPile.addToTop(c);
-        }
-        AbstractDungeon.player.exhaustPile.group.addAll(this.exhaustPile);
+        for(AbstractCard c: this.hand)
+            this.addToBot(new MakeTempCardInHandAction(c.makeSameInstanceOf()));
+        for(AbstractCard c: this.discardPile)
+            p.discardPile.addToTop(c.makeSameInstanceOf());
+        for (AbstractCard c: this.exhaustPile)
+            p.exhaustPile.addToTop(c.makeSameInstanceOf());
         this.isDone = true;
     }
 }

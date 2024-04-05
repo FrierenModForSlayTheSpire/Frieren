@@ -26,7 +26,8 @@ public class TimeTravelAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> exhaustPile = new ArrayList<>();
     private final ArrayList<AbstractCard> cardsPlayedThisTurn = new ArrayList<>();
     private boolean isChanged = false;
-    public TimeTravelAction(AbstractCard excludeCard, boolean isChanged){
+
+    public TimeTravelAction(AbstractCard excludeCard, boolean isChanged) {
         this.excludeCard = excludeCard;
         this.isChanged = isChanged;
         this.init();
@@ -38,19 +39,21 @@ public class TimeTravelAction extends AbstractGameAction {
         int maxEnergy = AbstractDungeon.player.maxOrbs;
         status = new Status(hp, maxHp, gold, potions, relics, block, powers, energy, maxEnergy, drawPile, hand, discardPile, exhaustPile, cardsPlayedThisTurn);
     }
+
     @Override
     public void update() {
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new TimeTravelPower(AbstractDungeon.player,status,isChanged)));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TimeTravelPower(AbstractDungeon.player, status, isChanged)));
         this.isDone = true;
     }
-    private void init(){
+
+    private void init() {
         potions.addAll(AbstractDungeon.player.potions);
-        for(AbstractRelic relic: AbstractDungeon.player.relics){
+        for (AbstractRelic relic : AbstractDungeon.player.relics) {
             AbstractRelic tmpRelic = relic.makeCopy();
             tmpRelic.counter = relic.counter;
             relics.add(tmpRelic);
         }
-        for(AbstractPower power:AbstractDungeon.player.powers){
+        for (AbstractPower power : AbstractDungeon.player.powers) {
             powers.add(ObjectCloner.copyObject(power));
         }
         drawPile.addAll(AbstractDungeon.player.drawPile.group);
