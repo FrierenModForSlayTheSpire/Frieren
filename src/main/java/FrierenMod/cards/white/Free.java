@@ -2,7 +2,6 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
-import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,13 +16,13 @@ public class Free extends AbstractFrierenCard {
 
     public Free() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        this.damage = this.baseDamage = 12;
+        this.damage = this.baseDamage = 14;
     }
 
     @Override
     public void triggerOnGlowCheck() {
         if (getAllManaNum() % 6 == 0)
-            this.glowColor = new Color(140, 87, 127, 1);
+            this.glowColor = GREEN_BORDER_GLOW_COLOR;
         else if (getAllManaNum() % 2 == 0)
             this.glowColor = GOLD_BORDER_GLOW_COLOR;
         else if (getAllManaNum() % 3 == 0)
@@ -43,7 +42,7 @@ public class Free extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(5);
+            upgradeDamage(2);
         }
     }
 
