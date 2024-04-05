@@ -38,6 +38,14 @@ public class ConcentrationPower extends AbstractBasePower {
         }
     }
 
+    @Override
+    public void stackPower(int stackAmount) {
+        this.fontScale = 8.0F;
+        this.amount += stackAmount;
+        if(this.amount < 0)
+            this.amount = 0;
+    }
+
     public void updateDescription() {
         this.description = String.format(descriptions[0], this.amount);
     }

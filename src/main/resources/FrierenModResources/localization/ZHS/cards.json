@@ -583,5 +583,9 @@
   "FrierenMod:7": {
     "NAME": "",
     "DESCRIPTION": "获得或失去至多 !M! 层 frierenmod:专注 ，使离差尽可能小。"
+  },
+  "FrierenMod:Fragile": {
+    "NAME": "易碎品",
+    "DESCRIPTION": " 打出后返回手牌。 NL  frierenmod:奇袭 !R! ：随机获得5种效果1种： *奇袭 值-1，效果值+1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
   }
 }
