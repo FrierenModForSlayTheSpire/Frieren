@@ -18,7 +18,7 @@
     "NAMES": [
       "Limit Over Synchro","limit_over_synchro"
     ],
-    "DESCRIPTION": "Deal 20 damage to a random enemy. #yExhaust ."
+    "DESCRIPTION": "Deal 15 damage to a random enemy. #yExhaust ."
   },
   {
     "PROPER_NAME":"Accel Synchro",
@@ -32,7 +32,7 @@
     "NAMES": [
       "Limit Over Accel Synchro","limit_over_accel_synchro"
     ],
-    "DESCRIPTION": "Deal 20 damage to a random enemy. Draw 2 cards. #yExhaust ."
+    "DESCRIPTION": "Deal 15 damage to a random enemy. Draw 2 cards. #yExhaust ."
   },
   {
     "PROPER_NAME":"Legendary Magic",

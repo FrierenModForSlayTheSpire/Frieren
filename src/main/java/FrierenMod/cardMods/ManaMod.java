@@ -46,7 +46,7 @@ public class ManaMod extends AbstractCardModifier {
             case 3:
                 ((AbstractFrierenCard)card).isAccelMana = false;
                 ((AbstractFrierenCard)card).isLimitedOverMana = true;
-                card.baseDamage = 20;
+                card.baseDamage = 15;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 if (card instanceof Mana)
@@ -55,7 +55,7 @@ public class ManaMod extends AbstractCardModifier {
             case 4:
                 ((AbstractFrierenCard)card).isAccelMana = true;
                 ((AbstractFrierenCard)card).isLimitedOverMana = true;
-                card.baseDamage = 20;
+                card.baseDamage = 15;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 card.exhaust = true;
