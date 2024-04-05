@@ -443,7 +443,7 @@
   },
   "FrierenMod:Free": {
     "NAME": "Free",
-    "DESCRIPTION": "Deal 10 damage to ALL enemies. If your *Mana amount is multiple of 2, change to deal !D! damage to ALL enemies, and if your *Mana amount is multiple of 3, attack once more."
+    "DESCRIPTION": "Deal 10 damage to ALL enemies. If your *Mana amount is multiple of 2, deal !D! damage again. If your *Mana amount is multiple of 3, deal !D! damage again. "
   },
   "FrierenMod:MageStyleChoke": {
     "NAME": "Mage Style Choke",
