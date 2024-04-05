@@ -8,15 +8,18 @@ import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.EquilibriumPower;
+
 import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDiscardPile;
 
 public class BabySleeping extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(BabySleeping.class.getSimpleName());
-    public BabySleeping(){
+
+    public BabySleeping() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.SELF);
         this.block = baseBlock = 7;
         this.magicNumber = this.baseMagicNumber = 1;
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -24,11 +27,19 @@ public class BabySleeping extends AbstractFrierenCard {
             this.upgradeBlock(3);
         }
     }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        this.glowColor = getManaNumInDiscardPile() % 3 == 0 && getManaNumInDiscardPile() > 1 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
+    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p,p,this.block));
-        if(getManaNumInDiscardPile()%3==0&&getManaNumInDiscardPile()>1) this.addToBot(new ApplyPowerAction(p, p,new EquilibriumPower(p, 1), 1));
-        else this.addToBot(new RetainCardsAction(p, this.magicNumber));
+        this.addToBot(new GainBlockAction(p, p, this.block));
+        if (getManaNumInDiscardPile() % 3 == 0 && getManaNumInDiscardPile() > 1)
+            this.addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1), 1));
+        else
+            this.addToBot(new RetainCardsAction(p, this.magicNumber));
     }
 }
 
