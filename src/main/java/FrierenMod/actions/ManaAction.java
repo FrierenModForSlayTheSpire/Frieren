@@ -1,9 +1,11 @@
 package FrierenMod.actions;
 
+import FrierenMod.cards.AbstractFrierenCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class ManaAction extends AbstractGameAction{
     private final int type;
@@ -34,6 +36,9 @@ public class ManaAction extends AbstractGameAction{
             default:
                 break;
         }
+        for(AbstractCard c: AbstractDungeon.player.discardPile.group)
+            if(c instanceof AbstractFrierenCard)
+                ((AbstractFrierenCard) c).afterSynchro();
         this.isDone = true;
     }
 }
