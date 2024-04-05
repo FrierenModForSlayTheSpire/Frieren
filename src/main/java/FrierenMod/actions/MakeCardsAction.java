@@ -13,28 +13,37 @@ public class MakeCardsAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> discardPile;
     private final ArrayList<AbstractCard> exhaustPile;
     private final boolean isChanged;
-    public MakeCardsAction(ArrayList<AbstractCard> drawPile,ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, boolean isChanged){
+
+    public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, boolean isChanged) {
         this.drawPile = drawPile;
         this.hand = hand;
         this.discardPile = discardPile;
         this.exhaustPile = exhaustPile;
         this.isChanged = isChanged;
     }
+
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        for(AbstractCard c: this.drawPile){
-            if(isChanged)
-                p.drawPile.addToRandomSpot(c.makeSameInstanceOf());
+        for (AbstractCard c : this.drawPile) {
+            if (isChanged)
+                p.drawPile.addToRandomSpot(c);
             else
-                p.drawPile.addToTop(c.makeSameInstanceOf());
+                p.drawPile.addToTop(c);
+            c.unfadeOut();
         }
-        for(AbstractCard c: this.hand)
+        for (AbstractCard c : this.hand) {
             p.hand.addToHand(c);
-        for(AbstractCard c: this.discardPile)
-            p.discardPile.addToTop(c.makeSameInstanceOf());
-        for (AbstractCard c: this.exhaustPile)
-            p.exhaustPile.addToTop(c.makeSameInstanceOf());
+            c.unfadeOut();
+        }
+        for (AbstractCard c : this.discardPile) {
+            p.discardPile.addToTop(c);
+            c.unfadeOut();
+        }
+        for (AbstractCard c : this.exhaustPile) {
+            p.exhaustPile.addToTop(c);
+            c.unfadeOut();
+        }
         this.isDone = true;
     }
 }
