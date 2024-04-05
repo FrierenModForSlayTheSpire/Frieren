@@ -202,7 +202,7 @@
   },
   "FrierenMod:LittleFire": {
     "NAME": "小小火花",
-    "DESCRIPTION": " frierenmod:回火 。造成 !D! 点伤害，本场战斗所有 *小小火花 伤害加2。 NL 你每次 frierenmod:同调 时，将这张牌从弃牌堆放回手牌。"
+    "DESCRIPTION": " frierenmod:回火 。造成 !D! 点伤害，你所有的 *小小火花 在本场战斗中加2伤害。你每次 frierenmod:同调 时，将这张牌从弃牌堆放回手牌。"
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
