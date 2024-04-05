@@ -16,6 +16,7 @@ public class ModifyCostAction extends AbstractGameAction {
 
     public void update() {
         for(AbstractCard c:GetAllInBattleInstances.get(this.uuid)){
+            c.cost = c.costForTurn;
             c.cost += this.amount;
             if(c.cost < 0){
                 c.cost = 0;
