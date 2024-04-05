@@ -30,13 +30,13 @@ public class BabySleeping extends AbstractFrierenCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = getManaNumInDiscardPile() % 3 == 0 && getManaNumInDiscardPile() > 1 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = getManaNumInDiscardPile() % 3 == 0 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
-        if (getManaNumInDiscardPile() % 3 == 0 && getManaNumInDiscardPile() > 1)
+        if (getManaNumInDiscardPile() % 3 == 0)
             this.addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1), 1));
         else
             this.addToBot(new RetainCardsAction(p, this.magicNumber));
