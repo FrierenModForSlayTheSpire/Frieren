@@ -16,7 +16,7 @@ import java.util.Iterator;
 public class Thunder extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(Thunder.class.getSimpleName());
     public Thunder() {
-        super(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
+        super(ID, 0, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ALL_ENEMY);
         this.damage = this.baseDamage = 8;
         this.exhaust = true;
         this.isEthereal = true;
