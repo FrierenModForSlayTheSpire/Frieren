@@ -380,8 +380,8 @@
   },
   "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "防御魔法完全体",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 获得一层 frierenmod:缓冲 ，获得 !B! 点护甲。",
-    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 获得一层 frierenmod:缓冲 ，获得 !B! 点护甲。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 获得一层 frierenmod:缓冲 ，获得 !B! 点格挡。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 获得一层 frierenmod:缓冲 ，获得 !B! 点格挡。"
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "魔法使流终结技",
