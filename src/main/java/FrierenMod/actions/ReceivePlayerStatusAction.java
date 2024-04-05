@@ -16,6 +16,7 @@ public class ReceivePlayerStatusAction extends AbstractGameAction {
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         p.currentHealth = status.hp;
+        p.healthBarUpdatedEvent();
         p.currentBlock = status.block;
         p.maxHealth = status.maxHp;
         p.relics.clear();
