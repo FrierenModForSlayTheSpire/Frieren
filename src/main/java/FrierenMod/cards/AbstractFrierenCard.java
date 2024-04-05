@@ -192,6 +192,7 @@ public abstract class AbstractFrierenCard extends CustomCard {
         return LegendarySpellHelper.canLegendarySpellUse(this,m);
     }
     public void afterChant(){}
+    public void afterChantFinished(){}
     public void afterSynchro(){}
     public void taskProgressIncrease(){
         this.flash(FLASH_COLOR);

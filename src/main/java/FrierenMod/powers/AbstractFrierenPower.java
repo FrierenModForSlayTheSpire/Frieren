@@ -34,4 +34,5 @@ public abstract class AbstractFrierenPower extends AbstractPower {
         this.updateDescription();
     }
     public void afterChant(){}
+    public void afterChantFinished(){}
 }

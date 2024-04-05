@@ -15,8 +15,10 @@ public abstract class ChantFromCardGroupAction extends AbstractGameAction {
     public void triggerPowers(){
         if(haveNotTriggered)
             for(AbstractPower po: AbstractDungeon.player.powers)
-                if(po instanceof AbstractFrierenPower)
+                if(po instanceof AbstractFrierenPower){
                     ((AbstractFrierenPower) po).afterChant();
+                    this.addToBot(new AfterChantFinishedAction((AbstractFrierenPower) po));
+                }
     }
     public void triggerCards(){
         AbstractPlayer p = AbstractDungeon.player;
@@ -27,8 +29,10 @@ public abstract class ChantFromCardGroupAction extends AbstractGameAction {
     private void triggerCardsInCardGroup(CardGroup group){
         if(haveNotTriggered)
             for(AbstractCard c:group.group)
-                if(c instanceof AbstractFrierenCard)
+                if(c instanceof AbstractFrierenCard){
                     ((AbstractFrierenCard) c).afterChant();
+                    this.addToBot(new AfterChantFinishedAction((AbstractFrierenCard) c));
+                }
     }
     public void addNextAction(){
         if(haveNotTriggered)
