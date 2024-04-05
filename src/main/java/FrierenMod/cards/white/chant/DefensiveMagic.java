@@ -25,6 +25,7 @@ public class DefensiveMagic extends AbstractFrierenCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
+            this.cardsToPreview.upgrade();
             this.upgradeBlock(2);
             this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
