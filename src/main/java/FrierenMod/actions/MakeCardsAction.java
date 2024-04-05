@@ -1,7 +1,6 @@
 package FrierenMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,7 +30,7 @@ public class MakeCardsAction extends AbstractGameAction {
                 p.drawPile.addToTop(c.makeSameInstanceOf());
         }
         for(AbstractCard c: this.hand)
-            this.addToBot(new MakeTempCardInHandAction(c.makeSameInstanceOf()));
+            p.hand.addToHand(c);
         for(AbstractCard c: this.discardPile)
             p.discardPile.addToTop(c.makeSameInstanceOf());
         for (AbstractCard c: this.exhaustPile)

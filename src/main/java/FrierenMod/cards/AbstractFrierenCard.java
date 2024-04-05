@@ -159,10 +159,10 @@ public abstract class AbstractFrierenCard extends CustomCard {
             ((AbstractFrierenCard) card).isSecondMagicNumberModified = this.isSecondMagicNumberModified;
             ((AbstractFrierenCard) card).upgradedSecondMagicNumber = this.upgradedSecondMagicNumber;
             if(this.isTaskCard){
-                ((AbstractFrierenCard) card).updateDescriptionAndCardImg();
                 ((AbstractFrierenCard) card).currentLevel = this.currentLevel;
                 ((AbstractFrierenCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
                 ((AbstractFrierenCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
+                ((AbstractFrierenCard) card).updateDescriptionAndCardImg();
             }
         }
         return super.makeStatEquivalentCopy();
