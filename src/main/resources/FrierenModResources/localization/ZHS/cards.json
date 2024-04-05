@@ -420,7 +420,7 @@
   "FrierenMod:OpenTheWaygate": {
     "NAME": "打开时空之门",
     "DESCRIPTION": " frierenmod:解析 1： frierenmod:同调 !M! 张 *魔力 。 NL  *奖励 ：在本回合结束后，额外获得一回合。 NL （当前进度 !SM! /7）。",
-    "UPGRADE_DESCRIPTION": " frierenmod:解析 1： frierenmod:同调 !M! 张 *魔力 。 NL  *奖励 ：在本回合结束后，额外获得一回合。 NL （当前进度 !SM! /6）。"
+    "UPGRADE_DESCRIPTION": " frierenmod:解析 1： frierenmoeld:同调 !M! 张 *魔力 。 NL  *奖励 ：在本回合结束后，额外获得一回合。 NL （当前进度 !SM! /6）。"
   },
   "FrierenMod:GrandCross": {
     "NAME": "大十字",
