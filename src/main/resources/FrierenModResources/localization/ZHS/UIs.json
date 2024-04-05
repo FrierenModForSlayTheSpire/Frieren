@@ -6,12 +6,12 @@
   },
   "FrierenMod:ManaNumMod": {
     "TEXT": [
-      " NL 将 ", " 张 *魔力 置入弃牌堆。"
+      " NL 将 ", " 张 *魔力 放入弃牌堆。"
     ]
   },
   "FrierenMod:ManaInHandNumMod": {
     "TEXT": [
-      " NL 将 ", " 张 *魔力 置入手牌。"
+      " NL 将 ", " 张 *魔力 放入手牌。"
     ]
   },
   "FrierenMod:ScryMod": {
