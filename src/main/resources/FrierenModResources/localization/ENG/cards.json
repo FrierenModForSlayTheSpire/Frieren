@@ -419,7 +419,8 @@
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",
-    "DESCRIPTION": "frierenmod:Analyze 1: frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7)."
+    "DESCRIPTION": "frierenmod:Analyze 1: frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /7).",
+    "UPGRADE_DESCRIPTION": "frierenmod:Analyze 1: frierenmod:Synchro !M! *Mana. NL *Reward: Take an extra turn after this one. NL (Progress: !SM! /6)."
   },
   "FrierenMod:GrandCross": {
     "NAME": "Grand Cross",
