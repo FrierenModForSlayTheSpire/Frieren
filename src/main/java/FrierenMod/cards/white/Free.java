@@ -16,7 +16,7 @@ public class Free extends AbstractFrierenCard {
 
     public Free() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-        this.damage = this.baseDamage = 14;
+        this.damage = this.baseDamage = 12;
     }
 
     @Override
