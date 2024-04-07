@@ -67,7 +67,7 @@ public class Frieren extends CustomPlayer {
         for(int x = 0; x<4; x++) {
             retVal.add(Strike.ID);
         }
-        for(int x = 0; x<4; x++) {
+        for(int x = 0; x<3; x++) {
             retVal.add(Defend.ID);
         }
         retVal.add(Flow.ID);
