@@ -16,6 +16,7 @@ public class FullAheadPower extends AbstractFrierenPower {
 
     public FullAheadPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.takeEffect = false;
     }
 
     public void afterChantFinished() {
