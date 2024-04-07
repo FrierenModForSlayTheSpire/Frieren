@@ -77,7 +77,7 @@
   },
   "FrierenMod:Flow": {
     "NAME": "Flow",
-    "DESCRIPTION": "Put !M! *Mana from your draw pile into your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL Put !M! *Mana from your draw pile into your discard pile."
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "Flying Magic",

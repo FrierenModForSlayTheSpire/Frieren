@@ -77,7 +77,7 @@
   },
   "FrierenMod:Flow": {
     "NAME": "流转",
-    "DESCRIPTION": "将抽牌堆中 !M! 张 *魔力 放入弃牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将抽牌堆 !M! 张 *魔力 放入弃牌堆。"
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "飞行魔法",
