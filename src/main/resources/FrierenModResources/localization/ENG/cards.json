@@ -171,7 +171,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Anti-Corrosion Spell",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Remove all Block from the enemy. If the Block amount is more than !M!, gain Metallicize 3."
+    "DESCRIPTION": "frierenmod:Chant !CX!. NL Remove a non-boss enemy's buff. If your *Mana more than !M!, gain Artifact 1."
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "Spell to Turn Red Apple into Green Apple",

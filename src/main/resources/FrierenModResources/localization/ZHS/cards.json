@@ -169,7 +169,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名敌人的所有格挡值。若去除的格挡值大于 !M! ，获得 金属化 3。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的buff。若魔力总数大于 !M! ，获得1层 人工制品 。"
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "将红苹果变成青苹果的魔法",
