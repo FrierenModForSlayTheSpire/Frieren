@@ -32,9 +32,9 @@ public class ApexMagic extends AbstractFrierenCard {
     }
     public void triggerOnGlowCheck() {
         if(ChantHelper.getManaNumInDrawPile() == 4 && ChantHelper.getManaNumInHand() == 4 && ChantHelper.getManaNumInDiscardPile() == 4)
-            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
-        else {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
+        else {
+            this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
         }
     }
 }
