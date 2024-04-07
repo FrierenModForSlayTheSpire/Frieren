@@ -9,13 +9,13 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MagicPowerInDrawOption extends AbstractFrierenCard {
-    public static final String ID = ModInformation.makeID(MagicPowerInDrawOption.class.getSimpleName());
+public class ManaOption extends AbstractFrierenCard {
+    public static final String ID = ModInformation.makeID(ManaOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
-    public MagicPowerInDrawOption() {
+    public ManaOption() {
         super(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     }
-    public MagicPowerInDrawOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
+    public ManaOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
         super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
         this.currentLegendMagic = currentLegendMagic;
         this.magicNumber = this.baseMagicNumber = magicPowerAmt;

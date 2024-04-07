@@ -242,17 +242,17 @@
     "DESCRIPTION": "抽 !M! 张牌。",
     "EXTENDED_DESCRIPTION": ["抽1/2/3张牌。"]
   },
-  "FrierenMod:MagicPowerOption": {
+  "FrierenMod:ManaOption": {
     "NAME": "月亮",
     "DESCRIPTION": "将 !M! 张 *魔力 放入弃牌堆。",
     "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入弃牌堆。"]
   },
-  "FrierenMod:MagicPowerInHandOption": {
+  "FrierenMod:ManaInHandOption": {
     "NAME": "太阳",
     "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。",
     "EXTENDED_DESCRIPTION": ["将2/3/4/5张 *魔力 放入手牌。"]
   },
-  "FrierenMod:MagicPowerInDrawOption": {
+  "FrierenMod:ManaInDrawOption": {
     "NAME": "愚者",
     "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
     "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入抽牌堆。"]

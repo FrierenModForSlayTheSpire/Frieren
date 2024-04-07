@@ -1,6 +1,6 @@
 package FrierenMod.cards.optionCards.zeerie.layer2;
 
-import FrierenMod.cardMods.ManaNumMod;
+import FrierenMod.cardMods.ManaInHandNumMod;
 import FrierenMod.cards.AbstractFrierenCard;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
@@ -9,17 +9,20 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class MagicPowerOption extends AbstractFrierenCard {
-    public static final String ID = ModInformation.makeID(MagicPowerOption.class.getSimpleName());
+public class ManaInHandOption extends AbstractFrierenCard {
+    public static final String ID = ModInformation.makeID(ManaInHandOption.class.getSimpleName());
     private AbstractCard currentLegendMagic;
-    public MagicPowerOption() {
+    private int magicPowerAmt;
+    public ManaInHandOption() {
         super(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     }
-    public MagicPowerOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
+    public ManaInHandOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
         super(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
         this.currentLegendMagic = currentLegendMagic;
+        this.magicPowerAmt = magicPowerAmt;
         this.magicNumber = this.baseMagicNumber = magicPowerAmt;
     }
+
     @Override
     public boolean canUpgrade() {
         return false;
@@ -31,6 +34,6 @@ public class MagicPowerOption extends AbstractFrierenCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, new ManaNumMod(this.magicNumber));
+        CardModifierManager.addModifier(this.currentLegendMagic, new ManaInHandNumMod(magicPowerAmt));
     }
 }

@@ -242,17 +242,17 @@
     "DESCRIPTION": "Draw !M! card(s).",
     "EXTENDED_DESCRIPTION": ["Draw 1/2/3 card(s)."]
   },
-  "FrierenMod:MagicPowerOption": {
+  "FrierenMod:ManaOption": {
     "NAME": "The Moon",
     "DESCRIPTION": "Shuffle !M! *Mana into your discard pile.",
     "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your discard pile."]
   },
-  "FrierenMod:MagicPowerInHandOption": {
+  "FrierenMod:ManaInHandOption": {
     "NAME": "The Sun",
     "DESCRIPTION": "Add !M! *Mana into your hand.",
     "EXTENDED_DESCRIPTION": ["add 2/3/4/5 *Mana into your hand."]
   },
-  "FrierenMod:MagicPowerInDrawOption": {
+  "FrierenMod:ManaInDrawOption": {
     "NAME": "The fool",
     "DESCRIPTION": "Shuffle !M! *Mana into your draw pile.",
     "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your draw pile."]

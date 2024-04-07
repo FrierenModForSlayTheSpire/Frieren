@@ -1,5 +1,6 @@
 package FrierenMod.cardMods;
-import FrierenMod.actions.MakeManaInDiscardAction;
+
+import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.cards.tempCards.CustomLegendaryMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
@@ -27,7 +28,7 @@ public class ManaInDrawNumMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        this.addToBot(new MakeManaInDiscardAction(manaAmt));
+        this.addToBot(new MakeManaInDrawPileAction(manaAmt));
     }
 
     public String identifier(AbstractCard card) {
