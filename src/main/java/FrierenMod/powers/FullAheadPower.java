@@ -12,17 +12,26 @@ import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDrawPile;
 
 public class FullAheadPower extends AbstractFrierenPower {
     public static final String POWER_ID = ModInformation.makeID(FullAheadPower.class.getSimpleName());
+    public boolean takeEffect;
 
     public FullAheadPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
     }
 
     public void afterChantFinished() {
-        this.flash();
-        if (getManaNumInDrawPile() == getManaNumInDiscardPile()) {
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, amount), amount));
-        } else
-            this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
+        if(!takeEffect){
+            this.flash();
+            if (getManaNumInDrawPile() == getManaNumInDiscardPile()) {
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, amount), amount));
+            } else
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
+            this.takeEffect = true;
+        }
+    }
+
+    @Override
+    public void atEndOfTurn(boolean isPlayer) {
+        this.takeEffect = false;
     }
 
     public void updateDescription() {

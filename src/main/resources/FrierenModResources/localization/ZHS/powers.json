@@ -110,7 +110,7 @@
   "FrierenMod:FullAheadPower": {
     "NAME": "全速前进",
     "DESCRIPTIONS": [
-      "每次 #y咏唱 后，若抽牌堆和弃牌堆的 #y魔力 数量相同，获得 #b%d #y敏捷 ，否则获得 #b%d #y力量 。"
+      "每回合第一次 #y咏唱 后，若抽牌堆 #y魔力 数等于弃牌堆，获得 #b%d #y敏捷 ，否则获得 #b%d #y力量 。"
     ]
   }
 }
