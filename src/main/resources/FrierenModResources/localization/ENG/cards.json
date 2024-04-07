@@ -255,7 +255,7 @@
     "EXTENDED_DESCRIPTION": ["add 2/3/4/5 *Mana into your hand."]
   },
   "FrierenMod:MagicPowerInDrawOption": {
-    "NAME": "The Sword",
+    "NAME": "The fool",
     "DESCRIPTION": "Add !M! *Mana into your draw pile.",
     "EXTENDED_DESCRIPTION": ["add 2/4/6/8 *Mana into your draw pile."]
   },
