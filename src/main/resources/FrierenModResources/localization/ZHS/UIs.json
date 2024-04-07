@@ -14,6 +14,11 @@
       " NL 将 ", " 张 *魔力 放入手牌。"
     ]
   },
+  "FrierenMod:ManaInDrawNumMod": {
+    "TEXT": [
+      " NL 将 ", " 张 *魔力 放入抽牌堆。"
+    ]
+  },
   "FrierenMod:ScryMod": {
     "TEXT": [
       " NL  预见 ", "。"

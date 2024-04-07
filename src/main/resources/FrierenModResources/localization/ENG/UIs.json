@@ -14,6 +14,11 @@
       " NL Add ", " *Mana into your hand."
     ]
   },
+  "FrierenMod:ManaInDrawNumMod": {
+    "TEXT": [
+      " NL Shuffle  ", " *Mana into your draw pile."
+    ]
+  },
   "FrierenMod:ScryMod": {
     "TEXT": [
       " NL  Scry ", "."

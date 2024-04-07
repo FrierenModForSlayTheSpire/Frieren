@@ -254,6 +254,11 @@
     "DESCRIPTION": "Add !M! *Mana into your hand.",
     "EXTENDED_DESCRIPTION": ["add 2/3/4/5 *Mana into your hand."]
   },
+  "FrierenMod:MagicPowerInDrawOption": {
+    "NAME": "The Sword",
+    "DESCRIPTION": "Add !M! *Mana into your draw pile.",
+    "EXTENDED_DESCRIPTION": ["add 2/4/6/8 *Mana into your draw pile."]
+  },
   "FrierenMod:ScryOption": {
     "NAME": "The High Priestess",
     "DESCRIPTION": "Scry !M!.",

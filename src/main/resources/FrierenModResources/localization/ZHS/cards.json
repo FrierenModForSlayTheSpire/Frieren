@@ -252,6 +252,11 @@
     "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。",
     "EXTENDED_DESCRIPTION": ["将2/3/4/5张 *魔力 放入手牌。"]
   },
+  "FrierenMod:MagicPowerInDrawOption": {
+    "NAME": "宝剑",
+    "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
+    "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入抽牌堆。"]
+  },
   "FrierenMod:ScryOption": {
     "NAME": "女祭司",
     "DESCRIPTION": " 预见 !M! 。",
