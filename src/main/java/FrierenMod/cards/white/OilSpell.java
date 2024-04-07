@@ -8,10 +8,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OilSpell extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(OilSpell.class.getSimpleName());
-    private static final CardTarget TARGET = CardTarget.ALL_ENEMY;
     public OilSpell() {
         super(ID, 2, CardType.ATTACK, CardRarity.COMMON, CardTarget.ALL_ENEMY);
-        this.damage = this.baseDamage = 12;
+        this.damage = this.baseDamage = 14;
         this.isLegendarySpell = true;
     }
     @Override
