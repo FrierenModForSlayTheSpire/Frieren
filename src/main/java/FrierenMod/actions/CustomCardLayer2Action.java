@@ -42,13 +42,14 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
             case 0:
                 layer.add(new ChantOption(currentLegendMagic,CHANT0));
                 layer.add(new MagicPowerOption(currentLegendMagic,MAGIC0));
-                layer.add(new MagicPowerInHandOption(currentLegendMagic,MAGIC_IN_HAND0));
+                layer.add(new MagicPowerInDrawOption(currentLegendMagic,MAGIC0));
                 layer.add(new ScryOption(currentLegendMagic,SCRY0));
                 break;
             case 1:
                 layer.add(new ChantOption(currentLegendMagic,CHANT1));
                 layer.add(new MagicPowerOption(currentLegendMagic,MAGIC1));
                 layer.add(new MagicPowerInHandOption(currentLegendMagic,MAGIC_IN_HAND1));
+                layer.add(new MagicPowerInDrawOption(currentLegendMagic,MAGIC1));
                 layer.add(new ScryOption(currentLegendMagic,SCRY1));
                 break;
             case 2:
