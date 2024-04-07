@@ -138,8 +138,7 @@
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
-    "DESCRIPTION": "Exchange a *Mana in your hand with !M! card in your draw pile.",
-    "UPGRADE_DESCRIPTION": "Exchange a *Mana in your hand with !M! cards in your draw pile."
+    "DESCRIPTION": "Exchange a *Mana in your hand with !M! card in your draw pile."
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Successfully",
@@ -166,8 +165,7 @@
   },
   "FrierenMod:Recall": {
     "NAME": "Recall",
-    "DESCRIPTION": "put a card from Exhaust pile into your hand and Retain it. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "put 2 cards from Exhaust pile into your hand and Retain them. NL Exhaust."
+    "DESCRIPTION": "Put !M! card from Exhaust pile into your hand and Retain it. NL Exhaust."
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Anti-Corrosion Spell",
@@ -256,8 +254,8 @@
   },
   "FrierenMod:MagicPowerInDrawOption": {
     "NAME": "The fool",
-    "DESCRIPTION": "Add !M! *Mana into your draw pile.",
-    "EXTENDED_DESCRIPTION": ["add 2/4/6/8 *Mana into your draw pile."]
+    "DESCRIPTION": "Shuffle !M! *Mana into your draw pile.",
+    "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your draw pile."]
   },
   "FrierenMod:ScryOption": {
     "NAME": "The High Priestess",
@@ -527,7 +525,6 @@
   },
   "FrierenMod:SayThinkingSpell": {
     "NAME": "Spell to Say What You're Thinking",
-    "DESCRIPTION": "Exhaust all *Mana in your hand, play !M! random card in your draw pile for each *Mana you Exhausted.",
-    "UPGRADE_DESCRIPTION": "Exhaust all *Mana in your hand, play !M! random cards in your draw pile for each *Mana you Exhausted."
+    "DESCRIPTION": "Exhaust all *Mana in your hand, play !M! random card in your draw pile for each *Mana you Exhausted."
   }
 }
