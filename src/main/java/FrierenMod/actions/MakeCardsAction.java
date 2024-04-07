@@ -31,18 +31,22 @@ public class MakeCardsAction extends AbstractGameAction {
             else
                 p.drawPile.addToTop(c);
             c.unfadeOut();
+            c.lighten(true);
         }
         for (AbstractCard c : this.hand) {
             p.hand.addToHand(c);
             c.unfadeOut();
+            c.lighten(true);
         }
         for (AbstractCard c : this.discardPile) {
             p.discardPile.addToTop(c);
             c.unfadeOut();
+            c.lighten(true);
         }
         for (AbstractCard c : this.exhaustPile) {
             p.exhaustPile.addToTop(c);
             c.unfadeOut();
+            c.lighten(true);
         }
         this.isDone = true;
     }
