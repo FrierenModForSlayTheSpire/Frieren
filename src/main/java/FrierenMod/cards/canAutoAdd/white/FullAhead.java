@@ -23,7 +23,7 @@ public class FullAhead extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
 
     @Override
