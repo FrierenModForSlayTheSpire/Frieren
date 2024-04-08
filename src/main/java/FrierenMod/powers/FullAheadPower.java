@@ -25,7 +25,7 @@ public class FullAheadPower extends AbstractFrierenPower {
             if (getManaNumInDrawPile() == getManaNumInDiscardPile()) {
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, amount), amount));
             } else
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount + 1), this.amount + 1));
             this.takeEffect = true;
         }
     }

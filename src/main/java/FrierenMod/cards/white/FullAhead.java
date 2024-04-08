@@ -10,14 +10,14 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class FullAhead extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(FullAhead.class.getSimpleName());
     public FullAhead() {
-        super(ID, 1,CardType.POWER, CardRarity.COMMON);
+        super(ID, 2,CardType.POWER, CardRarity.COMMON);
         this.magicNumber = this.baseMagicNumber = 2;
     }
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeBaseCost(1);
         }
     }
 
