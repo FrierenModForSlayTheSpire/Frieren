@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Flow extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(Flow.class.getSimpleName());
     public Flow() {
-        super(ID, 0, CardType.ATTACK,CardRarity.COMMON);
+        super(ID, 0, CardType.ATTACK,CardRarity.COMMON,CardTarget.ENEMY);
         this.magicNumber = this.baseMagicNumber = 3;
         this.damage = this.baseDamage = 3;
         this.cardsToPreview = new Mana();
