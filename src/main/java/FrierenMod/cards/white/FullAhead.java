@@ -11,7 +11,7 @@ public class FullAhead extends AbstractFrierenCard {
     public static final String ID = ModInformation.makeID(FullAhead.class.getSimpleName());
     public FullAhead() {
         super(ID, 2,CardType.POWER, CardRarity.COMMON);
-        this.magicNumber = this.baseMagicNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 1;
     }
     @Override
     public void upgrade() {
