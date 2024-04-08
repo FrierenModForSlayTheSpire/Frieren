@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer2;
 
-import FrierenMod.cardMods.ManaNumMod;
+import FrierenMod.cardMods.ManaInDiscardNumMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -10,17 +10,17 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ManaOption extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(ManaOption.class.getSimpleName());
+public class ManaInDiscardOption extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(ManaInDiscardOption.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     public static final CardInfo info2 = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION, CardType.SKILL, CardTarget.NONE);
     private AbstractCard currentLegendMagic;
 
-    public ManaOption() {
+    public ManaInDiscardOption() {
         super(info);
     }
 
-    public ManaOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
+    public ManaInDiscardOption(AbstractCard currentLegendMagic, int magicPowerAmt) {
         super(info2);
         this.currentLegendMagic = currentLegendMagic;
         this.magicNumber = this.baseMagicNumber = magicPowerAmt;
@@ -37,6 +37,6 @@ public class ManaOption extends AbstractBaseCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, new ManaNumMod(this.magicNumber));
+        CardModifierManager.addModifier(this.currentLegendMagic, new ManaInDiscardNumMod(this.magicNumber));
     }
 }

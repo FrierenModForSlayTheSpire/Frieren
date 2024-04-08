@@ -4,7 +4,7 @@
       " NL Draw ", " card.", " cards."
     ]
   },
-  "FrierenMod:ManaNumMod": {
+  "FrierenMod:ManaInDiscardNumMod": {
     "TEXT": [
       " NL Shuffle ", " *Mana into discard pile."
     ]

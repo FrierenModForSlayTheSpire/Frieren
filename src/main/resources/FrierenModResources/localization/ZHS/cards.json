@@ -239,7 +239,7 @@
     "DESCRIPTION": "抽 !M! 张牌。",
     "EXTENDED_DESCRIPTION": ["抽1/2/3张牌。"]
   },
-  "FrierenMod:ManaOption": {
+  "FrierenMod:ManaInDiscardOption": {
     "NAME": "月亮",
     "DESCRIPTION": "将 !M! 张 *魔力 放入弃牌堆。",
     "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入弃牌堆。"]

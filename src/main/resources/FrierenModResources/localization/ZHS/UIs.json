@@ -4,7 +4,7 @@
     " NL 抽 ", " 张牌。", " 张牌。"
     ]
   },
-  "FrierenMod:ManaNumMod": {
+  "FrierenMod:ManaInDiscardNumMod": {
     "TEXT": [
       " NL 将 ", " 张 *魔力 放入弃牌堆。"
     ]

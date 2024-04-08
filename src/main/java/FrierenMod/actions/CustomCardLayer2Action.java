@@ -40,20 +40,20 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
         switch (cost) {
             case 0:
                 layer.add(new ChantOption(currentLegendMagic, CHANT0));
-                layer.add(new ManaOption(currentLegendMagic, MAGIC0));
+                layer.add(new ManaInDiscardOption(currentLegendMagic, MAGIC0));
                 layer.add(new ManaInDrawOption(currentLegendMagic, MAGIC0));
                 layer.add(new ScryOption(currentLegendMagic, SCRY0));
                 break;
             case 1:
                 layer.add(new ChantOption(currentLegendMagic, CHANT1));
-                layer.add(new ManaOption(currentLegendMagic, MAGIC1));
+                layer.add(new ManaInDiscardOption(currentLegendMagic, MAGIC1));
                 layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND1));
                 layer.add(new ManaInDrawOption(currentLegendMagic, MAGIC1));
                 layer.add(new ScryOption(currentLegendMagic, SCRY1));
                 break;
             case 2:
                 layer.add(new ChantOption(currentLegendMagic, CHANT2));
-                layer.add(new ManaOption(currentLegendMagic, MAGIC2));
+                layer.add(new ManaInDiscardOption(currentLegendMagic, MAGIC2));
                 layer.add(new GainRandomCardOption(currentLegendMagic, CARD2));
                 layer.add(new SelfRetainOption(currentLegendMagic, RETAIN2));
                 layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND2));
@@ -61,7 +61,7 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
                 layer.add(new CostZeroOption(currentLegendMagic, COST_ZERO2));
                 break;
             case 3:
-                layer.add(new ManaOption(currentLegendMagic, MAGIC3));
+                layer.add(new ManaInDiscardOption(currentLegendMagic, MAGIC3));
                 layer.add(new GainRandomCardOption(currentLegendMagic, CARD3));
                 layer.add(new SelfRetainOption(currentLegendMagic, RETAIN3));
                 layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND3));

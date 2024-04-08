@@ -8,14 +8,14 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
-public class ManaNumMod extends AbstractCardModifier {
-    public static final String ID = ModInformation.makeID(ManaNumMod.class.getSimpleName());
+public class ManaInDiscardNumMod extends AbstractCardModifier {
+    public static final String ID = ModInformation.makeID(ManaInDiscardNumMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
     private final int manaAmt;
 
-    public ManaNumMod(int manaAmt) {
+    public ManaInDiscardNumMod(int manaAmt) {
         this.manaAmt = manaAmt;
     }
     public void onInitialApplication(AbstractCard card) {
@@ -23,7 +23,7 @@ public class ManaNumMod extends AbstractCardModifier {
             ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.manaAmt + TEXT[1];
     }
     public AbstractCardModifier makeCopy() {
-        return new ManaNumMod(this.manaAmt);
+        return new ManaInDiscardNumMod(this.manaAmt);
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

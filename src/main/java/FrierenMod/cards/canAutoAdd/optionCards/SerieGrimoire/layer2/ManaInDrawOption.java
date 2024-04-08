@@ -1,6 +1,6 @@
 package FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer2;
 
-import FrierenMod.cardMods.ManaNumMod;
+import FrierenMod.cardMods.ManaInDrawNumMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -37,6 +37,6 @@ public class ManaInDrawOption extends AbstractBaseCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, new ManaNumMod(this.magicNumber));
+        CardModifierManager.addModifier(this.currentLegendMagic, new ManaInDrawNumMod(this.magicNumber));
     }
 }

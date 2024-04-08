@@ -239,7 +239,7 @@
     "DESCRIPTION": "Draw !M! card(s).",
     "EXTENDED_DESCRIPTION": ["Draw 1/2/3 card(s)."]
   },
-  "FrierenMod:ManaOption": {
+  "FrierenMod:ManaInDiscardOption": {
     "NAME": "The Moon",
     "DESCRIPTION": "Shuffle !M! *Mana into your discard pile.",
     "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your discard pile."]
