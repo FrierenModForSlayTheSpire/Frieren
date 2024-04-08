@@ -1,8 +1,7 @@
 package FrierenMod.actions;
 
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-
-import static FrierenMod.gameHelpers.ChantHelper.*;
 
 public class ExhaustManaTakeTurnsAction extends AbstractGameAction {
     private final int requiredAmt;
@@ -13,9 +12,9 @@ public class ExhaustManaTakeTurnsAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        if(getAllManaNum() >= requiredAmt){
-            int draw = getManaNumInDrawPile();
-            int hand = getManaNumInHand();
+        if(CombatHelper.getAllManaNum() >= requiredAmt){
+            int draw = CombatHelper.getManaNumInDrawPile();
+            int hand = CombatHelper.getManaNumInHand();
             if(draw >= requiredAmt){
                 this.addToBot(new ExhaustManaInDrawPileAction(requiredAmt));
             }

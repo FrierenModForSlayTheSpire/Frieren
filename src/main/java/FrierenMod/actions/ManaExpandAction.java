@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.DoubleMagicInDiscardPile;
-import FrierenMod.cards.optionCards.DoubleMagicInDrawPile;
-import FrierenMod.cards.optionCards.DoubleMagicInHand;
+import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInDiscardPile;
+import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInDrawPile;
+import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInHand;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,9 +24,9 @@ public class ManaExpandAction extends AbstractGameAction {
             this.addToBot(new DoubleManaInDiscardPileAction());
         }else {
             ArrayList<AbstractCard> choices = new ArrayList<>();
-            choices.add(new DoubleMagicInDrawPile());
-            choices.add(new DoubleMagicInHand());
-            choices.add(new DoubleMagicInDiscardPile());
+            choices.add(new DoubleManaInDrawPile());
+            choices.add(new DoubleManaInHand());
+            choices.add(new DoubleManaInDiscardPile());
             this.addToBot(new ChooseOneAction(choices));
         }
         this.isDone = true;

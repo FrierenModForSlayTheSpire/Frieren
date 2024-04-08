@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -17,8 +17,8 @@ import java.util.UUID;
 public class EleganceAction extends AbstractGameAction {
     private final DamageInfo info;
 
-    private final AbstractFrierenCard c;
-    public EleganceAction(AbstractCreature target, DamageInfo info, AbstractFrierenCard c) {
+    private final AbstractBaseCard c;
+    public EleganceAction(AbstractCreature target, DamageInfo info, AbstractBaseCard c) {
         this.info = info;
         this.c = c;
         setValues(target, info);
@@ -62,18 +62,18 @@ public class EleganceAction extends AbstractGameAction {
     }
     private void increaseEleganceSecondMisc(UUID targetUUID, int miscIncrease){
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if(c instanceof AbstractFrierenCard){
+            if(c instanceof AbstractBaseCard){
                 if (!c.uuid.equals(targetUUID))
                     continue;
-                ((AbstractFrierenCard) c).secondMisc += miscIncrease;
-                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
+                ((AbstractBaseCard) c).secondMisc += miscIncrease;
+                c.baseMagicNumber = ((AbstractBaseCard) c).secondMisc;
                 c.isMagicNumberModified = false;
             }
         }
         for (AbstractCard c : GetAllInBattleInstances.get(targetUUID)) {
-            if(c instanceof AbstractFrierenCard){
-                ((AbstractFrierenCard) c).secondMisc += miscIncrease;
-                c.baseMagicNumber = ((AbstractFrierenCard) c).secondMisc;
+            if(c instanceof AbstractBaseCard){
+                ((AbstractBaseCard) c).secondMisc += miscIncrease;
+                c.baseMagicNumber = ((AbstractBaseCard) c).secondMisc;
             }
         }
     }

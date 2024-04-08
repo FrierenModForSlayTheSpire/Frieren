@@ -1,6 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.powers.BanManaGainPower;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -8,8 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndAddToDrawPileEffect;
-
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.BAN_MANA_GAIN;
 
 public class MakeManaInDrawPileAction extends AbstractGameAction {
     private final AbstractCard cardToMake;
@@ -26,7 +25,7 @@ public class MakeManaInDrawPileAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             AbstractPlayer p = AbstractDungeon.player;
-            if(!p.hasPower(BAN_MANA_GAIN)){
+            if(!p.hasPower(BanManaGainPower.POWER_ID)){
                 for (int i = 0; i < this.amount; i++) {
                     AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
                     AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false));

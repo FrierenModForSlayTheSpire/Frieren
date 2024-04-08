@@ -1,16 +1,17 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.tempCards.ManaConcealment;
+import FrierenMod.cards.canAutoAdd.tempCards.ManaConcealment;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class TrickPower extends AbstractFrierenPower {
+public class TrickPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(TrickPower.class.getSimpleName());
     public TrickPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void atStartOfTurn() {

@@ -1,9 +1,9 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.TopTextHelper;
+import FrierenMod.utils.TopTextHelper;
 import FrierenMod.utils.FrierenRes;
 import basemod.ReflectionHacks;
 import basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix;
@@ -57,7 +57,7 @@ public class RenderTopTextPatches {
 
     public static boolean shouldShowTopText(AbstractCard c) {
         if (!Settings.hideCards && (isInFrierenRun() || isInFrierenCardLibraryScreen())) {
-            if (c instanceof AbstractFrierenCard)
+            if (c instanceof AbstractBaseCard)
                 return true;
             for (Class<?> clazz : allowedCardClasses) {
                 if (clazz.isAssignableFrom(c.getClass()))

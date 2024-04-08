@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
@@ -8,8 +9,6 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDiscardPile;
-import static FrierenMod.gameHelpers.ChantHelper.getManaNumInDrawPile;
 
 public class LockTargetAction extends AbstractGameAction {
     private final int magicNumber;
@@ -27,12 +26,12 @@ public class LockTargetAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToBot(new DrawCardAction(this.magicNumber));
-        if (getManaNumInDrawPile()>=getManaNumInDiscardPile()) {
-            this.addToBot(new DamageAction(m, new DamageInfo( p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        if (CombatHelper.getManaNumInDrawPile() >= CombatHelper.getManaNumInDiscardPile()) {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             this.addToBot(new DrawCardAction(this.magicNumber));
         }
-        this.isDone =true;
+        this.isDone = true;
     }
 }

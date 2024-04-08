@@ -1,16 +1,16 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.powers.AbstractFrierenPower;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.powers.AbstractBasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class AfterChantFinishedAction extends AbstractGameAction {
-    private AbstractFrierenCard c;
-    private AbstractFrierenPower po;
-    public AfterChantFinishedAction(AbstractFrierenCard c){
+    private AbstractBaseCard c;
+    private AbstractBasePower po;
+    public AfterChantFinishedAction(AbstractBaseCard c){
         this.c = c;
     }
-    public AfterChantFinishedAction(AbstractFrierenPower po){
+    public AfterChantFinishedAction(AbstractBasePower po){
         this.po = po;
     }
     @Override

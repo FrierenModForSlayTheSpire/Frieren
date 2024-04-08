@@ -156,5 +156,17 @@
       "/2）"
     ],
     "TEXT_DICT": {}
+  },
+  "FrierenMod:DualCardTip": {
+    "TEXT": [
+      "双职业卡",
+      " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
+    ]
+  },
+  "FrierenMod:FernPanel": {
+    "TEXT": [
+      "计数器",
+      "上：本回合使用过的卡牌数 NL 中： #y离差 NL 下： #y专注 层数"
+    ]
   }
 }

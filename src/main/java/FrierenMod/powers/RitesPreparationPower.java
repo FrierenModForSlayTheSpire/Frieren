@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -8,16 +8,17 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class RitesPreparationPower extends AbstractFrierenPower {
+public class RitesPreparationPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(RitesPreparationPower.class.getSimpleName());
     private int MagicPowerPlayedNum = 0;
     public RitesPreparationPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
         super.onAfterCardPlayed(usedCard);
-        if(usedCard instanceof AbstractFrierenCard && ((AbstractFrierenCard) usedCard).isMana){
+        if(usedCard instanceof AbstractBaseCard && ((AbstractBaseCard) usedCard).isMana){
             this.MagicPowerPlayedNum++;
         }
         if(this.MagicPowerPlayedNum == 3){

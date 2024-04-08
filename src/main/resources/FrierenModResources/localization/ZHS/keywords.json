@@ -103,5 +103,33 @@
       "壁垒"
     ],
     "DESCRIPTION": "格挡不会在你的回合开始时消失。"
+  },
+  {
+    "PROPER_NAME":"离差",
+    "NAMES": [
+      "离差"
+    ],
+    "DESCRIPTION": "本回合使用过的卡牌数和 #y专注 层数之差的绝对值。"
+  },
+  {
+    "PROPER_NAME":"专注",
+    "NAMES": [
+      "专注"
+    ],
+    "DESCRIPTION": "使用 #b1 张牌后失去 #b1 层该能力 ， #y咏唱 消耗 的 #y魔力 减少（该能力层数）张。"
+  },
+  {
+    "PROPER_NAME":"奇袭X",
+    "NAMES": [
+      "奇袭X","奇袭"
+    ],
+    "DESCRIPTION": " #y离差 小于等于X时触发。"
+  },
+  {
+    "PROPER_NAME":"凝聚",
+    "NAMES": [
+      "凝聚"
+    ],
+    "DESCRIPTION": "自动同调你下1张加入手牌的 #y魔力 ，且同调时不失去专注层数。"
   }
 ]

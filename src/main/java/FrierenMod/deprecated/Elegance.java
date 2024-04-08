@@ -1,7 +1,8 @@
 package FrierenMod.deprecated;
 
 import FrierenMod.actions.EleganceAction;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomSavable;
 import com.google.gson.reflect.TypeToken;
@@ -13,11 +14,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.lang.reflect.Type;
 
 @Deprecated
-public class Elegance extends AbstractFrierenCard implements CustomSavable<Integer> {
+public class Elegance extends AbstractBaseCard implements CustomSavable<Integer> {
     public static final String ID = ModInformation.makeID(Elegance.class.getSimpleName());
     private int secondMiscVariable;
     public Elegance() {
-        super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
+        super(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.misc = 8;
         this.secondMisc = 0;
         this.baseDamage = this.misc;

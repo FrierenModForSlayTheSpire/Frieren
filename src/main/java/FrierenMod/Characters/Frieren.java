@@ -1,10 +1,10 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.white.Defend;
-import FrierenMod.cards.white.Flow;
-import FrierenMod.cards.white.Strike;
-import FrierenMod.cards.white.chant.DefensiveMagic;
-import FrierenMod.cards.white.chant.RapidChant;
+import FrierenMod.cards.canAutoAdd.white.Defend_Frieren;
+import FrierenMod.cards.canAutoAdd.white.Flow;
+import FrierenMod.cards.canAutoAdd.white.Strike_Frieren;
+import FrierenMod.cards.canAutoAdd.white.DefensiveMagic;
+import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HolyEmblem;
@@ -33,7 +33,7 @@ public class Frieren extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ModInformation.MOD_NAME + ":" + FrierenRes.CHARACTER_NAME);
 
     public Frieren(String name) {
-        super(name, CharacterEnums.FRIEREN,FrierenRes.ORB_TEXTURES,FrierenRes.ORB_VFX,FrierenRes.LAYER_SPEED, null, null);
+        super(name, CharacterEnums.FRIEREN, FrierenRes.ORB_TEXTURES, FrierenRes.ORB_VFX, FrierenRes.LAYER_SPEED, null, null);
 
         // 人物对话气泡的大小，如果游戏中尺寸不对在这里修改（libgdx的坐标轴左下为原点）
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -64,11 +64,11 @@ public class Frieren extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for(int x = 0; x<4; x++) {
-            retVal.add(Strike.ID);
+        for (int x = 0; x < 4; x++) {
+            retVal.add(Strike_Frieren.ID);
         }
-        for(int x = 0; x<3; x++) {
-            retVal.add(Defend.ID);
+        for (int x = 0; x < 3; x++) {
+            retVal.add(Defend_Frieren.ID);
         }
         retVal.add(Flow.ID);
         retVal.add(DefensiveMagic.ID);
@@ -114,7 +114,7 @@ public class Frieren extends CustomPlayer {
     // 翻牌事件出现的你的职业牌（一般设为打击）
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new Strike();
+        return new Strike_Frieren();
     }
 
     // 卡牌轨迹颜色

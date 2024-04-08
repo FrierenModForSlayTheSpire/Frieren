@@ -1,8 +1,8 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.ManaAction;
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -26,41 +26,41 @@ public class ManaMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
-        switch (type){
+        switch (type) {
             case 1:
-                ((AbstractFrierenCard)card).isAccelMana = false;
-                ((AbstractFrierenCard)card).isLimitedOverMana = false;
+                ((AbstractBaseCard) card).isAccelMana = false;
+                ((AbstractBaseCard) card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
                 break;
             case 2:
-                ((AbstractFrierenCard)card).isAccelMana = true;
-                ((AbstractFrierenCard)card).isLimitedOverMana = false;
+                ((AbstractBaseCard) card).isAccelMana = true;
+                ((AbstractBaseCard) card).isLimitedOverMana = false;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
                 break;
             case 3:
-                ((AbstractFrierenCard)card).isAccelMana = false;
-                ((AbstractFrierenCard)card).isLimitedOverMana = true;
-                card.baseDamage = 15;
+                ((AbstractBaseCard) card).isAccelMana = false;
+                ((AbstractBaseCard) card).isLimitedOverMana = true;
+                card.baseDamage = 20;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana3"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana3"));
                 break;
             case 4:
-                ((AbstractFrierenCard)card).isAccelMana = true;
-                ((AbstractFrierenCard)card).isLimitedOverMana = true;
-                card.baseDamage = 15;
+                ((AbstractBaseCard) card).isAccelMana = true;
+                ((AbstractBaseCard) card).isLimitedOverMana = true;
+                card.baseDamage = 20;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 card.exhaust = true;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana4"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana4"));
                 break;
             default:
                 break;
@@ -69,7 +69,7 @@ public class ManaMod extends AbstractCardModifier {
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.actions.removeIf(action1 -> action1 instanceof ManaAction);
-        switch (type){
+        switch (type) {
             case 1:
                 this.addToBot(new ManaAction(1));
                 break;
@@ -77,10 +77,10 @@ public class ManaMod extends AbstractCardModifier {
                 this.addToBot(new ManaAction(2));
                 break;
             case 3:
-                this.addToBot(new ManaAction(card,3));
+                this.addToBot(new ManaAction(card, 3));
                 break;
             case 4:
-                this.addToBot(new ManaAction(card,4));
+                this.addToBot(new ManaAction(card, 4));
                 break;
             default:
                 break;

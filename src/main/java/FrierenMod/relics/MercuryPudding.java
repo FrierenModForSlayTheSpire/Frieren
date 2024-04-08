@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 
-public class MercuryPudding extends AbstractFrierenRelic {
+public class MercuryPudding extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(MercuryPudding.class.getSimpleName());
     public MercuryPudding() {
         super(ID, RelicTier.UNCOMMON);

@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.effects.SealEffect;
 import FrierenMod.powers.SealPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -35,7 +35,7 @@ public class SealCardsAction extends AbstractGameAction {
     }
     private void storeSealCardsInCardGroup(ArrayList<AbstractCard> sealCards, CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isSealCard){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isSealCard){
                 sealCards.add(c);
             }
         }

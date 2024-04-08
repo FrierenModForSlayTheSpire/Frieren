@@ -1,7 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.zeerie.layer2.*;
-import FrierenMod.cards.optionCards.zeerie.layer2.ChantOption;
+import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer2.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -27,8 +26,8 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
     private static final int COST_ZERO2 = 1;
     private static final int COST_ZERO3 = 2;
 
-    public CustomCardLayer2Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic,boolean upgraded){
-        super(nextAction,currentLegendMagic,upgraded);
+    public CustomCardLayer2Action(AbstractGameAction nextAction, AbstractCard currentLegendMagic, boolean upgraded) {
+        super(nextAction, currentLegendMagic, upgraded);
     }
 
     @Override
@@ -36,37 +35,37 @@ public class CustomCardLayer2Action extends CustomCardLayerAction {
         super.update();
     }
 
-    public void initLayer(int cost){
+    public void initLayer(int cost) {
         super.initLayer(cost);
-        switch (cost){
+        switch (cost) {
             case 0:
-                layer.add(new ChantOption(currentLegendMagic,CHANT0));
-                layer.add(new ManaOption(currentLegendMagic,MAGIC0));
-                layer.add(new ManaInDrawOption(currentLegendMagic,MAGIC0));
-                layer.add(new ScryOption(currentLegendMagic,SCRY0));
+                layer.add(new ChantOption(currentLegendMagic, CHANT0));
+                layer.add(new ManaOption(currentLegendMagic, MAGIC0));
+                layer.add(new ManaInDrawOption(currentLegendMagic, MAGIC0));
+                layer.add(new ScryOption(currentLegendMagic, SCRY0));
                 break;
             case 1:
-                layer.add(new ChantOption(currentLegendMagic,CHANT1));
-                layer.add(new ManaOption(currentLegendMagic,MAGIC1));
-                layer.add(new ManaInHandOption(currentLegendMagic,MAGIC_IN_HAND1));
-                layer.add(new ManaInDrawOption(currentLegendMagic,MAGIC1));
-                layer.add(new ScryOption(currentLegendMagic,SCRY1));
+                layer.add(new ChantOption(currentLegendMagic, CHANT1));
+                layer.add(new ManaOption(currentLegendMagic, MAGIC1));
+                layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND1));
+                layer.add(new ManaInDrawOption(currentLegendMagic, MAGIC1));
+                layer.add(new ScryOption(currentLegendMagic, SCRY1));
                 break;
             case 2:
-                layer.add(new ChantOption(currentLegendMagic,CHANT2));
-                layer.add(new ManaOption(currentLegendMagic,MAGIC2));
-                layer.add(new GainRandomCardOption(currentLegendMagic,CARD2));
-                layer.add(new SelfRetainOption(currentLegendMagic,RETAIN2));
-                layer.add(new ManaInHandOption(currentLegendMagic,MAGIC_IN_HAND2));
-                layer.add(new ScryOption(currentLegendMagic,SCRY2));
-                layer.add(new CostZeroOption(currentLegendMagic,COST_ZERO2));
+                layer.add(new ChantOption(currentLegendMagic, CHANT2));
+                layer.add(new ManaOption(currentLegendMagic, MAGIC2));
+                layer.add(new GainRandomCardOption(currentLegendMagic, CARD2));
+                layer.add(new SelfRetainOption(currentLegendMagic, RETAIN2));
+                layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND2));
+                layer.add(new ScryOption(currentLegendMagic, SCRY2));
+                layer.add(new CostZeroOption(currentLegendMagic, COST_ZERO2));
                 break;
             case 3:
-                layer.add(new ManaOption(currentLegendMagic,MAGIC3));
-                layer.add(new GainRandomCardOption(currentLegendMagic,CARD3));
-                layer.add(new SelfRetainOption(currentLegendMagic,RETAIN3));
-                layer.add(new ManaInHandOption(currentLegendMagic,MAGIC_IN_HAND3));
-                layer.add(new CostZeroOption(currentLegendMagic,COST_ZERO3));
+                layer.add(new ManaOption(currentLegendMagic, MAGIC3));
+                layer.add(new GainRandomCardOption(currentLegendMagic, CARD3));
+                layer.add(new SelfRetainOption(currentLegendMagic, RETAIN3));
+                layer.add(new ManaInHandOption(currentLegendMagic, MAGIC_IN_HAND3));
+                layer.add(new CostZeroOption(currentLegendMagic, COST_ZERO3));
                 break;
             default:
                 break;

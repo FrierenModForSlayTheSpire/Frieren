@@ -1,9 +1,9 @@
 {
-  "FrierenMod:Strike": {
+  "FrierenMod:Strike_Frieren": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
   },
-  "FrierenMod:Defend": {
+  "FrierenMod:Defend_Frieren": {
     "NAME": "防御",
     "DESCRIPTION": "获得 !B! 点 格挡 。"
   },
@@ -39,18 +39,15 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !M! 张 *魔力 ，获得 !B! 点 格挡 两次。",
-    "UPGRADE_DESCRIPTION":"获得 !B! 点 格挡 两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。"
   },
   "FrierenMod:ChantHand": {
     "NAME": "从手牌咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !M! 张 *魔力 ，获得 !M! 点 [E] 。",
-    "UPGRADE_DESCRIPTION":"获得 !M! 点 [E] 。"
+    "DESCRIPTION": " 消耗 手牌中 !SM! 张 *魔力 ，获得 !M! 点 [E] 。"
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "从弃牌堆咏唱",
-    "DESCRIPTION": " 消耗 弃牌堆中 !M! 张 *魔力 ，获得 !M! 点 力量 。",
-    "UPGRADE_DESCRIPTION":"获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !SM! 张 *魔力 ，获得 !M! 点 力量 。"
   },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",
@@ -217,7 +214,7 @@
     "DESCRIPTION": "获得 [E] [E] ，将一张 *懒懒散散 放入手牌。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "获得 [E] [E] ，将一张 *懒懒散散 放入手牌。"
   },
-  "FrierenMod:CustomLegendaryMagic": {
+  "FrierenMod:CustomLegendarySpell": {
     "NAME": "自定义魔法",
     "DESCRIPTION": " frierenmod:传说魔法 。"
   },
@@ -353,15 +350,15 @@
     "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆，将其中的 *魔力 数量翻倍。 NL  消耗 。",
     "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪（消耗牌堆除外）。 NL  消耗 。"
   },
-  "FrierenMod:DoubleMagicInDrawPile": {
+  "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "从抽牌堆膨胀",
     "DESCRIPTION": " 翻倍抽牌堆中的 *魔力 数量。"
   },
-  "FrierenMod:DoubleMagicInHand": {
+  "FrierenMod:DoubleManaInHand": {
     "NAME": "从手牌膨胀",
     "DESCRIPTION": " 翻倍手牌中的 *魔力 数量。"
   },
-  "FrierenMod:DoubleMagicInDiscardPile": {
+  "FrierenMod:DoubleManaInDiscardPile": {
     "NAME": "从弃牌堆膨胀",
     "DESCRIPTION": " 翻倍弃牌堆中的 *魔力 数量。"
   },
@@ -526,5 +523,71 @@
   "FrierenMod:SayThinkingSpell": {
     "NAME": "把思考的事情说出来的魔法",
     "DESCRIPTION": " 消耗 手中所有的 *魔力 ，每 消耗 1张就打出你抽牌堆随机位置的 !M! 张牌。"
+  },
+  "FrierenMod:Strike_Fern": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "FrierenMod:Defend_Fern": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
+  },
+  "FrierenMod:WaitingInTheWings": {
+    "NAME": "伺机待发",
+    "DESCRIPTION": " frierenmod:离差 为奇数时，获得1层 frierenmod:专注 和 !B! 点 格挡 ，将其返回手牌。 NL  *离差 为偶数时，造成 !D! 点伤害。"
+  },
+  "FrierenMod:CriticalStrike": {
+    "NAME": "会心一击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 2:再造成 !D! 点。"
+  },
+  "FrierenMod:SuperSerious": {
+    "NAME": "超级认真",
+    "DESCRIPTION": "使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
+  },
+  "FrierenMod:DancingForm": {
+    "NAME": "舞姿形态",
+    "DESCRIPTION": "使用卡牌后，获得或失去 frierenmod:专注 ，使 frierenmod:离差 永恒为2。"
+  },
+  "FrierenMod:1": {
+    "NAME": "",
+    "DESCRIPTION": "在本场战斗中提高你当前所有卡牌的 frierenmod:奇袭 值1点。 NL 消耗 。"
+  },
+  "FrierenMod:2": {
+    "NAME": "",
+    "DESCRIPTION": "在本回合中，反转 frierenmod:奇袭 判定条件 。"
+  },
+  "FrierenMod:3": {
+    "NAME": "",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果你 *咏唱 的是手牌，失去 !CX! 层 frierenmod:专注 。"
+  },
+  "FrierenMod:4": {
+    "NAME": "",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。如果 *咏唱 值为6，消耗 。在本场战斗中提高 *咏唱 值1点。将这张牌放入你的抽牌堆。"
+  },
+  "FrierenMod:Moody": {
+    "NAME": "喜怒无常",
+    "DESCRIPTION": "造成本场战斗 frierenmod:专注 层数变化次数的伤害。 NL （将造成 !D! 点）。"
+  },
+  "FrierenMod:WashingClothesSpell": {
+    "NAME": "彻底清除衣服污渍的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 消耗 抽牌堆所有牌，弃掉所有手牌。下一回合，获得 消耗 数的专注，弃牌数的 [E] ，抽2张牌。"
+  },
+  "FrierenMod:OneShot": {
+    "NAME": "一击毙命",
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 使所有非boss敌人生命值变为0。 失去所有 frierenmod:专注 层数。"
+  },
+  "FrierenMod:6": {
+    "NAME": "",
+    "DESCRIPTION": "抽 !M! 张牌，丢弃不为 *魔力 的牌，获得弃牌数的 frierenmod:专注 。"
+  },
+  "FrierenMod:7": {
+    "NAME": "",
+    "DESCRIPTION": "获得或失去至多 !M! 层 frierenmod:专注 ，使离差尽可能小。"
+  },
+  "FrierenMod:Fragile": {
+    "NAME": "易碎品",
+    "DESCRIPTION": " 打出后返回手牌。 NL  frierenmod:奇袭 !R! ：随机获得5种效果1种： *奇袭 值-1，效果值+1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
   }
 }

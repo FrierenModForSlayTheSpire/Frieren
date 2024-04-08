@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class ScaleOfObedience extends AbstractFrierenRelic {
+public class ScaleOfObedience extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(ScaleOfObedience.class.getSimpleName());
     public ScaleOfObedience() {
         super(ID, RelicTier.BOSS);

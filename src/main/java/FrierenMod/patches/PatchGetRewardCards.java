@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.relics.IcicleCherryBlossom;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
