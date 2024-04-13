@@ -1,4 +1,4 @@
-package FrierenMod.cards.canAutoAdd.purple;
+package FrierenMod.cards.purple;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;

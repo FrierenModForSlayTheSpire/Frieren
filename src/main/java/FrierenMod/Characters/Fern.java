@@ -1,9 +1,9 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.canAutoAdd.purple.CriticalStrike;
-import FrierenMod.cards.canAutoAdd.purple.Defend_Fern;
-import FrierenMod.cards.canAutoAdd.purple.Strike_Fern;
-import FrierenMod.cards.canAutoAdd.purple.WaitingInTheWings;
+import FrierenMod.cards.purple.CriticalStrike;
+import FrierenMod.cards.purple.Defend_Fern;
+import FrierenMod.cards.purple.Strike_Fern;
+import FrierenMod.cards.purple.WaitingInTheWings;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;

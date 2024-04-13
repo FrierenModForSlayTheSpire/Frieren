@@ -4,6 +4,7 @@ import FrierenMod.cards.canAutoAdd.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -94,12 +95,14 @@ public class CardPoolHelper {
 //    }
     public static ArrayList<AbstractCard> getBaseFrierenFernCardPool(){
         ArrayList<AbstractCard> retVal = new ArrayList<>();
+        if(Config.FERN_ENABLE){
+            retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info2));
+            retVal.add(new RapidChant(RapidChant.info2));
+            retVal.add(new ShavedIceSpell(ShavedIceSpell.info2));
+        }
         retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info));
-        retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info2));
         retVal.add(new RapidChant(RapidChant.info));
-        retVal.add(new RapidChant(RapidChant.info2));
         retVal.add(new ShavedIceSpell(ShavedIceSpell.info));
-        retVal.add(new ShavedIceSpell(ShavedIceSpell.info2));
         return retVal;
     }
     public static ArrayList<AbstractCard> getChantCardPool(){

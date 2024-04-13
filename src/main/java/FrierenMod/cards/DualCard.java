@@ -3,6 +3,7 @@ package FrierenMod.cards;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.FrierenRes;
 import basemod.helpers.TooltipInfo;
@@ -20,7 +21,7 @@ public abstract class DualCard extends AbstractBaseCard {
         super(info);
     }
     public void loadSpecifiedCardStyle(){
-        if(this.isFrierenFernCard){
+        if(this.isFrierenFernCard && Config.FERN_ENABLE){
             String img512, img1024;
             switch(this.type){
                 case ATTACK:
@@ -56,7 +57,7 @@ public abstract class DualCard extends AbstractBaseCard {
         }
     }
     public List<TooltipInfo> getCustomTooltips() {
-        if(this.isFrierenFernCard){
+        if(this.isFrierenFernCard && Config.FERN_ENABLE){
             this.tips.clear();
             this.tips.add(new TooltipInfo(CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[0], CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[1]));
         }

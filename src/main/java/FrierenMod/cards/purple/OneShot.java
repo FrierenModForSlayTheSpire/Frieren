@@ -1,4 +1,4 @@
-package FrierenMod.cards.canAutoAdd.purple;
+package FrierenMod.cards.purple;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.ModifyPowerStackAmtAction;

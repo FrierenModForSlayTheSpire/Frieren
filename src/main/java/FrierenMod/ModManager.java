@@ -43,6 +43,7 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 @SpireInitializer
 public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber {
     private static String modID;
+
     public ModManager() {
         BaseMod.subscribe(this);
         setModID(ModInformation.MOD_NAME);
@@ -64,23 +65,24 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 FrierenRes.BG_POWER_1024,
                 FrierenRes.BIG_ORB,
                 FrierenRes.SMALL_ORB);
-        BaseMod.addColor(CardEnums.FERN_CARD,
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.RENDER_COLOR.cpy(),
-                FernRes.BG_ATTACK_512,
-                FernRes.BG_SKILL_512,
-                FernRes.BG_POWER_512,
-                FernRes.ENERGY_ORB,
-                FernRes.BG_ATTACK_1024,
-                FernRes.BG_SKILL_1024,
-                FernRes.BG_POWER_1024,
-                FernRes.BIG_ORB,
-                FernRes.SMALL_ORB);
+        if (Config.FERN_ENABLE)
+            BaseMod.addColor(CardEnums.FERN_CARD,
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.RENDER_COLOR.cpy(),
+                    FernRes.BG_ATTACK_512,
+                    FernRes.BG_SKILL_512,
+                    FernRes.BG_POWER_512,
+                    FernRes.ENERGY_ORB,
+                    FernRes.BG_ATTACK_1024,
+                    FernRes.BG_SKILL_1024,
+                    FernRes.BG_POWER_1024,
+                    FernRes.BIG_ORB,
+                    FernRes.SMALL_ORB);
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
         BaseMod.subscribe(new OnPlayerTurnStartHelper());
@@ -102,9 +104,11 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         logger.info("Success! ID is " + modID);
     }
+
     public static void initialize() {
         new ModManager();
     }
+
     @Override
     public void receiveEditCards() {
         pathCheck();
@@ -115,22 +119,30 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
         String cardsClassPath = getModID() + ".cards.canAutoAdd";
+        String FernCardsClassPath = getModID() + ".cards.purple";
         (new AutoAdd(getModID())).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
             BaseMod.addCard(card);
             if (Config.IN_DEV && info.seen)
                 UnlockTracker.unlockCard(card.cardID);
         });
+        if (Config.FERN_ENABLE)
+            (new AutoAdd(getModID())).packageFilter(FernCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+                BaseMod.addCard(card);
+                if (Config.IN_DEV && info.seen)
+                    UnlockTracker.unlockCard(card.cardID);
+            });
 //        for (AbstractCard c: CardPoolHelper.getFrierenCardPool())
 //            BaseMod.addCard(c);
 //        for (AbstractCard c: CardPoolHelper.getFernCardPool())
 //            BaseMod.addCard(c);
-        for (AbstractCard c: CardPoolHelper.getBaseFrierenFernCardPool()){
+        for (AbstractCard c : CardPoolHelper.getBaseFrierenFernCardPool()) {
             BaseMod.addCard(c);
             if (Config.IN_DEV)
                 UnlockTracker.unlockCard(c.cardID);
         }
         Log.logger.info("Done adding cards!");
     }
+
     @Override
     public void receiveEditRelics() {
         String relicClassPath = getClass().getPackage().getName() + ".relics";
@@ -144,20 +156,24 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         });
         Log.logger.info("Done adding relics!");
     }
+
     @Override
     public void receiveEditCharacters() {
         Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FRIEREN.toString());
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
-        Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FERN.toString());
-        BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
         Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
-        Log.logger.info("Added " + CharacterEnums.FERN.toString());
+        if(Config.FERN_ENABLE){
+            Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FERN.toString());
+            BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
+            Log.logger.info("Added " + CharacterEnums.FERN.toString());
+        }
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(BottledMana.class, Color.BLUE.cpy(), Color.ROYAL.cpy(), Color.ROYAL, BottledMana.POTION_ID, CharacterEnums.FRIEREN);
-        BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), new Color(149.0F/255.0F, 122.0F/255.0F, 157.0F/255.0F,1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
-        BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(),FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
+        BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
         Log.logger.info("Added potions.");
     }
+
     @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
@@ -168,7 +184,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 //            lang = "ZHS";
             lang = "ENG";
         }
-        String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang,"keywords"))
+        String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang, "keywords"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
         Keyword[] keywords = gson.fromJson(json, Keyword[].class);
         if (keywords != null) {
@@ -178,6 +194,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
             }
         }
     }
+
     public void receiveEditStrings() {
         String lang;
         if (language == Settings.GameLanguage.ZHS) {
@@ -186,21 +203,22 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 //            lang = "ZHS";
             lang = "ENG";
         }
-        BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang,"cards"));
-        BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang,"characters"));
-        BaseMod.loadCustomStringsFile(RelicStrings.class, ModInformation.makeLocalizationPath(lang,"relics"));
-        BaseMod.loadCustomStringsFile(PotionStrings.class, ModInformation.makeLocalizationPath(lang,"potions"));
-        BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang,"powers"));
-        BaseMod.loadCustomStringsFile(UIStrings.class,ModInformation.makeLocalizationPath(lang,"UIs"));
+        BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang, "cards"));
+        BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang, "characters"));
+        BaseMod.loadCustomStringsFile(RelicStrings.class, ModInformation.makeLocalizationPath(lang, "relics"));
+        BaseMod.loadCustomStringsFile(PotionStrings.class, ModInformation.makeLocalizationPath(lang, "potions"));
+        BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang, "powers"));
+        BaseMod.loadCustomStringsFile(UIStrings.class, ModInformation.makeLocalizationPath(lang, "UIs"));
     }
 
     private static String getModID() {
         return modID;
     }
+
     private static void pathCheck() {
         Gson coolG = new Gson();
         InputStream in = ModManager.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
-        IDCheckDontTouchPls EXCEPTION_STRINGS = (IDCheckDontTouchPls)coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
+        IDCheckDontTouchPls EXCEPTION_STRINGS = (IDCheckDontTouchPls) coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
         String packageName = ModManager.class.getPackage().getName();
         FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources");
         if (!modID.equals(EXCEPTION_STRINGS.DEV_ID)) {
