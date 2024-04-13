@@ -23,9 +23,10 @@ public class OilSpellAction extends AbstractGameAction {
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         int flag = 0;
+        c.applyPowers();
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             if(!mo.isDead && !mo.halfDead){
-                if (mo.currentHealth - c.damage <= 0) {
+                if (mo.currentHealth + mo.currentBlock - c.damage <= 0) {
                     flag = 1;
                     break;
                 }
