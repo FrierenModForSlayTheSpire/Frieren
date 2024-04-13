@@ -18,7 +18,7 @@ public class RustCleanMagicAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (!this.target.isDying && !this.target.isDead && this.target.currentBlock > 0) {
+        if (!this.target.isDying && !this.target.isDead) {
             if (this.target instanceof AbstractMonster && ((AbstractMonster) this.target).type != AbstractMonster.EnemyType.BOSS) {
                 for (AbstractPower po : this.target.powers)
                     if (po.type == AbstractPower.PowerType.BUFF) {
