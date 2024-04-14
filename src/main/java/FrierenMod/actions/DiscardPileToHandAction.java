@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,7 +13,7 @@ public class DiscardPileToHandAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (AbstractDungeon.player.discardPile.contains(this.card) && AbstractDungeon.player.hand.group.size() < 10) {
+        if (AbstractDungeon.player.discardPile.contains(this.card) && AbstractDungeon.player.hand.group.size() < BaseMod.MAX_HAND_SIZE) {
             AbstractDungeon.player.hand.addToHand(this.card);
             this.card.unhover();
             this.card.setAngle(0.0F, true);

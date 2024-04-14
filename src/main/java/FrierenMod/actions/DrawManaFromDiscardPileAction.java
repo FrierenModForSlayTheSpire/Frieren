@@ -5,8 +5,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-import java.util.Iterator;
-
 public class DrawManaFromDiscardPileAction extends AbstractGameAction {
     private int drawNumber = 0;
 
@@ -16,17 +14,14 @@ public class DrawManaFromDiscardPileAction extends AbstractGameAction {
     }
 
     public void update() {
-        Iterator<AbstractCard> var1 = AbstractDungeon.player.discardPile.group.iterator();
         int counts = 0;
-        while(var1.hasNext()) {
-            AbstractCard c = (AbstractCard)var1.next();
-            if (counts >= this.drawNumber){
-                break;
-            }
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+        for(AbstractCard c:AbstractDungeon.player.discardPile.group){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
                 counts++;
                 this.addToTop(new DiscardPileToHandAction(c));
             }
+            if(counts >= this.drawNumber)
+                break;
         }
         this.isDone = true;
     }

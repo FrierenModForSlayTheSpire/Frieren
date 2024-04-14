@@ -113,6 +113,12 @@
       "每回合第一次 #y咏唱 后，若抽牌堆 #y魔力 数等于弃牌堆，获得 #b%d #y敏捷 ，否则获得 #b%d #y力量 。"
     ]
   },
+  "FrierenMod:FrierenSuitcasePower": {
+    "NAME": "芙莉莲的旅行箱",
+    "DESCRIPTIONS": [
+      "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 #b%d 点格挡。"
+    ]
+  },
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [

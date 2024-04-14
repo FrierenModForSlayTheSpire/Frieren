@@ -524,6 +524,10 @@
     "NAME": "把思考的事情说出来的魔法",
     "DESCRIPTION": " 消耗 手中所有的 *魔力 ，每 消耗 1张就打出你抽牌堆随机位置的 !M! 张牌。"
   },
+  "FrierenMod:FrierenSuitcase": {
+    "NAME": "芙莉莲的旅行箱",
+    "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
+  },
   "FrierenMod:Strike_Fern": {
     "NAME": "打击",
     "DESCRIPTION": "造成 !D! 点伤害。"
