@@ -4,7 +4,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-public class MimicHead extends AbstractFrierenRelic {
+public class MimicHead extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(MimicHead.class.getSimpleName());
 
     public MimicHead() {

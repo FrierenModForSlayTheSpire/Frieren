@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -26,8 +26,8 @@ public class IntangibleMod extends AbstractCardModifier {
         if(!card.exhaust){
             card.exhaust = true;
         }
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.stackAmt + TEXT[1];
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.stackAmt + TEXT[1];
     }
 
     public AbstractCardModifier makeCopy() {

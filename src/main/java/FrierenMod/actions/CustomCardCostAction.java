@@ -1,9 +1,9 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.zeerie.layer1.Cost0;
-import FrierenMod.cards.optionCards.zeerie.layer1.Cost1;
-import FrierenMod.cards.optionCards.zeerie.layer1.Cost2;
-import FrierenMod.cards.optionCards.zeerie.layer1.Cost3;
+import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer1.Cost0;
+import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer1.Cost1;
+import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer1.Cost2;
+import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer1.Cost3;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

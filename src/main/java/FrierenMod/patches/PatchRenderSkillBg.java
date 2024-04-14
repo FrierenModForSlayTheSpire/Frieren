@@ -1,7 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.tempCards.Mana;
-import FrierenMod.utils.ModInformation;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,11 +12,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import static FrierenMod.utils.FrierenRes.CHARACTER_NAME;
+import static FrierenMod.utils.PublicRes.BG_MAGIC_512;
 
 @SpirePatch(clz = AbstractCard.class,method = "renderSkillBg")
 public class PatchRenderSkillBg {
-    public static TextureAtlas.AtlasRegion MAGIC_POWER_BG = getImg(ImageMaster.loadImage(ModInformation.makeCardBgPath(CHARACTER_NAME,"magic",512)));
+    public static TextureAtlas.AtlasRegion MAGIC_POWER_BG = getImg(ImageMaster.loadImage(BG_MAGIC_512));
     @SpireInsertPatch(rloc = 0,localvars = {"sb","renderColor","x","y"})
     public static SpireReturn renderMagicPower(AbstractCard _inst,SpriteBatch sb,Color renderColor,float x,float y){
         if(_inst instanceof Mana){

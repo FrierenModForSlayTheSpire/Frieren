@@ -1,9 +1,9 @@
 {
-  "FrierenMod:Strike": {
+  "FrierenMod:Strike_Frieren": {
     "NAME": "Strike",
     "DESCRIPTION": "Deal !D! damage."
   },
-  "FrierenMod:Defend": {
+  "FrierenMod:Defend_Frieren": {
     "NAME": "Defend",
     "DESCRIPTION": "Gain !B! Block."
   },
@@ -39,18 +39,15 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "Chant From Draw Pile",
-    "DESCRIPTION": "Exhaust !M! *Mana in your draw pile, gain !B! Block twice.",
-    "UPGRADE_DESCRIPTION":"Gain !B! Block twice."
+    "DESCRIPTION": "Exhaust !M! *Mana in your draw pile, gain !B! Block twice."
   },
   "FrierenMod:ChantHand": {
     "NAME": "Chant From Hand",
-    "DESCRIPTION": "Exhaust !M! *Mana in your hand, gain !M! [E] .",
-    "UPGRADE_DESCRIPTION":"Gain !M! [E] ."
+    "DESCRIPTION": "Exhaust !M! *Mana in your hand, gain !M! [E] ."
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "Chant From Discard Pile",
-    "DESCRIPTION": "Exhaust !M! *Mana in your discard pile, Gain !M! Strength.",
-    "UPGRADE_DESCRIPTION":"Gain !M! Strength."
+    "DESCRIPTION": "Exhaust !M! *Mana in your discard pile, Gain !M! Strength."
   },
   "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Swamp",
@@ -206,7 +203,7 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "Full Ahead",
-    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 4 Strength."
+    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 3 Strength."
   },
   "FrierenMod:LockTarget": {
   "NAME": "Lock Target",
@@ -217,7 +214,7 @@
     "DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand."
   },
-  "FrierenMod:CustomLegendaryMagic": {
+  "FrierenMod:CustomLegendarySpell": {
     "NAME": "Craft Spell",
     "DESCRIPTION": "frierenmod:Legendary_Spell."
   },
@@ -242,7 +239,7 @@
     "DESCRIPTION": "Draw !M! card(s).",
     "EXTENDED_DESCRIPTION": ["Draw 1/2/3 card(s)."]
   },
-  "FrierenMod:ManaOption": {
+  "FrierenMod:ManaInDiscardOption": {
     "NAME": "The Moon",
     "DESCRIPTION": "Shuffle !M! *Mana into your discard pile.",
     "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your discard pile."]
@@ -353,15 +350,15 @@
     "DESCRIPTION": "Choose:Draw pile,hand or discard pile, DOUBLE the *Mana. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "DOUBLE the *Mana WHEREVER are they (except exhaust pile). NL Exhaust."
   },
-  "FrierenMod:DoubleMagicInDrawPile": {
+  "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "Double From Draw Pile",
     "DESCRIPTION": "Double *Mana in your draw pile."
   },
-  "FrierenMod:DoubleMagicInHand": {
+  "FrierenMod:DoubleManaInHand": {
     "NAME": "Double From Hand",
     "DESCRIPTION": "Double *Mana in your hand."
   },
-  "FrierenMod:DoubleMagicInDiscardPile": {
+  "FrierenMod:DoubleManaInDiscardPile": {
     "NAME": "Double From Discard Pile",
     "DESCRIPTION": " Double *Mana in your discard pile."
   },
@@ -526,5 +523,9 @@
   "FrierenMod:SayThinkingSpell": {
     "NAME": "Spell to Say What You're Thinking",
     "DESCRIPTION": "Exhaust all *Mana in your hand, play !M! random card in your draw pile for each *Mana you Exhausted."
+  },
+  "FrierenMod:FrierenSuitcase": {
+    "NAME": "芙莉莲的旅行箱",
+    "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
   }
 }

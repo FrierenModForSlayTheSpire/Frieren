@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.ObjectCloner;
+import FrierenMod.utils.ObjectCloner;
 import FrierenMod.gameHelpers.Status;
 import FrierenMod.powers.TimeTravelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

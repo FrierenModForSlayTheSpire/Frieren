@@ -1,8 +1,8 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.ManaAction;
-import FrierenMod.cards.AbstractFrierenCard;
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -15,9 +15,9 @@ public class ManaMod extends AbstractCardModifier {
     public static final String ID = ModInformation.makeID(ManaMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
-    private final int type;
+    private final Mana.Type type;
 
-    public ManaMod(int type) {
+    public ManaMod(Mana.Type type) {
         this.type = type;
     }
 
@@ -26,41 +26,42 @@ public class ManaMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
-        switch (type){
-            case 1:
-                ((AbstractFrierenCard)card).isAccelMana = false;
-                ((AbstractFrierenCard)card).isLimitedOverMana = false;
+        switch (type) {
+            case NORMAL:
+                ((AbstractBaseCard) card).isAccelMana = false;
+                ((AbstractBaseCard) card).isLimitedOverMana = false;
+                card.baseDamage = -1;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana"));
                 break;
-            case 2:
-                ((AbstractFrierenCard)card).isAccelMana = true;
-                ((AbstractFrierenCard)card).isLimitedOverMana = false;
+            case ACCEL:
+                ((AbstractBaseCard) card).isAccelMana = true;
+                ((AbstractBaseCard) card).isLimitedOverMana = false;
+                card.baseDamage = -1;
                 card.target = AbstractCard.CardTarget.NONE;
                 card.type = AbstractCard.CardType.STATUS;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana2"));
                 break;
-            case 3:
-                ((AbstractFrierenCard)card).isAccelMana = false;
-                ((AbstractFrierenCard)card).isLimitedOverMana = true;
+            case LIMITED_OVER:
+                ((AbstractBaseCard) card).isAccelMana = false;
+                ((AbstractBaseCard) card).isLimitedOverMana = true;
                 card.baseDamage = 15;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana3"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana3"));
                 break;
-            case 4:
-                ((AbstractFrierenCard)card).isAccelMana = true;
-                ((AbstractFrierenCard)card).isLimitedOverMana = true;
+            case LIMITED_OVER_ACCEL:
+                ((AbstractBaseCard) card).isAccelMana = true;
+                ((AbstractBaseCard) card).isLimitedOverMana = true;
                 card.baseDamage = 15;
                 card.target = AbstractCard.CardTarget.ALL_ENEMY;
                 card.type = AbstractCard.CardType.ATTACK;
-                card.exhaust = true;
                 if (card instanceof Mana)
-                    ((Mana)card).loadCardImage(ModInformation.makeCardImgPath("Mana4"));
+                    ((Mana) card).loadCardImage(ModInformation.makeCardImgPath("Mana4"));
                 break;
             default:
                 break;
@@ -69,22 +70,7 @@ public class ManaMod extends AbstractCardModifier {
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.actions.removeIf(action1 -> action1 instanceof ManaAction);
-        switch (type){
-            case 1:
-                this.addToBot(new ManaAction(1));
-                break;
-            case 2:
-                this.addToBot(new ManaAction(2));
-                break;
-            case 3:
-                this.addToBot(new ManaAction(card,3));
-                break;
-            case 4:
-                this.addToBot(new ManaAction(card,4));
-                break;
-            default:
-                break;
-        }
+        this.addToBot(new ManaAction(card, this.type));
     }
 
     public String identifier(AbstractCard card) {
@@ -92,6 +78,15 @@ public class ManaMod extends AbstractCardModifier {
     }
 
     public String modifyDescription(String rawDescription, AbstractCard card) {
-        return TEXT[type - 1];
+        switch (type) {
+            case ACCEL:
+                return TEXT[1];
+            case LIMITED_OVER:
+                return TEXT[2];
+            case LIMITED_OVER_ACCEL:
+                return TEXT[3];
+            default:
+                return TEXT[0];
+        }
     }
 }

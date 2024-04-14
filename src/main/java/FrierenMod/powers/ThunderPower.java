@@ -1,7 +1,8 @@
 package FrierenMod.powers;
 
 import FrierenMod.cardMods.ManaMod;
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -10,55 +11,56 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class ThunderPower extends AbstractFrierenPower {
+public class ThunderPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ThunderPower.class.getSimpleName());
     private final AbstractPlayer p = AbstractDungeon.player;
 
     public ThunderPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
     @Override
     public void onInitialApplication() {
-        upgradeAllMagicPower();
+        upgradeMana();
     }
     @Override
     public void onDrawOrDiscard() {
-        upgradeAllMagicPower();
+        upgradeMana();
     }
     @Override
     public void atStartOfTurnPostDraw() {
-        upgradeAllMagicPower();
+        upgradeMana();
     }
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
-        upgradeAllMagicPower();
+        upgradeMana();
     }
     public void updateDescription() {
         this.description = descriptions[0];
     }
-    private void upgradeAllMagicPowerInGroup(CardGroup cardGroup) {
+    private void upgradeManaInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractFrierenCard && ((AbstractFrierenCard) c).isMana && !((AbstractFrierenCard) c).isLimitedOverMana){
-                if (((AbstractFrierenCard) c).isAccelMana) {
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && !((AbstractBaseCard) c).isLimitedOverMana){
+                if (((AbstractBaseCard) c).isAccelMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new ManaMod(4));
+                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER_ACCEL));
                     c.applyPowers();
                 } else{
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
                     }
-                    CardModifierManager.addModifier(c, new ManaMod(3));
+                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER));
                     c.applyPowers();
                 }
             }
         }
     }
-    public void upgradeAllMagicPower(){
-        upgradeAllMagicPowerInGroup(p.drawPile);
-        upgradeAllMagicPowerInGroup(p.hand);
-        upgradeAllMagicPowerInGroup(p.discardPile);
-        upgradeAllMagicPowerInGroup(p.exhaustPile);
+    public void upgradeMana(){
+        upgradeManaInGroup(p.drawPile);
+        upgradeManaInGroup(p.hand);
+        upgradeManaInGroup(p.discardPile);
+        upgradeManaInGroup(p.exhaustPile);
     }
 }

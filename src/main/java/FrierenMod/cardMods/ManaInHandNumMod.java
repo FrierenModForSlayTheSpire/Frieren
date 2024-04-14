@@ -1,7 +1,7 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.actions.MakeManaInHandAction;
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -20,8 +20,8 @@ public class ManaInHandNumMod extends AbstractCardModifier {
         this.manaAmt = manaAmt;
     }
     public void onInitialApplication(AbstractCard card) {
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.manaAmt + TEXT[1];
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.manaAmt + TEXT[1];
     }
 
     public AbstractCardModifier makeCopy() {

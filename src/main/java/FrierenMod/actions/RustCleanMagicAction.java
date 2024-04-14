@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.ChantHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -18,7 +18,7 @@ public class RustCleanMagicAction extends AbstractGameAction {
     }
 
     public void update() {
-        if (!this.target.isDying && !this.target.isDead && this.target.currentBlock > 0) {
+        if (!this.target.isDying && !this.target.isDead) {
             if (this.target instanceof AbstractMonster && ((AbstractMonster) this.target).type != AbstractMonster.EnemyType.BOSS) {
                 for (AbstractPower po : this.target.powers)
                     if (po.type == AbstractPower.PowerType.BUFF) {
@@ -27,7 +27,7 @@ public class RustCleanMagicAction extends AbstractGameAction {
                     }
             }
         }
-        if (ChantHelper.getAllManaNum() > this.magicNumber)
+        if (CombatHelper.getAllManaNum() > this.magicNumber)
             this.addToBot(new ApplyPowerAction(this.source, this.source, new ArtifactPower(this.source, 1)));
         this.tickDuration();
         this.isDone = true;

@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -23,9 +23,9 @@ public class DrawMod extends AbstractCardModifier {
     }
     public void onInitialApplication(AbstractCard card) {
         if(this.drawAmt == 1)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
         else
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
     }
 
     public AbstractCardModifier makeCopy() {

@@ -11,39 +11,28 @@ import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import com.megacrit.cardcrawl.vfx.combat.MiracleEffect;
 
-import static FrierenMod.gameHelpers.HardCodedPowerHelper.CHANT_WITHOUT_MANA;
-
 public class ChantFromHandAction extends ChantFromCardGroupAction {
-    private final int magicNumber;
-    public ChantFromHandAction(int magicNumber){
-        this.magicNumber = magicNumber;
-        this.haveNotTriggered = true;
-    }
-    public ChantFromHandAction(int magicNumber,boolean haveNotTriggered){
-        this.magicNumber = magicNumber;
+
+    public ChantFromHandAction(int manaExhaust, int reward, boolean haveNotTriggered) {
+        super(manaExhaust, reward);
         this.haveNotTriggered = haveNotTriggered;
     }
-    public ChantFromHandAction(int magicNumber,AbstractGameAction... nextAction){
-        this.magicNumber = magicNumber;
+
+    public ChantFromHandAction(int manaExhaust, int reward, AbstractGameAction... nextAction) {
+        super(manaExhaust, reward);
         this.nextAction = nextAction;
-        this.haveNotTriggered = true;
     }
+
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new VFXAction(new BorderLongFlashEffect(Color.FIREBRICK, true)));
         this.addToBot(new VFXAction(p, new InflameEffect(p), 1.0F));
-        if(!p.hasPower(CHANT_WITHOUT_MANA)){
-            this.addToBot(new ExhaustManaInHandAction(this.magicNumber));
-        }
+        if (this.manaExhaust > 0)
+            this.addToBot(new ExhaustManaInHandAction(this.manaExhaust));
         this.addToBot(new VFXAction(new BorderFlashEffect(Color.GOLDENROD, true)));
         this.addToBot(new VFXAction(new MiracleEffect()));
-        this.addToBot(new GainEnergyAction(this.magicNumber));
-        if(haveNotTriggered){
-            this.triggerPowers();
-            this.triggerCards();
-            this.addNextAction();
-        }
-        this.isDone = true;
+        this.addToBot(new GainEnergyAction(this.reward));
+        super.update();
     }
 }

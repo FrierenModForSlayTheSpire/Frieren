@@ -6,7 +6,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class IcicleCherryBlossom extends AbstractFrierenRelic {
+public class IcicleCherryBlossom extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
 
     public IcicleCherryBlossom() {

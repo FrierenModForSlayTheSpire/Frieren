@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.AbstractFrierenCard;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class HairAccessory extends AbstractFrierenRelic {
+public class HairAccessory extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(HairAccessory.class.getSimpleName());
     public HairAccessory() {
         super(ID, RelicTier.RARE);
@@ -27,7 +27,7 @@ public class HairAccessory extends AbstractFrierenRelic {
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof AbstractFrierenCard && ((AbstractFrierenCard) card).isMana){
+        if(card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana){
             this.counter++;
             if (this.counter >= 4) {
                 this.counter = 0;

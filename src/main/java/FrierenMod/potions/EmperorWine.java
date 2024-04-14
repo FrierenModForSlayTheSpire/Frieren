@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class EmperorWine extends AbstractFrierenPotion {
+public class EmperorWine extends AbstractBasePotion {
     public static final String POTION_ID = ModInformation.makeID(EmperorWine.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 

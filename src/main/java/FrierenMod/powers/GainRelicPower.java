@@ -5,10 +5,11 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class GainRelicPower extends AbstractFrierenPower {
+public class GainRelicPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(GainRelicPower.class.getSimpleName());
     public GainRelicPower(AbstractCreature owner,int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void onVictory() {

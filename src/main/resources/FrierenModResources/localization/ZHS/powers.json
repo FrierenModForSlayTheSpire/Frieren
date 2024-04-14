@@ -112,5 +112,36 @@
     "DESCRIPTIONS": [
       "每回合第一次 #y咏唱 后，若抽牌堆 #y魔力 数等于弃牌堆，获得 #b%d #y敏捷 ，否则获得 #b%d #y力量 。"
     ]
+  },
+  "FrierenMod:FrierenSuitcasePower": {
+    "NAME": "芙莉莲的旅行箱",
+    "DESCRIPTIONS": [
+      "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 #b%d 点格挡。"
+    ]
+  },
+  "FrierenMod:ConcentrationPower": {
+    "NAME": "专注",
+    "DESCRIPTIONS": [
+      "使用 #b1 张牌后失去 #b1 层该能力， #y咏唱 消耗 的 #y魔力 减少 #b%d 张。"
+    ]
+  },
+  "FrierenMod:SuperSeriousPower": {
+    "NAME": "超级认真",
+    "DESCRIPTIONS": [
+      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 *专注 。"
+    ]
+  },
+  "FrierenMod:DancingPower": {
+    "NAME": "舞姿形态",
+    "DESCRIPTIONS": [
+      "使用卡牌后，获得或失去 #专注 ，使 #离差 永恒为 #b2 。"
+    ]
+  },
+  "FrierenMod:WashingClothesPower": {
+    "NAME": "彻底清除衣服污渍的魔法",
+    "DESCRIPTIONS": [
+      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] 。",
+      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] ，抽 #b%d 张牌。"
+    ]
   }
 }

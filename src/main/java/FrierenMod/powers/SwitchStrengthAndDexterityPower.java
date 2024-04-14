@@ -5,10 +5,11 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
-public class SwitchStrengthAndDexterityPower extends AbstractFrierenPower {
+public class SwitchStrengthAndDexterityPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(SwitchStrengthAndDexterityPower.class.getSimpleName());
     public SwitchStrengthAndDexterityPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
+        this.updateDescription();
     }
 
     public void atEndOfTurn(boolean isPlayer) {

@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 
-import FrierenMod.cards.tempCards.CustomLegendaryMagic;
+import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -28,8 +28,8 @@ public class ExtinguishMod extends AbstractCardModifier {
 
     public void onInitialApplication(AbstractCard card) {
         card.target = AbstractCard.CardTarget.ENEMY;
-        if(card instanceof CustomLegendaryMagic)
-            ((CustomLegendaryMagic) card).usedModifierText += TEXT[0] + this.hpAmt + TEXT[1];
+        if(card instanceof CustomLegendarySpell)
+            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.hpAmt + TEXT[1];
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {

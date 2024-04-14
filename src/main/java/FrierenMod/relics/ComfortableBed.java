@@ -1,13 +1,13 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Laziness;
+import FrierenMod.cards.canAutoAdd.tempCards.Laziness;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class ComfortableBed extends AbstractFrierenRelic {
+public class ComfortableBed extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(ComfortableBed.class.getSimpleName());
 
     public ComfortableBed() {

@@ -1,6 +1,6 @@
 package FrierenMod.potions;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.canAutoAdd.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
-public class BottledMana extends AbstractFrierenPotion {
+public class BottledMana extends AbstractBasePotion {
     public static final String POTION_ID = ModInformation.makeID(BottledMana.class.getSimpleName());
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
