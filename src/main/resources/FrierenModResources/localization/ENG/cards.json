@@ -525,7 +525,7 @@
     "DESCRIPTION": "Exhaust all *Mana in your hand, play !M! random card in your draw pile for each *Mana you Exhausted."
   },
   "FrierenMod:FrierenSuitcase": {
-    "NAME": "芙莉莲的旅行箱",
-    "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
+    "NAME": "Frieren's Suitcase",
+    "DESCRIPTION": "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain !M! Block."
   }
 }

@@ -114,9 +114,9 @@
     ]
   },
   "FrierenMod:FrierenSuitcasePower": {
-    "NAME": "芙莉莲的旅行箱",
+    "NAME": "Frieren's Suitcase",
     "DESCRIPTIONS": [
-      "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 #b%d 点格挡。"
+      "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain #b%d Block."
     ]
   }
 }
