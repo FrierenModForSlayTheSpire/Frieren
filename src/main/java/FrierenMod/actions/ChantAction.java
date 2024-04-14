@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.optionCards.ChantDiscardPile;
-import FrierenMod.cards.canAutoAdd.optionCards.ChantDrawPile;
-import FrierenMod.cards.canAutoAdd.optionCards.ChantHand;
+import FrierenMod.cards.optionCards.ChantDiscardPile;
+import FrierenMod.cards.optionCards.ChantDrawPile;
+import FrierenMod.cards.optionCards.ChantHand;
 import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;

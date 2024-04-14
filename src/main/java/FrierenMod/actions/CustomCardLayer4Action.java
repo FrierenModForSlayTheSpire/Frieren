@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer4.DrawOption;
-import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer4.*;
+import FrierenMod.cards.optionCards.SerieGrimoire.layer4.DrawOption;
+import FrierenMod.cards.optionCards.SerieGrimoire.layer4.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

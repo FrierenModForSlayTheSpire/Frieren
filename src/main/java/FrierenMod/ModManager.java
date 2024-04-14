@@ -118,9 +118,21 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new RaidVariable());
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
-        String cardsClassPath = getModID() + ".cards.canAutoAdd";
+        String optionCardsClassPath = getModID() + ".cards.optionCards";
+        String tempCardsClassPath = getModID() + ".cards.tempCards";
+        String FrierenCardsClassPath = getModID() + ".cards.white";
         String FernCardsClassPath = getModID() + ".cards.purple";
-        (new AutoAdd(getModID())).packageFilter(cardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+        (new AutoAdd(getModID())).packageFilter(optionCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+            BaseMod.addCard(card);
+            if (Config.IN_DEV && info.seen)
+                UnlockTracker.unlockCard(card.cardID);
+        });
+        (new AutoAdd(getModID())).packageFilter(tempCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+            BaseMod.addCard(card);
+            if (Config.IN_DEV && info.seen)
+                UnlockTracker.unlockCard(card.cardID);
+        });
+        (new AutoAdd(getModID())).packageFilter(FrierenCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
             BaseMod.addCard(card);
             if (Config.IN_DEV && info.seen)
                 UnlockTracker.unlockCard(card.cardID);

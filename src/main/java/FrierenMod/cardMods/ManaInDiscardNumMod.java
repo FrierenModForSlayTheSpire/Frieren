@@ -1,6 +1,6 @@
 package FrierenMod.cardMods;
 import FrierenMod.actions.MakeManaInDiscardAction;
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

@@ -2,7 +2,7 @@ package FrierenMod.cardMods;
 
 import FrierenMod.actions.ManaAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;

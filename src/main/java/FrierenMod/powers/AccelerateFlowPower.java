@@ -2,7 +2,7 @@ package FrierenMod.powers;
 
 import FrierenMod.cardMods.ManaMod;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;

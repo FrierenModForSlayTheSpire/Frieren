@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 

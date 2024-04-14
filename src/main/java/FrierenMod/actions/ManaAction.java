@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.powers.AbstractBasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;

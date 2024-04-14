@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.canAutoAdd.tempCards.Laziness;
+import FrierenMod.cards.tempCards.Laziness;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;

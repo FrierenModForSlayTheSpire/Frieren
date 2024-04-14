@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.powers.BanManaGainPower;
 import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

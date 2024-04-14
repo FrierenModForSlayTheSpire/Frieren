@@ -2,7 +2,7 @@ package FrierenMod.cards.whitePurple;
 
 import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.cards.DualCard;
-import FrierenMod.cards.canAutoAdd.tempCards.Mana;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;

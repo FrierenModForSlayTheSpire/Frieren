@@ -1,6 +1,6 @@
 package FrierenMod.cards;
 
-import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import basemod.abstracts.CustomCard;

@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.optionCards.SerieGrimoire.layer2.*;
+import FrierenMod.cards.optionCards.SerieGrimoire.layer2.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

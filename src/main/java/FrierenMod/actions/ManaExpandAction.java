@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInDiscardPile;
-import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInDrawPile;
-import FrierenMod.cards.canAutoAdd.optionCards.DoubleManaInHand;
+import FrierenMod.cards.optionCards.DoubleManaInDiscardPile;
+import FrierenMod.cards.optionCards.DoubleManaInDrawPile;
+import FrierenMod.cards.optionCards.DoubleManaInHand;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

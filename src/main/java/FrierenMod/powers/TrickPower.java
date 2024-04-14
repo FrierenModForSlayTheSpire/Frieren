@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.canAutoAdd.tempCards.ManaConcealment;
+import FrierenMod.cards.tempCards.ManaConcealment;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
