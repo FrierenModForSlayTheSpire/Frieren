@@ -14,7 +14,7 @@ public class ManaConcealment extends AbstractBaseCard {
         super(info);
         this.cardsToPreview = new Mana();
         this.exhaust = true;
-        this.selfRetain = true;
+        this.isEthereal = true;
     }
     @Override
     public boolean canUpgrade() {

@@ -109,7 +109,7 @@
   },
   "FrierenMod:Trick": {
     "NAME": "Trick",
-    "DESCRIPTION": "At the start of your turn, if you don't have *ManaConcealment in your hand, add it into your hand."
+    "DESCRIPTION": "At the start of your turn, add *ManaConcealment into your hand."
   },
   "FrierenMod:FlowerFieldSpell": {
     "NAME": "Spell to Produce Flower Fields",

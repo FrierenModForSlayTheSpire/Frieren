@@ -35,7 +35,7 @@
   },
   "FrierenMod:ManaConcealment": {
     "NAME": "魔力隐藏",
-    "DESCRIPTION": " 保留 。 NL 将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL  消耗 。"
+    "DESCRIPTION": "将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
@@ -109,7 +109,7 @@
   },
   "FrierenMod:Trick": {
     "NAME": "欺骗魔族的小把戏",
-    "DESCRIPTION": "在你的回合开始时，如果你的手牌中没有 *魔力隐藏 ，将1张 *魔力隐藏 放入手牌。"
+    "DESCRIPTION": "在你的回合开始时，将一张 *魔力隐藏 放入手牌。"
   },
   "FrierenMod:FlowerFieldSpell": {
     "NAME": "开出花田的魔法",

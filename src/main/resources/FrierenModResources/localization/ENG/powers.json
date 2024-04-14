@@ -20,7 +20,7 @@
   "FrierenMod:TrickPower": {
     "NAME": "Trick",
     "DESCRIPTIONS": [
-      "At the start of your turn, if you don't have #yManaConcealment in your hand, add it into your hand."
+      "At the start of your turn, add #yManaConcealment into your hand."
     ]
   },
   "FrierenMod:GainRelicPower": {
