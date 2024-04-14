@@ -28,7 +28,6 @@ public class RedAppleSpell extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.cardsToPreview = new GreenApple();
-        this.selfRetain = true;
     }
 
     @Override

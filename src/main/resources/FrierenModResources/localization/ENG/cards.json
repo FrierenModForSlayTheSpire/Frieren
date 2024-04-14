@@ -170,7 +170,7 @@
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "Spell to Turn Red Apple into Green Apple",
-    "DESCRIPTION": "Retain. NL Switch the amount of your Strength and Dexterity, add an *Apple into hand. NL At the end of your turn, switch back."
+    "DESCRIPTION": "Switch the amount of your Strength and Dexterity, add an *Apple into hand. NL At the end of your turn, switch back."
   },
   "FrierenMod:GreenApple": {
     "NAME": "Green Apple",

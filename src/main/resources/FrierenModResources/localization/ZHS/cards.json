@@ -170,7 +170,7 @@
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "将红苹果变成青苹果的魔法",
-    "DESCRIPTION": " 保留 。 NL 交换你的的 力量 和 敏捷 层数， 将一张 *青苹果 放入手牌。 NL 在你的回合结束时，换回。"
+    "DESCRIPTION": "交换你的的 力量 和 敏捷 层数， 将一张 *青苹果 放入手牌。 NL 回合结束时，换回。"
   },
   "FrierenMod:GreenApple": {
     "NAME": "青苹果",
