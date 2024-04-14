@@ -49,7 +49,7 @@ public class LittleFire extends AbstractBaseCard {
     }
 
     @Override
-    public void afterSynchro() {
+    public void afterSynchroFinished() {
         this.addToBot(new DiscardToHandAction(this));
     }
 }

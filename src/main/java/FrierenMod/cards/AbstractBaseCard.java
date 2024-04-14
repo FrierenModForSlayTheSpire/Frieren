@@ -260,6 +260,6 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterChantFinished() {
     }
 
-    public void afterSynchro(){
+    public void afterSynchroFinished(){
     }
 }

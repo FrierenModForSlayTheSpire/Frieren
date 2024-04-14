@@ -42,5 +42,10 @@ public abstract class AbstractBasePower extends AbstractPower {
 
     public void afterChant() {
     }
-    public void afterChantFinished(){}
+
+    public void afterChantFinished() {
+    }
+
+    public void afterSynchroFinished() {
+    }
 }

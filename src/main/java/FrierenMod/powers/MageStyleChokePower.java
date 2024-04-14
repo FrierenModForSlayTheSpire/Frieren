@@ -1,11 +1,8 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class MageStyleChokePower extends AbstractBasePower {
@@ -20,12 +17,12 @@ public class MageStyleChokePower extends AbstractBasePower {
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana) {
-            flash();
-            this.addToBot(new LoseHPAction(this.owner, null, this.amount));
-        }
+    @Override
+    public void afterSynchroFinished() {
+        this.flash();
+        this.addToBot(new LoseHPAction(this.owner, null, this.amount));
     }
+
     public void updateDescription() {
         this.description = String.format(descriptions[0], this.amount);
     }
