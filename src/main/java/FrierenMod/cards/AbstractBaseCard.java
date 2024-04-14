@@ -3,7 +3,6 @@ package FrierenMod.cards;
 import FrierenMod.cards.canAutoAdd.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
-import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
@@ -11,7 +10,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -51,36 +49,6 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
-        initCards();
-    }
-
-    @Deprecated
-    public AbstractBaseCard(String id, String rawDescription, CardType type, CardTarget target) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), -2, rawDescription, type, CardColor.COLORLESS, CardRarity.SPECIAL, target);
-        initCards();
-    }
-
-    @Deprecated
-    public AbstractBaseCard(String id, String img, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, img, cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-        initCards();
-    }
-
-    @Deprecated
-    public AbstractBaseCard(String id, int cost, CardType type, CardColor color, CardRarity rarity, CardTarget target) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, target);
-        initCards();
-    }
-
-    @Deprecated
-    public AbstractBaseCard(String id, int cost, CardType type, CardColor color, CardRarity rarity) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, type, color, rarity, CardTarget.NONE);
-        initCards();
-    }
-
-    @Deprecated
-    public AbstractBaseCard(String id, int cost, CardColor color, CardRarity rarity) {
-        super(id, CardCrawlGame.languagePack.getCardStrings(id).NAME, ModInformation.makeCardImgPath(id.split(":")[1]), cost, CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION, CardType.SKILL, color, rarity, CardTarget.NONE);
         initCards();
     }
 
