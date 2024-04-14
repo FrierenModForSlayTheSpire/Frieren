@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class PajamasForm extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(PajamasForm.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 3, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
+    public static final int RATE = 4;
 
     public PajamasForm() {
         super(info);
@@ -33,7 +34,7 @@ public class PajamasForm extends AbstractBaseCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = CombatHelper.getAllManaNum() * 3;
+        this.baseMagicNumber = CombatHelper.getAllManaNum() * RATE;
         int realBaseDamage = this.baseDamage;
         this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
@@ -45,7 +46,7 @@ public class PajamasForm extends AbstractBaseCard {
 
     public void applyPowers() {
         int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = CombatHelper.getAllManaNum() * 3;
+        this.baseMagicNumber = CombatHelper.getAllManaNum() * RATE;
         this.baseDamage += this.baseMagicNumber;
         super.applyPowers();
         this.baseDamage = realBaseDamage;

@@ -3,6 +3,7 @@ package FrierenMod.powers;
 import FrierenMod.actions.ExhaustManaInDiscardPileAction;
 import FrierenMod.actions.ExhaustManaInDrawPileAction;
 import FrierenMod.actions.ExhaustManaInHandAction;
+import FrierenMod.cards.white.PajamasForm;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -42,9 +43,9 @@ public class PajamasFormPower extends AbstractBasePower {
     }
 
     public void updateDescription() {
-        int rate = this.amount * 3;
-        this.baseDamage = CombatHelper.getAllManaNum() * rate;
-        this.description = String.format(descriptions[0], rate, this.baseDamage);
+        int perDamage = this.amount * PajamasForm.RATE;
+        this.baseDamage = CombatHelper.getAllManaNum() * perDamage;
+        this.description = String.format(descriptions[0], perDamage, this.baseDamage);
     }
 
 }
