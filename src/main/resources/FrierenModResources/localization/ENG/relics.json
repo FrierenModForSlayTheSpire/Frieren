@@ -82,5 +82,12 @@
     "DESCRIPTIONS": [
       "Future card rewards have #b60 % to be replaced by #yMana .Gain [E] at the start of your turn. "
     ]
+  },
+  "FrierenMod:HaitaaWand": {
+    "NAME": "Haitaa Wand",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Test"
+    ]
   }
 }
