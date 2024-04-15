@@ -108,8 +108,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     }
 
     public static void initialize() {
-        ModManager instance = new ModManager();
-        BaseMod.subscribe(instance);
+        new ModManager();
         SpireConfig config = makeConfig();
         loadProperties(config);
     }
