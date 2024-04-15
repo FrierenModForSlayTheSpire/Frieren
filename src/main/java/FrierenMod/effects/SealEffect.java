@@ -1,5 +1,6 @@
 package FrierenMod.effects;
 
+import FrierenMod.panels.ConfigPanel;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -32,6 +33,10 @@ public class SealEffect extends AbstractGameEffect {
     }
 
     public void update() {
+        if(!ConfigPanel.ALLOW_SPECIAL_SFX){
+            this.isDone = true;
+            return;
+        }
         if (this.justStart) {
             this.justStart = false;
             this.card.untip();

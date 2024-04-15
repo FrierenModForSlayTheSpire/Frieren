@@ -15,5 +15,6 @@ public class PublicRes {
     public static final String DEV_CARD_IMG = ModInformation.makeCardImgPath("Strike_Fern");
     public static final String DEV_POWER_IMG_84 = ModInformation.makePowerPath(AccelerateFlowPower.POWER_ID.split(":")[1],84);
     public static final String DEV_POWER_IMG_32 = ModInformation.makePowerPath(AccelerateFlowPower.POWER_ID.split(":")[1],32);
+    public static final String MOD_BADGE = ModInformation.makeImgPath("Badge.png");
 
 }

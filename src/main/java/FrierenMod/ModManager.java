@@ -24,6 +24,7 @@ import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -36,12 +37,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
+import static FrierenMod.panels.ConfigPanel.*;
 import static basemod.BaseMod.logger;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 
 @SpireInitializer
-public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber {
+public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
     private static String modID;
 
     public ModManager() {
@@ -106,7 +108,15 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     }
 
     public static void initialize() {
-        new ModManager();
+        ModManager instance = new ModManager();
+        BaseMod.subscribe(instance);
+        SpireConfig config = makeConfig();
+        loadProperties(config);
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        makeModPanels();
     }
 
     @Override
@@ -154,7 +164,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         Log.logger.info("Done adding cards!");
     }
-
     @Override
     public void receiveEditRelics() {
         String relicClassPath = getClass().getPackage().getName() + ".relics";

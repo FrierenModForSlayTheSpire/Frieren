@@ -7,6 +7,7 @@ import FrierenMod.cards.white.DefensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.panels.ConfigPanel;
 import FrierenMod.relics.HolyEmblem;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
@@ -138,8 +139,10 @@ public class Frieren extends CustomPlayer {
     // 人物选择界面点击你的人物按钮时触发的方法，这里为屏幕轻微震动
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.stop("I_am_frieren.mp3");
-        CardCrawlGame.sound.play("I_am_frieren.mp3");
+        if(ConfigPanel.ALLOW_SPECIAL_SFX){
+            CardCrawlGame.sound.stop("I_am_frieren.mp3");
+            CardCrawlGame.sound.play("I_am_frieren.mp3");
+        }
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
