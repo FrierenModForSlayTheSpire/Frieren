@@ -119,6 +119,12 @@
       "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 #b%d 点格挡。"
     ]
   },
+  "FrierenMod:SimmeringPower": {
+    "NAME": "暗流涌动",
+    "DESCRIPTIONS": [
+      "使用 #y攻击 牌后， #y消耗 1张 #y魔力 ，对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
