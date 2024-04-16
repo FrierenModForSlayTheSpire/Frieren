@@ -113,8 +113,8 @@
     "TEXT": [
       " frierenmod:Analyze %d:"," *Reward ：","(Progress:%d/%d).",
       " frierenmod:Synchro 4 *Mana . NL "," !B! Block . NL ",
-      "Play 3 frierenmod:Chant cards . NL "," !M! frierenmod:LegendaryMagic with 0 cost this turn . NL ",
-      "Play 3 frierenmod:LegendaryMagic . NL "," Deal !D! damage to ALL enemies. NL "
+      "Play 3 frierenmod:Chant cards . NL "," !M! frierenmod:Legendary_Spell with 0 cost this turn . NL ",
+      "Play 3 frierenmod:Legendary_Spell . NL "," Deal !D! damage to ALL enemies. NL "
     ]
   },
   "FrierenMod:RockGolemSpellMod": {

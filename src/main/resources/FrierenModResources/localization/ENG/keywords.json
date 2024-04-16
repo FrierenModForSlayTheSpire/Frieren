@@ -35,9 +35,9 @@
     "DESCRIPTION": "Deal 15 damage to a random enemy. Draw 2 cards. #yExhaust ."
   },
   {
-    "PROPER_NAME":"Legendary Magic",
+    "PROPER_NAME":"Legendary Spell",
     "NAMES": [
-      "Legendary Magic","legendary_magic","legendary_spell","Legendary Spell"
+      "Legendary Spell","legendary_spell"
     ],
     "DESCRIPTION": "Can only be played if you have #yChanted this turn."
   },
