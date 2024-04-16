@@ -25,14 +25,14 @@ public class Simmering extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.cardsToPreview = new Mana();
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 3;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(6);
+            this.upgradeMagicNumber(4);
         }
     }
 
