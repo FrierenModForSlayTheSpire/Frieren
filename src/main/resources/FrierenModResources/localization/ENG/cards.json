@@ -96,8 +96,8 @@
     "DESCRIPTION": "frierenmod:Legendary_Spell. NL Shuffle !M! *Mana into your draw pile. NL frierenmod:Chant !CX!."
   },
   "FrierenMod:Simmering": {
-    "NAME": "Simmering",
-    "DESCRIPTION": "Exhaust a *Mana in your hand, apply !M! Vulnerable to All enemies."
+    "NAME": "暗流涌动",
+    "DESCRIPTION": "使用攻击牌后， 消耗 1张魔力，对所有敌人造成 !M! 点伤害。 NL （优先从抽牌堆和弃牌堆 消耗 ）"
   },
   "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",

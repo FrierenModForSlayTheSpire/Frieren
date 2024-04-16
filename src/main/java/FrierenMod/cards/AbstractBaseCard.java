@@ -188,8 +188,7 @@ public abstract class AbstractBaseCard extends CustomCard {
             return canLegendarySpellUse(m);
         if (this.isChantCard)
             return canChantCardUse(m);
-        super.canUse(p, m);
-        return true;
+        return canUseOriginally(p,m);
     }
 
     public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m) {

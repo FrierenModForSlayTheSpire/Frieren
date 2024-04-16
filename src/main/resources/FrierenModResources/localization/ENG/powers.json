@@ -118,5 +118,11 @@
     "DESCRIPTIONS": [
       "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain #b%d Block."
     ]
+  },
+  "FrierenMod:SimmeringPower": {
+    "NAME": "暗流涌动",
+    "DESCRIPTIONS": [
+      "使用 #y攻击 牌后， #y消耗 1张 #y魔力 ，对所有敌人造成 #b%d 点伤害。"
+    ]
   }
 }
