@@ -97,7 +97,7 @@
   },
   "FrierenMod:Simmering": {
     "NAME": "暗流涌动",
-    "DESCRIPTION": "使用攻击牌后， 消耗 1张魔力，对所有敌人造成 !M! 点伤害。 NL （优先从抽牌堆和弃牌堆 消耗 ）"
+    "DESCRIPTION": "每当你打出攻击牌后， 消耗 1张 *魔力 ，对所有敌人造成 !M! 点伤害。 NL （优先从抽牌堆和弃牌堆 消耗 ）"
   },
   "FrierenMod:PajamasForm": {
     "NAME": "睡衣形态",

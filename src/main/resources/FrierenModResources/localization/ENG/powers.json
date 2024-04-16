@@ -120,9 +120,9 @@
     ]
   },
   "FrierenMod:SimmeringPower": {
-    "NAME": "暗流涌动",
+    "NAME": "Simmering",
     "DESCRIPTIONS": [
-      "使用 #y攻击 牌后， #y消耗 1张 #y魔力 ，对所有敌人造成 #b%d 点伤害。"
+      "After you play an attack card, Exhaust #b1 #yMana to deal #b%d damage to ALL enemies. (Draw pile and Discard's #yMana will be Exhausted first)"
     ]
   }
 }
