@@ -16,6 +16,7 @@ public class FullAheadPower extends AbstractBasePower {
     public FullAheadPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
         this.takeEffect = false;
+        this.updateDescription();
     }
 
     public void afterChantFinished() {
