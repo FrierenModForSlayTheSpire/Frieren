@@ -32,7 +32,7 @@ public class Simmering extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(4);
+            this.upgradeMagicNumber(1);
         }
     }
 
