@@ -1,4 +1,4 @@
-package FrierenMod.cards.white;
+package FrierenMod.deprecated;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
