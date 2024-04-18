@@ -1,10 +1,10 @@
 package FrierenMod.panels;
 
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
-import basemod.IUIElement;
 import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import com.badlogic.gdx.graphics.Color;
@@ -18,12 +18,11 @@ import java.util.Properties;
 
 public class ConfigPanel extends ModPanel {
     public static final String[] AUTHORS = new String[]{"Arkalin", "Figure"};
-    public static boolean ALLOW_SPECIAL_SFX = true;
 
     @Nullable
     public static SpireConfig makeConfig() {
         Properties properties = new Properties();
-        properties.setProperty("ALLOW_SPECIAL_SFX", Boolean.toString(ALLOW_SPECIAL_SFX));
+        properties.setProperty("ALLOW_SPECIAL_SFX", Boolean.toString(Config.ALLOW_SPECIAL_SFX));
         try {
             return new SpireConfig(ModInformation.MOD_NAME, "FrierenModConfig", properties);
         } catch (Exception e) {
@@ -36,7 +35,7 @@ public class ConfigPanel extends ModPanel {
             Log.logger.info("Missing config file");
             return;
         }
-        ALLOW_SPECIAL_SFX = config.getBool("ALLOW_SPECIAL_SFX");
+        Config.ALLOW_SPECIAL_SFX = config.getBool("ALLOW_SPECIAL_SFX");
     }
 
     private static void save(SpireConfig config) {
@@ -52,22 +51,22 @@ public class ConfigPanel extends ModPanel {
     public static void SaveConfig() {
         SpireConfig config = makeConfig();
         assert config != null;
-        config.setBool("ALLOW_SPECIAL_SFX", ALLOW_SPECIAL_SFX);
+        config.setBool("ALLOW_SPECIAL_SFX", Config.ALLOW_SPECIAL_SFX);
         save(config);
     }
 
     public static void makeModPanels() {
         ModPanel settings = new ModPanel();
-        ModLabeledToggleButton allowSFX = new ModLabeledToggleButton("Special SFX", 380.0F, 720.0F, Color.WHITE.cpy(), FontHelper.charDescFont, ALLOW_SPECIAL_SFX, settings, l -> {
+        ModLabeledToggleButton allowSFX = new ModLabeledToggleButton("Special SFX", 380.0F, 720.0F, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ALLOW_SPECIAL_SFX, settings, l -> {
 
         }, btn -> {
-            ALLOW_SPECIAL_SFX = btn.enabled;
+            Config.ALLOW_SPECIAL_SFX = btn.enabled;
             SpireConfig config = makeConfig();
             assert config != null;
-            config.setBool("ALLOW_SPECIAL_SFX", ALLOW_SPECIAL_SFX);
+            config.setBool("ALLOW_SPECIAL_SFX", Config.ALLOW_SPECIAL_SFX);
             save(config);
         });
-        settings.addUIElement((IUIElement) allowSFX);
+        settings.addUIElement(allowSFX);
         BaseMod.registerModBadge(ImageMaster.loadImage(PublicRes.MOD_BADGE), "FrierenMod", Arrays.toString((Object[]) AUTHORS), "An original character", settings);
     }
 }
