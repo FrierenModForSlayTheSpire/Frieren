@@ -31,6 +31,9 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.relics.DeadBranch;
+import com.megacrit.cardcrawl.relics.StrangeSpoon;
+import com.megacrit.cardcrawl.relics.VelvetChoker;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
 import java.io.InputStream;
@@ -163,6 +166,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         Log.logger.info("Done adding cards!");
     }
+
     @Override
     public void receiveEditRelics() {
         String relicClassPath = getClass().getPackage().getName() + ".relics";
@@ -175,14 +179,20 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
             Log.logger.info("Adding relics: " + relic.relicId);
         });
         Log.logger.info("Done adding relics!");
-    }
+        if(Config.REMOVE_VELVET_CHOKER)
+            BaseMod.removeRelicFromCustomPool(new VelvetChoker(), CardEnums.FRIEREN_CARD);
+        if(Config.REMOVE_DEAD_BRANCH)
+            BaseMod.removeRelicFromCustomPool(new DeadBranch(), CardEnums.FRIEREN_CARD);
+        if(Config.REMOVE_STRANGE_SPOON)
+            BaseMod.removeRelicFromCustomPool(new StrangeSpoon(), CardEnums.FRIEREN_CARD);
+   }
 
     @Override
     public void receiveEditCharacters() {
         Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FRIEREN.toString());
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
         Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
-        if(Config.FERN_ENABLE){
+        if (Config.FERN_ENABLE) {
             Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FERN.toString());
             BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
             Log.logger.info("Added " + CharacterEnums.FERN.toString());
