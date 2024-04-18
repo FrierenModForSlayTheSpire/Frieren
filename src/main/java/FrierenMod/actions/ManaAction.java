@@ -2,15 +2,12 @@ package FrierenMod.actions;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
-import FrierenMod.powers.AbstractBasePower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ManaAction extends AbstractGameAction {
     private final Mana.Type type;
@@ -44,30 +41,14 @@ public class ManaAction extends AbstractGameAction {
             default:
                 break;
         }
-        this.triggerPowers();
-        this.triggerCards();
+        this.triggerCardsInGroup(AbstractDungeon.player.discardPile);
         this.isDone = true;
     }
 
     private void triggerCardsInGroup(CardGroup group) {
         for (AbstractCard c : group.group)
             if (c instanceof AbstractBaseCard) {
-                this.addToBot(new AfterSynchroFinishedAction((AbstractBaseCard) c));
-            }
-    }
-
-    private void triggerCards() {
-        AbstractPlayer p = AbstractDungeon.player;
-        triggerCardsInGroup(p.drawPile);
-        triggerCardsInGroup(p.discardPile);
-        triggerCardsInGroup(p.hand);
-    }
-
-    private void triggerPowers() {
-        AbstractPlayer p = AbstractDungeon.player;
-        for (AbstractPower po : p.powers)
-            if (po instanceof AbstractBasePower) {
-                this.addToBot(new AfterSynchroFinishedAction((AbstractBasePower) po));
+                ((AbstractBaseCard) c).afterSynchroFinished();
             }
     }
 }
