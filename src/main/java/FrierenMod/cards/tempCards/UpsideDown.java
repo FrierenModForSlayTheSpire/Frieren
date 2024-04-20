@@ -7,11 +7,11 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class Perversion extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(Perversion.class.getSimpleName());
+public class UpsideDown extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(UpsideDown.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, -2, CardType.CURSE, CardColor.CURSE, CardRarity.SPECIAL, CardTarget.NONE);
 
-    public Perversion() {
+    public UpsideDown() {
         super(info);
     }
 
