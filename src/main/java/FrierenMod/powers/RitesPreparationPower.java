@@ -1,5 +1,6 @@
 package FrierenMod.powers;
 
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -19,13 +20,15 @@ public class RitesPreparationPower extends AbstractBasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        this.ManaPlayedNum++;
-        if (this.ManaPlayedNum == 3) {
-            this.flash();
-            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount * 8, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
-            this.ManaPlayedNum = 0;
+        if(card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana){
+            this.ManaPlayedNum++;
+            if (this.ManaPlayedNum == 3) {
+                this.flash();
+                this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount * 8, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                this.ManaPlayedNum = 0;
+            }
+            this.updateDescription();
         }
-        this.updateDescription();
     }
 
     public void updateDescription() {
