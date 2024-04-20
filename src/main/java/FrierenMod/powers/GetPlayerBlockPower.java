@@ -10,7 +10,7 @@ public class GetPlayerBlockPower extends AbstractBasePower implements InvisibleP
     private final AbstractCreature receiver;
 
     public GetPlayerBlockPower(AbstractCreature owner, AbstractCreature receiver) {
-        super(POWER_ID, owner, -1, PowerType.BUFF);
+        super(POWER_ID, owner, -1, true);
         this.receiver = receiver;
     }
 

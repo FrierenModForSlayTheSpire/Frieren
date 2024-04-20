@@ -36,6 +36,14 @@ public abstract class AbstractBasePower extends AbstractPower {
         this.region48 = getImgTexture(id, 32);
     }
 
+    public AbstractBasePower(String id, AbstractCreature owner, int amt, boolean invisiblePower) {
+        super();
+        this.ID = id;
+        this.owner = owner;
+        this.amount = amt;
+        this.type = PowerType.BUFF;
+    }
+
     private static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
         return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(Config.IN_DEV ? ((size == 84) ? PublicRes.DEV_POWER_IMG_84 : PublicRes.DEV_POWER_IMG_32) : ModInformation.makePowerPath(id.split(":")[1], size)), 0, 0, size, size);
     }

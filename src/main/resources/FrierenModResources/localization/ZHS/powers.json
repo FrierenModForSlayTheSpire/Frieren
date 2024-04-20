@@ -131,12 +131,6 @@
       "受到伤害时，获得受到伤害的 #y力量 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
     ]
   },
-  "FrierenMod:GetPlayerBlockPower": {
-    "NAME": "",
-    "DESCRIPTIONS": [
-      ""
-    ]
-  },
   "FrierenMod:WeakenedChantPower": {
     "NAME": "咏唱削弱",
     "DESCRIPTIONS": [
