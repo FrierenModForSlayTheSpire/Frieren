@@ -527,5 +527,9 @@
   "FrierenMod:FrierenSuitcase": {
     "NAME": "Frieren's Suitcase",
     "DESCRIPTION": "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain !M! Block."
+  },
+  "FrierenMod:Perversion": {
+    "NAME": "颠倒",
+    "DESCRIPTION": " 不能被打出 。 NL 同调1张 *魔力 后， 交换你的抽牌堆和弃牌堆。"
   }
 }

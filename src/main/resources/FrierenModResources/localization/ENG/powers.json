@@ -124,5 +124,23 @@
     "DESCRIPTIONS": [
       "After you play an attack card, Exhaust #b1 #yMana to deal #b%d damage to ALL enemies. (Draw pile and Discard's #yMana will be Exhausted first)"
     ]
+  },
+  "FrierenMod:CopyPower": {
+    "NAME": "复制体",
+    "DESCRIPTIONS": [
+      "受到伤害时，获得受到伤害的 #y力量 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
+    ]
+  },
+  "FrierenMod:GetPlayerBlockPower": {
+    "NAME": "",
+    "DESCRIPTIONS": [
+      ""
+    ]
+  },
+  "FrierenMod:WeakenedChantPower": {
+    "NAME": "咏唱削弱",
+    "DESCRIPTIONS": [
+      "在本回合中， #y咏唱 消耗的 #y魔力 增加 #b%d 张 。"
+    ]
   }
 }

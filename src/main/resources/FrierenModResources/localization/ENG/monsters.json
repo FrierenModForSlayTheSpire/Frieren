@@ -1,0 +1,16 @@
+{
+  "FrierenMod:Spiegel_Frieren": {
+    "MOVES": [
+      "普通攻击魔法",
+      "魔力压制",
+      "魔力污染",
+      "颠倒",
+      "咏唱压制",
+      "多重攻击魔法"
+    ],
+    "NAME": "Spiegel:The copy of Frieren",
+    "DIALOG": [
+      ""
+    ]
+  }
+}

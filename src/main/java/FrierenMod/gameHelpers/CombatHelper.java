@@ -3,6 +3,7 @@ package FrierenMod.gameHelpers;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ConcentrationPower;
+import FrierenMod.powers.WeakenedChantPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -105,6 +106,11 @@ public class CombatHelper {
         return (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
     }
 
+    public static int getWeakenedChantPowerAmt() {
+        AbstractPower po = AbstractDungeon.player.getPower(WeakenedChantPower.POWER_ID);
+        return po == null ? 0 : po.amount;
+    }
+
     public static int getConcentrationPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
         return po == null ? 0 : po.amount;
@@ -123,7 +129,7 @@ public class CombatHelper {
     }
 
     public static int getManaNeedWhenChant(int chantX) {
-        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - CombatHelper.getConcentrationPowerAmt()), 0);
+        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
     }
 
     public static boolean isRaidReversed() {

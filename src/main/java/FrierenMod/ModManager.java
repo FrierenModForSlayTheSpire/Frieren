@@ -8,6 +8,7 @@ import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
 import FrierenMod.gameHelpers.OnStartBattleHelper;
+import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
@@ -30,6 +31,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.DeadBranch;
 import com.megacrit.cardcrawl.relics.StrangeSpoon;
@@ -119,6 +121,10 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receivePostInitialize() {
         makeModPanels();
+        BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
+        BaseMod.addBoss(Exordium.ID, Spiegel_Frieren.MONSTER_ID,
+                MonsterRes.SPIEGEL_BOSS_ICON,
+                MonsterRes.SPIEGEL_BOSS_ICON);
     }
 
     @Override
@@ -239,6 +245,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(PotionStrings.class, ModInformation.makeLocalizationPath(lang, "potions"));
         BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang, "powers"));
         BaseMod.loadCustomStringsFile(UIStrings.class, ModInformation.makeLocalizationPath(lang, "UIs"));
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, ModInformation.makeLocalizationPath(lang, "monsters"));
     }
 
     private static String getModID() {

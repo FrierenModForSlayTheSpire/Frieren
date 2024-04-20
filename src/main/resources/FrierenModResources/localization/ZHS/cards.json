@@ -206,8 +206,8 @@
     "DESCRIPTION": "每回合第一次 frierenmod:咏唱 后，若抽牌堆 *魔力 数等于弃牌堆，获得 2 敏捷 ，否则获得 3 力量 。"
   },
   "FrierenMod:LockTarget": {
-  "NAME": "定叫他有来无回",
-  "DESCRIPTION": "造成 !D! 点伤害，抽1张牌。 如果抽牌堆 *魔力 数量大于等于弃牌堆 *魔力 数量，再触发一次。"
+    "NAME": "定叫他有来无回",
+    "DESCRIPTION": "造成 !D! 点伤害，抽1张牌。 如果抽牌堆 *魔力 数量大于等于弃牌堆 *魔力 数量，再触发一次。"
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "再睡五分钟",
@@ -237,87 +237,121 @@
   "FrierenMod:DrawOption": {
     "NAME": "星星",
     "DESCRIPTION": "抽 !M! 张牌。",
-    "EXTENDED_DESCRIPTION": ["抽1/2/3张牌。"]
+    "EXTENDED_DESCRIPTION": [
+      "抽1/2/3张牌。"
+    ]
   },
   "FrierenMod:ManaInDiscardOption": {
     "NAME": "月亮",
     "DESCRIPTION": "将 !M! 张 *魔力 放入弃牌堆。",
-    "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入弃牌堆。"]
+    "EXTENDED_DESCRIPTION": [
+      "将2/4/6/8张 *魔力 放入弃牌堆。"
+    ]
   },
   "FrierenMod:ManaInHandOption": {
     "NAME": "太阳",
     "DESCRIPTION": "将 !M! 张 *魔力 放入手牌。",
-    "EXTENDED_DESCRIPTION": ["将2/3/4/5张 *魔力 放入手牌。"]
+    "EXTENDED_DESCRIPTION": [
+      "将2/3/4/5张 *魔力 放入手牌。"
+    ]
   },
   "FrierenMod:ManaInDrawOption": {
     "NAME": "愚者",
     "DESCRIPTION": "将 !M! 张 *魔力 放入抽牌堆。",
-    "EXTENDED_DESCRIPTION": ["将2/4/6/8张 *魔力 放入抽牌堆。"]
+    "EXTENDED_DESCRIPTION": [
+      "将2/4/6/8张 *魔力 放入抽牌堆。"
+    ]
   },
   "FrierenMod:ScryOption": {
     "NAME": "女祭司",
     "DESCRIPTION": " 预见 !M! 。",
-    "EXTENDED_DESCRIPTION": [" 预见 2/3/4。"]
+    "EXTENDED_DESCRIPTION": [
+      " 预见 2/3/4。"
+    ]
   },
   "FrierenMod:CostZeroOption": {
     "NAME": "星币",
     "DESCRIPTION": " 你手牌中 !M! 张随机牌在本回合中耗能变为0。",
-    "EXTENDED_DESCRIPTION": ["你手牌中1/2张随机牌在本回合中耗能变为0。"]
+    "EXTENDED_DESCRIPTION": [
+      "你手牌中1/2张随机牌在本回合中耗能变为0。"
+    ]
   },
   "FrierenMod:SelfRetainOption": {
     "NAME": "节制",
     "DESCRIPTION": " 保留 手牌中的 !M! 张牌。",
-    "EXTENDED_DESCRIPTION": [" 保留 手牌中的1/2张牌。"]
+    "EXTENDED_DESCRIPTION": [
+      " 保留 手牌中的1/2张牌。"
+    ]
   },
   "FrierenMod:GainRandomCardOption": {
     "NAME": "命运之轮",
     "DESCRIPTION": "将 !M! 张随机普通牌放入手中。 NL 其在本回合耗能变为0。",
-    "EXTENDED_DESCRIPTION": ["将1/2张随机普通牌放入手中。 NL 其在本回合耗能变为0。"]
+    "EXTENDED_DESCRIPTION": [
+      "将1/2张随机普通牌放入手中。 NL 其在本回合耗能变为0。"
+    ]
   },
   "FrierenMod:DamageOption": {
     "NAME": "正义",
     "DESCRIPTION": "造成 !D! 点伤害。",
-    "EXTENDED_DESCRIPTION": ["造成6/10点伤害。"]
+    "EXTENDED_DESCRIPTION": [
+      "造成6/10点伤害。"
+    ]
   },
   "FrierenMod:DamageThirdOption": {
     "NAME": "恶魔",
     "DESCRIPTION": "造成 !D! 点伤害三次。",
-    "EXTENDED_DESCRIPTION": ["造成5/7点伤害三次。"]
+    "EXTENDED_DESCRIPTION": [
+      "造成5/7点伤害三次。"
+    ]
   },
   "FrierenMod:DamageAllOption": {
     "NAME": "死神",
     "DESCRIPTION": "对所有敌人造成 !D! 点伤害。",
-    "EXTENDED_DESCRIPTION": ["对所有敌人造成4/8/12/16点伤害。"]
+    "EXTENDED_DESCRIPTION": [
+      "对所有敌人造成4/8/12/16点伤害。"
+    ]
   },
   "FrierenMod:BlockOption": {
     "NAME": "隐者",
     "DESCRIPTION": "获得 !B! 点 格挡 。",
-    "EXTENDED_DESCRIPTION": ["获得4/8/12/16点 格挡 。"]
+    "EXTENDED_DESCRIPTION": [
+      "获得4/8/12/16点 格挡 。"
+    ]
   },
   "FrierenMod:EnergyOption": {
     "NAME": "恋人",
     "DESCRIPTION": "下一回合，获得 !M! 点 [E] 。",
-    "EXTENDED_DESCRIPTION": ["下一回合，获得1/2/3点 [E] 。"]
+    "EXTENDED_DESCRIPTION": [
+      "下一回合，获得1/2/3点 [E] 。"
+    ]
   },
   "FrierenMod:ExtinguishOption": {
     "NAME": "审判",
     "DESCRIPTION": "如果目标敌人的生命值小于等于 !M! 点，则将其生命值变为0。",
-    "EXTENDED_DESCRIPTION": ["如果目标敌人的生命值小于等于30/40点，则将其生命值变为0。"]
+    "EXTENDED_DESCRIPTION": [
+      "如果目标敌人的生命值小于等于30/40点，则将其生命值变为0。"
+    ]
   },
   "FrierenMod:DexterityOption": {
     "NAME": "魔术师",
     "DESCRIPTION": "获得 !M! 点 敏捷 。",
-    "EXTENDED_DESCRIPTION": ["获得2/3/4点 敏捷 。"]
+    "EXTENDED_DESCRIPTION": [
+      "获得2/3/4点 敏捷 。"
+    ]
   },
   "FrierenMod:ChantOption": {
     "NAME": "圣杯",
     "DESCRIPTION": " frierenmod:咏唱 !CX! 。",
-    "EXTENDED_DESCRIPTION": [" frierenmod:咏唱 2/3/4。"]
+    "EXTENDED_DESCRIPTION": [
+      " frierenmod:咏唱 2/3/4。"
+    ]
   },
   "FrierenMod:IntangibleOption": {
     "NAME": "倒吊者",
     "DESCRIPTION": "获得 !M! 层 无实体 。 NL  消耗 。",
-    "EXTENDED_DESCRIPTION": ["获得1/2层 无实体 。 NL  消耗 。"]
+    "EXTENDED_DESCRIPTION": [
+      "获得1/2层 无实体 。 NL  消耗 。"
+    ]
   },
   "FrierenMod:StrengthOption": {
     "NAME": "女皇",
@@ -326,7 +360,9 @@
   "FrierenMod:VulnerableOption": {
     "NAME": "教皇",
     "DESCRIPTION": "给与所有敌人 !M! 层 易伤 。",
-    "EXTENDED_DESCRIPTION": ["给与所有敌人1/2/3层 易伤 。"]
+    "EXTENDED_DESCRIPTION": [
+      "给与所有敌人1/2/3层 易伤 。"
+    ]
   },
   "FrierenMod:UpgradeOption": {
     "NAME": "塔",
@@ -343,7 +379,7 @@
   "FrierenMod:PreciseChant": {
     "NAME": "精准咏唱",
     "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION":"选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
+    "UPGRADE_DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "魔力膨胀",
@@ -527,6 +563,10 @@
   "FrierenMod:FrierenSuitcase": {
     "NAME": "芙莉莲的旅行箱",
     "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
+  },
+  "FrierenMod:Perversion": {
+    "NAME": "颠倒",
+    "DESCRIPTION": " 不能被打出 。 NL 同调1张 *魔力 后， 交换你的抽牌堆和弃牌堆。"
   },
   "FrierenMod:Strike_Fern": {
     "NAME": "打击",
