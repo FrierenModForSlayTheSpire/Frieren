@@ -38,7 +38,7 @@ public class Spiegel_Frieren extends AbstractMonster {
     private static final int WEAKENED_CHANT_POWER_AMT_ASC = 2;
 
     public Spiegel_Frieren() {
-        super(monsterStrings.NAME, MONSTER_ID, 500, 30.0F, -30.0F, 476.0F, 410.0F, MonsterRes.SPIEGEL_FRIEREN, -50.0F, 30.0F);
+        super(monsterStrings.NAME, MONSTER_ID, 400, 30.0F, -30.0F, 476.0F, 410.0F, MonsterRes.SPIEGEL_FRIEREN, -50.0F, 30.0F);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 19)
             this.damage.add(new DamageInfo(this, BASE_DAMAGE));
