@@ -44,7 +44,7 @@ public class ModInformation {
         return getCharPath() + character + "/" + content + ".png";
     }
     public static String makeMonsterResPath(String content){
-        return getImgPath() + content + ".png";
+        return getImgPath() + "monsters/" +content + ".png";
     }
 
     public static String getUIPath() {
