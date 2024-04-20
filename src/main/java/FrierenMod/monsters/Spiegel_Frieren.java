@@ -1,7 +1,7 @@
 package FrierenMod.monsters;
 
 import FrierenMod.actions.ReplaceManaAction;
-import FrierenMod.cards.tempCards.Perversion;
+import FrierenMod.cards.tempCards.UpsideDown;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.BanManaGainPower;
 import FrierenMod.powers.CopyPower;
@@ -77,7 +77,7 @@ public class Spiegel_Frieren extends AbstractMonster {
                 setMove(monsterStrings.MOVES[0], (byte) 1, AbstractMonster.Intent.ATTACK, this.damage.get(0).base);
                 break;
             case 4:
-                this.addToBot(new MakeTempCardInDrawPileAction(new Perversion(), 1, true, true));
+                this.addToBot(new MakeTempCardInDrawPileAction(new UpsideDown(), 1, true, true));
                 setMove(monsterStrings.MOVES[0], (byte) 1, AbstractMonster.Intent.ATTACK, this.damage.get(0).base);
                 break;
             case 5:

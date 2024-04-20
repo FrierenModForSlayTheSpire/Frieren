@@ -564,7 +564,7 @@
     "NAME": "芙莉莲的旅行箱",
     "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
   },
-  "FrierenMod:Perversion": {
+  "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL 同调1张 *魔力 后， 交换你的抽牌堆和弃牌堆。"
   },
