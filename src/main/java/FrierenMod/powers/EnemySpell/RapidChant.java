@@ -8,7 +8,7 @@ public class RapidChant extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[2];
     public final String SPELL_CONTENT = descriptions[3];
     public static final int MANA_NEED = 20;
-    public static final int POWER_GAIN = 5;
+    public static final int POWER_GAIN = 10;
 
     public RapidChant(AbstractCreature owner) {
         super(owner);
