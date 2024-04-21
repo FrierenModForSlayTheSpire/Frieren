@@ -2,6 +2,7 @@ package FrierenMod.powers.EnemySpell;
 
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 
 public class CatchBirdSpell extends AbstractEnemySpell {
@@ -16,7 +17,7 @@ public class CatchBirdSpell extends AbstractEnemySpell {
 
     @Override
     public void update() {
-        this.addToBot(new SpawnMonsterAction(new Cultist(-350.0F * postfix++, 0), true));
+        this.addToBot(new SpawnMonsterAction(new Cultist(-250.0F * Settings.scale * (postfix++), 0), true));
     }
 
     @Override
