@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.exordium.Cultist;
 import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 
 import java.util.ArrayList;
@@ -149,7 +150,7 @@ public class Spiegel_Frieren extends AbstractMonster {
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);
             for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
-                if (!m.isDying && m instanceof com.megacrit.cardcrawl.monsters.exordium.Cultist)
+                if (!m.isDying && m instanceof Cultist)
                     AbstractDungeon.actionManager.addToBottom(new EscapeAction(m));
             }
             onBossVictoryLogic();
