@@ -1,5 +1,6 @@
 package FrierenMod.powers;
 
+import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -16,10 +17,7 @@ public class CopyPower extends AbstractBasePower {
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.owner != this.owner) {
-            flash();
-            this.addToBot(new ApplyPowerAction(this.owner, this.owner, new EnemyManaPower(this.owner, damageAmount)));
-        }
+        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new EnemyManaPower(this.owner, damageAmount)));
         return damageAmount;
     }
 

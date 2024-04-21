@@ -3,7 +3,6 @@ package FrierenMod.powers;
 import FrierenMod.powers.EnemySpell.*;
 import FrierenMod.utils.ModInformation;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.OnReceivePowerPower;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -29,12 +28,6 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
         this.spellList.add(new FlyingMagic(this.owner));
         this.updateDescription();
     }
-
-    @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-    }
-
     public int getCurrentSpellManaNeed() {
         if(currentRecycleTimes >= MAX_RECYCLE_TIMES){
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
@@ -86,7 +79,9 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
             int manaAmt = (power == null ? 0 : power.amount) + po.amount;
             while (manaAmt >= getCurrentSpellManaNeed()) {
                 int manaNeed = getCurrentSpellManaNeed();
-                this.addToBot(new ApplyPowerAction(this.owner, this.owner, new EnemyManaPower(this.owner, -manaNeed)));
+                assert power != null;
+                power.amount -= manaNeed;
+                power.flash();
                 this.takeEffectCurrentSpell();
                 manaAmt -= manaNeed;
             }
