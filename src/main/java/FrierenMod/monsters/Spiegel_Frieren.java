@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.EscapeAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -141,5 +142,19 @@ public class Spiegel_Frieren extends AbstractMonster {
         }
         if (i >= 1)
             setMove(monsterStrings.MOVES[i - 1], (byte) i, Intent.STRONG_DEBUFF);
+    }
+    public void die() {
+        if (!(AbstractDungeon.getCurrRoom()).cannotLose) {
+            super.die();
+            useFastShakeAnimation(5.0F);
+            CardCrawlGame.screenShake.rumble(4.0F);
+            for (AbstractMonster m : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+                if (!m.isDying && m instanceof com.megacrit.cardcrawl.monsters.exordium.Cultist)
+                    AbstractDungeon.actionManager.addToBottom(new EscapeAction(m));
+            }
+            onBossVictoryLogic();
+            onFinalBossVictoryLogic();
+            CardCrawlGame.stopClock = true;
+        }
     }
 }
