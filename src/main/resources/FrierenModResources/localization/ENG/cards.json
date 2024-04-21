@@ -529,7 +529,7 @@
     "DESCRIPTION": "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain !M! Block."
   },
   "FrierenMod:UpsideDown": {
-    "NAME": "颠倒",
-    "DESCRIPTION": " 不能被打出 。 NL 同调1张 *魔力 后， 交换你的抽牌堆和弃牌堆。"
+    "NAME": "Upside Down",
+    "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile."
   }
 }

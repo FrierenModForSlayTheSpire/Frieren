@@ -126,15 +126,42 @@
     ]
   },
   "FrierenMod:CopyPower": {
-    "NAME": "复制体",
+    "NAME": "Replica",
     "DESCRIPTIONS": [
-      "受到伤害时，获得受到伤害的 #y力量 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
+      "When taken unblocked attack damage, gain the same amount of #rMana . NL When player gain #yBlock , Gain the same amount of #yBlock ."
+    ]
+  },
+  "FrierenMod:EnemyManaPower": {
+    "NAME": "Mana",
+    "DESCRIPTIONS": [
+      "Exhaust corresponding amount of #rMana to cast #rSpell."
+    ]
+  },
+  "FrierenMod:SpellCasterPower": {
+    "NAME": "Master Of Spell",
+    "DESCRIPTIONS": [
+      "Spell_To_Protect_Treasure_Vault.  ",
+      "Consume #b%d #rMana , Gain #yBarricade and #b%d #yBlock . NL ",
+      "Rapid_Chant_SP NL ",
+      "Consume #b%d #rMana , Gain #b%d #yRitual . NL ",
+      "Spell_To_Control_Rock_Golem_SP   ",
+      "Consume #b%d #rMana , Gain #b%d #yArtifact . NL ",
+      "HellFire_Summoning_SP NL ",
+      "Consume #b%d #rMana , Add #b%d #yBurn into enemy's draw pile. NL ",
+      "Destructive_Lightning_Magic_SP  ",
+      "Consume #b%d #rMana , Apply #b%d #yVulnerable and #yWeak to enemy. NL ",
+      "Perfect_Defensive_Magic_SP NL ",
+      "Consume #b%d #rMana , Gain #b%d #yBuffer and #b%d #yMetallicize . NL ",
+      "Spell_To_Capture_A_Bird NL ",
+      "Consume #b%d #rMana , Summon #b1 #yCultist. NL ",
+      "Flying_Magic_SP NL ",
+      "Consume #b%d #rMana , Gain #b%d #yIntangible ."
     ]
   },
   "FrierenMod:WeakenedChantPower": {
-    "NAME": "咏唱削弱",
+    "NAME": "Be Weaken in Chant",
     "DESCRIPTIONS": [
-      "在本回合中， #y咏唱 消耗的 #y魔力 增加 #b%d 张 。"
+      "This turn, #yChant will Exhaust #b%d more #yMana."
     ]
   }
 }
