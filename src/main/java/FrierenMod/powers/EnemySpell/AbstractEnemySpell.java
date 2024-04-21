@@ -1,10 +1,13 @@
 package FrierenMod.powers.EnemySpell;
 
 import FrierenMod.powers.SpellCasterPower;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 public abstract class AbstractEnemySpell {
     public static final String[] descriptions = CardCrawlGame.languagePack.getPowerStrings(SpellCasterPower.POWER_ID).DESCRIPTIONS;
@@ -33,6 +36,9 @@ public abstract class AbstractEnemySpell {
 
     public void takeEffect(){
         if(!this.isDone){
+            addToBot(new VFXAction(owner, new VerticalAuraEffect(Color.BLACK, owner.hb.cX, owner.hb.cY), 0.33F));
+            addToBot(new VFXAction(owner, new VerticalAuraEffect(Color.PURPLE, owner.hb.cX, owner.hb.cY), 0.33F));
+            addToBot(new VFXAction(owner, new VerticalAuraEffect(Color.CYAN, owner.hb.cX, owner.hb.cY), 0.0F));
             this.update();
             this.isDone = true;
         }

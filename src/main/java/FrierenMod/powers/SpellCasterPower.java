@@ -21,9 +21,9 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
         super(POWER_ID, owner, PowerType.BUFF);
         this.spellList.add(new DefendTreasureSpell(this.owner));
         this.spellList.add(new RapidChant(this.owner));
-        this.spellList.add(new RustCleanSpell(this.owner));
-        this.spellList.add(new Simmering(this.owner));
-        this.spellList.add(new SeeThroughPhantom(this.owner, AbstractDungeon.player));
+        this.spellList.add(new RockGolemSpell(this.owner));
+        this.spellList.add(new HellFireSummoning(this.owner));
+        this.spellList.add(new LightningMagic(this.owner, AbstractDungeon.player));
         this.spellList.add(new PerfectDefensiveMagic(this.owner));
         this.spellList.add(new CatchBirdSpell(this.owner));
         this.spellList.add(new FlyingMagic(this.owner));

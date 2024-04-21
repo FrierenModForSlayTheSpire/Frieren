@@ -7,14 +7,17 @@ import FrierenMod.powers.*;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.MonsterRes;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 
 import java.util.ArrayList;
 
@@ -45,6 +48,9 @@ public class Spiegel_Frieren extends AbstractMonster {
     }
 
     public void usePreBattleAction() {
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("Frieren_The_Slayer");
         this.addToBot(new ApplyPowerAction(this, this, new CopyPower(this)));
         this.addToBot(new ApplyPowerAction(this, this, new SpellCasterPower(this)));
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new GetPlayerBlockPower(AbstractDungeon.player, this)));
@@ -54,6 +60,7 @@ public class Spiegel_Frieren extends AbstractMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case 1:
+                this.addToBot(new VFXAction(new LaserBeamEffect(this.hb.cX - 50.0F * Settings.scale, this.hb.cY + 60.0F * Settings.scale), 1.5F));
                 this.addToBot(new DamageAction(AbstractDungeon.player, this.damage
                         .get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 ActionHelper.addToBotAbstract(() -> {
@@ -85,6 +92,7 @@ public class Spiegel_Frieren extends AbstractMonster {
                 setMove(monsterStrings.MOVES[0], (byte) 1, AbstractMonster.Intent.ATTACK, this.damage.get(0).base);
                 break;
             case 6:
+                this.addToBot(new VFXAction(new LaserBeamEffect(this.hb.cX - 50.0F * Settings.scale, this.hb.cY + 60.0F * Settings.scale), 1.5F));
                 for (int i = 0; i < this.finalStageAttackTimes; i++) {
                     this.addToBot(new DamageAction(AbstractDungeon.player, this.damage
                             .get(0), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
