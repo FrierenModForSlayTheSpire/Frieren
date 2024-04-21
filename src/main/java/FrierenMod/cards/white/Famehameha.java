@@ -26,7 +26,7 @@ public class Famehameha extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.damage = this.baseDamage = 25;
+        this.damage = this.baseDamage = 31;
         this.isLegendarySpell = true;
         this.isCostResetCard = true;
     }
@@ -39,7 +39,7 @@ public class Famehameha extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(6);
+            this.upgradeDamage(5);
         }
     }
 
