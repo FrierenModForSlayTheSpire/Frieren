@@ -121,6 +121,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receivePostInitialize() {
         makeModPanels();
+        BaseMod.addAudio("Frieren_The_Slayer.mp3",ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
         BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,

@@ -4,13 +4,13 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-public class RustCleanSpell extends AbstractEnemySpell {
+public class RockGolemSpell extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[4];
     public final String SPELL_CONTENT = descriptions[5];
     public static final int MANA_NEED = 10;
     public static final int POWER_GAIN = 1;
 
-    public RustCleanSpell(AbstractCreature owner) {
+    public RockGolemSpell(AbstractCreature owner) {
         super(owner);
     }
 
