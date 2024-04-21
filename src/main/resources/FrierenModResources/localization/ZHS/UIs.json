@@ -76,7 +76,7 @@
   },
   "FrierenMod:DexterityMod": {
     "TEXT": [
-      " NL 获得 ", " 点 敏捷 。"
+      " NL 获得 ", " 点 敏捷 。 NL 消耗 。"
     ]
   },
   "FrierenMod:IntangibleMod": {

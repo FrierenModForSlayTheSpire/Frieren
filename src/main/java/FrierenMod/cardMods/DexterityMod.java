@@ -29,12 +29,14 @@ public class DexterityMod extends AbstractCardModifier {
     }
 
     public void onInitialApplication(AbstractCard card) {
-        if(card instanceof CustomLegendarySpell)
+        if (card instanceof CustomLegendarySpell) {
             ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.dexterityAmt + TEXT[1];
+            card.exhaust = true;
+        }
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction(AbstractDungeon.player, (AbstractCreature)AbstractDungeon.player, (AbstractPower)new DexterityPower(AbstractDungeon.player, this.dexterityAmt), this.dexterityAmt));
+        AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new ApplyPowerAction(AbstractDungeon.player, (AbstractCreature) AbstractDungeon.player, (AbstractPower) new DexterityPower(AbstractDungeon.player, this.dexterityAmt), this.dexterityAmt));
     }
 
     public String identifier(AbstractCard card) {
