@@ -1,10 +1,8 @@
 package FrierenMod.powers.EnemySpell;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 
 public class HellFireSummoning extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[6];
@@ -19,7 +17,6 @@ public class HellFireSummoning extends AbstractEnemySpell {
     @Override
     public void update() {
         this.addToBot(new MakeTempCardInDrawPileAction(new Burn(), CARD_MAKE_AMT, true, true));
-        this.addToBot(new ApplyPowerAction(owner, owner, new ThornsPower(owner, CARD_MAKE_AMT)));
     }
 
     @Override
