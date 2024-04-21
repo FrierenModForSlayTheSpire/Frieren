@@ -203,7 +203,7 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "Full Ahead",
-    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 3 Strength."
+    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 2 Strength."
   },
   "FrierenMod:LockTarget": {
   "NAME": "Lock Target",

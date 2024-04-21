@@ -25,7 +25,7 @@ public class FullAheadPower extends AbstractBasePower {
             if (CombatHelper.getManaNumInDrawPile() == CombatHelper.getManaNumInDiscardPile()) {
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
             } else
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 3), this.amount * 3));
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
             this.takeEffect = true;
         }
     }
@@ -36,6 +36,6 @@ public class FullAheadPower extends AbstractBasePower {
     }
 
     public void updateDescription() {
-        this.description = String.format(descriptions[0], this.amount * 2, this.amount * 3);
+        this.description = String.format(descriptions[0], this.amount * 2, this.amount * 2);
     }
 }
