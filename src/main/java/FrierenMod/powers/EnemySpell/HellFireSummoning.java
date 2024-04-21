@@ -7,8 +7,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 public class HellFireSummoning extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[6];
     public final String SPELL_CONTENT = descriptions[7];
-    public static final int MANA_NEED = 10;
-    public static final int CARD_MAKE_AMT = 2;
+    public static final int MANA_NEED = 30;
+    public static final int CARD_MAKE_AMT = 3;
 
     public HellFireSummoning(AbstractCreature owner) {
         super(owner);

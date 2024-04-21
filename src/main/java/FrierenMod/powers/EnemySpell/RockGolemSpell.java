@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.powers.ArtifactPower;
 public class RockGolemSpell extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[4];
     public final String SPELL_CONTENT = descriptions[5];
-    public static final int MANA_NEED = 10;
+    public static final int MANA_NEED = 20;
     public static final int POWER_GAIN = 1;
 
     public RockGolemSpell(AbstractCreature owner) {

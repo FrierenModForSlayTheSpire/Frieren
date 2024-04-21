@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 public class FlyingMagic extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[14];
     public final String SPELL_CONTENT = descriptions[15];
-    public static final int MANA_NEED = 100;
+    public static final int MANA_NEED = 50;
     public static final int POWER_GAIN = 1;
 
     public FlyingMagic(AbstractCreature owner) {

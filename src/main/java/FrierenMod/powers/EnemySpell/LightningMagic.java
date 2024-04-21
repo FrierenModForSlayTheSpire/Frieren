@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 public class LightningMagic extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[8];
     public final String SPELL_CONTENT = descriptions[9];
-    public static final int MANA_NEED = 10;
+    public static final int MANA_NEED = 20;
     public static final int POWER_GAIN_1 = 2;
     public static final int POWER_GAIN_2 = 2;
 
