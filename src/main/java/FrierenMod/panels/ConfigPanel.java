@@ -29,6 +29,7 @@ public class ConfigPanel extends ModPanel {
         properties.setProperty("REMOVE_VELVET_CHOKER", Boolean.toString(Config.REMOVE_VELVET_CHOKER));
         properties.setProperty("REMOVE_DEAD_BRANCH", Boolean.toString(Config.REMOVE_DEAD_BRANCH));
         properties.setProperty("REMOVE_STRANGE_SPOON", Boolean.toString(Config.REMOVE_STRANGE_SPOON));
+        properties.setProperty("REPLACE_CORRUPT_HEART", Boolean.toString(Config.REPLACE_CORRUPT_HEART));
         try {
             return new SpireConfig(ModInformation.MOD_NAME, "FrierenModConfig", properties);
         } catch (Exception e) {
@@ -45,6 +46,7 @@ public class ConfigPanel extends ModPanel {
         Config.REMOVE_VELVET_CHOKER = config.getBool("REMOVE_VELVET_CHOKER");
         Config.REMOVE_DEAD_BRANCH = config.getBool("REMOVE_DEAD_BRANCH");
         Config.REMOVE_STRANGE_SPOON = config.getBool("REMOVE_STRANGE_SPOON");
+        Config.REPLACE_CORRUPT_HEART = config.getBool("REPLACE_CORRUPT_HEART");
     }
 
     private static void save(SpireConfig config) {
@@ -64,6 +66,7 @@ public class ConfigPanel extends ModPanel {
         config.setBool("REMOVE_VELVET_CHOKER", Config.REMOVE_VELVET_CHOKER);
         config.setBool("REMOVE_DEAD_BRANCH", Config.REMOVE_DEAD_BRANCH);
         config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
+        config.setBool("REPLACE_CORRUPT_HEART", Config.REPLACE_CORRUPT_HEART);
         save(config);
     }
 
@@ -101,10 +104,19 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
             save(config);
         });
+        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% Replace Corrupt Heart with Spiegel", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REPLACE_CORRUPT_HEART, settings, l -> {
+        }, btn -> {
+            Config.REPLACE_CORRUPT_HEART = btn.enabled;
+            SpireConfig config = makeConfig();
+            assert config != null;
+            config.setBool("REPLACE_CORRUPT_HEART", Config.REPLACE_CORRUPT_HEART);
+            save(config);
+        });
         settings.addUIElement(allowSFX);
         settings.addUIElement(removeVelvetChoker);
         settings.addUIElement(removeDeadBranch);
         settings.addUIElement(removeStrangeSpoon);
+        settings.addUIElement(replaceHeart);
         BaseMod.registerModBadge(ImageMaster.loadImage(PublicRes.MOD_BADGE), "FrierenMod", Arrays.toString(AUTHORS), "An original character", settings);
     }
 }

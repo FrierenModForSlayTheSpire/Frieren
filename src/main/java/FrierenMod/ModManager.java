@@ -31,7 +31,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheEnding;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.relics.DeadBranch;
 import com.megacrit.cardcrawl.relics.StrangeSpoon;
@@ -123,7 +123,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         makeModPanels();
         BaseMod.addAudio("Frieren_The_Slayer.mp3",ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
         BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
-        BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
+        BaseMod.addBoss(TheEnding.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
     }
