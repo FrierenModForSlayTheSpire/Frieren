@@ -157,7 +157,6 @@ public class Spiegel_Frieren extends AbstractMonster {
             }
             onBossVictoryLogic();
             onFinalBossVictoryLogic();
-            CardCrawlGame.stopClock = true;
         }
     }
 }
