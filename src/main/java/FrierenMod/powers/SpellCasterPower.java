@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class SpellCasterPower extends AbstractBasePower implements OnReceivePowerPower {
     public static final String POWER_ID = ModInformation.makeID(SpellCasterPower.class.getSimpleName());
     public ArrayList<AbstractEnemySpell> spellList = new ArrayList<>();
-    private int currentRecycleTimes = 0;
+    public int currentRecycleTimes = 0;
     private static final int MAX_RECYCLE_TIMES = 2;
 
     public SpellCasterPower(AbstractCreature owner) {
@@ -28,8 +28,9 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
         this.spellList.add(new FlyingMagic(this.owner));
         this.updateDescription();
     }
+
     public int getCurrentSpellManaNeed() {
-        if(currentRecycleTimes >= MAX_RECYCLE_TIMES){
+        if (currentRecycleTimes >= MAX_RECYCLE_TIMES) {
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
             return Integer.MAX_VALUE;
         }
@@ -79,7 +80,7 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
             int manaAmt = (power == null ? 0 : power.amount) + po.amount;
             while (manaAmt >= getCurrentSpellManaNeed()) {
                 int manaNeed = getCurrentSpellManaNeed();
-                if(power != null){
+                if (power != null) {
                     power.amount -= manaNeed;
                     power.flash();
                 }

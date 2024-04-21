@@ -1,5 +1,6 @@
 package FrierenMod.powers.EnemySpell;
 
+import FrierenMod.powers.SpellCasterPower;
 import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
@@ -9,15 +10,20 @@ public class CatchBirdSpell extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[12];
     public final String SPELL_CONTENT = descriptions[13];
     public static final int MANA_NEED = 20;
-    private static int postfix = 1;
+    private final int recycleTimes;
 
     public CatchBirdSpell(AbstractCreature owner) {
         super(owner);
+        SpellCasterPower po = (SpellCasterPower) owner.getPower(SpellCasterPower.POWER_ID);
+        if(po != null){
+            this.recycleTimes = po.currentRecycleTimes;
+        }else
+            recycleTimes = 0;
     }
 
     @Override
     public void update() {
-        this.addToBot(new SpawnMonsterAction(new Cultist(-250.0F * Settings.scale * (postfix++), 0), true));
+        this.addToBot(new SpawnMonsterAction(new Cultist(-250.0F * Settings.scale * (recycleTimes + 1), 0), true));
     }
 
     @Override
