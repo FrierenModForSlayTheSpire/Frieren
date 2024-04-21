@@ -101,7 +101,7 @@
   },
   "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",
-    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 3 times the amount you Exhaust to ALL enemies. NL (Deal !M! damage)"
+    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 4 times the amount you Exhaust to ALL enemies. NL (Deal !M! damage)"
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "Prepared Posture",
