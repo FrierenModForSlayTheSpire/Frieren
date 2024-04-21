@@ -55,6 +55,7 @@ public class Spiegel_Frieren extends AbstractMonster {
         AbstractDungeon.getCurrRoom().playBgmInstantly("Frieren_The_Slayer");
         this.addToBot(new ApplyPowerAction(this, this, new CopyPower(this)));
         this.addToBot(new ApplyPowerAction(this, this, new SpellCasterPower(this)));
+        this.addToBot(new ApplyPowerAction(this, this, new EnemyManaPower(this, 0)));
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new GetPlayerBlockPower(AbstractDungeon.player, this)));
     }
 
@@ -144,6 +145,7 @@ public class Spiegel_Frieren extends AbstractMonster {
         if (i >= 1)
             setMove(monsterStrings.MOVES[i - 1], (byte) i, Intent.STRONG_DEBUFF);
     }
+
     public void die() {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose) {
             super.die();

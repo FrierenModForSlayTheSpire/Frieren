@@ -79,9 +79,10 @@ public class SpellCasterPower extends AbstractBasePower implements OnReceivePowe
             int manaAmt = (power == null ? 0 : power.amount) + po.amount;
             while (manaAmt >= getCurrentSpellManaNeed()) {
                 int manaNeed = getCurrentSpellManaNeed();
-                assert power != null;
-                power.amount -= manaNeed;
-                power.flash();
+                if(power != null){
+                    power.amount -= manaNeed;
+                    power.flash();
+                }
                 this.takeEffectCurrentSpell();
                 manaAmt -= manaNeed;
             }
