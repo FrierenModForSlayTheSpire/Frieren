@@ -104,7 +104,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
             save(config);
         });
-        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% Replace Corrupt Heart with Spiegel", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REPLACE_CORRUPT_HEART, settings, l -> {
+        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% encounter Spiegel when playing Frieren in The Beyond.", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REPLACE_CORRUPT_HEART, settings, l -> {
         }, btn -> {
             Config.REPLACE_CORRUPT_HEART = btn.enabled;
             SpireConfig config = makeConfig();
