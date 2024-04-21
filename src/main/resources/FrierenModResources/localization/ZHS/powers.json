@@ -128,7 +128,34 @@
   "FrierenMod:CopyPower": {
     "NAME": "复制体",
     "DESCRIPTIONS": [
-      "受到伤害时，获得受到伤害的 #y力量 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
+      "受到伤害时，获得等量 #r魔力 层数 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
+    ]
+  },
+  "FrierenMod:EnemyManaPower": {
+    "NAME": "魔力",
+    "DESCRIPTIONS": [
+      "使用 #r魔法 时会失去对应的层数。"
+    ]
+  },
+  "FrierenMod:SpellCasterPower": {
+    "NAME": "魔法精通",
+    "DESCRIPTIONS": [
+      "誓死守护宝库的魔法 NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #y壁垒 和 #b%d 点 #y格挡  。 NL ",
+      "高速咏唱SP NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #b%d 层 #y仪式 。 NL ",
+      "清除铜像生锈的魔法SP NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #b%d 层 #y人工制品 。 NL ",
+      "暗流涌动SP NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #b%d 层 #y荆棘 。 NL ",
+      "识破幻影SP NL ",
+      "失去 #b%d 层 #r魔力 ，使敌人获得 #b%d 层 #y易伤 和 #y虚弱 。 NL ",
+      "防御魔法完全体SP NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #b%d 层 #y缓冲 和 #b%d 层 #y金属化 。 NL ",
+      "捕鸟魔法 NL ",
+      "失去 #b%d 层 #r魔力 ，召唤 #b1 只 #y咔咔 。 NL ",
+      "飞行魔法SP NL ",
+      "失去 #b%d 层 #r魔力 ，获得 #b%d 层 #y无实体 。"
     ]
   },
   "FrierenMod:WeakenedChantPower": {
