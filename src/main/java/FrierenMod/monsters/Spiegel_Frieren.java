@@ -36,7 +36,7 @@ public class Spiegel_Frieren extends AbstractMonster {
     private static final int BASE_DAMAGE_ASC = 25;
     private static final int ATTACK_TIMES_DELTA = 1;
     private static final int ATTACK_TIMES_DELTA_ASC = 2;
-    private static final int WEAKENED_CHANT_POWER_AMT = 2;
+    private static final int WEAKENED_CHANT_POWER_AMT = 1;
     private static final int WEAKENED_CHANT_POWER_AMT_ASC = 3;
 
     public Spiegel_Frieren() {

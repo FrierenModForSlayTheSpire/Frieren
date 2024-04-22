@@ -155,7 +155,8 @@
       "捕鸟魔法 NL ",
       "花费 #b%d 层 #r魔力 ，召唤 #b1 只 #y咔咔 。 NL ",
       "飞行魔法SP NL ",
-      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y无实体 。"
+      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y无实体 。",
+      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y缓冲 和 #b%d 层 #y金属化 。 NL "
     ]
   },
   "FrierenMod:WeakenedChantPower": {

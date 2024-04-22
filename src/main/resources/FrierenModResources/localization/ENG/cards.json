@@ -530,6 +530,6 @@
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
-    "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile."
+    "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."
   }
 }
