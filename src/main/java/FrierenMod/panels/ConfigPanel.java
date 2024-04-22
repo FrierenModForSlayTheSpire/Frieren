@@ -29,7 +29,7 @@ public class ConfigPanel extends ModPanel {
         properties.setProperty("REMOVE_VELVET_CHOKER", Boolean.toString(Config.REMOVE_VELVET_CHOKER));
         properties.setProperty("REMOVE_DEAD_BRANCH", Boolean.toString(Config.REMOVE_DEAD_BRANCH));
         properties.setProperty("REMOVE_STRANGE_SPOON", Boolean.toString(Config.REMOVE_STRANGE_SPOON));
-        properties.setProperty("REPLACE_CORRUPT_HEART", Boolean.toString(Config.REPLACE_CORRUPT_HEART));
+        properties.setProperty("REPLACE_CORRUPT_HEART", Boolean.toString(Config.ENCOUNTER_SPIEGEL));
         try {
             return new SpireConfig(ModInformation.MOD_NAME, "FrierenModConfig", properties);
         } catch (Exception e) {
@@ -46,7 +46,7 @@ public class ConfigPanel extends ModPanel {
         Config.REMOVE_VELVET_CHOKER = config.getBool("REMOVE_VELVET_CHOKER");
         Config.REMOVE_DEAD_BRANCH = config.getBool("REMOVE_DEAD_BRANCH");
         Config.REMOVE_STRANGE_SPOON = config.getBool("REMOVE_STRANGE_SPOON");
-        Config.REPLACE_CORRUPT_HEART = config.getBool("REPLACE_CORRUPT_HEART");
+        Config.ENCOUNTER_SPIEGEL = config.getBool("REPLACE_CORRUPT_HEART");
     }
 
     private static void save(SpireConfig config) {
@@ -66,7 +66,7 @@ public class ConfigPanel extends ModPanel {
         config.setBool("REMOVE_VELVET_CHOKER", Config.REMOVE_VELVET_CHOKER);
         config.setBool("REMOVE_DEAD_BRANCH", Config.REMOVE_DEAD_BRANCH);
         config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
-        config.setBool("REPLACE_CORRUPT_HEART", Config.REPLACE_CORRUPT_HEART);
+        config.setBool("REPLACE_CORRUPT_HEART", Config.ENCOUNTER_SPIEGEL);
         save(config);
     }
 
@@ -104,12 +104,12 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
             save(config);
         });
-        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% encounter Spiegel when playing Frieren in The Beyond.", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REPLACE_CORRUPT_HEART, settings, l -> {
+        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% encounter Spiegel when playing Frieren in The Beyond.", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ENCOUNTER_SPIEGEL, settings, l -> {
         }, btn -> {
-            Config.REPLACE_CORRUPT_HEART = btn.enabled;
+            Config.ENCOUNTER_SPIEGEL = btn.enabled;
             SpireConfig config = makeConfig();
             assert config != null;
-            config.setBool("REPLACE_CORRUPT_HEART", Config.REPLACE_CORRUPT_HEART);
+            config.setBool("REPLACE_CORRUPT_HEART", Config.ENCOUNTER_SPIEGEL);
             save(config);
         });
         settings.addUIElement(allowSFX);

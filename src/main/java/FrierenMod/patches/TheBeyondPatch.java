@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class TheBeyondPatch {
     @SpireInsertPatch(rloc = 0, localvars = {"bossList"})
     public static SpireReturn<Void> Insert(AbstractDungeon _inst, ArrayList<String> bossList){
-        if(Config.REPLACE_CORRUPT_HEART && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+        if(Config.ENCOUNTER_SPIEGEL && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
             bossList.add(Spiegel_Frieren.MONSTER_ID);
             bossList.add(Spiegel_Frieren.MONSTER_ID);
             bossList.add(Spiegel_Frieren.MONSTER_ID);

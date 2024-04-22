@@ -16,7 +16,7 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.monsterRng;
 public class PatchProceedButton {
     @SpireInsertPatch(rloc = 1)
     public static void Insert(ProceedButton __inst) {
-        if (Config.REPLACE_CORRUPT_HEART && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
+        if (Config.ENCOUNTER_SPIEGEL && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
             AbstractDungeon.bossKey = getOriginalBoss();
         }
     }
