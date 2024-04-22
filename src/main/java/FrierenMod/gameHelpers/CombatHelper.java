@@ -124,8 +124,8 @@ public class CombatHelper {
         return getDeviationAmt(isUsingCard) % 2 == 0;
     }
 
-    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
-        return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
+    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard) {
+        return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
     public static int getManaNeedWhenChant(int chantX) {

@@ -632,6 +632,6 @@
   },
   "FrierenMod:Fragile": {
     "NAME": "易碎品",
-    "DESCRIPTION": " 打出后返回手牌。 NL  frierenmod:奇袭 !R! ：随机获得5种效果1种： *奇袭 值-1，效果值+1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
+    "DESCRIPTION": " frierenmod:奇袭 !R! ：打出后返回手牌并获得5种效果随机1种： *奇袭 值-1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
   }
 }

@@ -3,6 +3,7 @@ package FrierenMod.cards.purple;
 import FrierenMod.actions.FragileAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -10,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Fragile extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Fragile.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.NONE);
 
     public Fragile() {
         super(info);
@@ -20,7 +21,6 @@ public class Fragile extends AbstractBaseCard {
     public void initSpecifiedAttributes() {
         this.raidNumber = this.baseRaidNumber = 5;
         this.magicNumber = this.baseMagicNumber = 2;
-        this.returnToHand = true;
     }
 
     @Override
@@ -29,6 +29,12 @@ public class Fragile extends AbstractBaseCard {
             this.upgradeName();
             this.upgradeRaidNumber(1);
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        this.returnToHand = CombatHelper.canRaidTakeEffect(this.raidNumber, false);
     }
 
     @Override
