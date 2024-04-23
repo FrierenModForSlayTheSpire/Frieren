@@ -633,5 +633,9 @@
   "FrierenMod:Fragile": {
     "NAME": "易碎品",
     "DESCRIPTION": " frierenmod:奇袭 !R! ：打出后返回手牌并获得5种效果随机1种： *奇袭 值-1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
+  },
+  "FrierenMod:Exchange": {
+    "NAME": "师徒配合",
+    "DESCRIPTION": " 本局游戏第一次使用：使用2轮 *现开套牌 构筑 [#784183]菲伦[] 的一套牌组。将 [#edeaf5]芙莉莲[] 替换为 [#784183]菲伦[] 进行游戏，2回合后换回。"
   }
 }
