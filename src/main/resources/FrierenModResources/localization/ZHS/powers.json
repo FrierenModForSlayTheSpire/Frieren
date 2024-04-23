@@ -174,13 +174,13 @@
   "FrierenMod:SuperSeriousPower": {
     "NAME": "超级认真",
     "DESCRIPTIONS": [
-      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 *专注 。"
+      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 #y专注 。"
     ]
   },
   "FrierenMod:DancingPower": {
     "NAME": "舞姿形态",
     "DESCRIPTIONS": [
-      "使用卡牌后，获得或失去 #专注 ，使 #离差 永恒为 #b2 。"
+      "使用卡牌后，获得或失去 #y专注 ，使 #y离差 永恒为 #b2 。"
     ]
   },
   "FrierenMod:WashingClothesPower": {

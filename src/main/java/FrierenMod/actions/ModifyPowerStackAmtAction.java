@@ -33,14 +33,19 @@ public class ModifyPowerStackAmtAction extends AbstractGameAction {
             if(this.isNewAmt)
                 this.power.amount = amt;
             else {
-                this.power.amount += this.amt;
+                this.power.stackPower(this.amt);
             }
             this.power.flash();
             this.power.updateDescription();
             if (this.power.amount == 0 && this.zeroRemove)
                 this.addToBot(new RemoveSpecificPowerAction(p, p, this.power));
-            if(this.power instanceof ConcentrationPower)
+            if(this.power instanceof ConcentrationPower){
+                if(this.power.amount < 0){
+                    this.power.amount = 0;
+                }
                 ((ConcentrationPower) this.power).changeTimes++;
+            }
+
         }
         this.isDone = true;
     }
