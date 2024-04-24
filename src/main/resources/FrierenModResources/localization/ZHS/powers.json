@@ -178,7 +178,7 @@
     ]
   },
   "FrierenMod:DancingPower": {
-    "NAME": "舞姿形态",
+    "NAME": "交际舞",
     "DESCRIPTIONS": [
       "使用卡牌后，获得或失去 #y专注 ，使 #y离差 永恒为 #b2 。"
     ]
