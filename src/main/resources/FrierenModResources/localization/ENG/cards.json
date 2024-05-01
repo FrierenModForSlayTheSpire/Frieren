@@ -39,15 +39,24 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "Chant From Draw Pile",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your draw pile, gain !B! Block twice."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your draw pile, gain !B! Block twice.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your draw pile, gain X Block twice."
+    ]
   },
   "FrierenMod:ChantHand": {
     "NAME": "Chant From Hand",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your hand, gain !M! [E] ."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your hand, gain !M! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your hand, gain X [E] ."
+    ]
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "Chant From Discard Pile",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your discard pile, Gain !M! Strength."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your discard pile, Gain !M! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your discard pile, Gain X Strength."
+    ]
   },
   "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Swamp",
