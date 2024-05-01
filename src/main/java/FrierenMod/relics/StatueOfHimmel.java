@@ -36,4 +36,7 @@ public class StatueOfHimmel extends AbstractBaseRelic {
             this.addToTop(new ApplyPowerAction(AbstractDungeon.player, (AbstractCreature) AbstractDungeon.player, new ArtifactPower(AbstractDungeon.player, 1), 1));
         }
     }
+    public void onVictory() {
+        this.counter = -1;
+    }
 }
