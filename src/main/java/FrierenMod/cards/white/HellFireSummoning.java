@@ -12,10 +12,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class HellFireSummoning extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(HellFireSummoning.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.ENEMY);
 
     public HellFireSummoning() {
@@ -54,19 +57,27 @@ public class HellFireSummoning extends AbstractBaseCard {
         }
         this.addToBot(new ModifyCostAction(this.uuid, 1));
     }
-
     public void applyPowers() {
-        this.baseMagicNumber = CombatHelper.getChantCardUsedThisTurn();
-        super.applyPowers();
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        int chantCount = CombatHelper.getChantCardUsedThisTurn();
+        if (AbstractDungeon.player.hasRelic("Chemical X")) {
+            chantCount += 2;
+        }
+        if (chantCount > 0) {
+            this.magicNumber = this.baseMagicNumber = chantCount * 2;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
     }
-
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = CombatHelper.getChantCardUsedThisTurn();
         super.calculateCardDamage(mo);
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override

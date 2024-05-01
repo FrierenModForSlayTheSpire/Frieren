@@ -476,7 +476,10 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "Hellfire Summoning",
-    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! Damage 2X times, X equal to the amount of frierenmod:Chant card you played this turn. NL (Already played !M! )"
+    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! Damage 2X times, X equal to the amount of frierenmod:Chant card you played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !M! times.)"
+    ]
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "Spell to Manipulate A Rock Golem",
