@@ -9,7 +9,10 @@
   },
   "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "Ordinary Offensive Magic",
-    "DESCRIPTION": "Deal damage twice as the amount of *Mana you have Exhausted. NL (Deal !D! damage.)"
+    "DESCRIPTION": "Deal damage equal to 2 times the number of Mana Exhausted this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "Defensive Magic",

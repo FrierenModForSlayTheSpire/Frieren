@@ -9,7 +9,8 @@
   },
   "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。 NL （已 消耗 !M! 张魔力） NL （将造成 !D! 点伤害）"
+    "DESCRIPTION": "造成你在本场战斗中 消耗 过的 *魔力 总数2倍的伤害。",
+    "EXTENDED_DESCRIPTION": [" NL （造成 !D! 点伤害。）"]
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "防御魔法",

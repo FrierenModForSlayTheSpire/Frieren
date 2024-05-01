@@ -11,11 +11,13 @@ import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class OrdinaryOffensiveMagic extends DualCard {
     public static final String ID = ModInformation.makeID(OrdinaryOffensiveMagic.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
     public static CardInfo info2 = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY, true);
 
@@ -31,8 +33,6 @@ public class OrdinaryOffensiveMagic extends DualCard {
     public void initSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.baseDamage = 0;
-        this.baseMagicNumber = 0;
-        this.magicNumber = this.baseMagicNumber;
     }
 
     @Override
@@ -44,35 +44,33 @@ public class OrdinaryOffensiveMagic extends DualCard {
     }
 
     public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        this.baseMagicNumber = CombatHelper.getManaNumInExhaustPile();
-        this.baseDamage += this.baseMagicNumber;
-        super.applyPowers();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        int manaCount = CombatHelper.getManaNumInExhaustPile();
+        if (manaCount > 0) {
+            this.baseDamage = manaCount * 2;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
+    }
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        this.baseMagicNumber = CombatHelper.getManaNumInExhaustPile();
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.baseMagicNumber;
         super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        int manaCount = CombatHelper.getManaNumInExhaustPile();
+        this.baseDamage = manaCount * 2;
+        this.calculateCardDamage(null);
         this.addToTop(new VFXAction(p, new NormalAttackEffect(), 0.1F, true));
-        this.damage += this.magicNumber;
-        this.calculateCardDamage(m);
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
-        for (int i = 0; i < 2; i++) {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
-        }
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
     }
 }
