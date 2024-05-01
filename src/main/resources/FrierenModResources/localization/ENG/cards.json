@@ -306,8 +306,8 @@
   },
   "FrierenMod:DexterityOption": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Gain !M! Dexterity.",
-    "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity."]
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity. NL Exhaust."]
   },
   "FrierenMod:ChantOption": {
     "NAME": "The Cups",

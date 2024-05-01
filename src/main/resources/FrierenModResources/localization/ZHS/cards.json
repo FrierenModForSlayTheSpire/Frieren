@@ -334,9 +334,9 @@
   },
   "FrierenMod:DexterityOption": {
     "NAME": "魔术师",
-    "DESCRIPTION": "获得 !M! 点 敏捷 。",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。 NL  消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "获得2/3/4点 敏捷 。"
+      "获得2/3/4点 敏捷 。 NL  消耗 。"
     ]
   },
   "FrierenMod:ChantOption": {
