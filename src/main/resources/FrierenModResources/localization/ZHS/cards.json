@@ -433,7 +433,11 @@
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "魔法使流终结技",
-    "DESCRIPTION": "你在这个回合每 frierenmod:同调 过一张 *魔力 ，就造成一次 !D! 点伤害。（已 *同调 !M! 张）"
+    "DESCRIPTION": "你在这个回合内每 frierenmod:同调 过一张 *魔力 ，就造成一次 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （你在本回合 *同调 过",
+      " 张 *魔力 。）"
+    ]
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "解析结界的魔法",
@@ -510,9 +514,10 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。",
+    "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 你在这个回合内每打出过一张 frierenmod:咏唱 牌，就造成两次 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
-      " NL （造成 !M! 次。）"
+      " NL （你在本回合打出过",
+      " 张 *咏唱 牌。）"
     ]
   },
   "FrierenMod:RockGolemSpell": {

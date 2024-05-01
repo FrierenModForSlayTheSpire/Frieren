@@ -399,7 +399,11 @@
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "Mage Style Finisher",
-    "DESCRIPTION": "Deal !D! damage for each *Mana you played. NL (Already played !M!)"
+    "DESCRIPTION": "Deal !D! damage for each *Mana played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Mana played.)"
+    ]
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "Spell That Breaks Barriers",
@@ -476,9 +480,10 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "Hellfire Summoning",
-    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! Damage 2X times, X equal to the amount of frierenmod:Chant card you played this turn.",
+    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! damage for each frierenmod:Chant played this turn twice.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !M! times.)"
+      " NL (",
+      " *Chant played.)"
     ]
   },
   "FrierenMod:RockGolemSpell": {

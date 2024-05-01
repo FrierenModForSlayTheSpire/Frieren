@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.DamagePerAttackPlayedAction;
 import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
@@ -7,12 +8,10 @@ import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -32,7 +31,6 @@ public class HellFireSummoning extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
-        this.magicNumber = this.baseMagicNumber = 0;
         this.isCostResetCard = true;
         this.isSealCard = true;
     }
@@ -47,36 +45,24 @@ public class HellFireSummoning extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int times = CombatHelper.getChantCardUsedThisTurn();
-        if (p.hasRelic("Chemical X")) {
-            times += 2;
-            p.getRelic("Chemical X").flash();
-        }
-        for (int i = 0; i < times * 2; i++) {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
-        }
+        this.addToBot(new DamagePerAttackPlayedAction(DamagePerAttackPlayedAction.Type.ChantCardUsedTimes, m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.FIRE));
         this.addToBot(new ModifyCostAction(this.uuid, 1));
-    }
-    public void applyPowers() {
-        int chantCount = CombatHelper.getChantCardUsedThisTurn();
-        if (AbstractDungeon.player.hasRelic("Chemical X")) {
-            chantCount += 2;
-        }
-        if (chantCount > 0) {
-            this.magicNumber = this.baseMagicNumber = chantCount * 2;
-            super.applyPowers();
-            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
-            initializeDescription();
-        }
-    }
-    public void onMoveToDiscard() {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
     }
-    public void calculateCardDamage(AbstractMonster mo) {
-        super.calculateCardDamage(mo);
+
+    public void applyPowers() {
+        super.applyPowers();
+        int count = CombatHelper.getChantCardUsedThisTurn();
+        if (count > 0) {
+            this.rawDescription = cardStrings.DESCRIPTION;
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[1];
+            initializeDescription();
+        }
+    }
+
+    public void onMoveToDiscard() {
         this.rawDescription = cardStrings.DESCRIPTION;
-        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
         initializeDescription();
     }
 
