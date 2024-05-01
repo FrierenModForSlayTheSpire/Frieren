@@ -156,7 +156,10 @@
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "Multiple Offensive Magic",
     "DESCRIPTION": "Deal X+4 damage to a random enemy X times, add X *Mana into your hand.",
-    "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand."
+    "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage",
+      "times)"]
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
