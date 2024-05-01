@@ -24,6 +24,7 @@ public class CatchBirdSpell extends AbstractEnemySpell {
             recycleTimes = ((SpellCasterPower) po).currentRecycleTimes;
         }
         Cultist mo = new Cultist(-250.0F * Settings.scale * (recycleTimes + 1), 0);
+        mo.nextMove = (byte) 3;
         this.addToBot(new SpawnMonsterAction(mo, true));
     }
 
