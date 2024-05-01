@@ -32,7 +32,7 @@ public class ChantHand extends AbstractBaseCard {
     }
 
     public ChantHand(int manaExhaust, int reward, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        super(info);
+        super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
