@@ -4,6 +4,7 @@ import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
@@ -32,11 +33,12 @@ public class ManaStylePatch {
 
     @SpirePatch(clz = SingleCardViewPopup.class, method = "getCardBackAtlasRegion")
     public static class PatchGetCardBackAtlasRegion {
+        private static final TextureAtlas.AtlasRegion MANA_TEXTURE_IMG = getImg(ImageMaster.loadImage(PublicRes.BG_MANA_1024));
         @SpirePrefixPatch
         public static SpireReturn<TextureAtlas.AtlasRegion> Insert(SingleCardViewPopup _inst) {
             AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
             if (c instanceof Mana) {
-                return SpireReturn.Return(getImg(PublicRes.BG_MANA_1024));
+                return SpireReturn.Return(MANA_TEXTURE_IMG);
             } else
                 return SpireReturn.Continue();
         }
@@ -57,10 +59,11 @@ public class ManaStylePatch {
 
     @SpirePatch(clz = AbstractCard.class, method = "renderSkillBg")
     public static class PatchRenderSkillBg {
+        private static final TextureAtlas.AtlasRegion MANA_TEXTURE_IMG = getImg(ImageMaster.loadImage(PublicRes.BG_MANA_512));
         @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "x", "y"})
         public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float x, float y) {
             if (_inst instanceof Mana) {
-                renderHelper(_inst, sb, renderColor, getImg(PublicRes.BG_MANA_512), x, y);
+                renderHelper(_inst, sb, renderColor, MANA_TEXTURE_IMG, x, y);
                 return SpireReturn.Return();
             } else {
                 return SpireReturn.Continue();
@@ -73,7 +76,7 @@ public class ManaStylePatch {
         }
     }
 
-    private static TextureAtlas.AtlasRegion getImg(String imgUrl) {
-        return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(imgUrl), 0, 0, ImageMaster.loadImage(imgUrl).getWidth(), ImageMaster.loadImage(imgUrl).getHeight());
+    private static TextureAtlas.AtlasRegion getImg(Texture texture) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
     }
 }
