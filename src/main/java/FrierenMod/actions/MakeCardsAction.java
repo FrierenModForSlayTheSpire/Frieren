@@ -12,7 +12,7 @@ public class MakeCardsAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> hand;
     private final ArrayList<AbstractCard> discardPile;
     private final ArrayList<AbstractCard> exhaustPile;
-    private final boolean isChanged;
+    private boolean isChanged;
 
     public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, boolean isChanged) {
         this.drawPile = drawPile;
@@ -22,32 +22,43 @@ public class MakeCardsAction extends AbstractGameAction {
         this.isChanged = isChanged;
     }
 
+    public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile) {
+        this.drawPile = drawPile;
+        this.hand = hand;
+        this.discardPile = discardPile;
+        this.exhaustPile = exhaustPile;
+    }
+
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        for (AbstractCard c : this.drawPile) {
-            if (isChanged)
-                p.drawPile.addToRandomSpot(c);
-            else
-                p.drawPile.addToTop(c);
-            c.unfadeOut();
-            c.lighten(true);
-        }
-        for (AbstractCard c : this.hand) {
-            p.hand.addToHand(c);
-            c.unfadeOut();
-            c.lighten(true);
-        }
-        for (AbstractCard c : this.discardPile) {
-            p.discardPile.addToTop(c);
-            c.unfadeOut();
-            c.lighten(true);
-        }
-        for (AbstractCard c : this.exhaustPile) {
-            p.exhaustPile.addToTop(c);
-            c.unfadeOut();
-            c.lighten(true);
-        }
+        if (this.drawPile != null)
+            for (AbstractCard c : this.drawPile) {
+                if (isChanged)
+                    p.drawPile.addToRandomSpot(c);
+                else
+                    p.drawPile.addToTop(c);
+                c.unfadeOut();
+                c.lighten(true);
+            }
+        if (this.hand != null)
+            for (AbstractCard c : this.hand) {
+                p.hand.addToHand(c);
+                c.unfadeOut();
+                c.lighten(true);
+            }
+        if (this.discardPile != null)
+            for (AbstractCard c : this.discardPile) {
+                p.discardPile.addToTop(c);
+                c.unfadeOut();
+                c.lighten(true);
+            }
+        if (this.exhaustPile != null)
+            for (AbstractCard c : this.exhaustPile) {
+                p.exhaustPile.addToTop(c);
+                c.unfadeOut();
+                c.lighten(true);
+            }
         this.isDone = true;
     }
 }

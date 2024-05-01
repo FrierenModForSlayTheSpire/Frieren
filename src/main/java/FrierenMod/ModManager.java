@@ -6,6 +6,7 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CardPoolHelper;
+import FrierenMod.gameHelpers.DataObject;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
 import FrierenMod.gameHelpers.OnStartBattleHelper;
 import FrierenMod.monsters.Spiegel_Frieren;
@@ -19,6 +20,7 @@ import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
@@ -45,8 +47,9 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 
 
 @SpireInitializer
-public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
+public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, CustomSavable<String> {
     private static String modID;
+    public static final DataObject saveData = new DataObject();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -92,6 +95,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.subscribe(new OnPlayerTurnStartHelper());
         BaseMod.subscribe(new OnStartBattleHelper());
         Log.logger.info("Done adding hooks");
+        BaseMod.addSaveField(modID, this);
     }
 
     public void setModID(String ID) {
@@ -118,7 +122,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receivePostInitialize() {
         makeModPanels();
-        BaseMod.addAudio("Frieren_The_Slayer.mp3",ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
+        BaseMod.addAudio("Frieren_The_Slayer.mp3", ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
         BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
@@ -183,7 +187,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
             Log.logger.info("Adding relics: " + relic.relicId);
         });
         Log.logger.info("Done adding relics!");
-   }
+    }
 
     @Override
     public void receiveEditCharacters() {
@@ -256,5 +260,17 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
             if (!resourcePathExists.exists())
                 throw new RuntimeException(EXCEPTION_STRINGS.RESOURCE_FOLDER_EXCEPTION + getModID() + "Resources");
         }
+    }
+
+    @Override
+    public final String onSave() {
+        // 可以直接在抽象类存储一些共有的数据，例如 secondCounter
+        return saveData.save();
+    }
+
+
+    @Override
+    public final void onLoad(String s) {
+        saveData.load(s);
     }
 }
