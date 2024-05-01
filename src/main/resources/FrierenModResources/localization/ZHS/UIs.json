@@ -132,11 +132,6 @@
       " frierenmod:终极加速同调 。"
     ]
   },
-  "FrierenMod:PatchHasEnoughEnergy": {
-    "TEXT": [
-      "没有足够 #r魔力 。"
-    ]
-  },
   "FrierenMod:ManaPanel": {
     "TEXT": [
       "魔力",
@@ -156,6 +151,12 @@
       "/2）"
     ],
     "TEXT_DICT": {}
+  },
+  "FrierenMod:cantUseMessage": {
+    "TEXT": [
+      "没有足够 #r魔力 。",
+      "本回合没有打出过 #r咏唱 牌。"
+    ]
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [

@@ -3,6 +3,7 @@ package FrierenMod.cards;
 import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
+import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
@@ -10,6 +11,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -46,6 +48,7 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public static final Color FLASH_COLOR = new Color(123.0F / 255.0F, 236.0F / 255.0F, 232.0F / 255.0F, 1.0F);
     public ArrayList<TooltipInfo> tips = new ArrayList<>();
+    public static final String[] cantUseTEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("cantUseMessage")).TEXT;
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
@@ -182,25 +185,19 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (this.isLegendarySpell && this.isChantCard)
-            return canLegendarySpellUse(m) && canChantCardUse(m);
-        if (this.isLegendarySpell)
-            return canLegendarySpellUse(m);
-        if (this.isChantCard)
-            return canChantCardUse(m);
-        return canUseOriginally(p,m);
+        if (this.isChantCard && CombatHelper.cannotChant(CombatHelper.getManaNeedWhenChant(chantX))) {
+            this.cantUseMessage = cantUseTEXT[0];
+            return false;
+        }
+        if (this.isLegendarySpell && CombatHelper.cannotPlayLegendarySpell()) {
+            this.cantUseMessage = cantUseTEXT[1];
+            return false;
+        }
+        return super.canUse(p, m);
     }
 
     public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m) {
         return super.canUse(p, m);
-    }
-
-    private boolean canChantCardUse(AbstractMonster m) {
-        return CombatHelper.canChantUse(this, m, this.chantX);
-    }
-
-    private boolean canLegendarySpellUse(AbstractMonster m) {
-        return CombatHelper.canLegendarySpellUse(this, m);
     }
 
     public void afterChant() {
@@ -259,6 +256,6 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterChantFinished() {
     }
 
-    public void afterSynchroFinished(){
+    public void afterSynchroFinished() {
     }
 }

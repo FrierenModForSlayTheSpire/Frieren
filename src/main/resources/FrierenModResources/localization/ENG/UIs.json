@@ -132,11 +132,6 @@
       " frierenmod:Limit_Over_Accel_Synchro ."
     ]
   },
-  "FrierenMod:PatchHasEnoughEnergy": {
-    "TEXT": [
-      "Not enough #rMana ."
-    ]
-  },
   "FrierenMod:ManaPanel": {
     "TEXT": [
       "Mana",
@@ -156,6 +151,12 @@
       "/2)"
     ],
     "TEXT_DICT": {}
+  },
+  "FrierenMod:cantUseMessage": {
+    "TEXT": [
+      "Not enough #rMana .",
+      "Not #rChanted this turn."
+    ]
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
