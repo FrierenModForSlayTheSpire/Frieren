@@ -1,6 +1,5 @@
 package FrierenMod.panels;
 
-import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.FernRes;
@@ -10,7 +9,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -58,35 +56,7 @@ public class FernPanel extends AbstractPanel {
         if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
             return false;
         if (CardCrawlGame.isInARun()) {
-            if (AbstractDungeon.player.chosenClass == CharacterEnums.FERN)
-                return true;
-            for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-                if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana)
-                    return true;
-            }
-            if (CombatHelper.isInCombat()) {
-                for (AbstractCard card : AbstractDungeon.player.hand.group) {
-                    if (card instanceof AbstractBaseCard)
-                        return true;
-                }
-                for (AbstractCard card : AbstractDungeon.player.drawPile.group) {
-                    if (card instanceof AbstractBaseCard)
-                        return true;
-                }
-                for (AbstractCard card : AbstractDungeon.player.discardPile.group) {
-                    if (card instanceof AbstractBaseCard)
-                        return true;
-                }
-                for (AbstractCard card : AbstractDungeon.player.exhaustPile.group) {
-                    if (card instanceof AbstractBaseCard)
-                        return true;
-                }
-                for (AbstractCard card : AbstractDungeon.player.limbo.group) {
-                    if (card instanceof AbstractBaseCard)
-                        return true;
-                }
-            }
-            return false;
+            return AbstractDungeon.player.chosenClass == CharacterEnums.FERN;
         }
         return false;
     }
