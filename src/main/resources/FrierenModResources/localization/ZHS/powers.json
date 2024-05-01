@@ -128,7 +128,7 @@
   "FrierenMod:CopyPower": {
     "NAME": "复制体",
     "DESCRIPTIONS": [
-      "受到未被格挡的攻击伤害时，获得等量 #r魔力 层数 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。"
+      "受到未被格挡的伤害时，获得等量 #r魔力 层数 。 NL 玩家获得 #y格挡 时，获得相同数量的 #y格挡 。 NL 血量降到100以下时将会逼出复制体的全力！"
     ]
   },
   "FrierenMod:EnemyManaPower": {
