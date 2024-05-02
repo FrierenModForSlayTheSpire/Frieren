@@ -23,14 +23,14 @@ public class CriticalStrike extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
-        this.raidNumber = this.baseRaidNumber = 2;
+        this.raidNumber = this.baseRaidNumber = 0;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeRaidNumber(1);
+            this.upgradeRaidNumber(2);
         }
     }
 

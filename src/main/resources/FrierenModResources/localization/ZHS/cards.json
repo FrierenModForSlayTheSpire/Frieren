@@ -603,7 +603,7 @@
   },
   "FrierenMod:CriticalStrike": {
     "NAME": "会心一击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 2:再造成 !D! 点。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 !R! :再造成 !D! 点。"
   },
   "FrierenMod:SuperSerious": {
     "NAME": "超级认真",
