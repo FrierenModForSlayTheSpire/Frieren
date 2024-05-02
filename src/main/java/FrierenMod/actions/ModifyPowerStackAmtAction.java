@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 public class ModifyPowerStackAmtAction extends AbstractGameAction {
     private final AbstractPower power;
     private final int amt;
-    private  final boolean zeroRemove;
+    private final boolean zeroRemove;
     private final boolean isNewAmt;
 
     public ModifyPowerStackAmtAction(AbstractPower power, int amt, boolean zeroRemove) {
@@ -19,6 +19,7 @@ public class ModifyPowerStackAmtAction extends AbstractGameAction {
         this.zeroRemove = zeroRemove;
         this.isNewAmt = false;
     }
+
     public ModifyPowerStackAmtAction(AbstractPower power, int amt, boolean zeroRemove, boolean newAmt) {
         this.power = power;
         this.amt = amt;
@@ -29,8 +30,8 @@ public class ModifyPowerStackAmtAction extends AbstractGameAction {
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        if(this.amt != 0){
-            if(this.isNewAmt)
+        if (this.amt != 0) {
+            if (this.isNewAmt)
                 this.power.amount = amt;
             else {
                 this.power.stackPower(this.amt);
@@ -39,8 +40,8 @@ public class ModifyPowerStackAmtAction extends AbstractGameAction {
             this.power.updateDescription();
             if (this.power.amount == 0 && this.zeroRemove)
                 this.addToBot(new RemoveSpecificPowerAction(p, p, this.power));
-            if(this.power instanceof ConcentrationPower){
-                if(this.power.amount < 0){
+            if (this.power instanceof ConcentrationPower) {
+                if (this.power.amount < 0) {
                     this.power.amount = 0;
                 }
                 ((ConcentrationPower) this.power).changeTimes++;

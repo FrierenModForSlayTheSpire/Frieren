@@ -11,52 +11,24 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Moody extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Moody.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+
     public Moody() {
         super(info);
         this.baseDamage = 0;
         this.baseMagicNumber = 0;
         this.magicNumber = this.baseMagicNumber;
     }
+
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 6;
-    }
-    public void applyPowers() {
-        int realBaseDamage = this.baseDamage;
-        AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
-        if(po instanceof ConcentrationPower)
-            this.baseMagicNumber = ((ConcentrationPower) po).changeTimes;
-        else {
-            this.baseMagicNumber = 0;
-        }
-        this.baseDamage += this.baseMagicNumber;
-        super.applyPowers();
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
-    }
-
-    public void calculateCardDamage(AbstractMonster mo) {
-        AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
-        if(po instanceof ConcentrationPower)
-            this.baseMagicNumber = ((ConcentrationPower) po).changeTimes;
-        else {
-            this.baseMagicNumber = 0;
-        }
-        int realBaseDamage = this.baseDamage;
-        this.baseDamage += this.baseMagicNumber;
-        super.calculateCardDamage(mo);
-        this.baseDamage = realBaseDamage;
-        this.isDamageModified = this.damage != this.baseDamage;
-        this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).DESCRIPTION;
-        this.initializeDescription();
     }
 
     @Override
@@ -66,8 +38,35 @@ public class Moody extends AbstractBaseCard {
             this.upgradeBaseCost(1);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        ConcentrationPower po = (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
+        this.baseDamage = po == null ? 0 : po.changeTimes;
+        this.calculateCardDamage(null);
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+    }
+
+    public void applyPowers() {
+        ConcentrationPower po = (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
+        int count = po == null ? 0 : po.changeTimes;
+        if (count > 0) {
+            this.baseDamage = count;
+            super.applyPowers();
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
+            initializeDescription();
+        }
+    }
+
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION;
+        this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0];
+        initializeDescription();
     }
 }
