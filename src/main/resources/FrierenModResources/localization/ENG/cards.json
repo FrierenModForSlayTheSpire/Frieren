@@ -9,7 +9,10 @@
   },
   "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "Ordinary Offensive Magic",
-    "DESCRIPTION": "Deal damage twice as the amount of *Mana you have Exhausted. NL (Deal !D! damage.)"
+    "DESCRIPTION": "Deal damage equal to 2 times the number of Mana Exhausted this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "Defensive Magic",
@@ -39,15 +42,24 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "Chant From Draw Pile",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your draw pile, gain !B! Block twice."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your draw pile, gain !B! Block twice.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your draw pile, gain X Block twice."
+    ]
   },
   "FrierenMod:ChantHand": {
     "NAME": "Chant From Hand",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your hand, gain !M! [E] ."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your hand, gain !M! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your hand, gain X [E] ."
+    ]
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "Chant From Discard Pile",
-    "DESCRIPTION": "Exhaust !SM! *Mana in your discard pile, Gain !M! Strength."
+    "DESCRIPTION": "Exhaust !SM! *Mana in your discard pile, Gain !M! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in your discard pile, Gain X Strength."
+    ]
   },
   "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Swamp",
@@ -144,7 +156,10 @@
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "Multiple Offensive Magic",
     "DESCRIPTION": "Deal X+4 damage to a random enemy X times, add X *Mana into your hand.",
-    "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand."
+    "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage",
+      "times)"]
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
@@ -203,7 +218,7 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "Full Ahead",
-    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 3 Strength."
+    "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 2 Strength."
   },
   "FrierenMod:LockTarget": {
   "NAME": "Lock Target",
@@ -306,8 +321,8 @@
   },
   "FrierenMod:DexterityOption": {
     "NAME": "The Magician",
-    "DESCRIPTION": "Gain !M! Dexterity.",
-    "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity."]
+    "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity. NL Exhaust."]
   },
   "FrierenMod:ChantOption": {
     "NAME": "The Cups",
@@ -387,7 +402,11 @@
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "Mage Style Finisher",
-    "DESCRIPTION": "Deal !D! damage for each *Mana you played. NL (Already played !M!)"
+    "DESCRIPTION": "Deal !D! damage for each *Mana played this turn.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " Mana played.)"
+    ]
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "Spell That Breaks Barriers",
@@ -464,7 +483,11 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "Hellfire Summoning",
-    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! Damage 2X times, X equal to the amount of frierenmod:Chant card you played this turn. NL (Already played !M! )"
+    "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! damage for each frierenmod:Chant played this turn twice.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (",
+      " *Chant played.)"
+    ]
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "Spell to Manipulate A Rock Golem",
@@ -530,6 +553,6 @@
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
-    "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile."
+    "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."
   }
 }

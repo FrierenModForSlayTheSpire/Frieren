@@ -27,7 +27,7 @@ public class MultipleOffensiveMagicAction extends AbstractGameAction {
 
     public void update() {
         int baseDamage = this.energyOnUse + 4;
-        int counts = this.isUpgraded?this.energyOnUse+1:this.energyOnUse;
+        int counts = this.isUpgraded ? this.energyOnUse + 1 : this.energyOnUse;
         int magicNum = this.energyOnUse;
         if (this.p.hasRelic("Chemical X")) {
             baseDamage += 2;
@@ -36,9 +36,9 @@ public class MultipleOffensiveMagicAction extends AbstractGameAction {
             this.p.getRelic("Chemical X").flash();
         }
         this.card.baseDamage = baseDamage;
-        for(int i = 0; i < counts; ++i) {
-            this.target = AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng);
-            this.card.calculateCardDamage((AbstractMonster)this.target);
+        for (int i = 0; i < counts; ++i) {
+            this.target = AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng);
+            this.card.calculateCardDamage((AbstractMonster) this.target);
             if (this.target != null) {
                 this.addToTop(new DamageAction(this.target, new DamageInfo(AbstractDungeon.player, this.card.damage, this.card.damageTypeForTurn), AttackEffect.NONE));
                 this.addToTop(new SFXAction("ORB_LIGHTNING_EVOKE", 0.1F));

@@ -1,6 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.actions.ModifyPowerStackAmtAction;
+import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
@@ -22,27 +23,29 @@ public class ConcentrationPower extends AbstractBasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        AbstractPlayer p = AbstractDungeon.player;
-        AbstractPower superSerious = p.getPower(SuperSeriousPower.POWER_ID);
-        AbstractPower dancing = p.getPower(DancingPower.POWER_ID);
-        if (dancing != null) {
-            int amt = CombatHelper.getCardsUsedThisTurnSize(false) + 2;
-            this.addToBot(new ModifyPowerStackAmtAction(this, amt, false, true));
-            return;
-        }
-        if (superSerious != null) {
-            this.addToBot(new ModifyPowerStackAmtAction(this, 1, false));
-            this.addToBot(new ModifyPowerStackAmtAction(superSerious, -1, true));
-        } else {
-            this.addToBot(new ModifyPowerStackAmtAction(this, -1, false));
-        }
+        ActionHelper.addToBotAbstract(() -> {
+            AbstractPlayer p = AbstractDungeon.player;
+            AbstractPower superSerious = p.getPower(SuperSeriousPower.POWER_ID);
+            AbstractPower dancing = p.getPower(DancingPower.POWER_ID);
+            if (dancing != null) {
+                int amt = CombatHelper.getCardsUsedThisTurnSize(false) + 2;
+                this.addToBot(new ModifyPowerStackAmtAction(this, amt, false, true));
+                return;
+            }
+            if (superSerious != null) {
+                this.addToBot(new ModifyPowerStackAmtAction(this, 1, false));
+                this.addToBot(new ModifyPowerStackAmtAction(superSerious, -1, true));
+            } else {
+                this.addToBot(new ModifyPowerStackAmtAction(this, -1, false));
+            }
+        });
     }
 
     @Override
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;
         this.amount += stackAmount;
-        if(this.amount < 0)
+        if (this.amount < 0)
             this.amount = 0;
     }
 

@@ -8,10 +8,13 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class MultipleOffensiveMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(MultipleOffensiveMagic.class.getSimpleName());
+    private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final CardInfo info = new CardInfo(ID, -1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ALL_ENEMY);
 
     public MultipleOffensiveMagic() {
@@ -40,5 +43,32 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MultipleOffensiveMagicAction(p, this, this.energyOnUse, this.upgraded));
+    }
+
+    public void onMoveToDiscard() {
+        this.rawDescription = cardStrings.DESCRIPTION;
+        initializeDescription();
+    }
+
+    public void calculateCardDamage(AbstractMonster mo) {
+        int energy = EnergyPanel.getCurrentEnergy();
+        this.baseDamage = energy + 4;
+        int times = this.upgraded ? energy + 1 : energy;
+        super.calculateCardDamage(mo);
+        this.rawDescription = cardStrings.DESCRIPTION;
+        if (times > 0)
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + times + cardStrings.EXTENDED_DESCRIPTION[1];
+        initializeDescription();
+    }
+
+    public void applyPowers() {
+        int energy = EnergyPanel.getCurrentEnergy();
+        this.baseDamage = energy + 4;
+        int times = this.upgraded ? energy + 1 : energy;
+        super.applyPowers();
+        this.rawDescription = cardStrings.DESCRIPTION;
+        if (times > 0)
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + times + cardStrings.EXTENDED_DESCRIPTION[1];
+        initializeDescription();
     }
 }

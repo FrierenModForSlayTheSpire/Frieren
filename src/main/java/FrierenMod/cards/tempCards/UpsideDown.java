@@ -4,6 +4,7 @@ import FrierenMod.actions.ExchangeDrawAndDiscardPileAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -19,6 +20,7 @@ public class UpsideDown extends AbstractBaseCard {
     public void triggerOnOtherCardPlayed(AbstractCard c) {
         if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
             this.addToBot(new ExchangeDrawAndDiscardPileAction(AbstractDungeon.player));
+            this.addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 2));
         }
     }
 }

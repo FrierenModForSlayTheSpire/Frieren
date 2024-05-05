@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class IcicleCherryBlossom extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
+    public static final int RATE = 60;
 
     public IcicleCherryBlossom() {
         super(ID, RelicTier.BOSS);

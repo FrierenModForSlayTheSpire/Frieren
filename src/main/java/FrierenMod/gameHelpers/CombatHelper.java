@@ -6,7 +6,6 @@ import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.powers.WeakenedChantPower;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
@@ -75,16 +74,8 @@ public class CombatHelper {
         return manaNeed <= getManaNumInDiscardPile();
     }
 
-    public static boolean canChantUse(AbstractCard c, AbstractMonster m, int chantX) {
-        return !cannotChant(getManaNeedWhenChant(chantX)) && c.cardPlayable(m) && c.hasEnoughEnergy();
-    }
-
     public static boolean cannotPlayLegendarySpell() {
         return getChantCardUsedThisTurn() == 0;
-    }
-
-    public static boolean canLegendarySpellUse(AbstractCard c, AbstractMonster m) {
-        return !cannotPlayLegendarySpell() && c.cardPlayable(m) && c.hasEnoughEnergy();
     }
 
     public static int getChantCardUsedThisTurn() {
@@ -124,8 +115,8 @@ public class CombatHelper {
         return getDeviationAmt(isUsingCard) % 2 == 0;
     }
 
-    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard, boolean reversed) {
-        return reversed == (getDeviationAmt(isUsingCard) > raidNumber);
+    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard) {
+        return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
     public static int getManaNeedWhenChant(int chantX) {

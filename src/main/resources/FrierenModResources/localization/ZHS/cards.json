@@ -9,7 +9,8 @@
   },
   "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "普通攻击魔法",
-    "DESCRIPTION": "造成你已 消耗 的 *魔力 数量的伤害两次。 NL （已 消耗 !M! 张魔力） NL （将造成 !D! 点伤害）"
+    "DESCRIPTION": "造成你在本场战斗中 消耗 过的 *魔力 总数2倍的伤害。",
+    "EXTENDED_DESCRIPTION": [" NL （造成 !D! 点伤害。）"]
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "防御魔法",
@@ -39,15 +40,24 @@
   },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
-    "DESCRIPTION": " 消耗 抽牌堆中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。"
+    "DESCRIPTION": " 消耗 抽牌堆中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 抽牌堆中X张 *魔力 ，获得X点 格挡 两次。"
+    ]
   },
   "FrierenMod:ChantHand": {
     "NAME": "从手牌咏唱",
-    "DESCRIPTION": " 消耗 手牌中 !SM! 张 *魔力 ，获得 !M! 点 [E] 。"
+    "DESCRIPTION": " 消耗 手牌中 !SM! 张 *魔力 ，获得 !M! 点 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 手牌中X张 *魔力 ，获得X点 [E] 。"
+    ]
   },
   "FrierenMod:ChantDiscardPile": {
     "NAME": "从弃牌堆咏唱",
-    "DESCRIPTION": " 消耗 弃牌堆中 !SM! 张 *魔力 ，获得 !M! 点 力量 。"
+    "DESCRIPTION": " 消耗 弃牌堆中 !SM! 张 *魔力 ，获得 !M! 点 力量 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 弃牌堆中X张 *魔力 ，获得X点 力量 。"
+    ]
   },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",
@@ -143,8 +153,11 @@
   },
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "多重攻击魔法",
-    "DESCRIPTION": " 随机造成X+4点伤害X次，将X张 *魔力 放入手牌。",
-    "UPGRADE_DESCRIPTION": "随机造成X+4点伤害X+1次，将X张 *魔力 放入手牌。"
+    "DESCRIPTION": "随机造成X+4点伤害X次，将X张 *魔力 放入手牌。",
+    "UPGRADE_DESCRIPTION": "随机造成X+4点伤害X+1次，将X张 *魔力 放入手牌。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害",
+      "次）"]
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "仪式的准备",
@@ -203,7 +216,7 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
-    "DESCRIPTION": "每回合第一次 frierenmod:咏唱 后，若抽牌堆 *魔力 数等于弃牌堆，获得 2 敏捷 ，否则获得 3 力量 。"
+    "DESCRIPTION": "每回合第一次 frierenmod:咏唱 后，若抽牌堆 *魔力 数等于弃牌堆，获得 2 敏捷 ，否则获得 2 力量 。"
   },
   "FrierenMod:LockTarget": {
     "NAME": "定叫他有来无回",
@@ -334,9 +347,9 @@
   },
   "FrierenMod:DexterityOption": {
     "NAME": "魔术师",
-    "DESCRIPTION": "获得 !M! 点 敏捷 。",
+    "DESCRIPTION": "获得 !M! 点 敏捷 。 NL  消耗 。",
     "EXTENDED_DESCRIPTION": [
-      "获得2/3/4点 敏捷 。"
+      "获得2/3/4点 敏捷 。 NL  消耗 。"
     ]
   },
   "FrierenMod:ChantOption": {
@@ -423,7 +436,11 @@
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "魔法使流终结技",
-    "DESCRIPTION": "你在这个回合每 frierenmod:同调 过一张 *魔力 ，就造成一次 !D! 点伤害。（已 *同调 !M! 张）"
+    "DESCRIPTION": "你在这个回合内每 frierenmod:同调 过一张 *魔力 ，就造成一次 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （你在本回合 *同调 过",
+      " 张 *魔力 。）"
+    ]
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "解析结界的魔法",
@@ -500,7 +517,11 @@
   },
   "FrierenMod:HellFireSummoning": {
     "NAME": "地狱业火魔法",
-    "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 造成 !D! 点伤害2X次，X为你在本回合打出的 frierenmod:咏唱 牌数量。 NL （已打出 !M! 张）"
+    "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 你在这个回合内每打出过一张 frierenmod:咏唱 牌，就造成两次 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （你在本回合打出过",
+      " 张 *咏唱 牌。）"
+    ]
   },
   "FrierenMod:RockGolemSpell": {
     "NAME": "操纵石像的魔法",
@@ -566,7 +587,7 @@
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
-    "DESCRIPTION": " 不能被打出 。 NL 同调1张 *魔力 后， 交换你的抽牌堆和弃牌堆。"
+    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:同调 1张 *魔力 后，交换你的抽牌堆和弃牌堆并失去2点生命。"
   },
   "FrierenMod:Strike_Fern": {
     "NAME": "打击",
@@ -590,7 +611,7 @@
     "UPGRADE_DESCRIPTION": " 保留 。 NL 使用的下 !M! 张牌不会失去 frierenmod:专注 ，而是获得1层 *专注 。"
   },
   "FrierenMod:DancingForm": {
-    "NAME": "舞姿形态",
+    "NAME": "交际舞",
     "DESCRIPTION": "使用卡牌后，获得或失去 frierenmod:专注 ，使 frierenmod:离差 永恒为2。"
   },
   "FrierenMod:1": {
@@ -632,6 +653,14 @@
   },
   "FrierenMod:Fragile": {
     "NAME": "易碎品",
-    "DESCRIPTION": " 打出后返回手牌。 NL  frierenmod:奇袭 !R! ：随机获得5种效果1种： *奇袭 值-1，效果值+1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
+    "DESCRIPTION": " frierenmod:奇袭 !R! ：打出后返回手牌并获得5种效果随机1种： *奇袭 值-1；抽 !M! 张牌；获得 !M! 点 [E] ；获得 !M! 层 frierenmod:专注 ； 消耗 。"
+  },
+  "FrierenMod:Exchange": {
+    "NAME": "师徒配合",
+    "DESCRIPTION": " 本局游戏第一次使用：使用2套 *现开套牌 构筑 [#784183]菲伦[] 的一套牌组。将 [#edeaf5]芙莉莲[] 替换为 [#784183]菲伦[] 进行游戏。"
+  },
+  "FrierenMod:ExchangeBack": {
+    "NAME": "换回",
+    "DESCRIPTION": " 保留 。 NL 将 [#784183]菲伦[] 换回 [#edeaf5]芙莉莲[] 。 NL 消耗 。"
   }
 }

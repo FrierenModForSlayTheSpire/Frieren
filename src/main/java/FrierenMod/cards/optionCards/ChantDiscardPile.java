@@ -7,11 +7,13 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantDiscardPile extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ChantDiscardPile.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
+    public static final CardInfo info2 = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     private AbstractGameAction[] nextAction;
 
     public ChantDiscardPile() {
@@ -20,7 +22,7 @@ public class ChantDiscardPile extends AbstractBaseCard {
     }
 
     public ChantDiscardPile(int manaExhaust, int reward) {
-        super(info);
+        super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
@@ -28,7 +30,7 @@ public class ChantDiscardPile extends AbstractBaseCard {
     }
 
     public ChantDiscardPile(int manaExhaust, int reward, AbstractGameAction... nextAction) {
-        super(info);
+        super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);

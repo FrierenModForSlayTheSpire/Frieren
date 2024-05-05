@@ -39,7 +39,9 @@ public class GrandCross extends AbstractBaseCard {
     public void applyPowers() {
         super.applyPowers();
         if (!CombatHelper.cannotPlayLegendarySpell())
-            this.costForTurn = 0;
+            this.setCostForTurn(0);
+        else
+            this.setCostForTurn(this.cost);
     }
 
     public void triggerOnGlowCheck() {

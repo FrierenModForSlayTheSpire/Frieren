@@ -8,11 +8,13 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ChantHand extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
+    public static final CardInfo info2 = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public AbstractCard cardToReturn;
     public AbstractGameAction[] nextAction;
 
@@ -21,7 +23,7 @@ public class ChantHand extends AbstractBaseCard {
         this.cardsToPreview = new Mana();
     }
     public ChantHand(int manaExhaust, int reward) {
-        super(info);
+        super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
@@ -30,7 +32,7 @@ public class ChantHand extends AbstractBaseCard {
     }
 
     public ChantHand(int manaExhaust, int reward, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        super(info);
+        super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);

@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -39,7 +40,7 @@ public class RecallAction extends AbstractGameAction {
 
                     for(var5 = cardsToMove.iterator(); var5.hasNext(); c.lighten(false)) {
                         c = (AbstractCard)var5.next();
-                        if (this.player.hand.size() < 10) {
+                        if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                             this.player.hand.addToHand(c);
                             this.player.exhaustPile.removeCard(c);
                         }
@@ -71,7 +72,7 @@ public class RecallAction extends AbstractGameAction {
                 AbstractCard c;
                 while(var1.hasNext()) {
                     c = (AbstractCard)var1.next();
-                    if (this.player.hand.size() < 10) {
+                    if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                         this.player.hand.addToHand(c);
                         c.retain = true;
                         this.player.exhaustPile.removeCard(c);

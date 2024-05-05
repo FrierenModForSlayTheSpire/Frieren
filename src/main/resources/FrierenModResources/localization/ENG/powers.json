@@ -151,11 +151,12 @@
       "Destructive_Lightning_Magic_SP  ",
       "Consume #b%d #rMana , Apply #b%d #yVulnerable and #yWeak to enemy. NL ",
       "Perfect_Defensive_Magic_SP NL ",
-      "Consume #b%d #rMana , Gain #b%d #yBuffer and #b%d #yMetallicize . NL ",
+      "Consume #b%d #rMana , Gain #b%d #yBuffer and #b%d #yMalleable . NL ",
       "Spell_To_Capture_A_Bird NL ",
       "Consume #b%d #rMana , Summon #b1 #yCultist. NL ",
       "Flying_Magic_SP NL ",
-      "Consume #b%d #rMana , Gain #b%d #yIntangible ."
+      "Consume #b%d #rMana , Gain #b%d #yIntangible .",
+      "Consume #b%d #rMana , Gain #b%d #yBuffer and #b%d #yMetallicize . NL "
     ]
   },
   "FrierenMod:WeakenedChantPower": {

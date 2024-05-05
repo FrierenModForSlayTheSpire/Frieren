@@ -19,31 +19,26 @@ public class FragileAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        int randomNumber = cardRandomRng.random(100);
-        if (randomNumber < 20) {
-            this.addToBot(new DrawCardAction(c.magicNumber));
-        } else if (randomNumber < 40) {
-            this.addToBot(new GainEnergyAction(c.magicNumber));
-        } else if (randomNumber < 60) {
-            this.addToBot(new ModifyPowerStackAmtAction(CombatHelper.getConcentrationPower(), c.magicNumber, false));
-        } else if (randomNumber < 80) {
-            c.upgradeRaidNumber(-1);
-            if (c.raidNumber < 0) {
+        if (CombatHelper.canRaidTakeEffect(c.raidNumber, true)) {
+            int randomNumber = cardRandomRng.random(100);
+            if (randomNumber < 20) {
+                this.addToBot(new DrawCardAction(c.magicNumber));
+            } else if (randomNumber < 40) {
+                this.addToBot(new GainEnergyAction(c.magicNumber));
+            } else if (randomNumber < 60) {
+                this.addToBot(new ModifyPowerStackAmtAction(CombatHelper.getConcentrationPower(), c.magicNumber, false));
+            } else if (randomNumber < 80) {
+                c.upgradeRaidNumber(-1);
+                if (c.raidNumber < 0) {
+                    this.addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+                    c.raidNumber = c.baseRaidNumber = 0;
+                    this.isDone = true;
+                    return;
+                }
+            } else {
                 this.addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
-                c.raidNumber = c.baseRaidNumber = 0;
-                this.isDone = true;
-                return;
             }
-            this.upgradeMagicNumber();
-        }else {
-            this.addToBot(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
         }
         this.isDone = true;
-    }
-
-    private void upgradeMagicNumber() {
-        c.baseMagicNumber += 1;
-        c.magicNumber = c.baseMagicNumber;
-        c.upgradedMagicNumber = true;
     }
 }

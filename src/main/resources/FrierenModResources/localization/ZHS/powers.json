@@ -32,7 +32,7 @@
   "FrierenMod:RitesPreparationPower": {
     "NAME": "仪式准备",
     "DESCRIPTIONS": [
-      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已打出 #b%d 张）。"
+      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已 *同调 #b%d 张。）"
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {
@@ -151,11 +151,12 @@
       "破灭之雷魔法SP NL ",
       "花费 #b%d 层 #r魔力 ，使敌人获得 #b%d 层 #y易伤 和 #y虚弱 。 NL ",
       "防御魔法完全体SP NL ",
-      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y缓冲 和 #b%d 层 #y金属化 。 NL ",
+      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y缓冲 和 #b%d 层 #y柔韧 。 NL ",
       "捕鸟魔法 NL ",
       "花费 #b%d 层 #r魔力 ，召唤 #b1 只 #y咔咔 。 NL ",
       "飞行魔法SP NL ",
-      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y无实体 。"
+      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y无实体 。",
+      "花费 #b%d 层 #r魔力 ，获得 #b%d 层 #y缓冲 和 #b%d 层 #y金属化 。 NL "
     ]
   },
   "FrierenMod:WeakenedChantPower": {
@@ -173,13 +174,13 @@
   "FrierenMod:SuperSeriousPower": {
     "NAME": "超级认真",
     "DESCRIPTIONS": [
-      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 *专注 。"
+      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 #y专注 。"
     ]
   },
   "FrierenMod:DancingPower": {
-    "NAME": "舞姿形态",
+    "NAME": "交际舞",
     "DESCRIPTIONS": [
-      "使用卡牌后，获得或失去 #专注 ，使 #离差 永恒为 #b2 。"
+      "使用卡牌后，获得或失去 #y专注 ，使 #y离差 永恒为 #b2 。"
     ]
   },
   "FrierenMod:WashingClothesPower": {

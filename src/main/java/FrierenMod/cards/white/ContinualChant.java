@@ -48,7 +48,8 @@ public class ContinualChant extends AbstractBaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!CombatHelper.canLegendarySpellUse(this, m)) {
+        if (CombatHelper.cannotPlayLegendarySpell()) {
+            this.cantUseMessage = cantUseTEXT[1];
             return false;
         }
         return super.canUseOriginally(p, m);

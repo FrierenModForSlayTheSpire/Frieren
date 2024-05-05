@@ -54,6 +54,8 @@ public class ManaCollapse extends AbstractBaseCard {
     public void applyPowers() {
         super.applyPowers();
         this.secondMagicNumber = this.baseSecondMagicNumber = this.damage + 11;
+        if(this.secondMagicNumber > 20)
+            this.isSecondMagicNumberModified = true;
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 10) {
             this.shuffleBackIntoDrawPile = false;
         }
