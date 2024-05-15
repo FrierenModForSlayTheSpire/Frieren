@@ -44,12 +44,16 @@ public class FireSpell extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        LittleFire c = new LittleFire();
+        if (this.upgraded) {
+            c.upgrade();
+        }
         int count = 0;
         for (AbstractMonster m2 : AbstractDungeon.getMonsters().monsters) {
             if (!m2.isDeadOrEscaped()) {
                 count++;
             }
         }
-        this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(), count));
+        this.addToBot(new MakeTempCardInHandAction(c, count));
     }
 }
