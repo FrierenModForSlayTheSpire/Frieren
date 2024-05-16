@@ -128,7 +128,7 @@
   "FrierenMod:CopyPower": {
     "NAME": "Replica",
     "DESCRIPTIONS": [
-      "When taken unblocked attack damage, gain the same amount of #rMana . NL When player gain #yBlock , Gain the same amount of #yBlock ."
+      "When taken unblocked damage, gain the same amount of #rMana . NL When player gain #yBlock , Gain the same amount of #yBlock . NL It will use #rApex_Of_The_Magic when its HP less than 100!"
     ]
   },
   "FrierenMod:EnemyManaPower": {

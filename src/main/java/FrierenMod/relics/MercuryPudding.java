@@ -20,20 +20,21 @@ public class MercuryPudding extends AbstractBaseRelic {
     }
     @Override
     public void setCounter(int setCounter) {
-        if (setCounter == -2) {
+        if (this.counter != -2) {
             usedUp();
-            this.counter = -2;
         }
+        this.counter = setCounter;
     }
 
     public void onVictory() {
         addToTop((AbstractGameAction) new RelicAboveCreatureAction((AbstractCreature) AbstractDungeon.player, this));
         AbstractPlayer p = AbstractDungeon.player;
         if (p.currentHealth <= 10) {
-            flash();
-            int healAmt =p.maxHealth/2;
-            AbstractDungeon.player.heal(healAmt, true);
-            this.setCounter(-2);
+            if (this.counter == -2) return ;
+                flash();
+                int healAmt = p.maxHealth / 2;
+                AbstractDungeon.player.heal(healAmt, true);
+                this.setCounter(-2);
         }
     }
     public AbstractRelic makeCopy() {
