@@ -8,6 +8,7 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -54,6 +55,10 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
         int energy = EnergyPanel.getCurrentEnergy();
         this.baseDamage = energy + 4;
         int times = this.upgraded ? energy + 1 : energy;
+        if (AbstractDungeon.player.hasRelic("Chemical X")) {
+            times += 2;
+            this.baseDamage += 2;
+        }
         super.calculateCardDamage(mo);
         this.rawDescription = cardStrings.DESCRIPTION;
         if (times > 0)
@@ -65,6 +70,10 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
         int energy = EnergyPanel.getCurrentEnergy();
         this.baseDamage = energy + 4;
         int times = this.upgraded ? energy + 1 : energy;
+        if (AbstractDungeon.player.hasRelic("Chemical X")) {
+            times += 2;
+            this.baseDamage += 2;
+        }
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION;
         if (times > 0)
