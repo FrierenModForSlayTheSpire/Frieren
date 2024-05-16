@@ -32,7 +32,7 @@
   "FrierenMod:RitesPreparationPower": {
     "NAME": "仪式准备",
     "DESCRIPTIONS": [
-      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已 *同调 #b%d 张。）"
+      "你每 #y同调 3张 #y魔力 ， 就对所有敌人造成 #b%d 点伤害。 NL （已 #y同调 #b%d 张。）"
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {

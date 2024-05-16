@@ -62,7 +62,7 @@
   "FrierenMod:ManaReturnPower": {
     "NAME": "Mana Return",
     "DESCRIPTIONS": [
-      "Whenever it is attacked, shuffle #b%d *Mana into your discard pile."
+      "Whenever it is attacked, shuffle #b%d #yMana into your discard pile."
     ]
   },
   "FrierenMod:ChantWithoutManaPower": {
@@ -92,7 +92,7 @@
   "FrierenMod:RingletFormPower": {
     "NAME": "Ringlet Form",
     "DESCRIPTIONS": [
-      "Whenever you Synchro a *Mana, gain #b%d #yBlock ."
+      "Whenever you Synchro a #yMana, gain #b%d #yBlock ."
     ]
   },
   "FrierenMod:SealPower": {
