@@ -54,11 +54,11 @@ public class HellFireSummoning extends AbstractBaseCard {
     public void applyPowers() {
         super.applyPowers();
         int count = CombatHelper.getChantCardUsedThisTurn();
+        this.rawDescription = cardStrings.DESCRIPTION;
         if (count > 0) {
-            this.rawDescription = cardStrings.DESCRIPTION;
             this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + count + cardStrings.EXTENDED_DESCRIPTION[1];
-            initializeDescription();
         }
+        initializeDescription();
     }
 
     public void onMoveToDiscard() {
