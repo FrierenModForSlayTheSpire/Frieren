@@ -8,10 +8,7 @@ import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.MonsterRes;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.EscapeAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -19,6 +16,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 
 import java.util.ArrayList;
@@ -111,6 +109,7 @@ public class Spiegel_Frieren extends AbstractMonster {
                 setMove(monsterStrings.MOVES[7], (byte) 8, Intent.ATTACK, 999, 999, true);
                 break;
             case 8:
+                this.addToBot(new RemoveSpecificPowerAction(this, this, IntangiblePower.POWER_ID));
                 for (int i = 0; i < 999; i++) {
                     this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(this, 999), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 }

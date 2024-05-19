@@ -2,7 +2,7 @@ package FrierenMod.powers.EnemySpell;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
+import com.megacrit.cardcrawl.powers.IntangiblePower;
 
 public class FlyingMagic extends AbstractEnemySpell {
     public final String SPELL_NAME = descriptions[14];
@@ -16,7 +16,7 @@ public class FlyingMagic extends AbstractEnemySpell {
 
     @Override
     public void update() {
-        this.addToBot(new ApplyPowerAction(owner, owner, new IntangiblePlayerPower(owner, POWER_GAIN)));
+        this.addToBot(new ApplyPowerAction(owner, owner, new IntangiblePower(owner, POWER_GAIN)));
     }
 
     @Override
