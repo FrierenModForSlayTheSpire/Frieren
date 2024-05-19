@@ -51,6 +51,7 @@ public class TimeTravelAction extends AbstractGameAction {
         for (AbstractRelic relic : AbstractDungeon.player.relics) {
             AbstractRelic tmpRelic = relic.makeCopy();
             tmpRelic.counter = relic.counter;
+            tmpRelic.usedUp = relic.usedUp;
             relics.add(tmpRelic);
         }
         for (AbstractPower power : AbstractDungeon.player.powers) {
