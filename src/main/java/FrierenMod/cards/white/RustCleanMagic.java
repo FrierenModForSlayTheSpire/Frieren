@@ -1,12 +1,12 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
-import FrierenMod.actions.RustCleanMagicAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -48,6 +48,6 @@ public class RustCleanMagic extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX, new RustCleanMagicAction(m, p, this.magicNumber)));
+        this.addToBot(new ChantAction(this.chantX, new RemoveDebuffsAction(p)));
     }
 }
