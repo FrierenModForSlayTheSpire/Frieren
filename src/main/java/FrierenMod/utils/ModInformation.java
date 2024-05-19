@@ -112,7 +112,7 @@ public class ModInformation {
 
     public static String makeTipImgPath(String character, String tipNum) {
 //        if (language == Settings.GameLanguage.ZHS) {
-        return makeUIPath("tip/ZHS/" + character + "/tip" + tipNum + ".png");
+        return makeUIPath("tip/ZHS/" + character + "/tip" + tipNum);
 //        } else {
 //            return makeUIPath("tip/ENG/"+ character +"/tip" + tipNum + ".png");
 //        }
