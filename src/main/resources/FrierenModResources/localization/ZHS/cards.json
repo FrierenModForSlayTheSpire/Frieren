@@ -519,8 +519,8 @@
     "NAME": "地狱业火魔法",
     "DESCRIPTION": " frierenmod:封印 。 frierenmod:回火 。 NL 你在这个回合内每打出过一张 frierenmod:咏唱 牌，就造成两次 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
-      " NL （你在本回合打出过",
-      " 张 *咏唱 牌。）"
+      " NL （共",
+      " 次。）"
     ]
   },
   "FrierenMod:RockGolemSpell": {

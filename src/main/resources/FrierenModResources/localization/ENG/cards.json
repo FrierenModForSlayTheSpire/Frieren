@@ -485,8 +485,8 @@
     "NAME": "Hellfire Summoning",
     "DESCRIPTION": "frierenmod:Seal. frierenmod:Backfire. NL Deal !D! damage for each frierenmod:Chant played this turn twice.",
     "EXTENDED_DESCRIPTION": [
-      " NL (",
-      " *Chant played.)"
+      " NL (Deal ",
+      " times.)"
     ]
   },
   "FrierenMod:RockGolemSpell": {
