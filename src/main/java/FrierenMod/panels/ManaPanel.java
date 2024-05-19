@@ -146,9 +146,9 @@ public class ManaPanel extends AbstractPanel {
             renderOrb(sb);
             renderVFX(sb);
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(this.FontScale);
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.drawPileCounter), this.current_x, this.current_y + 100.0F, MPTextColor.cpy());
+            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.drawPileCounter), this.current_x, this.current_y + 80.0F * Settings.scale, MPTextColor.cpy());
             FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.handCounter), this.current_x, this.current_y, MPTextColor.cpy());
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.discardPileCounter), this.current_x, this.current_y - 100.0F, MPTextColor.cpy());
+            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.discardPileCounter), this.current_x, this.current_y - 80.0F * Settings.scale, MPTextColor.cpy());
             this.TipHitBox.render(sb);
             if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp)
                 TipHelper.renderGenericTip(this.current_x + (this.isEmpty() ? MPDarkImage.getWidth() : MPImage.getWidth()) / 2.0F * Settings.scale, this.current_y + (this.isEmpty() ? MPDarkImage.getHeight() : MPImage.getHeight()) / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1]);
