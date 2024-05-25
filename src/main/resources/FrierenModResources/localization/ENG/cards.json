@@ -551,6 +551,10 @@
     "NAME": "Frieren's Suitcase",
     "DESCRIPTION": "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain !M! Block."
   },
+  "FrierenMod:FairyTaleEnd": {
+    "NAME": "童话的结尾",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."

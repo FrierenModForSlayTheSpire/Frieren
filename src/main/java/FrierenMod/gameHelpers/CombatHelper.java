@@ -9,6 +9,8 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import java.util.HashSet;
+
 public class CombatHelper {
     public static boolean isInCombat() {
         return (AbstractDungeon.getCurrMapNode() != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT);
@@ -85,6 +87,19 @@ public class CombatHelper {
                 amounts++;
             }
         }
+        return amounts;
+    }
+    public static int getLegendarySpellUsedVarietyThisCombat(boolean isInUsingCard) {
+        int amounts;
+        HashSet<String> set = new HashSet<>();
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell) {
+                set.add(c.cardID);
+            }
+        }
+        amounts = set.size();
+        if(isInUsingCard)
+            amounts--;
         return amounts;
     }
 
