@@ -41,7 +41,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.panels.ConfigPanel.*;
+import static FrierenMod.ui.panels.ConfigPanel.*;
 import static basemod.BaseMod.logger;
 import static com.megacrit.cardcrawl.core.Settings.language;
 

@@ -1,4 +1,4 @@
-package FrierenMod.panels;
+package FrierenMod.ui.panels;
 
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;

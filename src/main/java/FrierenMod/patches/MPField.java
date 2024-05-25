@@ -1,8 +1,8 @@
 package FrierenMod.patches;
 
 
-import FrierenMod.panels.FernPanel;
-import FrierenMod.panels.ManaPanel;
+import FrierenMod.ui.panels.FernPanel;
+import FrierenMod.ui.panels.ManaPanel;
 import com.evacipated.cardcrawl.modthespire.lib.SpireField;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch2;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
