@@ -179,7 +179,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若魔力总数大于 !M! ，移除你身上的所有负面效果。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若魔力总数大于 !M! ，移除你身上的一个负面效果。"
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "将红苹果变成青苹果的魔法",
