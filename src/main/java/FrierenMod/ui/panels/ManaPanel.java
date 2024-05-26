@@ -1,4 +1,4 @@
-package FrierenMod.panels;
+package FrierenMod.ui.panels;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CharacterEnums;

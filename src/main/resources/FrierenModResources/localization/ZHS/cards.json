@@ -179,7 +179,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若魔力总数大于 !M! ，移除你身上的所有负面效果。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若魔力总数大于 !M! ，移除你身上的一个负面效果。"
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "将红苹果变成青苹果的魔法",
@@ -584,6 +584,10 @@
   "FrierenMod:FrierenSuitcase": {
     "NAME": "芙莉莲的旅行箱",
     "DESCRIPTION": "本场战斗中手牌上限提高至13。 NL 使用卡牌后若手牌已满，获得 !M! 点格挡。"
+  },
+  "FrierenMod:FairyTaleEnd": {
+    "NAME": "童话的结尾",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",

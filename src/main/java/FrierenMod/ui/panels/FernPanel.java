@@ -1,4 +1,4 @@
-package FrierenMod.panels;
+package FrierenMod.ui.panels;
 
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;

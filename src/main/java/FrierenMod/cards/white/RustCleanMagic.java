@@ -6,9 +6,11 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class RustCleanMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RustCleanMagic.class.getSimpleName());
@@ -48,6 +50,17 @@ public class RustCleanMagic extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX, new RemoveDebuffsAction(p)));
+        this.addToBot(new ChantAction(this.chantX, new AbstractGameAction() {
+            @Override
+            public void update() {
+                for (AbstractPower po : p.powers) {
+                    if (po.type == AbstractPower.PowerType.DEBUFF) {
+                        this.addToTop(new RemoveSpecificPowerAction(p, p, po.ID));
+                        break;
+                    }
+                }
+                this.isDone = true;
+            }
+        }));
     }
 }

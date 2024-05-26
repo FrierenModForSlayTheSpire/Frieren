@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class ManaBarricade extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ManaBarricade.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
 
     public ManaBarricade() {
         super(info);
@@ -26,7 +26,7 @@ public class ManaBarricade extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(1);
+            this.upgradeBaseCost(0);
         }
     }
 
