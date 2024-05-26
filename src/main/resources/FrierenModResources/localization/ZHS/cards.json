@@ -587,7 +587,11 @@
   },
   "FrierenMod:FairyTaleEnd": {
     "NAME": "童话的结尾",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （已使用",
+      " 种。）"
+    ]
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
