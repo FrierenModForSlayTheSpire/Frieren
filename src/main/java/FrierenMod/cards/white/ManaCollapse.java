@@ -28,8 +28,7 @@ public class ManaCollapse extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 9;
-        this.magicNumber = this.baseMagicNumber = 1;
-        this.secondMagicNumber = this.baseSecondMagicNumber = 20;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.shuffleBackIntoDrawPile = true;
     }
 
@@ -37,25 +36,20 @@ public class ManaCollapse extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(3);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 10) {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.secondMagicNumber, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        } else {
-            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1 < 10) {
             this.addToBot(new MakeManaInHandAction(this.magicNumber));
         }
     }
 
     public void applyPowers() {
         super.applyPowers();
-        this.secondMagicNumber = this.baseSecondMagicNumber = this.damage + 11;
-        if(this.secondMagicNumber > 20)
-            this.isSecondMagicNumberModified = true;
         if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 10) {
             this.shuffleBackIntoDrawPile = false;
         }
@@ -63,7 +57,7 @@ public class ManaCollapse extends AbstractBaseCard {
     }
 
     public void triggerOnGlowCheck() {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 10) {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < 10) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         } else {
             this.glowColor = AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();

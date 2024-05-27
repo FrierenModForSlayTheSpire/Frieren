@@ -499,7 +499,7 @@
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
-    "DESCRIPTION": "Deal !D! damage. NL Add !M! *Mana into your hand. NL Put this card back to your draw pile. If you have played over 10 cards, change to deal !SM! damage."
+    "DESCRIPTION": "Deal !D! damage. NL If you have played less than 10 cards this turn, Add !M! *Mana into your hand and Put this card back to draw pile."
   },
   "FrierenMod:Elegance": {
     "NAME": "Elegance",
