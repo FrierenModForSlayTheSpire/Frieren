@@ -516,7 +516,7 @@
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "Mana Barricade",
-    "DESCRIPTION": "At the end of your turn, if you have 5 *Mana or more, gain frierenmod:Barricade, otherwise, lose frierenmod:Barricade."
+    "DESCRIPTION": "frierenmod:Chant !CX! . NL If you *Chant from draw pile, gain !B! Block."
   },
   "FrierenMod:ElementsBombing": {
     "NAME": "Elemental Bombing",

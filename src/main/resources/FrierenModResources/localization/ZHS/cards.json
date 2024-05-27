@@ -550,7 +550,7 @@
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "魔力壁垒",
-    "DESCRIPTION": "你的回合结束时，若你的 *魔力 总数大于等于5，获得 frierenmod:壁垒 。否则失去 frierenmod:壁垒 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 如果 *咏唱 的是抽牌堆，获得 !B! 点 格挡。"
   },
   "FrierenMod:ElementsBombing": {
     "NAME": "元素轰炸",
