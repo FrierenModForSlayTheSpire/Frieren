@@ -542,7 +542,7 @@
   },
   "FrierenMod:Confrontation": {
     "NAME": "对峙",
-    "DESCRIPTION": "获得 !B! 点格挡，抽1张牌。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础格挡增加3。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础 格挡 增加3。"
   },
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",

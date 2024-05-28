@@ -508,7 +508,7 @@
   },
   "FrierenMod:Confrontation": {
     "NAME": "Confrontation",
-    "DESCRIPTION": "Gain !B! Block and draw a card. NL If you frierenmod:Chant when this card is in your hand, increase its Block by 3 this combat."
+    "DESCRIPTION": "Gain !B! Block. NL If you frierenmod:Chant when this card is in your hand, increase its Block by 3 this combat."
   },
   "FrierenMod:Famehameha": {
     "NAME": "Famehameha Wave",
