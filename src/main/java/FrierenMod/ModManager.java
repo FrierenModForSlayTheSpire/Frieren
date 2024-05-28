@@ -3,12 +3,10 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
+import FrierenMod.cards.optionCards.ChantOptions.AbstractChantOption;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.CardPoolHelper;
-import FrierenMod.gameHelpers.DataObject;
-import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
-import FrierenMod.gameHelpers.OnStartBattleHelper;
+import FrierenMod.gameHelpers.*;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
@@ -22,6 +20,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -33,6 +32,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -136,6 +136,15 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
         BaseMod.addDynamicVariable(new RaidVariable());
+        DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
+            if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
+                if (card instanceof AbstractChantOption) {
+                    System.out.println(((AbstractChantOption) card).slotNumber);
+                    return ((AbstractChantOption) card).slotNumber;
+                }
+            }
+            return -1;
+        });
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
         String optionCardsClassPath = getModID() + ".cards.optionCards";

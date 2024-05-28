@@ -158,6 +158,25 @@
       "本回合没有打出过 #r咏唱 牌。"
     ]
   },
+  "FrierenMod:ChantOptionCardLoadMessages": {
+    "TEXT": [
+      " NL #r未装载 。",
+      " NL #g已装载入抽牌堆槽 。",
+      " NL #g已装载入手牌槽 。",
+      " NL #g已装载入弃牌堆槽 。"
+    ]
+  },
+  "FrierenMod:ChantOptionCardBanTips": {
+    "TEXT": [
+      " #r抽牌堆 ",
+      " #r手牌 ",
+      " #r弃牌堆 ",
+      "禁用",
+      "将此牌 #y装载 入 #咏唱插槽 后会导致",
+      " #y槽位 中的 #y咏唱选项卡 失效。",
+      "和"
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",

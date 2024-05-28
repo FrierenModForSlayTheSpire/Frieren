@@ -1,6 +1,6 @@
-package FrierenMod.cards.optionCards;
+package FrierenMod.cards.optionCards.ChantOptions;
 
-import FrierenMod.actions.ChantFromDrawPileAction;
+import FrierenMod.actions.ChantFromDiscardPileAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.CardInfo;
@@ -10,33 +10,31 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChantDrawPile extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(ChantDrawPile.class.getSimpleName());
+public class ChantDiscardPile extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(ChantDiscardPile.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     public static final CardInfo info2 = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-    public AbstractGameAction[] nextAction;
-    public int blockGain = 0;
+    private AbstractGameAction[] nextAction;
 
-    public ChantDrawPile() {
+    public ChantDiscardPile() {
         super(info);
         this.cardsToPreview = new Mana();
     }
 
-    public ChantDrawPile(int manaExhaust, int reward) {
+    public ChantDiscardPile(int manaExhaust, int reward) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
-        this.block = this.baseBlock = reward;
+        this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
         this.nextAction = null;
     }
 
-    public ChantDrawPile(int manaExhaust, int reward, int blockGain, AbstractGameAction... nexAction) {
+    public ChantDiscardPile(int manaExhaust, int reward, AbstractGameAction... nextAction) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
-        this.block = this.baseBlock = reward;
+        this.magicNumber = this.baseMagicNumber = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
-        this.nextAction = nexAction;
-        this.blockGain = blockGain;
+        this.nextAction = nextAction;
     }
 
     @Override
@@ -50,10 +48,6 @@ public class ChantDrawPile extends AbstractBaseCard {
     }
 
     public void onChoseThisOption() {
-        this.applyPowers();
-        if (blockGain > 0)
-            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.blockGain));
-        else
-            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.nextAction));
+        this.addToBot(new ChantFromDiscardPileAction(this.secondMagicNumber, this.magicNumber, this.nextAction));
     }
 }

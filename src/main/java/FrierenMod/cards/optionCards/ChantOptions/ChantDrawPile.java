@@ -1,43 +1,42 @@
-package FrierenMod.cards.optionCards;
+package FrierenMod.cards.optionCards.ChantOptions;
 
-import FrierenMod.actions.ChantFromHandAction;
+import FrierenMod.actions.ChantFromDrawPileAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ChantHand extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(ChantHand.class.getSimpleName());
+public class ChantDrawPile extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(ChantDrawPile.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     public static final CardInfo info2 = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
-    public AbstractCard cardToReturn;
     public AbstractGameAction[] nextAction;
+    public int blockGain = 0;
 
-    public ChantHand() {
+    public ChantDrawPile() {
         super(info);
         this.cardsToPreview = new Mana();
     }
-    public ChantHand(int manaExhaust, int reward) {
+
+    public ChantDrawPile(int manaExhaust, int reward) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
-        this.magicNumber = this.baseMagicNumber = reward;
+        this.block = this.baseBlock = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
-        this.cardToReturn = null;
         this.nextAction = null;
     }
 
-    public ChantHand(int manaExhaust, int reward, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
+    public ChantDrawPile(int manaExhaust, int reward, int blockGain, AbstractGameAction... nexAction) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
-        this.magicNumber = this.baseMagicNumber = reward;
+        this.block = this.baseBlock = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
-        this.cardToReturn = cardToReturn;
-        this.nextAction = nextAction;
+        this.nextAction = nexAction;
+        this.blockGain = blockGain;
     }
 
     @Override
@@ -51,10 +50,10 @@ public class ChantHand extends AbstractBaseCard {
     }
 
     public void onChoseThisOption() {
-        if (cardToReturn != null) {
-            cardToReturn.returnToHand = true;
-            cardToReturn.upgrade();
-        }
-        this.addToBot(new ChantFromHandAction(this.secondMagicNumber, this.magicNumber, nextAction));
+        this.applyPowers();
+        if (blockGain > 0)
+            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.blockGain));
+        else
+            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.nextAction));
     }
 }
