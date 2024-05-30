@@ -111,12 +111,12 @@ public class CardPoolHelper {
         retVal.add(new RapidChant());
         retVal.add(new ContinualChant());
         retVal.add(new FlowerFieldSpell());
-        retVal.add(new RustCleanMagic());
         retVal.add(new PerfectDefensiveMagic());
         retVal.add(new FinalChant());
         retVal.add(new PreciseChant());
         retVal.add(new TrueColours());
         retVal.add(new LureTheEnemyInDeep());
+        retVal.add(new ManaBarricade());
         return retVal;
     }
     public static ArrayList<AbstractCard> getLegendarySpellCardPool(){
@@ -127,6 +127,8 @@ public class CardPoolHelper {
         retVal.add(new OilSpell());
         retVal.add(new LightningMagic());
         retVal.add(new Famehameha());
+        retVal.add(new FairyTaleEnd());
+        retVal.add(new RustCleanMagic());
         return retVal;
     }
     public static AbstractCard getRandomCard(PoolType type) {
