@@ -2,7 +2,7 @@ package FrierenMod.cards.optionCards.ChantOptions;
 
 import FrierenMod.utils.ModInformation;
 
-public class MagicFactorAlpha extends AbstractChantOption {
+public class MagicFactorAlpha extends AbstractMagicFactor {
     public static final String ID = ModInformation.makeID(MagicFactorAlpha.class.getSimpleName());
 
     public MagicFactorAlpha() {

@@ -10,17 +10,17 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class AbstractChantOption extends AbstractBaseCard {
+public abstract class AbstractMagicFactor extends AbstractBaseCard {
     public int slotNumber; //-1表示未装载，0表示抽，1手，2弃
-    public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("ChantOptionCardLoadMessages")).TEXT;
-    public static final String[] BAN_TIPS = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("ChantOptionCardBanTips")).TEXT;
+    public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
+    public static final String[] BAN_TIPS = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorBanTips")).TEXT;
     public byte[] banSlot;
 
-    public AbstractChantOption(String ID) {
+    public AbstractMagicFactor(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
     }
 
-    public AbstractChantOption(String ID, ShowPlaceType type) {
+    public AbstractMagicFactor(String ID, ShowPlaceType type) {
         super(new CardInfo(ID, "", CardType.SKILL, CardTarget.NONE));
         switch (type) {
             case COMBAT:
@@ -74,10 +74,11 @@ public abstract class AbstractChantOption extends AbstractBaseCard {
 
     //TODO: 从ModManager.save中获取装载槽位
     public void refreshCurrentSlot() {
-        this.slotNumber = 1;
+        this.slotNumber = 0;
     }
 
     public String getBagDescription(String id) {
+        refreshCurrentSlot();
         return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0] + LOAD_MESSAGES[slotNumber + 1];
     }
 

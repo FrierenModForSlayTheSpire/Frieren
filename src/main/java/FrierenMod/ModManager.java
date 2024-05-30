@@ -3,7 +3,7 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
-import FrierenMod.cards.optionCards.ChantOptions.AbstractChantOption;
+import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.*;
@@ -11,6 +11,8 @@ import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
+import FrierenMod.ui.panels.MagicFactorDeckPanel;
+import FrierenMod.ui.screens.MagicFactorDeckScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.RaidVariable;
@@ -127,6 +129,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
+        BaseMod.addTopPanelItem(new MagicFactorDeckPanel());
+        BaseMod.addCustomScreen(new MagicFactorDeckScreen());
     }
 
     @Override
@@ -138,9 +142,9 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new RaidVariable());
         DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
             if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
-                if (card instanceof AbstractChantOption) {
-                    System.out.println(((AbstractChantOption) card).slotNumber);
-                    return ((AbstractChantOption) card).slotNumber;
+                if (card instanceof AbstractMagicFactor) {
+                    System.out.println(((AbstractMagicFactor) card).slotNumber);
+                    return ((AbstractMagicFactor) card).slotNumber;
                 }
             }
             return -1;

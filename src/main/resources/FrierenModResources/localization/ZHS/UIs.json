@@ -158,15 +158,15 @@
       "本回合没有打出过 #r咏唱 牌。"
     ]
   },
-  "FrierenMod:ChantOptionCardLoadMessages": {
+  "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL #r未装载 。",
-      " NL #g已装载入抽牌堆槽 。",
-      " NL #g已装载入手牌槽 。",
-      " NL #g已装载入弃牌堆槽 。"
+      " NL 未装载 。",
+      " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
+      " NL 手牌槽 装载中",
+      " NL 已装载弃牌堆槽 。"
     ]
   },
-  "FrierenMod:ChantOptionCardBanTips": {
+  "FrierenMod:MagicFactorBanTips": {
     "TEXT": [
       " #r抽牌堆 ",
       " #r手牌 ",
@@ -175,6 +175,12 @@
       "将此牌 #y装载 入 #咏唱插槽 后会导致",
       " #y槽位 中的 #y咏唱选项卡 失效。",
       "和"
+    ]
+  },
+  "FrierenMod:MagicFactorDeckPanel": {
+    "TEXT": [
+      "魔法因子",
+      "查看你拥有的 #y魔法因子 。"
     ]
   },
   "FrierenMod:DualCardTip": {
