@@ -67,7 +67,7 @@ public class AudioPatch {
     @SpirePatch(clz = MainMusic.class, method = "getSong")
     public static class PatchGetSongInMainMusic{
         @SpireInsertPatch(rloc = 0, localvars = {"key"})
-        public static SpireReturn<Music> Insert(TempMusic __instance, String key) {
+        public static SpireReturn<Music> Insert(MainMusic __instance, String key) {
             if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
                 switch (key) {
                     case "Exordium":
