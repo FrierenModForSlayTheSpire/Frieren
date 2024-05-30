@@ -10,15 +10,21 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 public class ChantFromDrawPileAction extends ChantFromCardGroupAction {
+    private int blockGain = 0;
 
     public ChantFromDrawPileAction(int manaExhaust, int reward, boolean haveNotTriggered) {
-        super(manaExhaust,reward);
+        super(manaExhaust, reward);
         this.haveNotTriggered = haveNotTriggered;
     }
 
     public ChantFromDrawPileAction(int manaExhaust, int reward, AbstractGameAction... nextAction) {
         super(manaExhaust, reward);
         this.nextAction = nextAction;
+    }
+
+    public ChantFromDrawPileAction(int manaExhaust, int reward, int blockGain) {
+        super(manaExhaust, reward);
+        this.blockGain = blockGain;
     }
 
     @Override
@@ -31,6 +37,8 @@ public class ChantFromDrawPileAction extends ChantFromCardGroupAction {
         for (int i = 0; i < 2; i++) {
             this.addToBot(new GainBlockAction(p, p, this.reward));
         }
+        if (blockGain > 0)
+            this.addToBot(new GainBlockAction(p, p, this.blockGain));
         super.update();
     }
 }

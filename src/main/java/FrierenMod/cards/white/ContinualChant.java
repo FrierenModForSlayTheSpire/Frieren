@@ -6,6 +6,7 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.BanManaGainPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -52,6 +53,8 @@ public class ContinualChant extends AbstractBaseCard {
             this.cantUseMessage = cantUseTEXT[1];
             return false;
         }
+        if (p.hasPower(BanManaGainPower.POWER_ID))
+            return super.canUse(p, m);
         return super.canUseOriginally(p, m);
     }
 }

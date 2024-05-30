@@ -499,7 +499,7 @@
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
-    "DESCRIPTION": "Deal !D! damage. NL Add !M! *Mana into your hand. NL Put this card back to your draw pile. If you have played over 10 cards, change to deal !SM! damage."
+    "DESCRIPTION": "Deal !D! damage. NL If you have played less than 10 cards this turn, Add !M! *Mana into your hand and Put this card back to draw pile."
   },
   "FrierenMod:Elegance": {
     "NAME": "Elegance",
@@ -508,7 +508,7 @@
   },
   "FrierenMod:Confrontation": {
     "NAME": "Confrontation",
-    "DESCRIPTION": "Gain !B! Block and draw a card. NL If you frierenmod:Chant when this card is in your hand, increase its Block by 3 this combat."
+    "DESCRIPTION": "Gain !B! Block. NL If you frierenmod:Chant when this card is in your hand, increase its Block by 3 this combat."
   },
   "FrierenMod:Famehameha": {
     "NAME": "Famehameha Wave",
@@ -516,7 +516,7 @@
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "Mana Barricade",
-    "DESCRIPTION": "At the end of your turn, if you have 5 *Mana or more, gain frierenmod:Barricade, otherwise, lose frierenmod:Barricade."
+    "DESCRIPTION": "frierenmod:Chant !CX! . NL If you *Chant from draw pile, gain !B! Block."
   },
   "FrierenMod:ElementsBombing": {
     "NAME": "Elemental Bombing",
@@ -552,8 +552,12 @@
     "DESCRIPTION": "Increase your hand size to 13 this combat. NL If your hand is full after you play a card, gain !M! Block."
   },
   "FrierenMod:FairyTaleEnd": {
-    "NAME": "The End of Fairy Tale",
-    "DESCRIPTION": " frierenmod:Legendary_Spell. NL Deal !D! damage. The damage will be doubled for every kind of frierenmod:Legendary_Spell you have played."
+    "NAME": "The end of Fairy Tale",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Deal !D! damage. Double base damage of this card after you played a new kind of *Legendary_Spell this combat.",
+    "EXTENDED_DESCRIPTION": [
+      " NL （Have played",
+      " kinds.）"
+    ]
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",

@@ -111,7 +111,7 @@
   },
   "FrierenMod:PajamasForm": {
     "NAME": "睡衣形态",
-    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量的伤害的4倍。 NL （将造成 !M! 点伤害）。"
+    "DESCRIPTION": "在每回合结束时，消耗所有 *魔力 ，对所有敌人造成消耗的 *魔力 数量4倍的伤害。"
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "准备架势",
@@ -179,7 +179,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "清洁铜像生锈的魔法",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若魔力总数大于 !M! ，移除你身上的一个负面效果。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 去除一名非boss敌人的一个正面效果。若 *魔力 总数大于 !M! ，移除你身上的一个负面效果。"
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "将红苹果变成青苹果的魔法",
@@ -533,7 +533,7 @@
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "离别的馈赠",
-    "DESCRIPTION": "造成 !D! 点伤害。将 !M! 张 *魔力 放入手中。将这张牌放入你的抽牌堆。 NL 本回合打出10张牌以上时，改为造成 !SM! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。若本回合内打出小于10张牌，将 !M! 张 *魔力 放入手中，将此牌放入抽牌堆。"
   },
   "FrierenMod:Elegance": {
     "NAME": "英姿",
@@ -542,7 +542,7 @@
   },
   "FrierenMod:Confrontation": {
     "NAME": "对峙",
-    "DESCRIPTION": "获得 !B! 点格挡，抽1张牌。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础格挡增加3。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础 格挡 增加3。"
   },
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",
@@ -550,7 +550,7 @@
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "魔力壁垒",
-    "DESCRIPTION": "你的回合结束时，若你的 *魔力 总数大于等于5，获得 frierenmod:壁垒 。否则失去 frierenmod:壁垒 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 如果 *咏唱 的是抽牌堆，获得 !B! 点 格挡。"
   },
   "FrierenMod:ElementsBombing": {
     "NAME": "元素轰炸",
@@ -587,7 +587,11 @@
   },
   "FrierenMod:FairyTaleEnd": {
     "NAME": "童话的结尾",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 造成 !D! 点伤害。本场战斗中你每使用过一种 *传说魔法 ，此牌的基础伤害就翻一倍。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （已使用",
+      " 种。）"
+    ]
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",

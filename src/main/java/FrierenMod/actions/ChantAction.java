@@ -15,6 +15,7 @@ public class ChantAction extends AbstractGameAction {
     private final int manaNeed;
     private final AbstractGameAction[] nextAction;
     private final AbstractCard cardToReturn;
+    private int blockGain = 0;
 
     public ChantAction(int chantX) {
         this.chantX = chantX;
@@ -22,6 +23,15 @@ public class ChantAction extends AbstractGameAction {
         this.actionType = ActionType.WAIT;
         this.cardToReturn = null;
         this.nextAction = null;
+    }
+
+    public ChantAction(int chantX, int blockGain) {
+        this.chantX = chantX;
+        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
+        this.actionType = ActionType.WAIT;
+        this.cardToReturn = null;
+        this.nextAction = null;
+        this.blockGain = blockGain;
     }
 
     public ChantAction(int chantX, AbstractGameAction... nextAction) {
@@ -52,7 +62,7 @@ public class ChantAction extends AbstractGameAction {
     public void update() {
         ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
         if (CombatHelper.canChantFromDrawPile(this.manaNeed)) {
-            stanceChoices.add(new ChantDrawPile(this.manaNeed, this.chantX, this.nextAction));
+            stanceChoices.add(new ChantDrawPile(this.manaNeed, this.chantX, this.blockGain, this.nextAction));
         }
         if (CombatHelper.canChantFromHand(this.manaNeed)) {
             stanceChoices.add(new ChantHand(this.manaNeed, this.chantX, this.cardToReturn, this.nextAction));

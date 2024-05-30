@@ -15,11 +15,13 @@ public class ChantDrawPile extends AbstractBaseCard {
     public static final CardInfo info = new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE);
     public static final CardInfo info2 = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public AbstractGameAction[] nextAction;
+    public int blockGain = 0;
 
     public ChantDrawPile() {
         super(info);
         this.cardsToPreview = new Mana();
     }
+
     public ChantDrawPile(int manaExhaust, int reward) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
@@ -27,12 +29,14 @@ public class ChantDrawPile extends AbstractBaseCard {
         this.isSecondMagicNumberModified = (manaExhaust < reward);
         this.nextAction = null;
     }
-    public ChantDrawPile(int manaExhaust, int reward, AbstractGameAction... nexAction) {
+
+    public ChantDrawPile(int manaExhaust, int reward, int blockGain, AbstractGameAction... nexAction) {
         super(info2);
         this.secondMagicNumber = this.baseSecondMagicNumber = manaExhaust;
         this.block = this.baseBlock = reward;
         this.isSecondMagicNumberModified = (manaExhaust < reward);
         this.nextAction = nexAction;
+        this.blockGain = blockGain;
     }
 
     @Override
@@ -47,6 +51,9 @@ public class ChantDrawPile extends AbstractBaseCard {
 
     public void onChoseThisOption() {
         this.applyPowers();
-        this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.nextAction));
+        if (blockGain > 0)
+            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.blockGain));
+        else
+            this.addToBot(new ChantFromDrawPileAction(this.secondMagicNumber, this.block, this.nextAction));
     }
 }
