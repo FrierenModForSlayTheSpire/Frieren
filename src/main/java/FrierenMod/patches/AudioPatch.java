@@ -49,12 +49,15 @@ public class AudioPatch {
                     case "BOSS_CITY":
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Boss2_NewMix_v1.ogg")));
                     case "BOSS_BEYOND":
+                        //未替换
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Boss3_NewMix_v1.ogg")));
                     case "BOSS_ENDING":
+                        //未替换
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Boss4_v6.ogg")));
                     case "ELITE":
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_EliteBoss_NewMix_v1.ogg")));
                     case "CREDITS":
+                        // 未替换
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Credits_v5.ogg")));
                 }
             }
