@@ -115,7 +115,7 @@
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "准备架势",
-    "DESCRIPTION": "抽1张 frierenmod:咏唱 牌。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 抽一张 frierenmod:咏唱 牌。"
   },
   "FrierenMod:Trick": {
     "NAME": "欺骗魔族的小把戏",
