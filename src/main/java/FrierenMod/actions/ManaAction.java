@@ -9,9 +9,12 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
+import java.util.ArrayList;
+
 public class ManaAction extends AbstractGameAction {
     private final Mana.Type type;
     private AbstractCard c;
+    private ArrayList<AbstractGameAction> actionsToRecover;
 
     public ManaAction(Mana.Type type) {
         this.type = type;
@@ -20,6 +23,11 @@ public class ManaAction extends AbstractGameAction {
     public ManaAction(AbstractCard c, Mana.Type type) {
         this(type);
         this.c = c;
+    }
+    public ManaAction(AbstractCard c, Mana.Type type, ArrayList<AbstractGameAction> actionsToRecover) {
+        this(type);
+        this.c = c;
+        this.actionsToRecover = actionsToRecover;
     }
 
     @Override
@@ -40,6 +48,11 @@ public class ManaAction extends AbstractGameAction {
                 break;
             default:
                 break;
+        }
+        if(actionsToRecover != null && !actionsToRecover.isEmpty()){
+            for(AbstractGameAction action : actionsToRecover){
+                this.addToBot(action);
+            }
         }
         this.triggerCardsInGroup(AbstractDungeon.player.discardPile);
         this.isDone = true;

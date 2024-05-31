@@ -4,12 +4,19 @@ import FrierenMod.actions.ManaAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
+import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.PenNibPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
+
+import java.util.ArrayList;
 
 public class ManaMod extends AbstractCardModifier {
     public static final String ID = ModInformation.makeID(ManaMod.class.getSimpleName());
@@ -70,7 +77,19 @@ public class ManaMod extends AbstractCardModifier {
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
         AbstractDungeon.actionManager.actions.removeIf(action1 -> action1 instanceof ManaAction);
-        this.addToBot(new ManaAction(card, this.type));
+        ArrayList<AbstractGameAction> actionsToStore = new ArrayList<>();
+        for (AbstractGameAction action2 : AbstractDungeon.actionManager.actions) {
+            if (action2 instanceof RemoveSpecificPowerAction) {
+                String poId = ReflectionHacks.getPrivate(action2, RemoveSpecificPowerAction.class, "powerToRemove");
+                if (poId.equals(PenNibPower.POWER_ID) || poId.equals(VigorPower.POWER_ID)) {
+                    actionsToStore.add(action2);
+                }
+            }
+        }
+        for (AbstractGameAction action3 : actionsToStore) {
+            AbstractDungeon.actionManager.actions.remove(action3);
+        }
+        this.addToBot(new ManaAction(card, this.type, actionsToStore));
     }
 
     public String identifier(AbstractCard card) {
