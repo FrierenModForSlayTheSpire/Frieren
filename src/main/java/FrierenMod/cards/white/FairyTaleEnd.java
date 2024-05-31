@@ -70,7 +70,7 @@ public class FairyTaleEnd extends AbstractBaseCard {
         if (this.baseDamage >= 99999 || this.baseDamage == Integer.MIN_VALUE)
             this.damage = this.baseDamage = 99999;
         else
-            this.damage = this.baseDamage = (int) (baseDamage * Math.pow(2, count));
+            this.baseDamage = (int) (baseDamage * Math.pow(2, count));
         super.calculateCardDamage(m);
     }
 }

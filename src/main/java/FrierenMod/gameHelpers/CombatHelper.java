@@ -89,18 +89,17 @@ public class CombatHelper {
         }
         return amounts;
     }
+
     public static int getLegendarySpellUsedVarietyThisCombat(boolean isInUsingCard) {
-        int amounts;
         HashSet<String> set = new HashSet<>();
-        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisCombat) {
+        int size = isInUsingCard ? AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1 : AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
+        for (int i = 0; i < size; i++) {
+            AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisTurn.get(i);
             if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell) {
                 set.add(c.cardID);
             }
         }
-        amounts = set.size();
-        if(isInUsingCard)
-            amounts--;
-        return amounts;
+        return set.size();
     }
 
     public static int getCardsUsedThisTurnSize(boolean isInUsingCard) {
