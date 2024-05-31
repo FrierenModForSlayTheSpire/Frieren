@@ -92,7 +92,7 @@ public class CombatHelper {
 
     public static int getLegendarySpellUsedVarietyThisCombat(boolean isInUsingCard) {
         HashSet<String> set = new HashSet<>();
-        int size = Math.max(0, (isInUsingCard ? AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1 : AbstractDungeon.actionManager.cardsPlayedThisCombat.size()));
+        int size = Math.max(0, (isInUsingCard ? AbstractDungeon.actionManager.cardsPlayedThisTurn.size() - 1 : AbstractDungeon.actionManager.cardsPlayedThisCombat.size()));
         if(size == 0)
             return 0;
         for (int i = 0; i < size; i++) {
