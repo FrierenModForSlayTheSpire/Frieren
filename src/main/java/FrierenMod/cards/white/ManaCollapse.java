@@ -50,10 +50,7 @@ public class ManaCollapse extends AbstractBaseCard {
 
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() >= 10) {
-            this.shuffleBackIntoDrawPile = false;
-        }
-        initializeDescription();
+        this.shuffleBackIntoDrawPile = AbstractDungeon.actionManager.cardsPlayedThisTurn.size() < 10;
     }
 
     public void triggerOnGlowCheck() {
