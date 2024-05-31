@@ -505,7 +505,7 @@
   },
   "FrierenMod:RingletForm": {
     "NAME": "卷发形态",
-    "DESCRIPTION": "你每 frierenmod:同调 一张 *魔力 ，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "你每 消耗 一张 *魔力 ，获得 !M! 点 格挡 。"
   },
   "FrierenMod:Himmel": {
     "NAME": "辛美尔",
