@@ -1,6 +1,5 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -39,7 +38,7 @@ public class RustCleanMagic extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX, new AbstractGameAction() {
+        this.addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 for (AbstractPower po : m.powers) {
@@ -56,6 +55,6 @@ public class RustCleanMagic extends AbstractBaseCard {
                 }
                 this.isDone = true;
             }
-        }));
+        });
     }
 }

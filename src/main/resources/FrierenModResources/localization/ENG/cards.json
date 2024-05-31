@@ -181,7 +181,7 @@
   },
   "FrierenMod:RustCleanMagic": {
     "NAME": "Anti-Corrosion Spell",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Remove a non-boss enemy's buff. If your *Mana more than !M!, remove one of your debuffs."
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Remove one of a non-boss enemy's buff and one of your debuffs. NL Exhaust."
   },
   "FrierenMod:RedAppleSpell": {
     "NAME": "Spell to Turn Red Apple into Green Apple",
