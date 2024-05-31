@@ -92,7 +92,7 @@
   "FrierenMod:RingletFormPower": {
     "NAME": "Ringlet Form",
     "DESCRIPTIONS": [
-      "Whenever you Synchro a #yMana, gain #b%d #yBlock ."
+      "Whenever you #yExhaust a #yMana, gain #b%d #yBlock ."
     ]
   },
   "FrierenMod:SealPower": {

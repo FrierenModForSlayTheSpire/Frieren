@@ -471,7 +471,7 @@
   },
   "FrierenMod:RingletForm": {
     "NAME": "Ringlet Form",
-    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana, gain !M! Block."
+    "DESCRIPTION": "Whenever you Exhaust a *Mana, gain !M! Block."
   },
   "FrierenMod:Himmel": {
     "NAME": "Himmel",
