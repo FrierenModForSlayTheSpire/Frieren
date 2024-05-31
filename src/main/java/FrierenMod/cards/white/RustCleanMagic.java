@@ -41,12 +41,13 @@ public class RustCleanMagic extends AbstractBaseCard {
         this.addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                for (AbstractPower po : m.powers) {
-                    if (po.type == AbstractPower.PowerType.BUFF) {
-                        this.addToTop(new RemoveSpecificPowerAction(m, m, po.ID));
-                        break;
+                if (m.type != AbstractMonster.EnemyType.BOSS)
+                    for (AbstractPower po : m.powers) {
+                        if (po.type == AbstractPower.PowerType.BUFF) {
+                            this.addToTop(new RemoveSpecificPowerAction(m, m, po.ID));
+                            break;
+                        }
                     }
-                }
                 for (AbstractPower po : p.powers) {
                     if (po.type == AbstractPower.PowerType.DEBUFF) {
                         this.addToTop(new RemoveSpecificPowerAction(p, p, po.ID));
