@@ -106,10 +106,10 @@ public class Spiegel_Frieren extends AbstractMonster {
                 break;
             case 7:
                 apexMagicPrepared = true;
+                this.addToBot(new RemoveSpecificPowerAction(this, this, IntangiblePower.POWER_ID));
                 setMove(monsterStrings.MOVES[7], (byte) 8, Intent.ATTACK, 999, 999, true);
                 break;
             case 8:
-                this.addToBot(new RemoveSpecificPowerAction(this, this, IntangiblePower.POWER_ID));
                 for (int i = 0; i < 999; i++) {
                     this.addToBot(new DamageAction(AbstractDungeon.player, new DamageInfo(this, 999), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
                 }
