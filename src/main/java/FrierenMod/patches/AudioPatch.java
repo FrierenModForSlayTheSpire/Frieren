@@ -5,13 +5,20 @@ import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.audio.Music;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInstrumentPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.audio.MainMusic;
 import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.audio.TempMusic;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.screens.DeathScreen;
+import javassist.CannotCompileException;
+import javassist.expr.ExprEditor;
+import javassist.expr.MethodCall;
 
 import java.util.HashMap;
 import java.util.Objects;
@@ -29,6 +36,7 @@ public class AudioPatch {
             AudioPatch.load(instance, ___map, "Himmel.mp3");
         }
     }
+
     @SpirePatch(clz = TempMusic.class, method = "getSong")
     public static class PatchGetSongInTempMusic {
         @SpireInsertPatch(rloc = 0, localvars = {"key"})
@@ -36,7 +44,10 @@ public class AudioPatch {
             if (Objects.equals(key, "Frieren_The_Slayer")) {
                 return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3")));
             }
-            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+            if (Objects.equals(key, "Frieren_DeathStinger")) {
+                return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/Frieren_DeathStinger.mp3")));
+            }
+            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
                 switch (key) {
                     case "SHOP":
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Merchant_NewMix_v1.ogg")));
@@ -64,11 +75,12 @@ public class AudioPatch {
             return SpireReturn.Continue();
         }
     }
+
     @SpirePatch(clz = MainMusic.class, method = "getSong")
-    public static class PatchGetSongInMainMusic{
+    public static class PatchGetSongInMainMusic {
         @SpireInsertPatch(rloc = 0, localvars = {"key"})
         public static SpireReturn<Music> Insert(MainMusic __instance, String key) {
-            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
                 switch (key) {
                     case "Exordium":
                         if (AbstractDungeon.miscRng.random(1) == 0) {
@@ -94,6 +106,40 @@ public class AudioPatch {
                 return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level1_NewMix_v1.ogg")));
             }
             return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(clz = DeathScreen.class, method = "<ctor>", paramtypez = {MonsterGroup.class})
+    public static class PatchDeathScreen {
+        @SpireInstrumentPatch
+        public static ExprEditor Instrument() {
+            return new ExprEditor() {
+                @Override
+                public void edit(MethodCall m) throws CannotCompileException {
+                    if (isMethodCalled(m)) {
+                        m.replace("{" +
+                                "if(" + PatchDeathScreen.class.getName() + ".check()){" +
+                                PatchDeathScreen.class.getName() + ".calc();" +
+                                "}else{" +
+                                "$_=$proceed($$);" +
+                                "}" +
+                                "}");
+                    }
+                }
+
+                private boolean isMethodCalled(MethodCall m) {
+                    String methodName = m.getMethodName();
+                    return methodName.equals("playTempBgmInstantly");
+                }
+            };
+        }
+
+        public static boolean check() {
+            return AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN;
+        }
+
+        public static void calc() {
+            CardCrawlGame.music.playTempBgmInstantly("Frieren_DeathStinger");
         }
     }
 
