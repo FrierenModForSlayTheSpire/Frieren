@@ -4,6 +4,13 @@ size: 1024,2048
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
+Frieren/5Arm
+  rotate: false
+  xy: 471, 1
+  size: 330, 1268
+  orig: 330, 1268
+  offset: 0, 0
+  index: -1
 Frieren/9Decoration
   rotate: false
   xy: 436, 1073
@@ -30,13 +37,6 @@ Frieren/6Arm
   xy: 1, 1514
   size: 171, 237
   orig: 171, 237
-  offset: 0, 0
-  index: -1
-Frieren/5Arm
-  rotate: false
-  xy: 471, 1
-  size: 330, 1268
-  orig: 330, 1268
   offset: 0, 0
   index: -1
 Frieren/4Head
