@@ -117,7 +117,7 @@
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "Prepared Posture",
-    "DESCRIPTION": "Draw a frierenmod:Chant card."
+    "DESCRIPTION": "Deal !D! damage. NL Draw a frierenmod:Chant card."
   },
   "FrierenMod:Trick": {
     "NAME": "Trick",
