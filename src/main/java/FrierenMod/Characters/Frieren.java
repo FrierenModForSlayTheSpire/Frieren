@@ -14,6 +14,8 @@ import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -43,7 +45,7 @@ public class Frieren extends CustomPlayer {
 
         // 初始化你的人物，如果你的人物只有一张图，那么第一个参数填写你人物图片的路径。
         this.initializeClass(
-                FrierenRes.CHARACTER_IMG, // 人物图片
+                null, // 人物图片
                 FrierenRes.SHOULDER_1, FrierenRes.SHOULDER_2,
                 FrierenRes.CORPSE_IMAGE, // 人物死亡图像
                 this.getLoadout(),
@@ -53,13 +55,10 @@ public class Frieren extends CustomPlayer {
         );
 
 
-        // 如果你的人物没有动画，那么这些不需要写
-        // this.loadAnimation("FrierenModResources/img/char/character.atlas", "FrierenModResources/img/char/character.json", 1.8F);
-        // AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-        // e.setTime(e.getEndTime() * MathUtils.random());
-        // e.setTimeScale(1.2F);
-
-
+        this.loadAnimation(FrierenRes.CHARACTER_ATLAS, FrierenRes.CHARACTER_ATLAS_JSON, 4.0F);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "ArmatureFrieren", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
+        e.setTimeScale(1.2F);
     }
 
     // 初始卡组的ID，可直接写或引用变量
@@ -139,7 +138,7 @@ public class Frieren extends CustomPlayer {
     // 人物选择界面点击你的人物按钮时触发的方法，这里为屏幕轻微震动
     @Override
     public void doCharSelectScreenSelectEffect() {
-        if(Config.ALLOW_SPECIAL_SFX){
+        if (Config.ALLOW_SPECIAL_SFX) {
             CardCrawlGame.sound.stop("I_am_frieren.mp3");
             CardCrawlGame.sound.play("I_am_frieren.mp3");
         }

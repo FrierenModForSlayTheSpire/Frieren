@@ -1,0 +1,69 @@
+
+character.png
+size: 1024,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Frieren/9Decoration
+  rotate: false
+  xy: 436, 1073
+  size: 24, 151
+  orig: 24, 151
+  offset: 0, 0
+  index: -1
+Frieren/8Body
+  rotate: false
+  xy: 1, 1
+  size: 468, 1070
+  orig: 468, 1070
+  offset: 0, 0
+  index: -1
+Frieren/7Arm
+  rotate: false
+  xy: 1, 1073
+  size: 338, 439
+  orig: 338, 439
+  offset: 0, 0
+  index: -1
+Frieren/6Arm
+  rotate: false
+  xy: 1, 1514
+  size: 171, 237
+  orig: 171, 237
+  offset: 0, 0
+  index: -1
+Frieren/5Arm
+  rotate: false
+  xy: 471, 1
+  size: 330, 1268
+  orig: 330, 1268
+  offset: 0, 0
+  index: -1
+Frieren/4Head
+  rotate: false
+  xy: 341, 1271
+  size: 262, 267
+  orig: 262, 267
+  offset: 0, 0
+  index: -1
+Frieren/3Hair
+  rotate: false
+  xy: 174, 1742
+  size: 119, 219
+  orig: 119, 219
+  offset: 0, 0
+  index: -1
+Frieren/2Hair
+  rotate: false
+  xy: 174, 1514
+  size: 126, 226
+  orig: 126, 226
+  offset: 0, 0
+  index: -1
+Frieren/1Hair
+  rotate: false
+  xy: 341, 1073
+  size: 93, 167
+  orig: 93, 167
+  offset: 0, 0
+  index: -1
