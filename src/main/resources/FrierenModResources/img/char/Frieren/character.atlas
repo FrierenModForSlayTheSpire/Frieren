@@ -32,11 +32,11 @@ Frieren/7Arm
   orig: 338, 439
   offset: 0, 0
   index: -1
-Frieren/6Arm
+Frieren/6Arm2
   rotate: false
   xy: 1, 1514
-  size: 171, 237
-  orig: 171, 237
+  size: 180, 237
+  orig: 180, 237
   offset: 0, 0
   index: -1
 Frieren/4Head
@@ -48,14 +48,14 @@ Frieren/4Head
   index: -1
 Frieren/3Hair
   rotate: false
-  xy: 174, 1742
+  xy: 183, 1742
   size: 119, 219
   orig: 119, 219
   offset: 0, 0
   index: -1
 Frieren/2Hair
   rotate: false
-  xy: 174, 1514
+  xy: 183, 1514
   size: 126, 226
   orig: 126, 226
   offset: 0, 0
