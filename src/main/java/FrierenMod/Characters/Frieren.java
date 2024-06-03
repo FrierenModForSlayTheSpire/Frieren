@@ -56,7 +56,7 @@ public class Frieren extends CustomPlayer {
 
 
         this.loadAnimation(FrierenRes.CHARACTER_ATLAS, FrierenRes.CHARACTER_ATLAS_JSON, 4.0F);
-        AnimationState.TrackEntry e = this.state.setAnimation(0, "newAnimation", true);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
         e.setTime(e.getEndTime() * MathUtils.random());
         e.setTimeScale(1.2F);
     }
