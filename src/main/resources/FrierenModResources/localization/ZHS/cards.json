@@ -497,7 +497,7 @@
   },
   "FrierenMod:Free": {
     "NAME": "物理超度",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害。 如果你的 *魔力 总数为3的倍数，再造成 !D! 点。 如果你的 *魔力 总数为5的倍数，再造成 !D! 点。"
+    "DESCRIPTION": "丢弃所有非 *魔力 牌。 NL 每丢弃一张牌，造成 !D! 点伤害，获得 !B! 点 格挡 。"
   },
   "FrierenMod:MageStyleChoke": {
     "NAME": "魔法使流勒脖",

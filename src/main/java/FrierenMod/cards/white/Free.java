@@ -2,21 +2,24 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+
+import java.util.ArrayList;
 
 
 public class Free extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Free.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-    public static final int RATE_1 = 3;
-    public static final int RATE_2 = 5;
-
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
     public Free() {
         super(info);
@@ -28,33 +31,33 @@ public class Free extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.damage = this.baseDamage = 8;
-    }
-
-    @Override
-    public void triggerOnGlowCheck() {
-        if (CombatHelper.getAllManaNum() % (RATE_1 * RATE_2) == 0)
-            this.glowColor = GREEN_BORDER_GLOW_COLOR;
-        else if (CombatHelper.getAllManaNum() % RATE_1 == 0)
-            this.glowColor = GOLD_BORDER_GLOW_COLOR;
-        else if (CombatHelper.getAllManaNum() % RATE_2 == 0)
-            this.glowColor = GOLD_BORDER_GLOW_COLOR;
-        else
-            this.glowColor = BLUE_BORDER_GLOW_COLOR;
+        this.damage = this.baseDamage = 2;
+        this.block = this.baseBlock = 2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (CombatHelper.getAllManaNum() % RATE_1 == 0)
-            this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        if (CombatHelper.getAllManaNum() % RATE_2 == 0)
-            this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        ActionHelper.addToBotAbstract(() -> {
+            ArrayList<AbstractCard> cardsToDiscard = new ArrayList<>();
+            for (AbstractCard c : p.hand.group) {
+                if (!(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana)) {
+                    cardsToDiscard.add(c);
+                }
+            }
+            for (AbstractCard c : cardsToDiscard) {
+                p.hand.moveToDiscardPile(c);
+                c.triggerOnManualDiscard();
+                GameActionManager.incrementDiscard(false);
+                addToBot(new GainBlockAction(p, p, block));
+                addToBot(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            }
+            p.hand.applyPowers();
+        });
     }
 
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            upgradeDamage(2);
+            upgradeDamage(1);
         }
     }
 }

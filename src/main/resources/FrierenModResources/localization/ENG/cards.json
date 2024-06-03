@@ -463,7 +463,7 @@
   },
   "FrierenMod:Free": {
     "NAME": "Free",
-    "DESCRIPTION": "Deal 10 damage to ALL enemies. If your *Mana amount is multiple of 3, deal !D! damage again. If your *Mana amount is multiple of 5, deal !D! damage again. "
+    "DESCRIPTION": "Discard your *non-Mana card in your hand. NL Deal !D! damage and gain !B! Block for each card discarded."
   },
   "FrierenMod:MageStyleChoke": {
     "NAME": "Mage Style Choke",
