@@ -1,7 +1,6 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.SimmeringPower;
 import FrierenMod.utils.CardInfo;
@@ -18,26 +17,16 @@ public class Simmering extends AbstractBaseCard {
         super(info);
     }
 
-//    public Simmering(CardColor color) {
-//        super(ID, 1, color, CardRarity.UNCOMMON);
-//    }
-
-    @Override
-    public void initSpecifiedAttributes() {
-        this.cardsToPreview = new Mana();
-        this.magicNumber = this.baseMagicNumber = 3;
-    }
-
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(0);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new SimmeringPower(p, this.magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new SimmeringPower(p, 1)));
     }
 }

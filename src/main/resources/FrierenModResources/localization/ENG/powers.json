@@ -122,7 +122,7 @@
   "FrierenMod:SimmeringPower": {
     "NAME": "Simmering",
     "DESCRIPTIONS": [
-      "After you play an attack card, Exhaust #b1 #yMana to deal #b%d damage to ALL enemies. (Draw pile and Discard's #yMana will be Exhausted first)"
+      "After #yChant , draw #b%d #yLegendary_Spell ."
     ]
   },
   "FrierenMod:CopyPower": {

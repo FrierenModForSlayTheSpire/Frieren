@@ -109,7 +109,7 @@
   },
   "FrierenMod:Simmering": {
     "NAME": "Simmering",
-    "DESCRIPTION": "After you play an attack card, Exhaust 1 *Mana to deal !M! damage to ALL enemies. NL (Draw pile's and discard pile's *Mana will be Exhausted first)"
+    "DESCRIPTION": "After frierenmod:Chant, draw a frierenmod:Legendary_Spell."
   },
   "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",

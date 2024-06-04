@@ -122,7 +122,7 @@
   "FrierenMod:SimmeringPower": {
     "NAME": "暗流涌动",
     "DESCRIPTIONS": [
-      "每当你打出 #y攻击 牌后， #y消耗 1张 #y魔力 ，对所有敌人造成 #b%d 点伤害。"
+      " #y咏唱 后，抽 #b%d 张 #y传说魔法 。"
     ]
   },
   "FrierenMod:CopyPower": {
