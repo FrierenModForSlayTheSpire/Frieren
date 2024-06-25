@@ -562,5 +562,9 @@
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."
+  },
+  "FrierenMod:EmergencyFood": {
+    "NAME": "Emergency Food",
+    "DESCRIPTION": "Retain. NL Heal !M! HP. NL Exhaust."
   }
 }

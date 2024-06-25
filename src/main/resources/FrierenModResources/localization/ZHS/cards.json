@@ -671,5 +671,9 @@
   "FrierenMod:ExchangeBack": {
     "NAME": "换回",
     "DESCRIPTION": " 保留 。 NL 将 [#784183]菲伦[] 换回 [#edeaf5]芙莉莲[] 。 NL 消耗 。"
+  },
+  "FrierenMod:EmergencyFood": {
+    "NAME": "应急食物",
+    "DESCRIPTION": " 保留 。 NL 回复 !M! 生命。 NL 消耗 。"
   }
 }
