@@ -162,8 +162,8 @@
     "TEXT": [
       " NL 未装载 。",
       " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
-      " NL 手牌槽 装载中",
-      " NL 已装载弃牌堆槽 。"
+      " [#9ffc4f]手牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
+      " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
     ]
   },
   "FrierenMod:MagicFactorBanTips": {

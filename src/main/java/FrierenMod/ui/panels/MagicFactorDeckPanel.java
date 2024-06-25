@@ -1,14 +1,11 @@
 package FrierenMod.ui.panels;
 
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.ChantOptions.MagicFactorAlpha;
 import FrierenMod.ui.screens.MagicFactorDeckScreen;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
 import basemod.TopPanelItem;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -28,9 +25,7 @@ public class MagicFactorDeckPanel extends TopPanelItem {
 
     @Override
     protected void onClick() {
-        CardGroup tmp = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
-        tmp.addToTop(new MagicFactorAlpha(AbstractMagicFactor.ShowPlaceType.COMBAT));
-        BaseMod.openCustomScreen(MagicFactorDeckScreen.Enum.MY_SCREEN);
+        BaseMod.openCustomScreen(MagicFactorDeckScreen.Enum.MAGIC_FACTOR_SCREEN);
     }
 
     protected void onHover() {

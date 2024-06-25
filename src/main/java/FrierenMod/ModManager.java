@@ -94,8 +94,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                     FernRes.SMALL_ORB);
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
-        BaseMod.subscribe(new OnPlayerTurnStartHelper());
-        BaseMod.subscribe(new OnStartBattleHelper());
+        BaseMod.subscribe(new HookHelper());
         Log.logger.info("Done adding hooks");
         BaseMod.addSaveField(modID, this);
     }
@@ -143,8 +142,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
             if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
                 if (card instanceof AbstractMagicFactor) {
-                    System.out.println(((AbstractMagicFactor) card).slotNumber);
-                    return ((AbstractMagicFactor) card).slotNumber;
+                    System.out.println(((AbstractMagicFactor) card).currentSlot);
+                    return ((AbstractMagicFactor) card).currentSlot;
                 }
             }
             return -1;
@@ -277,7 +276,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public final String onSave() {
-        // 可以直接在抽象类存储一些共有的数据，例如 secondCounter
         return saveData.save();
     }
 

@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class AbstractMagicFactor extends AbstractBaseCard {
-    public int slotNumber; //-1表示未装载，0表示抽，1手，2弃
+public abstract class AbstractMagicFactor extends AbstractBaseCard{
+    public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
+    public ShowPlaceType showPlaceType;
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
     public static final String[] BAN_TIPS = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorBanTips")).TEXT;
     public byte[] banSlot;
@@ -74,12 +75,12 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
 
     //TODO: 从ModManager.save中获取装载槽位
     public void refreshCurrentSlot() {
-        this.slotNumber = 0;
+        this.currentSlot = 0;
     }
 
     public String getBagDescription(String id) {
         refreshCurrentSlot();
-        return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0] + LOAD_MESSAGES[slotNumber + 1];
+        return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0] + LOAD_MESSAGES[currentSlot + 1];
     }
 
     public enum ShowPlaceType {

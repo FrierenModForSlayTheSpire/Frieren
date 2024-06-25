@@ -40,12 +40,10 @@ public class DataObject {
         dataMap.put(key, boolValue);
     }
 
-    public boolean getBool(String key) {
-        if (dataMap.containsKey(key))
-            return Boolean.parseBoolean(dataMap.get(key));
-        return false;
+    public boolean containsKey(String key) {
+        return dataMap.containsKey(key);
     }
-    public Object getValue(String key){
+    public String getValue(String key){
         return dataMap.get(key);
     }
 }

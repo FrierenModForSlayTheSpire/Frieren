@@ -1,10 +1,9 @@
 package FrierenMod.ui.screens;
 
-import com.badlogic.gdx.graphics.Color;
+import FrierenMod.utils.FrierenRes;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.compendium.CardLibSortHeader;
 import com.megacrit.cardcrawl.screens.mainMenu.SortHeaderButton;
@@ -16,14 +15,6 @@ public class MagicFactorDeckSortHeader extends CardLibSortHeader {
     private static final int BAR_W = 1334;
 
     private static final int BAR_H = 102;
-
-    private static final Color BAR_COLOR = new Color(0.4F, 0.4F, 0.4F, 1.0F);
-
-    private static final Color IRONCLAD_COLOR = new Color(0.5F, 0.1F, 0.1F, 1.0F);
-
-    private static final Color SILENT_COLOR = new Color(0.25F, 0.55F, 0.0F, 1.0F);
-
-    private static final Color DEFECT_COLOR = new Color(0.01F, 0.34F, 0.52F, 1.0F);
 
     private static final Comparator<AbstractCard> BY_TYPE;
 
@@ -85,20 +76,7 @@ public class MagicFactorDeckSortHeader extends CardLibSortHeader {
     protected void updateScrollPositions() {}
 
     public void render(SpriteBatch sb) {
-        switch (AbstractDungeon.player.chosenClass) {
-            case IRONCLAD:
-                sb.setColor(IRONCLAD_COLOR);
-                break;
-            case THE_SILENT:
-                sb.setColor(SILENT_COLOR);
-                break;
-            case DEFECT:
-                sb.setColor(DEFECT_COLOR);
-                break;
-            default:
-                sb.setColor(BAR_COLOR);
-                break;
-        }
+        sb.setColor(FrierenRes.RENDER_COLOR.cpy());
         sb.draw(ImageMaster.COLOR_TAB_BAR, Settings.WIDTH / 2.0F - 667.0F, this.scrollY - 51.0F, 667.0F, 51.0F, 1334.0F, 102.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 1334, 102, false, false);
         super.render(sb);
     }

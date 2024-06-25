@@ -1,9 +1,8 @@
 package FrierenMod.ui.screens;
 
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.ChantOptions.MagicFactorAlpha;
-import FrierenMod.utils.Log;
+import FrierenMod.patches.fields.MagicFactorDeckField;
 import basemod.abstracts.CustomScreen;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -19,6 +18,8 @@ import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+
+import static com.megacrit.cardcrawl.ui.buttons.CancelButton.TEXT;
 
 public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarListener {
     private AbstractCard hoveredCard = null;
@@ -43,8 +44,6 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
     private boolean justSorted = false;
     private int headerScrollLockRemainingFrames = 0;
     private final MagicFactorDeckSortHeader sortHeader;
-    private static AbstractCard test = new MagicFactorAlpha(AbstractMagicFactor.ShowPlaceType.BAG);
-    private final ArrayList<AbstractCard> testDeck = new ArrayList<>();
 
     public MagicFactorDeckScreen() {
         drawStartX = Settings.WIDTH;
@@ -57,7 +56,6 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
         this.scrollBar = new ScrollBar(this);
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
         this.sortHeader = new MagicFactorDeckSortHeader(this);
-        this.testDeck.add(test);
     }
 
     @Override
@@ -73,12 +71,12 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
 
     public static class Enum {
         @SpireEnum
-        public static AbstractDungeon.CurrentScreen MY_SCREEN;
+        public static AbstractDungeon.CurrentScreen MAGIC_FACTOR_SCREEN;
     }
 
     @Override
     public AbstractDungeon.CurrentScreen curScreen() {
-        return Enum.MY_SCREEN;
+        return Enum.MAGIC_FACTOR_SCREEN;
     }
 
     // Note that this can be private and take any parameters you want.
@@ -97,7 +95,7 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
         hideCards();
         AbstractDungeon.dynamicBanner.hide();
         AbstractDungeon.isScreenUp = true;
-        AbstractDungeon.screen = Enum.MY_SCREEN;
+        AbstractDungeon.screen = Enum.MAGIC_FACTOR_SCREEN;
         AbstractDungeon.overlayMenu.proceedButton.hide();
         AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.overlayMenu.showBlackScreen();
@@ -107,17 +105,26 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
 
     @Override
     public void reopen() {
-
+        if (Settings.isControllerMode) {
+            Gdx.input.setCursorPosition(10, Settings.HEIGHT / 2);
+        }
+        AbstractDungeon.overlayMenu.cancelButton.show(TEXT[0]);
     }
-
     @Override
     public void close() {
-
+        AbstractDungeon.overlayMenu.hideBlackScreen();
+        AbstractDungeon.isScreenUp = false;
+        AbstractDungeon.overlayMenu.cancelButton.hide();
+        genericScreenOverlayReset();
+        for (AbstractCard c : getFactorDeck()) {
+            c.drawScale = 0.12F;
+            c.targetDrawScale = 0.12F;
+            c.unhover();
+        }
     }
 
     @Override
     public void update() {
-        Log.logger.info(Settings.isControllerMode);
         boolean isDraggingScrollBar = false;
         if (shouldShowScrollBar())
             isDraggingScrollBar = this.scrollBar.update();
@@ -199,7 +206,7 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
     }
 
     public ArrayList<AbstractCard> getFactorDeck() {
-        return this.testDeck;
+        return MagicFactorDeckField.getDeck().group;
     }
 
     public void renderMagicFactorDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {
@@ -242,7 +249,6 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
                 this.clickStartedCard = this.hoveredCard;
             if (InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard) {
                 InputHelper.justReleasedClickLeft = false;
-                Log.logger.info("!!!!!!!!!!!!");
                 this.clickStartedCard = null;
             }
         } else {
