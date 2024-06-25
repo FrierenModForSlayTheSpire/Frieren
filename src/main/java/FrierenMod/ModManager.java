@@ -5,6 +5,7 @@ import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.events.FoodEvent;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.DataObject;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
@@ -127,6 +128,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
+        BaseMod.addEvent("FoodEvent", FoodEvent.class);
+        //BaseMod.addEvent("MimicFight", FoodEvent.class, "Exordium");
     }
 
     @Override
@@ -242,6 +245,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang, "powers"));
         BaseMod.loadCustomStringsFile(UIStrings.class, ModInformation.makeLocalizationPath(lang, "UIs"));
         BaseMod.loadCustomStringsFile(MonsterStrings.class, ModInformation.makeLocalizationPath(lang, "monsters"));
+        BaseMod.loadCustomStringsFile(EventStrings.class, ModInformation.makeLocalizationPath(lang, "events"));
     }
 
     private static String getModID() {

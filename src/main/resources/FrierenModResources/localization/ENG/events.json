@@ -2,18 +2,41 @@
   "FrierenMod:MimicFight": {
     "NAME": "遭遇宝箱怪",
     "DESCRIPTIONS": [
-      "那里有一个闪闪发光的宝箱！你使用了宝箱判别魔法 #bMeekhite 发现它有百分之99的概率是宝箱怪，身为真正的魔法使，你打算...",
-      "不出所料它是个宝箱怪，而你落到了它的的嘴里！ ~好黑，好可怕~ 但堂堂魔法使不会被宝箱怪单杀！，你决定...",
-      "你满怀期待地打开它，发现它居然是一个真的宝箱！里面有一本闪闪发光的魔导书和大量的财宝，你证明了自己是真正的魔法使，你的不懈努力没有白费！",
-      "宝箱怪灰飞烟灭，而你被烫成了卷发"
+      "那里有一个闪闪发光的宝箱！你使用了宝箱判别魔法 #bMeekhite 发现它有百分之99的概率是宝箱怪,身为真正的魔法使,你打算...",
+      "不出所料它是个宝箱怪,而你落到了它的的嘴里！ ~好黑,好可怕~ 但堂堂魔法使不会被宝箱怪单杀！,你决定...",
+      "你满怀期待地打开它,发现它居然是一个真的宝箱！里面有一本闪闪发光的魔导书和大量的财宝,你证明了自己是真正的魔法使,你的不懈努力没有白费！",
+      "宝箱怪灰飞烟灭,而你被烫成了卷发"
     ],
     "OPTIONS": [
       "[冲动]毫不犹豫地打开宝箱！",
       "[理智]果然还是要打开宝箱！",
-      "[战斗]让宝箱怪吐出自己，和它一决胜负!",
-      "[逃离]使用爆破魔法强行消灭宝箱怪。",
+      "[战斗]让宝箱怪吐出自己,和它一决胜负!",
+      "[逃离]使用爆破魔法强行消灭宝箱怪.",
       "[发财]拿走宝箱里的一切！",
       "[离开]"
+    ]
+  },
+  "FrierenMod:FoodEvent": {
+    "NAME": "Journey of Delicacy",
+    "DESCRIPTIONS": [
+      "In the journey through the Spire, you feel @extremely@ @hungry@ , you decide to buy some #g~tasty~ #g~food~ as a reward...",
+      "You look at your ~flattened~ ~purse~, and decide to go to have some free snacks. ~Anyway,~ ~free~ ~ones~ ~are~ ~yummy~ ~ones.~",
+      "There is no time for a slow enjoyment, you hastily #gpack #gand #gcarry #gthe #gfood. This ~enormous~ ~amount~ can be eaten for some days.",
+      "You come to a dance, however, you are not a dancer but a diner. #gThe #gdelicious #gstrawberry #gcake makes the trip worthwhile. #b~Greedily,~ you brought a #gstrawberry with you.",
+      "You come to a noble restaurant. Fruit, dessert, cake, everything is so outstanding that makes you dizzy. After @gorging@ on them, ~you~ ~realize~ ~the~ ~essence~ ~of~ ~life.~ #gHeal #gfull #gHP.",
+      ""
+    ],
+    "OPTIONS": [
+      "[Free snacks] #gHeal #g",
+      " #gHP.",
+      "[Pack to eat] #y75 #ygolds:  #gGet #gEmergency #gFood.",
+      "[Meal] #y150 #ygolds: #gGet #gStrawberry, #gHEAL #g",
+      " #gHP.",
+      "[Big Meal] #y250 #ygolds: #gGet #gMango, #gHeal #gfull #gHP.",
+      "[Leave]",
+      "[Locked] Requires: At least 75 golds.",
+      "[Locked] Requires: At least 150 golds.",
+      "[Locked] Requires: At least 250 golds."
     ]
   }
 }
