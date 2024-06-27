@@ -675,5 +675,13 @@
   "FrierenMod:EmergencyFood": {
     "NAME": "应急食物",
     "DESCRIPTION": " 保留 。 NL 回复 !M! 生命。 NL 消耗 。"
+  },
+  "FrierenMod:BirdCapturingSpell": {
+    "NAME": "捕鸟魔法",
+    "DESCRIPTION": " *击晕 一个鸟类，或者长的像鸟类的敌人3回合。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL *击晕 一个鸟类，或者长的像鸟类的敌人3回合。",
+    "EXTENDED_DESCRIPTION": [
+      "这个目标长得并不像鸟..."
+    ]
   }
 }
