@@ -75,11 +75,29 @@
       "[Gift to Glutton] #gGain #gMeat #gOn #gthe #gBone",
       "[Gift to Millionaire] #gGain #gMembershipCard.",
       "[Gift to Hoarder] #gGain #gRing #gOf #gThe #gSerpent.",
-      "[Decline the gift] ",
+      "[Decline the Gift] ",
       "[Locked] Requires: Have more than 80 MaxHP.",
       "[Locked] Requires: Have more than 300 golds.",
       "[Locked] Requires: Have more than 30 cards in your Deck.",
       "[Leave]"
+    ]
+  },
+  "FrierenMod:AnimalWell": {
+    "NAME": "Adventure: AnimalWell",
+    "DESCRIPTIONS": [
+      "You see a strange well and jump into it without thinking, your instinct told you there must be an #b~amazing~ #b~treasure~ inside. You enter a world of pixels, everything around you is #beerie #band #bbeautiful. You turn around and have a glance, a #r@Big@ #r@Ostrich@ #r@is@ #r@charging@ #r@towards@ #r@you!@",
+      "You hurriedly throw the #rfirecracker from your backpack at the #rOstrich, carrying the remaining two #rfirecrackers and flying far away. You are safe, for now...",
+      "Under the emergency, you blow the #yanimal #yflute, hoping to calm it down, With the #y~rhythm~ #y~dancing,~ you are transported to the #gcampfire. Although confused, the opportunity to upgrade is always excellent.",
+      "After thinking for 0.001 seconds, you run straight towards #rthe #rOstrich, instead of staying away from it. #r@The@ #r@Ostrich@ #r@is@ #r@about@ #r@to@ #r@peck@ #r@at@ #r@you@ #r! ~Swoosh—~ You slide to its feet, and then use #gBird #gCapturing #gSpell. #rThe #rOstrich is immediately #yfrozen by the Spell. Well, great mage always makes it at leisure.",
+      ""
+    ],
+    "OPTIONS": [
+      "[Throw Firecracker] #gGain #g2 #gFirePotion.",
+      "[Blow Animal Flute] #gUpgrade #ga #gcard.",
+      "[Use Bird Capturing Spell] #gGain #gSpell #gto #gCapture #ga #gBird",
+      "[Leave the Animal Well]",
+      "[Locked] Requires: Upgradeable Cards",
+      "Choose a Card to Upgrade"
     ]
   }
 }
