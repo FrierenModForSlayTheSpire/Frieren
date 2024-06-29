@@ -5,7 +5,9 @@ import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.events.AnimalWell;
 import FrierenMod.events.FoodEvent;
+import FrierenMod.events.KraftGift;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.DataObject;
 import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
@@ -129,7 +131,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
-        //BaseMod.addEvent("MimicFight", FoodEvent.class, "Exordium");
+        BaseMod.addEvent("KraftGift", KraftGift.class);
+        BaseMod.addEvent("AnimalWell", AnimalWell.class);
     }
 
     @Override

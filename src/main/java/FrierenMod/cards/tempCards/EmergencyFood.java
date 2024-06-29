@@ -10,13 +10,14 @@ import FrierenMod.cards.AbstractBaseCard;
 
 public class EmergencyFood extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(EmergencyFood.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
 
     public EmergencyFood() {
         super(info);
         this.magicNumber = this.baseMagicNumber = 5;
         this.exhaust = true;
         this.selfRetain=true;
+        this.setDisplayRarity(CardRarity.UNCOMMON);
     }
 
     @Override

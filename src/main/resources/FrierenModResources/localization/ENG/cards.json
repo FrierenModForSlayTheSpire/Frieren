@@ -566,5 +566,13 @@
   "FrierenMod:EmergencyFood": {
     "NAME": "Emergency Food",
     "DESCRIPTION": "Retain. NL Heal !M! HP. NL Exhaust."
+  },
+  "FrierenMod:BirdCapturingSpell": {
+    "NAME": "Spell to Capture a Bird",
+    "DESCRIPTION": "*Stun a bird or a bird-like enemy 3 turns.",
+    "UPGRADE_DESCRIPTION": "Innate. NL *Stun a bird or a bird-like enemy 3 turns.",
+    "EXTENDED_DESCRIPTION": [
+    "It is not a bird, or a bird-like enemy"
+  ]
   }
 }

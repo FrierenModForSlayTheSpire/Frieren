@@ -38,5 +38,66 @@
       "[Locked] Requires: At least 150 golds.",
       "[Locked] Requires: At least 250 golds."
     ]
+  },
+  "FrierenMod:ManaRampage": {
+    "NAME": "Journey of Delicacy",
+    "DESCRIPTIONS": [
+      "你在悬浮在空中的平台上往上跳跃时,不慎滑了一跤. NL NL 你开始坠落.",
+      "在摔下的途中,你开始考虑自己有什么选择: NL 用你最好的技术安全落地. NL 释放能力牌的力量来抵御伤害. NL 对墙壁猛击,让自己不再下坠.",
+      "你以优雅的姿势落地,继续前行.",
+      "你催动自己的力量,成功在落地时避免了损伤.",
+      "你成功挂在了墙上,一个小跳翻上了一个稳固的平台.",
+      "你有如羽毛一般缓缓降落,安然无恙地落了地."
+    ],
+    "OPTIONS": [
+      "[继续]",
+      "[落地] #r失去 ",
+      "[锁定] 需要: 技能牌",
+      "[释放] #r失去 ",
+      "[锁定] 需要: 能力牌",
+      "[猛击] #r失去 ",
+      "[锁定] 需要: 攻击牌",
+      "[离开]",
+      "[落地] "
+    ]
+  },
+  "FrierenMod:KraftGift": {
+    "NAME": "Kraft's Gift",
+    "DESCRIPTIONS": [
+      "In the journey, #b@A@ #b@blizzard@ #b@struck,@ and you walk into an abandoned cabin, found #banother #belf squatting inside to keep warm. It have taken you hundreds of years until you finally met #banother #belf, #bKraft. You recall the past and discuss the present, withstand frost in the cold forest. At the moment of parting, #bKraft decides to give you a #g~farewell~ #g~gift~ ...",
+      "Kraft notice your #b~gluttonous~ nature, and then give you a #gMeat #gOn #gthe #gBone. You won't worry about the food for the next few days.",
+      "Kraft is not as wealthy as you, but he find a #gMembershipCard which he bought hundreds of years ago and give it to you, hoping that would still work.",
+      "Kraft is surprised by your huge luggage, and he recommend the benefits of brevity to you. In order to uphold his #b brevity, Kraft give you the #gRing #gOf #gThe #gSerpent he received while traveling.",
+      "You decline his gift, and Kraft smiles and says, \"Frieren, let's keep the gift until we meet again. Goodbye.\" You believe you will meet again, although it may take another few hundred years.",
+      ""
+    ],
+    "OPTIONS": [
+      "[Gift to Glutton] #gGain #gMeat #gOn #gthe #gBone",
+      "[Gift to Millionaire] #gGain #gMembershipCard.",
+      "[Gift to Hoarder] #gGain #gRing #gOf #gThe #gSerpent.",
+      "[Decline the Gift] ",
+      "[Locked] Requires: Have more than 80 MaxHP.",
+      "[Locked] Requires: Have more than 300 golds.",
+      "[Locked] Requires: Have more than 30 cards in your Deck.",
+      "[Leave]"
+    ]
+  },
+  "FrierenMod:AnimalWell": {
+    "NAME": "Adventure: AnimalWell",
+    "DESCRIPTIONS": [
+      "You see a strange well and jump into it without thinking, your instinct told you there must be an #b~amazing~ #b~treasure~ inside. You enter a world of pixels, everything around you is #beerie #band #bbeautiful. You turn around and have a glance, a #r@Big@ #r@Ostrich@ #r@is@ #r@charging@ #r@towards@ #r@you!@",
+      "You hurriedly throw the #rfirecracker from your backpack at the #rOstrich, carrying the remaining two #rfirecrackers and flying far away. You are safe, for now...",
+      "Under the emergency, you blow the #yanimal #yflute, hoping to calm it down, With the #y~rhythm~ #y~dancing,~ you are transported to the #gcampfire. Although confused, the opportunity to upgrade is always excellent.",
+      "After thinking for 0.001 seconds, you run straight towards #rthe #rOstrich, instead of staying away from it. #r@The@ #r@Ostrich@ #r@is@ #r@about@ #r@to@ #r@peck@ #r@at@ #r@you@ #r! ~Swoosh—~ You slide to its feet, and then use #gBird #gCapturing #gSpell. #rThe #rOstrich is immediately #yfrozen by the Spell. Well, great mage always makes it at leisure.",
+      ""
+    ],
+    "OPTIONS": [
+      "[Throw Firecracker] #gGain #g2 #gFirePotion.",
+      "[Blow Animal Flute] #gUpgrade #ga #gcard.",
+      "[Use Bird Capturing Spell] #gGain #gSpell #gto #gCapture #ga #gBird",
+      "[Leave the Animal Well]",
+      "[Locked] Requires: Upgradeable Cards",
+      "Choose a Card to Upgrade"
+    ]
   }
 }
