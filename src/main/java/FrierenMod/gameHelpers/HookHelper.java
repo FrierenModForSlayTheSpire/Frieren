@@ -21,13 +21,13 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
-            ResetCardCost();
+            resetCardCost();
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
     }
 
-    private void ResetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
+    private void resetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
         for (AbstractCard c : group.group) {
             if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isCostResetCard) {
                 Class<? extends AbstractBaseCard> cardClass = (Class<? extends AbstractBaseCard>) c.getClass();
@@ -38,12 +38,12 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
         }
     }
 
-    private void ResetCardCost() throws InstantiationException, IllegalAccessException {
+    private void resetCardCost() throws InstantiationException, IllegalAccessException {
         AbstractPlayer p = AbstractDungeon.player;
-        ResetBackFireCardCostInCardGroup(p.hand);
-        ResetBackFireCardCostInCardGroup(p.discardPile);
-        ResetBackFireCardCostInCardGroup(p.drawPile);
-        ResetBackFireCardCostInCardGroup(p.exhaustPile);
+        resetBackFireCardCostInCardGroup(p.hand);
+        resetBackFireCardCostInCardGroup(p.discardPile);
+        resetBackFireCardCostInCardGroup(p.drawPile);
+        resetBackFireCardCostInCardGroup(p.exhaustPile);
     }
 
     @Override
