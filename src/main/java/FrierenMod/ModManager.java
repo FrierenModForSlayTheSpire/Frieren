@@ -6,7 +6,10 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.*;
+import FrierenMod.gameHelpers.CardPoolHelper;
+import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.DataObject;
+import FrierenMod.gameHelpers.HookHelper;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
@@ -20,7 +23,6 @@ import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
-import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
@@ -49,9 +51,9 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 
 
 @SpireInitializer
-public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, CustomSavable<String> {
+public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
     private static String modID;
-    public static final DataObject saveData = new DataObject();
+    public static DataObject saveData = new DataObject();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -96,7 +98,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         Log.logger.info("Adding hooks...");
         BaseMod.subscribe(new HookHelper());
         Log.logger.info("Done adding hooks");
-        BaseMod.addSaveField(modID, this);
     }
 
     public void setModID(String ID) {
@@ -274,14 +275,4 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
     }
 
-    @Override
-    public final String onSave() {
-        return saveData.save();
-    }
-
-
-    @Override
-    public final void onLoad(String s) {
-        saveData.load(s);
-    }
 }

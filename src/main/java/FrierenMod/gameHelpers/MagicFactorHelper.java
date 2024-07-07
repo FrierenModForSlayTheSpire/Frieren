@@ -15,25 +15,25 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MagicFactorHelper {
-    public static final String SAVE_NAME = "MagicFactorSave";
+    public static final String SAVE_NAME = "magic_factor";
     public static void saveAllFactors() {
         ModManager.saveData.putValue(SAVE_NAME, null);
-        List<SerializableMagicFactor> sf = new ArrayList<>();
+        List<SerializableMagicFactor> sfs = new ArrayList<>();
         Gson gson = new Gson();
         for (AbstractCard c : MagicFactorDeckField.getDeck().group) {
             if (c instanceof AbstractMagicFactor) {
-                sf.add(new SerializableMagicFactor(c.cardID, ((AbstractMagicFactor) c).currentSlot));
+                sfs.add(new SerializableMagicFactor(c.cardID, ((AbstractMagicFactor) c).currentSlot));
             }
         }
-        JsonArray factorsArray = gson.toJsonTree(sf).getAsJsonArray();
+        JsonArray factorsArray = gson.toJsonTree(sfs).getAsJsonArray();
         ModManager.saveData.putValue(SAVE_NAME, factorsArray);
     }
 
     public static ArrayList<AbstractMagicFactor> getAllFactors() {
         ArrayList<AbstractMagicFactor> fs = new ArrayList<>();
         Gson gson = new Gson();
-        Type personListType = new TypeToken<List<SerializableMagicFactor>>() {}.getType();
-        List<SerializableMagicFactor> sfs = gson.fromJson(ModManager.saveData.getValue(SAVE_NAME), personListType);
+        Type sfType = new TypeToken<List<SerializableMagicFactor>>() {}.getType();
+        List<SerializableMagicFactor> sfs = gson.fromJson(ModManager.saveData.getValue(SAVE_NAME), sfType);
         for (SerializableMagicFactor sf : sfs) {
             AbstractMagicFactor f = (AbstractMagicFactor) CardLibrary.getCard(sf.id);
             f.currentSlot = sf.currentSlot;
