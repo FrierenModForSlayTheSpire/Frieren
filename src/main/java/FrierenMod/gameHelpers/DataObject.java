@@ -1,13 +1,12 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.utils.Log;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static basemod.DevConsole.log;
 
 public class DataObject {
     private final Map<String, String> dataMap;
@@ -25,9 +24,9 @@ public class DataObject {
         Gson gson = new GsonBuilder().create();
         Map<String, String> map = gson.fromJson(save, new TypeToken<Map<String, String>>(){}.getType());
         if (map != null) {
-            map.forEach( (k, v) -> log("{" + k + ", " + v + "} loaded") );
+            map.forEach( (k, v) -> Log.logger.info("{{}, {}} loaded", k, v));
         } else {
-            log("Failed to load saved data");
+            Log.logger.info("Failed to load saved data");
         }
     }
 
@@ -40,12 +39,10 @@ public class DataObject {
         dataMap.put(key, boolValue);
     }
 
-    public boolean getBool(String key) {
-        if (dataMap.containsKey(key))
-            return Boolean.parseBoolean(dataMap.get(key));
-        return false;
+    public boolean containsKey(String key) {
+        return dataMap.containsKey(key);
     }
-    public Object getValue(String key){
+    public String getValue(String key){
         return dataMap.get(key);
     }
 }

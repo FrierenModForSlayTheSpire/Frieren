@@ -158,6 +158,37 @@
       "本回合没有打出过 #r咏唱 牌。"
     ]
   },
+  "FrierenMod:MagicFactorLoadMessages": {
+    "TEXT": [
+      " NL 未装载 。",
+      " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
+      " [#9ffc4f]手牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
+      " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
+    ]
+  },
+  "FrierenMod:MagicFactorBanTips": {
+    "TEXT": [
+      " #r抽牌堆 ",
+      " #r手牌 ",
+      " #r弃牌堆 ",
+      "禁用",
+      "将此牌 #y装载 入 #咏唱插槽 后会导致",
+      " #y槽位 中的 #y咏唱选项卡 失效。",
+      "和"
+    ]
+  },
+  "FrierenMod:MagicFactorDeckPanel": {
+    "TEXT": [
+      "魔法因子堆",
+      "查看你拥有的 #y魔法因子 。"
+    ]
+  },
+  "FrierenMod:MagicFactorTip": {
+    "TEXT": [
+      "魔法因子",
+      "一种特殊的选项卡，选择后会 #y消耗  #y魔力 并发动相应效果，仅当 对应牌堆中 #y魔力 数充足时可被选择。"
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",

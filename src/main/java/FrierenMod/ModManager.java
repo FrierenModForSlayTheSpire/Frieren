@@ -3,19 +3,19 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
+import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.events.AnimalWell;
-import FrierenMod.events.FoodEvent;
-import FrierenMod.events.KraftGift;
 import FrierenMod.gameHelpers.CardPoolHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.DataObject;
-import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
-import FrierenMod.gameHelpers.OnStartBattleHelper;
+import FrierenMod.gameHelpers.HookHelper;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
+import FrierenMod.ui.panels.MagicFactorDeckPanel;
+import FrierenMod.ui.screens.MagicFactorDeckScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.RaidVariable;
@@ -23,8 +23,8 @@ import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
-import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -36,6 +36,7 @@ import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -50,9 +51,9 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 
 
 @SpireInitializer
-public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, CustomSavable<String> {
+public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
     private static String modID;
-    public static final DataObject saveData = new DataObject();
+    public static DataObject saveData = new DataObject();
 
     public ModManager() {
         BaseMod.subscribe(this);
@@ -95,10 +96,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                     FernRes.SMALL_ORB);
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
-        BaseMod.subscribe(new OnPlayerTurnStartHelper());
-        BaseMod.subscribe(new OnStartBattleHelper());
+        BaseMod.subscribe(new HookHelper());
         Log.logger.info("Done adding hooks");
-        BaseMod.addSaveField(modID, this);
     }
 
     public void setModID(String ID) {
@@ -130,9 +129,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
-        BaseMod.addEvent("FoodEvent", FoodEvent.class);
-        BaseMod.addEvent("KraftGift", KraftGift.class);
-        BaseMod.addEvent("AnimalWell", AnimalWell.class);
+        BaseMod.addTopPanelItem(new MagicFactorDeckPanel());
+        BaseMod.addCustomScreen(new MagicFactorDeckScreen());
     }
 
     @Override
@@ -142,6 +140,14 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
         BaseMod.addDynamicVariable(new RaidVariable());
+        DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
+            if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
+                if (card instanceof AbstractMagicFactor) {
+                    return ((AbstractMagicFactor) card).currentSlot;
+                }
+            }
+            return -1;
+        });
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
         String optionCardsClassPath = getModID() + ".cards.optionCards";
@@ -248,7 +254,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.loadCustomStringsFile(PowerStrings.class, ModInformation.makeLocalizationPath(lang, "powers"));
         BaseMod.loadCustomStringsFile(UIStrings.class, ModInformation.makeLocalizationPath(lang, "UIs"));
         BaseMod.loadCustomStringsFile(MonsterStrings.class, ModInformation.makeLocalizationPath(lang, "monsters"));
-        BaseMod.loadCustomStringsFile(EventStrings.class, ModInformation.makeLocalizationPath(lang, "events"));
     }
 
     private static String getModID() {
@@ -269,15 +274,4 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
     }
 
-    @Override
-    public final String onSave() {
-        // 可以直接在抽象类存储一些共有的数据，例如 secondCounter
-        return saveData.save();
-    }
-
-
-    @Override
-    public final void onLoad(String s) {
-        saveData.load(s);
-    }
 }
