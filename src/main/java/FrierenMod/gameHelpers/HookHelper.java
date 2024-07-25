@@ -4,7 +4,9 @@ import FrierenMod.ModManager;
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.ChantOptions.MagicFactorAlpha;
+import FrierenMod.cards.optionCards.ChantOptions.BaseFactorAlpha;
+import FrierenMod.cards.optionCards.ChantOptions.BaseFactorBeta;
+import FrierenMod.cards.optionCards.ChantOptions.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicFactorDeckField;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
@@ -55,7 +57,15 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         if (playerClass == CharacterEnums.FRIEREN) {
             MagicFactorDeckField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
-            MagicFactorDeckField.getDeck().addToTop(new MagicFactorAlpha(AbstractMagicFactor.ShowPlaceType.BAG));
+            BaseFactorAlpha alpha = new BaseFactorAlpha();
+            alpha.setCurrentSlot(0);
+            BaseFactorBeta beta = new BaseFactorBeta();
+            beta.setCurrentSlot(1);
+            BaseFactorGamma gamma = new BaseFactorGamma();
+            gamma.setCurrentSlot(2);
+            MagicFactorDeckField.getDeck().addToTop(alpha);
+            MagicFactorDeckField.getDeck().addToTop(beta);
+            MagicFactorDeckField.getDeck().addToTop(gamma);
             MagicFactorHelper.saveAllFactors();
         }
     }

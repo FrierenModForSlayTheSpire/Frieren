@@ -3,7 +3,6 @@ package FrierenMod.gameHelpers;
 import FrierenMod.ModManager;
 import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
 import FrierenMod.patches.fields.MagicFactorDeckField;
-import FrierenMod.utils.Log;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
@@ -35,10 +34,9 @@ public class MagicFactorHelper {
         Type sfType = new TypeToken<List<SerializableMagicFactor>>() {}.getType();
         List<SerializableMagicFactor> sfs = gson.fromJson(ModManager.saveData.getValue(SAVE_NAME), sfType);
         for (SerializableMagicFactor sf : sfs) {
-            AbstractMagicFactor f = (AbstractMagicFactor) CardLibrary.getCard(sf.id);
+            AbstractMagicFactor f = (AbstractMagicFactor) CardLibrary.getCopy(sf.id);
             f.currentSlot = sf.currentSlot;
             fs.add(f);
-            Log.logger.info(f);
         }
         return fs;
     }

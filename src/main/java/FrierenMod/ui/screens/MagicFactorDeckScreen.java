@@ -1,5 +1,6 @@
 package FrierenMod.ui.screens;
 
+import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
 import FrierenMod.patches.fields.MagicFactorDeckField;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;
@@ -206,7 +207,13 @@ public class MagicFactorDeckScreen extends CustomScreen implements ScrollBarList
     }
 
     public ArrayList<AbstractCard> getFactorDeck() {
-        return MagicFactorDeckField.getDeck().group;
+        ArrayList<AbstractCard> retVal = MagicFactorDeckField.getDeck().group;
+        for (AbstractCard f : retVal) {
+            if(f instanceof AbstractMagicFactor){
+                ((AbstractMagicFactor) f).setDescriptionByShowPlaceType(AbstractMagicFactor.ShowPlaceType.DECK);
+            }
+        }
+        return retVal;
     }
 
     public void renderMagicFactorDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {

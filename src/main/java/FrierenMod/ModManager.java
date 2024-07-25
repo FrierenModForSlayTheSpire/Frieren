@@ -143,7 +143,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
             if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
                 if (card instanceof AbstractMagicFactor) {
-                    System.out.println(((AbstractMagicFactor) card).currentSlot);
                     return ((AbstractMagicFactor) card).currentSlot;
                 }
             }

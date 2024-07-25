@@ -38,11 +38,25 @@
     "NAME": "魔力隐藏",
     "DESCRIPTION": "将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
   },
-  "FrierenMod:MagicFactorAlpha": {
-    "NAME": "魔法因子α",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。",
+  "FrierenMod:BaseFactorAlpha": {
+    "NAME": "基础因子α",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 两次。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X点 格挡 两次。"
+    ]
+  },
+  "FrierenMod:BaseFactorBeta": {
+    "NAME": "基础因子β",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，获得X点 [E] 。"
+    ]
+  },
+  "FrierenMod:BaseFactorGamma": {
+    "NAME": "基础因子γ",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 力量 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，获得X点 力量 。"
     ]
   },
   "FrierenMod:ChantDrawPile": {

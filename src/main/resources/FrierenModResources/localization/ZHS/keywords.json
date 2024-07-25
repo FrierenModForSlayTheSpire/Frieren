@@ -4,7 +4,7 @@
     "NAMES": [
       "咏唱X","咏唱"
     ],
-    "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得X点 #y格挡 两次。 NL 消耗手牌中X张 #y魔力 ，获得X点 [E] 。 NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量 。"
+    "DESCRIPTION": "在 #g装载中 的 #y魔法因子 中选择1张发动效果。"
   },
   {
     "PROPER_NAME":"同调",
