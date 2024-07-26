@@ -1,6 +1,6 @@
 package FrierenMod.ui.screens;
 
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.MagicFactors.AbstractMagicFactor;
 import FrierenMod.patches.fields.MagicFactorDeckField;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;

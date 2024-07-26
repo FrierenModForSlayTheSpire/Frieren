@@ -3,7 +3,7 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.MagicFactors.AbstractMagicFactor;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CardPoolHelper;

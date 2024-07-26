@@ -1,4 +1,4 @@
-package FrierenMod.cards.optionCards.ChantOptions;
+package FrierenMod.cards.optionCards.MagicFactors;
 
 import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.cards.AbstractBaseCard;
@@ -6,7 +6,6 @@ import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
-import basemod.helpers.TooltipInfo;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -17,14 +16,13 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
 public abstract class AbstractMagicFactor extends AbstractBaseCard {
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
     public static final String[] BAN_TIPS = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorBanTips")).TEXT;
-    public byte[] banSlot;
     public ArrayList<AbstractGameAction> extraActions;
+    public FactorRarityType factorRarity;
 
     public AbstractMagicFactor(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -32,37 +30,6 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     }
 
     public abstract void takeEffect();
-
-    public List<TooltipInfo> getCustomTooltips() {
-        String banTipTitle = BAN_TIPS[3];
-        String banTipDescription = getBanTipDescription();
-        if (getBanTipDescription() != null) {
-            this.tips.clear();
-            this.tips.add(new TooltipInfo(banTipTitle, banTipDescription));
-        }
-        return this.tips;
-    }
-
-    public String getBanTipDescription() {
-        if (banSlot == null || banSlot.length == 0 || Arrays.equals(banSlot, new byte[]{0, 0, 0})) {
-            return null;
-        }
-        String description = "";
-        ArrayList<String> banTypeStrings = new ArrayList<>();
-        if (banSlot[0] == 1)
-            banTypeStrings.add(BAN_TIPS[0]);
-        if (banSlot[1] == 1)
-            banTypeStrings.add(BAN_TIPS[1]);
-        if (banSlot[2] == 1)
-            banTypeStrings.add(BAN_TIPS[2]);
-        if (banTypeStrings.isEmpty())
-            return null;
-        if (banTypeStrings.size() == 1)
-            description = BAN_TIPS[4] + banTypeStrings.get(0) + BAN_TIPS[5];
-        if (banTypeStrings.size() == 2)
-            description = BAN_TIPS[4] + banTypeStrings.get(0) + BAN_TIPS[6] + banTypeStrings.get(1) + BAN_TIPS[5];
-        return description;
-    }
 
     public String getCombatDescription(String id) {
         return CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION;
@@ -89,11 +56,6 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
                 break;
         }
         this.initializeDescription();
-    }
-
-    public enum ShowPlaceType {
-        COMBAT,
-        DECK
     }
 
     @Override
@@ -155,5 +117,15 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
                 ((AbstractBaseCard) c).afterChant();
                 this.addToBot(new AfterChantFinishedAction((AbstractBaseCard) c));
             }
+    }
+    public enum ShowPlaceType {
+        COMBAT,
+        DECK
+    }
+    public enum FactorRarityType{
+        BASIC,
+        COMMON,
+        UNCOMMON,
+        RARE,
     }
 }

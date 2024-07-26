@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.MagicFactors.AbstractMagicFactor;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.MagicFactorHelper;
 import FrierenMod.utils.Log;
