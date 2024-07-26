@@ -15,7 +15,7 @@ public class SimmeringAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        this.addToBot(new ExhaustManaInHandAction(1));
+        this.addToBot(new ExhaustManaInCardGroupAction(1,1));
         for(AbstractMonster mo:AbstractDungeon.getCurrRoom().monsters.monsters){
             this.addToBot(new ApplyPowerAction(mo, AbstractDungeon.player, new VulnerablePower(mo, this.magicNumber, false), 1, true, AbstractGameAction.AttackEffect.NONE));
         }

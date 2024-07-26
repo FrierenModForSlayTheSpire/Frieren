@@ -16,9 +16,9 @@ public class ExhaustAllManaAction extends AbstractGameAction {
     }
 
     public void update() {
-        this.addToBot(new ExhaustManaInDrawPileAction(this.exhaustNumberInDrawPile));
-        this.addToBot(new ExhaustManaInHandAction(this.exhaustNumberInHand));
-        this.addToBot(new ExhaustManaInDiscardPileAction(this.exhaustNumberInDiscardPile));
+        this.addToBot(new ExhaustManaInCardGroupAction(this.exhaustNumberInDrawPile,0));
+        this.addToBot(new ExhaustManaInCardGroupAction(this.exhaustNumberInHand,1));
+        this.addToBot(new ExhaustManaInCardGroupAction(this.exhaustNumberInDiscardPile,2));
         this.isDone = true;
     }
 }

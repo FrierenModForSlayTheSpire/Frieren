@@ -1,8 +1,7 @@
 package FrierenMod.powers;
 
-import FrierenMod.actions.ExhaustManaInDiscardPileAction;
-import FrierenMod.actions.ExhaustManaInDrawPileAction;
-import FrierenMod.actions.ExhaustManaInHandAction;
+
+import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.cards.white.PajamasForm;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
@@ -25,9 +24,9 @@ public class PajamasFormPower extends AbstractBasePower {
         if (isPlayer) {
             this.updateDescription();
             this.flash();
-            this.addToBot(new ExhaustManaInDrawPileAction(CombatHelper.getManaNumInDrawPile()));
-            this.addToBot(new ExhaustManaInHandAction(CombatHelper.getManaNumInHand()));
-            this.addToBot(new ExhaustManaInDiscardPileAction(CombatHelper.getManaNumInDiscardPile()));
+            this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInDrawPile(),0));
+            this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInHand(),1));
+            this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInDiscardPile(),2));
             this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.baseDamage, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
         }
     }
