@@ -1,6 +1,5 @@
 package FrierenMod.cards.optionCards.magicFactors;
 
-import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 
@@ -14,8 +13,6 @@ public class BaseFactorBeta extends AbstractMagicFactor {
 
     @Override
     public void takeEffect() {
-        if (magicNumber > 0)
-            this.addToBot(new ExhaustManaInCardGroupAction(magicNumber, currentSlot));
         this.addToBot(new GainEnergyAction(secondMagicNumber));
     }
 }

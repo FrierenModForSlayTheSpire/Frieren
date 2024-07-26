@@ -1,6 +1,7 @@
 package FrierenMod.cards.optionCards.magicFactors;
 
 import FrierenMod.actions.AfterChantFinishedAction;
+import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.AbstractBasePower;
@@ -74,6 +75,7 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     public void onChoseThisOption() {
         ActionHelper.addToBotAbstract(() -> {
             showVFX();
+            exhaustMana();
             takeEffect();
             triggerPowers();
             triggerCards();
@@ -149,6 +151,10 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
                 addToBot(new VFXAction(p, new VerticalAuraEffect(Color.GOLD, p.hb.cX, p.hb.cY), 0.05F));
                 break;
         }
+    }
+    public void exhaustMana(){
+        if (this.magicNumber > 0)
+            this.addToBot(new ExhaustManaInCardGroupAction(magicNumber,currentSlot));
     }
 
     public enum ShowPlaceType {
