@@ -5,14 +5,18 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
+import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
+import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -20,13 +24,21 @@ import java.util.Arrays;
 public abstract class AbstractMagicFactor extends AbstractBaseCard {
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
-    public static final String[] BAN_TIPS = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorBanTips")).TEXT;
     public ArrayList<AbstractGameAction> extraActions;
     public FactorRarityType factorRarity;
+    public int manaNeedMultipleCoefficient;
+    public int manaNeedAddCoefficient;
+    public int rewardMultipleCoefficient;
+    public int rewardAddCoefficient;
+    public AbstractPlayer p = AbstractDungeon.player;
 
     public AbstractMagicFactor(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
         this.currentSlot = -1;
+        this.manaNeedMultipleCoefficient = 1;
+        this.manaNeedAddCoefficient = 0;
+        this.rewardMultipleCoefficient = 1;
+        this.rewardAddCoefficient = 0;
     }
 
     public abstract void takeEffect();
@@ -60,7 +72,8 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
 
     @Override
     public void onChoseThisOption() {
-        ActionHelper.addToBotAbstract(()->{
+        ActionHelper.addToBotAbstract(() -> {
+            showVFX();
             takeEffect();
             triggerPowers();
             triggerCards();
@@ -78,20 +91,20 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     }
 
     public void loadMagicFactor(AbstractGameAction[] nextAction, int manaNeed, int chantX) {
+        int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
         this.extraActions = new ArrayList<>();
         if (nextAction != null && nextAction.length > 0)
             this.extraActions.addAll(Arrays.asList(nextAction));
         this.magicNumber = this.baseMagicNumber = manaNeed;
-        this.secondMagicNumber = this.baseSecondMagicNumber = chantX;
-        this.isSecondMagicNumberModified = (manaNeed < chantX);
+        this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
 
     public void loadMagicFactor(int manaNeed, int chantX) {
+        int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
         this.extraActions = new ArrayList<>();
         this.magicNumber = this.baseMagicNumber = manaNeed;
-        this.secondMagicNumber = this.baseSecondMagicNumber = chantX;
-        this.isSecondMagicNumberModified = (manaNeed < chantX);
+        this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
 
@@ -118,11 +131,32 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
                 this.addToBot(new AfterChantFinishedAction((AbstractBaseCard) c));
             }
     }
+
+    public void showVFX() {
+        switch (this.factorRarity) {
+            default:
+            case BASIC:
+            case COMMON:
+                addToBot(new VFXAction(p, new VerticalAuraEffect(FrierenRes.RENDER_COLOR, p.hb.cX, p.hb.cY), 0.1F));
+                addToBot(new VFXAction(p, new VerticalAuraEffect(Color.TAN, p.hb.cX, p.hb.cY), 0.05F));
+                break;
+            case UNCOMMON:
+                addToBot(new VFXAction(p, new VerticalAuraEffect(FrierenRes.RENDER_COLOR, p.hb.cX, p.hb.cY), 0.1F));
+                addToBot(new VFXAction(p, new VerticalAuraEffect(Color.SKY, p.hb.cX, p.hb.cY), 0.05F));
+                break;
+            case RARE:
+                addToBot(new VFXAction(p, new VerticalAuraEffect(FrierenRes.RENDER_COLOR, p.hb.cX, p.hb.cY), 0.1F));
+                addToBot(new VFXAction(p, new VerticalAuraEffect(Color.GOLD, p.hb.cX, p.hb.cY), 0.05F));
+                break;
+        }
+    }
+
     public enum ShowPlaceType {
         COMBAT,
         BAG
     }
-    public enum FactorRarityType{
+
+    public enum FactorRarityType {
         BASIC,
         COMMON,
         UNCOMMON,

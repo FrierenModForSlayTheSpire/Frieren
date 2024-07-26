@@ -14,7 +14,6 @@ import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
     private int chantX;
-    private int manaNeed;
     private AbstractGameAction[] nextAction;
     private AbstractCard cardToReturn;
     private Integer blockGain = null;
@@ -24,48 +23,28 @@ public class ChantAction extends AbstractGameAction {
 
     public ChantAction(int chantX) {
         this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
-        this.nextAction = null;
         this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(int chantX, int blockGain) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
-        this.nextAction = null;
+        this(chantX);
         this.blockGain = blockGain;
-        this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(int chantX, AbstractGameAction... nextAction) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
+        this(chantX);
         this.nextAction = nextAction;
-        this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(int chantX, AbstractCard cardToReturn) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
+        this(chantX);
         this.cardToReturn = cardToReturn;
-        this.nextAction = null;
-        this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(int chantX, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = cardToReturn;
+        this(chantX, cardToReturn);
         this.nextAction = nextAction;
-        this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(ChantType type) {
@@ -82,22 +61,22 @@ public class ChantAction extends AbstractGameAction {
         switch (this.chantType) {
             case NORMAL:
                 stanceChoices = new ArrayList<>();
-                if (CombatHelper.canChantFromDrawPile(this.manaNeed) && chantChoices[0] != null) {
-                    chantChoices[0].loadMagicFactor(nextAction, manaNeed, chantX);
+                if (chantChoices[0] != null && CombatHelper.canChantFromDrawPile(getManaNeed(chantChoices[0]))) {
+                    chantChoices[0].loadMagicFactor(nextAction, getManaNeed(chantChoices[0]), chantX);
                     if (this.blockGain != null)
                         chantChoices[0].extraActions.add(new GainBlockAction(AbstractDungeon.player, this.blockGain));
                     stanceChoices.add(chantChoices[0]);
                 }
-                if (CombatHelper.canChantFromHand(this.manaNeed) && chantChoices[1] != null) {
-                    chantChoices[1].loadMagicFactor(nextAction, manaNeed, chantX);
+                if (chantChoices[1] != null && CombatHelper.canChantFromHand(getManaNeed(chantChoices[1]))) {
+                    chantChoices[1].loadMagicFactor(nextAction, getManaNeed(chantChoices[1]), chantX);
                     if (cardToReturn != null) {
                         cardToReturn.returnToHand = true;
                         cardToReturn.upgrade();
                     }
                     stanceChoices.add(chantChoices[1]);
                 }
-                if (CombatHelper.canChantFromDiscardPile(this.manaNeed) && chantChoices[2] != null) {
-                    chantChoices[2].loadMagicFactor(nextAction, manaNeed, chantX);
+                if (chantChoices[2] != null && CombatHelper.canChantFromDiscardPile(getManaNeed(chantChoices[2]))) {
+                    chantChoices[2].loadMagicFactor(nextAction, getManaNeed(chantChoices[2]), chantX);
                     stanceChoices.add(chantChoices[2]);
                 }
                 if (!stanceChoices.isEmpty()) {
@@ -105,46 +84,47 @@ public class ChantAction extends AbstractGameAction {
                 }
                 break;
             case PRECISE:
-                stanceChoices = new ArrayList<>();
-                if (draw > 0 && chantChoices[0] != null) {
-                    chantChoices[0].loadMagicFactor(CombatHelper.getManaNeedWhenChant(draw), draw);
-                    stanceChoices.add(chantChoices[0]);
-                }
-                if (hand > 0 && chantChoices[1] != null) {
-                    chantChoices[1].loadMagicFactor(CombatHelper.getManaNeedWhenChant(hand), hand);
-                    stanceChoices.add(chantChoices[1]);
-                }
-                if (discard > 0 && chantChoices[2] != null) {
-                    chantChoices[2].loadMagicFactor(CombatHelper.getManaNeedWhenChant(discard), discard);
-                    stanceChoices.add(chantChoices[2]);
-                }
-                if (!stanceChoices.isEmpty()) {
-                    this.addToTop(new ChooseOneAction(stanceChoices));
-                }
-                break;
             case FINAL:
                 stanceChoices = new ArrayList<>();
-                if (draw > 0 && chantChoices[0] != null) {
-                    chantChoices[0].loadMagicFactor(CombatHelper.getManaNeedWhenChant(draw), draw);
-                    stanceChoices.add(chantChoices[0]);
+                if (chantChoices[0] != null) {
+                    int chantX = getChantX(draw, chantChoices[0]);
+                    int manaNeed = getManaNeed(draw, chantChoices[0]);
+                    if (CombatHelper.canChantFromDrawPile(manaNeed)) {
+                        chantChoices[0].loadMagicFactor(manaNeed, chantX);
+                        stanceChoices.add(chantChoices[0]);
+                    }
                 }
-                if (hand > 0 && chantChoices[1] != null) {
-                    chantChoices[1].loadMagicFactor(CombatHelper.getManaNeedWhenChant(hand), hand);
-                    stanceChoices.add(chantChoices[1]);
+                if (chantChoices[1] != null) {
+                    int chantX = getChantX(hand, chantChoices[1]);
+                    int manaNeed = getManaNeed(hand, chantChoices[1]);
+                    if (CombatHelper.canChantFromHand(manaNeed)) {
+                        chantChoices[1].loadMagicFactor(manaNeed, chantX);
+                        stanceChoices.add(chantChoices[1]);
+                    }
                 }
-                if (discard > 0 && chantChoices[2] != null) {
-                    chantChoices[2].loadMagicFactor(CombatHelper.getManaNeedWhenChant(discard), discard);
-                    stanceChoices.add(chantChoices[2]);
+                if(chantChoices[2] != null){
+                    int chantX = getChantX(discard, chantChoices[2]);
+                    int manaNeed = getManaNeed(discard, chantChoices[2]);
+                    if (CombatHelper.canChantFromDiscardPile(manaNeed)) {
+                        chantChoices[2].loadMagicFactor(manaNeed, chantX);
+                        stanceChoices.add(chantChoices[2]);
+                    }
                 }
-                if (!stanceChoices.isEmpty()) {
-                    boolean haveTriggered = false;
-                    for(AbstractCard f:stanceChoices){
-                        if(f instanceof AbstractMagicFactor){
-                            ((AbstractMagicFactor) f).takeEffect();
-                            if(!haveTriggered){
-                                ((AbstractMagicFactor) f).triggerPowers();
-                                ((AbstractMagicFactor) f).triggerCards();
-                                haveTriggered = true;
+                if(this.chantType == ChantType.PRECISE){
+                    if (!stanceChoices.isEmpty())
+                        this.addToTop(new ChooseOneAction(stanceChoices));
+                }
+                else {
+                    if (!stanceChoices.isEmpty()) {
+                        boolean haveTriggered = false;
+                        for (AbstractCard f : stanceChoices) {
+                            if (f instanceof AbstractMagicFactor) {
+                                ((AbstractMagicFactor) f).takeEffect();
+                                if (!haveTriggered) {
+                                    ((AbstractMagicFactor) f).triggerPowers();
+                                    ((AbstractMagicFactor) f).triggerCards();
+                                    haveTriggered = true;
+                                }
                             }
                         }
                     }
@@ -177,9 +157,23 @@ public class ChantAction extends AbstractGameAction {
             }
         }
     }
+
     public enum ChantType {
         NORMAL,
         PRECISE,
         FINAL
     }
+
+    private int getManaNeed(AbstractMagicFactor f) {
+        return CombatHelper.getManaNeedWhenChant(this.chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient);
+    }
+
+    private static int getManaNeed(int chantX, AbstractMagicFactor f) {
+        return CombatHelper.getManaNeedWhenChant(chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient);
+    }
+
+    private static int getChantX(int manaAmt, AbstractMagicFactor f) {
+        return (manaAmt - f.manaNeedAddCoefficient) / f.manaNeedMultipleCoefficient;
+    }
+
 }
