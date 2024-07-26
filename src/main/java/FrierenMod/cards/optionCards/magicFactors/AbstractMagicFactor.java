@@ -48,7 +48,7 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
             case COMBAT:
                 this.rawDescription = getCombatDescription(this.cardID);
                 break;
-            case DECK:
+            case BAG:
                 this.rawDescription = getDeckDescription(this.cardID);
                 break;
             default:
@@ -120,7 +120,7 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     }
     public enum ShowPlaceType {
         COMBAT,
-        DECK
+        BAG
     }
     public enum FactorRarityType{
         BASIC,

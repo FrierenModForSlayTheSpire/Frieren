@@ -1,7 +1,7 @@
 package FrierenMod.patches;
 
 import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.magicProps.AbstractMagicProps;
+import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
@@ -36,7 +36,7 @@ public class CardStylePatch {
                 FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[1], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
                 return SpireReturn.Return();
             }
-            if (c instanceof AbstractMagicProps) {
+            if (c instanceof AbstractMagicProp) {
                 FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[2], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
                 return SpireReturn.Return();
             }
@@ -70,7 +70,7 @@ public class CardStylePatch {
                 FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[1], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
                 return SpireReturn.Return();
             }
-            if (_inst instanceof AbstractMagicProps) {
+            if (_inst instanceof AbstractMagicProp) {
                 FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[2], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
                 return SpireReturn.Return();
             }
@@ -97,7 +97,7 @@ public class CardStylePatch {
                         return SpireReturn.Return();
                 }
             }
-            if (_inst instanceof AbstractMagicProps) {
+            if (_inst instanceof AbstractMagicProp) {
                 renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
                 return SpireReturn.Return();
             }

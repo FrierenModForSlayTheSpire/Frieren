@@ -2,7 +2,7 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.ModManager;
 import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
-import FrierenMod.patches.fields.MagicFactorDeckField;
+import FrierenMod.patches.fields.MagicBagField;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
@@ -19,7 +19,7 @@ public class MagicFactorHelper {
         ModManager.saveData.putValue(SAVE_NAME, null);
         List<SerializableMagicFactor> sfs = new ArrayList<>();
         Gson gson = new Gson();
-        for (AbstractCard c : MagicFactorDeckField.getDeck().group) {
+        for (AbstractCard c : MagicBagField.getDeck().group) {
             if (c instanceof AbstractMagicFactor) {
                 sfs.add(new SerializableMagicFactor(c.cardID, ((AbstractMagicFactor) c).currentSlot));
             }

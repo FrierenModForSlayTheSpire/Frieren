@@ -8,7 +8,7 @@ import FrierenMod.cards.optionCards.magicFactors.BaseFactorAlpha;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorBeta;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.patches.fields.MagicFactorDeckField;
+import FrierenMod.patches.fields.MagicBagField;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostCreateStartingDeckSubscriber;
@@ -56,26 +56,26 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         if (playerClass == CharacterEnums.FRIEREN) {
-            MagicFactorDeckField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+            MagicBagField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
             BaseFactorAlpha alpha = new BaseFactorAlpha();
             alpha.setCurrentSlot(0);
             BaseFactorBeta beta = new BaseFactorBeta();
             beta.setCurrentSlot(1);
             BaseFactorGamma gamma = new BaseFactorGamma();
             gamma.setCurrentSlot(2);
-            MagicFactorDeckField.getDeck().addToTop(alpha);
-            MagicFactorDeckField.getDeck().addToTop(beta);
-            MagicFactorDeckField.getDeck().addToTop(gamma);
+            MagicBagField.getDeck().addToTop(alpha);
+            MagicBagField.getDeck().addToTop(beta);
+            MagicBagField.getDeck().addToTop(gamma);
             MagicFactorHelper.saveAllFactors();
         }
     }
 
     @Override
     public void receiveStartGame() {
-        MagicFactorDeckField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+        MagicBagField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
         if (ModManager.saveData.containsKey(MagicFactorHelper.SAVE_NAME)) {
             for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-                MagicFactorDeckField.getDeck().addToTop(f);
+                MagicBagField.getDeck().addToTop(f);
             }
         }
     }
