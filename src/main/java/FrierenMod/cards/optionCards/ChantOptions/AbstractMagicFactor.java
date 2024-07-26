@@ -2,6 +2,7 @@ package FrierenMod.cards.optionCards.ChantOptions;
 
 import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -97,14 +98,16 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
 
     @Override
     public void onChoseThisOption() {
-        takeEffect();
-        triggerPowers();
-        triggerCards();
-        if (extraActions != null && !extraActions.isEmpty()) {
-            for (AbstractGameAction action : extraActions) {
-                this.addToBot(action);
+        ActionHelper.addToBotAbstract(()->{
+            takeEffect();
+            triggerPowers();
+            triggerCards();
+            if (extraActions != null && !extraActions.isEmpty()) {
+                for (AbstractGameAction action : extraActions) {
+                    this.addToBot(action);
+                }
             }
-        }
+        });
     }
 
     @Override
