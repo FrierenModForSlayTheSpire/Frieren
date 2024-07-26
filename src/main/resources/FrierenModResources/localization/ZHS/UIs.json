@@ -166,18 +166,7 @@
       " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
     ]
   },
-  "FrierenMod:MagicFactorBanTips": {
-    "TEXT": [
-      " #r抽牌堆 ",
-      " #r手牌 ",
-      " #r弃牌堆 ",
-      "禁用",
-      "将此牌 #y装载 入 #咏唱插槽 后会导致",
-      " #y槽位 中的 #y咏唱选项卡 失效。",
-      "和"
-    ]
-  },
-  "FrierenMod:MagicFactorDeckPanel": {
+  "FrierenMod:MagicBagPanel": {
     "TEXT": [
       "魔法背包",
       "查看你拥有的 #y魔法因子 和 #y魔具 。"
