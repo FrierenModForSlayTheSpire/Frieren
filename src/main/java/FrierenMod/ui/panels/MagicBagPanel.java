@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.helpers.TipHelper;
 public class MagicBagPanel extends TopPanelItem {
     public static final String ID = ModInformation.makeID(MagicBagPanel.class.getSimpleName());
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
-    private static final Texture icon = ImageMaster.loadImage(PublicRes.CHANT_BAG_ICON);
+    private static final Texture icon = ImageMaster.loadImage(PublicRes.MAGIC_BAG_ICON);
     private static final float TOP_RIGHT_TIP_X = 1550.0F * Settings.scale;
     private static final float TIP_Y = Settings.HEIGHT - 120.0F * Settings.scale, TIP_OFF_X = 140.0F * Settings.scale;
 
