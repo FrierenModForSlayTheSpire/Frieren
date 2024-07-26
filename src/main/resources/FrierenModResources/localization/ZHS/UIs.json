@@ -179,14 +179,21 @@
   },
   "FrierenMod:MagicFactorDeckPanel": {
     "TEXT": [
-      "魔法因子堆",
-      "查看你拥有的 #y魔法因子 。"
+      "魔法背包",
+      "查看你拥有的 #y魔法因子 和 #y魔具 。"
     ]
   },
   "FrierenMod:MagicFactorTip": {
     "TEXT": [
       "魔法因子",
       "一种特殊的选项卡，选择后会 #y消耗  #y魔力 并发动相应效果，仅当 对应牌堆中 #y魔力 数充足时可被选择。"
+    ]
+  },
+  "FrierenMod:CardStyleText": {
+    "TEXT": [
+      "魔力",
+      "魔法因子",
+      "魔具"
     ]
   },
   "FrierenMod:DualCardTip": {
