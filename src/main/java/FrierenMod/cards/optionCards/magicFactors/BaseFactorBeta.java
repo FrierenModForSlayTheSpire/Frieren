@@ -1,20 +1,19 @@
-package FrierenMod.cards.optionCards.MagicFactors;
+package FrierenMod.cards.optionCards.magicFactors;
 
-import FrierenMod.actions.ExhaustManaInDiscardPileAction;
+import FrierenMod.actions.ExhaustManaInHandAction;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
-public class BaseFactorGamma extends AbstractMagicFactor {
-    public static final String ID = ModInformation.makeID(BaseFactorGamma.class.getSimpleName());
+public class BaseFactorBeta extends AbstractMagicFactor {
+    public static final String ID = ModInformation.makeID(BaseFactorBeta.class.getSimpleName());
 
-    public BaseFactorGamma() {
+    public BaseFactorBeta() {
         super(ID);
         this.factorRarity = FactorRarityType.BASIC;
     }
@@ -24,9 +23,8 @@ public class BaseFactorGamma extends AbstractMagicFactor {
         AbstractPlayer p = AbstractDungeon.player;
         addToBot(new VFXAction(p, new VerticalAuraEffect(FrierenRes.RENDER_COLOR, p.hb.cX, p.hb.cY), 0.1F));
         addToBot(new VFXAction(p, new VerticalAuraEffect(Color.PURPLE, p.hb.cX, p.hb.cY), 0.05F));
-        if (this.magicNumber > 0) {
-            this.addToBot(new ExhaustManaInDiscardPileAction(this.magicNumber));
-        }
-        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.secondMagicNumber)));
+        if (this.magicNumber > 0)
+            this.addToBot(new ExhaustManaInHandAction(this.magicNumber));
+        this.addToBot(new GainEnergyAction(this.secondMagicNumber));
     }
 }

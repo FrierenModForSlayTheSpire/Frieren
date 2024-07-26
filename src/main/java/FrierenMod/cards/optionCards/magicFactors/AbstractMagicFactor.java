@@ -1,4 +1,4 @@
-package FrierenMod.cards.optionCards.MagicFactors;
+package FrierenMod.cards.optionCards.magicFactors;
 
 import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.cards.AbstractBaseCard;

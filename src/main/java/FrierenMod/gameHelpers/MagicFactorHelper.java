@@ -1,7 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.ModManager;
-import FrierenMod.cards.optionCards.MagicFactors.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
 import FrierenMod.patches.fields.MagicFactorDeckField;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

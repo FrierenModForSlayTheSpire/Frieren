@@ -1,7 +1,7 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.optionCards.MagicFactors.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.MagicProps.AbstractMagicProps;
+import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.magicProps.AbstractMagicProps;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
