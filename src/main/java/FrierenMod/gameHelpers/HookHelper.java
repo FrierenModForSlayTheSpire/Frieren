@@ -7,6 +7,8 @@ import FrierenMod.cards.optionCards.magicFactors.BaseFactorBeta;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicBagField;
+import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.utils.Config;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostCreateStartingDeckSubscriber;
@@ -15,6 +17,9 @@ import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
 public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber{
     @Override
@@ -48,6 +53,19 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     @Override
     public void receiveOnBattleStart(AbstractRoom abstractRoom) {
         AbstractDungeon.actionManager.addToBottom(new SealCardsAction());
+        int chance = 0;
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
+            chance = 60;
+        } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoom) {
+            if (!AbstractDungeon.getMonsters().haveMonstersEscaped()) {
+                chance = 30;
+            }
+        } else if (AbstractDungeon.getCurrRoom() instanceof EventRoom) {
+            chance = 30;
+        }
+        if (AbstractDungeon.cardRandomRng.random(0, 99) < chance || Config.IN_DEV) {
+            MagicItemReward.addMagicItemRewardToRoom();
+        }
     }
 
     @Override

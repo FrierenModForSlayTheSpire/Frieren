@@ -59,6 +59,13 @@
       " 消耗 牌堆中X张 *魔力 ，获得X点 力量 。"
     ]
   },
+  "FrierenMod:Vigor": {
+    "NAME": "活力",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一次攻击额外造成 !SM! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，下一次攻击额外造成X+4点伤害。"
+    ]
+  },
   "FrierenMod:ChantDrawPile": {
     "NAME": "从抽牌堆咏唱",
     "DESCRIPTION": " 消耗 抽牌堆中 !SM! 张 *魔力 ，获得 !B! 点 格挡 两次。",

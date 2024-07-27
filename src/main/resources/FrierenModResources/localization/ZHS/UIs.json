@@ -160,7 +160,7 @@
   },
   "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL 未装载 。",
+      " NL [#ff2c1d]未装载[#ff2c1d] ",
       " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
       " [#9ffc4f]手牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
       " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
@@ -168,8 +168,14 @@
   },
   "FrierenMod:MagicBagPanel": {
     "TEXT": [
-      "魔法背包",
+      "背包",
       "查看你拥有的 #y魔法因子 和 #y魔具 。"
+    ]
+  },
+  "FrierenMod:MagicItemReward": {
+    "TEXT": [
+      "将一张 #y魔法因子 或 #y魔具 加入背包",
+      "选择一张魔法因子或魔具"
     ]
   },
   "FrierenMod:MagicFactorTip": {
