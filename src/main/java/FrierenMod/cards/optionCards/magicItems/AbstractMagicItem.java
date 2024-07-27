@@ -1,4 +1,4 @@
-package FrierenMod.cards.optionCards.magicFactors;
+package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.actions.ExhaustManaInCardGroupAction;
@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public abstract class AbstractMagicFactor extends AbstractBaseCard {
+public abstract class AbstractMagicItem extends AbstractBaseCard {
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
     public ArrayList<AbstractGameAction> extraActions;
@@ -33,7 +33,7 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     public int rewardAddCoefficient;
     public AbstractPlayer p = AbstractDungeon.player;
 
-    public AbstractMagicFactor(String ID) {
+    public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
         this.currentSlot = -1;
         this.manaNeedMultipleCoefficient = 1;
@@ -160,8 +160,8 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard c = this.makeCopy();
-        if(c instanceof AbstractMagicFactor){
-            ((AbstractMagicFactor) c).currentSlot = this.currentSlot;
+        if(c instanceof AbstractMagicItem){
+            ((AbstractMagicItem) c).currentSlot = this.currentSlot;
         }
         return c;
     }

@@ -7,9 +7,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 @SpirePatch(clz = AbstractPlayer.class, method = "<class>")
-public class MagicBagField {
-    public static SpireField<CardGroup> magicFactorDeck = new SpireField<>(() -> null);
-    public static CardGroup getDeck() {
-        return magicFactorDeck.get(AbstractDungeon.player);
+public class MagicItemBagField {
+    public static SpireField<CardGroup> magicItemBag = new SpireField<>(() -> null);
+    public static CardGroup getBag() {
+        return magicItemBag.get(AbstractDungeon.player);
     }
 }

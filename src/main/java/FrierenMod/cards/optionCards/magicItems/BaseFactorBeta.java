@@ -1,9 +1,9 @@
-package FrierenMod.cards.optionCards.magicFactors;
+package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 
-public class BaseFactorBeta extends AbstractMagicFactor {
+public class BaseFactorBeta extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BaseFactorBeta.class.getSimpleName());
 
     public BaseFactorBeta() {

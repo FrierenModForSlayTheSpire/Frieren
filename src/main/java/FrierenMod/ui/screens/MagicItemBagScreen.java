@@ -1,7 +1,7 @@
 package FrierenMod.ui.screens;
 
-import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
-import FrierenMod.patches.fields.MagicBagField;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.patches.fields.MagicItemBagField;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -22,7 +22,7 @@ import java.util.Comparator;
 
 import static com.megacrit.cardcrawl.ui.buttons.CancelButton.TEXT;
 
-public class MagicBagScreen extends CustomScreen implements ScrollBarListener {
+public class MagicItemBagScreen extends CustomScreen implements ScrollBarListener {
     private AbstractCard hoveredCard = null;
     private AbstractCard clickStartedCard = null;
     private static float drawStartX;
@@ -44,9 +44,9 @@ public class MagicBagScreen extends CustomScreen implements ScrollBarListener {
     private ArrayList<AbstractCard> tmpSortedDeck = null;
     private boolean justSorted = false;
     private int headerScrollLockRemainingFrames = 0;
-    private final MagicBagSortHeader sortHeader;
+    private final MagicItemBagSortHeader sortHeader;
 
-    public MagicBagScreen() {
+    public MagicItemBagScreen() {
         drawStartX = Settings.WIDTH;
         drawStartX -= 5.0F * AbstractCard.IMG_WIDTH * 0.75F;
         drawStartX -= 4.0F * Settings.CARD_VIEW_PAD_X;
@@ -56,7 +56,7 @@ public class MagicBagScreen extends CustomScreen implements ScrollBarListener {
         padY = AbstractCard.IMG_HEIGHT * 0.75F + Settings.CARD_VIEW_PAD_Y;
         this.scrollBar = new ScrollBar(this);
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
-        this.sortHeader = new MagicBagSortHeader(this);
+        this.sortHeader = new MagicItemBagSortHeader(this);
     }
 
     @Override
@@ -207,10 +207,10 @@ public class MagicBagScreen extends CustomScreen implements ScrollBarListener {
     }
 
     public ArrayList<AbstractCard> getFactorDeck() {
-        ArrayList<AbstractCard> retVal = MagicBagField.getDeck().group;
+        ArrayList<AbstractCard> retVal = MagicItemBagField.getBag().group;
         for (AbstractCard f : retVal) {
-            if(f instanceof AbstractMagicFactor){
-                ((AbstractMagicFactor) f).setDescriptionByShowPlaceType(AbstractMagicFactor.ShowPlaceType.BAG);
+            if(f instanceof AbstractMagicItem){
+                ((AbstractMagicItem) f).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.BAG);
             }
         }
         return retVal;

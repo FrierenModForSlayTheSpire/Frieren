@@ -1,10 +1,10 @@
-package FrierenMod.cards.optionCards.magicFactors;
+package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class BetaFactor1 extends AbstractMagicFactor {
+public class BetaFactor1 extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BetaFactor1.class.getSimpleName());
 
     public BetaFactor1() {

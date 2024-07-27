@@ -1,6 +1,6 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.optionCards.magicFactors.*;
+import FrierenMod.cards.optionCards.magicItems.*;
 import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
@@ -73,8 +73,8 @@ public class CardPoolHelper {
         ArrayList<AbstractCard> rare = new ArrayList<>();
         ArrayList<AbstractCard> prop = new ArrayList<>();
         for (AbstractCard c : srcCardPool) {
-            if (c instanceof AbstractMagicFactor) {
-                switch (((AbstractMagicFactor) c).factorRarity) {
+            if (c instanceof AbstractMagicItem) {
+                switch (((AbstractMagicItem) c).factorRarity) {
                     case RARE:
                         rare.add(c);
                         break;

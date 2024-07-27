@@ -1,8 +1,8 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.patches.fields.MagicBagField;
+import FrierenMod.patches.fields.MagicItemBagField;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -18,7 +18,7 @@ public class ChantAction extends AbstractGameAction {
     private AbstractCard cardToReturn;
     private Integer blockGain = null;
     private final ChantType chantType;
-    private final AbstractMagicFactor[] chantChoices = new AbstractMagicFactor[3];
+    private final AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
     ;
 
     public ChantAction(int chantX) {
@@ -117,11 +117,11 @@ public class ChantAction extends AbstractGameAction {
                     if (!stanceChoices.isEmpty()) {
                         boolean haveTriggered = false;
                         for (AbstractCard f : stanceChoices) {
-                            if (f instanceof AbstractMagicFactor) {
-                                ((AbstractMagicFactor) f).takeEffect();
+                            if (f instanceof AbstractMagicItem) {
+                                ((AbstractMagicItem) f).takeEffect();
                                 if (!haveTriggered) {
-                                    ((AbstractMagicFactor) f).triggerPowers();
-                                    ((AbstractMagicFactor) f).triggerCards();
+                                    ((AbstractMagicItem) f).triggerPowers();
+                                    ((AbstractMagicItem) f).triggerCards();
                                     haveTriggered = true;
                                 }
                             }
@@ -137,15 +137,15 @@ public class ChantAction extends AbstractGameAction {
     }
 
     protected void initializeChantChoices() {
-        for (AbstractCard c : MagicBagField.getDeck().group) {
-            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 0) {
-                this.chantChoices[0] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
+        for (AbstractCard c : MagicItemBagField.getBag().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
+                this.chantChoices[0] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }
-            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 1) {
-                this.chantChoices[1] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+                this.chantChoices[1] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }
-            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 2) {
-                this.chantChoices[2] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+                this.chantChoices[2] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }
         }
     }
@@ -156,15 +156,15 @@ public class ChantAction extends AbstractGameAction {
         FINAL
     }
 
-    private int getManaNeed(AbstractMagicFactor f) {
+    private int getManaNeed(AbstractMagicItem f) {
         return CombatHelper.getManaNeedWhenChant(this.chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient);
     }
 
-    private static int getManaNeed(int chantX, AbstractMagicFactor f) {
+    private static int getManaNeed(int chantX, AbstractMagicItem f) {
         return CombatHelper.getManaNeedWhenChant(chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient);
     }
 
-    private static int getChantX(int manaAmt, AbstractMagicFactor f) {
+    private static int getChantX(int manaAmt, AbstractMagicItem f) {
         return (manaAmt - f.manaNeedAddCoefficient) / f.manaNeedMultipleCoefficient;
     }
 

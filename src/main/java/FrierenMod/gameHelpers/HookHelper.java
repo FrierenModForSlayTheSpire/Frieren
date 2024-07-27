@@ -2,11 +2,11 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicFactors.BaseFactorAlpha;
-import FrierenMod.cards.optionCards.magicFactors.BaseFactorBeta;
-import FrierenMod.cards.optionCards.magicFactors.BaseFactorGamma;
+import FrierenMod.cards.optionCards.magicItems.BaseFactorAlpha;
+import FrierenMod.cards.optionCards.magicItems.BaseFactorBeta;
+import FrierenMod.cards.optionCards.magicItems.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.patches.fields.MagicBagField;
+import FrierenMod.patches.fields.MagicItemBagField;
 import FrierenMod.rewards.MagicItemReward;
 import FrierenMod.utils.Config;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
@@ -71,17 +71,17 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         if (playerClass == CharacterEnums.FRIEREN) {
-            MagicBagField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+            MagicItemBagField.magicItemBag.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
             BaseFactorAlpha alpha = new BaseFactorAlpha();
             alpha.setCurrentSlot(0);
             BaseFactorBeta beta = new BaseFactorBeta();
             beta.setCurrentSlot(1);
             BaseFactorGamma gamma = new BaseFactorGamma();
             gamma.setCurrentSlot(2);
-            MagicBagField.getDeck().addToTop(alpha);
-            MagicBagField.getDeck().addToTop(beta);
-            MagicBagField.getDeck().addToTop(gamma);
-            MagicFactorHelper.save();
+            MagicItemBagField.getBag().addToTop(alpha);
+            MagicItemBagField.getBag().addToTop(beta);
+            MagicItemBagField.getBag().addToTop(gamma);
+            MagicItemHelper.save();
         }
     }
 

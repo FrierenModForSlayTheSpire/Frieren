@@ -1,10 +1,10 @@
-package FrierenMod.cards.optionCards.magicFactors;
+package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 
-public class BetaFactor4 extends AbstractMagicFactor {
+public class BetaFactor4 extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BetaFactor4.class.getSimpleName());
 
     public BetaFactor4() {

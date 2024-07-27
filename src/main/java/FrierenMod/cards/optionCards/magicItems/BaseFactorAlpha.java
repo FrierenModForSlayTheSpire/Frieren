@@ -1,9 +1,9 @@
-package FrierenMod.cards.optionCards.magicFactors;
+package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 
-public class BaseFactorAlpha extends AbstractMagicFactor {
+public class BaseFactorAlpha extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BaseFactorAlpha.class.getSimpleName());
 
     public BaseFactorAlpha() {

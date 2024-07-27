@@ -3,7 +3,7 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
-import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.*;
@@ -12,8 +12,8 @@ import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
 import FrierenMod.rewards.MagicItemReward;
-import FrierenMod.ui.panels.MagicBagPanel;
-import FrierenMod.ui.screens.MagicBagScreen;
+import FrierenMod.ui.panels.MagicItemBagPanel;
+import FrierenMod.ui.screens.MagicItemBagScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.RaidVariable;
@@ -128,8 +128,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
-        BaseMod.addTopPanelItem(new MagicBagPanel());
-        BaseMod.addCustomScreen(new MagicBagScreen());
+        BaseMod.addTopPanelItem(new MagicItemBagPanel());
+        BaseMod.addCustomScreen(new MagicItemBagScreen());
         BaseMod.addSaveField(ModInformation.MOD_NAME,this);
         MagicItemReward.register();
     }
@@ -143,8 +143,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new RaidVariable());
         DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
             if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
-                if (card instanceof AbstractMagicFactor) {
-                    return ((AbstractMagicFactor) card).currentSlot;
+                if (card instanceof AbstractMagicItem) {
+                    return ((AbstractMagicItem) card).currentSlot;
                 }
             }
             return -1;
@@ -277,12 +277,12 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public String onSave() {
-        MagicFactorHelper.save();
+        MagicItemHelper.save();
         return "";
     }
 
     @Override
     public void onLoad(String s) {
-        MagicFactorHelper.load();
+        MagicItemHelper.load();
     }
 }
