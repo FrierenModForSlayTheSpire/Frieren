@@ -18,6 +18,10 @@ public class FastMagicItemObtainEffect extends AbstractGameEffect {
         card.current_y = y;
         CardCrawlGame.sound.play("CARD_SELECT");
     }
+    public FastMagicItemObtainEffect(AbstractCard card) {
+        this.card = card;
+        this.duration = 0.01F;
+    }
 
     public void update() {
         if (this.isDone)

@@ -4,6 +4,7 @@ package FrierenMod;
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.commands.MagicItemCommand;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.*;
@@ -132,6 +133,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addCustomScreen(new MagicDeckScreen());
         BaseMod.addSaveField(ModInformation.MOD_NAME,this);
         MagicItemReward.register();
+        MagicItemCommand.register();
     }
 
     @Override
