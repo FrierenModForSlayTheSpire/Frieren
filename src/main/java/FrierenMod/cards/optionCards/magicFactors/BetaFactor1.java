@@ -4,10 +4,10 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
-public class Vigor extends AbstractMagicFactor {
-    public static final String ID = ModInformation.makeID(Vigor.class.getSimpleName());
+public class BetaFactor1 extends AbstractMagicFactor {
+    public static final String ID = ModInformation.makeID(BetaFactor1.class.getSimpleName());
 
-    public Vigor() {
+    public BetaFactor1() {
         super(ID);
         this.factorRarity = FactorRarityType.COMMON;
         this.rewardAddCoefficient = 4;

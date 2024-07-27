@@ -1,7 +1,6 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.magicFactors.Vigor;
+import FrierenMod.cards.optionCards.magicFactors.*;
 import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
@@ -59,7 +58,14 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getMagicItemCardPool(int flag) {
         ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
-        srcCardPool.add(new Vigor());
+        srcCardPool.add(new BetaFactor1());
+        srcCardPool.add(new BetaFactor2());
+        srcCardPool.add(new BetaFactor3());
+        srcCardPool.add(new BetaFactor4());
+        srcCardPool.add(new BetaFactor5());
+        srcCardPool.add(new BetaFactor6());
+        srcCardPool.add(new BetaFactor7());
+        srcCardPool.add(new BetaFactor8());
         if (flag == 4)
             return srcCardPool;
         ArrayList<AbstractCard> common = new ArrayList<>();

@@ -71,7 +71,7 @@ public class MagicItemReward extends CustomReward {
 
     public static ArrayList<AbstractCard> rollMagicItems() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        int numCards = 1;
+        int numCards = 3;
         for (int i = 0; i < numCards; i++) {
             int rarity = rollRarity();
             AbstractCard card = null;
@@ -101,8 +101,8 @@ public class MagicItemReward extends CustomReward {
 //            return 2;
 //        if (rnd <= 20)
 //            return 3;
-//        if (rnd <= 50)
-//            return 1;
+        if (rnd <= 40)
+            return 1;
         return 0;
     }
 
