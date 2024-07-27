@@ -139,13 +139,13 @@ public class ChantAction extends AbstractGameAction {
     protected void initializeChantChoices() {
         for (AbstractCard c : MagicBagField.getDeck().group) {
             if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 0) {
-                this.chantChoices[0] = (AbstractMagicFactor) c.makeCopy();
+                this.chantChoices[0] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
             }
             if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 1) {
-                this.chantChoices[1] = (AbstractMagicFactor) c.makeCopy();
+                this.chantChoices[1] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
             }
             if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 2) {
-                this.chantChoices[2] = (AbstractMagicFactor) c.makeCopy();
+                this.chantChoices[2] = (AbstractMagicFactor) c.makeStatEquivalentCopy();
             }
         }
     }

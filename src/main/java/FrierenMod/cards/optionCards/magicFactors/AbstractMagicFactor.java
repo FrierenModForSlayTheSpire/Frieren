@@ -157,6 +157,15 @@ public abstract class AbstractMagicFactor extends AbstractBaseCard {
             this.addToBot(new ExhaustManaInCardGroupAction(magicNumber,currentSlot));
     }
 
+    @Override
+    public AbstractCard makeStatEquivalentCopy() {
+        AbstractCard c = this.makeCopy();
+        if(c instanceof AbstractMagicFactor){
+            ((AbstractMagicFactor) c).currentSlot = this.currentSlot;
+        }
+        return c;
+    }
+
     public enum ShowPlaceType {
         COMBAT,
         BAG
