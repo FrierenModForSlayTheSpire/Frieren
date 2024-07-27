@@ -4,6 +4,7 @@ import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.gameHelpers.ActionHelper;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.FrierenRes;
@@ -101,20 +102,20 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         return false;
     }
 
-    public void loadMagicFactor(AbstractGameAction[] nextAction, int manaNeed, int chantX) {
+    public void loadMagicFactor(int chantX, AbstractGameAction[] nextAction) {
         int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
         this.extraActions = new ArrayList<>();
         if (nextAction != null && nextAction.length > 0)
             this.extraActions.addAll(Arrays.asList(nextAction));
-        this.magicNumber = this.baseMagicNumber = manaNeed;
+        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX,this);
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
 
-    public void loadMagicFactor(int manaNeed, int chantX) {
+    public void loadMagicFactor(int chantX) {
         int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
         this.extraActions = new ArrayList<>();
-        this.magicNumber = this.baseMagicNumber = manaNeed;
+        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX,this);
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
