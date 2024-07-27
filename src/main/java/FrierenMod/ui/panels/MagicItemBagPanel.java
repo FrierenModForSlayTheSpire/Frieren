@@ -1,6 +1,6 @@
 package FrierenMod.ui.panels;
 
-import FrierenMod.ui.screens.MagicItemBagScreen;
+import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
@@ -23,7 +23,7 @@ public class MagicItemBagPanel extends TopPanelItem {
 
     @Override
     protected void onClick() {
-        BaseMod.openCustomScreen(MagicItemBagScreen.Enum.MAGIC_FACTOR_SCREEN);
+        BaseMod.openCustomScreen(MagicDeckScreen.Enum.MAGIC_FACTOR_SCREEN);
     }
 
     protected void onHover() {

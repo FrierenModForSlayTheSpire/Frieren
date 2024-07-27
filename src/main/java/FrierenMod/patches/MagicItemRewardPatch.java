@@ -2,7 +2,7 @@ package FrierenMod.patches;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.FastMagicItemObtainEffect;
-import FrierenMod.patches.fields.MagicItemBagField;
+import FrierenMod.patches.fields.MagicDeckField;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.Vector2;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
@@ -45,7 +45,7 @@ public class MagicItemRewardPatch {
         public static SpireReturn<Void> Insert(Soul __instance, AbstractCard card) {
             if (card instanceof AbstractMagicItem) {
                 __instance.card = card;
-                __instance.group = MagicItemBagField.getBag();
+                __instance.group = MagicDeckField.getDeck();
                 __instance.group.addToTop(card);
                 ReflectionHacks.setPrivate(__instance, Soul.class, "pos", new Vector2(card.current_x, card.current_y));
                 ReflectionHacks.setPrivate(__instance, Soul.class, "target", new Vector2(MAGIC_BAG_X, MAGIC_BAG_Y));

@@ -6,7 +6,7 @@ import FrierenMod.cards.optionCards.magicItems.BaseFactorAlpha;
 import FrierenMod.cards.optionCards.magicItems.BaseFactorBeta;
 import FrierenMod.cards.optionCards.magicItems.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.patches.fields.MagicItemBagField;
+import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.rewards.MagicItemReward;
 import FrierenMod.utils.Config;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
@@ -71,16 +71,16 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         if (playerClass == CharacterEnums.FRIEREN) {
-            MagicItemBagField.magicItemBag.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+            MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
             BaseFactorAlpha alpha = new BaseFactorAlpha();
             alpha.setCurrentSlot(0);
             BaseFactorBeta beta = new BaseFactorBeta();
             beta.setCurrentSlot(1);
             BaseFactorGamma gamma = new BaseFactorGamma();
             gamma.setCurrentSlot(2);
-            MagicItemBagField.getBag().addToTop(alpha);
-            MagicItemBagField.getBag().addToTop(beta);
-            MagicItemBagField.getBag().addToTop(gamma);
+            MagicDeckField.getDeck().addToTop(alpha);
+            MagicDeckField.getDeck().addToTop(beta);
+            MagicDeckField.getDeck().addToTop(gamma);
             MagicItemHelper.save();
         }
     }

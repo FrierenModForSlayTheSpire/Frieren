@@ -2,7 +2,7 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.ModManager;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.patches.fields.MagicItemBagField;
+import FrierenMod.patches.fields.MagicDeckField;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
@@ -16,12 +16,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MagicItemHelper {
-    public static final String SAVE_NAME = "magic_item";
+    public static final String SAVE_NAME = "magic_deck";
     public static void save() {
         ModManager.saveData.putValue(SAVE_NAME, null);
         List<SerializableMagicItem> sfs = new ArrayList<>();
         Gson gson = new Gson();
-        for (AbstractCard c : MagicItemBagField.getBag().group) {
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
             if (c instanceof AbstractMagicItem) {
                 sfs.add(new SerializableMagicItem(c.cardID, ((AbstractMagicItem) c).currentSlot));
             }
@@ -30,15 +30,15 @@ public class MagicItemHelper {
         ModManager.saveData.putValue(SAVE_NAME, factorsArray);
     }
     public static void load(){
-        MagicItemBagField.magicItemBag.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
+        MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
         if (ModManager.saveData.containsKey(MagicItemHelper.SAVE_NAME)) {
-            for (AbstractMagicItem f : MagicItemHelper.getAllItems()) {
-                MagicItemBagField.getBag().addToTop(f);
+            for (AbstractMagicItem f : MagicItemHelper.getAllMagicItems()) {
+                MagicDeckField.getDeck().addToTop(f);
             }
         }
     }
 
-    private static ArrayList<AbstractMagicItem> getAllItems() {
+    private static ArrayList<AbstractMagicItem> getAllMagicItems() {
         ArrayList<AbstractMagicItem> fs = new ArrayList<>();
         Gson gson = new Gson();
         Type sfType = new TypeToken<List<SerializableMagicItem>>() {}.getType();

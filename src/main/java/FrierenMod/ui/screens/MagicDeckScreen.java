@@ -1,7 +1,7 @@
 package FrierenMod.ui.screens;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.patches.fields.MagicItemBagField;
+import FrierenMod.patches.fields.MagicDeckField;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -22,7 +22,7 @@ import java.util.Comparator;
 
 import static com.megacrit.cardcrawl.ui.buttons.CancelButton.TEXT;
 
-public class MagicItemBagScreen extends CustomScreen implements ScrollBarListener {
+public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private AbstractCard hoveredCard = null;
     private AbstractCard clickStartedCard = null;
     private static float drawStartX;
@@ -44,9 +44,9 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
     private ArrayList<AbstractCard> tmpSortedDeck = null;
     private boolean justSorted = false;
     private int headerScrollLockRemainingFrames = 0;
-    private final MagicItemBagSortHeader sortHeader;
+    private final MagicDeckSortHeader sortHeader;
 
-    public MagicItemBagScreen() {
+    public MagicDeckScreen() {
         drawStartX = Settings.WIDTH;
         drawStartX -= 5.0F * AbstractCard.IMG_WIDTH * 0.75F;
         drawStartX -= 4.0F * Settings.CARD_VIEW_PAD_X;
@@ -56,7 +56,7 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
         padY = AbstractCard.IMG_HEIGHT * 0.75F + Settings.CARD_VIEW_PAD_Y;
         this.scrollBar = new ScrollBar(this);
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
-        this.sortHeader = new MagicItemBagSortHeader(this);
+        this.sortHeader = new MagicDeckSortHeader(this);
     }
 
     @Override
@@ -117,7 +117,7 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
         AbstractDungeon.isScreenUp = false;
         AbstractDungeon.overlayMenu.cancelButton.hide();
         genericScreenOverlayReset();
-        for (AbstractCard c : getFactorDeck()) {
+        for (AbstractCard c : getItemBag()) {
             c.drawScale = 0.12F;
             c.targetDrawScale = 0.12F;
             c.unhover();
@@ -159,7 +159,7 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
     private void updatePositions() {
         this.hoveredCard = null;
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getFactorDeck();
+        ArrayList<AbstractCard> cards = getItemBag();
         if (this.sortOrder != null) {
             cards = new ArrayList<>(cards);
             cards.sort(this.sortOrder);
@@ -201,23 +201,23 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
     }
 
     public void renderMagicFactorDeck(SpriteBatch sb) {
-        for (AbstractCard c : getFactorDeck()) {
+        for (AbstractCard c : getItemBag()) {
             c.render(sb);
         }
     }
 
-    public ArrayList<AbstractCard> getFactorDeck() {
-        ArrayList<AbstractCard> retVal = MagicItemBagField.getBag().group;
-        for (AbstractCard f : retVal) {
-            if(f instanceof AbstractMagicItem){
-                ((AbstractMagicItem) f).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.BAG);
+    public ArrayList<AbstractCard> getItemBag() {
+        ArrayList<AbstractCard> retVal = MagicDeckField.getDeck().group;
+        for (AbstractCard c : retVal) {
+            if(c instanceof AbstractMagicItem){
+                ((AbstractMagicItem) c).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.DECK);
             }
         }
         return retVal;
     }
 
     public void renderMagicFactorDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {
-        for (AbstractCard c : getFactorDeck()) {
+        for (AbstractCard c : getItemBag()) {
             if (!c.equals(card)) {
                 c.render(sb);
             }
@@ -244,7 +244,7 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
         } else {
             this.grabbedScreen = false;
         }
-        if (this.prevDeckSize != getFactorDeck().size())
+        if (this.prevDeckSize != getItemBag().size())
             calculateScrollBounds();
         resetScrolling();
         updateBarPosition();
@@ -264,7 +264,7 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
     }
     private void hideCards() {
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getFactorDeck();
+        ArrayList<AbstractCard> cards = getItemBag();
         for (int i = 0; i < cards.size(); i++) {
             int mod = i % 5;
             if (mod == 0 && i != 0)
@@ -277,15 +277,15 @@ public class MagicItemBagScreen extends CustomScreen implements ScrollBarListene
         }
     }
     private void calculateScrollBounds() {
-        if (getFactorDeck().size() > 10) {
-            int scrollTmp = getFactorDeck().size() / 5 - 2;
-            if (getFactorDeck().size() % 5 != 0)
+        if (getItemBag().size() > 10) {
+            int scrollTmp = getItemBag().size() / 5 - 2;
+            if (getItemBag().size() % 5 != 0)
                 scrollTmp++;
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + scrollTmp * padY;
         } else {
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
         }
-        this.prevDeckSize = getFactorDeck().size();
+        this.prevDeckSize = getItemBag().size();
     }
 
     private void resetScrolling() {

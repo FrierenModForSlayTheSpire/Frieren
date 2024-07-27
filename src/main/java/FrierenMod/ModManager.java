@@ -13,7 +13,7 @@ import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
 import FrierenMod.rewards.MagicItemReward;
 import FrierenMod.ui.panels.MagicItemBagPanel;
-import FrierenMod.ui.screens.MagicItemBagScreen;
+import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.RaidVariable;
@@ -129,7 +129,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
         BaseMod.addTopPanelItem(new MagicItemBagPanel());
-        BaseMod.addCustomScreen(new MagicItemBagScreen());
+        BaseMod.addCustomScreen(new MagicDeckScreen());
         BaseMod.addSaveField(ModInformation.MOD_NAME,this);
         MagicItemReward.register();
     }

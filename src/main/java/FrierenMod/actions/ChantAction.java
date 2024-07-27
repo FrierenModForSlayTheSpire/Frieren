@@ -2,7 +2,7 @@ package FrierenMod.actions;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.patches.fields.MagicItemBagField;
+import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -137,7 +137,7 @@ public class ChantAction extends AbstractGameAction {
     }
 
     protected void initializeChantChoices() {
-        for (AbstractCard c : MagicItemBagField.getBag().group) {
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
             if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
                 this.chantChoices[0] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }

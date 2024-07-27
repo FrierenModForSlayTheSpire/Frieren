@@ -42,7 +42,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.rewardAddCoefficient = 0;
     }
 
-    public abstract void takeEffect();
+    public void takeEffect(){}
 
     public String getCombatDescription(String id) {
         return CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION;
@@ -61,7 +61,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
             case COMBAT:
                 this.rawDescription = getCombatDescription(this.cardID);
                 break;
-            case BAG:
+            case DECK:
                 this.rawDescription = getDeckDescription(this.cardID);
                 break;
             default:
@@ -170,7 +170,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
 
     public enum ShowPlaceType {
         COMBAT,
-        BAG
+        DECK
     }
 
     public enum MagicItemRarity {

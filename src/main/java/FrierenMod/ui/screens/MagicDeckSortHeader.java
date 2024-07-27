@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.screens.mainMenu.SortHeaderButtonListener;
 
 import java.util.Comparator;
 
-public class MagicItemBagSortHeader extends CardLibSortHeader {
+public class MagicDeckSortHeader extends CardLibSortHeader {
     private static final int BAR_W = 1334;
 
     private static final int BAR_H = 102;
@@ -24,7 +24,7 @@ public class MagicItemBagSortHeader extends CardLibSortHeader {
 
     private static final Comparator<AbstractCard> PURE_REVERSE;
 
-    private MagicItemBagScreen magicItemBagScreen;
+    private MagicDeckScreen magicDeckScreen;
 
     private float scrollY;
 
@@ -35,9 +35,9 @@ public class MagicItemBagSortHeader extends CardLibSortHeader {
         PURE_REVERSE = ((a, b) -> a.cardID.equals(b.cardID) ? 0 : -1);
     }
 
-    public MagicItemBagSortHeader(MagicItemBagScreen magicItemBagScreen) {
+    public MagicDeckSortHeader(MagicDeckScreen magicDeckScreen) {
         super(null);
-        this.magicItemBagScreen = magicItemBagScreen;
+        this.magicDeckScreen = magicDeckScreen;
         this.buttons[0] = new SortHeaderButton(TEXT[5], START_X, 0.0F, (SortHeaderButtonListener)this);
         this.buttons[0].setActive(true);
         float HB_W = (this.buttons[0]).hb.width;
@@ -53,9 +53,9 @@ public class MagicItemBagSortHeader extends CardLibSortHeader {
         button.setActive(true);
         if (button == this.buttons[0]) {
             if (isAscending) {
-                this.magicItemBagScreen.setSortOrder(null);
+                this.magicDeckScreen.setSortOrder(null);
             } else {
-                this.magicItemBagScreen.setSortOrder(PURE_REVERSE);
+                this.magicDeckScreen.setSortOrder(PURE_REVERSE);
             }
             return;
         }
@@ -70,7 +70,7 @@ public class MagicItemBagSortHeader extends CardLibSortHeader {
         }
         if (!isAscending)
             order = order.reversed();
-        this.magicItemBagScreen.setSortOrder(order);
+        this.magicDeckScreen.setSortOrder(order);
     }
 
     protected void updateScrollPositions() {}
