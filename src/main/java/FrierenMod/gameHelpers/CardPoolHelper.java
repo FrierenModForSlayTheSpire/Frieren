@@ -1,7 +1,6 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.optionCards.magicItems.*;
-import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
@@ -56,7 +55,7 @@ public class CardPoolHelper {
         return retVal;
     }
 
-    public static ArrayList<AbstractCard> getMagicItemCardPool(int flag) {
+    public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
         srcCardPool.add(new BetaFactor1());
         srcCardPool.add(new BetaFactor2());
@@ -66,15 +65,13 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaFactor6());
         srcCardPool.add(new BetaFactor7());
         srcCardPool.add(new BetaFactor8());
-        if (flag == 4)
-            return srcCardPool;
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();
         ArrayList<AbstractCard> prop = new ArrayList<>();
         for (AbstractCard c : srcCardPool) {
             if (c instanceof AbstractMagicItem) {
-                switch (((AbstractMagicItem) c).factorRarity) {
+                switch (((AbstractMagicItem) c).magicItemRarity) {
                     case RARE:
                         rare.add(c);
                         break;
@@ -84,19 +81,20 @@ public class CardPoolHelper {
                     case COMMON:
                         common.add(c);
                         break;
+                    case PROP:
+                        prop.add(c);
+                        break;
                 }
-            } else if (c instanceof AbstractMagicProp) {
-                prop.add(c);
             }
         }
-        switch (flag) {
-            case 0:
+        switch (rarity) {
+            case COMMON:
                 return common;
-            case 1:
+            case UNCOMMON:
                 return uncommon;
-            case 2:
+            case RARE:
                 return rare;
-            case 3:
+            case PROP:
                 return prop;
         }
         return srcCardPool;
@@ -119,8 +117,8 @@ public class CardPoolHelper {
         return list.get(cardRandomRng.random(list.size() - 1));
     }
 
-    public static AbstractCard getRandomMagicItem(int flag) {
-        ArrayList<AbstractCard> list = getMagicItemCardPool(flag);
+    public static AbstractCard getRandomMagicItem(AbstractMagicItem.MagicItemRarity rarity) {
+        ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
         return list.get(cardRandomRng.random(list.size() - 1));
     }
 

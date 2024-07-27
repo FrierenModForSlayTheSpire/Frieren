@@ -1,5 +1,6 @@
 package FrierenMod.rewards;
 
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
@@ -73,7 +74,7 @@ public class MagicItemReward extends CustomReward {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         int numCards = 3;
         for (int i = 0; i < numCards; i++) {
-            int rarity = rollRarity();
+            AbstractMagicItem.MagicItemRarity rarity = rollRarity();
             AbstractCard card = null;
             boolean containsDupe = true;
             while (containsDupe) {
@@ -95,15 +96,15 @@ public class MagicItemReward extends CustomReward {
         return retVal2;
     }
 
-    public static int rollRarity() {
+    public static AbstractMagicItem.MagicItemRarity rollRarity() {
         int rnd = cardRandomRng.random(99);
 //        if (rnd <= 3)
 //            return 2;
 //        if (rnd <= 20)
 //            return 3;
         if (rnd <= 40)
-            return 1;
-        return 0;
+            return AbstractMagicItem.MagicItemRarity.UNCOMMON;
+        return AbstractMagicItem.MagicItemRarity.COMMON;
     }
 
     private static String encodeSavaString(ArrayList<AbstractCard> cards) {

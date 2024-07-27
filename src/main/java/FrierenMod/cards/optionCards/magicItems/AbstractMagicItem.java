@@ -26,7 +26,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
     public ArrayList<AbstractGameAction> extraActions;
-    public FactorRarityType factorRarity;
+    public MagicItemRarity magicItemRarity;
     public int manaNeedMultipleCoefficient;
     public int manaNeedAddCoefficient;
     public int rewardMultipleCoefficient;
@@ -135,7 +135,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     }
 
     public void showVFX() {
-        switch (this.factorRarity) {
+        switch (this.magicItemRarity) {
             default:
             case BASIC:
             case COMMON:
@@ -171,10 +171,11 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         BAG
     }
 
-    public enum FactorRarityType {
+    public enum MagicItemRarity {
         BASIC,
         COMMON,
         UNCOMMON,
         RARE,
+        PROP
     }
 }

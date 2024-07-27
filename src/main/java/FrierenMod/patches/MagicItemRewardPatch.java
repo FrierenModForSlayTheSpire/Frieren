@@ -1,7 +1,6 @@
 package FrierenMod.patches;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.effects.FastMagicItemObtainEffect;
 import FrierenMod.patches.fields.MagicItemBagField;
 import basemod.ReflectionHacks;
@@ -28,7 +27,7 @@ public class MagicItemRewardPatch {
     public static class PatchAcquireCard {
         @SpireInsertPatch(rloc = 0, localvars = "hoveredCard")
         public static SpireReturn<Void> Insert(CardRewardScreen __instance, AbstractCard hoveredCard) {
-            if (hoveredCard instanceof AbstractMagicItem || hoveredCard instanceof AbstractMagicProp) {
+            if (hoveredCard instanceof AbstractMagicItem) {
                 InputHelper.justClickedLeft = false;
                 AbstractDungeon.effectsQueue.add(new FastMagicItemObtainEffect(hoveredCard, hoveredCard.current_x, hoveredCard.current_y));
                 return SpireReturn.Return();
@@ -44,7 +43,7 @@ public class MagicItemRewardPatch {
 
         @SpireInsertPatch(rloc = 0, localvars = "card")
         public static SpireReturn<Void> Insert(Soul __instance, AbstractCard card) {
-            if (card instanceof AbstractMagicItem || card instanceof AbstractMagicProp) {
+            if (card instanceof AbstractMagicItem) {
                 __instance.card = card;
                 __instance.group = MagicItemBagField.getBag();
                 __instance.group.addToTop(card);

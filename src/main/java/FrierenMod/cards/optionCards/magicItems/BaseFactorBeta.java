@@ -8,7 +8,7 @@ public class BaseFactorBeta extends AbstractMagicItem {
 
     public BaseFactorBeta() {
         super(ID);
-        this.factorRarity = FactorRarityType.BASIC;
+        this.magicItemRarity = MagicItemRarity.BASIC;
     }
 
     @Override

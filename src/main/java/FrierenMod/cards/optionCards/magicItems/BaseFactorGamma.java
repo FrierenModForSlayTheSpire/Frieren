@@ -9,7 +9,7 @@ public class BaseFactorGamma extends AbstractMagicItem {
 
     public BaseFactorGamma() {
         super(ID);
-        this.factorRarity = FactorRarityType.BASIC;
+        this.magicItemRarity = MagicItemRarity.BASIC;
     }
 
     @Override

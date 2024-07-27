@@ -1,7 +1,6 @@
 package FrierenMod.patches;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.optionCards.magicProps.AbstractMagicProp;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
@@ -33,11 +32,10 @@ public class CardStylePatch {
                 return SpireReturn.Return();
             }
             if (c instanceof AbstractMagicItem) {
-                FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[1], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
-                return SpireReturn.Return();
-            }
-            if (c instanceof AbstractMagicProp) {
-                FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[2], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
+                if(((AbstractMagicItem) c).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
+                    FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[2], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
+                else
+                    FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[1], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
@@ -67,11 +65,10 @@ public class CardStylePatch {
                 return SpireReturn.Return();
             }
             if (_inst instanceof AbstractMagicItem) {
-                FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[1], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
-                return SpireReturn.Return();
-            }
-            if (_inst instanceof AbstractMagicProp) {
-                FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[2], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
+                if(((AbstractMagicItem) _inst).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
+                    FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[2], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
+                else
+                    FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[1], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
@@ -83,12 +80,13 @@ public class CardStylePatch {
         @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "drawX", "drawY"})
         public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float drawX, float drawY) {
             if (_inst instanceof AbstractMagicItem) {
-                switch (((AbstractMagicItem) _inst).factorRarity) {
+                switch (((AbstractMagicItem) _inst).magicItemRarity) {
                     default:
                     case COMMON:
                     case BASIC:
                         renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_COMMON, drawX, drawY);
                         return SpireReturn.Return();
+                    case PROP:
                     case UNCOMMON:
                         renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
                         return SpireReturn.Return();
@@ -96,10 +94,6 @@ public class CardStylePatch {
                         renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_RARE, drawX, drawY);
                         return SpireReturn.Return();
                 }
-            }
-            if (_inst instanceof AbstractMagicProp) {
-                renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
-                return SpireReturn.Return();
             }
             return SpireReturn.Continue();
         }

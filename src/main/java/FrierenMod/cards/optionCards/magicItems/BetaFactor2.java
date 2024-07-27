@@ -9,7 +9,7 @@ public class BetaFactor2 extends AbstractMagicItem {
 
     public BetaFactor2() {
         super(ID);
-        this.factorRarity = FactorRarityType.COMMON;
+        this.magicItemRarity = MagicItemRarity.COMMON;
     }
 
     @Override
