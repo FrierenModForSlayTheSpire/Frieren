@@ -2,7 +2,7 @@ package FrierenMod.actions;
 
 import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.gameHelpers.MagicFactorHelper;
+import FrierenMod.patches.fields.MagicBagField;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -102,7 +102,7 @@ public class ChantAction extends AbstractGameAction {
                         stanceChoices.add(chantChoices[1]);
                     }
                 }
-                if(chantChoices[2] != null){
+                if (chantChoices[2] != null) {
                     int chantX = getChantX(discard, chantChoices[2]);
                     int manaNeed = getManaNeed(discard, chantChoices[2]);
                     if (CombatHelper.canChantFromDiscardPile(manaNeed)) {
@@ -110,11 +110,10 @@ public class ChantAction extends AbstractGameAction {
                         stanceChoices.add(chantChoices[2]);
                     }
                 }
-                if(this.chantType == ChantType.PRECISE){
+                if (this.chantType == ChantType.PRECISE) {
                     if (!stanceChoices.isEmpty())
                         this.addToTop(new ChooseOneAction(stanceChoices));
-                }
-                else {
+                } else {
                     if (!stanceChoices.isEmpty()) {
                         boolean haveTriggered = false;
                         for (AbstractCard f : stanceChoices) {
@@ -138,22 +137,15 @@ public class ChantAction extends AbstractGameAction {
     }
 
     protected void initializeChantChoices() {
-        for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-            if (f != null && f.currentSlot == 0) {
-                this.chantChoices[0] = f;
-                break;
+        for (AbstractCard c : MagicBagField.getDeck().group) {
+            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 0) {
+                this.chantChoices[0] = (AbstractMagicFactor) c.makeCopy();
             }
-        }
-        for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-            if (f != null && f.currentSlot == 1) {
-                this.chantChoices[1] = f;
-                break;
+            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 1) {
+                this.chantChoices[1] = (AbstractMagicFactor) c.makeCopy();
             }
-        }
-        for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-            if (f != null && f.currentSlot == 2) {
-                this.chantChoices[2] = f;
-                break;
+            if (c instanceof AbstractMagicFactor && ((AbstractMagicFactor) c).currentSlot == 2) {
+                this.chantChoices[2] = (AbstractMagicFactor) c.makeCopy();
             }
         }
     }

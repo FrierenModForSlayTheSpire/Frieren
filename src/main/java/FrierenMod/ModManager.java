@@ -6,14 +6,12 @@ import FrierenMod.Characters.Frieren;
 import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.CardPoolHelper;
-import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.gameHelpers.DataObject;
-import FrierenMod.gameHelpers.HookHelper;
+import FrierenMod.gameHelpers.*;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
+import FrierenMod.rewards.MagicItemReward;
 import FrierenMod.ui.panels.MagicBagPanel;
 import FrierenMod.ui.screens.MagicBagScreen;
 import FrierenMod.utils.*;
@@ -23,6 +21,7 @@ import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
@@ -51,7 +50,7 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 
 
 @SpireInitializer
-public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber {
+public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, CustomSavable<String> {
     private static String modID;
     public static DataObject saveData = new DataObject();
 
@@ -131,6 +130,8 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
         BaseMod.addTopPanelItem(new MagicBagPanel());
         BaseMod.addCustomScreen(new MagicBagScreen());
+        BaseMod.addSaveField(ModInformation.MOD_NAME,this);
+        MagicItemReward.register();
     }
 
     @Override
@@ -274,4 +275,14 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
     }
 
+    @Override
+    public String onSave() {
+        MagicFactorHelper.save();
+        return "";
+    }
+
+    @Override
+    public void onLoad(String s) {
+        MagicFactorHelper.load();
+    }
 }

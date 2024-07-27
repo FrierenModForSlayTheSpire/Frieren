@@ -1,9 +1,7 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.ModManager;
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicFactors.AbstractMagicFactor;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorAlpha;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorBeta;
 import FrierenMod.cards.optionCards.magicFactors.BaseFactorGamma;
@@ -12,14 +10,13 @@ import FrierenMod.patches.fields.MagicBagField;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
 import basemod.interfaces.PostCreateStartingDeckSubscriber;
-import basemod.interfaces.StartGameSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, StartGameSubscriber {
+public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber{
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -66,17 +63,8 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
             MagicBagField.getDeck().addToTop(alpha);
             MagicBagField.getDeck().addToTop(beta);
             MagicBagField.getDeck().addToTop(gamma);
-            MagicFactorHelper.saveAllFactors();
+            MagicFactorHelper.save();
         }
     }
 
-    @Override
-    public void receiveStartGame() {
-        MagicBagField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
-        if (ModManager.saveData.containsKey(MagicFactorHelper.SAVE_NAME)) {
-            for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-                MagicBagField.getDeck().addToTop(f);
-            }
-        }
-    }
 }
