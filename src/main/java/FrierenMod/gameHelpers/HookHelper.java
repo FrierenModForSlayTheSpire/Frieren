@@ -5,6 +5,7 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.magicItems.BaseFactorAlpha;
 import FrierenMod.cards.optionCards.magicItems.BaseFactorBeta;
 import FrierenMod.cards.optionCards.magicItems.BaseFactorGamma;
+import FrierenMod.cards.optionCards.magicItems.BetaProp1;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.rewards.MagicItemReward;
@@ -81,6 +82,7 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
             MagicDeckField.getDeck().addToTop(alpha);
             MagicDeckField.getDeck().addToTop(beta);
             MagicDeckField.getDeck().addToTop(gamma);
+            MagicDeckField.getDeck().addToTop(new BetaProp1());
             MagicItemHelper.save();
         }
     }

@@ -115,6 +115,13 @@
       " 消耗 牌堆中3X张 *魔力 ，给予所有敌人X层 易伤 。"
     ]
   },
+  "FrierenMod:BetaProp1": {
+    "NAME": "测试魔具1",
+    "DESCRIPTION": "选择1张 [#ff2c1d]未装载[#ff2c1d] 的 frierenmod:魔法因子 替换1张 [#9ffc4f]已装载[#9ffc4f] 的 frierenmod:魔法因子 。",
+    "EXTENDED_DESCRIPTION": [
+      "选择1张 [#ff2c1d]未装载[#ff2c1d] 的 frierenmod:魔法因子 替换1张 [#9ffc4f]已装载[#9ffc4f] 的 frierenmod:魔法因子 。"
+    ]
+  },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",
     "DESCRIPTION": "抽 !M! 张 *魔力 。"

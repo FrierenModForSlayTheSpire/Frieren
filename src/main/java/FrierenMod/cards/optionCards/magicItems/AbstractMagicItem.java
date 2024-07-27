@@ -40,15 +40,23 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.manaNeedAddCoefficient = 0;
         this.rewardMultipleCoefficient = 1;
         this.rewardAddCoefficient = 0;
+        if(this.magicItemRarity == MagicItemRarity.PROP)
+            this.glowColor = Color.GREEN;
     }
 
-    public void takeEffect(){}
+    public void takeEffect() {
+    }
+    public boolean propTakeEffect(AbstractMagicItem factor1, AbstractMagicItem factor2){
+        return false;
+    }
 
     public String getCombatDescription(String id) {
         return CardCrawlGame.languagePack.getCardStrings(id).DESCRIPTION;
     }
 
     public String getDeckDescription(String id) {
+        if (this.magicItemRarity == MagicItemRarity.PROP)
+            return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0];
         return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0] + LOAD_MESSAGES[currentSlot + 1];
     }
 

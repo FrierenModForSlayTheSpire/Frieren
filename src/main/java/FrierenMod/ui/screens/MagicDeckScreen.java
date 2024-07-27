@@ -46,6 +46,10 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private int headerScrollLockRemainingFrames = 0;
     private final MagicDeckSortHeader sortHeader;
 
+    private AbstractCard isUsingProp = null;
+    private AbstractCard chosenFactor1 = null;
+    private AbstractCard chosenFactor2 = null;
+
     public MagicDeckScreen() {
         drawStartX = Settings.WIDTH;
         drawStartX -= 5.0F * AbstractCard.IMG_WIDTH * 0.75F;
@@ -100,7 +104,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         AbstractDungeon.overlayMenu.proceedButton.hide();
         AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.overlayMenu.showBlackScreen();
-        AbstractDungeon.overlayMenu.cancelButton.show("Cancel");
+        AbstractDungeon.overlayMenu.cancelButton.show(TEXT[0]);
         calculateScrollBounds();
     }
 
@@ -109,6 +113,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         if (Settings.isControllerMode) {
             Gdx.input.setCursorPosition(10, Settings.HEIGHT / 2);
         }
+        cancelUsingProp();
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[0]);
     }
     @Override
@@ -117,7 +122,8 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         AbstractDungeon.isScreenUp = false;
         AbstractDungeon.overlayMenu.cancelButton.hide();
         genericScreenOverlayReset();
-        for (AbstractCard c : getItemBag()) {
+        cancelUsingProp();
+        for (AbstractCard c : getDeck()) {
             c.drawScale = 0.12F;
             c.targetDrawScale = 0.12F;
             c.unhover();
@@ -134,6 +140,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         updatePositions();
         this.sortHeader.update();
         updateClicking();
+        updatePropUse();
     }
 
     @Override
@@ -159,7 +166,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private void updatePositions() {
         this.hoveredCard = null;
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getItemBag();
+        ArrayList<AbstractCard> cards = getDeck();
         if (this.sortOrder != null) {
             cards = new ArrayList<>(cards);
             cards.sort(this.sortOrder);
@@ -201,12 +208,12 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     public void renderMagicFactorDeck(SpriteBatch sb) {
-        for (AbstractCard c : getItemBag()) {
+        for (AbstractCard c : getDeck()) {
             c.render(sb);
         }
     }
 
-    public ArrayList<AbstractCard> getItemBag() {
+    public ArrayList<AbstractCard> getDeck() {
         ArrayList<AbstractCard> retVal = MagicDeckField.getDeck().group;
         for (AbstractCard c : retVal) {
             if(c instanceof AbstractMagicItem){
@@ -217,7 +224,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     public void renderMagicFactorDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {
-        for (AbstractCard c : getItemBag()) {
+        for (AbstractCard c : getDeck()) {
             if (!c.equals(card)) {
                 c.render(sb);
             }
@@ -244,7 +251,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         } else {
             this.grabbedScreen = false;
         }
-        if (this.prevDeckSize != getItemBag().size())
+        if (this.prevDeckSize != getDeck().size())
             calculateScrollBounds();
         resetScrolling();
         updateBarPosition();
@@ -252,8 +259,27 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private void updateClicking() {
         if (this.hoveredCard != null) {
             CardCrawlGame.cursor.changeType(GameCursor.CursorType.INSPECT);
-            if (InputHelper.justClickedLeft)
-                this.clickStartedCard = this.hoveredCard;
+            if(InputHelper.justClickedRight){
+                if(hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem)hoveredCard).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP && this.isUsingProp == null){
+                    this.isUsingProp = hoveredCard;
+                    this.isUsingProp.beginGlowing();
+                    System.out.println(this.isUsingProp.cardID);
+                }
+            }
+            if (InputHelper.justClickedLeft){
+                if(this.isUsingProp != null && hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem)hoveredCard).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP){
+                    if(this.chosenFactor1 == null){
+                        this.chosenFactor1 = this.hoveredCard;
+                        this.chosenFactor1.beginGlowing();
+                        System.out.println(this.chosenFactor1.cardID);
+                    }
+                    if(this.chosenFactor2 == null && this.chosenFactor1 != null && this.chosenFactor1 != this.hoveredCard){
+                        this.chosenFactor2 = this.hoveredCard;
+                        this.chosenFactor2.beginGlowing();
+                        System.out.println(this.chosenFactor2.cardID);
+                    }
+                }
+            }
             if (InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard) {
                 InputHelper.justReleasedClickLeft = false;
                 this.clickStartedCard = null;
@@ -264,7 +290,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
     private void hideCards() {
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getItemBag();
+        ArrayList<AbstractCard> cards = getDeck();
         for (int i = 0; i < cards.size(); i++) {
             int mod = i % 5;
             if (mod == 0 && i != 0)
@@ -277,15 +303,15 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         }
     }
     private void calculateScrollBounds() {
-        if (getItemBag().size() > 10) {
-            int scrollTmp = getItemBag().size() / 5 - 2;
-            if (getItemBag().size() % 5 != 0)
+        if (getDeck().size() > 10) {
+            int scrollTmp = getDeck().size() / 5 - 2;
+            if (getDeck().size() % 5 != 0)
                 scrollTmp++;
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + scrollTmp * padY;
         } else {
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
         }
-        this.prevDeckSize = getItemBag().size();
+        this.prevDeckSize = getDeck().size();
     }
 
     private void resetScrolling() {
@@ -312,5 +338,30 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             }
         }
         return retVal;
+    }
+    private void updatePropUse(){
+        if(this.isUsingProp != null && chosenFactor1 != null && chosenFactor2 != null){
+            if(this.isUsingProp instanceof AbstractMagicItem && chosenFactor1 instanceof AbstractMagicItem && chosenFactor2 instanceof AbstractMagicItem){
+                if(((AbstractMagicItem) this.isUsingProp).propTakeEffect((AbstractMagicItem) chosenFactor1, (AbstractMagicItem) chosenFactor2)){
+                    MagicDeckField.getDeck().removeCard(isUsingProp);
+                    cancelUsingProp();
+                }else
+                    cancelUsingProp();
+            }
+        }
+    }
+    private void cancelUsingProp(){
+        if(this.isUsingProp != null){
+            this.isUsingProp.stopGlowing();
+            this.isUsingProp = null;
+        }
+        if(chosenFactor1 != null){
+            this.chosenFactor1.stopGlowing();
+            this.chosenFactor1 = null;
+        }
+        if(chosenFactor2 != null){
+            this.chosenFactor2.stopGlowing();
+            this.chosenFactor2 = null;
+        }
     }
 }

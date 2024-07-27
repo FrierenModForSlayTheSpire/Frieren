@@ -12,7 +12,7 @@ import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
 import FrierenMod.rewards.MagicItemReward;
-import FrierenMod.ui.panels.MagicItemBagPanel;
+import FrierenMod.ui.panels.MagicDeckPanel;
 import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
@@ -128,7 +128,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
-        BaseMod.addTopPanelItem(new MagicItemBagPanel());
+        BaseMod.addTopPanelItem(new MagicDeckPanel());
         BaseMod.addCustomScreen(new MagicDeckScreen());
         BaseMod.addSaveField(ModInformation.MOD_NAME,this);
         MagicItemReward.register();

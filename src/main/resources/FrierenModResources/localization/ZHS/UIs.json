@@ -166,9 +166,9 @@
       " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
     ]
   },
-  "FrierenMod:MagicBagPanel": {
+  "FrierenMod:MagicDeckPanel": {
     "TEXT": [
-      "背包",
+      "魔法牌组",
       "查看你拥有的 #y魔法因子 和 #y魔具 。"
     ]
   },
