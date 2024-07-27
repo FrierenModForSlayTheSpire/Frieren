@@ -73,18 +73,19 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
 
     @Override
     public void onChoseThisOption() {
-        ActionHelper.addToBotAbstract(() -> {
-            showVFX();
-            exhaustMana();
-            takeEffect();
-            triggerPowers();
-            triggerCards();
-            if (extraActions != null && !extraActions.isEmpty()) {
-                for (AbstractGameAction action : extraActions) {
-                    this.addToBot(action);
+        if (this.magicItemRarity != MagicItemRarity.PROP)
+            ActionHelper.addToBotAbstract(() -> {
+                showVFX();
+                exhaustMana();
+                takeEffect();
+                triggerPowers();
+                triggerCards();
+                if (extraActions != null && !extraActions.isEmpty()) {
+                    for (AbstractGameAction action : extraActions) {
+                        this.addToBot(action);
+                    }
                 }
-            }
-        });
+            });
     }
 
     @Override
@@ -152,15 +153,16 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
                 break;
         }
     }
-    public void exhaustMana(){
+
+    public void exhaustMana() {
         if (this.magicNumber > 0)
-            this.addToBot(new ExhaustManaInCardGroupAction(magicNumber,currentSlot));
+            this.addToBot(new ExhaustManaInCardGroupAction(magicNumber, currentSlot));
     }
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
         AbstractCard c = this.makeCopy();
-        if(c instanceof AbstractMagicItem){
+        if (c instanceof AbstractMagicItem) {
             ((AbstractMagicItem) c).currentSlot = this.currentSlot;
         }
         return c;
