@@ -6,6 +6,7 @@ import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
 import basemod.abstracts.CustomReward;
+import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -23,15 +24,16 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 public class MagicItemReward extends CustomReward {
 
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(MagicItemReward.class.getSimpleName())).TEXT;
+    private static final Texture ICON = ImageMaster.loadImage(PublicRes.MAGIC_ITEM_REWARD_ICON);
 
     public MagicItemReward(String saveString) {
-        super(ImageMaster.loadImage(PublicRes.MAGIC_BAG_ICON), TEXT[0], MAGIC_ITEM_REWARD);
+        super(ICON, TEXT[0], MAGIC_ITEM_REWARD);
         ArrayList<AbstractCard> cards = decodeSavaString(saveString);
         init(cards);
     }
 
     public MagicItemReward() {
-        super(ImageMaster.loadImage(PublicRes.MAGIC_BAG_ICON), TEXT[0], MAGIC_ITEM_REWARD);
+        super(ICON, TEXT[0], MAGIC_ITEM_REWARD);
         init(rollMagicItems());
     }
 

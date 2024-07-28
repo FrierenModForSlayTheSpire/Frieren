@@ -19,7 +19,7 @@ public class MagicDeckPanel extends TopPanelItem {
     ;
 
     public MagicDeckPanel() {
-        super(ImageMaster.loadImage(PublicRes.MAGIC_BAG_ICON), ID);
+        super(ImageMaster.loadImage(PublicRes.MAGIC_DECK_ICON), ID);
     }
 
     @Override

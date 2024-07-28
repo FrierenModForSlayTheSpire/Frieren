@@ -32,7 +32,7 @@ public class CardStylePatch {
                 return SpireReturn.Return();
             }
             if (c instanceof AbstractMagicItem) {
-                if(((AbstractMagicItem) c).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
+                if (((AbstractMagicItem) c).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
                     FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[2], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
                 else
                     FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[1], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
@@ -65,7 +65,7 @@ public class CardStylePatch {
                 return SpireReturn.Return();
             }
             if (_inst instanceof AbstractMagicItem) {
-                if(((AbstractMagicItem) _inst).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
+                if (((AbstractMagicItem) _inst).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
                     FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[2], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
                 else
                     FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[1], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
@@ -77,6 +77,8 @@ public class CardStylePatch {
 
     @SpirePatch(clz = AbstractCard.class, method = "renderBannerImage")
     public static class PatchRenderBannerImage {
+        private static final TextureAtlas.AtlasRegion CARD_BANNER_PROP = getImg(ImageMaster.loadImage(PublicRes.CARD_BANNER_PROP));
+
         @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "drawX", "drawY"})
         public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float drawX, float drawY) {
             if (_inst instanceof AbstractMagicItem) {
@@ -87,6 +89,8 @@ public class CardStylePatch {
                         renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_COMMON, drawX, drawY);
                         return SpireReturn.Return();
                     case PROP:
+                        renderHelper(_inst, sb, renderColor, CARD_BANNER_PROP, drawX, drawY);
+                        return SpireReturn.Return();
                     case UNCOMMON:
                         renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
                         return SpireReturn.Return();
@@ -121,5 +125,9 @@ public class CardStylePatch {
 
     private static TextureAtlas.AtlasRegion getImg(Texture texture) {
         return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
+    }
+
+    private static TextureAtlas.AtlasRegion getImg(Texture texture, int width, int height) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, width, height);
     }
 }
