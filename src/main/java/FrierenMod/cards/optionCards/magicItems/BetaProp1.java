@@ -1,6 +1,9 @@
 package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+
+import java.util.ArrayList;
 
 public class BetaProp1 extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BetaProp1.class.getSimpleName());
@@ -8,24 +11,33 @@ public class BetaProp1 extends AbstractMagicItem {
     public BetaProp1() {
         super(ID);
         this.magicItemRarity = MagicItemRarity.PROP;
+        this.propCanChooseMaxAmt = 2;
     }
 
-    public boolean propTakeEffect(AbstractMagicItem factor1, AbstractMagicItem factor2) {
-        if (factor1.magicItemRarity == MagicItemRarity.PROP || factor2.magicItemRarity == MagicItemRarity.PROP) {
+    public boolean propTakeEffect(ArrayList<AbstractCard> chosenCards) {
+        AbstractMagicItem item1 = null;
+        AbstractMagicItem item2 = null;
+        if (chosenCards.get(0) instanceof AbstractMagicItem)
+            item1 = (AbstractMagicItem) chosenCards.get(0);
+        if (chosenCards.get(1) instanceof AbstractMagicItem)
+            item2 = (AbstractMagicItem) chosenCards.get(1);
+        if (item1 == null || item2 == null)
+            return false;
+        if (item1.magicItemRarity == MagicItemRarity.PROP || item2.magicItemRarity == MagicItemRarity.PROP) {
             return false;
         }
-        if (factor1.currentSlot == -1 && factor2.currentSlot == -1) {
+        if (item1.currentSlot == -1 && item2.currentSlot == -1) {
             return false;
         }
-        if (factor1.currentSlot > -1 && factor2.currentSlot > -1){
+        if (item1.currentSlot > -1 && item2.currentSlot > -1) {
             return false;
         }
-        if (factor1.currentSlot == factor2.currentSlot) {
+        if (item1.currentSlot == item2.currentSlot) {
             return false;
         }
-        int tmp = factor1.currentSlot;
-        factor1.currentSlot = factor2.currentSlot;
-        factor2.currentSlot = tmp;
+        int tmp = item1.currentSlot;
+        item1.currentSlot = item2.currentSlot;
+        item2.currentSlot = tmp;
         return true;
     }
 }

@@ -51,10 +51,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private final MagicDeckSortHeader sortHeader;
 
     private AbstractCard isUsingProp = null;
-    private AbstractCard chosenFactor1 = null;
-    private AbstractCard chosenFactor2 = null;
-
-    private int flameCount = 0;
+    private final ArrayList<AbstractCard> chosenCards;
 
     public MagicDeckScreen() {
         drawStartX = Settings.WIDTH;
@@ -67,6 +64,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         this.scrollBar = new ScrollBar(this);
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
         this.sortHeader = new MagicDeckSortHeader(this);
+        chosenCards = new ArrayList<>();
     }
 
     @Override
@@ -160,13 +158,18 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             if (showVFX)
                 AbstractDungeon.topLevelEffects.add(new MagicPropUsingEffect(Color.PURPLE, false));
             FontHelper.renderDeckViewTip(sb, String.format(TEXT[1], isUsingProp.name), 146.0F * Settings.scale, Color.PURPLE);
+            if (!chosenCards.isEmpty()) {
+                StringBuilder isUsingItemsNameBuilder = new StringBuilder();
+                for (AbstractCard card : chosenCards) {
+                    if (card instanceof AbstractMagicItem) {
+                        isUsingItemsNameBuilder.append(card.name).append(",");
+                    }
+                }
+                String isUsingItemsName = isUsingItemsNameBuilder.substring(0, isUsingItemsNameBuilder.length() - 1);
+                FontHelper.renderDeckViewTip(sb, String.format(TEXT[2], isUsingItemsName), 96.0F * Settings.scale, Color.WHITE);
+            }
         }
-        if (chosenFactor1 != null) {
-            FontHelper.renderDeckViewTip(sb, String.format(TEXT[2], chosenFactor1.name), 96.0F * Settings.scale, Color.WHITE);
-        }
-        if (chosenFactor2 != null) {
-            FontHelper.renderDeckViewTip(sb, String.format(TEXT[2], chosenFactor2.name), 46.0F * Settings.scale, Color.WHITE);
-        }
+
         if (shouldShowScrollBar())
             this.scrollBar.render(sb);
         if (this.hoveredCard == null) {
@@ -295,18 +298,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
                 }
             }
             if (InputHelper.justClickedLeft) {
-                if (this.isUsingProp != null && hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem) hoveredCard).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP) {
-                    if (this.chosenFactor1 == null) {
-                        this.chosenFactor1 = this.hoveredCard;
-                        this.chosenFactor1.beginGlowing();
-                        System.out.println(this.chosenFactor1.cardID);
-                    }
-                    if (this.chosenFactor2 == null && this.chosenFactor1 != null && this.chosenFactor1 != this.hoveredCard) {
-                        this.chosenFactor2 = this.hoveredCard;
-                        this.chosenFactor2.beginGlowing();
-                        System.out.println(this.chosenFactor2.cardID);
-                    }
-                }
+                addCardToChosenCards(hoveredCard);
             }
 
             if (InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard) {
@@ -374,14 +366,11 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     private void updatePropUse() {
-        if (this.isUsingProp != null && chosenFactor1 != null && chosenFactor2 != null) {
-            if (this.isUsingProp instanceof AbstractMagicItem && chosenFactor1 instanceof AbstractMagicItem && chosenFactor2 instanceof AbstractMagicItem) {
-                if (((AbstractMagicItem) this.isUsingProp).propTakeEffect((AbstractMagicItem) chosenFactor1, (AbstractMagicItem) chosenFactor2)) {
-                    removeProp(isUsingProp);
-                    cancelUsingProp();
-                } else
-                    cancelUsingProp();
+        if (this.isUsingProp != null && isUsingProp instanceof AbstractMagicItem && !chosenCards.isEmpty() && chosenCards.size() >= ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt) {
+            if (((AbstractMagicItem) this.isUsingProp).propTakeEffect(chosenCards)) {
+                removeProp(isUsingProp);
             }
+            cancelUsingProp();
         }
     }
 
@@ -390,13 +379,11 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             this.isUsingProp.stopGlowing();
             this.isUsingProp = null;
         }
-        if (chosenFactor1 != null) {
-            this.chosenFactor1.stopGlowing();
-            this.chosenFactor1 = null;
-        }
-        if (chosenFactor2 != null) {
-            this.chosenFactor2.stopGlowing();
-            this.chosenFactor2 = null;
+        if (!chosenCards.isEmpty()) {
+            for (AbstractCard card : chosenCards) {
+                card.stopGlowing();
+            }
+            chosenCards.clear();
         }
         AbstractDungeon.topLevelEffects.removeIf(effect -> effect instanceof MagicPropUsingEffect);
     }
@@ -408,4 +395,10 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         }
     }
 
+    private void addCardToChosenCards(AbstractCard card) {
+        if (isUsingProp != null && isUsingProp instanceof AbstractMagicItem && chosenCards.size() < ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt && !this.chosenCards.contains(card) && card instanceof AbstractMagicItem) {
+            card.beginGlowing();
+            this.chosenCards.add(card);
+        }
+    }
 }

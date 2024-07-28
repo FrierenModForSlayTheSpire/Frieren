@@ -36,6 +36,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public int rewardAddCoefficient;
     public AbstractPlayer p = AbstractDungeon.player;
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicItemTip")).TEXT;
+    public int propCanChooseMaxAmt;
 
     public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -44,6 +45,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.manaNeedAddCoefficient = 0;
         this.rewardMultipleCoefficient = 1;
         this.rewardAddCoefficient = 0;
+        this.propCanChooseMaxAmt = 0;
     }
 
     @Override
@@ -56,7 +58,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public void takeEffect() {
     }
 
-    public boolean propTakeEffect(AbstractMagicItem factor1, AbstractMagicItem factor2) {
+    public boolean propTakeEffect(ArrayList<AbstractCard> chosenCards) {
         return false;
     }
 
