@@ -176,7 +176,7 @@
     "TEXT": [
       "取消",
       "魔具 [%s] 使用中",
-      "魔法因子 [%s] 选择中"
+      " [%s] 选择中"
     ]
   },
   "FrierenMod:MagicItemReward": {

@@ -38,7 +38,7 @@ public class MagicDeckSortHeader extends CardLibSortHeader {
     public MagicDeckSortHeader(MagicDeckScreen magicDeckScreen) {
         super(null);
         this.magicDeckScreen = magicDeckScreen;
-        this.buttons[0] = new SortHeaderButton(TEXT[5], START_X, 0.0F, (SortHeaderButtonListener)this);
+        this.buttons[0] = new SortHeaderButton(TEXT[5], START_X, 0.0F, this);
         this.buttons[0].setActive(true);
         float HB_W = (this.buttons[0]).hb.width;
         float leftSideOffset = Settings.WIDTH / 2.0F - HB_W * this.buttons.length / 2.0F;

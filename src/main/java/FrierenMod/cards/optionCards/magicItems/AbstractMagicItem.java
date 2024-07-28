@@ -48,13 +48,6 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.propCanChooseMaxAmt = 0;
     }
 
-    @Override
-    public void initSpecifiedAttributes() {
-        super.initSpecifiedAttributes();
-        if (this.magicItemRarity == MagicItemRarity.PROP)
-            this.glowColor = Color.GREEN;
-    }
-
     public void takeEffect() {
     }
 

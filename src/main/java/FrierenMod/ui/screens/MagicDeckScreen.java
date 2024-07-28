@@ -1,9 +1,11 @@
 package FrierenMod.ui.screens;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.effects.ExhaustMagicItemEffect;
 import FrierenMod.effects.MagicPropUsingEffect;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.utils.ModInformation;
+import basemod.ReflectionHacks;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -20,7 +22,6 @@ import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBar;
 import com.megacrit.cardcrawl.screens.mainMenu.ScrollBarListener;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -291,6 +292,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
                 if (hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem) hoveredCard).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
                     if (this.isUsingProp == null) {
                         this.isUsingProp = hoveredCard;
+                        this.isUsingProp.glowColor = Color.GREEN;
                         this.isUsingProp.beginGlowing();
                     } else if (this.isUsingProp == hoveredCard) {
                         cancelUsingProp();
@@ -376,6 +378,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     private void cancelUsingProp() {
         if (this.isUsingProp != null) {
+            this.isUsingProp.glowColor = ((Color) ReflectionHacks.getPrivateStatic(AbstractCard.class, "BLUE_BORDER_GLOW_COLOR")).cpy();
             this.isUsingProp.stopGlowing();
             this.isUsingProp = null;
         }
@@ -390,8 +393,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     private static void removeProp(AbstractCard card) {
         if (MagicDeckField.getDeck().contains(card) && card instanceof AbstractMagicItem && ((AbstractMagicItem) card).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
-            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(card));
-            MagicDeckField.getDeck().removeCard(card);
+            AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(card));
         }
     }
 
