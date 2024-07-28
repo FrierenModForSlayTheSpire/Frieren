@@ -2,6 +2,8 @@ package FrierenMod.rewards;
 
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CardPoolHelper;
+import FrierenMod.patches.fields.RandomField;
+import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
@@ -18,13 +20,16 @@ import com.megacrit.cardcrawl.rewards.RewardSave;
 import java.util.ArrayList;
 
 import static FrierenMod.patches.MagicItemRewardPatch.TypePatch.MAGIC_ITEM_REWARD;
-import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.player;
 
 public class MagicItemReward extends CustomReward {
 
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(MagicItemReward.class.getSimpleName())).TEXT;
     private static final Texture ICON = ImageMaster.loadImage(PublicRes.MAGIC_ITEM_REWARD_ICON);
+    public static final int baseRareMagicItemChance = 3;
+
+    public static final int baseUncommonMagicItemChance = 17;
+    public static final int basePropMagicItemChance = 50;
 
     public MagicItemReward(String saveString) {
         super(ICON, TEXT[0], MAGIC_ITEM_REWARD);
@@ -78,6 +83,21 @@ public class MagicItemReward extends CustomReward {
         for (int i = 0; i < numCards; i++) {
             AbstractMagicItem.MagicItemRarity rarity = rollRarity();
             AbstractCard card = null;
+            switch (rarity) {
+                case COMMON:
+                    RandomField.addMagicItemRandomizer(-RandomField.magicItemBlizzGrowth);
+                    if (RandomField.getMagicItemRandomizer() <= RandomField.magicItemBlizzStartOffset) {
+                        RandomField.magicItemRandomizer.set(RandomField.magicItemBlizzMaxOffset);
+                    }
+                case UNCOMMON:
+                case PROP:
+                    break;
+                case RARE:
+                    RandomField.magicItemRandomizer.set(RandomField.magicItemBlizzStartOffset);
+                    break;
+                default:
+                    Log.logger.info("WTF?");
+            }
             boolean containsDupe = true;
             while (containsDupe) {
                 containsDupe = false;
@@ -99,13 +119,18 @@ public class MagicItemReward extends CustomReward {
     }
 
     public static AbstractMagicItem.MagicItemRarity rollRarity() {
-        int rnd = cardRandomRng.random(99);
-//        if (rnd <= 3)
-//            return 2;
-//        if (rnd <= 20)
-//            return 3;
-        if (rnd <= 40)
+        int roll = RandomField.getMagicItemRng().random(99);
+        roll += RandomField.getMagicItemRandomizer();
+        return getMagicItemRarity(roll);
+    }
+
+    private static AbstractMagicItem.MagicItemRarity getMagicItemRarity(int roll) {
+        if (roll < baseRareMagicItemChance)
+            return AbstractMagicItem.MagicItemRarity.RARE;
+        if (roll < baseRareMagicItemChance + baseUncommonMagicItemChance)
             return AbstractMagicItem.MagicItemRarity.UNCOMMON;
+        if (roll < baseRareMagicItemChance + baseUncommonMagicItemChance + basePropMagicItemChance)
+            return AbstractMagicItem.MagicItemRarity.PROP;
         return AbstractMagicItem.MagicItemRarity.COMMON;
     }
 

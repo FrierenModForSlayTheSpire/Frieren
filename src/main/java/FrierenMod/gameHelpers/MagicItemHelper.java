@@ -4,6 +4,7 @@ import FrierenMod.ModManager;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
+import FrierenMod.patches.fields.RandomField2;
 import FrierenMod.utils.Log;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -21,10 +22,13 @@ public class MagicItemHelper {
 
     public static final String DECK_SAVE_NAME = "magic_deck";
     public static final String MAGIC_ITEM_RNG_COUNT_SAVE_NAME = "magic_item_seed_count";
+    public static final String MAGIC_ITEM_RANDOMIZER_SAVE_NAME = "magic_item_randomizer";
+    public static final String MAGIC_ITEM_CHANCE_SAVE_NAME = "magic_item_chance";
+    public static final String MAGIC_ITEM_RANDOM_COUNT_SAVE_NAME = "magic_item_random_seed_count";
 
     public static void save() {
         saveMagicDeck();
-        saveMagicItemRngCount();
+        saveRandomNumber();
     }
 
     public static void load() {
@@ -43,7 +47,9 @@ public class MagicItemHelper {
 
     private static void loadRandomNumber() {
         RandomField.magicItemRng.set(null);
-        System.out.println("123");
+        RandomField.magicItemRandomizer.set(RandomField.magicItemBlizzStartOffset);
+        RandomField2.blizzardMagicItemMod.set(0);
+        RandomField.magicItemRandomRng.set(null);
     }
 
     private static void saveMagicDeck() {
@@ -59,16 +65,44 @@ public class MagicItemHelper {
         ModManager.saveData.putValue(DECK_SAVE_NAME, factorsArray);
     }
 
-    private static void saveMagicItemRngCount() {
+    private static void saveRandomNumber() {
         ModManager.saveData.putValue(MAGIC_ITEM_RNG_COUNT_SAVE_NAME, null);
         if (RandomField.getMagicItemRng() != null) {
             ModManager.saveData.putValue(MAGIC_ITEM_RNG_COUNT_SAVE_NAME, RandomField.getMagicItemRng().counter);
         } else {
             Log.logger.info("WHY NO MAGIC ITEM RNG?");
         }
+        if (RandomField.getMagicItemRandomizer() != null) {
+            ModManager.saveData.putValue(MAGIC_ITEM_RANDOMIZER_SAVE_NAME, RandomField.getMagicItemRandomizer());
+        } else {
+            Log.logger.info("WHY NO MAGIC ITEM RANDOMIZER?");
+        }
+        if (RandomField2.getBlizzardMagicItemMod() != null) {
+            ModManager.saveData.putValue(MAGIC_ITEM_CHANCE_SAVE_NAME, RandomField2.getBlizzardMagicItemMod());
+        } else {
+            Log.logger.info("WHY NO MAGIC ITEM MOD?");
+        }
+        if (RandomField.getMagicItemRandomRng() != null) {
+            ModManager.saveData.putValue(MAGIC_ITEM_RANDOM_COUNT_SAVE_NAME, RandomField.getMagicItemRandomRng().counter);
+        } else {
+            Log.logger.info("WHY NO MAGIC ITEM RANDOM?");
+        }
     }
+
     public static Integer getMagicItemRngCount() {
         return Integer.valueOf(ModManager.saveData.getValue(MAGIC_ITEM_RNG_COUNT_SAVE_NAME));
+    }
+
+    public static Integer getMagicItemRandomizer() {
+        return Integer.valueOf(ModManager.saveData.getValue(MAGIC_ITEM_RANDOMIZER_SAVE_NAME));
+    }
+
+    public static Integer getMagicItemChance() {
+        return Integer.valueOf(ModManager.saveData.getValue(MAGIC_ITEM_CHANCE_SAVE_NAME));
+    }
+
+    public static Integer getMagicItemRandomRngCount() {
+        return Integer.valueOf(ModManager.saveData.getValue(MAGIC_ITEM_RANDOM_COUNT_SAVE_NAME));
     }
 
     private static ArrayList<AbstractMagicItem> getAllMagicItems() {
