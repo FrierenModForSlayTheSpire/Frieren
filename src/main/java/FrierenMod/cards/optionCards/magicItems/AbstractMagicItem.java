@@ -9,6 +9,7 @@ import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
+import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -22,6 +23,7 @@ import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public abstract class AbstractMagicItem extends AbstractBaseCard {
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
@@ -33,6 +35,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public int rewardMultipleCoefficient;
     public int rewardAddCoefficient;
     public AbstractPlayer p = AbstractDungeon.player;
+    public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicItemTip")).TEXT;
 
     public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -41,13 +44,19 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.manaNeedAddCoefficient = 0;
         this.rewardMultipleCoefficient = 1;
         this.rewardAddCoefficient = 0;
-        if(this.magicItemRarity == MagicItemRarity.PROP)
+    }
+
+    @Override
+    public void initSpecifiedAttributes() {
+        super.initSpecifiedAttributes();
+        if (this.magicItemRarity == MagicItemRarity.PROP)
             this.glowColor = Color.GREEN;
     }
 
     public void takeEffect() {
     }
-    public boolean propTakeEffect(AbstractMagicItem factor1, AbstractMagicItem factor2){
+
+    public boolean propTakeEffect(AbstractMagicItem factor1, AbstractMagicItem factor2) {
         return false;
     }
 
@@ -107,7 +116,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.extraActions = new ArrayList<>();
         if (nextAction != null && nextAction.length > 0)
             this.extraActions.addAll(Arrays.asList(nextAction));
-        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX,this);
+        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX, this);
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
@@ -115,7 +124,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public void loadMagicFactor(int chantX) {
         int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
         this.extraActions = new ArrayList<>();
-        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX,this);
+        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX, this);
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
@@ -175,6 +184,18 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
             ((AbstractMagicItem) c).currentSlot = this.currentSlot;
         }
         return c;
+    }
+
+    public List<TooltipInfo> getCustomTooltips() {
+        if (this.magicItemRarity == MagicItemRarity.PROP){
+            this.tips.clear();
+            this.tips.add(new TooltipInfo(TEXT[2], TEXT[3]));
+        }
+        else {
+            this.tips.clear();
+            this.tips.add(new TooltipInfo(TEXT[0], TEXT[1]));
+        }
+        return this.tips;
     }
 
     public enum ShowPlaceType {

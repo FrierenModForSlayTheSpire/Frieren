@@ -117,9 +117,9 @@
   },
   "FrierenMod:BetaProp1": {
     "NAME": "测试魔具1",
-    "DESCRIPTION": "选择1张 [#ff2c1d]未装载[#ff2c1d] 的 frierenmod:魔法因子 替换1张 [#9ffc4f]已装载[#9ffc4f] 的 frierenmod:魔法因子 。",
+    "DESCRIPTION": "选择1张 [#ff2c1d]未装载[#ff2c1d] 和1张 [#9ffc4f]已装载[#9ffc4f] *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
-      "选择1张 [#ff2c1d]未装载[#ff2c1d] 的 frierenmod:魔法因子 替换1张 [#9ffc4f]已装载[#9ffc4f] 的 frierenmod:魔法因子 。"
+      "选择1张 [#ff2c1d]未装载[#ff2c1d] 和1张 [#9ffc4f]已装载[#9ffc4f] *魔法因子 ，使它们 frierenmod:槽位 互换。"
     ]
   },
   "FrierenMod:SwampSpell": {

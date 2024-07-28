@@ -15,7 +15,8 @@ public class MagicDeckPanel extends TopPanelItem {
     public static final String ID = ModInformation.makeID(MagicDeckPanel.class.getSimpleName());
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ID).TEXT;
     private static final float TOP_RIGHT_TIP_X = 1550.0F * Settings.scale;
-    private static final float TIP_Y = Settings.HEIGHT - 120.0F * Settings.scale, TIP_OFF_X = 140.0F * Settings.scale;
+    private static final float TIP_Y = Settings.HEIGHT - 120.0F * Settings.scale, TIP_OFF_X = 140.0F * Settings.scale, TIP_OFF_Y = 100.0F * Settings.scale;
+    ;
 
     public MagicDeckPanel() {
         super(ImageMaster.loadImage(PublicRes.MAGIC_BAG_ICON), ID);
