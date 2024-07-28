@@ -1,12 +1,16 @@
 package FrierenMod.ui.panels;
 
+import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import basemod.BaseMod;
 import basemod.TopPanelItem;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
@@ -31,5 +35,12 @@ public class MagicDeckPanel extends TopPanelItem {
         this.angle = MathHelper.angleLerpSnap(this.angle, 15.0F);
         this.tint.a = 0.25F;
         TipHelper.renderGenericTip(TOP_RIGHT_TIP_X, TIP_Y, TEXT[0], TEXT[1]);
+    }
+
+    @Override
+    public void render(SpriteBatch sb) {
+        super.render(sb);
+        FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont,
+                Integer.toString(MagicDeckField.getDeck().size()), this.x + 58.0F * Settings.scale, this.y + 25.0F * Settings.scale, Color.WHITE.cpy());
     }
 }
