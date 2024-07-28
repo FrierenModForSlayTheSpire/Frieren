@@ -38,6 +38,8 @@ public class BetaProp1 extends AbstractMagicItem {
         int tmp = item1.currentSlot;
         item1.currentSlot = item2.currentSlot;
         item2.currentSlot = tmp;
+        item1.superFlash();
+        item2.superFlash();
         return true;
     }
 }
