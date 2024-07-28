@@ -179,6 +179,13 @@
       " [%s] 选择中"
     ]
   },
+  "FrierenMod:MagicDeckSortHeader": {
+    "TEXT": [
+      "装载槽位",
+      "稀有度",
+      "类型"
+    ]
+  },
   "FrierenMod:MagicItemReward": {
     "TEXT": [
       "将一张 #y魔法因子 或 #y魔具 加入你的魔法牌组",

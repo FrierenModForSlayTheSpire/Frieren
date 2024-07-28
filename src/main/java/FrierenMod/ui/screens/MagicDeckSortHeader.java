@@ -1,44 +1,85 @@
 package FrierenMod.ui.screens;
 
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.compendium.CardLibSortHeader;
 import com.megacrit.cardcrawl.screens.mainMenu.SortHeaderButton;
-import com.megacrit.cardcrawl.screens.mainMenu.SortHeaderButtonListener;
 
 import java.util.Comparator;
 
 public class MagicDeckSortHeader extends CardLibSortHeader {
-    private static final int BAR_W = 1334;
-
-    private static final int BAR_H = 102;
+    private static final Comparator<AbstractCard> BY_LOAD;
 
     private static final Comparator<AbstractCard> BY_TYPE;
+    private static final Comparator<AbstractCard> BY_RARITY;
 
-    private static final Comparator<AbstractCard> ALPHA;
-
-    private static final Comparator<AbstractCard> BY_COST;
-
-    private static final Comparator<AbstractCard> PURE_REVERSE;
-
-    private MagicDeckScreen magicDeckScreen;
+    private final MagicDeckScreen magicDeckScreen;
 
     private float scrollY;
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(MagicDeckSortHeader.class.getSimpleName())).TEXT;
 
     static {
-        BY_TYPE = (Comparator.comparing(a -> (a.type.name() + a.name)));
-        ALPHA = (Comparator.comparing(a -> a.name));
-        BY_COST = (Comparator.comparing(a -> ("" + a.cost + a.name)));
-        PURE_REVERSE = ((a, b) -> a.cardID.equals(b.cardID) ? 0 : -1);
+        BY_LOAD = (Comparator.comparing((a) -> {
+            if (a instanceof AbstractMagicItem) {
+                if (((AbstractMagicItem) a).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
+                    return 4;
+                } else {
+                    if (((AbstractMagicItem) a).currentSlot == -1)
+                        return 3;
+                    else
+                        return ((AbstractMagicItem) a).currentSlot;
+                }
+            } else
+                return 5;
+        }));
+        BY_TYPE = (Comparator.comparing(a -> {
+            if (a instanceof AbstractMagicItem) {
+                if (((AbstractMagicItem) a).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
+                    return -1;
+                } else {
+                    if (((AbstractMagicItem) a).currentSlot == -1)
+                        return 3;
+                    else
+                        return ((AbstractMagicItem) a).currentSlot;
+                }
+            } else
+                return 4;
+        }));
+        BY_RARITY = (Comparator.comparing(a -> {
+            if (a instanceof AbstractMagicItem) {
+                switch (((AbstractMagicItem) a).magicItemRarity) {
+                    case BASIC:
+                        return 1;
+                    case COMMON:
+                        return 2;
+                    case UNCOMMON:
+                        return 3;
+                    case PROP:
+                        return 4;
+                    case RARE:
+                        return 5;
+                }
+            }
+            return 6;
+        }));
     }
 
     public MagicDeckSortHeader(MagicDeckScreen magicDeckScreen) {
         super(null);
         this.magicDeckScreen = magicDeckScreen;
-        this.buttons[0] = new SortHeaderButton(TEXT[5], START_X, 0.0F, this);
+        float xPosition = START_X;
+        SortHeaderButton loadButton = new SortHeaderButton(TEXT[0], xPosition, 0.0F, this);
+        xPosition += SPACE_X;
+        SortHeaderButton rarityButton = new SortHeaderButton(TEXT[1], xPosition, 0.0F, this);
+        xPosition += SPACE_X;
+        SortHeaderButton typeButton = new SortHeaderButton(TEXT[2], xPosition, 0.0F, this);
+        this.buttons = new SortHeaderButton[]{loadButton, rarityButton, typeButton};
         this.buttons[0].setActive(true);
         float HB_W = (this.buttons[0]).hb.width;
         float leftSideOffset = Settings.WIDTH / 2.0F - HB_W * this.buttons.length / 2.0F;
@@ -52,19 +93,11 @@ public class MagicDeckSortHeader extends CardLibSortHeader {
         Comparator<AbstractCard> order;
         button.setActive(true);
         if (button == this.buttons[0]) {
-            if (isAscending) {
-                this.magicDeckScreen.setSortOrder(null);
-            } else {
-                this.magicDeckScreen.setSortOrder(PURE_REVERSE);
-            }
-            return;
-        }
-        if (button == this.buttons[1]) {
-            order = BY_TYPE;
+            order = BY_LOAD;
+        } else if (button == this.buttons[1]) {
+            order = BY_RARITY;
         } else if (button == this.buttons[2]) {
-            order = BY_COST;
-        } else if (button == this.buttons[3]) {
-            order = ALPHA;
+            order = BY_TYPE;
         } else {
             return;
         }
@@ -73,7 +106,8 @@ public class MagicDeckSortHeader extends CardLibSortHeader {
         this.magicDeckScreen.setSortOrder(order);
     }
 
-    protected void updateScrollPositions() {}
+    protected void updateScrollPositions() {
+    }
 
     public void render(SpriteBatch sb) {
         sb.setColor(Color.WHITE.cpy());
