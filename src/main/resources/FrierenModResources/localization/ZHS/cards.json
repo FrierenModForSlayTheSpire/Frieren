@@ -124,9 +124,9 @@
   },
   "FrierenMod:BetaFactor10": {
     "NAME": "测试因子10",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，随机将 !SM! 张耗能为0且具有 虚无 和 消耗 的 frierenmod:传说魔法 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，随机将 !SM! 张 frierenmod:传说魔法 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中3X张 *魔力 ，随机将 X 张耗能为0且具有 虚无 和 消耗 的 frierenmod:传说魔法 放入牌堆。"
+      " 消耗 牌堆中2X张 *魔力 ，随机将 X 张 frierenmod:传说魔法 放入牌堆。"
     ]
   },
   "FrierenMod:BetaFactor11": {

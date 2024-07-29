@@ -20,9 +20,6 @@ public class BetaFactor10 extends AbstractMagicItem {
     public void takeEffect() {
         for (int i = 0; i < secondMagicNumber; i++) {
             AbstractCard c = CardPoolHelper.getRandomCard(CardPoolHelper.PoolType.LEGENDARY_SPELL);
-            c.cost = 0;
-            c.exhaust = true;
-            c.isEthereal = true;
             switch (this.currentSlot){
                 case 0:
                     addToBot(new MakeTempCardInDrawPileAction(c,1,true,true));
