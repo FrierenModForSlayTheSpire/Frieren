@@ -8,16 +8,25 @@ import FrierenMod.cards.optionCards.magicItems.BaseFactorGamma;
 import FrierenMod.cards.optionCards.magicItems.BetaProp1;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicDeckField;
+import FrierenMod.patches.fields.RandomField;
+import FrierenMod.patches.fields.RandomField2;
+import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.utils.Config;
+import FrierenMod.utils.Log;
 import basemod.interfaces.OnPlayerTurnStartSubscriber;
 import basemod.interfaces.OnStartBattleSubscriber;
+import basemod.interfaces.PostBattleSubscriber;
 import basemod.interfaces.PostCreateStartingDeckSubscriber;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
-public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber{
+public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -69,4 +78,28 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
         }
     }
 
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        AbstractRoom currRoom = AbstractDungeon.getCurrRoom();
+        int chance = 0;
+        if (currRoom instanceof MonsterRoomElite) {
+            chance = 70;
+            chance += RandomField2.getBlizzardMagicItemMod();
+        } else if (currRoom instanceof MonsterRoom) {
+            if (!AbstractDungeon.getMonsters().haveMonstersEscaped()) {
+                chance = 40;
+                chance += RandomField2.getBlizzardMagicItemMod();
+            }
+        } else if (currRoom instanceof EventRoom) {
+            chance = 40;
+            chance += RandomField2.getBlizzardMagicItemMod();
+        }
+        Log.logger.info("MAGIC ITEM CHANCE: {}", chance);
+        if (RandomField.getMagicItemRng().random(0, 99) < chance || Config.IN_DEV) {
+            MagicItemReward.addMagicItemRewardToRoom();
+            RandomField2.addBlizzardMagicItemMod(-10);
+        } else {
+            RandomField2.addBlizzardMagicItemMod(10);
+        }
+    }
 }

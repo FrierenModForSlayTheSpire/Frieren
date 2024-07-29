@@ -3,23 +3,18 @@ package FrierenMod.patches;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.FastMagicItemObtainEffect;
 import FrierenMod.patches.fields.MagicDeckField;
-import FrierenMod.patches.fields.RandomField;
-import FrierenMod.patches.fields.RandomField2;
-import FrierenMod.rewards.MagicItemReward;
-import FrierenMod.utils.Log;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.math.Vector2;
-import com.evacipated.cardcrawl.modthespire.lib.*;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.Soul;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.EventRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoom;
-import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 
 
@@ -59,33 +54,6 @@ public class MagicItemRewardPatch {
                 return SpireReturn.Return();
             }
             return SpireReturn.Continue();
-        }
-    }
-
-    @SpirePatch(clz = AbstractRoom.class, method = "addCardToRewards")
-    public static class PatchAddCardToRewards {
-        @SpirePostfixPatch
-        public static void Postfix(AbstractRoom __instance) {
-            int chance = 0;
-            if (__instance instanceof MonsterRoomElite) {
-                chance = 70;
-                chance += RandomField2.getBlizzardMagicItemMod();
-            } else if (__instance instanceof MonsterRoom) {
-                if (!AbstractDungeon.getMonsters().haveMonstersEscaped()) {
-                    chance = 40;
-                    chance += RandomField2.getBlizzardMagicItemMod();
-                }
-            } else if (__instance instanceof EventRoom) {
-                chance = 40;
-                chance += RandomField2.getBlizzardMagicItemMod();
-            }
-            Log.logger.info("MAGIC ITEM CHANCE: {}", chance);
-            if (RandomField.getMagicItemRng().random(0, 99) < chance || Settings.isDebug) {
-                MagicItemReward.addMagicItemRewardToRoom();
-                RandomField2.addBlizzardMagicItemMod(-10);
-            } else {
-                RandomField2.addBlizzardMagicItemMod(10);
-            }
         }
     }
 }

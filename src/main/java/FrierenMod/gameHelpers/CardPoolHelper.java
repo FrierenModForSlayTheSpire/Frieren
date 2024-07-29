@@ -137,7 +137,7 @@ public class CardPoolHelper {
 
     public static AbstractCard getRandomMagicItem(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
-        return list.get(cardRandomRng.random(list.size() - 1));
+        return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
     }
 
     public enum PoolType {
