@@ -8,6 +8,7 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -257,5 +258,9 @@ public abstract class AbstractBaseCard extends CustomCard {
     }
 
     public void afterSynchroFinished() {
+    }
+    public static class Enum{
+        @SpireEnum
+        public static AbstractCard.CardTags CAN_NOT_RANDOM_GENERATED_IN_COMBAT;
     }
 }

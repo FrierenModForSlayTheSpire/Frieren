@@ -1,5 +1,6 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.magicItems.*;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
@@ -55,6 +56,7 @@ public class CardPoolHelper {
         retVal.add(new Famehameha());
         retVal.add(new FairyTaleEnd());
         retVal.add(new RustCleanMagic());
+        retVal.removeIf(c -> c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT));
         return retVal;
     }
 
