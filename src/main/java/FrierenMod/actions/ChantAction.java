@@ -99,7 +99,7 @@ public class ChantAction extends AbstractGameAction {
                         boolean haveTriggered = false;
                         for (AbstractCard f : stanceChoices) {
                             if (f instanceof AbstractMagicItem) {
-                                ((AbstractMagicItem) f).takeEffect();
+                                f.onChoseThisOption();
                                 if (!haveTriggered) {
                                     ((AbstractMagicItem) f).triggerPowers();
                                     ((AbstractMagicItem) f).triggerCards();
