@@ -699,8 +699,8 @@
   },
   "FrierenMod:BirdCapturingSpell": {
     "NAME": "捕鸟魔法",
-    "DESCRIPTION": " *击晕 一个鸟类，或者长的像鸟类的敌人3回合。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL *击晕 一个鸟类，或者长的像鸟类的敌人3回合。",
+    "DESCRIPTION": " *击晕 一个鸟类，或者长的像鸟类的敌人3回合。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL *击晕 一个鸟类，或者长的像鸟类的敌人3回合。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "这个目标长得并不像鸟..."
     ]
