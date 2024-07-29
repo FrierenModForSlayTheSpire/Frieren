@@ -1,6 +1,7 @@
 package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.MagicItemHelper;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -33,8 +34,14 @@ public class BetaProp4 extends AbstractMagicItem {
         }
         List<Integer> newSlotNumber = Arrays.asList(0, 1, 2);
         Collections.shuffle(newSlotNumber, new Random(RandomField.getMagicItemRandomRng().randomLong()));
-        for (int i = 0; i < propCanChooseMaxAmt; i++)
-            ((AbstractMagicItem) chosenCards.get(i)).currentSlot = newSlotNumber.get(i);
+        for (int i = 0; i < propCanChooseMaxAmt; i++){
+            AbstractMagicItem newItem = ((AbstractMagicItem) chosenCards.get(i));
+            newItem.currentSlot = newSlotNumber.get(i);
+            newItem.superFlash();
+            AbstractMagicItem oldItem = MagicItemHelper.getLoadedMagicFactor()[i];
+            oldItem.currentSlot = -1;
+            oldItem.superFlash();
+        }
         return true;
     }
 }

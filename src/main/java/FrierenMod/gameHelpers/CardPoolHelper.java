@@ -97,16 +97,17 @@ public class CardPoolHelper {
                 }
             }
         }
-        switch (rarity) {
-            case COMMON:
-                return common;
-            case UNCOMMON:
-                return uncommon;
-            case RARE:
-                return rare;
-            case PROP:
-                return prop;
-        }
+        if (rarity != null)
+            switch (rarity) {
+                case COMMON:
+                    return common;
+                case UNCOMMON:
+                    return uncommon;
+                case RARE:
+                    return rare;
+                case PROP:
+                    return prop;
+            }
         return srcCardPool;
     }
 
@@ -126,7 +127,7 @@ public class CardPoolHelper {
                     if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP)
                         retVal.add(c);
                 }
-                return retVal.get(RandomField.getMagicItemRandomRng().random(list.size() - 1));
+                return retVal.get(RandomField.getMagicItemRandomRng().random(retVal.size() - 1));
             default:
                 list = null;
                 Log.logger.info("WTF?");

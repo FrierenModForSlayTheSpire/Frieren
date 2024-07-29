@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class MagicItemAdd extends ConsoleCommand {
     public MagicItemAdd() {
-        this.requiresPlayer = true;
+        this.requiresPlayer = false;
         this.minExtraTokens = 1;
         this.maxExtraTokens = 3;
     }
