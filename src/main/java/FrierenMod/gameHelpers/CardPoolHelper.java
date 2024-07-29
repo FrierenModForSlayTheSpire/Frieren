@@ -5,6 +5,7 @@ import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
+import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -65,6 +66,15 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaFactor6());
         srcCardPool.add(new BetaFactor7());
         srcCardPool.add(new BetaFactor8());
+        srcCardPool.add(new BetaFactor9());
+        srcCardPool.add(new BetaFactor10());
+        srcCardPool.add(new BetaFactor11());
+        srcCardPool.add(new BetaProp1());
+        srcCardPool.add(new BetaProp2());
+        srcCardPool.add(new BetaProp3());
+        srcCardPool.add(new BetaProp4());
+        srcCardPool.add(new BetaProp5());
+        srcCardPool.add(new BetaProp6());
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();
@@ -109,6 +119,14 @@ public class CardPoolHelper {
             case LEGENDARY_SPELL:
                 list = getLegendarySpellCardPool();
                 break;
+            case MAGIC_FACTOR:
+                list = getMagicItemCardPool(null);
+                ArrayList<AbstractCard> retVal = new ArrayList<>();
+                for (AbstractCard c : list) {
+                    if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP)
+                        retVal.add(c);
+                }
+                return retVal.get(RandomField.getMagicItemRandomRng().random(list.size() - 1));
             default:
                 list = null;
                 Log.logger.info("WTF?");
@@ -124,6 +142,7 @@ public class CardPoolHelper {
 
     public enum PoolType {
         CHANT,
-        LEGENDARY_SPELL
+        LEGENDARY_SPELL,
+        MAGIC_FACTOR
     }
 }

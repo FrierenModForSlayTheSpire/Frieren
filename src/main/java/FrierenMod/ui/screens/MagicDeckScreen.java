@@ -368,7 +368,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     private void updatePropUse() {
-        if (this.isUsingProp != null && isUsingProp instanceof AbstractMagicItem && !chosenCards.isEmpty() && chosenCards.size() >= ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt) {
+        if (this.isUsingProp != null && isUsingProp instanceof AbstractMagicItem && chosenCards.size() >= ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt) {
             if (((AbstractMagicItem) this.isUsingProp).propTakeEffect(chosenCards)) {
                 removeProp(isUsingProp);
             }
