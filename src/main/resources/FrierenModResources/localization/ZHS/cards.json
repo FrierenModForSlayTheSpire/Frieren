@@ -531,8 +531,8 @@
   },
   "FrierenMod:PreciseChant": {
     "NAME": "精准咏唱",
-    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆， 每有一张 *魔力 就 frierenmod:咏唱 一次。"
+    "DESCRIPTION": "尽可能 frierenmod:咏唱 对应牌堆中的所有 *魔力 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "尽可能 frierenmod:咏唱 对应牌堆中的所有 *魔力 。"
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "魔力膨胀",
@@ -592,7 +592,7 @@
   },
   "FrierenMod:FinalChant": {
     "NAME": "终极咏唱",
-    "DESCRIPTION": " frierenmod:咏唱 你所有的 *魔力 ，无论它们在哪 。"
+    "DESCRIPTION": "尽可能 frierenmod:咏唱 所有牌堆的所有的 *魔力 。"
   },
   "FrierenMod:Kiss": {
     "NAME": " 飞吻(杀伤力极强!)",

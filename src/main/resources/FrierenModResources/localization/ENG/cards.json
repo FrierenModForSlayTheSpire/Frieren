@@ -497,8 +497,8 @@
   },
   "FrierenMod:PreciseChant": {
     "NAME": "Precise Chant",
-    "DESCRIPTION": "Choose:Draw pile, hand or discard pile, Chant the amount as the *Mana amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION":"Choose:Draw pile, hand or discard pile, Chant the amount as the *Mana amount."
+    "DESCRIPTION": "frierenmod:Chant ALL *Mana in the corresponding pile as possible. NL Exhaust.",
+    "UPGRADE_DESCRIPTION":"frierenmod:Chant ALL *Mana in the corresponding pile as possible."
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "Mana Expansion",
@@ -558,7 +558,7 @@
   },
   "FrierenMod:FinalChant": {
     "NAME": "Final Chant",
-    "DESCRIPTION": "frierenmod:Chant ALL *Mana, WHEREVER are they."
+    "DESCRIPTION": "frierenmod:Chant ALL *Mana as possible, WHEREVER are they."
   },
   "FrierenMod:Kiss": {
     "NAME": "Kiss(very lethal!)",
