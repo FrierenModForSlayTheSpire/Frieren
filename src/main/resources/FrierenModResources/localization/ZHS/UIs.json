@@ -174,7 +174,7 @@
   },
   "FrierenMod:MagicDeckScreen": {
     "TEXT": [
-      "取消",
+      "返回",
       "魔具 [%s] 使用中",
       " [%s] 选择中"
     ]
