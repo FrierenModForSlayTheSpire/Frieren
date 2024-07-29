@@ -86,7 +86,7 @@ public class ChantAction extends AbstractGameAction {
                 manaNums[2] = CombatHelper.getManaNumInDiscardPile();
                 for (int i = 0; i < 3; i++) {
                     int chantX = getChantX(manaNums[i], chantChoices[i]);
-                    if (CombatHelper.canActivateSlot(chantX, i)) {
+                    if (CombatHelper.canActivateSlot(chantX, i) && chantX > 0) {
                         chantChoices[i].loadMagicFactor(chantX);
                         stanceChoices.add(chantChoices[i]);
                     }
