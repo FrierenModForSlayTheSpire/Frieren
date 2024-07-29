@@ -185,7 +185,7 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (this.isChantCard && CombatHelper.cannotChant(CombatHelper.getManaNeedWhenChant(chantX))) {
+        if (this.isChantCard && CombatHelper.cannotChant(chantX)) {
             this.cantUseMessage = cantUseTEXT[0];
             return false;
         }

@@ -1,78 +1,130 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.ChantDiscardPile;
-import FrierenMod.cards.optionCards.ChantDrawPile;
-import FrierenMod.cards.optionCards.ChantHand;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
 
 public class ChantAction extends AbstractGameAction {
-    private final int chantX;
-    private final int manaNeed;
-    private final AbstractGameAction[] nextAction;
-    private final AbstractCard cardToReturn;
-    private int blockGain = 0;
+    private int chantX;
+    private AbstractGameAction[] nextAction;
+    private AbstractCard cardToReturn;
+    private Integer blockGain = null;
+    private final ChantType chantType;
 
     public ChantAction(int chantX) {
         this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
         this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
-        this.nextAction = null;
+        this.chantType = ChantType.NORMAL;
     }
 
     public ChantAction(int chantX, int blockGain) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
-        this.nextAction = null;
+        this(chantX);
         this.blockGain = blockGain;
     }
 
     public ChantAction(int chantX, AbstractGameAction... nextAction) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = null;
+        this(chantX);
         this.nextAction = nextAction;
     }
 
     public ChantAction(int chantX, AbstractCard cardToReturn) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
+        this(chantX);
         this.cardToReturn = cardToReturn;
-        this.nextAction = null;
     }
 
     public ChantAction(int chantX, AbstractCard cardToReturn, AbstractGameAction... nextAction) {
-        this.chantX = chantX;
-        this.manaNeed = CombatHelper.getManaNeedWhenChant(chantX);
-        this.actionType = ActionType.WAIT;
-        this.cardToReturn = cardToReturn;
+        this(chantX, cardToReturn);
         this.nextAction = nextAction;
+    }
+
+    public ChantAction(ChantType type) {
+        this.chantType = type;
     }
 
     @Override
     public void update() {
-        ArrayList<AbstractCard> stanceChoices = new ArrayList<>();
-        if (CombatHelper.canChantFromDrawPile(this.manaNeed)) {
-            stanceChoices.add(new ChantDrawPile(this.manaNeed, this.chantX, this.blockGain, this.nextAction));
-        }
-        if (CombatHelper.canChantFromHand(this.manaNeed)) {
-            stanceChoices.add(new ChantHand(this.manaNeed, this.chantX, this.cardToReturn, this.nextAction));
-        }
-        if (CombatHelper.canChantFromDiscardPile(this.manaNeed)) {
-            stanceChoices.add(new ChantDiscardPile(this.manaNeed, this.chantX, this.nextAction));
-        }
-        if (!stanceChoices.isEmpty()) {
-            this.addToTop(new ChooseOneAction(stanceChoices));
+        ArrayList<AbstractCard> stanceChoices;
+        AbstractMagicItem[] chantChoices = CombatHelper.getChantChoices();
+        switch (this.chantType) {
+            case NORMAL:
+                stanceChoices = new ArrayList<>();
+                if (CombatHelper.canActivateSlot(chantX, 0)) {
+                    chantChoices[0].loadMagicFactor(chantX, nextAction);
+                    if (this.blockGain != null)
+                        chantChoices[0].extraActions.add(new GainBlockAction(AbstractDungeon.player, this.blockGain));
+                    stanceChoices.add(chantChoices[0]);
+                }
+                if (CombatHelper.canActivateSlot(chantX, 1)) {
+                    chantChoices[1].loadMagicFactor(chantX, nextAction);
+                    if (cardToReturn != null) {
+                        cardToReturn.returnToHand = true;
+                        cardToReturn.upgrade();
+                    }
+                    stanceChoices.add(chantChoices[1]);
+                }
+                if (CombatHelper.canActivateSlot(chantX, 2)) {
+                    chantChoices[2].loadMagicFactor(chantX, nextAction);
+                    stanceChoices.add(chantChoices[2]);
+                }
+                if (!stanceChoices.isEmpty()) {
+                    this.addToTop(new ChooseOneAction(stanceChoices));
+                }
+                break;
+            case PRECISE:
+            case FINAL:
+                stanceChoices = new ArrayList<>();
+                int[] manaNums = new int[3];
+                manaNums[0] = CombatHelper.getManaNumInDrawPile();
+                manaNums[1] = CombatHelper.getManaNumInHand();
+                manaNums[2] = CombatHelper.getManaNumInDiscardPile();
+                for (int i = 0; i < 3; i++) {
+                    int chantX = getChantX(manaNums[i], chantChoices[i]);
+                    if (CombatHelper.canActivateSlot(chantX, i)) {
+                        chantChoices[i].loadMagicFactor(chantX);
+                        stanceChoices.add(chantChoices[i]);
+                    }
+                }
+                if (this.chantType == ChantType.PRECISE) {
+                    if (!stanceChoices.isEmpty())
+                        this.addToTop(new ChooseOneAction(stanceChoices));
+                } else {
+                    if (!stanceChoices.isEmpty()) {
+                        boolean haveTriggered = false;
+                        for (AbstractCard f : stanceChoices) {
+                            if (f instanceof AbstractMagicItem) {
+                                ((AbstractMagicItem) f).takeEffect();
+                                if (!haveTriggered) {
+                                    ((AbstractMagicItem) f).triggerPowers();
+                                    ((AbstractMagicItem) f).triggerCards();
+                                    haveTriggered = true;
+                                }
+                            }
+                        }
+                    }
+                }
+                break;
+            default:
+                Log.logger.info("ERROR: Unknown Chant Type !!!");
+                break;
         }
         this.isDone = true;
     }
+
+    public enum ChantType {
+        NORMAL,
+        PRECISE,
+        FINAL
+    }
+
+    private static int getChantX(int manaAmt, AbstractMagicItem f) {
+        return (manaAmt - f.manaNeedAddCoefficient) / f.manaNeedMultipleCoefficient;
+    }
+
 }

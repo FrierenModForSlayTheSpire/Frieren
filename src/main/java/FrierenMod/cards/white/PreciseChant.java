@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.PreciseChantAction;
+import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -39,6 +39,6 @@ public class PreciseChant extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new PreciseChantAction());
+        this.addToBot(new ChantAction(ChantAction.ChantType.PRECISE));
     }
 }

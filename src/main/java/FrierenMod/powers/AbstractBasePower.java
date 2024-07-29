@@ -1,8 +1,8 @@
 package FrierenMod.powers;
 
-import FrierenMod.utils.Config;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
+import FrierenMod.utils.ResourceChecker;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -45,7 +45,10 @@ public abstract class AbstractBasePower extends AbstractPower {
     }
 
     private static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
-        return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(Config.IN_DEV ? ((size == 84) ? PublicRes.DEV_POWER_IMG_84 : PublicRes.DEV_POWER_IMG_32) : ModInformation.makePowerPath(id.split(":")[1], size)), 0, 0, size, size);
+        if(ResourceChecker.exist( ModInformation.makePowerPath(id.split(":")[1], size))){
+            return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ModInformation.makePowerPath(id.split(":")[1], size)), 0, 0, size, size);
+        }
+        return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(((size == 84) ? PublicRes.DEV_POWER_IMG_84 : PublicRes.DEV_POWER_IMG_32)), 0, 0, size, size);
     }
 
     public void afterChant() {

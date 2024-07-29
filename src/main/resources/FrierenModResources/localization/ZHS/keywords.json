@@ -1,132 +1,143 @@
 [
   {
-    "PROPER_NAME":"咏唱X",
+    "PROPER_NAME": "咏唱X",
     "NAMES": [
-      "咏唱X","咏唱"
+      "咏唱X",
+      "咏唱"
     ],
-    "DESCRIPTION": "选择：消耗抽牌堆中X张 #y魔力 ，获得X点 #y格挡 两次。 NL 消耗手牌中X张 #y魔力 ，获得X点 [E] 。 NL 消耗弃牌堆中X张 #y魔力 ，获得X点 #y力量 。"
+    "DESCRIPTION": "在 #g装载中 且对应牌堆 #y魔力 充足的 #y魔法因子 中选择1张发动效果。"
   },
   {
-    "PROPER_NAME":"同调",
+    "PROPER_NAME": "槽位",
+    "NAMES": [
+      "槽位"
+    ],
+    "DESCRIPTION": "分为抽牌槽，手牌槽，弃牌槽。NL 在 #y咏唱 时 对应 #y消耗 抽牌堆、手牌、弃牌堆中的 #y魔力 。"
+  },
+  {
+    "PROPER_NAME": "同调",
     "NAMES": [
       "同调"
     ],
     "DESCRIPTION": "抽1张牌。 #y消耗 。"
   },
   {
-    "PROPER_NAME":"终极同调",
+    "PROPER_NAME": "终极同调",
     "NAMES": [
       "终极同调"
     ],
     "DESCRIPTION": "随机对1个敌人造成15点伤害。 #y消耗 。"
   },
   {
-    "PROPER_NAME":"加速同调",
+    "PROPER_NAME": "加速同调",
     "NAMES": [
       "加速同调"
     ],
     "DESCRIPTION": "抽2张牌。 #y消耗 。"
   },
   {
-    "PROPER_NAME":"终极加速同调",
+    "PROPER_NAME": "终极加速同调",
     "NAMES": [
       "终极加速同调"
     ],
     "DESCRIPTION": "随机对1个敌人造成15点伤害，抽2张牌。 #y消耗 。"
   },
   {
-    "PROPER_NAME":"传说魔法",
+    "PROPER_NAME": "传说魔法",
     "NAMES": [
       "传说魔法"
     ],
     "DESCRIPTION": "本回合中打出过 #y咏唱 牌后才可打出。"
   },
   {
-    "PROPER_NAME":"解析X",
+    "PROPER_NAME": "解析X",
     "NAMES": [
-      "解析","解析X","奖励"
+      "解析",
+      "解析X",
+      "奖励"
     ],
     "DESCRIPTION": " #y保留 且 #y无法被打出 。 NL 在手牌中完成解析条件会使X-1，获得相应 #y奖励 并刷新。 NL  X为0时会使此牌 #y消耗 。"
   },
   {
-    "PROPER_NAME":"临时力量",
+    "PROPER_NAME": "临时力量",
     "NAMES": [
       "临时力量"
     ],
     "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
   },
   {
-    "PROPER_NAME":"缓冲",
+    "PROPER_NAME": "缓冲",
     "NAMES": [
       "缓冲"
     ],
     "DESCRIPTION": "阻止你下一次受到的生命值损伤。"
   },
   {
-    "PROPER_NAME":"缠绕",
+    "PROPER_NAME": "缠绕",
     "NAMES": [
       "缠绕"
     ],
     "DESCRIPTION": "在回合结束时承受伤害。"
   },
   {
-    "PROPER_NAME":"变动",
+    "PROPER_NAME": "变动",
     "NAMES": [
       "变动"
     ],
     "DESCRIPTION": "抽牌顺序将改变。"
   },
   {
-    "PROPER_NAME":"缓慢",
+    "PROPER_NAME": "缓慢",
     "NAMES": [
       "缓慢"
     ],
     "DESCRIPTION": "你在这个回合每打出一张卡牌，该敌人本回合受到的伤害增加 10% 。"
   },
   {
-    "PROPER_NAME":"封印",
+    "PROPER_NAME": "封印",
     "NAMES": [
       "封印"
     ],
     "DESCRIPTION": "战斗开始时此牌位于所有牌堆之外，一回合内打出5张 #y咏唱 牌后加入你的手牌。"
   },
   {
-    "PROPER_NAME":"回火",
+    "PROPER_NAME": "回火",
     "NAMES": [
       "回火"
     ],
     "DESCRIPTION": "这张牌本回合中每被打出1次，耗能+1，下回合开始时重置耗能。"
   },
   {
-    "PROPER_NAME":"壁垒",
+    "PROPER_NAME": "壁垒",
     "NAMES": [
       "壁垒"
     ],
     "DESCRIPTION": "格挡不会在你的回合开始时消失。"
   },
   {
-    "PROPER_NAME":"离差",
+    "PROPER_NAME": "离差",
     "NAMES": [
       "离差"
     ],
     "DESCRIPTION": "本回合使用过的卡牌数和 #y专注 层数之差的绝对值。"
   },
   {
-    "PROPER_NAME":"专注",
+    "PROPER_NAME": "专注",
     "NAMES": [
       "专注"
     ],
     "DESCRIPTION": "使用 #b1 张牌后失去 #b1 层该能力 ， #y咏唱 消耗 的 #y魔力 减少（该能力层数）张。"
   },
   {
-    "PROPER_NAME":"奇袭X",
+    "PROPER_NAME": "奇袭X",
     "NAMES": [
-      "奇袭X","奇袭"
+      "奇袭X",
+      "奇袭"
     ],
     "DESCRIPTION": " #y离差 小于等于X时触发。"
   },
   {
-    "PROPER_NAME":"凝聚",
+    "PROPER_NAME": "凝聚",
     "NAMES": [
       "凝聚"
     ],

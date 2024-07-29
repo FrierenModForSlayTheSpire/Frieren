@@ -3,19 +3,21 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.commands.MagicItemCommand;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.events.AnimalWell;
 import FrierenMod.events.FoodEvent;
 import FrierenMod.events.KraftGift;
-import FrierenMod.gameHelpers.CardPoolHelper;
-import FrierenMod.gameHelpers.DataObject;
-import FrierenMod.gameHelpers.OnPlayerTurnStartHelper;
-import FrierenMod.gameHelpers.OnStartBattleHelper;
+import FrierenMod.gameHelpers.*;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
 import FrierenMod.potions.EmperorWine;
+import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.ui.panels.MagicDeckPanel;
+import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.*;
 import FrierenMod.variables.ChantXVariable;
 import FrierenMod.variables.RaidVariable;
@@ -25,6 +27,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
@@ -37,6 +40,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -52,12 +56,12 @@ import static com.megacrit.cardcrawl.core.Settings.language;
 @SpireInitializer
 public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, EditKeywordsSubscriber, PostInitializeSubscriber, CustomSavable<String> {
     private static String modID;
-    public static final DataObject saveData = new DataObject();
+    public static DataObject saveData = new DataObject();
 
     public ModManager() {
         BaseMod.subscribe(this);
         setModID(ModInformation.MOD_NAME);
-        Log.logger.info("Creating the color " + CardEnums.FRIEREN_CARD.toString());
+        Log.logger.info("Creating the color {}", CardEnums.FRIEREN_CARD.toString());
         BaseMod.addColor(CardEnums.FRIEREN_CARD,
                 FrierenRes.RENDER_COLOR.cpy(),
                 FrierenRes.RENDER_COLOR.cpy(),
@@ -95,17 +99,15 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                     FernRes.SMALL_ORB);
         Log.logger.info("Done creating the color");
         Log.logger.info("Adding hooks...");
-        BaseMod.subscribe(new OnPlayerTurnStartHelper());
-        BaseMod.subscribe(new OnStartBattleHelper());
+        BaseMod.subscribe(new HookHelper());
         Log.logger.info("Done adding hooks");
-        BaseMod.addSaveField(modID, this);
     }
 
     public void setModID(String ID) {
         Gson coolG = new Gson();
         InputStream in = ModManager.class.getResourceAsStream("/IDCheckStringsDONT-EDIT-AT-ALL.json");
         IDCheckDontTouchPls EXCEPTION_STRINGS = coolG.fromJson(new InputStreamReader(in, StandardCharsets.UTF_8), IDCheckDontTouchPls.class);
-        logger.info("You are attempting to set your mod ID as: " + ID);
+        logger.info("You are attempting to set your mod ID as: {}", ID);
         if (ID.equals(EXCEPTION_STRINGS.DEFAULT_ID))
             throw new RuntimeException(EXCEPTION_STRINGS.EXCEPTION);
         if (ID.equals(EXCEPTION_STRINGS.DEV_ID)) {
@@ -113,7 +115,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         } else {
             modID = ID;
         }
-        logger.info("Success! ID is " + modID);
+        logger.info("Success! ID is {}", modID);
     }
 
     public static void initialize() {
@@ -130,6 +132,11 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
                 MonsterRes.SPIEGEL_BOSS_ICON_1,
                 MonsterRes.SPIEGEL_BOSS_ICON_2);
+        BaseMod.addTopPanelItem(new MagicDeckPanel());
+        BaseMod.addCustomScreen(new MagicDeckScreen());
+        BaseMod.addSaveField(ModInformation.MOD_NAME,this);
+        MagicItemReward.register();
+        MagicItemCommand.register();
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
         BaseMod.addEvent("KraftGift", KraftGift.class);
         BaseMod.addEvent("AnimalWell", AnimalWell.class);
@@ -142,6 +149,14 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         BaseMod.addDynamicVariable(new ChantXVariable());
         BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
         BaseMod.addDynamicVariable(new RaidVariable());
+        DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
+            if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
+                if (card instanceof AbstractMagicItem) {
+                    return ((AbstractMagicItem) card).currentSlot;
+                }
+            }
+            return -1;
+        });
         Log.logger.info("Done adding variables");
         Log.logger.info("Adding cards");
         String optionCardsClassPath = getModID() + ".cards.optionCards";
@@ -190,20 +205,20 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         (new AutoAdd(getModID())).packageFilter(relicClassPath).any(CustomRelic.class, (info, relic) -> {
             BaseMod.addRelicToCustomPool(relic, CardEnums.FRIEREN_CARD);
             UnlockTracker.markRelicAsSeen(relic.relicId);
-            Log.logger.info("Adding relics: " + relic.relicId);
+            Log.logger.info("Adding relics: {}", relic.relicId);
         });
         Log.logger.info("Done adding relics!");
     }
 
     @Override
     public void receiveEditCharacters() {
-        Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FRIEREN.toString());
+        Log.logger.info("Beginning to edit characters. Add {}", CharacterEnums.FRIEREN.toString());
         BaseMod.addCharacter(new Frieren(CardCrawlGame.playerName), FrierenRes.CHARACTER_BUTTON, FrierenRes.CHARACTER_PORTRAIT, CharacterEnums.FRIEREN);
-        Log.logger.info("Added " + CharacterEnums.FRIEREN.toString());
+        Log.logger.info("Added {}", CharacterEnums.FRIEREN.toString());
         if (Config.FERN_ENABLE) {
-            Log.logger.info("Beginning to edit characters. Add " + CharacterEnums.FERN.toString());
+            Log.logger.info("Beginning to edit characters. Add {}", CharacterEnums.FERN.toString());
             BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
-            Log.logger.info("Added " + CharacterEnums.FERN.toString());
+            Log.logger.info("Added {}", CharacterEnums.FERN.toString());
         }
         Log.logger.info("Beginning to add potions.");
         BaseMod.addPotion(BottledMana.class, Color.BLUE.cpy(), Color.ROYAL.cpy(), Color.ROYAL, BottledMana.POTION_ID, CharacterEnums.FRIEREN);
@@ -270,14 +285,13 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     }
 
     @Override
-    public final String onSave() {
-        // 可以直接在抽象类存储一些共有的数据，例如 secondCounter
-        return saveData.save();
+    public String onSave() {
+        MagicItemHelper.save();
+        return "";
     }
 
-
     @Override
-    public final void onLoad(String s) {
-        saveData.load(s);
+    public void onLoad(String s) {
+        MagicItemHelper.load();
     }
 }

@@ -25,11 +25,11 @@ public class SimmeringPowerAction extends AbstractGameAction {
             return;
         }
         if (draw > 0) {
-            this.addToBot(new ExhaustManaInDrawPileAction(1));
+            this.addToBot(new ExhaustManaInCardGroupAction(1,0));
         } else if (discard > 0) {
-            this.addToBot(new ExhaustManaInDiscardPileAction(1));
+            this.addToBot(new ExhaustManaInCardGroupAction(1,2));
         } else if (hand > 0) {
-            this.addToBot(new ExhaustManaInHandAction(1));
+            this.addToBot(new ExhaustManaInCardGroupAction(1,1));
         }
         this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amt, true), DamageInfo.DamageType.THORNS, AttackEffect.SLASH_HORIZONTAL, true));
         this.isDone = true;

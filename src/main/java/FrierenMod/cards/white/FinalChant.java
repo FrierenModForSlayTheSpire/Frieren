@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.FinalChantAction;
+import FrierenMod.actions.ChantAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
@@ -38,7 +38,7 @@ public class FinalChant extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.chantX = this.baseChantX = CombatHelper.getAllManaNum();
-        this.addToBot(new FinalChantAction(this));
+        this.addToBot(new ChantAction(ChantAction.ChantType.FINAL));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

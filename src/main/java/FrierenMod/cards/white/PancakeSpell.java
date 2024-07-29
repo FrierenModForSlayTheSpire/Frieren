@@ -43,7 +43,7 @@ public class PancakeSpell extends AbstractBaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (!CombatHelper.canChantFromHand(1)) {
+        if (CombatHelper.getManaNumInHand() < 1) {
             return false;
         } else {
             return super.canUseOriginally(p, m);

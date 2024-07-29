@@ -116,6 +116,9 @@ public class CardInfo {
         return id + "$";
     }
     private static String getImgPath(String baseId){
-        return Config.IN_DEV ? PublicRes.DEV_CARD_IMG : ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        if(ResourceChecker.exist(ModInformation.makeCardImgPath(baseId.split(":")[1])))
+            return ModInformation.makeCardImgPath(baseId.split(":")[1]);
+        else
+            return null;
     }
 }

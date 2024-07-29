@@ -158,10 +158,59 @@
       "Not #rChanted this turn."
     ]
   },
+  "FrierenMod:MagicFactorLoadMessages": {
+    "TEXT": [
+      " NL [#ff2c1d]Unloaded[#ff2c1d] ",
+      " [#9ffc4f]Draw_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] ",
+      " [#9ffc4f]Hand_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] ",
+      " [#9ffc4f]Discard_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] "
+    ]
+  },
+  "FrierenMod:MagicDeckPanel": {
+    "TEXT": [
+      "Magic Deck",
+      "View #yMagic_Factor and #yMagic_Prop you have."
+    ]
+  },
+  "FrierenMod:MagicDeckScreen": {
+    "TEXT": [
+      "Cancel",
+      "Magic Prop [%s] is using",
+      " [%s] is chosen"
+    ]
+  },
+  "FrierenMod:MagicDeckSortHeader": {
+    "TEXT": [
+      "Slot",
+      "Rarity",
+      "Type"
+    ]
+  },
+  "FrierenMod:MagicItemReward": {
+    "TEXT": [
+      "Add a #yMagic_Factor or #yMagic_Prop to your Magic Deck",
+      "Choose a Magic Factor or Magic Prop"
+    ]
+  },
+  "FrierenMod:MagicItemTip": {
+    "TEXT": [
+      "Magic Factor",
+      "A special kind of option card which can be loaded in #ySlot .It can be activated when you're #ychanting and there's enough #yMana in the pile corresponding to the #gLoading #ySlot .",
+      "Magic Prop",
+      "A disposable card. Start or stop using by #rRight_Click itself in #yMagic_Deck ."
+    ]
+  },
+  "FrierenMod:CardStyleText": {
+    "TEXT": [
+      "Mana",
+      "Magic Factor",
+      "Magic Prop"
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",
-      " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
+      " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌."
     ]
   }
 }
