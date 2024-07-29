@@ -73,6 +73,8 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaFactor9());
         srcCardPool.add(new BetaFactor10());
         srcCardPool.add(new BetaFactor11());
+        srcCardPool.add(new BetaFactor12());
+        srcCardPool.add(new BetaFactor13());
         srcCardPool.add(new Factor001());
         srcCardPool.add(new Factor010());
         srcCardPool.add(new Factor100());

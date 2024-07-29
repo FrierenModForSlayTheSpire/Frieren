@@ -138,6 +138,20 @@
       "Exhaust 6X *Mana in pile, gain X Intangible."
     ]
   },
+  "FrierenMod:BetaFactor12": {
+    "NAME": "Beta Factor 12",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block and Block is not removed at the start of your next !SM! turns.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust 2X *Mana in pile, gain X Block and Block is not removed at the start of your next X turns."
+    ]
+  },
+  "FrierenMod:BetaFactor13": {
+    "NAME": "Beta Factor 13",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add !SM! *Mana {@@} into {!frierenmod:SlotNumber!|-1= Error|0= Hand|1= Discard Pile|2= Draw Pile}.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, add X *Mana into the next pile."
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": " ? @ @ ",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= @}",

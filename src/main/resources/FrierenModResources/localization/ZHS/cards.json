@@ -136,6 +136,20 @@
       " 消耗 牌堆中6X张 *魔力 ，获得 X 层 无实体 。"
     ]
   },
+  "FrierenMod:BetaFactor12": {
+    "NAME": "测试因子12",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 且下 !SM! 回合你的 格挡 不会消失。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中2X张 *魔力 ，获得 X 点 格挡 且下 X 回合你的 格挡 不会消失。"
+    ]
+  },
+  "FrierenMod:BetaFactor13": {
+    "NAME": "测试因子13",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *魔力 {@@} 放入 {!frierenmod:SlotNumber!|-1= Error|0= 手牌|1= 弃牌堆|2= 抽牌堆}",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，将X张 *魔力 放入下个牌堆。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "？！！",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ？|1= ！|2= ！} ",
