@@ -11,13 +11,18 @@ import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
 
@@ -193,6 +198,25 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         return this.tips;
     }
 
+    @SpireOverride
+    protected void renderMainBorder(SpriteBatch sb){
+        if (this.isGlowing) {
+            sb.setBlendFunction(770, 1);
+            TextureAtlas.AtlasRegion img;
+            switch (this.type) {
+                case ATTACK:
+                    img = ImageMaster.CARD_ATTACK_BG_SILHOUETTE;
+                    break;
+                case POWER:
+                    img = ImageMaster.CARD_POWER_BG_SILHOUETTE;
+                    break;
+                default:
+                    img = ImageMaster.CARD_SKILL_BG_SILHOUETTE;
+            }
+            sb.setColor(this.glowColor);
+            sb.draw(img, this.current_x + img.offsetX - (float)img.originalWidth / 2.0F, this.current_y + img.offsetY - (float)img.originalWidth / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalWidth / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale * 1.04F, this.drawScale * Settings.scale * 1.03F, this.angle);
+        }
+    }
     public enum ShowPlaceType {
         COMBAT,
         DECK

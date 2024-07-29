@@ -398,7 +398,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     private void addCardToChosenCards(AbstractCard card) {
-        if (isUsingProp != null && isUsingProp instanceof AbstractMagicItem && chosenCards.size() < ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt && !this.chosenCards.contains(card) && card instanceof AbstractMagicItem) {
+        if (isUsingProp != null && isUsingProp instanceof AbstractMagicItem && chosenCards.size() < ((AbstractMagicItem) isUsingProp).propCanChooseMaxAmt && !this.chosenCards.contains(card) && card instanceof AbstractMagicItem && card != isUsingProp) {
             card.beginGlowing();
             this.chosenCards.add(card);
         }

@@ -8,16 +8,14 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
+import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
+import com.megacrit.cardcrawl.vfx.cardManip.CardGlowBorder;
 
 public class CardStylePatch {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("FrierenMod:CardStyleText").TEXT;
@@ -115,6 +113,20 @@ public class CardStylePatch {
             } else {
                 return SpireReturn.Continue();
             }
+        }
+    }
+
+    @SpirePatch(clz = CardGlowBorder.class, method = SpirePatch.CONSTRUCTOR, paramtypez = {AbstractCard.class, Color.class})
+    public static class PatchCardGlowBorder {
+        @SpireInsertPatch(rloc = 20, localvars = {"card", "gColor"})
+        public static SpireReturn<Void> Insert(CardGlowBorder _inst, AbstractCard card, Color gColor) {
+            if (card instanceof AbstractMagicItem) {
+                _inst.duration = 1.2F;
+                ReflectionHacks.setPrivate(_inst, CardGlowBorder.class, "card", card);
+                ReflectionHacks.setPrivateInherited(_inst, CardGlowBorder.class, "color", gColor.cpy());
+                return SpireReturn.Return();
+            }
+            return SpireReturn.Continue();
         }
     }
 
