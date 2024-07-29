@@ -4,12 +4,12 @@ import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
-import basemod.BaseMod;
 import basemod.TopPanelItem;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
@@ -28,7 +28,11 @@ public class MagicDeckPanel extends TopPanelItem {
 
     @Override
     protected void onClick() {
-        BaseMod.openCustomScreen(MagicDeckScreen.Enum.MAGIC_FACTOR_SCREEN);
+        MagicDeckScreen screen = new MagicDeckScreen();
+        if (AbstractDungeon.screen == MagicDeckScreen.Enum.MAGIC_DECK_SCREEN)
+            screen.reopen();
+        else
+            screen.open();
     }
 
     protected void onHover() {

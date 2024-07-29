@@ -81,12 +81,12 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     public static class Enum {
         @SpireEnum
-        public static AbstractDungeon.CurrentScreen MAGIC_FACTOR_SCREEN;
+        public static AbstractDungeon.CurrentScreen MAGIC_DECK_SCREEN;
     }
 
     @Override
     public AbstractDungeon.CurrentScreen curScreen() {
-        return Enum.MAGIC_FACTOR_SCREEN;
+        return Enum.MAGIC_DECK_SCREEN;
     }
 
     // Note that this can be private and take any parameters you want.
@@ -105,7 +105,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         hideCards();
         AbstractDungeon.dynamicBanner.hide();
         AbstractDungeon.isScreenUp = true;
-        AbstractDungeon.screen = Enum.MAGIC_FACTOR_SCREEN;
+        AbstractDungeon.screen = Enum.MAGIC_DECK_SCREEN;
         AbstractDungeon.overlayMenu.proceedButton.hide();
         AbstractDungeon.overlayMenu.hideCombatPanels();
         AbstractDungeon.overlayMenu.showBlackScreen();
@@ -121,7 +121,8 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     @Override
     public void close() {
-        AbstractDungeon.overlayMenu.hideBlackScreen();
+        if(AbstractDungeon.previousScreen != AbstractDungeon.CurrentScreen.CARD_REWARD)
+            AbstractDungeon.overlayMenu.hideBlackScreen();
         AbstractDungeon.isScreenUp = false;
         AbstractDungeon.overlayMenu.cancelButton.hide();
         genericScreenOverlayReset();
