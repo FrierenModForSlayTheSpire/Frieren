@@ -4,7 +4,14 @@
     "NAMES": [
       "ChantX","chant","chanted"
     ],
-    "DESCRIPTION": "Choose: Exhaust X #yMana from your draw pile, gain X #yBlock twice. NL Exhaust X #yMana from your hand, gain X [E] . NL Exhaust X #yMana from your discard pile, gain X #yStrength."
+    "DESCRIPTION": "Choose an available #yMagic_Factor to activate."
+  },
+  {
+    "PROPER_NAME": "Slot",
+    "NAMES": [
+      "Slot","slot"
+    ],
+    "DESCRIPTION": "Divided by Draw Slot, Hand Slot and Discard Slot. NL Exhaust #yMana in the pile corresponding when you're #ychanting ."
   },
   {
     "PROPER_NAME":"Synchro",
