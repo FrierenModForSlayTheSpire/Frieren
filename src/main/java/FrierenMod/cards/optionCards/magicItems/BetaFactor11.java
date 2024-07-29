@@ -2,7 +2,7 @@ package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.powers.IntangiblePower;
+import com.megacrit.cardcrawl.powers.IntangiblePlayerPower;
 
 public class BetaFactor11 extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BetaFactor11.class.getSimpleName());
@@ -15,6 +15,6 @@ public class BetaFactor11 extends AbstractMagicItem {
 
     @Override
     public void takeEffect() {
-        this.addToBot(new ApplyPowerAction(p, p, new IntangiblePower(p, secondMagicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, secondMagicNumber)));
     }
 }
