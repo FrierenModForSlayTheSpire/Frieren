@@ -136,6 +136,27 @@
       " 消耗 牌堆中6X张 *魔力 ，获得 X 层 无实体 。"
     ]
   },
+  "FrierenMod:Factor100": {
+    "NAME": "？！！",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ？|1= ！|2= ！} ",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X+1张 *魔力 ，？！！"
+    ]
+  },
+  "FrierenMod:Factor010": {
+    "NAME": "！？！",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ？|2= ！} ",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中2X+2张 *魔力 ，！？！"
+    ]
+  },
+  "FrierenMod:Factor001": {
+    "NAME": "！！？",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ！|2= ？} ",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中3X+3张 *魔力 ，！！？"
+    ]
+  },
   "FrierenMod:BetaProp1": {
     "NAME": "测试魔具1",
     "DESCRIPTION": "选择1张 [#ff2c1d]未装载[#ff2c1d] 和1张 [#9ffc4f]已装载[#9ffc4f] *魔法因子 ，使它们 frierenmod:槽位 互换。",

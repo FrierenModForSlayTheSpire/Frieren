@@ -138,6 +138,27 @@
       "Exhaust 6X *Mana in pile, gain X Intangible."
     ]
   },
+  "FrierenMod:Factor100": {
+    "NAME": " ? @ @ ",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= @}",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X+1 *Mana in pile, ? @ @ "
+    ]
+  },
+  "FrierenMod:Factor010": {
+    "NAME": " @ ? @ ",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= @ |1= ?|2= @}",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust 2X+2 *Mana in pile, @ ? @ "
+    ]
+  },
+  "FrierenMod:Factor001": {
+    "NAME": " @ @ ? ",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= @ |1= @|2= ?}",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust 3X+3 *Mana in pile, @ @ ? "
+    ]
+  },
   "FrierenMod:BetaProp1": {
     "NAME": "Beta Prop 1",
     "DESCRIPTION": "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,exchange their frierenmod:slot.",

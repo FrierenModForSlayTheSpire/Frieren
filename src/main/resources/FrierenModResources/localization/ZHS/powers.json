@@ -165,6 +165,24 @@
       "在本回合中， #y咏唱 消耗的 #y魔力 增加 #b%d 张 。"
     ]
   },
+  "FrierenMod:Factor100Power": {
+    "NAME": "？！！",
+    "DESCRIPTIONS": [
+      "？！！"
+    ]
+  },
+  "FrierenMod:Factor010Power": {
+    "NAME": "！？！",
+    "DESCRIPTIONS": [
+      "！？！"
+    ]
+  },
+  "FrierenMod:Factor001Power": {
+    "NAME": "！！？",
+    "DESCRIPTIONS": [
+      "！！？"
+    ]
+  },
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [

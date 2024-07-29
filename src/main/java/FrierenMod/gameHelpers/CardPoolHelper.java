@@ -73,6 +73,9 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaFactor9());
         srcCardPool.add(new BetaFactor10());
         srcCardPool.add(new BetaFactor11());
+        srcCardPool.add(new Factor001());
+        srcCardPool.add(new Factor010());
+        srcCardPool.add(new Factor100());
         srcCardPool.add(new BetaProp1());
         srcCardPool.add(new BetaProp2());
         srcCardPool.add(new BetaProp3());
@@ -129,7 +132,7 @@ public class CardPoolHelper {
                 list = getMagicItemCardPool(null);
                 ArrayList<AbstractCard> retVal = new ArrayList<>();
                 for (AbstractCard c : list) {
-                    if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP)
+                    if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT))
                         retVal.add(c);
                 }
                 return retVal.get(RandomField.getMagicItemRandomRng().random(retVal.size() - 1));
