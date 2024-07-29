@@ -27,14 +27,13 @@ public class BetaProp6 extends AbstractMagicItem {
             if (((AbstractMagicItem) c).magicItemRarity == MagicItemRarity.PROP)
                 return false;
         }
-        for(AbstractCard c:chosenCards){
-            if(c instanceof AbstractMagicItem){
-                AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(c));
-                AbstractMagicItem newItem = (AbstractMagicItem) CardPoolHelper.getRandomMagicItem(((AbstractMagicItem) c).magicItemRarity);
-                newItem.currentSlot = ((AbstractMagicItem) c).currentSlot;
-                MagicDeckField.getDeck().addToTop(newItem);
-                newItem.superFlash();
-            }
+        for (AbstractCard chosenCard : chosenCards) {
+            AbstractMagicItem oldItem = (AbstractMagicItem) chosenCard;
+            AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(oldItem));
+            AbstractMagicItem newItem = (AbstractMagicItem) CardPoolHelper.getRandomMagicItem(oldItem.magicItemRarity);
+            newItem.currentSlot = oldItem.currentSlot;
+            MagicDeckField.getDeck().addToTop(newItem);
+            newItem.superFlash();
         }
         return true;
     }

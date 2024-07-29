@@ -53,6 +53,7 @@ public class CardPoolHelper {
         retVal.add(new OilSpell());
         retVal.add(new LightningMagic());
         retVal.add(new Famehameha());
+        retVal.add(new FairyTaleEnd());
         return retVal;
     }
 
@@ -100,6 +101,7 @@ public class CardPoolHelper {
         if (rarity != null)
             switch (rarity) {
                 case COMMON:
+                case BASIC:
                     return common;
                 case UNCOMMON:
                     return uncommon;
