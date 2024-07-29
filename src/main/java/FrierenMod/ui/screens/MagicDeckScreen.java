@@ -14,6 +14,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.GameCursor;
+import com.megacrit.cardcrawl.core.OverlayMenu;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
@@ -53,6 +54,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     private AbstractCard isUsingProp = null;
     private final ArrayList<AbstractCard> chosenCards;
+    private boolean previousHasBlackScreen = false;
 
     public MagicDeckScreen() {
         drawStartX = Settings.WIDTH;
@@ -92,9 +94,18 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     // Note that this can be private and take any parameters you want.
     // When you call openCustomScreen it finds the first method named "open"
     // and calls it with whatever arguments were passed to it.
-    private void open() {
-        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE)
+    public void open() {
+        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE){
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
+            if((float)ReflectionHacks.getPrivate(AbstractDungeon.overlayMenu, OverlayMenu.class,"blackScreenTarget") == 0.85F){
+                this.previousHasBlackScreen = true;
+            }
+        }
+        reopen();
+    }
+
+    @Override
+    public void reopen() {
         AbstractDungeon.screen = curScreen();
         AbstractDungeon.isScreenUp = true;
         AbstractDungeon.player.releaseCard();
@@ -111,17 +122,12 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         AbstractDungeon.overlayMenu.showBlackScreen();
         AbstractDungeon.overlayMenu.cancelButton.show(TEXT[0]);
         calculateScrollBounds();
-    }
-
-    @Override
-    public void reopen() {
         cancelUsingProp();
-        AbstractDungeon.overlayMenu.cancelButton.show(TEXT[0]);
     }
 
     @Override
     public void close() {
-        if(AbstractDungeon.previousScreen != AbstractDungeon.CurrentScreen.CARD_REWARD)
+        if (!previousHasBlackScreen)
             AbstractDungeon.overlayMenu.hideBlackScreen();
         AbstractDungeon.isScreenUp = false;
         AbstractDungeon.overlayMenu.cancelButton.hide();
@@ -187,8 +193,6 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     @Override
     public void openingSettings() {
-        // Required if you want to reopen your screen when the settings screen closes
-        AbstractDungeon.previousScreen = curScreen();
     }
 
     private void updatePositions() {
