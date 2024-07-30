@@ -47,10 +47,9 @@ public class CardStylePatch {
         @SpirePrefixPatch
         public static SpireReturn<TextureAtlas.AtlasRegion> Insert(SingleCardViewPopup _inst) {
             AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
-            if (c instanceof Mana) {
+            if (c instanceof Mana || (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP))
                 return SpireReturn.Return(MANA_TEXTURE_IMG);
-            } else
-                return SpireReturn.Continue();
+            return SpireReturn.Continue();
         }
     }
 
@@ -107,12 +106,11 @@ public class CardStylePatch {
 
         @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "x", "y"})
         public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float x, float y) {
-            if (_inst instanceof Mana) {
+            if (_inst instanceof Mana || (_inst instanceof AbstractMagicItem && ((AbstractMagicItem) _inst).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP)) {
                 renderHelper(_inst, sb, renderColor, MANA_TEXTURE_IMG, x, y);
                 return SpireReturn.Return();
-            } else {
-                return SpireReturn.Continue();
             }
+            return SpireReturn.Continue();
         }
     }
 
