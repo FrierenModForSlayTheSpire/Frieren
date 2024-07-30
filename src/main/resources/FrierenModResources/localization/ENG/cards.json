@@ -152,6 +152,13 @@
       "Exhaust X *Mana in pile, add X *Mana into the next pile."
     ]
   },
+  "FrierenMod:BetaFactor14": {
+    "NAME": "Beta Factor 14",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust 4X *Mana in pile, gain X Mantra."
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": " ? @ @ ",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= @}",

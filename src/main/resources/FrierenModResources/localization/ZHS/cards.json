@@ -150,6 +150,13 @@
       " 消耗 牌堆中X张 *魔力 ，将X张 *魔力 放入下个牌堆。"
     ]
   },
+  "FrierenMod:BetaFactor14": {
+    "NAME": "测试因子14",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中4X张 *魔力 ，获得 X 层 真言 。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "？！！",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ？|1= ！|2= ！} ",
