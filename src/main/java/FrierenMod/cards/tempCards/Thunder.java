@@ -25,6 +25,7 @@ public class Thunder extends AbstractBaseCard {
         this.damage = this.baseDamage = 8;
         this.exhaust = true;
         this.isEthereal = true;
+        this.isMultiDamage = true;
     }
 
     @Override
