@@ -170,4 +170,26 @@ public class CombatHelper {
         }
         return chantChoices;
     }
+    public static AbstractMagicItem[] getLoadedMagicFactor() {
+        AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
+                chantChoices[0] = (AbstractMagicItem) c;
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+                chantChoices[1] = (AbstractMagicItem) c;
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+                chantChoices[2] = (AbstractMagicItem) c;
+            }
+        }
+        return chantChoices;
+    }
+    public static boolean isAllMagicFactorLoading(){
+        for(AbstractMagicItem f : getLoadedMagicFactor()){
+            if(f == null)
+                return false;
+        }
+        return true;
+    }
 }

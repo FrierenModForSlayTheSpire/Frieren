@@ -64,7 +64,7 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
         if (playerClass == CharacterEnums.FRIEREN) {
-            MagicItemHelper.save();
+            SaveFileHelper.save();
         }
     }
 

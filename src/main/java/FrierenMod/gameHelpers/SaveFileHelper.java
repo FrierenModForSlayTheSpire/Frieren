@@ -18,7 +18,7 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MagicItemHelper {
+public class SaveFileHelper {
 
     public static final String DECK_SAVE_NAME = "magic_deck";
     public static final String MAGIC_ITEM_RNG_COUNT_SAVE_NAME = "magic_item_seed_count";
@@ -38,8 +38,8 @@ public class MagicItemHelper {
 
     private static void loadMagicDeck() {
         MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
-        if (ModManager.saveData.containsKey(MagicItemHelper.DECK_SAVE_NAME)) {
-            for (AbstractMagicItem f : MagicItemHelper.getAllMagicItems()) {
+        if (ModManager.saveData.containsKey(SaveFileHelper.DECK_SAVE_NAME)) {
+            for (AbstractMagicItem f : SaveFileHelper.getAllMagicItems()) {
                 MagicDeckField.getDeck().addToTop(f);
             }
         }
@@ -117,27 +117,5 @@ public class MagicItemHelper {
             fs.add(f);
         }
         return fs;
-    }
-    public static AbstractMagicItem[] getLoadedMagicFactor() {
-        AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
-        for (AbstractCard c : MagicDeckField.getDeck().group) {
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
-                chantChoices[0] = (AbstractMagicItem) c;
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
-                chantChoices[1] = (AbstractMagicItem) c;
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
-                chantChoices[2] = (AbstractMagicItem) c;
-            }
-        }
-        return chantChoices;
-    }
-    public static boolean isAllMagicFactorLoading(){
-        for(AbstractMagicItem f : getLoadedMagicFactor()){
-            if(f == null)
-                return false;
-        }
-        return true;
     }
 }

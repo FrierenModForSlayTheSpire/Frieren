@@ -286,12 +286,12 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public String onSave() {
-        MagicItemHelper.save();
+        SaveFileHelper.save();
         return "";
     }
 
     @Override
     public void onLoad(String s) {
-        MagicItemHelper.load();
+        SaveFileHelper.load();
     }
 }

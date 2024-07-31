@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.gameHelpers.MagicItemHelper;
+import FrierenMod.gameHelpers.SaveFileHelper;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;
 import FrierenMod.utils.Log;
@@ -25,11 +25,11 @@ public class RandomPatch {
     public static class PatchLoadSeeds {
         @SpirePostfixPatch
         public static void Postfix() {
-            RandomField.magicItemRng.set(new Random(Settings.seed, MagicItemHelper.getMagicItemRngCount()));
+            RandomField.magicItemRng.set(new Random(Settings.seed, SaveFileHelper.getMagicItemRngCount()));
             Log.logger.info("Magic Item Seed:{}", RandomField.getMagicItemRng().counter);
-            RandomField.magicItemRandomizer.set(MagicItemHelper.getMagicItemRandomizer());
+            RandomField.magicItemRandomizer.set(SaveFileHelper.getMagicItemRandomizer());
             Log.logger.info("Magic Item Randomizer:{}", RandomField.magicItemRandomizer.get());
-            RandomField.magicItemRandomRng.set(new Random(Settings.seed, MagicItemHelper.getMagicItemRandomRngCount()));
+            RandomField.magicItemRandomRng.set(new Random(Settings.seed, SaveFileHelper.getMagicItemRandomRngCount()));
             Log.logger.info("Magic Item Seed:{}", RandomField.getMagicItemRandomRng().random);
         }
     }
@@ -46,7 +46,7 @@ public class RandomPatch {
     public static class PatchLoadSave {
         @SpirePostfixPatch
         public static void Postfix() {
-            RandomField2.blizzardMagicItemMod.set(MagicItemHelper.getMagicItemChance());
+            RandomField2.blizzardMagicItemMod.set(SaveFileHelper.getMagicItemChance());
         }
     }
 }
