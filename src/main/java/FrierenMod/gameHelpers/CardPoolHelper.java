@@ -151,6 +151,37 @@ public class CardPoolHelper {
         return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
     }
 
+    public static AbstractCard getRandomMagicItem(AbstractMagicItem.MagicItemRarity rarity, boolean judgeByTag) {
+        ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
+        if (judgeByTag)
+            list.removeIf(card -> card.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT));
+        return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
+    }
+
+    public static ArrayList<AbstractCard> getBasicMagicItems(int slot) {
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        int numCards = 3;
+        for (int i = 0; i < numCards; i++) {
+            AbstractCard card = null;
+            boolean containsDupe = true;
+            while (containsDupe) {
+                containsDupe = false;
+                card = getRandomMagicItem(AbstractMagicItem.MagicItemRarity.COMMON, true);
+                for (AbstractCard c : retVal) {
+                    if (c.cardID.equals(card.cardID)) {
+                        containsDupe = true;
+                        break;
+                    }
+                }
+            }
+            if (card != null)
+                retVal.add(card);
+            if (card instanceof AbstractMagicItem)
+                ((AbstractMagicItem) card).currentSlot = slot;
+        }
+        return retVal;
+    }
+
     public enum PoolType {
         CHANT,
         LEGENDARY_SPELL,

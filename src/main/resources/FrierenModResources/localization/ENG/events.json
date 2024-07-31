@@ -99,5 +99,23 @@
       "[Locked] Requires: Upgradeable Cards",
       "Choose a Card to Upgrade"
     ]
+  },
+  "FrierenMod:ReadingGrimoireEvent": {
+    "NAME": "New Beginning",
+    "DESCRIPTIONS": [
+      "\\\"Wow, what a high tower! While you were delighted to be able to explore a new maze, you suddenly noticed that the three magic books in your suitcase were out of the ordinary. It could be caused by the great whale on one side... \\\"",
+      "You sense that the mana flowing within you is undergoing a transformation...",
+      "After examining the grimoires, it seems that part of your #ymana has materialized. Excitedly, you make your way towards the spire.",
+      "Choose one to put in Draw Slot.",
+      "Choose one to put in Hand Slot.",
+      "Choose one to put in Discard Slot."
+    ],
+    "OPTIONS": [
+      "[Examine the grimoires] Choose #yMagic_Factor in the basic #ySlot take turns.",
+      "Examine the next...",
+      "Examine the final...",
+      "[And some Magic Pro?] Gain 2 Magic_Prop",
+      "Let's go!"
+    ]
   }
 }

@@ -133,4 +133,11 @@ public class MagicItemHelper {
         }
         return chantChoices;
     }
+    public static boolean isAllMagicFactorLoading(){
+        for(AbstractMagicItem f : getLoadedMagicFactor()){
+            if(f == null)
+                return false;
+        }
+        return true;
+    }
 }
