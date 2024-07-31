@@ -23,8 +23,8 @@
   },
   "FrierenMod:RapidChant": {
     "NAME": "高速咏唱",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL frierenmod:咏唱 !CX! 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。将一张 *魔力 放入抽牌堆。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL frierenmod:咏唱 !CX! 。将一张 *魔力 放入抽牌堆。"
   },
   "FrierenMod:Mana": {
     "NAME": "魔力",
@@ -266,7 +266,7 @@
   },
   "FrierenMod:Flow": {
     "NAME": "流转",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将抽牌堆 !M! 张 *魔力 放入弃牌堆。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将抽牌堆和弃牌堆各一张 *魔力 放入手中。"
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "飞行魔法",

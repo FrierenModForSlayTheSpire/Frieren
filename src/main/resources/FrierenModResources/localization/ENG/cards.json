@@ -25,8 +25,8 @@
   },
   "FrierenMod:RapidChant": {
     "NAME": "Rapid Chant",
-    "DESCRIPTION": "frierenmod:Chant !CX!.",
-    "UPGRADE_DESCRIPTION": "Retain. NL frierenmod:Chant !CX!."
+    "DESCRIPTION": "frierenmod:Chant !CX!. Shuffle one *Mana into your draw pile.",
+    "UPGRADE_DESCRIPTION": "Retain. NL frierenmod:Chant !CX!.Shuffle one *Mana into your draw pile."
   },
   "FrierenMod:Mana": {
     "NAME": "Mana",

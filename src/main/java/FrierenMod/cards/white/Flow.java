@@ -30,7 +30,6 @@ public class Flow extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.magicNumber = this.baseMagicNumber = 1;
         this.damage = this.baseDamage = 3;
         this.cardsToPreview = new Mana();
     }
@@ -39,7 +38,6 @@ public class Flow extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
             this.upgradeDamage(2);
         }
     }
@@ -51,7 +49,7 @@ public class Flow extends AbstractBaseCard {
             if (!AbstractDungeon.player.drawPile.isEmpty()) {
                 int counts = 0;
                 for(AbstractCard c : AbstractDungeon.player.drawPile.group){
-                    if(counts >= this.magicNumber){
+                    if(counts >= 1){
                         break;
                     }
                     if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
@@ -63,7 +61,7 @@ public class Flow extends AbstractBaseCard {
             if (!AbstractDungeon.player.discardPile.isEmpty()) {
                 int counts = 0;
                 for(AbstractCard c : AbstractDungeon.player.discardPile.group){
-                    if(counts >= this.magicNumber){
+                    if(counts >= 1){
                         break;
                     }
                     if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){

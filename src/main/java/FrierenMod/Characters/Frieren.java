@@ -1,6 +1,7 @@
 package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
+import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HolyEmblem;
@@ -68,7 +69,7 @@ public class Frieren extends CustomPlayer {
         }
         retVal.add(Flow.ID);
         retVal.add(DefensiveMagic.ID);
-        retVal.add(GrandCross.ID);
+        retVal.add(RapidChant.ID);
         return retVal;
     }
 
