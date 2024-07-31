@@ -2,10 +2,7 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicItems.BaseFactorAlpha;
-import FrierenMod.cards.optionCards.magicItems.BaseFactorBeta;
-import FrierenMod.cards.optionCards.magicItems.BaseFactorGamma;
-import FrierenMod.cards.optionCards.magicItems.BetaProp1;
+import FrierenMod.cards.optionCards.magicItems.*;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
@@ -68,11 +65,11 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
         MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
         if (playerClass == CharacterEnums.FRIEREN) {
-            BaseFactorAlpha alpha = new BaseFactorAlpha();
+            BetaFactor15 alpha = new BetaFactor15();
             alpha.setCurrentSlot(0);
-            BaseFactorBeta beta = new BaseFactorBeta();
+            BetaFactor18 beta = new BetaFactor18();
             beta.setCurrentSlot(1);
-            BaseFactorGamma gamma = new BaseFactorGamma();
+            BetaFactor17 gamma = new BetaFactor17();
             gamma.setCurrentSlot(2);
             MagicDeckField.getDeck().addToTop(alpha);
             MagicDeckField.getDeck().addToTop(beta);

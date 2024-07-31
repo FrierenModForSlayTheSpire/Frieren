@@ -1,8 +1,8 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.actions.MakeManaInDiscardAction;
+import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -26,6 +26,7 @@ public class HolyEmblem extends AbstractBaseRelic {
         this.flash();
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new RelicAboveCreatureAction(p, this));
-        this.addToBot(new MakeTempCardInDrawPileAction(new Mana(),3,true,true));
+        addToBot(new MakeManaInDrawPileAction(1));
+        addToBot(new MakeManaInDiscardAction(1));
     }
 }

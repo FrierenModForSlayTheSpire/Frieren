@@ -38,27 +38,6 @@
     "NAME": "魔力隐藏",
     "DESCRIPTION": "将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
   },
-  "FrierenMod:BaseFactorAlpha": {
-    "NAME": "基础因子α",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 两次。",
-    "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，获得X点 格挡 两次。"
-    ]
-  },
-  "FrierenMod:BaseFactorBeta": {
-    "NAME": "基础因子β",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 [E] 。",
-    "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，获得X点 [E] 。"
-    ]
-  },
-  "FrierenMod:BaseFactorGamma": {
-    "NAME": "基础因子γ",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 力量 。",
-    "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，获得X点 力量 。"
-    ]
-  },
   "FrierenMod:BetaFactor1": {
     "NAME": "测试因子1",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一次攻击额外造成 !SM! 点伤害。",
@@ -70,14 +49,14 @@
     "NAME": "测试因子2",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 金属化 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，获得 X 层 金属化 。"
+      " 消耗 牌堆中X张 *魔力 ，获得X层 金属化 。"
     ]
   },
   "FrierenMod:BetaFactor3": {
     "NAME": "测试因子3",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一回合获得 !SM! [E] 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，下一回合获得X+2 [E]  。"
+      " 消耗 牌堆中2X张 *魔力 ，下一回合获得X [E] 。"
     ]
   },
   "FrierenMod:BetaFactor4": {
@@ -103,16 +82,9 @@
   },
   "FrierenMod:BetaFactor7": {
     "NAME": "测试因子7",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 虚弱 。",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 虚弱 和 易伤 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，给予所有敌人X层 虚弱 。"
-    ]
-  },
-  "FrierenMod:BetaFactor8": {
-    "NAME": "测试因子8",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 易伤 。",
-    "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中3X张 *魔力 ，给予所有敌人X层 易伤 。"
+      " 消耗 牌堆中3X张 *魔力 ，给予所有敌人X层 虚弱 和 易伤 。"
     ]
   },
   "FrierenMod:BetaFactor9": {
@@ -126,21 +98,21 @@
     "NAME": "测试因子10",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，随机将 !SM! 张 frierenmod:传说魔法 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，随机将 X 张 frierenmod:传说魔法 放入牌堆。"
+      " 消耗 牌堆中X张 *魔力 ，随机将X张 frierenmod:传说魔法 放入牌堆。"
     ]
   },
   "FrierenMod:BetaFactor11": {
     "NAME": "测试因子11",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 无实体 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中6X张 *魔力 ，获得 X 层 无实体 。"
+      " 消耗 牌堆中6X张 *魔力 ，获得X层 无实体 。"
     ]
   },
   "FrierenMod:BetaFactor12": {
     "NAME": "测试因子12",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 且下 !SM! 回合你的 格挡 不会消失。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，获得 X 点 格挡 且下 X 回合你的 格挡 不会消失。"
+      " 消耗 牌堆中2X张 *魔力 ，获得X点 格挡 且下X回合你的 格挡 不会消失。"
     ]
   },
   "FrierenMod:BetaFactor13": {
@@ -154,7 +126,35 @@
     "NAME": "测试因子14",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中4X张 *魔力 ，获得 X 层 真言 。"
+      " 消耗 牌堆中2X张 *魔力 ，获得X层 真言 。"
+    ]
+  },
+  "FrierenMod:BetaFactor15": {
+    "NAME": "测试因子15",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，获得X+2点 格挡 。"
+    ]
+  },
+  "FrierenMod:BetaFactor16": {
+    "NAME": "测试因子16",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 [E] 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中2X张 *魔力 ，获得X点 [E] 。"
+    ]
+  },
+  "FrierenMod:BetaFactor17": {
+    "NAME": "测试因子17",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 力量 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，获得X点 力量 。"
+    ]
+  },
+  "FrierenMod:BetaFactor18": {
+    "NAME": "测试因子18",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 X+2 点额外伤害。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成 X+2 点额外伤害。"
     ]
   },
   "FrierenMod:Factor100": {

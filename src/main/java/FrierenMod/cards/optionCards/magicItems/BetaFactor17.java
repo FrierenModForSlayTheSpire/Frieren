@@ -4,12 +4,12 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class BaseFactorGamma extends AbstractMagicItem {
-    public static final String ID = ModInformation.makeID(BaseFactorGamma.class.getSimpleName());
+public class BetaFactor17 extends AbstractMagicItem {
+    public static final String ID = ModInformation.makeID(BetaFactor17.class.getSimpleName());
 
-    public BaseFactorGamma() {
+    public BetaFactor17() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.BASIC;
+        this.magicItemRarity = MagicItemRarity.COMMON;
     }
 
     @Override

@@ -40,27 +40,6 @@
     "NAME":"ManaConcealment",
     "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in your hand and draw pile into your discard pile. NL Exhaust."
   },
-  "FrierenMod:BaseFactorAlpha": {
-    "NAME": "Base Factor α",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block twice.",
-    "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, gain X Block twice."
-    ]
-  },
-  "FrierenMod:BaseFactorBeta": {
-    "NAME": "Base Factor β",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] .",
-    "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, gain X [E] ."
-    ]
-  },
-  "FrierenMod:BaseFactorGamma": {
-    "NAME": "Base Factor γ",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Strength.",
-    "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, gain X Strength."
-    ]
-  },
   "FrierenMod:BetaFactor1": {
     "NAME": "Beta Factor 1",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, your next Attack deals !SM! additional damage.",
@@ -79,7 +58,7 @@
     "NAME": "Beta Factor 3",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] next turn.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, gain X+2 [E] next turn."
+      "Exhaust 2X *Mana in pile, gain X [E] next turn."
     ]
   },
   "FrierenMod:BetaFactor4": {
@@ -105,9 +84,9 @@
   },
   "FrierenMod:BetaFactor7": {
     "NAME": "Beta Factor 7",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Weak to all enemies.",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Weak and Vulnerable to all enemies.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, apply X Weak to all enemies."
+      "Exhaust 2X *Mana in pile, apply X Weak and Vulnerable to all enemies."
     ]
   },
   "FrierenMod:BetaFactor8": {
@@ -128,7 +107,7 @@
     "NAME": "Beta Factor 10",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add random !SM! frierenmod:Legendary_Spell into {!frierenmod:SlotNumber!|-1= Error|0= draw pile|1= hand|2= discard pile}.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, add X random frierenmod:Legendary_Spell into pile."
+      "Exhaust X *Mana in pile, add X random frierenmod:Legendary_Spell into pile."
     ]
   },
   "FrierenMod:BetaFactor11": {
@@ -157,6 +136,34 @@
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 4X *Mana in pile, gain X Mantra."
+    ]
+  },
+  "FrierenMod:BetaFactor15": {
+    "NAME": "Base Factor 15",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, gain X+2 Block."
+    ]
+  },
+  "FrierenMod:BetaFactor16": {
+    "NAME": "Base Factor 16",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] .",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust 2X *Mana in pile, gain X [E] ."
+    ]
+  },
+  "FrierenMod:BetaFactor17": {
+    "NAME": "Base Factor 17",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Strength.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, gain X Strength."
+    ]
+  },
+  "FrierenMod:BetaFactor18": {
+    "NAME": "Base Factor 18",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, Cards containing \\\"Strike\\\" deal X+2 additional damage."
     ]
   },
   "FrierenMod:Factor100": {
