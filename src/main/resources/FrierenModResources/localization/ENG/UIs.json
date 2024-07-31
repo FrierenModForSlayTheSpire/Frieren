@@ -160,10 +160,10 @@
   },
   "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL [#ff2c1d]Unloaded[#ff2c1d] ",
-      " [#9ffc4f]Draw_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] ",
-      " [#9ffc4f]Hand_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] ",
-      " [#9ffc4f]Discard_Slot[#9ffc4f] NL [#9ffc4f]Loading[#9ffc4f] "
+      " NL frierenmod:[#ff2c1d]UnLoaded ",
+      " NL frierenmod:[#9ffc4f]Draw_Slot_Loading ",
+      " NL frierenmod:[#9ffc4f]Hand_Slot_Loading ",
+      " NL frierenmod:[#9ffc4f]Discard_Slot_Loading "
     ]
   },
   "FrierenMod:MagicDeckPanel": {

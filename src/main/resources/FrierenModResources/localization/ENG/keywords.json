@@ -14,6 +14,49 @@
     "DESCRIPTION": "Divided by Draw Slot, Hand Slot and Discard Slot. NL Exhaust #yMana in the pile corresponding when you're #ychanting ."
   },
   {
+    "PROPER_NAME": "Unloaded",
+    "NAMES": [
+      "Unloaded",
+      "[#ff2c1d]Unloaded"
+    ],
+    "DESCRIPTION": "Beyond any Slot."
+  },
+  {
+    "PROPER_NAME": "Loading",
+    "NAMES": [
+      "Loading",
+      "[#9ffc4f]Loading"
+    ],
+    "DESCRIPTION": "Draw_Slot, Hand_Slot or Discard_Slot Loading."
+  },
+  {
+    "PROPER_NAME": "Draw_Slot",
+    "NAMES": [
+      "Draw_Slot",
+      "[#9ffc4f]Draw_Slot_Loading",
+      "[#9ffc4f]Draw_Slot"
+    ],
+    "DESCRIPTION": "Draw Pile."
+  },
+  {
+    "PROPER_NAME": "Hand_Slot",
+    "NAMES": [
+      "Hand_Slot",
+      "[#9ffc4f]Hand_Slot",
+      "[#9ffc4f]Hand_Slot_Loading"
+    ],
+    "DESCRIPTION": "Hand."
+  },
+  {
+    "PROPER_NAME": "Discard_Slot",
+    "NAMES": [
+      "Discard_Slot",
+      "[#9ffc4f]Discard_Slot",
+      "[#9ffc4f]Discard_Slot_Loading"
+    ],
+    "DESCRIPTION": "Discard Pile."
+  },
+  {
     "PROPER_NAME":"Synchro",
     "NAMES": [
       "Synchro","synchro"

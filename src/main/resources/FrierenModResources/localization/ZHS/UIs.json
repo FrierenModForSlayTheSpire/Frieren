@@ -160,10 +160,10 @@
   },
   "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL [#ff2c1d]未装载[#ff2c1d] ",
-      " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
-      " [#9ffc4f]手牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
-      " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
+      " NL frierenmod:[#ff2c1d]未装载 ",
+      " NL frierenmod:[#9ffc4f]抽牌槽装载中 ",
+      " NL frierenmod:[#9ffc4f]手牌槽装载中 ",
+      " NL frierenmod:[#9ffc4f]弃牌槽装载中 "
     ]
   },
   "FrierenMod:MagicDeckPanel": {

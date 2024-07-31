@@ -15,6 +15,49 @@
     "DESCRIPTION": "分为抽牌槽，手牌槽，弃牌槽。 NL 在 #y咏唱 时 对应 #y消耗 抽牌堆、手牌、弃牌堆中的 #y魔力 。"
   },
   {
+    "PROPER_NAME": "未装载",
+    "NAMES": [
+      "未装载",
+      "[#ff2c1d]未装载"
+    ],
+    "DESCRIPTION": "装载槽位之外。"
+  },
+  {
+    "PROPER_NAME": "已装载",
+    "NAMES": [
+      "已装载",
+      "[#9ffc4f]已装载"
+    ],
+    "DESCRIPTION": "装载在抽牌槽、手牌或弃牌槽中。"
+  },
+  {
+    "PROPER_NAME": "抽牌槽",
+    "NAMES": [
+      "抽牌槽",
+      "[#9ffc4f]抽牌槽装载中",
+      "[#9ffc4f]抽牌槽"
+    ],
+    "DESCRIPTION": "对应抽牌堆。"
+  },
+  {
+    "PROPER_NAME": "手牌槽",
+    "NAMES": [
+      "手牌槽",
+      "[#9ffc4f]手牌槽",
+      "[#9ffc4f]手牌槽装载中"
+    ],
+    "DESCRIPTION": "对应手牌。"
+  },
+  {
+    "PROPER_NAME": "弃牌槽",
+    "NAMES": [
+      "弃牌槽",
+      "[#9ffc4f]弃牌槽",
+      "[#9ffc4f]弃牌槽装载中"
+    ],
+    "DESCRIPTION": "对应弃牌堆。"
+  },
+  {
     "PROPER_NAME": "同调",
     "NAMES": [
       "同调"
