@@ -29,7 +29,7 @@ public class PerfectDefensiveMagic extends AbstractBaseCard {
         this.block = this.baseBlock = 10;
         this.isChantCard = true;
         this.magicNumber = this.baseMagicNumber = 1;
-        this.chantX = this.baseChantX = 4;
+        this.chantX = this.baseChantX = 3;
     }
 
     @Override
