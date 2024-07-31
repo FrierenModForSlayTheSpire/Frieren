@@ -75,6 +75,12 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaFactor12());
         srcCardPool.add(new BetaFactor13());
         srcCardPool.add(new BetaFactor14());
+        srcCardPool.add(new BetaFactor15());
+        srcCardPool.add(new BetaFactor16());
+        srcCardPool.add(new BetaFactor17());
+        srcCardPool.add(new BetaFactor18());
+        srcCardPool.add(new BetaFactor19());
+        srcCardPool.add(new BetaFactor20());
         srcCardPool.add(new Factor001());
         srcCardPool.add(new Factor010());
         srcCardPool.add(new Factor100());
@@ -84,6 +90,7 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaProp4());
         srcCardPool.add(new BetaProp5());
         srcCardPool.add(new BetaProp6());
+        srcCardPool.add(new BetaProp7());
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();

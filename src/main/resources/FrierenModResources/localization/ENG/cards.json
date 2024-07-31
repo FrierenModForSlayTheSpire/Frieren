@@ -139,31 +139,45 @@
     ]
   },
   "FrierenMod:BetaFactor15": {
-    "NAME": "Base Factor 15",
+    "NAME": "Beta Factor 15",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X+2 Block."
     ]
   },
   "FrierenMod:BetaFactor16": {
-    "NAME": "Base Factor 16",
+    "NAME": "Beta Factor 16",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] .",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, gain X [E] ."
     ]
   },
   "FrierenMod:BetaFactor17": {
-    "NAME": "Base Factor 17",
+    "NAME": "Beta Factor 17",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Strength.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Strength."
     ]
   },
   "FrierenMod:BetaFactor18": {
-    "NAME": "Base Factor 18",
+    "NAME": "Beta Factor 18",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, Cards containing \\\"Strike\\\" deal X+2 additional damage."
+      "Exhaust X *Mana in pile, cards containing \\\"Strike\\\" deal X+2 additional damage."
+    ]
+  },
+  "FrierenMod:BetaFactor19": {
+    "NAME": "Beta Factor 19",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, All enemies lose !SM! Strength this turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, all enemies lose X+2 Strength this turn."
+    ]
+  },
+  "FrierenMod:BetaFactor20": {
+    "NAME": "Beta Factor 20",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, draw !SM! cards next turn.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, draw X cards next turn."
     ]
   },
   "FrierenMod:Factor100": {
@@ -227,6 +241,13 @@
     "DESCRIPTION": "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot."
+    ]
+  },
+  "FrierenMod:BetaProp7": {
+    "NAME": "Beta Prop 7",
+    "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 .",
+    "EXTENDED_DESCRIPTION": [
+      "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."
     ]
   },
   "FrierenMod:SwampSpell": {
