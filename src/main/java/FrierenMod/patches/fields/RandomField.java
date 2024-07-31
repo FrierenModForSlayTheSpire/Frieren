@@ -14,6 +14,7 @@ public class RandomField {
     public static StaticSpireField<Random> magicItemRng = new StaticSpireField<>(() -> null);
     public static StaticSpireField<Integer> magicItemRandomizer = new StaticSpireField<>(() -> AbstractDungeon.cardBlizzStartOffset);
     public static StaticSpireField<Random> magicItemRandomRng = new StaticSpireField<>(() -> null);
+    public static StaticSpireField<Random> manaRandomRng = new StaticSpireField<>(() -> null);
 
     public static Random getMagicItemRng() {
         return magicItemRng.get();
@@ -29,5 +30,8 @@ public class RandomField {
 
     public static Random getMagicItemRandomRng() {
         return magicItemRandomRng.get();
+    }
+    public static Random getManaRandomRng() {
+        return manaRandomRng.get();
     }
 }
