@@ -116,7 +116,7 @@
     ]
   },
   "FrierenMod:BetaFactor13": {
-    "NAME": "测试因子13",
+    "NAME": "薪火相传",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *魔力 {@@}放入{!frierenmod:SlotNumber!|-1= Error|0= 手牌|1= 弃牌堆|2= 抽牌堆}。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，将X张 *魔力 放入下个牌堆。"
