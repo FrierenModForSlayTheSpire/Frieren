@@ -180,6 +180,13 @@
       "Exhaust X *Mana in pile, draw X cards next turn."
     ]
   },
+  "FrierenMod:BetaFactor21": {
+    "NAME": "Beta Factor 21",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Poison to ALL enemies.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust X *Mana in pile, apply !SM! Poison to ALL enemies."
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": " ? @ @ ",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= @}",

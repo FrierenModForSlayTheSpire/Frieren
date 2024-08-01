@@ -171,6 +171,13 @@
       " 消耗 牌堆中X张 *魔力 ，下一回合抽X张牌。"
     ]
   },
+  "FrierenMod:BetaFactor21": {
+    "NAME": "测试因子21",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 中毒 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，给予所有敌人 2X 层 中毒 。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "？！！",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ？|1= ！|2= ！} ",
