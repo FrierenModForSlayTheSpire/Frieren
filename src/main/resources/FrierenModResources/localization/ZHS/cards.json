@@ -63,7 +63,7 @@
     "NAME": "测试因子4",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，对所有敌人造成 !SM! 点伤害。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，对所有敌人造成3X点伤害 。"
+      " 消耗 牌堆中X张 *魔力 ，对所有敌人造成4X点伤害 。"
     ]
   },
   "FrierenMod:BetaFactor5": {
