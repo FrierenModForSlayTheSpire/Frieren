@@ -41,7 +41,7 @@
     "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in your hand and draw pile into your discard pile. NL Exhaust."
   },
   "FrierenMod:BetaFactor1": {
-    "NAME": "Beta Factor 1",
+    "NAME": "Be Prepared",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, your next Attack deals !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, your next Attack deals X+3 additional damage."
