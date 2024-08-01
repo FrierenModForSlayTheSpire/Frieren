@@ -244,7 +244,7 @@
     ]
   },
   "FrierenMod:BetaProp6": {
-    "NAME": "Beta Prop 6",
+    "NAME": "A Certain Scientific Transmutation Circle",
     "DESCRIPTION": "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot."
