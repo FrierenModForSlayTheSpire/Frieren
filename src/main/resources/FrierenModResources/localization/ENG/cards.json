@@ -209,7 +209,7 @@
     ]
   },
   "FrierenMod:BetaProp1": {
-    "NAME": "Beta Prop 1",
+    "NAME": "Unbelievable Tool",
     "DESCRIPTION": "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [
       "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
@@ -251,7 +251,7 @@
     ]
   },
   "FrierenMod:BetaProp7": {
-    "NAME": "Beta Prop 7",
+    "NAME": "Unbelievable Tool Box",
     "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 .",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."

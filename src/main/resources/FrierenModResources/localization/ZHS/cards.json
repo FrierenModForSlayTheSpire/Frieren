@@ -200,7 +200,7 @@
     ]
   },
   "FrierenMod:BetaProp1": {
-    "NAME": "测试魔具1",
+    "NAME": "神奇妙妙工具",
     "DESCRIPTION": "选择1张 frierenmod:[#ff2c1d]未装载 和1张 frierenmod:[#9ffc4f]已装载  *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择1张 frierenmod:[#ff2c1d]未装载 和1张 frierenmod:[#9ffc4f]已装载 *魔法因子 ，使它们 frierenmod:槽位 互换。"
@@ -242,7 +242,7 @@
     ]
   },
   "FrierenMod:BetaProp7": {
-    "NAME": "测试魔具7",
+    "NAME": "妙妙工具箱",
     "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。",
     "EXTENDED_DESCRIPTION": [
       "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。"
