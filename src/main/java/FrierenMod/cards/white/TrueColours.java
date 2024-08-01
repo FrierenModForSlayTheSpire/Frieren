@@ -27,7 +27,7 @@ public class TrueColours extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.chantX = this.baseChantX = 6;
+        this.chantX = this.baseChantX = 4;
         this.isChantCard = true;
         this.exhaust = true;
     }

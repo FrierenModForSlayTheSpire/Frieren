@@ -1,9 +1,6 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.white.Defend_Frieren;
-import FrierenMod.cards.white.DefensiveMagic;
-import FrierenMod.cards.white.Flow;
-import FrierenMod.cards.white.Strike_Frieren;
+import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;

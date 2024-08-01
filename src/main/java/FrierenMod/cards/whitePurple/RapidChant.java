@@ -1,6 +1,7 @@
 package FrierenMod.cards.whitePurple;
 
 import FrierenMod.actions.ChantAction;
+import FrierenMod.actions.MakeManaInDrawPileAction;
 import FrierenMod.cards.DualCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -28,7 +29,7 @@ public class RapidChant extends DualCard {
     public void initSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.isChantCard = true;
-        this.chantX = this.baseChantX = 3;
+        this.chantX = this.baseChantX = 1;
     }
 
     @Override
@@ -43,5 +44,6 @@ public class RapidChant extends DualCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChantAction(this.chantX));
+        this.addToBot(new MakeManaInDrawPileAction(1));
     }
 }

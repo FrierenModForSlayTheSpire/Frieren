@@ -4,7 +4,59 @@
     "NAMES": [
       "ChantX","chant","chanted"
     ],
-    "DESCRIPTION": "Choose: Exhaust X #yMana from your draw pile, gain X #yBlock twice. NL Exhaust X #yMana from your hand, gain X [E] . NL Exhaust X #yMana from your discard pile, gain X #yStrength."
+    "DESCRIPTION": "Choose an available #yMagic_Factor to activate."
+  },
+  {
+    "PROPER_NAME": "Slot",
+    "NAMES": [
+      "Slot","slot"
+    ],
+    "DESCRIPTION": "Divided by Draw Slot, Hand Slot and Discard Slot. NL Exhaust #yMana in the pile corresponding when you're #ychanting ."
+  },
+  {
+    "PROPER_NAME": "Unloaded",
+    "NAMES": [
+      "Unloaded",
+      "[#ff2c1d]Unloaded",
+      "[#ff2c1d]unloaded"
+    ],
+    "DESCRIPTION": "Beyond any Slot."
+  },
+  {
+    "PROPER_NAME": "Loading",
+    "NAMES": [
+      "Loading",
+      "[#9ffc4f]Loading",
+      "[#9ffc4f]loading"
+    ],
+    "DESCRIPTION": "Draw_Slot, Hand_Slot or Discard_Slot Loading."
+  },
+  {
+    "PROPER_NAME": "Draw Slot",
+    "NAMES": [
+      "Draw Slot",
+      "[#9ffc4f]Draw Slot Loading",
+      "[#9ffc4f]draw_slot_loading"
+    ],
+    "DESCRIPTION": "Draw Pile."
+  },
+  {
+    "PROPER_NAME": "Hand Slot",
+    "NAMES": [
+      "Hand Slot",
+      "[#9ffc4f]Hand Slot Loading",
+      "[#9ffc4f]hand_slot_loading"
+    ],
+    "DESCRIPTION": "Hand."
+  },
+  {
+    "PROPER_NAME": "Discard Slot",
+    "NAMES": [
+      "Discard Slot",
+      "[#9ffc4f]Discard Slot Loading",
+      "[#9ffc4f]discard_slot_loading"
+    ],
+    "DESCRIPTION": "Discard Pile."
   },
   {
     "PROPER_NAME":"Synchro",

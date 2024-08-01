@@ -1,9 +1,12 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.powers.WeakenedChantPower;
+import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -60,20 +63,28 @@ public class CombatHelper {
         return getManaNumInDrawPile() + getManaNumInHand() + getManaNumInDiscardPile();
     }
 
-    public static boolean cannotChant(int manaNeed) {
-        return !canChantFromDrawPile(manaNeed) && !canChantFromHand(manaNeed) && !canChantFromDiscardPile(manaNeed);
+    public static boolean cannotChant(int chantX) {
+        return !canActivateSlot(chantX, 0) && !canActivateSlot(chantX, 1) && !canActivateSlot(chantX, 2);
     }
 
-    public static boolean canChantFromDrawPile(int manaNeed) {
-        return manaNeed <= getManaNumInDrawPile();
-    }
-
-    public static boolean canChantFromHand(int manaNeed) {
-        return manaNeed <= getManaNumInHand();
-    }
-
-    public static boolean canChantFromDiscardPile(int manaNeed) {
-        return manaNeed <= getManaNumInDiscardPile();
+    public static boolean canActivateSlot(int chantX, int slotNumber) {
+        int manaNum;
+        switch (slotNumber) {
+            case 0:
+                manaNum = getManaNumInDrawPile();
+                break;
+            case 1:
+                manaNum = getManaNumInHand();
+                break;
+            case 2:
+                manaNum = getManaNumInDiscardPile();
+                break;
+            default:
+                manaNum = -1;
+                Log.logger.info("NO SUCH SLOT NUMBER: {}", slotNumber);
+                break;
+        }
+        return getChantChoices()[slotNumber] != null && (getManaNeed(chantX, getChantChoices()[slotNumber])) <= manaNum;
     }
 
     public static boolean cannotPlayLegendarySpell() {
@@ -135,11 +146,50 @@ public class CombatHelper {
         return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
-    public static int getManaNeedWhenChant(int chantX) {
-        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((chantX - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
+    public static int getManaNeed(int chantX, AbstractMagicItem f) {
+        int baseManaNeed = chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient;
+        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
     }
 
     public static boolean isRaidReversed() {
         return false;
+    }
+
+    public static AbstractMagicItem[] getChantChoices() {
+        AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
+                chantChoices[0] = (AbstractMagicItem) c.makeStatEquivalentCopy();
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+                chantChoices[1] = (AbstractMagicItem) c.makeStatEquivalentCopy();
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+                chantChoices[2] = (AbstractMagicItem) c.makeStatEquivalentCopy();
+            }
+        }
+        return chantChoices;
+    }
+    public static AbstractMagicItem[] getLoadedMagicFactor() {
+        AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
+                chantChoices[0] = (AbstractMagicItem) c;
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+                chantChoices[1] = (AbstractMagicItem) c;
+            }
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+                chantChoices[2] = (AbstractMagicItem) c;
+            }
+        }
+        return chantChoices;
+    }
+    public static boolean isAllMagicFactorLoading(){
+        for(AbstractMagicItem f : getLoadedMagicFactor()){
+            if(f == null)
+                return false;
+        }
+        return true;
     }
 }

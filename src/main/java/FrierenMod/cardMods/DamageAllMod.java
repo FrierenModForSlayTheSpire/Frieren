@@ -2,6 +2,7 @@ package FrierenMod.cardMods;
 
 import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import FrierenMod.utils.ModInformation;
+import basemod.ReflectionHacks;
 import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -31,6 +32,7 @@ public class DamageAllMod extends AbstractCardModifier {
         card.damage = card.baseDamage = this.damageAmt;
         card.target = AbstractCard.CardTarget.ALL_ENEMY;
         card.type = AbstractCard.CardType.ATTACK;
+        ReflectionHacks.setPrivate(card,AbstractCard.class, "isMultiDamage", true);
         if (card instanceof CustomLegendarySpell){
             ((CustomLegendarySpell)card).loadCardImage("FrierenModResources/img/cards/CustomLegendarySpell (2).png");
             ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + "!D!" + TEXT[1];
@@ -38,7 +40,7 @@ public class DamageAllMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, card.baseDamage, card.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, card.multiDamage, card.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
     }
 
     public String identifier(AbstractCard card) {

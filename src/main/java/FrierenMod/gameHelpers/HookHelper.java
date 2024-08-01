@@ -1,25 +1,32 @@
 package FrierenMod.gameHelpers;
 
-import FrierenMod.ModManager;
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.ChantOptions.AbstractMagicFactor;
-import FrierenMod.cards.optionCards.ChantOptions.BaseFactorAlpha;
-import FrierenMod.cards.optionCards.ChantOptions.BaseFactorBeta;
-import FrierenMod.cards.optionCards.ChantOptions.BaseFactorGamma;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.patches.fields.MagicFactorDeckField;
-import basemod.interfaces.OnPlayerTurnStartSubscriber;
-import basemod.interfaces.OnStartBattleSubscriber;
-import basemod.interfaces.PostCreateStartingDeckSubscriber;
-import basemod.interfaces.StartGameSubscriber;
+import FrierenMod.patches.fields.MagicDeckField;
+import FrierenMod.patches.fields.RandomField;
+import FrierenMod.patches.fields.RandomField2;
+import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.ui.panels.MagicDeckPanel;
+import FrierenMod.utils.Config;
+import FrierenMod.utils.Log;
+import basemod.ReflectionHacks;
+import basemod.TopPanelGroup;
+import basemod.TopPanelItem;
+import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.EventRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
-public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, StartGameSubscriber {
+import java.util.ArrayList;
+
+public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -55,28 +62,53 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
 
     @Override
     public void receivePostCreateStartingDeck(AbstractPlayer.PlayerClass playerClass, CardGroup cardGroup) {
+        MagicDeckField.magicDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
         if (playerClass == CharacterEnums.FRIEREN) {
-            MagicFactorDeckField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
-            BaseFactorAlpha alpha = new BaseFactorAlpha();
-            alpha.setCurrentSlot(0);
-            BaseFactorBeta beta = new BaseFactorBeta();
-            beta.setCurrentSlot(1);
-            BaseFactorGamma gamma = new BaseFactorGamma();
-            gamma.setCurrentSlot(2);
-            MagicFactorDeckField.getDeck().addToTop(alpha);
-            MagicFactorDeckField.getDeck().addToTop(beta);
-            MagicFactorDeckField.getDeck().addToTop(gamma);
-            MagicFactorHelper.saveAllFactors();
+            SaveFileHelper.save();
+        }
+    }
+
+    @Override
+    public void receivePostBattle(AbstractRoom abstractRoom) {
+        if (AbstractDungeon.player.chosenClass != CharacterEnums.FRIEREN)
+            return;
+        AbstractRoom currRoom = AbstractDungeon.getCurrRoom();
+        int chance = 0;
+        if (currRoom instanceof MonsterRoomElite) {
+            chance = 70;
+            chance += RandomField2.getBlizzardMagicItemMod();
+        } else if (currRoom instanceof MonsterRoom) {
+            if (!AbstractDungeon.getMonsters().haveMonstersEscaped()) {
+                chance = 40;
+                chance += RandomField2.getBlizzardMagicItemMod();
+            }
+        } else if (currRoom instanceof EventRoom) {
+            chance = 40;
+            chance += RandomField2.getBlizzardMagicItemMod();
+        }
+        Log.logger.info("MAGIC ITEM CHANCE: {}", chance);
+        if (RandomField.getMagicItemRng().random(0, 99) < chance || Config.IN_DEV) {
+            MagicItemReward.addMagicItemRewardToRoom();
+            RandomField2.addBlizzardMagicItemMod(-10);
+        } else {
+            RandomField2.addBlizzardMagicItemMod(10);
         }
     }
 
     @Override
     public void receiveStartGame() {
-        MagicFactorDeckField.magicFactorDeck.set(AbstractDungeon.player, new CardGroup(CardGroup.CardGroupType.UNSPECIFIED));
-        if (ModManager.saveData.containsKey(MagicFactorHelper.SAVE_NAME)) {
-            for (AbstractMagicFactor f : MagicFactorHelper.getAllFactors()) {
-                MagicFactorDeckField.getDeck().addToTop(f);
-            }
+        ArrayList<TopPanelItem> items = ReflectionHacks.getPrivate(TopPanelHelper.topPanelGroup, TopPanelGroup.class, "topPanelItems");
+        if (AbstractDungeon.player.chosenClass != CharacterEnums.FRIEREN)
+            items.removeIf(topPanelItem -> topPanelItem instanceof MagicDeckPanel);
+        else {
+            boolean hasPanel = false;
+            for (TopPanelItem item : items)
+                if (item instanceof MagicDeckPanel) {
+                    hasPanel = true;
+                    break;
+                }
+            if (!hasPanel)
+                items.add(new MagicDeckPanel());
         }
     }
 }

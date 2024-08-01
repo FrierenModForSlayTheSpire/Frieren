@@ -43,8 +43,9 @@ public class ModInformation {
     public static String makeCharResPath(String character, String content) {
         return getCharPath() + character + "/" + content + ".png";
     }
-    public static String makeMonsterResPath(String content){
-        return getImgPath() + "monsters/" +content + ".png";
+
+    public static String makeMonsterResPath(String content) {
+        return getImgPath() + "monsters/" + content + ".png";
     }
 
     public static String getUIPath() {
@@ -87,6 +88,13 @@ public class ModInformation {
         } else {
             return "ERROR!";
         }
+    }
+
+    public static String makeCardBannerPath(String character, String bannerType, String bannerSize) {
+        return getCardStylesPath() + character + "/banners/" + "card_banner_" + bannerType + "_" + bannerSize + ".png";
+    }
+    public static String makeIconPath(String content) {
+        return getUIPath() + "icons/" + content + ".png";
     }
 
     public static String makeCardOrbPath(String character, String type) {

@@ -16,5 +16,8 @@ public class PublicRes {
     public static final String DEV_POWER_IMG_84 = ModInformation.makePowerPath(AccelerateFlowPower.POWER_ID.split(":")[1],84);
     public static final String DEV_POWER_IMG_32 = ModInformation.makePowerPath(AccelerateFlowPower.POWER_ID.split(":")[1],32);
     public static final String MOD_BADGE = ModInformation.makeImgPath("Badge.png");
-    public static final String CHANT_BAG_ICON = DEV_POWER_IMG_84;
+    public static final String MAGIC_DECK_ICON = ModInformation.makeIconPath("magic_deck");
+    public static final String MAGIC_ITEM_REWARD_ICON = ModInformation.makeIconPath("magic_item_reward");
+    public static final String CARD_BANNER_PROP = ModInformation.makeCardBannerPath(CHARACTER_NAME,"prop","small");
+    public static final String CARD_BANNER_PROP_L = ModInformation.makeCardBannerPath(CHARACTER_NAME,"prop","large");
 }

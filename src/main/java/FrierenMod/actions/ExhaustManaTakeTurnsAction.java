@@ -16,17 +16,17 @@ public class ExhaustManaTakeTurnsAction extends AbstractGameAction {
             int draw = CombatHelper.getManaNumInDrawPile();
             int hand = CombatHelper.getManaNumInHand();
             if(draw >= requiredAmt){
-                this.addToBot(new ExhaustManaInDrawPileAction(requiredAmt));
+                this.addToBot(new ExhaustManaInCardGroupAction(requiredAmt,0));
             }
             else {
-                this.addToBot(new ExhaustManaInDrawPileAction(draw));
+                this.addToBot(new ExhaustManaInCardGroupAction(draw,0));
                 int diff = requiredAmt - draw;
                 if(diff <= hand){
-                    this.addToBot(new ExhaustManaInHandAction(diff));
+                    this.addToBot(new ExhaustManaInCardGroupAction(diff,1));
                 }else {
-                    this.addToBot(new ExhaustManaInHandAction(hand));
+                    this.addToBot(new ExhaustManaInCardGroupAction(hand,1));
                     int diff2 = requiredAmt - hand - draw;
-                    this.addToBot(new ExhaustManaInDiscardPileAction(diff2));
+                    this.addToBot(new ExhaustManaInCardGroupAction(diff2,2));
                 }
             }
         }

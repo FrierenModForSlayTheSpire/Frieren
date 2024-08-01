@@ -35,8 +35,7 @@ public class ManaDetection extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(6);
         }
     }
 

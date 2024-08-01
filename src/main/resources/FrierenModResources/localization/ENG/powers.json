@@ -164,5 +164,23 @@
     "DESCRIPTIONS": [
       "This turn, #yChant will Exhaust #b%d more #yMana."
     ]
+  },
+  "FrierenMod:Factor100Power": {
+    "NAME": " ? @ @ ",
+    "DESCRIPTIONS": [
+      " ? @ @ "
+    ]
+  },
+  "FrierenMod:Factor010Power": {
+    "NAME": " @ ? @ ",
+    "DESCRIPTIONS": [
+      " @ ? @ "
+    ]
+  },
+  "FrierenMod:Factor001Power": {
+    "NAME": " @ @ ? ",
+    "DESCRIPTIONS": [
+      " @ @ ? "
+    ]
   }
 }

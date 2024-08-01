@@ -154,39 +154,57 @@
   },
   "FrierenMod:cantUseMessage": {
     "TEXT": [
-      "没有足够 #r魔力 。",
+      "没有足够 #r魔力 以激活 #y魔法因子 。",
       "本回合没有打出过 #r咏唱 牌。"
     ]
   },
   "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL 未装载 。",
-      " [#9ffc4f]抽牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
-      " [#9ffc4f]手牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] ",
-      " [#9ffc4f]弃牌槽[#9ffc4f] NL [#9ffc4f]装载中[#9ffc4f] "
+      " NL frierenmod:[#ff2c1d]未装载 ",
+      " NL frierenmod:[#9ffc4f]抽牌槽装载中 ",
+      " NL frierenmod:[#9ffc4f]手牌槽装载中 ",
+      " NL frierenmod:[#9ffc4f]弃牌槽装载中 "
     ]
   },
-  "FrierenMod:MagicFactorBanTips": {
+  "FrierenMod:MagicDeckPanel": {
     "TEXT": [
-      " #r抽牌堆 ",
-      " #r手牌 ",
-      " #r弃牌堆 ",
-      "禁用",
-      "将此牌 #y装载 入 #咏唱插槽 后会导致",
-      " #y槽位 中的 #y咏唱选项卡 失效。",
-      "和"
+      "魔法牌组",
+      "查看你拥有的 #y魔法因子 和 #y魔具 。"
     ]
   },
-  "FrierenMod:MagicFactorDeckPanel": {
+  "FrierenMod:MagicDeckScreen": {
     "TEXT": [
-      "魔法因子堆",
-      "查看你拥有的 #y魔法因子 。"
+      "返回",
+      "魔具 [%s] 使用中",
+      " [%s] 选择中"
     ]
   },
-  "FrierenMod:MagicFactorTip": {
+  "FrierenMod:MagicDeckSortHeader": {
+    "TEXT": [
+      "装载槽位",
+      "稀有度",
+      "类型"
+    ]
+  },
+  "FrierenMod:MagicItemReward": {
+    "TEXT": [
+      "将一张 #y魔法因子 或 #y魔具 加入你的魔法牌组",
+      "选择一张魔法因子或魔具"
+    ]
+  },
+  "FrierenMod:MagicItemTip": {
     "TEXT": [
       "魔法因子",
-      "一种特殊的选项卡，选择后会 #y消耗  #y魔力 并发动相应效果，仅当 对应牌堆中 #y魔力 数充足时可被选择。"
+      "一种特殊的选项卡，可被装载在 #y槽位 中。在战斗中 #y咏唱 ，且 #g装载中 的 #y槽位 对应牌堆中有足够 #y魔力 时可激活。",
+      "魔具",
+      "一次性卡牌，在 #y魔法牌组 中 #r右键 自身开始或停止使用 。"
+    ]
+  },
+  "FrierenMod:CardStyleText": {
+    "TEXT": [
+      "魔力",
+      "魔法因子",
+      "魔具"
     ]
   },
   "FrierenMod:DualCardTip": {

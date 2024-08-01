@@ -25,8 +25,8 @@ public class ContinualChant extends AbstractBaseCard {
 //    }
     @Override
     public void initSpecifiedAttributes() {
-        this.chantX = this.baseChantX = 4;
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.chantX = this.baseChantX = 3;
+        this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new Mana();
         this.isChantCard = true;
         this.isLegendarySpell = true;

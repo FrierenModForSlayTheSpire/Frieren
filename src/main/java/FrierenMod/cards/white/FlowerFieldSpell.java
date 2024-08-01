@@ -26,7 +26,7 @@ public class FlowerFieldSpell extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.isChantCard = true;
-        this.chantX = this.baseChantX = 3;
+        this.chantX = this.baseChantX = 2;
         this.cardsToPreview = new BlueMoonWeed();
     }
 

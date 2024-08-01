@@ -3,7 +3,7 @@
     "NAME": "Holy Emblem",
     "FLAVOR": "A certification used long long time ago. However, the organization that manage magic change all the time, which bothers Frieren.",
     "DESCRIPTIONS": [
-      "At the start of your turn, Shuffle #b3 #yMana into your draw pile."
+      "At the start of your turn, Shuffle #b1 #yMana into your draw pile and discard pile."
     ]
   },
   "FrierenMod:HairAccessory": {
