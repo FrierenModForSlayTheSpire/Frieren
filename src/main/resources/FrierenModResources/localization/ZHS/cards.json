@@ -56,7 +56,7 @@
     "NAME": "测试因子3",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一回合获得 !SM! [E] 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，下一回合获得X [E] 。"
+      " 消耗 牌堆中X+2张 *魔力 ，下一回合获得X [E] 。"
     ]
   },
   "FrierenMod:BetaFactor4": {
@@ -91,7 +91,7 @@
     "NAME": "测试因子9",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，抽 !SM! 张牌 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，抽X张牌 。"
+      " 消耗 牌堆中X+2张 *魔力 ，抽X张牌 。"
     ]
   },
   "FrierenMod:BetaFactor10": {
@@ -208,9 +208,9 @@
   },
   "FrierenMod:BetaProp3": {
     "NAME": "测试魔具3",
-    "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复5点生命。",
+    "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。",
     "EXTENDED_DESCRIPTION": [
-      "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复5点生命。"
+      "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。"
     ]
   },
   "FrierenMod:BetaProp4": {

@@ -58,7 +58,7 @@
     "NAME": "Beta Factor 3",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] next turn.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, gain X [E] next turn."
+      "Exhaust X+2 *Mana in pile, gain X [E] next turn."
     ]
   },
   "FrierenMod:BetaFactor4": {
@@ -100,7 +100,7 @@
     "NAME": "Beta Factor 9",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Draw !SM! card.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, Draw X card."
+      "Exhaust X+2 *Mana in pile, Draw X card."
     ]
   },
   "FrierenMod:BetaFactor10": {
@@ -135,7 +135,7 @@
     "NAME": "Beta Factor 14",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 4X *Mana in pile, gain X Mantra."
+      "Exhaust 2X *Mana in pile, gain X Mantra."
     ]
   },
   "FrierenMod:BetaFactor15": {
@@ -217,9 +217,9 @@
   },
   "FrierenMod:BetaProp3": {
     "NAME": "Beta Prop 3",
-    "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 5 HP.",
+    "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 10 HP.",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 5 HP."
+      "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 10 HP."
     ]
   },
   "FrierenMod:BetaProp4": {

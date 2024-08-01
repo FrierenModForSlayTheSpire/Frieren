@@ -27,9 +27,9 @@ public class BetaProp3 extends AbstractMagicItem {
             if (((AbstractMagicItem) c).currentSlot > -1)
                 return false;
         }
-        for(AbstractCard c: chosenCards)
+        for (AbstractCard c : chosenCards)
             AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(c));
-        p.heal(5,true);
+        p.heal(10, true);
         return true;
     }
 }

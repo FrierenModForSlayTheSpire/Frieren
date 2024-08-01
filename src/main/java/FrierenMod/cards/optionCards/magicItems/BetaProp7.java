@@ -15,6 +15,7 @@ public class BetaProp7 extends AbstractMagicItem {
         super(ID);
         this.magicItemRarity = MagicItemRarity.PROP;
         this.propCanChooseMaxAmt = 2;
+        this.cardsToPreview = new BetaProp1();
     }
 
     public boolean propTakeEffect(ArrayList<AbstractCard> chosenCards) {
