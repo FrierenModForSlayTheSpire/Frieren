@@ -83,7 +83,7 @@
     ]
   },
   "FrierenMod:BetaFactor7": {
-    "NAME": "Beta Factor 7",
+    "NAME": "Foreign Spell: Hypnosis",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Weak and Vulnerable to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, apply X Weak and Vulnerable to all enemies."

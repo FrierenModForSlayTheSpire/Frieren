@@ -81,7 +81,7 @@
     ]
   },
   "FrierenMod:BetaFactor7": {
-    "NAME": "测试因子7",
+    "NAME": "他山之石：精神操作魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 虚弱 和 易伤 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，给予所有敌人X层 虚弱 和 易伤 。"
