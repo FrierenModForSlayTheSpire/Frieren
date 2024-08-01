@@ -214,7 +214,7 @@
     ]
   },
   "FrierenMod:BetaProp3": {
-    "NAME": "测试魔具3",
+    "NAME": "赞因的笔记",
     "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。",
     "EXTENDED_DESCRIPTION": [
       "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。"
