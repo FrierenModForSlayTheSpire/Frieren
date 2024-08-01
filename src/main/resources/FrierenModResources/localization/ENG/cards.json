@@ -146,7 +146,7 @@
     ]
   },
   "FrierenMod:BetaFactor16": {
-    "NAME": "Beta Factor 16",
+    "NAME": "Strategizing",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] .",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, gain X [E] ."

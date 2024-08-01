@@ -137,7 +137,7 @@
     ]
   },
   "FrierenMod:BetaFactor16": {
-    "NAME": "测试因子16",
+    "NAME": "运筹帷幄",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 [E] 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，获得X点 [E] 。"
