@@ -109,7 +109,7 @@
     ]
   },
   "FrierenMod:BetaFactor12": {
-    "NAME": "测试因子12",
+    "NAME": "结界魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 格挡 且下 !SM! 回合你的 格挡 不会消失。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+2张 *魔力 ，获得X点 格挡 且下X回合你的 格挡 不会消失。"
