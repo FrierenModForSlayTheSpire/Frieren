@@ -95,7 +95,7 @@
     ]
   },
   "FrierenMod:BetaFactor10": {
-    "NAME": "测试因子10",
+    "NAME": "活着的传说",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，随机将 !SM! 张 frierenmod:传说魔法 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，随机将X张 frierenmod:传说魔法 放入牌堆。"
@@ -123,7 +123,7 @@
     ]
   },
   "FrierenMod:BetaFactor14": {
-    "NAME": "虔诚朝圣",
+    "NAME": "遁入智瞳",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，获得X层 真言 。"

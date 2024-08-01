@@ -104,7 +104,7 @@
     ]
   },
   "FrierenMod:BetaFactor10": {
-    "NAME": "Beta Factor 10",
+    "NAME": "The Living Legend",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add random !SM! frierenmod:Legendary_Spell into {!frierenmod:SlotNumber!|-1= Error|0= draw pile|1= hand|2= discard pile}.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, add X random frierenmod:Legendary_Spell into pile."
@@ -132,7 +132,7 @@
     ]
   },
   "FrierenMod:BetaFactor14": {
-    "NAME": "Devout Pilgrimage",
+    "NAME": "Transcendence",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, gain X Mantra."
