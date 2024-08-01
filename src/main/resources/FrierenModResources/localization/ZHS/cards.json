@@ -123,7 +123,7 @@
     ]
   },
   "FrierenMod:BetaFactor14": {
-    "NAME": "测试因子14",
+    "NAME": "虔诚朝圣",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，获得X层 真言 。"
