@@ -167,7 +167,7 @@
     ]
   },
   "FrierenMod:BetaFactor19": {
-    "NAME": "Beta Factor 19",
+    "NAME": "Grossed-out Look",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, All enemies lose !SM! Strength this turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, all enemies lose X+2 Strength this turn."
