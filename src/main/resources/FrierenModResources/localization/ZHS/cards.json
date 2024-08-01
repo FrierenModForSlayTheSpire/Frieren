@@ -91,7 +91,7 @@
     "NAME": "测试因子9",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，抽 !SM! 张牌 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X+2张 *魔力 ，抽X张牌 。"
+      " 消耗 牌堆中X+1张 *魔力 ，抽X张牌 。"
     ]
   },
   "FrierenMod:BetaFactor10": {
@@ -154,7 +154,7 @@
     "NAME": "测试因子18",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 !SM! 点额外伤害。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+2点额外伤害。"
+      " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+1点额外伤害。"
     ]
   },
   "FrierenMod:BetaFactor19": {

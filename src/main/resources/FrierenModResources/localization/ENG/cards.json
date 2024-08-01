@@ -100,7 +100,7 @@
     "NAME": "Beta Factor 9",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Draw !SM! card.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X+2 *Mana in pile, Draw X card."
+      "Exhaust X+1 *Mana in pile, Draw X card."
     ]
   },
   "FrierenMod:BetaFactor10": {
@@ -163,7 +163,7 @@
     "NAME": "Beta Factor 18",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, cards containing \"Strike\" deal X+2 additional damage."
+      "Exhaust X *Mana in pile, cards containing \"Strike\" deal X+1 additional damage."
     ]
   },
   "FrierenMod:BetaFactor19": {
