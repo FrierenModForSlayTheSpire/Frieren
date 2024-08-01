@@ -74,7 +74,7 @@
     ]
   },
   "FrierenMod:BetaFactor6": {
-    "NAME": "测试因子6",
+    "NAME": "魔力增幅",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 个回合你所有的攻击伤害翻倍。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中4X张 *魔力 ，下X个回合你所有的攻击伤害翻倍。"

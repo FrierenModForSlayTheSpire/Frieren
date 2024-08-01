@@ -76,7 +76,7 @@
     ]
   },
   "FrierenMod:BetaFactor6": {
-    "NAME": "Beta Factor 6",
+    "NAME": "Spell Boost",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, deal Double Damage for the next !SM! turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 4X *Mana in pile, deal Double Damage for the next X turn."
