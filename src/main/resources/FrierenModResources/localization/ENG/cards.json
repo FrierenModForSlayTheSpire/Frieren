@@ -160,7 +160,7 @@
     ]
   },
   "FrierenMod:BetaFactor18": {
-    "NAME": "Beta Factor 18",
+    "NAME": "Melee Mage",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, cards containing \"Strike\" deal X+1 additional damage."

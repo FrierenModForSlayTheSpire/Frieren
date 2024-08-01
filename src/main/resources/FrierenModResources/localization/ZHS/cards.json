@@ -151,7 +151,7 @@
     ]
   },
   "FrierenMod:BetaFactor18": {
-    "NAME": "测试因子18",
+    "NAME": "近战法师",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 !SM! 点额外伤害。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+1点额外伤害。"
