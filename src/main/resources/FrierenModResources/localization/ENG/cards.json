@@ -44,7 +44,7 @@
     "NAME": "Beta Factor 1",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, your next Attack deals !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, your next Attack deals X additional damage."
+      "Exhaust X *Mana in pile, your next Attack deals X+3 additional damage."
     ]
   },
   "FrierenMod:BetaFactor2": {
@@ -72,7 +72,7 @@
     "NAME": "Beta Factor 5",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Dexterity.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 3X *Mana in pile, gain X Dexterity."
+      "Exhaust 2X *Mana in pile, gain X Dexterity."
     ]
   },
   "FrierenMod:BetaFactor6": {
@@ -121,7 +121,7 @@
     "NAME": "Beta Factor 12",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block and Block is not removed at the start of your next !SM! turns.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, gain X Block and Block is not removed at the start of your next X turns."
+      "Exhaust X+2 *Mana in pile, gain X Block and Block is not removed at the start of your next X turns."
     ]
   },
   "FrierenMod:BetaFactor13": {
