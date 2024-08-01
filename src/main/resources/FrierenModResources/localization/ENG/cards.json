@@ -203,9 +203,9 @@
   },
   "FrierenMod:BetaProp1": {
     "NAME": "Beta Prop 1",
-    "DESCRIPTION": "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,exchange their frierenmod:slot.",
+    "DESCRIPTION": "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [
-      "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,exchange their frierenmod:slot."
+      "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
     ]
   },
   "FrierenMod:BetaProp2": {
@@ -224,9 +224,9 @@
   },
   "FrierenMod:BetaProp4": {
     "NAME": "Beta Prop 4",
-    "DESCRIPTION": "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , exchange their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
+    "DESCRIPTION": "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
     "EXTENDED_DESCRIPTION": [
-      "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , exchange their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
+      "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
     ]
   },
   "FrierenMod:BetaProp5": {
@@ -623,7 +623,7 @@
   },
   "FrierenMod:TrueColours": {
     "NAME": "True Colours",
-    "DESCRIPTION": "frierenmod:Chant 6. NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
+    "DESCRIPTION": "frierenmod:Chant !CX! . NL Gain [E] [E] [E] ,draw 3 cards, shuffle 3 *Mana into your draw pile, hand, and discard pile. NL Exhaust."
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",

@@ -117,7 +117,7 @@
   },
   "FrierenMod:BetaFactor13": {
     "NAME": "测试因子13",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *魔力 {@@} 放入 {!frierenmod:SlotNumber!|-1= Error|0= 手牌|1= 弃牌堆|2= 抽牌堆}",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *魔力 {@@}放入{!frierenmod:SlotNumber!|-1= Error|0= 手牌|1= 弃牌堆|2= 抽牌堆}。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，将X张 *魔力 放入下个牌堆。"
     ]
@@ -152,9 +152,9 @@
   },
   "FrierenMod:BetaFactor18": {
     "NAME": "测试因子18",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 X+2 点额外伤害。",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 !SM! 点额外伤害。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成 X+2 点额外伤害。"
+      " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+2点额外伤害。"
     ]
   },
   "FrierenMod:BetaFactor19": {
@@ -650,7 +650,7 @@
   },
   "FrierenMod:TrueColours": {
     "NAME": "真面目",
-    "DESCRIPTION": " frierenmod:咏唱 6。 NL 获得 [E] [E] [E] ，抽3张牌，在抽牌堆、手牌、弃牌堆各放入3张 *魔力 。 NL  消耗 。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 获得 [E] [E] [E] ，抽3张牌，在抽牌堆、手牌、弃牌堆各放入3张 *魔力 。 NL  消耗 。"
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "打开时空之门",
