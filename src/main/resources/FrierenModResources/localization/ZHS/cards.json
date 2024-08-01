@@ -53,7 +53,7 @@
     ]
   },
   "FrierenMod:BetaFactor3": {
-    "NAME": "测试因子3",
+    "NAME": "宴会魔法：花鸟风月",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一回合获得 !SM! [E] 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+2张 *魔力 ，下一回合获得X [E] 。"
