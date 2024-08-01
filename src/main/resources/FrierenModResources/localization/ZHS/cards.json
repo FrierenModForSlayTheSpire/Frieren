@@ -46,7 +46,7 @@
     ]
   },
   "FrierenMod:BetaFactor2": {
-    "NAME": "测试因子2",
+    "NAME": "他山之石：花瓣金属化魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 金属化 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X层 金属化 。"
@@ -67,7 +67,7 @@
     ]
   },
   "FrierenMod:BetaFactor5": {
-    "NAME": "测试因子5",
+    "NAME": "他山之石：高速移动魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，获得X点敏捷 。"

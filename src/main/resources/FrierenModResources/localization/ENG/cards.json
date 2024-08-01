@@ -48,7 +48,7 @@
     ]
   },
   "FrierenMod:BetaFactor2": {
-    "NAME": "Beta Factor 2",
+    "NAME": "Foreign Spell: Metallicize Flower",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Metallicize.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Metallicize."
@@ -69,7 +69,7 @@
     ]
   },
   "FrierenMod:BetaFactor5": {
-    "NAME": "Beta Factor 5",
+    "NAME": "Foreign Spell: High-Speed Movement",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Dexterity.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, gain X Dexterity."
