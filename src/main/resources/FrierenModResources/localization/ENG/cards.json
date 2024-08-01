@@ -62,7 +62,7 @@
     ]
   },
   "FrierenMod:BetaFactor4": {
-    "NAME": "Beta Factor 4",
+    "NAME": "Foreign Spell:Arrows of Ice",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, deal !SM! damage to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, deal 4X damage to all enemies ."

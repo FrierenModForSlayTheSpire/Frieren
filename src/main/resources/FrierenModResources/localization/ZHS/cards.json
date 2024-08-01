@@ -60,7 +60,7 @@
     ]
   },
   "FrierenMod:BetaFactor4": {
-    "NAME": "测试因子4",
+    "NAME": "他山之石：释放冰箭的魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，对所有敌人造成 !SM! 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，对所有敌人造成4X点伤害 。"
