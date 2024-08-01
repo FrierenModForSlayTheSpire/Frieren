@@ -160,10 +160,10 @@
   },
   "FrierenMod:MagicFactorLoadMessages": {
     "TEXT": [
-      " NL frierenmod:[#ff2c1d]UnLoaded ",
-      " NL frierenmod:[#9ffc4f]Draw_Slot_Loading ",
-      " NL frierenmod:[#9ffc4f]Hand_Slot_Loading ",
-      " NL frierenmod:[#9ffc4f]Discard_Slot_Loading "
+      " NL [#ff2c1d]UnLoaded[#ff2c1d] ",
+      " NL [#9ffc4f]Draw_Slot_Loading[#9ffc4f] ",
+      " NL [#9ffc4f]Hand_Slot_Loading[#9ffc4f] ",
+      " NL [#9ffc4f]Discard_Slot_Loading[#9ffc4f] "
     ]
   },
   "FrierenMod:MagicDeckPanel": {
@@ -203,8 +203,8 @@
   "FrierenMod:CardStyleText": {
     "TEXT": [
       "Mana",
-      "Magic Factor",
-      "Magic Prop"
+      "Factor",
+      "Prop"
     ]
   },
   "FrierenMod:DualCardTip": {

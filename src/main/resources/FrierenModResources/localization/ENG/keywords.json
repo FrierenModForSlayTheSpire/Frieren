@@ -17,7 +17,8 @@
     "PROPER_NAME": "Unloaded",
     "NAMES": [
       "Unloaded",
-      "[#ff2c1d]Unloaded"
+      "[#ff2c1d]Unloaded",
+      "[#ff2c1d]unloaded"
     ],
     "DESCRIPTION": "Beyond any Slot."
   },
@@ -25,34 +26,35 @@
     "PROPER_NAME": "Loading",
     "NAMES": [
       "Loading",
-      "[#9ffc4f]Loading"
+      "[#9ffc4f]Loading",
+      "[#9ffc4f]loading"
     ],
     "DESCRIPTION": "Draw_Slot, Hand_Slot or Discard_Slot Loading."
   },
   {
-    "PROPER_NAME": "Draw_Slot",
+    "PROPER_NAME": "Draw Slot",
     "NAMES": [
-      "Draw_Slot",
-      "[#9ffc4f]Draw_Slot_Loading",
-      "[#9ffc4f]Draw_Slot"
+      "Draw Slot",
+      "[#9ffc4f]Draw Slot Loading",
+      "[#9ffc4f]draw_slot_loading"
     ],
     "DESCRIPTION": "Draw Pile."
   },
   {
-    "PROPER_NAME": "Hand_Slot",
+    "PROPER_NAME": "Hand Slot",
     "NAMES": [
-      "Hand_Slot",
-      "[#9ffc4f]Hand_Slot",
-      "[#9ffc4f]Hand_Slot_Loading"
+      "Hand Slot",
+      "[#9ffc4f]Hand Slot Loading",
+      "[#9ffc4f]hand_slot_loading"
     ],
     "DESCRIPTION": "Hand."
   },
   {
-    "PROPER_NAME": "Discard_Slot",
+    "PROPER_NAME": "Discard Slot",
     "NAMES": [
-      "Discard_Slot",
-      "[#9ffc4f]Discard_Slot",
-      "[#9ffc4f]Discard_Slot_Loading"
+      "Discard Slot",
+      "[#9ffc4f]Discard Slot Loading",
+      "[#9ffc4f]discard_slot_loading"
     ],
     "DESCRIPTION": "Discard Pile."
   },

@@ -26,7 +26,7 @@
   "FrierenMod:RapidChant": {
     "NAME": "Rapid Chant",
     "DESCRIPTION": "frierenmod:Chant !CX!. Shuffle one *Mana into your draw pile.",
-    "UPGRADE_DESCRIPTION": "Retain. NL frierenmod:Chant !CX!.Shuffle one *Mana into your draw pile."
+    "UPGRADE_DESCRIPTION": "Retain. NL frierenmod:Chant !CX!. Shuffle one *Mana into your draw pile."
   },
   "FrierenMod:Mana": {
     "NAME": "Mana",
@@ -163,7 +163,7 @@
     "NAME": "Beta Factor 18",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, cards containing \\\"Strike\\\" deal X+2 additional damage."
+      "Exhaust X *Mana in pile, cards containing \"Strike\" deal X+2 additional damage."
     ]
   },
   "FrierenMod:BetaFactor19": {
@@ -275,7 +275,7 @@
   },
   "FrierenMod:Flow": {
     "NAME": "Flow",
-    "DESCRIPTION": "Deal !D! damage. NL Put !M! *Mana from your draw pile into your discard pile."
+    "DESCRIPTION": "Deal !D! damage. NL Put one *Mana from your draw pile and discard pile in your hand."
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "Flying Magic",
