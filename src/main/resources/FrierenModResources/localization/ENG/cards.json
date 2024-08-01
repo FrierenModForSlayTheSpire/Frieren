@@ -139,7 +139,7 @@
     ]
   },
   "FrierenMod:BetaFactor15": {
-    "NAME": "Beta Factor 15",
+    "NAME": "Advanced Defensive Magic",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X+2 Block."
