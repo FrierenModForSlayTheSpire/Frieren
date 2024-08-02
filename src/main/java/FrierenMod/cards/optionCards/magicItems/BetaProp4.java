@@ -27,19 +27,17 @@ public class BetaProp4 extends AbstractMagicItem {
             if (((AbstractMagicItem) c).currentSlot > -1)
                 return false;
         }
-        for (AbstractMagicItem c : CombatHelper.getChantChoices()) {
-            c.currentSlot = -1;
-            c.superFlash();
-        }
         List<Integer> newSlotNumber = Arrays.asList(0, 1, 2);
         Collections.shuffle(newSlotNumber, new Random(RandomField.getMagicItemRandomRng().randomLong()));
+        for (int i = 0; i < propCanChooseMaxAmt; i++){
+            AbstractMagicItem oldItem = CombatHelper.getLoadedMagicFactor()[i];
+            oldItem.currentSlot = -1;
+            oldItem.superFlash();
+        }
         for (int i = 0; i < propCanChooseMaxAmt; i++){
             AbstractMagicItem newItem = ((AbstractMagicItem) chosenCards.get(i));
             newItem.currentSlot = newSlotNumber.get(i);
             newItem.superFlash();
-            AbstractMagicItem oldItem = CombatHelper.getLoadedMagicFactor()[i];
-            oldItem.currentSlot = -1;
-            oldItem.superFlash();
         }
         return true;
     }
