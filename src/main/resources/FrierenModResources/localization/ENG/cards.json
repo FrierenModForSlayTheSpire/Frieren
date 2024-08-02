@@ -72,7 +72,7 @@
     "NAME": "Foreign Spell: High-Speed Movement",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Dexterity.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, gain X Dexterity."
+      "Exhaust X *Mana in pile, gain X Dexterity."
     ]
   },
   "FrierenMod:BetaFactor6": {
