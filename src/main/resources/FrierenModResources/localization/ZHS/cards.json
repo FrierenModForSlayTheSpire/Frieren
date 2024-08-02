@@ -221,14 +221,14 @@
     ]
   },
   "FrierenMod:BetaProp4": {
-    "NAME": "测试魔具4",
+    "NAME": "神秘魔术箱",
     "DESCRIPTION": "选择3张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择3张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。"
     ]
   },
   "FrierenMod:BetaProp5": {
-    "NAME": "测试魔具5",
+    "NAME": "暗黑龙的角",
     "DESCRIPTION": "仅战斗阶段生效：移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。",
     "EXTENDED_DESCRIPTION": [
       "仅战斗阶段生效：移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。"

@@ -230,14 +230,14 @@
     ]
   },
   "FrierenMod:BetaProp4": {
-    "NAME": "Beta Prop 4",
+    "NAME": "Mystic Box",
     "DESCRIPTION": "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
     "EXTENDED_DESCRIPTION": [
       "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
     ]
   },
   "FrierenMod:BetaProp5": {
-    "NAME": "Beta Prop 5",
+    "NAME": "Shadow Dragon's Horn",
     "DESCRIPTION": "Only available in combat: Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
       "Only available in combat: Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain [E] [E]."
