@@ -1,5 +1,8 @@
 package FrierenMod.utils;
 
+import FrierenMod.cards.optionCards.magicItems.BetaFactor2;
+import FrierenMod.cards.optionCards.magicItems.BetaFactor4;
+import FrierenMod.cards.optionCards.magicItems.BetaFactor5;
 import FrierenMod.cards.white.HellFireSummoning;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.white.LightningMagic;
@@ -13,6 +16,9 @@ public class TopTextHelper {
         map.put(OrdinaryOffensiveMagic.ID,"Zoltraak");
         map.put(LightningMagic.ID,"Jutragerme");
         map.put(HellFireSummoning.ID,"Volzanbell");
+        map.put(BetaFactor2.ID,"Jubelade");
+        map.put(BetaFactor5.ID,"Jilwer");
+        map.put(BetaFactor4.ID,"Nephtear");
         return map;
     }
     public static String getTopTextById(String id){
