@@ -92,6 +92,7 @@ public class CardPoolHelper {
         srcCardPool.add(new BetaProp5());
         srcCardPool.add(new BetaProp6());
         srcCardPool.add(new BetaProp7());
+        srcCardPool.add(new BetaProp8());
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();

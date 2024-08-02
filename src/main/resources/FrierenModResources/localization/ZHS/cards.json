@@ -248,6 +248,13 @@
       "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。"
     ]
   },
+  "FrierenMod:BetaProp8": {
+    "NAME": "测试魔具8",
+    "DESCRIPTION": "选择2张 frierenmod:[#ff2c1d]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。",
+    "EXTENDED_DESCRIPTION": [
+      "选择2张 frierenmod:[#9ffc4f]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。"
+    ]
+  },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",
     "DESCRIPTION": "抽 !M! 张 *魔力 。"

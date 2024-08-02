@@ -257,6 +257,13 @@
       "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."
     ]
   },
+  "FrierenMod:BetaProp8": {
+    "NAME": "Beta Prop 8",
+    "DESCRIPTION": "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot.",
+    "EXTENDED_DESCRIPTION": [
+      "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot."
+    ]
+  },
   "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Swamp",
     "DESCRIPTION": "Draw !M! *Mana."
