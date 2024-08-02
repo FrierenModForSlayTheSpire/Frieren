@@ -151,7 +151,7 @@
     ]
   },
   "FrierenMod:BetaFactor18": {
-    "NAME": "近战法师",
+    "NAME": "物理魔法使",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 !SM! 点额外伤害。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+1点额外伤害。"
@@ -179,24 +179,24 @@
     ]
   },
   "FrierenMod:Factor100": {
-    "NAME": "？！！",
+    "NAME": "谜题: ！？？",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ？|1= ！|2= ！} ",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X+1张 *魔力 ，？！！"
+      " 消耗 牌堆中X+1张 *魔力 , ... [#e1c6ed]芙莉莲 ..."
     ]
   },
   "FrierenMod:Factor010": {
-    "NAME": "！？！",
+    "NAME": "谜题: ？！？",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ？|2= ！} ",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X+2张 *魔力 ，！？！"
+      " 消耗 牌堆中2X+2张 *魔力 , ... [#FFFE91]消灭 ..."
     ]
   },
   "FrierenMod:Factor001": {
-    "NAME": "！！？",
+    "NAME": "谜题: ？？！",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ！|2= ？} ",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中3X+3张 *魔力 ，！！？"
+      " 消耗 牌堆中3X+3张 *魔力 ... [#ed1c24]怪物 ..."
     ]
   },
   "FrierenMod:BetaProp1": {
