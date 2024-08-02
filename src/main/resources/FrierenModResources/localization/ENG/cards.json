@@ -188,22 +188,22 @@
     ]
   },
   "FrierenMod:Factor100": {
-    "NAME": "Puzzle: ? ? @ ",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= @}",
+    "NAME": "Puzzle: @ ? ? ",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= @ |1= ?|2= ?}",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+1 *Mana in pile, ... [#e1c6ed]Frieren[] ..."
     ]
   },
   "FrierenMod:Factor010": {
     "NAME": "Puzzle: ? @ ? ",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= @ |1= ?|2= @}",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= @|2= ?}",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X+2 *Mana in pile, ... [#FFFE91]kill[] ..."
     ]
   },
   "FrierenMod:Factor001": {
     "NAME": "Puzzle: ? ? @ ",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= @ |1= @|2= ?}",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, {@@} {!frierenmod:SlotNumber!|-1= Error|0= ? |1= ?|2= @}",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 3X+3 *Mana in pile, ... [#ed1c24]monster[] ..."
     ]
