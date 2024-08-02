@@ -42,6 +42,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public AbstractPlayer p = AbstractDungeon.player;
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicItemTip")).TEXT;
     public int propCanChooseMaxAmt;
+    public boolean useBlock;
 
     public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -51,6 +52,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.rewardMultipleCoefficient = 1;
         this.rewardAddCoefficient = 0;
         this.propCanChooseMaxAmt = 0;
+        this.useBlock = false;
     }
 
     public void takeEffect() {
@@ -112,21 +114,21 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     }
 
     public void loadMagicFactor(int chantX, AbstractGameAction[] nextAction) {
-        int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
-        this.extraActions = new ArrayList<>();
+        loadMagicFactor(chantX);
         if (nextAction != null && nextAction.length > 0)
             this.extraActions.addAll(Arrays.asList(nextAction));
-        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX, this);
-        this.secondMagicNumber = this.baseSecondMagicNumber = reward;
-        this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
     }
 
     public void loadMagicFactor(int chantX) {
         int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
-        this.extraActions = new ArrayList<>();
         this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX, this);
-        this.secondMagicNumber = this.baseSecondMagicNumber = reward;
+        if(useBlock){
+            this.baseBlock = this.block = reward;
+            this.applyPowers();
+        }else
+            this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
+        this.extraActions = new ArrayList<>();
     }
 
     public void triggerPowers() {

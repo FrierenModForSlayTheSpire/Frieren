@@ -9,11 +9,13 @@ public class BetaFactor15 extends AbstractMagicItem {
     public BetaFactor15() {
         super(ID);
         this.magicItemRarity = MagicItemRarity.COMMON;
-        this.rewardAddCoefficient = 2;
+        this.useBlock = true;
     }
 
     @Override
     public void takeEffect() {
-        this.addToBot(new GainBlockAction(p, p, this.secondMagicNumber));
+        for (int i = 0; i < 2; i++) {
+            this.addToBot(new GainBlockAction(p, p, this.block));
+        }
     }
 }
