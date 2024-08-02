@@ -201,9 +201,9 @@
   },
   "FrierenMod:BetaProp1": {
     "NAME": "神奇妙妙工具",
-    "DESCRIPTION": "选择1张 frierenmod:[#ff2c1d]未装载 和1张 frierenmod:[#9ffc4f]已装载  *魔法因子 ，使它们 frierenmod:槽位 互换。",
+    "DESCRIPTION": "选择1张 frierenmod:[#ff4e41]未装载 和1张 frierenmod:[#9ffc4f]已装载  *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
-      "选择1张 frierenmod:[#ff2c1d]未装载 和1张 frierenmod:[#9ffc4f]已装载 *魔法因子 ，使它们 frierenmod:槽位 互换。"
+      "选择1张 frierenmod:[#ff4e41]未装载 和1张 frierenmod:[#9ffc4f]已装载 *魔法因子 ，使它们 frierenmod:槽位 互换。"
     ]
   },
   "FrierenMod:BetaProp2": {
@@ -215,23 +215,23 @@
   },
   "FrierenMod:BetaProp3": {
     "NAME": "赞因的笔记",
-    "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。",
+    "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。",
     "EXTENDED_DESCRIPTION": [
-      "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。"
+      "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。"
     ]
   },
   "FrierenMod:BetaProp4": {
     "NAME": "神秘魔术箱",
-    "DESCRIPTION": "选择3张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。",
+    "DESCRIPTION": "选择3张 frierenmod:[#ff4e41]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。",
     "EXTENDED_DESCRIPTION": [
-      "选择3张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。"
+      "选择3张 frierenmod:[#ff4e41]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。"
     ]
   },
   "FrierenMod:BetaProp5": {
     "NAME": "暗黑龙的角",
-    "DESCRIPTION": "仅战斗阶段生效：移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。",
+    "DESCRIPTION": "仅战斗阶段生效：移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。",
     "EXTENDED_DESCRIPTION": [
-      "仅战斗阶段生效：移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。"
+      "仅战斗阶段生效：移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。"
     ]
   },
   "FrierenMod:BetaProp6": {
@@ -243,14 +243,14 @@
   },
   "FrierenMod:BetaProp7": {
     "NAME": "妙妙工具箱",
-    "DESCRIPTION": "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。",
+    "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。",
     "EXTENDED_DESCRIPTION": [
-      "移除2张 frierenmod:[#ff2c1d]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。"
+      "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。"
     ]
   },
   "FrierenMod:BetaProp8": {
     "NAME": "测试魔具8",
-    "DESCRIPTION": "选择2张 frierenmod:[#ff2c1d]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。",
+    "DESCRIPTION": "选择2张 frierenmod:[#ff4e41]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择2张 frierenmod:[#9ffc4f]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。"
     ]

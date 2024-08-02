@@ -210,9 +210,9 @@
   },
   "FrierenMod:BetaProp1": {
     "NAME": "Unbelievable Tool",
-    "DESCRIPTION": "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
+    "DESCRIPTION": "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [
-      "Choose one [#ff2c1d]Unloaded[#ff2c1d] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
+      "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
     ]
   },
   "FrierenMod:BetaProp2": {
@@ -224,23 +224,23 @@
   },
   "FrierenMod:BetaProp3": {
     "NAME": "Sein's Note",
-    "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 10 HP.",
+    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP.",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, Heal 10 HP."
+      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP."
     ]
   },
   "FrierenMod:BetaProp4": {
     "NAME": "Mystic Box",
-    "DESCRIPTION": "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
+    "DESCRIPTION": "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
     "EXTENDED_DESCRIPTION": [
-      "Choose 3 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
+      "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
     ]
   },
   "FrierenMod:BetaProp5": {
     "NAME": "Shadow Dragon's Horn",
-    "DESCRIPTION": "Only available in combat: Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain [E] [E].",
+    "DESCRIPTION": "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
-      "Only available in combat: Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain [E] [E]."
+      "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E]."
     ]
   },
   "FrierenMod:BetaProp6": {
@@ -252,9 +252,9 @@
   },
   "FrierenMod:BetaProp7": {
     "NAME": "Unbelievable Tool Box",
-    "DESCRIPTION": "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 .",
+    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 .",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff2c1d]Unloaded[#ff2c1d] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."
+      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."
     ]
   },
   "FrierenMod:BetaProp8": {
