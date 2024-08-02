@@ -10,13 +10,11 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class RecallAction extends AbstractGameAction {
     public static final String[] TEXT;
     private final AbstractPlayer player;
     private final int numberOfCards;
-    private final boolean optional = false;
 
     public RecallAction(int numberOfCards) {
         this.actionType = ActionType.CARD_MANIPULATION;
@@ -24,42 +22,33 @@ public class RecallAction extends AbstractGameAction {
         this.player = AbstractDungeon.player;
         this.numberOfCards = numberOfCards;
     }
+
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
             if (!this.player.exhaustPile.isEmpty() && this.numberOfCards > 0) {
-                if (this.player.exhaustPile.size() <= this.numberOfCards && !this.optional) {
+                if (this.player.exhaustPile.size() <= this.numberOfCards) {
                     ArrayList<AbstractCard> cardsToMove = new ArrayList<>();
-
-                    AbstractCard c;
-                    Iterator var5;
-                    for(var5 = this.player.exhaustPile.group.iterator(); var5.hasNext(); c.retain = true) {
-                        c = (AbstractCard)var5.next();
+                    for (AbstractCard c : this.player.exhaustPile.group) {
+                        c.unhover();
+                        c.unfadeOut();
+                        c.retain = true;
                         cardsToMove.add(c);
                     }
-
-                    for(var5 = cardsToMove.iterator(); var5.hasNext(); c.lighten(false)) {
-                        c = (AbstractCard)var5.next();
+                    for (AbstractCard c : cardsToMove) {
                         if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
-                            this.player.hand.addToHand(c);
-                            this.player.exhaustPile.removeCard(c);
+                            c.lighten(false);
+                            player.hand.addToHand(c);
+                            player.exhaustPile.removeCard(c);
                         }
                     }
-
                     this.isDone = true;
                 } else {
                     if (this.numberOfCards == 1) {
-                        if (this.optional) {
-                            AbstractDungeon.gridSelectScreen.open(this.player.exhaustPile, this.numberOfCards, true, TEXT[0]);
-                        } else {
-                            AbstractDungeon.gridSelectScreen.open(this.player.exhaustPile, this.numberOfCards, TEXT[0], false);
-                        }
-                    } else if (this.optional) {
-                        AbstractDungeon.gridSelectScreen.open(this.player.exhaustPile, this.numberOfCards, true, TEXT[1] + this.numberOfCards + TEXT[2]);
+                        AbstractDungeon.gridSelectScreen.open(this.player.exhaustPile, this.numberOfCards, TEXT[0], false);
                     } else {
                         AbstractDungeon.gridSelectScreen.open(this.player.exhaustPile, this.numberOfCards, TEXT[1] + this.numberOfCards + TEXT[2], false);
                     }
-
                     this.tickDuration();
                 }
             } else {
@@ -67,34 +56,27 @@ public class RecallAction extends AbstractGameAction {
             }
         } else {
             if (!AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
-                Iterator<AbstractCard> var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
-
-                AbstractCard c;
-                while(var1.hasNext()) {
-                    c = (AbstractCard)var1.next();
+                for (AbstractCard c : AbstractDungeon.gridSelectScreen.selectedCards) {
                     if (this.player.hand.size() < BaseMod.MAX_HAND_SIZE) {
                         this.player.hand.addToHand(c);
                         c.retain = true;
+                        c.unfadeOut();
+                        c.unhover();
                         this.player.exhaustPile.removeCard(c);
                     }
-
-                    c.lighten(false);
-                    c.unhover();
                 }
-
-                for(var1 = this.player.exhaustPile.group.iterator(); var1.hasNext(); c.target_y = 0.0F) {
-                    c = (AbstractCard)var1.next();
+                for (AbstractCard c : player.exhaustPile.group) {
                     c.unhover();
                     c.target_x = (float) CardGroup.DISCARD_PILE_X;
+                    c.target_y = 0.0F;
                 }
-
                 AbstractDungeon.gridSelectScreen.selectedCards.clear();
                 AbstractDungeon.player.hand.refreshHandLayout();
             }
-
             this.tickDuration();
         }
     }
+
     static {
         TEXT = CardCrawlGame.languagePack.getUIString("BetterToHandAction").TEXT;
     }
