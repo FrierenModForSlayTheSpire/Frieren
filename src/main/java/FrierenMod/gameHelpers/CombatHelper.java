@@ -2,8 +2,10 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.optionCards.magicItems.BetaFactor24;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
+import FrierenMod.powers.ChantWithoutManaTimesPower;
 import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.powers.WeakenedChantPower;
 import FrierenMod.utils.Log;
@@ -84,7 +86,7 @@ public class CombatHelper {
                 Log.logger.info("NO SUCH SLOT NUMBER: {}", slotNumber);
                 break;
         }
-        return getChantChoices()[slotNumber] != null && (getManaNeed(chantX, getChantChoices()[slotNumber])) <= manaNum;
+        return getChantChoices() != null && getChantChoices()[slotNumber] != null && (getManaNeed(chantX, getChantChoices()[slotNumber])) <= manaNum;
     }
 
     public static boolean cannotPlayLegendarySpell() {
@@ -104,7 +106,7 @@ public class CombatHelper {
     public static int getLegendarySpellUsedVarietyThisCombat(boolean isInUsingCard) {
         HashSet<String> set = new HashSet<>();
         int size = Math.max(0, (isInUsingCard ? AbstractDungeon.actionManager.cardsPlayedThisCombat.size() - 1 : AbstractDungeon.actionManager.cardsPlayedThisCombat.size()));
-        if(size == 0)
+        if (size == 0)
             return 0;
         for (int i = 0; i < size; i++) {
             AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(i);
@@ -148,7 +150,11 @@ public class CombatHelper {
 
     public static int getManaNeed(int chantX, AbstractMagicItem f) {
         int baseManaNeed = chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient;
-        return AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID) ? 0 : Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
+        if (AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID))
+            return 0;
+        if (AbstractDungeon.player.hasPower(ChantWithoutManaTimesPower.POWER_ID))
+            return 0;
+        return Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
     }
 
     public static boolean isRaidReversed() {
@@ -168,8 +174,28 @@ public class CombatHelper {
                 chantChoices[2] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }
         }
+        boolean isAllCopyFactor = true;
+        for (AbstractCard c : chantChoices) {
+            if (!(c instanceof BetaFactor24)) {
+                isAllCopyFactor = false;
+                break;
+            }
+        }
+        if (isAllCopyFactor)
+            return null;
+        for (int i = 0; i < chantChoices.length; i++) {
+            if (chantChoices[i] instanceof BetaFactor24) {
+                int j = (i + 1) % chantChoices.length;
+                while (chantChoices[j] instanceof BetaFactor24)
+                    j = (j + 1) % chantChoices.length;
+                AbstractMagicItem targetChantChoice = (AbstractMagicItem) chantChoices[j].makeStatEquivalentCopy();
+                chantChoices[i] = targetChantChoice;
+                chantChoices[i].currentSlot = i;
+            }
+        }
         return chantChoices;
     }
+
     public static AbstractMagicItem[] getLoadedMagicFactor() {
         AbstractMagicItem[] chantChoices = new AbstractMagicItem[3];
         for (AbstractCard c : MagicDeckField.getDeck().group) {
@@ -185,9 +211,10 @@ public class CombatHelper {
         }
         return chantChoices;
     }
-    public static boolean isAllMagicFactorLoading(){
-        for(AbstractMagicItem f : getLoadedMagicFactor()){
-            if(f == null)
+
+    public static boolean isAllMagicFactorLoading() {
+        for (AbstractMagicItem f : getLoadedMagicFactor()) {
+            if (f == null)
                 return false;
         }
         return true;

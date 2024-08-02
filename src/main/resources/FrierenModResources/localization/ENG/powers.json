@@ -71,6 +71,18 @@
       "This turn, #yChant can be FREELY activated."
     ]
   },
+  "FrierenMod:ChantWithoutManaTimesPower": {
+    "NAME": "Free Chant",
+    "DESCRIPTIONS": [
+      "The next #b%d times you #yChant can be FREELY activated."
+    ]
+  },
+  "FrierenMod:SynchroWithoutManaPower": {
+    "NAME": "Mana Recycle",
+    "DESCRIPTIONS": [
+      "The next #b%d times you #ySynchro is FREE."
+    ]
+  },
   "FrierenMod:BanManaGainPower": {
     "NAME": "&",
     "DESCRIPTIONS": [

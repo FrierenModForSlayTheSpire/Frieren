@@ -2,9 +2,11 @@ package FrierenMod.cards.tempCards;
 
 import FrierenMod.actions.ManaAction;
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.powers.SynchroWithoutManaPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Mana extends AbstractBaseCard {
@@ -19,6 +21,12 @@ public class Mana extends AbstractBaseCard {
     public void initSpecifiedAttributes() {
         this.isMana = true;
         this.exhaust = true;
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        this.exhaust = !AbstractDungeon.player.hasPower(SynchroWithoutManaPower.POWER_ID);
     }
 
     @Override

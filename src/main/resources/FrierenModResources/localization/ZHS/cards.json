@@ -178,6 +178,27 @@
       " 消耗 牌堆中X张 *魔力 ，给予所有敌人2X层 中毒 。"
     ]
   },
+  "FrierenMod:BetaFactor22": {
+    "NAME": "测试因子22",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:咏唱 不 消耗 *魔力 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中3X张 *魔力 ，下X次 frierenmod:咏唱 不 消耗 *魔力 。"
+    ]
+  },
+  "FrierenMod:BetaFactor23": {
+    "NAME": "测试因子23",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:同调 不 消耗 *魔力 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，下2X次 frierenmod:同调 不 消耗 *魔力 。"
+    ]
+  },
+  "FrierenMod:BetaFactor24": {
+    "NAME": "测试因子24",
+    "DESCRIPTION": "",
+    "EXTENDED_DESCRIPTION": [
+      " frierenmod:咏唱 时始终复制下一 frierenmod:槽位 的 *魔法因子 。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "谜题: ！？？",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ？|2= ？} ",
