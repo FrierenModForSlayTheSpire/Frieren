@@ -21,7 +21,7 @@ public class BetaFactor21 extends AbstractMagicItem {
             flash();
             for (AbstractMonster monster : (AbstractDungeon.getMonsters()).monsters) {
                 if (!monster.isDead && !monster.isDying) {
-                    addToBot(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, this.magicNumber), this.magicNumber));
+                    addToBot(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, this.secondMagicNumber), this.secondMagicNumber));
                 }
             }
         }
