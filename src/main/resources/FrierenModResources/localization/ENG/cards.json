@@ -119,7 +119,7 @@
   },
   "FrierenMod:BetaFactor12": {
     "NAME": "Impeccable and Intangible",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Block and Block is not removed at the start of your next !SM! turns.",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !B! Block and Block is not removed at the start of your next !SM! turns.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+2 *Mana in pile, gain X Block and Block is not removed at the start of your next X turns."
     ]
