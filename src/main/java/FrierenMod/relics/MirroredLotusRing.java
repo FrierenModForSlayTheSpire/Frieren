@@ -26,7 +26,7 @@ public class MirroredLotusRing extends AbstractBaseRelic {
     }
     public void atTurnStart() {
         this.counter++;
-        if (this.counter == 7){
+        if (this.counter == 4){
             flash();
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new VFXAction(new HimmelEffect()));
