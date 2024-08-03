@@ -71,6 +71,18 @@
       "在本回合中，你的 #y咏唱 不再 消耗 #y魔力 。"
     ]
   },
+  "FrierenMod:ChantWithoutManaTimesPower": {
+    "NAME": "魔力预支",
+    "DESCRIPTIONS": [
+      "下 #b%d 次 #y咏唱 不再 消耗 #y魔力 。"
+    ]
+  },
+  "FrierenMod:SynchroWithoutManaPower": {
+    "NAME": "魔力回收",
+    "DESCRIPTIONS": [
+      "下 #b%d 次 #y同调 不再 消耗 #y魔力 。"
+    ]
+  },
   "FrierenMod:BanManaGainPower": {
     "NAME": "&",
     "DESCRIPTIONS": [
@@ -166,21 +178,21 @@
     ]
   },
   "FrierenMod:Factor100Power": {
-    "NAME": "？！！",
+    "NAME": "！？？",
     "DESCRIPTIONS": [
-      "？！！"
+      "！？？"
     ]
   },
   "FrierenMod:Factor010Power": {
-    "NAME": "！？！",
+    "NAME": "？！？",
     "DESCRIPTIONS": [
-      "！？！"
+      "？！？"
     ]
   },
   "FrierenMod:Factor001Power": {
-    "NAME": "！！？",
+    "NAME": "？？！",
     "DESCRIPTIONS": [
-      "！！？"
+      "？？！"
     ]
   },
   "FrierenMod:ConcentrationPower": {
