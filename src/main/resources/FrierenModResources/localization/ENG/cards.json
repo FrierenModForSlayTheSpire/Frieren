@@ -188,21 +188,21 @@
     ]
   },
   "FrierenMod:BetaFactor22": {
-    "NAME": "Beta Factor 22",
+    "NAME": "Great Mage's Composure",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Chant is FREE.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 3X *Mana in pile, the next X times frierenmod:Chant is FREE."
     ]
   },
   "FrierenMod:BetaFactor23": {
-    "NAME": "Beta Factor 23",
+    "NAME": "Pinch And Scrape",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Synchro is FREE.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, the next 2X times frierenmod:Synchro is FREE."
     ]
   },
   "FrierenMod:BetaFactor24": {
-    "NAME": "Beta Factor 24",
+    "NAME": "Blue Print",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       "Always COPY the *Magic_Factor in the next frierenmod:Slot when frierenmod:Chant ."
@@ -279,7 +279,7 @@
     ]
   },
   "FrierenMod:BetaProp8": {
-    "NAME": "Beta Prop 8",
+    "NAME": "Crystal Ball",
     "DESCRIPTION": "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [
       "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot."

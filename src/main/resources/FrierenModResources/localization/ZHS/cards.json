@@ -179,21 +179,21 @@
     ]
   },
   "FrierenMod:BetaFactor22": {
-    "NAME": "测试因子22",
+    "NAME": "大魔法使的余裕",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:咏唱 不 消耗 *魔力 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中3X张 *魔力 ，下X次 frierenmod:咏唱 不 消耗 *魔力 。"
     ]
   },
   "FrierenMod:BetaFactor23": {
-    "NAME": "测试因子23",
+    "NAME": "省吃俭用",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:同调 不 消耗 *魔力 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，下2X次 frierenmod:同调 不 消耗 *魔力 。"
     ]
   },
   "FrierenMod:BetaFactor24": {
-    "NAME": "测试因子24",
+    "NAME": "蓝图芙莉莲",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
       " frierenmod:咏唱 时始终复制下一 frierenmod:槽位 的 *魔法因子 。"
@@ -270,7 +270,7 @@
     ]
   },
   "FrierenMod:BetaProp8": {
-    "NAME": "测试魔具8",
+    "NAME": "魔法水晶球【蓝色品质】",
     "DESCRIPTION": "选择2张 frierenmod:[#ff4e41]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择2张 frierenmod:[#9ffc4f]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。"
