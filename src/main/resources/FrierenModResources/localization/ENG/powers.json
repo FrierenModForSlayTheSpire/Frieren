@@ -180,19 +180,19 @@
   "FrierenMod:Factor100Power": {
     "NAME": " @ ? ? ",
     "DESCRIPTIONS": [
-      " @ ? ? "
+      "...Frieren..."
     ]
   },
   "FrierenMod:Factor010Power": {
     "NAME": " ? @ ? ",
     "DESCRIPTIONS": [
-      " ? @ ? "
+      "...Kill..."
     ]
   },
   "FrierenMod:Factor001Power": {
     "NAME": " ? ? @ ",
     "DESCRIPTIONS": [
-      " ? ? @ "
+      "...Monster..."
     ]
   }
 }
