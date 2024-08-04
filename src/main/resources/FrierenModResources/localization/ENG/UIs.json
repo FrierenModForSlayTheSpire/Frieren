@@ -207,6 +207,12 @@
       "Prop"
     ]
   },
+  "FrierenMod:BuyPropOption": {
+    "TEXT": [
+      "Stroll in Magic Prop shop",
+      "Choose one Magic Prop"
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",

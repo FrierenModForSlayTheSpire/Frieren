@@ -207,6 +207,12 @@
       "魔具"
     ]
   },
+  "FrierenMod:BuyPropOption": {
+    "TEXT": [
+      "逛魔具店",
+      "选择一张魔具加入魔法牌组"
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",

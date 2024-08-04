@@ -10,6 +10,7 @@ import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 
 import java.util.ArrayList;
 
@@ -131,6 +132,13 @@ public class CardPoolHelper {
                     return prop;
             }
         return srcCardPool;
+    }
+
+    public static CardGroup getMagicItemCardGroup(AbstractMagicItem.MagicItemRarity rarity) {
+        CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        for (AbstractCard c : getMagicItemCardPool(rarity))
+            retVal.addToTop(c);
+        return retVal;
     }
 
     public static AbstractCard getRandomCard(PoolType type) {
