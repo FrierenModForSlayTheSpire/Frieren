@@ -182,7 +182,7 @@
     "NAME": "大魔法使的余裕",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:咏唱 不 消耗 *魔力 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中3X张 *魔力 ，下X次 frierenmod:咏唱 不 消耗 *魔力 。"
+      " 消耗 牌堆中3X张 *魔力 ，本回合中下X次 frierenmod:咏唱 不 消耗 *魔力 。"
     ]
   },
   "FrierenMod:BetaFactor23": {

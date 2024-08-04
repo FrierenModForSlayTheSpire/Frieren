@@ -25,6 +25,10 @@ public class ChantWithoutManaTimesPower extends AbstractBasePower {
         }
     }
 
+    public void atEndOfTurn(boolean isPlayer) {
+        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+    }
+
     public void updateDescription() {
         this.description = String.format(descriptions[0], this.amount);
     }

@@ -74,7 +74,7 @@
   "FrierenMod:ChantWithoutManaTimesPower": {
     "NAME": "魔力预支",
     "DESCRIPTIONS": [
-      "下 #b%d 次 #y咏唱 不再 消耗 #y魔力 。"
+      "在本回合中，下 #b%d 次 #y咏唱 不再 消耗 #y魔力 。"
     ]
   },
   "FrierenMod:SynchroWithoutManaPower": {

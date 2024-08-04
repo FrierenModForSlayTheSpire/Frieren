@@ -191,7 +191,7 @@
     "NAME": "Great Mage's Composure",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Chant is FREE.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 3X *Mana in pile, the next X times frierenmod:Chant is FREE."
+      "Exhaust 3X *Mana in pile, this turn the next X times frierenmod:Chant is FREE."
     ]
   },
   "FrierenMod:BetaFactor23": {
