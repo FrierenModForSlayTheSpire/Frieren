@@ -83,6 +83,13 @@
       "Future card rewards have #b60 % to be replaced by #yMana .Gain [E] at the start of your turn. "
     ]
   },
+  "FrierenMod:UbelStaff": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Every #b6th you #yChant gain 1 [E]."
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "Haitaa Wand",
     "FLAVOR": "",
