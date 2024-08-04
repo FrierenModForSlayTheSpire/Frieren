@@ -24,6 +24,8 @@ public class UbelStaff extends AbstractBaseRelic {
         if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isChantCard) {
             this.counter++;
             if (this.counter == TRIGGER_VALUE) {
+                addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+                addToBot(new GainEnergyAction(1));
                 this.counter = 0;
                 flash();
                 this.pulse = false;
@@ -31,8 +33,6 @@ public class UbelStaff extends AbstractBaseRelic {
                 beginPulse();
                 this.pulse = true;
                 AbstractDungeon.player.hand.refreshHandLayout();
-                addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-                addToBot(new GainEnergyAction(1));
             }
         }
     }
