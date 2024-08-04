@@ -111,17 +111,17 @@
     ]
   },
   "FrierenMod:BetaFactor11": {
-    "NAME": "in and intangible",
+    "NAME": "Impeccable and Intangible",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Intangible.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 6X *Mana in pile, gain X Intangible."
     ]
   },
   "FrierenMod:BetaFactor12": {
-    "NAME": "Impeccable and Intangible",
+    "NAME": "Barrier Magic",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !B! Block and Block is not removed at the start of your next !SM! turns.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X+2 *Mana in pile, gain X Block and Block is not removed at the start of your next X turns."
+      "Exhaust X+2 *Mana in pile, gain X Block and Block will not be removed at the start of your next X turns."
     ]
   },
   "FrierenMod:BetaFactor13": {
