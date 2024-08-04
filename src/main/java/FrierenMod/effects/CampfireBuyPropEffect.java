@@ -21,7 +21,7 @@ public class CampfireBuyPropEffect extends AbstractGameEffect {
 
     public static final String[] TEXT = BuyPropOption.TEXT;
 
-    private static final int PROP_NUM = 1;
+    private static final int PROP_NUM = 2;
 
     private boolean openedScreen = false;
 
