@@ -210,7 +210,8 @@
   "FrierenMod:BuyPropOption": {
     "TEXT": [
       "逛魔具店",
-      "选择2张魔具加入魔法牌组"
+      "选择2张魔具加入魔法牌组",
+      "取消"
     ]
   },
   "FrierenMod:DualCardTip": {

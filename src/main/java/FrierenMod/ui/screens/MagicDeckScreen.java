@@ -95,9 +95,9 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     // When you call openCustomScreen it finds the first method named "open"
     // and calls it with whatever arguments were passed to it.
     public void open() {
-        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE){
+        if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
-            if((float)ReflectionHacks.getPrivate(AbstractDungeon.overlayMenu, OverlayMenu.class,"blackScreenTarget") == 0.85F){
+            if ((float) ReflectionHacks.getPrivate(AbstractDungeon.overlayMenu, OverlayMenu.class, "blackScreenTarget") == 0.85F) {
                 this.previousHasBlackScreen = true;
             }
         }
@@ -407,5 +407,15 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             card.beginGlowing();
             this.chosenCards.add(card);
         }
+    }
+
+    @Override
+    public boolean allowOpenDeck() {
+        return true;
+    }
+
+    @Override
+    public boolean allowOpenMap() {
+        return true;
     }
 }
