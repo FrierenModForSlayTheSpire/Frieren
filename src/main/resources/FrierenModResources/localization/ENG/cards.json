@@ -371,7 +371,7 @@
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
-    "DESCRIPTION": "Exchange a *Mana in your hand with !M! card in your draw pile."
+    "DESCRIPTION": "Exchange !M! *Mana in your hand with one card in your draw pile."
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Successfully",

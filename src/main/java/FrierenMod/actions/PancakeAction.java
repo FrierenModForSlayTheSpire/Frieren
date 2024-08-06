@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class PancakeAction extends AbstractGameAction {
-    private final int magicNumber;
+    private int magicNumber;
 
     public PancakeAction(int magicNumber) {
         this.magicNumber = magicNumber;
@@ -15,13 +15,17 @@ public class PancakeAction extends AbstractGameAction {
 
     @Override
     public void update() {
+        int count = 0;
         for(AbstractCard c:AbstractDungeon.player.hand.group){
+            if(count >= magicNumber)
+                break;
             if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
                 this.addToBot(new HandToDrawPileAction(c));
-                break;
+                count++;
             }
         }
-        this.addToBot(new BetterDrawPileToHandAction(this.magicNumber));
+        if(count >= magicNumber)
+            this.addToBot(new BetterDrawPileToHandAction(1));
         this.isDone = true;
     }
 }
