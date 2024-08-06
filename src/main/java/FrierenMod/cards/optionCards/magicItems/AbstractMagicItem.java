@@ -42,6 +42,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public AbstractPlayer p = AbstractDungeon.player;
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicItemTip")).TEXT;
     public int propCanChooseMaxAmt;
+    public ArrayList<ActionHelper.Lambda> immediateActions;
 
     public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -91,7 +92,12 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
 
     @Override
     public void onChoseThisOption() {
-        if (this.magicItemRarity != MagicItemRarity.PROP)
+        if (this.magicItemRarity != MagicItemRarity.PROP) {
+            if (immediateActions != null && !immediateActions.isEmpty()) {
+                for (ActionHelper.Lambda action : immediateActions) {
+                    action.run();
+                }
+            }
             ActionHelper.addToBotAbstract(() -> {
                 showVFX();
                 exhaustMana();
@@ -104,6 +110,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
                     }
                 }
             });
+        }
     }
 
     @Override
@@ -124,6 +131,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.applyPowers();
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
         this.setDescriptionByShowPlaceType(ShowPlaceType.COMBAT);
+        this.immediateActions = new ArrayList<>();
         this.extraActions = new ArrayList<>();
     }
 
@@ -185,11 +193,10 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     }
 
     public List<TooltipInfo> getCustomTooltips() {
-        if (this.magicItemRarity == MagicItemRarity.PROP){
+        if (this.magicItemRarity == MagicItemRarity.PROP) {
             this.tips.clear();
             this.tips.add(new TooltipInfo(TEXT[2], TEXT[3]));
-        }
-        else {
+        } else {
             this.tips.clear();
             this.tips.add(new TooltipInfo(TEXT[0], TEXT[1]));
         }
@@ -197,7 +204,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     }
 
     @SpireOverride
-    protected void renderMainBorder(SpriteBatch sb){
+    protected void renderMainBorder(SpriteBatch sb) {
         if (this.isGlowing) {
             sb.setBlendFunction(770, 1);
             TextureAtlas.AtlasRegion img;
@@ -212,9 +219,10 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
                     img = ImageMaster.CARD_SKILL_BG_SILHOUETTE;
             }
             sb.setColor(this.glowColor);
-            sb.draw(img, this.current_x + img.offsetX - (float)img.originalWidth / 2.0F, this.current_y + img.offsetY - (float)img.originalWidth / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalWidth / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale * 1.04F, this.drawScale * Settings.scale * 1.03F, this.angle);
+            sb.draw(img, this.current_x + img.offsetX - (float) img.originalWidth / 2.0F, this.current_y + img.offsetY - (float) img.originalWidth / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalWidth / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, this.drawScale * Settings.scale * 1.04F, this.drawScale * Settings.scale * 1.03F, this.angle);
         }
     }
+
     public enum ShowPlaceType {
         COMBAT,
         DECK
