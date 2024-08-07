@@ -39,7 +39,7 @@ public class Famehameha extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(5);
+            this.upgradeDamage(10);
         }
     }
 
