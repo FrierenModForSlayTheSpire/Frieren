@@ -21,7 +21,7 @@ public class CampfireBuyPropEffect extends AbstractGameEffect {
 
     public static final String[] TEXT = BuyPropOption.TEXT;
 
-    private static final int PROP_NUM = 1;
+    private static final int PROP_NUM = 2;
 
     private boolean openedScreen = false;
 
@@ -48,6 +48,7 @@ public class CampfireBuyPropEffect extends AbstractGameEffect {
             this.openedScreen = true;
             AbstractDungeon.gridSelectScreen.open(
                     CardPoolHelper.getMagicItemCardGroup(AbstractMagicItem.MagicItemRarity.PROP), PROP_NUM, TEXT[1], false, false, true, false);
+            AbstractDungeon.overlayMenu.cancelButton.show(TEXT[2]);
             ForBuyPropField.forBuyProp.set(AbstractDungeon.gridSelectScreen, true);
         }
         if (this.duration < 0.0F) {

@@ -64,8 +64,10 @@ public class ChantAction extends AbstractGameAction {
                 if (CombatHelper.canActivateSlot(chantX, 1)) {
                     chantChoices[1].loadMagicFactor(chantX, nextAction);
                     if (cardToReturn != null) {
-                        cardToReturn.returnToHand = true;
-                        cardToReturn.upgrade();
+                        chantChoices[1].immediateActions.add(() -> {
+                            cardToReturn.returnToHand = true;
+                            cardToReturn.upgrade();
+                        });
                     }
                     stanceChoices.add(chantChoices[1]);
                 }

@@ -81,7 +81,7 @@ public class ManaMod extends AbstractCardModifier {
         for (AbstractGameAction action2 : AbstractDungeon.actionManager.actions) {
             if (action2 instanceof RemoveSpecificPowerAction) {
                 String poId = ReflectionHacks.getPrivate(action2, RemoveSpecificPowerAction.class, "powerToRemove");
-                if (poId.equals(PenNibPower.POWER_ID) || poId.equals(VigorPower.POWER_ID)) {
+                if (poId != null && (poId.equals(PenNibPower.POWER_ID) || poId.equals(VigorPower.POWER_ID))) {
                     actionsToStore.add(action2);
                 }
             }

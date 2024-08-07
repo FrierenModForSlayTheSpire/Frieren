@@ -63,6 +63,10 @@ public class MagicDeckPanel extends TopPanelItem {
                     AbstractDungeon.previousScreen = AbstractDungeon.CurrentScreen.MAP;
                 open();
                 break;
+            case GRID:
+                AbstractDungeon.gridSelectScreen.hide();
+                open();
+                break;
         }
     }
 

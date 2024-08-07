@@ -135,7 +135,7 @@
     "NAME": "Transcendence",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, gain X Mantra."
+      "Exhaust X+1 *Mana in pile, gain X Mantra."
     ]
   },
   "FrierenMod:BetaFactor15": {
@@ -273,9 +273,9 @@
   },
   "FrierenMod:BetaProp7": {
     "NAME": "Unbelievable Tool Box",
-    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 .",
+    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool .",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Beta_Prop_7 ."
+      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool ."
     ]
   },
   "FrierenMod:BetaProp8": {
@@ -371,7 +371,7 @@
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
-    "DESCRIPTION": "Exchange a *Mana in your hand with !M! card in your draw pile."
+    "DESCRIPTION": "Exchange !M! *Mana in your hand with one card in your draw pile."
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Successfully",

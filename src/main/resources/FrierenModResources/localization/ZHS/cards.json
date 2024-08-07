@@ -126,7 +126,7 @@
     "NAME": "遁入智瞳",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中2X张 *魔力 ，获得X层 真言 。"
+      " 消耗 牌堆中X+1张 *魔力 ，获得X层 真言 。"
     ]
   },
   "FrierenMod:BetaFactor15": {
@@ -264,9 +264,9 @@
   },
   "FrierenMod:BetaProp7": {
     "NAME": "妙妙工具箱",
-    "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。",
+    "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *神奇妙妙工具 。",
     "EXTENDED_DESCRIPTION": [
-      "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *测试魔具1 。"
+      "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *神奇妙妙工具 。"
     ]
   },
   "FrierenMod:BetaProp8": {
@@ -362,7 +362,7 @@
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "翻薄饼时会很顺利的魔法",
-    "DESCRIPTION": "从抽牌堆中选择 !M! 张牌和你手牌中的1张 *魔力 交换。"
+    "DESCRIPTION": "从抽牌堆中选择一张牌和你手牌中的 !M! 张 *魔力 交换。"
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "说绕口令时绝对不会大舌头的魔法",

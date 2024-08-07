@@ -210,7 +210,8 @@
   "FrierenMod:BuyPropOption": {
     "TEXT": [
       "Stroll in Magic Prop shop",
-      "Add 2 Magic Prop to your Magic Deck"
+      "Add 2 Magic Prop to your Magic Deck",
+      "Cancel"
     ]
   },
   "FrierenMod:DualCardTip": {

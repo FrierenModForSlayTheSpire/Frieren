@@ -25,14 +25,14 @@ public class PancakeSpell extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.cardsToPreview = new Mana();
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(-1);
         }
     }
 
@@ -43,10 +43,8 @@ public class PancakeSpell extends AbstractBaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (CombatHelper.getManaNumInHand() < 1) {
+        if (CombatHelper.getManaNumInHand() < this.magicNumber)
             return false;
-        } else {
-            return super.canUseOriginally(p, m);
-        }
+        return super.canUseOriginally(p, m);
     }
 }
