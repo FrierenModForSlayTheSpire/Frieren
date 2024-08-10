@@ -30,7 +30,7 @@ public class ManaBarricade extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(4);
+            this.upgradeBlock(3);
         }
     }
 

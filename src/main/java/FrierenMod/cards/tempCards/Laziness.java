@@ -24,7 +24,7 @@ public class Laziness extends AbstractBaseCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
+        if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard){
             this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
         }
     }
