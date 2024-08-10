@@ -137,6 +137,12 @@
       "After #yChant , draw #b%d #yLegendary_Spell ."
     ]
   },
+  "FrierenMod:FlyingMagicPower": {
+    "NAME": "Flying Magic",
+    "DESCRIPTIONS": [
+      "At the end of your turn, #yExhaust #b%d Mana in your discard pile."
+    ]
+  },
   "FrierenMod:CopyPower": {
     "NAME": "Replica",
     "DESCRIPTIONS": [

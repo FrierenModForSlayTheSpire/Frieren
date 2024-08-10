@@ -49,7 +49,6 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getLegendarySpellCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        retVal.add(new FlyingMagic());
         retVal.add(new ContinualChant());
         retVal.add(new AccessoriesSpell());
         retVal.add(new OilSpell());
@@ -57,6 +56,7 @@ public class CardPoolHelper {
         retVal.add(new Famehameha());
         retVal.add(new FairyTaleEnd());
         retVal.add(new RustCleanMagic());
+        retVal.add(new HotTeaSpell());
         retVal.removeIf(c -> c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT));
         return retVal;
     }

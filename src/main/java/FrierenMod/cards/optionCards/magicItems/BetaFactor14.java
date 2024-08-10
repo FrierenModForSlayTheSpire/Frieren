@@ -15,6 +15,8 @@ public class BetaFactor14 extends AbstractMagicItem {
 
     @Override
     public void takeEffect() {
+        if (!p.hasPower(MantraPower.POWER_ID))
+            this.addToBot(new ApplyPowerAction(p, p, new MantraPower(p, 0)));
         this.addToBot(new ApplyPowerAction(p, p, new MantraPower(p, secondMagicNumber)));
     }
 }

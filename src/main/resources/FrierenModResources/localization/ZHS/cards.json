@@ -36,7 +36,7 @@
   },
   "FrierenMod:ManaConcealment": {
     "NAME": "魔力隐藏",
-    "DESCRIPTION": "将手牌和抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
+    "DESCRIPTION": "将抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
   },
   "FrierenMod:BetaFactor1": {
     "NAME": "伺机而动",
@@ -305,8 +305,7 @@
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "飞行魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。"
+    "DESCRIPTION": "获得3层 无实体 ，在每回合结束时 消耗 弃牌堆 !M! 张 *魔力 。"
   },
   "FrierenMod:FolkGrimoire": {
     "NAME": "民间的魔导书",
@@ -388,7 +387,7 @@
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:同调 一张 *魔力 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:咏唱一次 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
@@ -809,6 +808,10 @@
       " NL （已使用",
       " 种。）"
     ]
+  },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "变出热茶的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到你的 *魔力 总数加成）"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",

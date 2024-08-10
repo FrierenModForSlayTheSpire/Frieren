@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class HolyEmblem extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(HolyEmblem.class.getSimpleName());
+
     public HolyEmblem() {
         super(ID, RelicTier.STARTER);
     }
@@ -21,12 +22,13 @@ public class HolyEmblem extends AbstractBaseRelic {
     public AbstractRelic makeCopy() {
         return new HolyEmblem();
     }
+
     @Override
     public void atTurnStartPostDraw() {
         this.flash();
         AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new RelicAboveCreatureAction(p, this));
-        addToBot(new MakeManaInDrawPileAction(1));
-        addToBot(new MakeManaInDiscardAction(1));
+        addToBot(new MakeManaInDrawPileAction(1, true));
+        addToBot(new MakeManaInDiscardAction(1, true));
     }
 }

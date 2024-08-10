@@ -38,7 +38,7 @@
   },
   "FrierenMod:ManaConcealment": {
     "NAME":"ManaConcealment",
-    "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in your hand and draw pile into your discard pile. NL Exhaust."
+    "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
   },
   "FrierenMod:BetaFactor1": {
     "NAME": "Be Prepared",
@@ -314,8 +314,7 @@
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "Flying Magic",
-    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Gain !M! Intangible.",
-    "UPGRADE_DESCRIPTION": "frierenmod:Legendary_Spell. NL Gain !M! Intangible."
+    "DESCRIPTION": "Gain 3 Intangible. NL Exhaust !M! Mana in discard pile at the end of your turn."
   },
   "FrierenMod:FolkGrimoire": {
     "NAME": "Folk Grimoire",
@@ -397,7 +396,7 @@
   },
   "FrierenMod:Laziness": {
     "NAME": "Laziness",
-    "DESCRIPTION": " Unplayable. NL Play a *Mana to Exhaust this card. NL At the end of your turn, shuffle a copy of this card into your discard pile."
+    "DESCRIPTION": " Unplayable. NL frierenmod:Chant once to Exhaust this card. NL At the end of your turn, shuffle a copy of this card into your discard pile."
   },
   "FrierenMod:Recall": {
     "NAME": "Recall",
@@ -782,6 +781,10 @@
       " NL （Have played",
       " kinds.）"
     ]
+  },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "Spell to make hot tea",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Gain !B! Block. NL (Additionally Increases Block By whole amount of your *Mana)"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
