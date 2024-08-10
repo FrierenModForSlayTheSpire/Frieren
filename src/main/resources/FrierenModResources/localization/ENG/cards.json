@@ -63,9 +63,9 @@
   },
   "FrierenMod:BetaFactor4": {
     "NAME": "Foreign Spell:Arrows of Ice",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, deal !SM! damage to all enemies.",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, ALL enemies lose !SM! HP.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, deal 4X damage to all enemies ."
+      "Exhaust X *Mana in pile, ALL enemies lose 4X HP."
     ]
   },
   "FrierenMod:BetaFactor5": {
@@ -781,6 +781,10 @@
       " NL （Have played",
       " kinds.）"
     ]
+  },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "Spell to make hot tea",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Gain !B! Block. NL (Additionally Increases Block By whole amount of your *Mana)"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",

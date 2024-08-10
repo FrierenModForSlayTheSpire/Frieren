@@ -61,9 +61,9 @@
   },
   "FrierenMod:BetaFactor4": {
     "NAME": "他山之石：释放冰箭的魔法",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，对所有敌人造成 !SM! 点伤害。",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，所有敌人失去 !SM! 点生命。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，对所有敌人造成4X点伤害 。"
+      " 消耗 牌堆中X张 *魔力 ，所有敌人失去4X点生命 。"
     ]
   },
   "FrierenMod:BetaFactor5": {
@@ -387,7 +387,7 @@
   },
   "FrierenMod:Laziness": {
     "NAME": "懒懒散散",
-    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:咏唱一次 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
+    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:咏唱 一次 以 消耗 此牌 。 NL 在你的回合结束且在手牌中时，将一张复制放入弃牌堆。"
   },
   "FrierenMod:Recall": {
     "NAME": "追忆",
@@ -808,6 +808,10 @@
       " NL （已使用",
       " 种。）"
     ]
+  },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "变出热茶的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到你的 *魔力 总数加成）"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",

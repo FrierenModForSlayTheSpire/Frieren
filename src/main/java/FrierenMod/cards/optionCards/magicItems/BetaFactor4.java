@@ -1,9 +1,9 @@
 package FrierenMod.cards.optionCards.magicItems;
 
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
-import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.actions.common.LoseHPAction;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BetaFactor4 extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BetaFactor4.class.getSimpleName());
@@ -16,6 +16,8 @@ public class BetaFactor4 extends AbstractMagicItem {
 
     @Override
     public void takeEffect() {
-        addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(secondMagicNumber, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT, true));
+        for (AbstractMonster mo : (AbstractDungeon.getCurrRoom()).monsters.monsters) {
+            addToBot(new LoseHPAction(mo, p, secondMagicNumber));
+        }
     }
 }
