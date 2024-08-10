@@ -14,6 +14,7 @@ public class MakeManaInDrawPileAction extends AbstractGameAction {
     private final AbstractCard cardToMake;
     private static final float x = Settings.WIDTH / 2.0F;
     private static final float y = Settings.HEIGHT / 2.0F;
+    private boolean ignoreBanPower;
 
     public MakeManaInDrawPileAction(int amount) {
         setValues(this.target, this.source, amount);
@@ -22,13 +23,21 @@ public class MakeManaInDrawPileAction extends AbstractGameAction {
         this.duration = this.startDuration;
         this.cardToMake = new Mana();
     }
+
+    public MakeManaInDrawPileAction(int amount, boolean ignoreBanPower) {
+        this(amount);
+        this.ignoreBanPower = true;
+    }
+
     public void update() {
         if (this.duration == this.startDuration) {
             AbstractPlayer p = AbstractDungeon.player;
-            if(!p.hasPower(BanManaGainPower.POWER_ID)){
+            if (!p.hasPower(BanManaGainPower.POWER_ID) || ignoreBanPower) {
                 for (int i = 0; i < this.amount; i++) {
                     AbstractCard c = this.cardToMake.makeStatEquivalentCopy();
-                    AbstractDungeon.effectList.add(new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false));
+                    ShowCardAndAddToDrawPileEffect effect = new ShowCardAndAddToDrawPileEffect(c, x, y, true, true, false);
+                    effect.duration = 0.5F;
+                    AbstractDungeon.effectList.add(effect);
                 }
             }
             this.duration -= Gdx.graphics.getDeltaTime();
