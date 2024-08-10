@@ -137,6 +137,12 @@
       " #y咏唱 后，抽 #b%d 张 #y传说魔法 。"
     ]
   },
+  "FrierenMod:FlyingMagicPower": {
+    "NAME": "飞行魔法",
+    "DESCRIPTIONS": [
+      "你的回合结束时， #y消耗 弃牌堆中 #b%d 张 #y魔力 。"
+    ]
+  },
   "FrierenMod:CopyPower": {
     "NAME": "复制体",
     "DESCRIPTIONS": [

@@ -305,8 +305,7 @@
   },
   "FrierenMod:FlyingMagic": {
     "NAME": "飞行魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !M! 层 无实体 。"
+    "DESCRIPTION": "获得3层 无实体 ，在每回合结束时 消耗 弃牌堆 !M! 张 *魔力 。"
   },
   "FrierenMod:FolkGrimoire": {
     "NAME": "民间的魔导书",

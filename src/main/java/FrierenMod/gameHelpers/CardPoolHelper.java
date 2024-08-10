@@ -49,7 +49,6 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getLegendarySpellCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        retVal.add(new FlyingMagic());
         retVal.add(new ContinualChant());
         retVal.add(new AccessoriesSpell());
         retVal.add(new OilSpell());
