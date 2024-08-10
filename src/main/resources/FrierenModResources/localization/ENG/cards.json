@@ -782,6 +782,10 @@
       " kinds.）"
     ]
   },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "Spell to make hot tea",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Gain !B! Block. NL (Additionally Increases Block By whole amount of your *Mana)"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."

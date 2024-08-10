@@ -809,6 +809,10 @@
       " 种。）"
     ]
   },
+  "FrierenMod:HotTeaSpell": {
+    "NAME": "变出热茶的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到你的 *魔力 总数加成）"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL  frierenmod:同调 1张 *魔力 后，交换你的抽牌堆和弃牌堆并失去2点生命。"
