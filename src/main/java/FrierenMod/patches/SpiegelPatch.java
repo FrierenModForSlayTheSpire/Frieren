@@ -7,6 +7,7 @@ import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
@@ -33,6 +34,8 @@ public class SpiegelPatch {
             ArrayList<String> bossList = new ArrayList<>();
             bossList.add("Awakened One");
             bossList.add("Donu and Deca");
+            if (!Config.REMOVE_TIME_EATER)
+                bossList.add("Time Eater");
             Collections.shuffle(bossList, new java.util.Random(monsterRng.randomLong()));
             return bossList.get(0);
         }
@@ -48,13 +51,19 @@ public class SpiegelPatch {
                 bossList.add(Spiegel_Frieren.MONSTER_ID);
                 return SpireReturn.Return();
             } else {
-                if(AbstractDungeon.player.chosenClass != CharacterEnums.FRIEREN) {
-                    HashMap<String, List<BaseMod.BossInfo>> customBosses = ReflectionHacks.getPrivateStatic(BaseMod.class,"customBosses");
+                if (AbstractDungeon.player.chosenClass != CharacterEnums.FRIEREN) {
+                    HashMap<String, List<BaseMod.BossInfo>> customBosses = ReflectionHacks.getPrivateStatic(BaseMod.class, "customBosses");
                     List<BaseMod.BossInfo> bossInfoList = customBosses.get(TheBeyond.ID);
                     bossInfoList.removeIf(bossInfo -> bossInfo.id.equals(Spiegel_Frieren.MONSTER_ID));
                 }
                 return SpireReturn.Continue();
             }
+        }
+
+        @SpirePostfixPatch
+        public static void postfix(AbstractDungeon _inst) {
+            if (Config.REMOVE_TIME_EATER && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
+                AbstractDungeon.bossList.removeIf(id -> id.equals("Time Eater"));
         }
     }
 }
