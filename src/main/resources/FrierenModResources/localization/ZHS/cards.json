@@ -813,6 +813,13 @@
     "NAME": "变出热茶的魔法",
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到 *魔力 总数加成）"
   },
+  "FrierenMod:ButtSlam": {
+    "NAME": "全身撞姬",
+    "DESCRIPTION": "你每有10点 格挡 ，就造成 !D! 点伤害，将2张魔力放入抽牌堆。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （共%d次）"
+    ]
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL  frierenmod:同调 1张 *魔力 后，交换你的抽牌堆和弃牌堆并失去2点生命。"
