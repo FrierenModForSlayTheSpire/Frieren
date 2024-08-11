@@ -811,7 +811,7 @@
   },
   "FrierenMod:HotTeaSpell": {
     "NAME": "变出热茶的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到你的 *魔力 总数加成）"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 获得 !B! 点 格挡 。 NL （受到 *魔力 总数加成）"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
