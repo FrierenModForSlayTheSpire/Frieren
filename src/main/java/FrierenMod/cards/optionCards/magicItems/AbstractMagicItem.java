@@ -3,14 +3,18 @@ package FrierenMod.cards.optionCards.magicItems;
 import FrierenMod.actions.AfterChantFinishedAction;
 import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
+import FrierenMod.utils.PublicRes;
+import basemod.ReflectionHacks;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
@@ -22,6 +26,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.vfx.combat.VerticalAuraEffect;
@@ -31,6 +36,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class AbstractMagicItem extends AbstractBaseCard {
+    private static final TextureAtlas.AtlasRegion MAGIC_FACTOR_TEXTURE_IMG = getImg(ImageMaster.loadImage(PublicRes.BG_MAGIC_FACTOR_512));
+    private static final TextureAtlas.AtlasRegion CARD_BANNER_PROP = getImg(ImageMaster.loadImage(PublicRes.CARD_BANNER_PROP));
     public int currentSlot; //-1表示未装载，0表示抽，1手，2弃
     public static final String[] LOAD_MESSAGES = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicFactorLoadMessages")).TEXT;
     public ArrayList<AbstractGameAction> extraActions;
@@ -220,6 +227,76 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
             }
             sb.setColor(this.glowColor);
             sb.draw(img, this.current_x + img.offsetX - (float) img.originalWidth / 2.0F, this.current_y + img.offsetY - (float) img.originalWidth / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalWidth / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, this.drawScale * Settings.scale * 1.04F, this.drawScale * Settings.scale * 1.03F, this.angle);
+        }
+    }
+
+    @SpireOverride
+    protected void renderBannerImage(SpriteBatch sb, float drawX, float drawY) {
+        Color renderColor = ReflectionHacks.getPrivate(this, AbstractCard.class, "renderColor");
+        switch (this.magicItemRarity) {
+            default:
+            case COMMON:
+            case BASIC:
+                renderHelper(sb, renderColor, ImageMaster.CARD_BANNER_COMMON, drawX, drawY);
+                break;
+            case PROP:
+                renderHelper(sb, renderColor, CARD_BANNER_PROP, drawX, drawY);
+                break;
+            case UNCOMMON:
+                renderHelper(sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
+                break;
+            case RARE:
+                renderHelper(sb, renderColor, ImageMaster.CARD_BANNER_RARE, drawX, drawY);
+                break;
+        }
+    }
+
+    @SpireOverride
+    protected void renderCardBg(SpriteBatch sb, float x, float y) {
+        Color renderColor = ReflectionHacks.getPrivate(this, AbstractCard.class, "renderColor");
+        TextureAtlas.AtlasRegion texture;
+        if (this.magicItemRarity == MagicItemRarity.PROP)
+            texture = ImageMaster.CARD_SKILL_BG_GRAY;
+        else
+            texture = MAGIC_FACTOR_TEXTURE_IMG;
+        renderHelper(sb, renderColor, texture, x, y);
+    }
+
+    protected void renderType(SpriteBatch sb) {
+        BitmapFont font = FontHelper.cardTypeFont;
+        font.getData().setScale(this.drawScale);
+        Color typeColor = ReflectionHacks.getPrivate(this, AbstractCard.class, "typeColor");
+        Color renderColor = ReflectionHacks.getPrivate(this, AbstractCard.class, "renderColor");
+        typeColor.a = renderColor.a;
+        String text;
+        if (this.magicItemRarity == MagicItemRarity.PROP)
+            text = typeTEXT[2];
+        else
+            text = typeTEXT[1];
+        FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, text, this.current_x, this.current_y - 22.0F * this.drawScale * Settings.scale, 0.0F, -1.0F * this.drawScale * Settings.scale, this.angle, false, typeColor);
+    }
+
+    protected void loadRarity(MagicItemRarity rarity) {
+        this.magicItemRarity = rarity;
+        this.color = CardEnums.MAGIC_ITEM;
+        switch (rarity) {
+            case BASIC:
+            case COMMON:
+                this.rarity = CardRarity.BASIC;
+                this.type = CardType.SKILL;
+                break;
+            case UNCOMMON:
+                this.rarity = CardRarity.COMMON;
+                this.type = CardType.SKILL;
+                break;
+            case PROP:
+                this.rarity = CardRarity.UNCOMMON;
+                this.type = CardType.STATUS;
+                break;
+            case RARE:
+                this.rarity = CardRarity.RARE;
+                this.type = CardType.SKILL;
+                break;
         }
     }
 

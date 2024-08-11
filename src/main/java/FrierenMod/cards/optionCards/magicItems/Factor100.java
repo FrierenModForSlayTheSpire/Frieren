@@ -9,7 +9,7 @@ public class Factor100 extends AbstractMagicItem {
 
     public Factor100() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.COMMON;
+        loadRarity(MagicItemRarity.COMMON);
         this.manaNeedMultipleCoefficient = 1;
         this.manaNeedAddCoefficient = 1;
         this.tags.add(Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT);

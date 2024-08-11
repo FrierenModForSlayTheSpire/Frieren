@@ -1,6 +1,8 @@
 package FrierenMod.utils;
 
 import FrierenMod.powers.AccelerateFlowPower;
+import com.badlogic.gdx.graphics.Color;
+import com.megacrit.cardcrawl.helpers.CardHelper;
 
 public class PublicRes {
     public static final String CHARACTER_NAME = "Public";
@@ -20,4 +22,7 @@ public class PublicRes {
     public static final String MAGIC_ITEM_REWARD_ICON = ModInformation.makeIconPath("magic_item_reward");
     public static final String CARD_BANNER_PROP = ModInformation.makeCardBannerPath(CHARACTER_NAME,"prop","small");
     public static final String CARD_BANNER_PROP_L = ModInformation.makeCardBannerPath(CHARACTER_NAME,"prop","large");
+    public static final Color MAGIC_ITEM_RENDER_COLOR = CardHelper.getColor(157, 68, 250);
+    public static final String BG_MAGIC_FACTOR_512 = BG_MANA_512;
+    public static final String BG_MAGIC_FACTOR_1024 = BG_MANA_1024;
 }

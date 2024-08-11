@@ -204,7 +204,8 @@
     "TEXT": [
       "Mana",
       "Factor",
-      "Prop"
+      "Prop",
+      "Magic Factor/Prop"
     ]
   },
   "FrierenMod:BuyPropOption": {

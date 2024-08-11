@@ -1,21 +1,35 @@
 package FrierenMod.patches;
 
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.enums.CardEnums;
+import FrierenMod.enums.CharacterEnums;
+import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.PublicRes;
+import FrierenMod.utils.TopTextHelper;
 import basemod.ReflectionHacks;
+import basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.screens.SingleCardViewPopup;
+import com.megacrit.cardcrawl.screens.compendium.CardLibraryScreen;
+import com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar;
+import com.megacrit.cardcrawl.screens.mainMenu.MainMenuScreen;
 import com.megacrit.cardcrawl.vfx.cardManip.CardGlowBorder;
+import javassist.CtBehavior;
+
+import java.util.ArrayList;
 
 public class CardStylePatch {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString("FrierenMod:CardStyleText").TEXT;
@@ -51,66 +65,9 @@ public class CardStylePatch {
                 return SpireReturn.Return(MANA_TEXTURE_IMG);
             return SpireReturn.Continue();
         }
-    }
 
-    @SpirePatch(clz = AbstractCard.class, method = "renderType")
-    public static class PatchRenderType {
-        @SpireInsertPatch(rloc = 25, localvars = {"sb", "typeColor"})
-        public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color typeColor) {
-            if (_inst instanceof Mana) {
-                FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[0], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
-                return SpireReturn.Return();
-            }
-            if (_inst instanceof AbstractMagicItem) {
-                if (((AbstractMagicItem) _inst).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
-                    FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[2], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
-                else
-                    FontHelper.renderRotatedText(sb, FontHelper.cardTypeFont, TEXT[1], _inst.current_x, _inst.current_y - 22.0F * _inst.drawScale * Settings.scale, 0.0F, -1.0F * _inst.drawScale * Settings.scale, _inst.angle, false, typeColor);
-                return SpireReturn.Return();
-            }
-            return SpireReturn.Continue();
-        }
-    }
-
-    @SpirePatch(clz = AbstractCard.class, method = "renderBannerImage")
-    public static class PatchRenderBannerImage {
-        private static final TextureAtlas.AtlasRegion CARD_BANNER_PROP = getImg(ImageMaster.loadImage(PublicRes.CARD_BANNER_PROP));
-
-        @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "drawX", "drawY"})
-        public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float drawX, float drawY) {
-            if (_inst instanceof AbstractMagicItem) {
-                switch (((AbstractMagicItem) _inst).magicItemRarity) {
-                    default:
-                    case COMMON:
-                    case BASIC:
-                        renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_COMMON, drawX, drawY);
-                        return SpireReturn.Return();
-                    case PROP:
-                        renderHelper(_inst, sb, renderColor, CARD_BANNER_PROP, drawX, drawY);
-                        return SpireReturn.Return();
-                    case UNCOMMON:
-                        renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_UNCOMMON, drawX, drawY);
-                        return SpireReturn.Return();
-                    case RARE:
-                        renderHelper(_inst, sb, renderColor, ImageMaster.CARD_BANNER_RARE, drawX, drawY);
-                        return SpireReturn.Return();
-                }
-            }
-            return SpireReturn.Continue();
-        }
-    }
-
-    @SpirePatch(clz = AbstractCard.class, method = "renderSkillBg")
-    public static class PatchRenderSkillBg {
-        private static final TextureAtlas.AtlasRegion MANA_TEXTURE_IMG = getImg(ImageMaster.loadImage(PublicRes.BG_MANA_512));
-
-        @SpireInsertPatch(rloc = 0, localvars = {"sb", "renderColor", "x", "y"})
-        public static SpireReturn<Void> Insert(AbstractCard _inst, SpriteBatch sb, Color renderColor, float x, float y) {
-            if (_inst instanceof Mana || (_inst instanceof AbstractMagicItem && ((AbstractMagicItem) _inst).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP)) {
-                renderHelper(_inst, sb, renderColor, MANA_TEXTURE_IMG, x, y);
-                return SpireReturn.Return();
-            }
-            return SpireReturn.Continue();
+        private static TextureAtlas.AtlasRegion getImg(Texture texture) {
+            return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
         }
     }
 
@@ -128,16 +85,79 @@ public class CardStylePatch {
         }
     }
 
-    private static void renderHelper(AbstractCard c, SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
-        sb.setColor(color);
-        sb.draw(img, drawX + img.offsetX - (float) img.originalWidth / 2.0F, drawY + img.offsetY - (float) img.originalHeight / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalHeight / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, c.drawScale * Settings.scale, c.drawScale * Settings.scale, c.angle);
-    }
 
-    private static TextureAtlas.AtlasRegion getImg(Texture texture) {
-        return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
-    }
+    @SpirePatches2({@SpirePatch2(clz = AbstractCard.class, method = "render", paramtypez = {SpriteBatch.class}), @SpirePatch2(clz = AbstractCard.class, method = "renderInLibrary", paramtypez = {SpriteBatch.class})})
+    public static class RenderTopTextPatches {
+        public static ArrayList<Class<? extends AbstractCard>> allowedCardClasses = new ArrayList<>();
 
-    private static TextureAtlas.AtlasRegion getImg(Texture texture, int width, int height) {
-        return new TextureAtlas.AtlasRegion(texture, 0, 0, width, height);
+        @SpirePostfixPatch
+        public static void patch(AbstractCard __instance, SpriteBatch sb) {
+            if (shouldShowTopText(__instance)) {
+                String text = TopTextHelper.getTopTextById(__instance.cardID);
+                if (text == null || __instance.isFlipped || __instance.isLocked || __instance.transparency <= 0.0F)
+                    return;
+                BitmapFont font = FontHelper.cardTitleFont;
+                float xPos = __instance.current_x;
+                float yPos = __instance.current_y;
+                float offsetY = 400.0F * Settings.scale * __instance.drawScale / 2.0F;
+                BitmapFont.BitmapFontData fontData = font.getData();
+                float originalScale = fontData.scaleX;
+                float scaleMulti = 0.8F;
+                int length = text.length();
+                if (length > 20) {
+                    scaleMulti -= 0.02F * (length - 20);
+                    if (scaleMulti < 0.5F)
+                        scaleMulti = 0.5F;
+                }
+                fontData.setScale(scaleMulti * __instance.drawScale * 0.85F);
+                Color color = FrierenRes.RENDER_COLOR.cpy();
+                color.a = __instance.transparency;
+                FontHelper.renderRotatedText(sb, font, text, xPos, yPos, 0.0F, offsetY, __instance.angle, true, color);
+                fontData.setScale(originalScale);
+            }
+        }
+
+        public static boolean shouldShowTopText(AbstractCard c) {
+            if (!Settings.hideCards && (isInFrierenRun() || isInFrierenCardLibraryScreen())) {
+                if (c instanceof AbstractBaseCard)
+                    return true;
+                for (Class<?> clazz : allowedCardClasses) {
+                    if (clazz.isAssignableFrom(c.getClass()))
+                        return true;
+                }
+            }
+            return false;
+        }
+
+        private static boolean isInFrierenRun() {
+            return (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN);
+        }
+
+        public static boolean isInFrierenCardLibraryScreen() {
+            if (!CardCrawlGame.isInARun() && CardCrawlGame.mainMenuScreen.screen == MainMenuScreen.CurScreen.CARD_LIBRARY) {
+                ColorTabBar colorBar = (ColorTabBar) ReflectionHacks.getPrivate(CardCrawlGame.mainMenuScreen.cardLibraryScreen, CardLibraryScreen.class, "colorBar");
+                if (colorBar.curTab == ColorTabBarFix.Enums.MOD) {
+                    ColorTabBarFix.ModColorTab modColorTab = ColorTabBarFix.Fields.getModTab();
+                    return (modColorTab != null && (modColorTab.color == CardEnums.FRIEREN_CARD || modColorTab.color == CardEnums.MAGIC_ITEM));
+                }
+            }
+            return false;
+        }
+    }
+    @SpirePatch(cls = "basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix$Render", method = "Insert", optional = true)
+    public static class TabNamePatch {
+        @SpireInsertPatch(locator = TabNameLocator.class, localvars = {"tabName"})
+        public static void InsertFix(ColorTabBar _instance, SpriteBatch sb, float y, ColorTabBar.CurrentTab curTab, @ByRef String[] tabName) {
+            if (tabName[0].equalsIgnoreCase(CardEnums.MAGIC_ITEM.name()))
+                tabName[0] = TEXT[3];
+        }
+
+        private static class TabNameLocator extends SpireInsertLocator {
+            @Override
+            public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
+                Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered");
+                return LineFinder.findInOrder(ctMethodToPatch, (Matcher)methodCallMatcher);
+            }
+        }
     }
 }

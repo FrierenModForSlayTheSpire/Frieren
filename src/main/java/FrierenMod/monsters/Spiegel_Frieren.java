@@ -6,6 +6,7 @@ import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.powers.*;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.MonsterRes;
+import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.exordium.Cultist;
@@ -157,5 +159,12 @@ public class Spiegel_Frieren extends AbstractMonster {
             onBossVictoryLogic();
             onFinalBossVictoryLogic();
         }
+    }
+
+    public static void register() {
+        BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
+        BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
+                MonsterRes.SPIEGEL_BOSS_ICON_1,
+                MonsterRes.SPIEGEL_BOSS_ICON_2);
     }
 }

@@ -11,7 +11,7 @@ public class BetaFactor21 extends AbstractMagicItem {
 
     public BetaFactor21() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.COMMON;
+        loadRarity(MagicItemRarity.COMMON);
         this.rewardMultipleCoefficient = 2;
     }
 

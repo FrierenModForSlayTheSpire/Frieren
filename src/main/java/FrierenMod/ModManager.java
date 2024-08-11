@@ -3,44 +3,26 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.commands.MagicItemCommand;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.events.AnimalWell;
-import FrierenMod.events.FoodEvent;
-import FrierenMod.events.KraftGift;
-import FrierenMod.gameHelpers.*;
-import FrierenMod.monsters.Spiegel_Frieren;
-import FrierenMod.potions.BottledMana;
-import FrierenMod.potions.DissolveClothPotion;
-import FrierenMod.potions.EmperorWine;
-import FrierenMod.rewards.MagicItemReward;
-import FrierenMod.ui.panels.MagicDeckPanel;
-import FrierenMod.ui.screens.MagicDeckScreen;
+import FrierenMod.gameHelpers.CardPoolHelper;
+import FrierenMod.gameHelpers.DataObject;
+import FrierenMod.gameHelpers.SaveFileHelper;
 import FrierenMod.utils.*;
-import FrierenMod.variables.ChantXVariable;
-import FrierenMod.variables.RaidVariable;
-import FrierenMod.variables.SecondMagicNumberVariable;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import basemod.interfaces.*;
-import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBlocks;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.ModInfo;
-import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -48,7 +30,6 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
-import static FrierenMod.ui.panels.ConfigPanel.*;
 import static basemod.BaseMod.logger;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
@@ -61,46 +42,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     public ModManager() {
         BaseMod.subscribe(this);
         setModID(ModInformation.MOD_NAME);
-        Log.logger.info("Creating the color {}", CardEnums.FRIEREN_CARD.toString());
-        BaseMod.addColor(CardEnums.FRIEREN_CARD,
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.RENDER_COLOR.cpy(),
-                FrierenRes.BG_ATTACK_512,
-                FrierenRes.BG_SKILL_512,
-                FrierenRes.BG_POWER_512,
-                FrierenRes.ENERGY_ORB,
-                FrierenRes.BG_ATTACK_1024,
-                FrierenRes.BG_SKILL_1024,
-                FrierenRes.BG_POWER_1024,
-                FrierenRes.BIG_ORB,
-                FrierenRes.SMALL_ORB);
-        if (Config.FERN_ENABLE)
-            BaseMod.addColor(CardEnums.FERN_CARD,
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.RENDER_COLOR.cpy(),
-                    FernRes.BG_ATTACK_512,
-                    FernRes.BG_SKILL_512,
-                    FernRes.BG_POWER_512,
-                    FernRes.ENERGY_ORB,
-                    FernRes.BG_ATTACK_1024,
-                    FernRes.BG_SKILL_1024,
-                    FernRes.BG_POWER_1024,
-                    FernRes.BIG_ORB,
-                    FernRes.SMALL_ORB);
-        Log.logger.info("Done creating the color");
-        Log.logger.info("Adding hooks...");
-        BaseMod.subscribe(new HookHelper());
-        Log.logger.info("Done adding hooks");
+        RegisterHelper.registerColor();
     }
 
     public void setModID(String ID) {
@@ -124,40 +66,18 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receivePostInitialize() {
-        makeModPanels();
-        SpireConfig config = makeConfig();
-        loadProperties(config);
-        BaseMod.addAudio("Frieren_The_Slayer.mp3", ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
-        BaseMod.addMonster(Spiegel_Frieren.MONSTER_ID, Spiegel_Frieren::new);
-        BaseMod.addBoss(TheBeyond.ID, Spiegel_Frieren.MONSTER_ID,
-                MonsterRes.SPIEGEL_BOSS_ICON_1,
-                MonsterRes.SPIEGEL_BOSS_ICON_2);
-        BaseMod.addTopPanelItem(new MagicDeckPanel());
-        BaseMod.addCustomScreen(new MagicDeckScreen());
+        RegisterHelper.registerPotions();
+        RegisterHelper.registerBosses();
+        RegisterHelper.registerAudios();
+        RegisterHelper.registerEvents();
+        RegisterHelper.registerSundries();
         BaseMod.addSaveField(ModInformation.MOD_NAME,this);
-        MagicItemReward.register();
-        MagicItemCommand.register();
-        BaseMod.addEvent("FoodEvent", FoodEvent.class);
-        BaseMod.addEvent("KraftGift", KraftGift.class);
-        BaseMod.addEvent("AnimalWell", AnimalWell.class);
     }
 
     @Override
     public void receiveEditCards() {
         pathCheck();
-        Log.logger.info("Adding variables");
-        BaseMod.addDynamicVariable(new ChantXVariable());
-        BaseMod.addDynamicVariable(new SecondMagicNumberVariable());
-        BaseMod.addDynamicVariable(new RaidVariable());
-        DynamicTextBlocks.registerCustomCheck("frierenmod:SlotNumber", card -> {
-            if (AbstractDungeon.player != null && CombatHelper.isInCombat()) {
-                if (card instanceof AbstractMagicItem) {
-                    return ((AbstractMagicItem) card).currentSlot;
-                }
-            }
-            return -1;
-        });
-        Log.logger.info("Done adding variables");
+        RegisterHelper.registerVariables();
         Log.logger.info("Adding cards");
         String optionCardsClassPath = getModID() + ".cards.optionCards";
         String tempCardsClassPath = getModID() + ".cards.tempCards";
@@ -199,7 +119,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     @Override
     public void receiveEditRelics() {
         String relicClassPath = getClass().getPackage().getName() + ".relics";
-        Log.logger.info("===============Adding relics: search in " + relicClassPath);
+        Log.logger.info("===============Adding relics: search in {}", relicClassPath);
         for (ModInfo info : Loader.MODINFOS)
             Log.logger.info(info.ID);
         (new AutoAdd(getModID())).packageFilter(relicClassPath).any(CustomRelic.class, (info, relic) -> {
@@ -220,11 +140,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
             BaseMod.addCharacter(new Fern(CardCrawlGame.playerName), FernRes.CHARACTER_BUTTON, FernRes.CHARACTER_PORTRAIT, CharacterEnums.FERN);
             Log.logger.info("Added {}", CharacterEnums.FERN.toString());
         }
-        Log.logger.info("Beginning to add potions.");
-        BaseMod.addPotion(BottledMana.class, Color.BLUE.cpy(), Color.ROYAL.cpy(), Color.ROYAL, BottledMana.POTION_ID, CharacterEnums.FRIEREN);
-        BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);
-        BaseMod.addPotion(EmperorWine.class, FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), FrierenRes.RENDER_COLOR.cpy(), EmperorWine.POTION_ID, CharacterEnums.FRIEREN);
-        Log.logger.info("Added potions.");
     }
 
     @Override
@@ -234,7 +149,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-//            lang = "ZHS";
             lang = "ENG";
         }
         String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang, "keywords"))
@@ -243,7 +157,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (keywords != null) {
             for (Keyword keyword : keywords) {
                 BaseMod.addKeyword(ModInformation.KEY_WORD, keyword.NAMES[0], keyword.NAMES, keyword.DESCRIPTION);
-                Log.logger.info("-----------------add keyword: " + keyword.NAMES[0]);
+                Log.logger.info("-----------------add keyword: {}", keyword.NAMES[0]);
             }
         }
     }
@@ -253,7 +167,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         if (language == Settings.GameLanguage.ZHS) {
             lang = "ZHS";
         } else {
-//            lang = "ZHS";
             lang = "ENG";
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang, "cards"));

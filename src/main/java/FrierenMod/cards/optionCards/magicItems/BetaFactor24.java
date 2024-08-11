@@ -7,6 +7,6 @@ public class BetaFactor24 extends AbstractMagicItem {
 
     public BetaFactor24() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.UNCOMMON;
+        loadRarity(MagicItemRarity.UNCOMMON);
     }
 }

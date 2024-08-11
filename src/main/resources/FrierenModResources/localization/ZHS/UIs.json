@@ -204,7 +204,8 @@
     "TEXT": [
       "魔力",
       "魔法因子",
-      "魔具"
+      "魔具",
+      "魔法因子/魔具"
     ]
   },
   "FrierenMod:BuyPropOption": {

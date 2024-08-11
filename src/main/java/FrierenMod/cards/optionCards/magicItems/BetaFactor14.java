@@ -9,7 +9,7 @@ public class BetaFactor14 extends AbstractMagicItem {
 
     public BetaFactor14() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.RARE;
+        loadRarity(MagicItemRarity.RARE);
         this.manaNeedAddCoefficient = 1;
     }
 

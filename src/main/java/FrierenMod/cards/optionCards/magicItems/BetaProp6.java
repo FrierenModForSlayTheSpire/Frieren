@@ -14,7 +14,7 @@ public class BetaProp6 extends AbstractMagicItem {
 
     public BetaProp6() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.PROP;
+        loadRarity(MagicItemRarity.PROP);
         this.propCanChooseMaxAmt = 2;
     }
 

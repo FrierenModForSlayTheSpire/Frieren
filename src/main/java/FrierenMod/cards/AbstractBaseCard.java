@@ -8,11 +8,15 @@ import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -50,6 +54,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public static final Color FLASH_COLOR = new Color(123.0F / 255.0F, 236.0F / 255.0F, 232.0F / 255.0F, 1.0F);
     public ArrayList<TooltipInfo> tips = new ArrayList<>();
     public static final String[] cantUseTEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("cantUseMessage")).TEXT;
+    protected static final String[] typeTEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("CardStyleText")).TEXT;
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
@@ -259,8 +264,22 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public void afterSynchroFinished() {
     }
-    public static class Enum{
+
+    public static class Enum {
         @SpireEnum
         public static AbstractCard.CardTags CAN_NOT_RANDOM_GENERATED_IN_COMBAT;
     }
+
+    protected static TextureAtlas.AtlasRegion getImg(Texture texture) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
+    }
+
+    protected static TextureAtlas.AtlasRegion getImg(Texture texture, int width, int height) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, width, height);
+    }
+    protected void renderHelper(SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
+        sb.setColor(color);
+        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
+    }
+
 }

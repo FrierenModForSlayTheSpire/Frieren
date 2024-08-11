@@ -6,11 +6,13 @@ import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
+import FrierenMod.enums.CardEnums;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import java.util.ArrayList;
 
@@ -62,41 +64,7 @@ public class CardPoolHelper {
     }
 
     public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
-        ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
-        srcCardPool.add(new BetaFactor1());
-        srcCardPool.add(new BetaFactor2());
-        srcCardPool.add(new BetaFactor3());
-        srcCardPool.add(new BetaFactor4());
-        srcCardPool.add(new BetaFactor5());
-        srcCardPool.add(new BetaFactor6());
-        srcCardPool.add(new BetaFactor7());
-        srcCardPool.add(new BetaFactor9());
-        srcCardPool.add(new BetaFactor10());
-        srcCardPool.add(new BetaFactor11());
-        srcCardPool.add(new BetaFactor12());
-        srcCardPool.add(new BetaFactor13());
-        srcCardPool.add(new BetaFactor14());
-        srcCardPool.add(new BetaFactor15());
-        srcCardPool.add(new BetaFactor16());
-        srcCardPool.add(new BetaFactor17());
-        srcCardPool.add(new BetaFactor18());
-        srcCardPool.add(new BetaFactor19());
-        srcCardPool.add(new BetaFactor20());
-        srcCardPool.add(new BetaFactor21());
-        srcCardPool.add(new BetaFactor22());
-        srcCardPool.add(new BetaFactor23());
-        srcCardPool.add(new BetaFactor24());
-        srcCardPool.add(new Factor001());
-        srcCardPool.add(new Factor010());
-        srcCardPool.add(new Factor100());
-        srcCardPool.add(new BetaProp1());
-        srcCardPool.add(new BetaProp2());
-        srcCardPool.add(new BetaProp3());
-        srcCardPool.add(new BetaProp4());
-        srcCardPool.add(new BetaProp5());
-        srcCardPool.add(new BetaProp6());
-        srcCardPool.add(new BetaProp7());
-        srcCardPool.add(new BetaProp8());
+        ArrayList<AbstractCard> srcCardPool = CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY);
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();

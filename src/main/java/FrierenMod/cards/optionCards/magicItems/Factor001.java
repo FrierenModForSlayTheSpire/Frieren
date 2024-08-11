@@ -9,7 +9,7 @@ public class Factor001 extends AbstractMagicItem {
 
     public Factor001() {
         super(ID);
-        this.magicItemRarity = MagicItemRarity.RARE;
+        loadRarity(MagicItemRarity.RARE);
         this.manaNeedMultipleCoefficient = 3;
         this.manaNeedAddCoefficient = 3;
         this.tags.add(Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT);
