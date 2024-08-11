@@ -1,7 +1,7 @@
 package FrierenMod.events;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.optionCards.magicItems.BetaProp1;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.props.UnbelievableTool;
 import FrierenMod.effects.FastMagicItemObtainEffect;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.utils.ModInformation;
@@ -90,7 +90,7 @@ public class ReadingGrimoireEvent extends AbstractImageEvent {
                     this.imageEventText.updateBodyText(EVENT_STRINGS.DESCRIPTIONS[3]);
                     this.imageEventText.clearAllDialogs();
                     this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[4]);
-                    AbstractDungeon.effectList.add(new FastMagicItemObtainEffect(new BetaProp1()));
+                    AbstractDungeon.effectList.add(new FastMagicItemObtainEffect(new UnbelievableTool()));
                     AbstractDungeon.effectList.add(new FastMagicItemObtainEffect(CardPoolHelper.getRandomMagicItem(AbstractMagicItem.MagicItemRarity.PROP)));
                     return;
                 }

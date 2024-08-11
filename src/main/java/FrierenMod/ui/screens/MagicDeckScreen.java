@@ -1,6 +1,6 @@
 package FrierenMod.ui.screens;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.ExhaustMagicItemEffect;
 import FrierenMod.effects.MagicPropUsingEffect;
 import FrierenMod.patches.fields.MagicDeckField;

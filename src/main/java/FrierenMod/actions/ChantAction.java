@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;

@@ -40,168 +40,161 @@
     "NAME":"ManaConcealment",
     "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
   },
-  "FrierenMod:BetaFactor1": {
+  "FrierenMod:BePrepared": {
     "NAME": "Be Prepared",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, your next Attack deals !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, your next Attack deals X+3 additional damage."
     ]
   },
-  "FrierenMod:BetaFactor2": {
+  "FrierenMod:MetallicizFlower": {
     "NAME": "Foreign Spell: Metallicize Flower",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Metallicize.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Metallicize."
     ]
   },
-  "FrierenMod:BetaFactor3": {
+  "FrierenMod:NatureBeauty": {
     "NAME": "Party Tricks: Nature's Beauty",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] next turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+2 *Mana in pile, gain X [E] next turn."
     ]
   },
-  "FrierenMod:BetaFactor4": {
+  "FrierenMod:IceArrows": {
     "NAME": "Foreign Spell:Arrows of Ice",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, ALL enemies lose !SM! HP.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, ALL enemies lose 4X HP."
     ]
   },
-  "FrierenMod:BetaFactor5": {
+  "FrierenMod:HighSpeedMovement": {
     "NAME": "Foreign Spell: High-Speed Movement",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Dexterity.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Dexterity."
     ]
   },
-  "FrierenMod:BetaFactor6": {
+  "FrierenMod:SpellBoost": {
     "NAME": "Spell Boost",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, deal Double Damage for the next !SM! turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 4X *Mana in pile, deal Double Damage for the next X turn."
     ]
   },
-  "FrierenMod:BetaFactor7": {
+  "FrierenMod:Hypnosis": {
     "NAME": "Foreign Spell: Hypnosis",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Weak and Vulnerable to all enemies.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, apply X Weak and Vulnerable to all enemies."
     ]
   },
-  "FrierenMod:BetaFactor8": {
-    "NAME": "Beta Factor 8",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Vulnerable to all enemies.",
-    "EXTENDED_DESCRIPTION": [
-      "Exhaust 3X *Mana in pile, apply X Vulnerable to all enemies."
-    ]
-  },
-  "FrierenMod:BetaFactor9": {
+  "FrierenMod:PeacefulDays": {
     "NAME": "Peaceful Days",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Draw !SM! card.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+1 *Mana in pile, Draw X card."
     ]
   },
-  "FrierenMod:BetaFactor10": {
+  "FrierenMod:TheLivingLegend": {
     "NAME": "The Living Legend",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add random !SM! frierenmod:Legendary_Spell into {!frierenmod:SlotNumber!|-1= Error|0= draw pile|1= hand|2= discard pile}.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, add X random frierenmod:Legendary_Spell into pile."
     ]
   },
-  "FrierenMod:BetaFactor11": {
+  "FrierenMod:ImpeccableIntangible": {
     "NAME": "Impeccable and Intangible",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Intangible.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 6X *Mana in pile, gain X Intangible."
     ]
   },
-  "FrierenMod:BetaFactor12": {
+  "FrierenMod:BarrierMagic": {
     "NAME": "Barrier Magic",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !B! Block and Block is not removed at the start of your next !SM! turns.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+2 *Mana in pile, gain X Block and Block will not be removed at the start of your next X turns."
     ]
   },
-  "FrierenMod:BetaFactor13": {
+  "FrierenMod:PassOnTheTorch": {
     "NAME": "Pass On the Torch",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add !SM! *Mana {@@} into {!frierenmod:SlotNumber!|-1= Error|0= Hand|1= Discard Pile|2= Draw Pile}.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, add X *Mana into the next pile."
     ]
   },
-  "FrierenMod:BetaFactor14": {
+  "FrierenMod:Transcendence": {
     "NAME": "Transcendence",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Mantra.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X+1 *Mana in pile, gain X Mantra."
     ]
   },
-  "FrierenMod:BetaFactor15": {
+  "FrierenMod:AdvancedDefensiveMagic": {
     "NAME": "Advanced Defensive Magic",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !B! Block twice.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Block twice."
     ]
   },
-  "FrierenMod:BetaFactor16": {
+  "FrierenMod:Strategizing": {
     "NAME": "Strategizing",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] .",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 2X *Mana in pile, gain X [E] ."
     ]
   },
-  "FrierenMod:BetaFactor17": {
+  "FrierenMod:BuildUpBody": {
     "NAME": "Build Up Body",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! Strength.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, gain X Strength."
     ]
   },
-  "FrierenMod:BetaFactor18": {
+  "FrierenMod:MeleeMage": {
     "NAME": "Melee Mage",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, Cards containing \\\"Strike\\\" deal !SM! additional damage.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, cards containing \"Strike\" deal X+1 additional damage."
     ]
   },
-  "FrierenMod:BetaFactor19": {
+  "FrierenMod:GrossedOutLook": {
     "NAME": "Grossed-out Look",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, All enemies lose !SM! Strength this turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, all enemies lose X+2 Strength this turn."
     ]
   },
-  "FrierenMod:BetaFactor20": {
+  "FrierenMod:Sleeeep": {
     "NAME": "Sleeeep",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, draw !SM! cards next turn.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, draw X cards next turn."
     ]
   },
-  "FrierenMod:BetaFactor21": {
+  "FrierenMod:TransferToAlchemist": {
     "NAME": "Transfer to Alchemist",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Poison to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, apply !SM! Poison to ALL enemies."
     ]
   },
-  "FrierenMod:BetaFactor22": {
+  "FrierenMod:GreatMageComposure": {
     "NAME": "Great Mage's Composure",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Chant is FREE.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust 3X *Mana in pile, this turn the next X times frierenmod:Chant is FREE."
     ]
   },
-  "FrierenMod:BetaFactor23": {
+  "FrierenMod:PinchAndScrape": {
     "NAME": "Pinch And Scrape",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Synchro is FREE.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, the next 2X times frierenmod:Synchro is FREE."
     ]
   },
-  "FrierenMod:BetaFactor24": {
+  "FrierenMod:BluePrint": {
     "NAME": "Blue Print",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
@@ -229,56 +222,56 @@
       "Exhaust 3X+3 *Mana in pile, ... [#ed1c24]monster[] ..."
     ]
   },
-  "FrierenMod:BetaProp1": {
+  "FrierenMod:UnbelievableTool": {
     "NAME": "Unbelievable Tool",
     "DESCRIPTION": "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [
       "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
     ]
   },
-  "FrierenMod:BetaProp2": {
+  "FrierenMod:MysteryBox": {
     "NAME": "Mystery Box",
     "DESCRIPTION": "Add 2 random *Magic_Factor to your Magic Deck.",
     "EXTENDED_DESCRIPTION": [
       "Add 2 random *Magic_Factor to your Magic Deck."
     ]
   },
-  "FrierenMod:BetaProp3": {
+  "FrierenMod:SeinNote": {
     "NAME": "Sein's Note",
     "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP.",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP."
     ]
   },
-  "FrierenMod:BetaProp4": {
+  "FrierenMod:MysticBox": {
     "NAME": "Mystic Box",
     "DESCRIPTION": "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
     "EXTENDED_DESCRIPTION": [
       "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
     ]
   },
-  "FrierenMod:BetaProp5": {
+  "FrierenMod:ShadowDragonHorn": {
     "NAME": "Shadow Dragon's Horn",
     "DESCRIPTION": "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
       "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E]."
     ]
   },
-  "FrierenMod:BetaProp6": {
+  "FrierenMod:TransmutationCircle": {
     "NAME": "A Certain Scientific Transmutation Circle",
     "DESCRIPTION": "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot."
     ]
   },
-  "FrierenMod:BetaProp7": {
+  "FrierenMod:UnbelievableToolBox": {
     "NAME": "Unbelievable Tool Box",
     "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool .",
     "EXTENDED_DESCRIPTION": [
       "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool ."
     ]
   },
-  "FrierenMod:BetaProp8": {
+  "FrierenMod:CrystalBall": {
     "NAME": "Crystal Ball",
     "DESCRIPTION": "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot.",
     "EXTENDED_DESCRIPTION": [

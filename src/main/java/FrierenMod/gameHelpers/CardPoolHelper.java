@@ -1,7 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicItems.*;
+import FrierenMod.cards.magicItems.*;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;

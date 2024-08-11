@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.FastMagicItemObtainEffect;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

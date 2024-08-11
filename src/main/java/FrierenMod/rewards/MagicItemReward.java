@@ -1,6 +1,6 @@
 package FrierenMod.rewards;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.Log;

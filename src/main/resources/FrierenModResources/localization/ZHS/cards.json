@@ -38,161 +38,161 @@
     "NAME": "魔力隐藏",
     "DESCRIPTION": "将抽牌堆中的 *魔力 全部放入弃牌堆。 NL 消耗 。 NL 虚无 。"
   },
-  "FrierenMod:BetaFactor1": {
+  "FrierenMod:BePrepared": {
     "NAME": "伺机而动",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一次攻击额外造成 !SM! 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，下一次攻击额外造成X+3点伤害。"
     ]
   },
-  "FrierenMod:BetaFactor2": {
+  "FrierenMod:MetallicizFlower": {
     "NAME": "他山之石：花瓣金属化魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 金属化 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X层 金属化 。"
     ]
   },
-  "FrierenMod:BetaFactor3": {
+  "FrierenMod:NatureBeauty": {
     "NAME": "宴会魔法：花鸟风月",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一回合获得 !SM! [E] 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+2张 *魔力 ，下一回合获得X [E] 。"
     ]
   },
-  "FrierenMod:BetaFactor4": {
+  "FrierenMod:IceArrows": {
     "NAME": "他山之石：释放冰箭的魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，所有敌人失去 !SM! 点生命。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，所有敌人失去4X点生命 。"
     ]
   },
-  "FrierenMod:BetaFactor5": {
+  "FrierenMod:HighSpeedMovement": {
     "NAME": "他山之石：高速移动魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 敏捷 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X点敏捷 。"
     ]
   },
-  "FrierenMod:BetaFactor6": {
+  "FrierenMod:SpellBoost": {
     "NAME": "魔力增幅",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 个回合你所有的攻击伤害翻倍。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中4X张 *魔力 ，下X个回合你所有的攻击伤害翻倍。"
     ]
   },
-  "FrierenMod:BetaFactor7": {
+  "FrierenMod:Hypnosis": {
     "NAME": "他山之石：精神操作魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 虚弱 和 易伤 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，给予所有敌人X层 虚弱 和 易伤 。"
     ]
   },
-  "FrierenMod:BetaFactor9": {
+  "FrierenMod:PeacefulDays": {
     "NAME": "岁月静好",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，抽 !SM! 张牌 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+1张 *魔力 ，抽X张牌 。"
     ]
   },
-  "FrierenMod:BetaFactor10": {
+  "FrierenMod:TheLivingLegend": {
     "NAME": "活着的传说",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，随机将 !SM! 张 frierenmod:传说魔法 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，随机将X张 frierenmod:传说魔法 放入牌堆。"
     ]
   },
-  "FrierenMod:BetaFactor11": {
+  "FrierenMod:ImpeccableIntangible": {
     "NAME": "出水芙蓉",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 无实体 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中6X张 *魔力 ，获得X层 无实体 。"
     ]
   },
-  "FrierenMod:BetaFactor12": {
+  "FrierenMod:BarrierMagic": {
     "NAME": "结界魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !B! 点 格挡 且下 !SM! 回合你的 格挡 不会消失。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+2张 *魔力 ，获得X点 格挡 且下X回合你的 格挡 不会消失。"
     ]
   },
-  "FrierenMod:BetaFactor13": {
+  "FrierenMod:PassOnTheTorch": {
     "NAME": "薪火相传",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *魔力 {@@}放入{!frierenmod:SlotNumber!|-1= Error|0= 手牌|1= 弃牌堆|2= 抽牌堆}。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，将X张 *魔力 放入下个牌堆。"
     ]
   },
-  "FrierenMod:BetaFactor14": {
+  "FrierenMod:Transcendence": {
     "NAME": "遁入智瞳",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X+1张 *魔力 ，获得X层 真言 。"
     ]
   },
-  "FrierenMod:BetaFactor15": {
+  "FrierenMod:AdvancedDefensiveMagic": {
     "NAME": "进化的防御魔法",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !B! 点 格挡 两次。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X点 格挡 两次。"
     ]
   },
-  "FrierenMod:BetaFactor16": {
+  "FrierenMod:Strategizing": {
     "NAME": "运筹帷幄",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 [E] 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中2X张 *魔力 ，获得X点 [E] 。"
     ]
   },
-  "FrierenMod:BetaFactor17": {
+  "FrierenMod:BuildUpBody": {
     "NAME": "强身健体",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 点 力量 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，获得X点 力量 。"
     ]
   },
-  "FrierenMod:BetaFactor18": {
+  "FrierenMod:MeleeMage": {
     "NAME": "物理魔法使",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，名字中有“打击”的卡牌造成 !SM! 点额外伤害。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，名字中有“打击”的卡牌造成X+1点额外伤害。"
     ]
   },
-  "FrierenMod:BetaFactor19": {
+  "FrierenMod:GrossedOutLook": {
     "NAME": "嫌弃脸",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，所有敌人在本回合内失去 !SM! 点 力量 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，所有敌人在本回合内失去x+2点 力量 。"
     ]
   },
-  "FrierenMod:BetaFactor20": {
+  "FrierenMod:Sleeeep": {
     "NAME": "养精蓄锐",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下一回合抽 !SM! 张牌。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，下一回合抽X张牌。"
     ]
   },
-  "FrierenMod:BetaFactor21": {
+  "FrierenMod:TransferToAlchemist": {
     "NAME": "转职药剂师",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，给予所有敌人 !SM! 层 中毒 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，给予所有敌人2X层 中毒 。"
     ]
   },
-  "FrierenMod:BetaFactor22": {
+  "FrierenMod:GreatMageComposure": {
     "NAME": "大魔法使的余裕",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:咏唱 不 消耗 *魔力 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中3X张 *魔力 ，本回合中下X次 frierenmod:咏唱 不 消耗 *魔力 。"
     ]
   },
-  "FrierenMod:BetaFactor23": {
+  "FrierenMod:PinchAndScrape": {
     "NAME": "省吃俭用",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:同调 不 消耗 *魔力 。",
     "EXTENDED_DESCRIPTION": [
       " 消耗 牌堆中X张 *魔力 ，下2X次 frierenmod:同调 不 消耗 *魔力 。"
     ]
   },
-  "FrierenMod:BetaFactor24": {
+  "FrierenMod:BluePrint": {
     "NAME": "蓝图芙莉莲",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
@@ -220,56 +220,56 @@
       " 消耗 牌堆中3X+3张 *魔力 ... [#ed1c24]怪物 ..."
     ]
   },
-  "FrierenMod:BetaProp1": {
+  "FrierenMod:UnbelievableTool": {
     "NAME": "神奇妙妙工具",
     "DESCRIPTION": "选择1张 frierenmod:[#ff4e41]未装载 和1张 frierenmod:[#9ffc4f]已装载  *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择1张 frierenmod:[#ff4e41]未装载 和1张 frierenmod:[#9ffc4f]已装载 *魔法因子 ，使它们 frierenmod:槽位 互换。"
     ]
   },
-  "FrierenMod:BetaProp2": {
+  "FrierenMod:MysteryBox": {
     "NAME": "盲盒",
     "DESCRIPTION": "将2张随机的 *魔法因子 放入 你的魔法牌组。",
     "EXTENDED_DESCRIPTION": [
       "将2张随机的 *魔法因子 放入 你的魔法牌组。"
     ]
   },
-  "FrierenMod:BetaProp3": {
+  "FrierenMod:SeinNote": {
     "NAME": "赞因的笔记",
     "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。",
     "EXTENDED_DESCRIPTION": [
       "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，回复10点生命。"
     ]
   },
-  "FrierenMod:BetaProp4": {
+  "FrierenMod:MysticBox": {
     "NAME": "神秘魔术箱",
     "DESCRIPTION": "选择3张 frierenmod:[#ff4e41]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。",
     "EXTENDED_DESCRIPTION": [
       "选择3张 frierenmod:[#ff4e41]未装载 的 *魔法因子 ，将它们的 frierenmod:槽位 和所有 frierenmod:[#9ffc4f]已装载 的 *魔法因子 随机 互换。"
     ]
   },
-  "FrierenMod:BetaProp5": {
+  "FrierenMod:ShadowDragonHorn": {
     "NAME": "暗黑龙的角",
     "DESCRIPTION": "仅战斗阶段生效：移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。",
     "EXTENDED_DESCRIPTION": [
       "仅战斗阶段生效：移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得 [E] [E] 。"
     ]
   },
-  "FrierenMod:BetaProp6": {
+  "FrierenMod:TransmutationCircle": {
     "NAME": "某科学的炼成阵",
     "DESCRIPTION": "移除2张 *魔法因子 ，在它们的 frierenmod:槽位 分别放入随机同稀有度的 *魔法因子 。",
     "EXTENDED_DESCRIPTION": [
       "移除2张 *魔法因子 ，在它们的 frierenmod:槽位 分别放入随机同稀有度的 *魔法因子 。"
     ]
   },
-  "FrierenMod:BetaProp7": {
+  "FrierenMod:UnbelievableToolBox": {
     "NAME": "妙妙工具箱",
     "DESCRIPTION": "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *神奇妙妙工具 。",
     "EXTENDED_DESCRIPTION": [
       "移除2张 frierenmod:[#ff4e41]未装载 的 *魔法因子 或除自己之外的 *魔具 ，获得2张 *神奇妙妙工具 。"
     ]
   },
-  "FrierenMod:BetaProp8": {
+  "FrierenMod:CrystalBall": {
     "NAME": "魔法水晶球【蓝色品质】",
     "DESCRIPTION": "选择2张 frierenmod:[#ff4e41]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。",
     "EXTENDED_DESCRIPTION": [

@@ -29,6 +29,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
 import static basemod.BaseMod.logger;
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -71,7 +72,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         RegisterHelper.registerAudios();
         RegisterHelper.registerEvents();
         RegisterHelper.registerSundries();
-        BaseMod.addSaveField(ModInformation.MOD_NAME,this);
+        BaseMod.addSaveField(ModInformation.MOD_NAME, this);
     }
 
     @Override
@@ -83,21 +84,19 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         String tempCardsClassPath = getModID() + ".cards.tempCards";
         String FrierenCardsClassPath = getModID() + ".cards.white";
         String FernCardsClassPath = getModID() + ".cards.purple";
-        (new AutoAdd(getModID())).packageFilter(optionCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
-            BaseMod.addCard(card);
-            if (Config.IN_DEV && info.seen)
-                UnlockTracker.unlockCard(card.cardID);
-        });
-        (new AutoAdd(getModID())).packageFilter(tempCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
-            BaseMod.addCard(card);
-            if (Config.IN_DEV && info.seen)
-                UnlockTracker.unlockCard(card.cardID);
-        });
-        (new AutoAdd(getModID())).packageFilter(FrierenCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
-            BaseMod.addCard(card);
-            if (Config.IN_DEV && info.seen)
-                UnlockTracker.unlockCard(card.cardID);
-        });
+        String magicItems = getModID() + ".cards.magicItems";
+        ArrayList<String> classPaths = new ArrayList<>();
+        classPaths.add(optionCardsClassPath);
+        classPaths.add(tempCardsClassPath);
+        classPaths.add(FrierenCardsClassPath);
+        classPaths.add(magicItems);
+        for (String classPath : classPaths) {
+            (new AutoAdd(getModID())).packageFilter(classPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
+                BaseMod.addCard(card);
+                if (Config.IN_DEV && info.seen)
+                    UnlockTracker.unlockCard(card.cardID);
+            });
+        }
         if (Config.FERN_ENABLE)
             (new AutoAdd(getModID())).packageFilter(FernCardsClassPath).setDefaultSeen(true).any(AbstractCard.class, (info, card) -> {
                 BaseMod.addCard(card);

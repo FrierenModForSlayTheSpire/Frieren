@@ -1,6 +1,6 @@
 package FrierenMod.ui.screens;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

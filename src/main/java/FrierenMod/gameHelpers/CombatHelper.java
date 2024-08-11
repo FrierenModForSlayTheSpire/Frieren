@@ -1,8 +1,8 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.optionCards.magicItems.BetaFactor24;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.factors.BluePrint;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
@@ -176,7 +176,7 @@ public class CombatHelper {
         }
         boolean isAllCopyFactor = true;
         for (AbstractCard c : chantChoices) {
-            if (!(c instanceof BetaFactor24)) {
+            if (!(c instanceof BluePrint)) {
                 isAllCopyFactor = false;
                 break;
             }
@@ -184,9 +184,9 @@ public class CombatHelper {
         if (isAllCopyFactor)
             return null;
         for (int i = 0; i < chantChoices.length; i++) {
-            if (chantChoices[i] instanceof BetaFactor24) {
+            if (chantChoices[i] instanceof BluePrint) {
                 int j = (i + 1) % chantChoices.length;
-                while (chantChoices[j] instanceof BetaFactor24)
+                while (chantChoices[j] instanceof BluePrint)
                     j = (j + 1) % chantChoices.length;
                 AbstractMagicItem targetChantChoice = (AbstractMagicItem) chantChoices[j].makeStatEquivalentCopy();
                 chantChoices[i] = targetChantChoice;

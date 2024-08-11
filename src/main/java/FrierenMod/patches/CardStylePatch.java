@@ -1,7 +1,7 @@
 package FrierenMod.patches;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;

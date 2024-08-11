@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.FastMagicItemObtainEffect;
 import FrierenMod.patches.fields.MagicDeckField;
 import basemod.ReflectionHacks;

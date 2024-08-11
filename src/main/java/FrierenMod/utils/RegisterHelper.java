@@ -1,6 +1,6 @@
 package FrierenMod.utils;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.commands.MagicItemCommand;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
@@ -113,18 +113,21 @@ public class RegisterHelper {
         Spiegel_Frieren.register();
         Log.logger.info("Done adding bosses");
     }
-    public static void registerAudios(){
+
+    public static void registerAudios() {
         Log.logger.info("Adding audios...");
         BaseMod.addAudio("Frieren_The_Slayer.mp3", ModInformation.makeAudioPath("sound/Frieren_The_Slayer.mp3"));
         Log.logger.info("Done adding audios");
     }
-    public static void registerEvents(){
+
+    public static void registerEvents() {
         Log.logger.info("Adding events...");
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
         BaseMod.addEvent("KraftGift", KraftGift.class);
         BaseMod.addEvent("AnimalWell", AnimalWell.class);
         Log.logger.info("Done adding events");
     }
+
     public static void registerVariables() {
         Log.logger.info("Adding variables...");
         BaseMod.addDynamicVariable(new ChantXVariable());
@@ -140,7 +143,8 @@ public class RegisterHelper {
         });
         Log.logger.info("Done adding variables");
     }
-    public static void registerPotions(){
+
+    public static void registerPotions() {
         Log.logger.info("Adding potions...");
         BaseMod.addPotion(BottledMana.class, Color.BLUE.cpy(), Color.ROYAL.cpy(), Color.ROYAL, BottledMana.POTION_ID, CharacterEnums.FRIEREN);
         BaseMod.addPotion(DissolveClothPotion.class, new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), new Color(149.0F / 255.0F, 122.0F / 255.0F, 157.0F / 255.0F, 1.0F), FrierenRes.RENDER_COLOR.cpy(), DissolveClothPotion.POTION_ID, CharacterEnums.FRIEREN);

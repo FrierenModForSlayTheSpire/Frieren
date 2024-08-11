@@ -1,6 +1,6 @@
 package FrierenMod.effects;
 
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.patches.fields.ForBuyPropField;
 import FrierenMod.ui.campfire.BuyPropOption;

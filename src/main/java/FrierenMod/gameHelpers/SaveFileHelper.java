@@ -1,7 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.ModManager;
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;

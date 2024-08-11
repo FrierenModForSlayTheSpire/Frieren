@@ -1,7 +1,7 @@
 package FrierenMod.commands;
 
 import FrierenMod.actions.AddMagicItemToDeckAction;
-import FrierenMod.cards.optionCards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import basemod.DevConsole;
 import basemod.devcommands.ConsoleCommand;
 import basemod.helpers.ConvertHelper;
