@@ -9,6 +9,7 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import org.jetbrains.annotations.Nullable;
@@ -21,6 +22,7 @@ public class ConfigPanel extends ModPanel {
     private static final float BASE_X_POSE = 380.0F;
     private static final float BASE_Y_POSE = 720.0F;
     private static final float GAP = 40.0F;
+    private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(ConfigPanel.class.getSimpleName())).TEXT;
 
     @Nullable
     public static SpireConfig makeConfig() {
@@ -55,7 +57,7 @@ public class ConfigPanel extends ModPanel {
         try {
             config.save();
         } catch (Exception e) {
-            Log.logger.info("Failed to save current rs.lunarshop.config file");
+            Log.logger.info("Failed to save current config file");
         }
     }
 
@@ -72,7 +74,7 @@ public class ConfigPanel extends ModPanel {
 
     public static void makeModPanels() {
         ModPanel settings = new ModPanel();
-        ModLabeledToggleButton allowSFX = new ModLabeledToggleButton("Special SFX", BASE_X_POSE, BASE_Y_POSE, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ALLOW_SPECIAL_SFX, settings, l -> {
+        ModLabeledToggleButton allowSFX = new ModLabeledToggleButton(TEXT[0], BASE_X_POSE, BASE_Y_POSE, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ALLOW_SPECIAL_SFX, settings, l -> {
         }, btn -> {
             Config.ALLOW_SPECIAL_SFX = btn.enabled;
             SpireConfig config = makeConfig();
@@ -80,7 +82,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("ALLOW_SPECIAL_SFX", Config.ALLOW_SPECIAL_SFX);
             save(config);
         });
-        ModLabeledToggleButton removeVelvetChoker = new ModLabeledToggleButton("Remove Velvet Choker when playing Frieren", BASE_X_POSE, BASE_Y_POSE - GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_VELVET_CHOKER, settings, l -> {
+        ModLabeledToggleButton removeVelvetChoker = new ModLabeledToggleButton(TEXT[1], BASE_X_POSE, BASE_Y_POSE - GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_VELVET_CHOKER, settings, l -> {
         }, btn -> {
             Config.REMOVE_VELVET_CHOKER = btn.enabled;
             SpireConfig config = makeConfig();
@@ -88,7 +90,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_VELVET_CHOKER", Config.REMOVE_VELVET_CHOKER);
             save(config);
         });
-        ModLabeledToggleButton removeDeadBranch = new ModLabeledToggleButton("Remove Dead Branch when playing Frieren", BASE_X_POSE, BASE_Y_POSE - 2 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_DEAD_BRANCH, settings, l -> {
+        ModLabeledToggleButton removeDeadBranch = new ModLabeledToggleButton(TEXT[2], BASE_X_POSE, BASE_Y_POSE - 2 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_DEAD_BRANCH, settings, l -> {
         }, btn -> {
             Config.REMOVE_DEAD_BRANCH = btn.enabled;
             SpireConfig config = makeConfig();
@@ -96,7 +98,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_DEAD_BRANCH", Config.REMOVE_DEAD_BRANCH);
             save(config);
         });
-        ModLabeledToggleButton removeStrangeSpoon = new ModLabeledToggleButton("Remove Strange Spoon when playing Frieren", BASE_X_POSE, BASE_Y_POSE - 3 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_STRANGE_SPOON, settings, l -> {
+        ModLabeledToggleButton removeStrangeSpoon = new ModLabeledToggleButton(TEXT[3], BASE_X_POSE, BASE_Y_POSE - 3 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_STRANGE_SPOON, settings, l -> {
         }, btn -> {
             Config.REMOVE_STRANGE_SPOON = btn.enabled;
             SpireConfig config = makeConfig();
@@ -104,7 +106,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
             save(config);
         });
-        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton("100% encounter Spiegel when playing Frieren in The Beyond.", BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ENCOUNTER_SPIEGEL, settings, l -> {
+        ModLabeledToggleButton replaceHeart = new ModLabeledToggleButton(TEXT[4], BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ENCOUNTER_SPIEGEL, settings, l -> {
         }, btn -> {
             Config.ENCOUNTER_SPIEGEL = btn.enabled;
             SpireConfig config = makeConfig();
@@ -117,6 +119,6 @@ public class ConfigPanel extends ModPanel {
         settings.addUIElement(removeDeadBranch);
         settings.addUIElement(removeStrangeSpoon);
         settings.addUIElement(replaceHeart);
-        BaseMod.registerModBadge(ImageMaster.loadImage(PublicRes.MOD_BADGE), "FrierenMod", Arrays.toString(AUTHORS), "An original character", settings);
+        BaseMod.registerModBadge(ImageMaster.loadImage(PublicRes.MOD_BADGE), ModInformation.MOD_NAME, Arrays.toString(AUTHORS), "An original character", settings);
     }
 }

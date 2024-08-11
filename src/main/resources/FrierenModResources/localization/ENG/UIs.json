@@ -214,6 +214,15 @@
       "Cancel"
     ]
   },
+  "FrierenMod:ConfigPanel": {
+    "TEXT": [
+      "Special VFX",
+      "Remove Velvet Choker when playing Frieren",
+      "Remove Dead Branch when playing Frieren",
+      "Remove Strange Spoon when playing Frieren",
+      "100% encounter Spiegel when playing Frieren in The Beyond."
+    ]
+  },
   "FrierenMod:DualCardTip": {
     "TEXT": [
       "双职业卡",
