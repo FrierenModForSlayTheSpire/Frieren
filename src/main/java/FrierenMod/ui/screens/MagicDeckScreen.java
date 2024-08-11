@@ -55,6 +55,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private AbstractCard isUsingProp = null;
     private final ArrayList<AbstractCard> chosenCards;
     private boolean previousHasBlackScreen = false;
+    private boolean choosable = true;
 
     public MagicDeckScreen() {
         drawStartX = Settings.WIDTH;
@@ -291,30 +292,38 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     private void updateClicking() {
-        if (this.hoveredCard != null) {
-            CardCrawlGame.cursor.changeType(GameCursor.CursorType.INSPECT);
-            if (InputHelper.justClickedRight) {
-                if (hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem) hoveredCard).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
-                    if (this.isUsingProp == null) {
-                        this.isUsingProp = hoveredCard;
-                        this.isUsingProp.glowColor = Color.GREEN;
-                        this.isUsingProp.beginGlowing();
-                    } else if (this.isUsingProp == hoveredCard) {
-                        cancelUsingProp();
+        if (choosable)
+            if (this.hoveredCard != null) {
+                CardCrawlGame.cursor.changeType(GameCursor.CursorType.INSPECT);
+                if (InputHelper.justClickedRight) {
+                    if (hoveredCard instanceof AbstractMagicItem && ((AbstractMagicItem) hoveredCard).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP) {
+                        if (this.isUsingProp == null) {
+                            this.isUsingProp = hoveredCard;
+                            this.isUsingProp.glowColor = Color.GREEN;
+                            this.isUsingProp.beginGlowing();
+                        } else if (this.isUsingProp == hoveredCard) {
+                            cancelUsingProp();
+                        }
                     }
                 }
-            }
-            if (InputHelper.justClickedLeft) {
-                addCardToChosenCards(hoveredCard);
-            }
+                if (InputHelper.justClickedLeft) {
+                    addCardToChosenCards(hoveredCard);
+                }
 
-            if (InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard) {
-                InputHelper.justReleasedClickLeft = false;
+                if (InputHelper.justReleasedClickLeft && this.hoveredCard == this.clickStartedCard) {
+                    InputHelper.justReleasedClickLeft = false;
+                    this.clickStartedCard = null;
+                }
+            } else {
                 this.clickStartedCard = null;
             }
-        } else {
-            this.clickStartedCard = null;
+        for (AbstractGameEffect effect : AbstractDungeon.topLevelEffects) {
+            if (effect instanceof ExhaustMagicItemEffect) {
+                choosable = false;
+                return;
+            }
         }
+        choosable = true;
     }
 
     private void hideCards() {
