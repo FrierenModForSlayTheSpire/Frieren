@@ -1,7 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.magicItems.*;
+import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
@@ -64,7 +64,10 @@ public class CardPoolHelper {
     }
 
     public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
-        ArrayList<AbstractCard> srcCardPool = CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY);
+        ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
+        for(AbstractCard c: CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY)){
+            srcCardPool.add(c.makeCopy());
+        }
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
         ArrayList<AbstractCard> rare = new ArrayList<>();
