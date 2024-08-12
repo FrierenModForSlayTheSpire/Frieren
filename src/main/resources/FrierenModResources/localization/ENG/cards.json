@@ -728,7 +728,7 @@
   },
   "FrierenMod:Famehameha": {
     "NAME": "Famehameha Wave",
-    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Costs 1 less [E] for each time you frierenmod:Chant this turn. NL Deal !D! damage. NL [#A4EBFA]KA-ME-HA-ME-HA![]"
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Costs 1 less for each time you frierenmod:Chant this turn. NL Deal !D! damage. NL [#A4EBFA]KA-ME-HA-ME-HA![]"
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "Mana Barricade",
