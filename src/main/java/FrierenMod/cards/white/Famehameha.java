@@ -1,17 +1,14 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.green.Eviscerate;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,35 +18,34 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class Famehameha extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Famehameha.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 4, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 5, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
     public Famehameha() {
         super(info);
     }
 
-//    public Famehameha(CardColor color) {
-//        super(ID, 4, CardType.ATTACK, color, CardRarity.UNCOMMON, CardTarget.ENEMY);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 31;
-        this.isLegendarySpell = true;
         this.isCostResetCard = true;
     }
 
-    public void afterChant() {
-        this.addToBot(new ModifyCostAction(this.uuid, -1));
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
     }
 
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        this.setCostForTurn(this.cost - CombatHelper.getChantCardUsedThisTurn());
+        this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
     }
+
     public void atTurnStart() {
         this.resetAttributes();
         this.applyPowers();
     }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -63,12 +59,12 @@ public class Famehameha extends AbstractBaseCard {
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
     }
+
     public AbstractCard makeCopy() {
         AbstractCard tmp = new Famehameha();
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            this.setCostForTurn(this.cost - CombatHelper.getChantCardUsedThisTurn());
+            this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
         }
-
         return tmp;
     }
 }

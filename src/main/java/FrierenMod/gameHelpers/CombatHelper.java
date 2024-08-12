@@ -124,7 +124,7 @@ public class CombatHelper {
         return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
     }
 
-    public static int getContinualSynchroManaNum(AbstractCard card) {
+    public static int getContinualSynchroTimes(AbstractCard card) {
         ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         int counts = 0;
         for (int i = 0; i < cardsPlayedThisTurn.size(); i++) {
@@ -139,6 +139,25 @@ public class CombatHelper {
             }
         }
         return counts;
+    }
+
+    public static int getContinualSynchroMaxTimes() {
+        int max = 0;
+        ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        for (int i = 0; i < cardsPlayedThisTurn.size(); i++) {
+            if (cardsPlayedThisTurn.get(i) instanceof Mana) {
+                int counts = 0;
+                for (int j = i; j < cardsPlayedThisTurn.size(); j++) {
+                    if (cardsPlayedThisTurn.get(j) instanceof Mana)
+                        counts++;
+                    else
+                        break;
+                }
+                if (counts > max)
+                    max = counts;
+            }
+        }
+        return max;
     }
 
     public static ConcentrationPower getConcentrationPower() {

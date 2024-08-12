@@ -31,7 +31,7 @@ public class OpenTheWaygatePower extends AbstractBasePower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana) {
             this.flash();
-            this.amount = this.originAmt - CombatHelper.getContinualSynchroManaNum(card);
+            this.amount = this.originAmt - CombatHelper.getContinualSynchroTimes(card);
             this.updateDescription();
             if (this.amount <= 0){
                 addToBot(new VFXAction(new WhirlwindEffect(new Color(1.0F, 0.9F, 0.4F, 1.0F), true)));
