@@ -33,20 +33,21 @@ public class OrdinaryOffensiveMagic extends DualCard {
     public void initSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.baseDamage = 0;
+        this.magicNumber = baseMagicNumber = 2;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(1);
+            this.upgradeMagicNumber(1);
         }
     }
 
     public void applyPowers() {
         int manaCount = CombatHelper.getManaNumInExhaustPile();
         if (manaCount > 0) {
-            this.baseDamage = manaCount * 2;
+            this.baseDamage = manaCount * magicNumber;
             super.applyPowers();
             this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0];
             initializeDescription();
@@ -67,7 +68,7 @@ public class OrdinaryOffensiveMagic extends DualCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int manaCount = CombatHelper.getManaNumInExhaustPile();
-        this.baseDamage = manaCount * 2;
+        this.baseDamage = manaCount * magicNumber;
         this.calculateCardDamage(m);
         this.addToTop(new VFXAction(p, new NormalAttackEffect(), 0.1F, true));
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
