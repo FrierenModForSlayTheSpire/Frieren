@@ -7,7 +7,6 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RitesPreparation extends AbstractBaseCard {
@@ -18,22 +17,21 @@ public class RitesPreparation extends AbstractBaseCard {
         super(info);
     }
 
-//    public RitesPreparation(CardColor color) {
-//        super(ID, 1, CardType.POWER, color, CardRarity.COMMON);
-//    }
+    @Override
+    public void initSpecifiedAttributes() {
+        this.magicNumber = baseMagicNumber = 4;
+    }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.isInnate = true;
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeMagicNumber(2);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new RitesPreparationPower(p, 1), 1));
+        this.addToBot(new ApplyPowerAction(p, p, new RitesPreparationPower(p, magicNumber), magicNumber));
     }
 }

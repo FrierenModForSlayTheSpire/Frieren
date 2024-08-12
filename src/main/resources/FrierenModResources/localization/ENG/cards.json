@@ -379,8 +379,7 @@
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
-    "DESCRIPTION": "Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies.",
-    "UPGRADE_DESCRIPTION": "Innate. NL Every 3 *Mana you frierenmod:Synchro, deal 8 damage to All enemies."
+    "DESCRIPTION": "The next !M! *Mana you frierenmod:Synchro will deal 6 damage to All enemies."
   },
   "FrierenMod:FireSpell": {
     "NAME": "Spell That Starts a Fire",

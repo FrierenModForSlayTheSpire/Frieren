@@ -376,8 +376,7 @@
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "仪式的准备",
-    "DESCRIPTION": "你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 你每 frierenmod:同调 3张 *魔力， 就对所有敌人造成8点伤害。"
+    "DESCRIPTION": "下 !M! 张 frierenmod:同调 的 *魔力 会对所有敌人造成6点伤害。"
   },
   "FrierenMod:FireSpell": {
     "NAME": "放出火焰的魔法",

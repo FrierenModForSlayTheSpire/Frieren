@@ -32,7 +32,7 @@
   "FrierenMod:RitesPreparationPower": {
     "NAME": "Preparation of Rites",
     "DESCRIPTIONS": [
-      "Every 3 #yMana you #ySynchro, deal #b%d damage to All enemies. NL (Already played #b%d)"
+      "The next #b%d #yMana you #ySynchro will deal 6 damage to All enemies."
     ]
   },
   "FrierenMod:SwitchStrengthAndDexterityPower": {
