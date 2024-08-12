@@ -357,8 +357,8 @@
   },
   "FrierenMod:ApexMagic": {
     "NAME": "The Apex of Magic",
-    "DESCRIPTION": "If your hand, draw pile and discard pile each have just 4 *Mana, set all enemies HP to 0, otherwise draw !M! card.",
-    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile each have just 4 *Mana, set all enemies HP to 0, otherwise draw !M! cards."
+    "DESCRIPTION": "If your hand, draw pile and discard pile each have just 4 *Mana, set all enemies HP to 0.",
+    "UPGRADE_DESCRIPTION": "Retain. NL If your hand, draw pile, and discard pile each have just 4 *Mana, set all enemies HP to 0."
   },
   "FrierenMod:PancakeSpell": {
     "NAME": "Spell to Flip Pancakes Perfectly",
