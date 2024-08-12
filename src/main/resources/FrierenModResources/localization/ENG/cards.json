@@ -441,7 +441,7 @@
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
-    "DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand. NL Exhaust.",
+    "DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your draw pile.",
     "UPGRADE_DESCRIPTION": "Gain [E] [E] . Add a *Laziness into your hand."
   },
   "FrierenMod:CustomLegendarySpell": {

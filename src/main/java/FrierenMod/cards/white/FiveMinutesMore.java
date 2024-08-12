@@ -6,6 +6,7 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,22 +20,16 @@ public class FiveMinutesMore extends AbstractBaseCard {
         super(info);
     }
 
-//    public FiveMinutesMore(CardColor color) {
-//        super(ID, 0, color, CardRarity.UNCOMMON);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.baseMagicNumber = this.magicNumber = 2;
         this.cardsToPreview = new Laziness();
-        this.exhaust = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.exhaust = false;
             this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }
@@ -42,7 +37,10 @@ public class FiveMinutesMore extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainEnergyAction(this.magicNumber));
-        this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(), 1));
+        this.addToBot(new GainEnergyAction(2));
+        if (!upgraded)
+            this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeCopy(), 1, true, true));
+        else
+            this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy(), 1));
     }
 }
