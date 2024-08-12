@@ -376,7 +376,7 @@
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "仪式的准备",
-    "DESCRIPTION": "下 !M! 张 frierenmod:同调 的 *魔力 会对所有敌人造成6点伤害。"
+    "DESCRIPTION": "下 !M! 次 frierenmod:同调 会对所有敌人造成6点伤害。"
   },
   "FrierenMod:FireSpell": {
     "NAME": "放出火焰的魔法",
@@ -686,7 +686,7 @@
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "打开时空之门",
-    "DESCRIPTION": "一回合内连续 frierenmod:同调 !M! 张 *魔力 后，结束你的回合并额外获得一回合，失去该能力。"
+    "DESCRIPTION": "一回合内连续 frierenmod:同调 !M! 次后，结束你的回合并额外获得一回合，失去该能力。"
   },
   "FrierenMod:GrandCross": {
     "NAME": "大十字",
@@ -760,7 +760,7 @@
   },
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",
-    "DESCRIPTION": "耗能减少本回合内连续 frierenmod:同调 最高次数。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": "耗能减少本回合内最高连续 frierenmod:同调 次数。 NL 造成 !D! 点伤害。"
   },
   "FrierenMod:ManaBarricade": {
     "NAME": "魔力壁垒",
@@ -820,7 +820,7 @@
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
-    "DESCRIPTION": " 不能被打出 。 NL  frierenmod:同调 1张 *魔力 后，交换你的抽牌堆和弃牌堆并失去2点生命。"
+    "DESCRIPTION": " 不能被打出 。 NL 每 frierenmod:同调 一次，交换你的抽牌堆和弃牌堆并失去2点生命。"
   },
   "FrierenMod:Strike_Fern": {
     "NAME": "打击",
