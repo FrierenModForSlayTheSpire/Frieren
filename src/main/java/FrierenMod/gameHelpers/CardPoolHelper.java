@@ -2,7 +2,6 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.white.*;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
@@ -36,30 +35,21 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getChantCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        retVal.add(new DefensiveMagic());
-        retVal.add(new RapidChant());
-        retVal.add(new ContinualChant());
-        retVal.add(new FlowerFieldSpell());
-        retVal.add(new PerfectDefensiveMagic());
-        retVal.add(new FinalChant());
-        retVal.add(new PreciseChant());
-        retVal.add(new TrueColours());
-        retVal.add(new LureTheEnemyInDeep());
-        retVal.add(new ManaBarricade());
+        for(AbstractCard c: CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)){
+                retVal.add(c.makeCopy());
+            }
+        }
         return retVal;
     }
 
     public static ArrayList<AbstractCard> getLegendarySpellCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        retVal.add(new ContinualChant());
-        retVal.add(new AccessoriesSpell());
-        retVal.add(new OilSpell());
-        retVal.add(new LightningMagic());
-        retVal.add(new Famehameha());
-        retVal.add(new FairyTaleEnd());
-        retVal.add(new RustCleanMagic());
-        retVal.add(new HotTeaSpell());
-        retVal.removeIf(c -> c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT));
+        for(AbstractCard c: CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)){
+            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)){
+                retVal.add(c.makeCopy());
+            }
+        }
         return retVal;
     }
 
