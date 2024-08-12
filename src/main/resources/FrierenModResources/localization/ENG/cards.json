@@ -366,7 +366,7 @@
   },
   "FrierenMod:TongueTwisterSpell": {
     "NAME": "Spell to Say Tongue Twisters Successfully",
-    "DESCRIPTION": "Traw !M! card. NL If you don't have *Mana in your hand, traw an extra one."
+    "DESCRIPTION": "Traw !M! card. NL Gain !B! block for each *Mana you have trawed."
   },
   "FrierenMod:MultipleOffensiveMagic": {
     "NAME": "Multiple Offensive Magic",

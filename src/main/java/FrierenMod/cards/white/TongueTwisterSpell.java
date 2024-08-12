@@ -3,11 +3,15 @@ package FrierenMod.cards.white;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class TongueTwisterSpell extends AbstractBaseCard {
@@ -18,13 +22,10 @@ public class TongueTwisterSpell extends AbstractBaseCard {
         super(info);
     }
 
-//    public TongueTwisterSpell(CardColor color) {
-//        super(ID, 1, color, CardRarity.COMMON);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
+        this.block = this.baseBlock = 5;
         this.cardsToPreview = new Mana();
     }
 
@@ -33,15 +34,25 @@ public class TongueTwisterSpell extends AbstractBaseCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeMagicNumber(1);
+            this.upgradeBlock(1);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (CombatHelper.getManaNumInHand() > 0) {
-            this.addToBot(new DrawCardAction(p, this.magicNumber));
-        } else {
-            this.addToBot(new DrawCardAction(p, this.magicNumber + 1));
-        }
+        this.addToBot(new DrawCardAction(this.magicNumber, new AbstractGameAction() {
+            @Override
+            public void update() {
+                AbstractDungeon.actionManager.addToTop(new WaitAction(0.4F));
+                tickDuration();
+                if (this.isDone)
+                    for (AbstractCard c : DrawCardAction.drawnCards) {
+                        if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+                            this.addToBot(new GainBlockAction(p, block));
+                        }
+                    }
+                this.isDone = true;
+            }
+        }));
     }
 }
