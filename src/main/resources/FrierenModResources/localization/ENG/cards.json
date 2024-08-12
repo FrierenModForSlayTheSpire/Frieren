@@ -311,8 +311,7 @@
   },
   "FrierenMod:FolkGrimoire": {
     "NAME": "Folk Grimoire",
-    "DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:Legendary_Spell into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:Legendary_Spell into your hand, they cost 2 less [E] . NL Exhaust."
+    "DESCRIPTION": "Add a random frierenmod:Chant card and a random frierenmod:Legendary_Spell into your hand, they cost !M! less this turn. NL Exhaust."
   },
   "FrierenMod:Outpouring": {
     "NAME": "Outpouring",

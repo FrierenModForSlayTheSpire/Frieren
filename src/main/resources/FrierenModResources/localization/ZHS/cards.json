@@ -309,8 +309,7 @@
   },
   "FrierenMod:FolkGrimoire": {
     "NAME": "民间的魔导书",
-    "DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "随机将1张 frierenmod:咏唱 牌和1张 frierenmod:传说魔法 放入手牌。这2张牌在本回合耗能-2。 NL  消耗 。"
+    "DESCRIPTION": "随机将一张本回合耗能减少!M!的 frierenmod:咏唱 牌和 frierenmod:传说魔法 放入手牌。 NL 消耗 。"
   },
   "FrierenMod:Outpouring": {
     "NAME": "倾泻",
