@@ -21,10 +21,6 @@ public class ContinuousShooting extends AbstractBaseCard {
         super(info);
     }
 
-//    public ContinuousShooting(CardColor color) {
-//        super(ID, 1, CardType.ATTACK, color, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 3;
@@ -38,9 +34,10 @@ public class ContinuousShooting extends AbstractBaseCard {
             this.upgradeDamage(1);
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.exhaust = CombatHelper.getManaNumInDrawPile() >= 3;
+        this.exhaust = CombatHelper.getManaNumInDrawPile() > 0;
         this.addToBot(new SFXAction("ATTACK_HEAVY"));
         this.addToBot(new VFXAction(p, new CleaveEffect(), 0.1F));
         this.addToBot(new DamageAllEnemiesAction(p, this.baseDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));

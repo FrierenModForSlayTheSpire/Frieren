@@ -422,7 +422,7 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "Sleeping Like a Baby",
-    "DESCRIPTION": "Gain !B! Block, Retain 1 card in your hand. If your *Mana amount is a multiple of 3, Retain your hand."
+    "DESCRIPTION": "Gain !B! Block, Retain 1 card in your hand. If your discard pile has no *Mana, Retain your hand."
   },
   "FrierenMod:SerieGrimoire": {
     "NAME": "Serie's Grimoire",
@@ -646,7 +646,7 @@
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
-    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. Exhaust this when your draw pile has 3 or more *Mana."
+    "DESCRIPTION": "Deal !D! damage 3 times to ALL enemies. Exhaust this when your draw pile has *Mana."
   },
   "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "Perfect Defensive Magic",

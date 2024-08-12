@@ -419,7 +419,7 @@
   },
   "FrierenMod:BabySleeping": {
     "NAME": "婴儿般的睡眠",
-    "DESCRIPTION": "获得 !B! 点格挡。 保留 1张手牌。 NL 若弃牌堆 *魔力 数量为3的倍数， 保留 所有手牌。"
+    "DESCRIPTION": "获得 !B! 点格挡。 保留 1张手牌。 NL 若弃牌堆没有 *魔力 ， 保留 所有手牌。"
   },
   "FrierenMod:SerieGrimoire": {
     "NAME": "赛莉耶的魔导书",
@@ -436,7 +436,7 @@
   },
   "FrierenMod:LockTarget": {
     "NAME": "定叫他有来无回",
-    "DESCRIPTION": "造成 !D! 点伤害，抽1张牌。 如果抽牌堆 *魔力 数量大于等于弃牌堆 *魔力 数量，再触发一次。"
+    "DESCRIPTION": "造成 !D! 点伤害，抽1张牌。若抽牌堆中 *魔力 不少于弃牌堆中的，再触发一次。"
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "再睡五分钟",
@@ -643,7 +643,7 @@
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "持续散射",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。若抽牌堆的 *魔力 数量大于等于3， 消耗 此牌"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害3次。若抽牌堆有 *魔力 ， 消耗 此牌。"
   },
   "FrierenMod:PerfectDefensiveMagic": {
     "NAME": "防御魔法完全体",
@@ -759,7 +759,7 @@
   },
   "FrierenMod:Confrontation": {
     "NAME": "对峙",
-    "DESCRIPTION": "获得 !B! 点 格挡 。这张牌在手中时每打出一张 frierenmod:咏唱 牌，它在本场战斗中的基础 格挡 增加3。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。这张牌在手中时每 frierenmod:咏唱 一次，它在本场战斗中的基础 格挡 增加3。"
   },
   "FrierenMod:Famehameha": {
     "NAME": "芙派气功",
@@ -816,7 +816,7 @@
   },
   "FrierenMod:ButtSlam": {
     "NAME": "全身撞姬",
-    "DESCRIPTION": "你每有10点 格挡 ，就造成 !D! 点伤害，将2张魔力放入抽牌堆。",
+    "DESCRIPTION": "你每有10点 格挡 ，就造成 !D! 点伤害，将2张 *魔力 放入抽牌堆。",
     "EXTENDED_DESCRIPTION": [
       " NL （共%d次）"
     ]

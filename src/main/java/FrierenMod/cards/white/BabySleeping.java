@@ -20,10 +20,6 @@ public class BabySleeping extends AbstractBaseCard {
         super(info);
     }
 
-//    public BabySleeping(CardColor color) {
-//        super(ID, 1, CardType.SKILL, color, CardRarity.COMMON, CardTarget.SELF);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.block = baseBlock = 7;
@@ -40,13 +36,13 @@ public class BabySleeping extends AbstractBaseCard {
 
     @Override
     public void triggerOnGlowCheck() {
-        this.glowColor = CombatHelper.getManaNumInDiscardPile() % 3 == 0 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
+        this.glowColor = CombatHelper.getManaNumInDiscardPile() == 0 ? GOLD_BORDER_GLOW_COLOR : BLUE_BORDER_GLOW_COLOR;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
-        if (CombatHelper.getManaNumInDiscardPile() % 3 == 0)
+        if (CombatHelper.getManaNumInDiscardPile() == 0)
             this.addToBot(new ApplyPowerAction(p, p, new EquilibriumPower(p, 1), 1));
         else
             this.addToBot(new RetainCardsAction(p, this.magicNumber));
