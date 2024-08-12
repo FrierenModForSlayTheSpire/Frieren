@@ -18,10 +18,6 @@ public class PreparedPosture extends AbstractBaseCard {
     public PreparedPosture() {
         super(info);
     }
-//    public PreparedPosture(CardColor color) {
-//        super(ID, 1, color, CardRarity.COMMON);
-//    }
-
 
     @Override
     public void initSpecifiedAttributes() {
@@ -32,7 +28,7 @@ public class PreparedPosture extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeDamage(3);
         }
     }
 
