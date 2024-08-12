@@ -143,6 +143,12 @@
       "你的回合结束时， #y消耗 弃牌堆中 #b%d 张 #y魔力 。"
     ]
   },
+  "FrierenMod:OpenTheWaygatePower": {
+    "NAME": "打开时空之门",
+    "DESCRIPTIONS": [
+      "一回合内连续 #y同调 #b%d 张 #y魔力 后，结束你的回合并额外获得一回合，失去该能力。"
+    ]
+  },
   "FrierenMod:CopyPower": {
     "NAME": "复制体",
     "DESCRIPTIONS": [

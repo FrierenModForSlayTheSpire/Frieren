@@ -3,6 +3,7 @@ package FrierenMod.gameHelpers;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.BluePrint;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
@@ -14,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 
 public class CombatHelper {
@@ -120,6 +122,23 @@ public class CombatHelper {
     public static int getCardsUsedThisTurnSize(boolean isInUsingCard) {
         int cardsPlayedThisTurnSize = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
         return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
+    }
+
+    public static int getContinualSynchroManaNum(AbstractCard card) {
+        ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
+        int counts = 0;
+        for (int i = 0; i < cardsPlayedThisTurn.size(); i++) {
+            if (cardsPlayedThisTurn.get(i).uuid.equals(card.uuid)) {
+                for (int j = i; j >= 0; j--) {
+                    if (cardsPlayedThisTurn.get(j) instanceof Mana) {
+                        counts++;
+                    } else
+                        break;
+                }
+                break;
+            }
+        }
+        return counts;
     }
 
     public static ConcentrationPower getConcentrationPower() {

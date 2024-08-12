@@ -143,6 +143,12 @@
       "At the end of your turn, #yExhaust #b%d Mana in your discard pile."
     ]
   },
+  "FrierenMod:OpenTheWaygatePower": {
+    "NAME": "Open The Waygate",
+    "DESCRIPTIONS": [
+      "After #ySynchro #b%d times CONTINUALLY in one turn, take an extra turn after this one, end your turn and remove this power."
+    ]
+  },
   "FrierenMod:CopyPower": {
     "NAME": "Replica",
     "DESCRIPTIONS": [
