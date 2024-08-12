@@ -122,7 +122,7 @@
   "FrierenMod:FullAheadPower": {
     "NAME": "Full Ahead",
     "DESCRIPTIONS": [
-      "After #yChant first time every turn, if your draw pile and discard pile has same #yMana amount, gain #b%d #yDexterity , otherwise, gain #b%d #yStrength ."
+      "After #yChant first time every turn,  gain #b%d #yStrength and #b%d #yDexterity ."
     ]
   },
   "FrierenMod:FrierenSuitcasePower": {

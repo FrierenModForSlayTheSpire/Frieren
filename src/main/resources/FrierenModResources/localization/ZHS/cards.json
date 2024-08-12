@@ -431,7 +431,7 @@
   },
   "FrierenMod:FullAhead": {
     "NAME": "全速前进",
-    "DESCRIPTION": "每回合第一次 frierenmod:咏唱 后，若抽牌堆 *魔力 数等于弃牌堆，获得 2 敏捷 ，否则获得 2 力量 。"
+    "DESCRIPTION": "每回合第一次 frierenmod:咏唱 后，获得 1 力量 和 1 敏捷 。"
   },
   "FrierenMod:LockTarget": {
     "NAME": "定叫他有来无回",

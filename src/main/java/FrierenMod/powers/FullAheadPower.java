@@ -1,10 +1,8 @@
 package FrierenMod.powers;
 
-import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
@@ -22,10 +20,8 @@ public class FullAheadPower extends AbstractBasePower {
     public void afterChantFinished() {
         if (!takeEffect) {
             this.flash();
-            if (CombatHelper.getManaNumInDrawPile() == CombatHelper.getManaNumInDiscardPile()) {
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new DexterityPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
-            } else
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, this.amount * 2), this.amount * 2));
+            this.addToBot(new ApplyPowerAction(owner, owner, new DexterityPower(owner, this.amount), this.amount));
+            this.addToBot(new ApplyPowerAction(owner, owner, new StrengthPower(owner, this.amount), this.amount));
             this.takeEffect = true;
         }
     }
@@ -36,6 +32,6 @@ public class FullAheadPower extends AbstractBasePower {
     }
 
     public void updateDescription() {
-        this.description = String.format(descriptions[0], this.amount * 2, this.amount * 2);
+        this.description = String.format(descriptions[0], this.amount, this.amount);
     }
 }
