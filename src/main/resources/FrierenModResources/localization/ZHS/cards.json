@@ -650,10 +650,10 @@
   },
   "FrierenMod:MageStyleFinisher": {
     "NAME": "魔法使流终结技",
-    "DESCRIPTION": "你在这个回合内每 frierenmod:同调 过一张 *魔力 ，就造成一次 !D! 点伤害。",
+    "DESCRIPTION": "你在这个回合内每 frierenmod:同调 过一次，就造成一次 !D! 点伤害。",
     "EXTENDED_DESCRIPTION": [
       " NL （你在本回合 *同调 过",
-      " 张 *魔力 。）"
+      " 次）"
     ]
   },
   "FrierenMod:BreaksBarriersSpell": {
