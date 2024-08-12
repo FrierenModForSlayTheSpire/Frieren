@@ -610,8 +610,8 @@
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "魔力膨胀",
-    "DESCRIPTION": "选择：抽牌堆、手牌或弃牌堆，将其中的 *魔力 数量翻倍。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻倍，无论它们在哪（消耗牌堆除外）。 NL  消耗 。"
+    "DESCRIPTION": "将你的 *魔力 数量翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻三倍。 NL 消耗 。"
   },
   "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "从抽牌堆膨胀",

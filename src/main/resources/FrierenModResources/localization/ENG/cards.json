@@ -613,8 +613,8 @@
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "Mana Expansion",
-    "DESCRIPTION": "Choose:Draw pile,hand or discard pile, DOUBLE the *Mana. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "DOUBLE the *Mana WHEREVER are they (except exhaust pile). NL Exhaust."
+    "DESCRIPTION": "DOUBLE the amount of your *Mana . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "TRIPLE the amount of your *Mana . NL Exhaust."
   },
   "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "Double From Draw Pile",
