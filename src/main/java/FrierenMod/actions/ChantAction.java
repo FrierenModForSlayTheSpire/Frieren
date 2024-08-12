@@ -66,7 +66,6 @@ public class ChantAction extends AbstractGameAction {
                     if (cardToReturn != null) {
                         chantChoices[1].immediateActions.add(() -> {
                             cardToReturn.returnToHand = true;
-                            cardToReturn.upgrade();
                         });
                     }
                     stanceChoices.add(chantChoices[1]);

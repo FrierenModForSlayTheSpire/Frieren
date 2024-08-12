@@ -37,7 +37,7 @@
     "DESCRIPTION": "Shuffle !M! *Mana into your draw pile."
   },
   "FrierenMod:ManaConcealment": {
-    "NAME":"ManaConcealment",
+    "NAME": "ManaConcealment",
     "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
   },
   "FrierenMod:BePrepared": {
@@ -375,7 +375,8 @@
     "UPGRADE_DESCRIPTION": "Deal X+4 damage to a random enemy X+1 times, add X *Mana into your hand.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage",
-      "times)"]
+      "times)"
+    ]
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
@@ -437,8 +438,8 @@
     "DESCRIPTION": "After frierenmod:Chant first time every turn, if your draw pile and discard pile has same *Mana amount, gain 2 Dexterity, otherwise, gain 2 Strength."
   },
   "FrierenMod:LockTarget": {
-  "NAME": "Lock Target",
-  "DESCRIPTION": "Deal !D! damage, draw a card. NL If draw pile's *Mana amount equals or more than discard pile's, attack once more."
+    "NAME": "Lock Target",
+    "DESCRIPTION": "Deal !D! damage, draw a card. NL If draw pile's *Mana amount equals or more than discard pile's, attack once more."
   },
   "FrierenMod:FiveMinutesMore": {
     "NAME": "Five Minutes More",
@@ -468,87 +469,121 @@
   "FrierenMod:DrawOption": {
     "NAME": "The Star",
     "DESCRIPTION": "Draw !M! card(s).",
-    "EXTENDED_DESCRIPTION": ["Draw 1/2/3 card(s)."]
+    "EXTENDED_DESCRIPTION": [
+      "Draw 1/2/3 card(s)."
+    ]
   },
   "FrierenMod:ManaInDiscardOption": {
     "NAME": "The Moon",
     "DESCRIPTION": "Shuffle !M! *Mana into your discard pile.",
-    "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your discard pile."]
+    "EXTENDED_DESCRIPTION": [
+      "Shuffle 2/4/6/8 *Mana into your discard pile."
+    ]
   },
   "FrierenMod:ManaInHandOption": {
     "NAME": "The Sun",
     "DESCRIPTION": "Add !M! *Mana into your hand.",
-    "EXTENDED_DESCRIPTION": ["add 2/3/4/5 *Mana into your hand."]
+    "EXTENDED_DESCRIPTION": [
+      "add 2/3/4/5 *Mana into your hand."
+    ]
   },
   "FrierenMod:ManaInDrawOption": {
     "NAME": "The fool",
     "DESCRIPTION": "Shuffle !M! *Mana into your draw pile.",
-    "EXTENDED_DESCRIPTION": ["Shuffle 2/4/6/8 *Mana into your draw pile."]
+    "EXTENDED_DESCRIPTION": [
+      "Shuffle 2/4/6/8 *Mana into your draw pile."
+    ]
   },
   "FrierenMod:ScryOption": {
     "NAME": "The High Priestess",
     "DESCRIPTION": "Scry !M!.",
-    "EXTENDED_DESCRIPTION": ["Scry 2/3/4."]
+    "EXTENDED_DESCRIPTION": [
+      "Scry 2/3/4."
+    ]
   },
   "FrierenMod:CostZeroOption": {
     "NAME": "The Pentacles",
     "DESCRIPTION": "Reduce the cost of !M! random card in your hand to 0 this turn.",
-    "EXTENDED_DESCRIPTION": ["reduce the cost of 1/2 card(s) in your hand to 0 this turn."]
+    "EXTENDED_DESCRIPTION": [
+      "reduce the cost of 1/2 card(s) in your hand to 0 this turn."
+    ]
   },
   "FrierenMod:SelfRetainOption": {
     "NAME": "Temperance",
     "DESCRIPTION": "Retain !M! card in your hand.",
-    "EXTENDED_DESCRIPTION": ["Retain 1/2 cards in your hand."]
+    "EXTENDED_DESCRIPTION": [
+      "Retain 1/2 cards in your hand."
+    ]
   },
   "FrierenMod:GainRandomCardOption": {
     "NAME": "The Wheel of Fortune",
     "DESCRIPTION": "Add !M! random common card into your hand. They cost 0 this turn.",
-    "EXTENDED_DESCRIPTION": ["Add 1/2 random common card(s) into your hand. They cost 0 this turn."]
+    "EXTENDED_DESCRIPTION": [
+      "Add 1/2 random common card(s) into your hand. They cost 0 this turn."
+    ]
   },
   "FrierenMod:DamageOption": {
     "NAME": "Justice",
     "DESCRIPTION": "Deal !D! damage.",
-    "EXTENDED_DESCRIPTION": ["Deal 6/10 damage."]
+    "EXTENDED_DESCRIPTION": [
+      "Deal 6/10 damage."
+    ]
   },
   "FrierenMod:DamageThirdOption": {
     "NAME": "The Devil",
     "DESCRIPTION": "Deal !D! damage 3 times.",
-    "EXTENDED_DESCRIPTION": ["Deal 5/7 damage 3 times."]
+    "EXTENDED_DESCRIPTION": [
+      "Deal 5/7 damage 3 times."
+    ]
   },
   "FrierenMod:DamageAllOption": {
     "NAME": "Death",
     "DESCRIPTION": "Deal !D! damage to ALL enemies.",
-    "EXTENDED_DESCRIPTION": ["Deal 4/8/12/16 damage to ALL enemies."]
+    "EXTENDED_DESCRIPTION": [
+      "Deal 4/8/12/16 damage to ALL enemies."
+    ]
   },
   "FrierenMod:BlockOption": {
     "NAME": "The Hermit",
     "DESCRIPTION": "Gain !B! Block.",
-    "EXTENDED_DESCRIPTION": ["Gain 4/8/12/16 Block."]
+    "EXTENDED_DESCRIPTION": [
+      "Gain 4/8/12/16 Block."
+    ]
   },
   "FrierenMod:EnergyOption": {
     "NAME": "The Lovers",
     "DESCRIPTION": "Next turn, gain !M! [E] .",
-    "EXTENDED_DESCRIPTION": ["Next turn, gain 1/2/3 [E] ."]
+    "EXTENDED_DESCRIPTION": [
+      "Next turn, gain 1/2/3 [E] ."
+    ]
   },
   "FrierenMod:ExtinguishOption": {
     "NAME": "Judgement",
     "DESCRIPTION": "If the enemy has !M! or less HP, set its HP to 0.",
-    "EXTENDED_DESCRIPTION": ["If the enemy has 30/40 or less HP, set its HP to 0."]
+    "EXTENDED_DESCRIPTION": [
+      "If the enemy has 30/40 or less HP, set its HP to 0."
+    ]
   },
   "FrierenMod:DexterityOption": {
     "NAME": "The Magician",
     "DESCRIPTION": "Gain !M! Dexterity. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Gain 2/3/4 Dexterity. NL Exhaust."]
+    "EXTENDED_DESCRIPTION": [
+      "Gain 2/3/4 Dexterity. NL Exhaust."
+    ]
   },
   "FrierenMod:ChantOption": {
     "NAME": "The Cups",
     "DESCRIPTION": "frierenmod:Chant !CX!.",
-    "EXTENDED_DESCRIPTION": ["frierenmod:Chant 2/3/4."]
+    "EXTENDED_DESCRIPTION": [
+      "frierenmod:Chant 2/3/4."
+    ]
   },
   "FrierenMod:IntangibleOption": {
     "NAME": "The Hanged Man",
     "DESCRIPTION": "Gain !M! Intangible. NL Exhaust.",
-    "EXTENDED_DESCRIPTION": ["Gain 1/2 Intangible. NL Exhaust."]
+    "EXTENDED_DESCRIPTION": [
+      "Gain 1/2 Intangible. NL Exhaust."
+    ]
   },
   "FrierenMod:StrengthOption": {
     "NAME": "The Empress",
@@ -557,7 +592,9 @@
   "FrierenMod:VulnerableOption": {
     "NAME": "The Hierophant",
     "DESCRIPTION": "Apply !M! Vulnerable to ALL enemies.",
-    "EXTENDED_DESCRIPTION": ["Apply 1/2/3 Vulnerable to ALL enemies."]
+    "EXTENDED_DESCRIPTION": [
+      "Apply 1/2/3 Vulnerable to ALL enemies."
+    ]
   },
   "FrierenMod:UpgradeOption": {
     "NAME": "The Tower",
@@ -574,7 +611,7 @@
   "FrierenMod:PreciseChant": {
     "NAME": "Precise Chant",
     "DESCRIPTION": "frierenmod:Chant ALL *Mana in the corresponding pile as possible. NL Exhaust.",
-    "UPGRADE_DESCRIPTION":"frierenmod:Chant ALL *Mana in the corresponding pile as possible."
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant ALL *Mana in the corresponding pile as possible."
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "Mana Expansion",
@@ -711,7 +748,8 @@
   },
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "Lure The Enemy In Deep",
-    "DESCRIPTION": "frierenmod:Chant !CX!. NL Draw !M! card. If you frierenmod:Chant from hand, Upgrade this for the rest of the combat and return it to your hand."
+    "DESCRIPTION": "frierenmod:Chant !CX!. NL If you frierenmod:Chant from hand, gain [E] [E] and return it to your hand.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. NL If you frierenmod:Chant from hand, gain [E] and return it to your hand."
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
@@ -799,7 +837,7 @@
     "DESCRIPTION": "*Stun a bird or a bird-like enemy 3 turns. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Innate. NL *Stun a bird or a bird-like enemy 3 turns. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-    "It is not a bird, or a bird-like enemy"
-  ]
+      "It is not a bird, or a bird-like enemy"
+    ]
   }
 }

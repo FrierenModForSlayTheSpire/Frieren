@@ -745,7 +745,8 @@
   },
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "诱敌深入",
-    "DESCRIPTION": " frierenmod:咏唱 !CX! 。 NL 抽 !M! 张牌。如果你 frierenmod:咏唱 的是手牌，在本场战斗中 升级 此牌并将其返回手牌。"
+    "DESCRIPTION": " frierenmod:咏唱 !CX! 。若 frierenmod:咏唱 的是手牌 ，获得 [E] [E] 并将这张牌返回手中。",
+    "UPGRADE_DESCRIPTION": " frierenmod:咏唱 !CX! 。若 frierenmod:咏唱 的是手牌 ，获得 [E] 并将这张牌返回手中。"
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "离别的馈赠",
