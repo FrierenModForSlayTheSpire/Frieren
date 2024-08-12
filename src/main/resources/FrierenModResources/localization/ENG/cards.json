@@ -661,7 +661,7 @@
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "Spell That Breaks Barriers",
-    "DESCRIPTION": "frierenmod:Analyze 3: frierenmod:Synchro 4 *Mana. NL *Reward : !B! Block. NL (Progress:0/4)."
+    "DESCRIPTION": "Sort your draw pile by the cost from low to high. NL Draw !M! cards."
   },
   "FrierenMod:ManaParcel": {
     "NAME": "Mana Parcel",

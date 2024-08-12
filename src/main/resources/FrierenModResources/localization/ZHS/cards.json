@@ -658,7 +658,7 @@
   },
   "FrierenMod:BreaksBarriersSpell": {
     "NAME": "解析结界的魔法",
-    "DESCRIPTION": " frierenmod:解析 3： frierenmod:同调 4张 *魔力 。 NL  *奖励 ： !B! 点 格挡 。 NL （当前进度0/4）。"
+    "DESCRIPTION": "按耗能从低到高的顺序排序你的抽牌堆。 NL 抽 !M! 张牌。"
   },
   "FrierenMod:ManaParcel": {
     "NAME": "魔力包裹",
