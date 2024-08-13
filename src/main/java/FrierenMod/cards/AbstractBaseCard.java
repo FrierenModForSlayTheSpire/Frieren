@@ -30,6 +30,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public boolean isLegendarySpell;
     public boolean isCostResetCard;
     public boolean isSealCard;
+    @Deprecated
     public boolean isTaskCard;
     public int baseChantX = -1;
     public int chantX = -1;
@@ -93,7 +94,6 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.upgradedSecondMagicNumber = false;
         this.isCostResetCard = false;
         this.isSealCard = false;
-        this.isTaskCard = false;
     }
 
     public void initSpecifiedAttributes() {
@@ -179,12 +179,6 @@ public abstract class AbstractBaseCard extends CustomCard {
             ((AbstractBaseCard) card).raidNumber = this.raidNumber;
             ((AbstractBaseCard) card).upgradedRaidNumber = this.upgradedRaidNumber;
             ((AbstractBaseCard) card).isRaidNumberModified = this.isRaidNumberModified;
-            if (this.isTaskCard) {
-                ((AbstractBaseCard) card).currentLevel = this.currentLevel;
-                ((AbstractBaseCard) card).currentInLevelProgressNumber = this.currentInLevelProgressNumber;
-                ((AbstractBaseCard) card).currentLevelRequiredNumber = this.currentLevelRequiredNumber;
-                ((AbstractBaseCard) card).updateDescriptionAndCardImg();
-            }
         }
         return super.makeStatEquivalentCopy();
     }
@@ -209,15 +203,18 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterChant() {
     }
 
+    @Deprecated
     public void taskProgressIncrease() {
         this.flash(FLASH_COLOR);
         currentInLevelProgressNumber++;
         this.updateDescriptionAndCardImg();
     }
 
+    @Deprecated
     public void updateDescriptionAndCardImg() {
     }
 
+    @Deprecated
     public void continueToNextLevel(int currentLevelRequiredNumber) {
         this.superFlash();
         this.currentLevel--;
@@ -226,9 +223,11 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.updateDescriptionAndCardImg();
     }
 
+    @Deprecated
     public void initTask() {
     }
 
+    @Deprecated
     public void endTask() {
         this.superFlash();
         this.initTask();

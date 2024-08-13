@@ -6,6 +6,7 @@ import basemod.abstracts.AbstractCardModifier;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
+@Deprecated
 public class RockGolemSpellMod extends AbstractCardModifier {
     public static final String ID = ModInformation.makeID(RockGolemSpellMod.class.getSimpleName());
 

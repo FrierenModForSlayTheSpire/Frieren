@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@Deprecated
 @AutoAdd.Ignore
 public class RockGolemSpell extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RockGolemSpell.class.getSimpleName());
