@@ -6,7 +6,6 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.events.AnimalWell;
 import FrierenMod.events.FoodEvent;
-import FrierenMod.events.KraftGift;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.HookHelper;
 import FrierenMod.monsters.Spiegel_Frieren;
@@ -123,7 +122,7 @@ public class RegisterHelper {
     public static void registerEvents() {
         Log.logger.info("Adding events...");
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
-        BaseMod.addEvent("KraftGift", KraftGift.class);
+//        BaseMod.addEvent("KraftGift", KraftGift.class);
         BaseMod.addEvent("AnimalWell", AnimalWell.class);
         Log.logger.info("Done adding events");
     }

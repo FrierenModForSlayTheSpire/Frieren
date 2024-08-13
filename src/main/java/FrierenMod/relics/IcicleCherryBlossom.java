@@ -1,11 +1,13 @@
 package FrierenMod.relics;
 
 import FrierenMod.utils.ModInformation;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 
+@AutoAdd.Ignore
 public class IcicleCherryBlossom extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
     public static final int RATE = 60;
