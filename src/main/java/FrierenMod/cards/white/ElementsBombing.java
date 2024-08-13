@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class ElementsBombing extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(ElementsBombing.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 3, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, 2, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.RARE, CardTarget.NONE);
 
     public ElementsBombing() {
         super(info);

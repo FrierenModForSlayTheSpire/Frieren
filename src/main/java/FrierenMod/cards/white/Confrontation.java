@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Confrontation extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Confrontation.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.NONE);
 
     public Confrontation() {
         super(info);
@@ -24,14 +24,14 @@ public class Confrontation extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.block = baseBlock = 5;
+        this.block = baseBlock = 6;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(2);
+            this.upgradeBlock(3);
         }
     }
 
