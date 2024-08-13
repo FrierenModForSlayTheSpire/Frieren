@@ -44,7 +44,7 @@ public class LureTheEnemyInDeep extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChantAction(this.chantX, this, new DrawCardAction(this.magicNumber)));
+        this.addToBot(new ChantAction(this.chantX, this));
         this.addToBot(new GainEnergyAction(this.magicNumber));
     }
 
