@@ -63,11 +63,46 @@ public class CardStylePatch {
             AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
             if (c instanceof Mana || (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP))
                 return SpireReturn.Return(MANA_TEXTURE_IMG);
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
+                return SpireReturn.Return(ImageMaster.CARD_SKILL_BG_GRAY_L);
+            return SpireReturn.Continue();
+        }
+    }
+
+    @SpirePatch(clz = SingleCardViewPopup.class, method = "renderCardBanner")
+    public static class PatchRenderCardBanner {
+        private static final TextureAtlas.AtlasRegion PROP_BANNER_L = getImg(ImageMaster.loadImage(PublicRes.CARD_BANNER_PROP_L));
+
+        @SpirePrefixPatch
+        public static SpireReturn<Void> Insert(SingleCardViewPopup _inst, SpriteBatch sb) {
+            AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
+            if (c instanceof AbstractMagicItem) {
+                TextureAtlas.AtlasRegion tmpImg = null;
+                switch (((AbstractMagicItem) c).magicItemRarity) {
+                    case BASIC:
+                    case COMMON:
+                        tmpImg = ImageMaster.CARD_BANNER_COMMON_L;
+                        break;
+                    case UNCOMMON:
+                        tmpImg = ImageMaster.CARD_BANNER_UNCOMMON_L;
+                        break;
+                    case PROP:
+                        tmpImg = PROP_BANNER_L;
+                        break;
+                    case RARE:
+                        tmpImg = ImageMaster.CARD_BANNER_RARE_L;
+                        break;
+                }
+                renderHelper(sb, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F, tmpImg);
+                return SpireReturn.Return();
+            }
             return SpireReturn.Continue();
         }
 
-        private static TextureAtlas.AtlasRegion getImg(Texture texture) {
-            return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
+        private static void renderHelper(SpriteBatch sb, float x, float y, TextureAtlas.AtlasRegion img) {
+            if (img != null) {
+                sb.draw(img, x + img.offsetX - (float) img.originalWidth / 2.0F, y + img.offsetY - (float) img.originalHeight / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalHeight / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, Settings.scale, Settings.scale, 0.0F);
+            }
         }
     }
 
@@ -144,6 +179,7 @@ public class CardStylePatch {
             return false;
         }
     }
+
     @SpirePatch(cls = "basemod.patches.com.megacrit.cardcrawl.screens.mainMenu.ColorTabBar.ColorTabBarFix$Render", method = "Insert", optional = true)
     public static class TabNamePatch {
         @SpireInsertPatch(locator = TabNameLocator.class, localvars = {"tabName"})
@@ -156,8 +192,12 @@ public class CardStylePatch {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher.MethodCallMatcher methodCallMatcher = new Matcher.MethodCallMatcher(FontHelper.class, "renderFontCentered");
-                return LineFinder.findInOrder(ctMethodToPatch, (Matcher)methodCallMatcher);
+                return LineFinder.findInOrder(ctMethodToPatch, (Matcher) methodCallMatcher);
             }
         }
+    }
+
+    private static TextureAtlas.AtlasRegion getImg(Texture texture) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
     }
 }
