@@ -9,8 +9,9 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RedAppleSpell extends AbstractBaseCard {
@@ -21,10 +22,6 @@ public class RedAppleSpell extends AbstractBaseCard {
         super(info);
     }
 
-//    public RedAppleSpell(CardColor color) {
-//        super(ID, 1, color, CardRarity.UNCOMMON);
-//    }
-
     @Override
     public void initSpecifiedAttributes() {
         this.cardsToPreview = new GreenApple();
@@ -34,14 +31,19 @@ public class RedAppleSpell extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.cardsToPreview.upgrade();
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new SwitchStrengthAndDexterityAction());
-        this.addToBot(new MakeTempCardInHandAction(new GreenApple()));
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new SwitchStrengthAndDexterityPower(AbstractDungeon.player)));
+        AbstractCard c = new GreenApple();
+        if (this.upgraded)
+            c.upgrade();
+        this.addToBot(new MakeTempCardInHandAction(c));
+        this.addToBot(new ApplyPowerAction(p, p, new SwitchStrengthAndDexterityPower(p)));
     }
 }
