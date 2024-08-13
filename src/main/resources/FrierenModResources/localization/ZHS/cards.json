@@ -126,7 +126,7 @@
     "NAME": "遁入智瞳",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，获得 !SM! 层 真言 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X+1张 *魔力 ，获得X层 真言 。"
+      " 消耗 牌堆中X张 *魔力 ，获得X层 真言 。"
     ]
   },
   "FrierenMod:AdvancedDefensiveMagic": {

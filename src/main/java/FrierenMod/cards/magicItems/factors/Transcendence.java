@@ -11,7 +11,6 @@ public class Transcendence extends AbstractMagicItem {
     public Transcendence() {
         super(ID);
         loadRarity(MagicItemRarity.RARE);
-        this.manaNeedAddCoefficient = 1;
     }
 
     @Override
