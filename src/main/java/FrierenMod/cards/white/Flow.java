@@ -52,7 +52,7 @@ public class Flow extends AbstractBaseCard {
                     if(counts >= 1){
                         break;
                     }
-                    if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
+                    if(c instanceof Mana){
                         counts++;
                         this.addToBot(new DrawPileToHandAction(c));
                     }
@@ -64,7 +64,7 @@ public class Flow extends AbstractBaseCard {
                     if(counts >= 1){
                         break;
                     }
-                    if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
+                    if(c instanceof Mana){
                         counts++;
                         this.addToBot(new DiscardPileToHandAction(c));
                     }

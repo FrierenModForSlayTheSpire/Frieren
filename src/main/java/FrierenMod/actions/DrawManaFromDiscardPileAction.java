@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -16,7 +16,7 @@ public class DrawManaFromDiscardPileAction extends AbstractGameAction {
     public void update() {
         int counts = 0;
         for(AbstractCard c:AbstractDungeon.player.discardPile.group){
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana){
+            if(c instanceof Mana){
                 counts++;
                 this.addToTop(new DiscardPileToHandAction(c));
             }

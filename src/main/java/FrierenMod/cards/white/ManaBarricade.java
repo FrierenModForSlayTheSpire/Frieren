@@ -20,7 +20,7 @@ public class ManaBarricade extends AbstractBaseCard {
     public void initSpecifiedAttributes() {
         this.block = this.baseBlock = 12;
         this.chantX = this.baseChantX = 2;
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
     }
     //    public ManaBarricade(CardColor color) {
 //        super(ID, 2, CardType.POWER, color, CardRarity.RARE);

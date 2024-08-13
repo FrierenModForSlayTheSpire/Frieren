@@ -40,7 +40,7 @@ public class ThunderPower extends AbstractBasePower {
     }
     private void upgradeManaInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && !((AbstractBaseCard) c).isLimitedOverMana){
+            if(c instanceof Mana && !((AbstractBaseCard) c).isLimitedOverMana){
                 if (((AbstractBaseCard) c).isAccelMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();

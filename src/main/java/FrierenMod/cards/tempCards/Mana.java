@@ -31,7 +31,6 @@ public class Mana extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.isMana = true;
         this.exhaust = true;
     }
 

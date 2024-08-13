@@ -35,7 +35,7 @@ public class SealCardsAction extends AbstractGameAction {
     }
     private void storeSealCardsInCardGroup(ArrayList<AbstractCard> sealCards, CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isSealCard){
+            if(c.hasTag(AbstractBaseCard.Enum.SEAL)){
                 sealCards.add(c);
             }
         }

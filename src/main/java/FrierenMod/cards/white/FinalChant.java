@@ -23,7 +23,7 @@ public class FinalChant extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.block = this.baseBlock;
     }
 

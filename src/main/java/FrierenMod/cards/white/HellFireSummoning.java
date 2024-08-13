@@ -31,8 +31,8 @@ public class HellFireSummoning extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
-        this.isCostResetCard = true;
-        this.isSealCard = true;
+        this.tags.add(AbstractBaseCard.Enum.COST_REST);
+        this.tags.add(Enum.SEAL);
     }
 
     @Override
@@ -68,7 +68,7 @@ public class HellFireSummoning extends AbstractBaseCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if (cardPlayed instanceof AbstractBaseCard && ((AbstractBaseCard) cardPlayed).isChantCard)
+        if (cardPlayed.hasTag(Enum.CHANT))
             this.superFlash();
     }
 }

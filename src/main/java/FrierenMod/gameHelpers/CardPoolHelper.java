@@ -35,7 +35,7 @@ public class CardPoolHelper {
     public static ArrayList<AbstractCard> getChantCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
+            if (c.hasTag(AbstractBaseCard.Enum.CHANT) && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
                 retVal.add(c.makeCopy());
             }
         }
@@ -45,7 +45,7 @@ public class CardPoolHelper {
     public static ArrayList<AbstractCard> getLegendarySpellCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
+            if (c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL) && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
                 retVal.add(c.makeCopy());
             }
         }

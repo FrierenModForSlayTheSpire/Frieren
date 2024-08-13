@@ -21,7 +21,7 @@ public class UbelStaff extends AbstractBaseRelic {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isChantCard) {
+        if (card.hasTag(AbstractBaseCard.Enum.CHANT)) {
             this.counter++;
             if (this.counter == TRIGGER_VALUE) {
                 addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));

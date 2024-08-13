@@ -1,6 +1,7 @@
 package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.utils.CardInfo;
@@ -39,7 +40,7 @@ public class Free extends AbstractBaseCard {
         ActionHelper.addToBotAbstract(() -> {
             ArrayList<AbstractCard> cardsToDiscard = new ArrayList<>();
             for (AbstractCard c : p.hand.group) {
-                if (!(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana)) {
+                if (!(c instanceof Mana)) {
                     cardsToDiscard.add(c);
                 }
             }

@@ -16,7 +16,7 @@ public class ChantWithoutManaTimesPower extends AbstractBasePower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (!owner.hasPower(ChantWithoutManaPower.POWER_ID) && card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isChantCard) {
+        if (!owner.hasPower(ChantWithoutManaPower.POWER_ID) && card.hasTag(AbstractBaseCard.Enum.CHANT)) {
             this.flash();
             this.amount--;
             this.updateDescription();

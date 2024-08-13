@@ -2,6 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.actions.DamagePerAttackPlayedAction;
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -54,7 +55,7 @@ public class MageStyleFinisher extends AbstractBaseCard {
         super.applyPowers();
         int count = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana)
+            if (c instanceof Mana)
                 count++;
         }
         if (count > 0) {

@@ -19,7 +19,7 @@ public class DrawChantAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard)c).isChantCard){
+            if(c.hasTag(AbstractBaseCard.Enum.CHANT)){
                 counts++;
                 this.addToBot(new DrawPileToHandAction(c));
             }

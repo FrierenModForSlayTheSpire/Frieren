@@ -26,7 +26,7 @@ public class CombatHelper {
     public static int getManaNumInDrawPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+            if (c instanceof Mana) {
                 counts++;
             }
         }
@@ -36,7 +36,7 @@ public class CombatHelper {
     public static int getManaNumInHand() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+            if (c instanceof Mana) {
                 counts++;
             }
         }
@@ -46,7 +46,7 @@ public class CombatHelper {
     public static int getManaNumInDiscardPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+            if (c instanceof Mana) {
                 counts++;
             }
         }
@@ -56,7 +56,7 @@ public class CombatHelper {
     public static int getManaNumInExhaustPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+            if (c instanceof Mana) {
                 counts++;
             }
         }
@@ -98,7 +98,7 @@ public class CombatHelper {
     public static int getChantCardUsedThisTurn() {
         int amounts = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard) {
+            if (c.hasTag(AbstractBaseCard.Enum.CHANT)) {
                 amounts++;
             }
         }
@@ -112,7 +112,7 @@ public class CombatHelper {
             return 0;
         for (int i = 0; i < size; i++) {
             AbstractCard c = AbstractDungeon.actionManager.cardsPlayedThisCombat.get(i);
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell) {
+            if (c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL)) {
                 set.add(c.cardID);
             }
         }

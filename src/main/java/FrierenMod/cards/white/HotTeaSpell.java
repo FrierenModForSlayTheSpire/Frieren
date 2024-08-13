@@ -23,7 +23,7 @@ public class HotTeaSpell extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.block = baseBlock = 12;
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
 
     @Override

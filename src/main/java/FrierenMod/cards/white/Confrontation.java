@@ -42,7 +42,7 @@ public class Confrontation extends AbstractBaseCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if (cardPlayed instanceof AbstractBaseCard && ((AbstractBaseCard) cardPlayed).isChantCard)
+        if (cardPlayed.hasTag(Enum.CHANT))
             this.addToBot(new ModifyBlockAction(this.uuid, 3));
     }
 }

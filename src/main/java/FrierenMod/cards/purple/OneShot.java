@@ -22,7 +22,7 @@ public class OneShot extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.chantX = this.baseChantX = 40;
     }
 

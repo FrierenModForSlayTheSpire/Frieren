@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,7 +24,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     if (counts >= this.exhaustNumber) {
                         break;
                     }
-                    if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+                    if (c instanceof Mana) {
                         counts++;
                         this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile));
                     }
@@ -35,7 +35,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     if (counts >= this.exhaustNumber) {
                         break;
                     }
-                    if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+                    if (c instanceof Mana) {
                         counts++;
                         this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
                     }
@@ -46,7 +46,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     if (counts >= this.exhaustNumber) {
                         break;
                     }
-                    if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+                    if (c instanceof Mana) {
                         counts++;
                         this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
                     }

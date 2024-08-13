@@ -15,7 +15,7 @@ public class SecondDefensiveMagic extends AbstractBaseCard {
     public SecondDefensiveMagic() {
         super(info);
         this.block = this.baseBlock = 3;
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.chantX = this.baseChantX = 1;
         this.exhaust = true;
     }

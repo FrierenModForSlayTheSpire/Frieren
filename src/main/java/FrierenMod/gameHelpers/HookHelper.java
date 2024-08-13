@@ -38,7 +38,7 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
 
     private void resetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
         for (AbstractCard c : group.group) {
-            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isCostResetCard) {
+            if (c.hasTag(AbstractBaseCard.Enum.COST_REST)) {
                 Class<? extends AbstractBaseCard> cardClass = (Class<? extends AbstractBaseCard>) c.getClass();
                 c.cost = cardClass.newInstance().cost;
                 c.costForTurn = c.cost;

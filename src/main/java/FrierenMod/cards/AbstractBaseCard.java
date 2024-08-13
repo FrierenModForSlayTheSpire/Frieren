@@ -12,45 +12,31 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
-import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
 
 public abstract class AbstractBaseCard extends CustomCard {
-    public boolean isChantCard;
-    public boolean isMana;
     public boolean isLimitedOverMana;
     public boolean isAccelMana;
-    public boolean isLegendarySpell;
-    public boolean isCostResetCard;
-    public boolean isSealCard;
-    @Deprecated
-    public boolean isTaskCard;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
     public boolean upgradedChantX;
     public int secondMagicNumber = -1;
     public int baseSecondMagicNumber = -1;
-    @Deprecated
-    public int secondMisc = 0;
     public boolean isSecondMagicNumberModified;
     public boolean upgradedSecondMagicNumber;
     public int raidNumber = -1;
     public int baseRaidNumber = -1;
     public boolean upgradedRaidNumber;
     public boolean isRaidNumberModified;
-    public int currentLevel = -1;
-    public int currentLevelRequiredNumber = -1;
-    public int currentInLevelProgressNumber = -1;
-    public float rotationTimer;
-    public int previewIndex;
+    protected float rotationTimer;
+    protected int previewIndex;
 
     public static final Color FLASH_COLOR = new Color(123.0F / 255.0F, 236.0F / 255.0F, 232.0F / 255.0F, 1.0F);
     public ArrayList<TooltipInfo> tips = new ArrayList<>();
@@ -84,16 +70,11 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isBlockModified = false;
         this.isMagicNumberModified = false;
         this.isRaidNumberModified = false;
-        this.isChantCard = false;
-        this.isLegendarySpell = false;
         this.isChantXModified = false;
-        this.isMana = false;
         this.isLimitedOverMana = false;
         this.isAccelMana = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
-        this.isCostResetCard = false;
-        this.isSealCard = false;
     }
 
     public void initSpecifiedAttributes() {
@@ -160,13 +141,8 @@ public abstract class AbstractBaseCard extends CustomCard {
         card.misc = this.misc;
         card.freeToPlayOnce = this.freeToPlayOnce;
         if (card instanceof AbstractBaseCard) {
-            ((AbstractBaseCard) card).isChantCard = this.isChantCard;
-            ((AbstractBaseCard) card).isMana = this.isMana;
             ((AbstractBaseCard) card).isLimitedOverMana = this.isLimitedOverMana;
             ((AbstractBaseCard) card).isAccelMana = this.isAccelMana;
-            ((AbstractBaseCard) card).isLegendarySpell = this.isLegendarySpell;
-            ((AbstractBaseCard) card).isCostResetCard = this.isCostResetCard;
-            ((AbstractBaseCard) card).isSealCard = this.isSealCard;
             ((AbstractBaseCard) card).baseChantX = this.baseChantX;
             ((AbstractBaseCard) card).chantX = this.chantX;
             ((AbstractBaseCard) card).isChantXModified = this.isChantXModified;
@@ -185,11 +161,11 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (this.isChantCard && CombatHelper.cannotChant(chantX)) {
+        if (this.hasTag(Enum.CHANT) && CombatHelper.cannotChant(chantX)) {
             this.cantUseMessage = cantUseTEXT[0];
             return false;
         }
-        if (this.isLegendarySpell && CombatHelper.cannotPlayLegendarySpell()) {
+        if (this.hasTag(Enum.LEGENDARY_SPELL) && CombatHelper.cannotPlayLegendarySpell()) {
             this.cantUseMessage = cantUseTEXT[1];
             return false;
         }
@@ -203,42 +179,11 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterChant() {
     }
 
-    @Deprecated
-    public void taskProgressIncrease() {
-        this.flash(FLASH_COLOR);
-        currentInLevelProgressNumber++;
-        this.updateDescriptionAndCardImg();
-    }
-
-    @Deprecated
-    public void updateDescriptionAndCardImg() {
-    }
-
-    @Deprecated
-    public void continueToNextLevel(int currentLevelRequiredNumber) {
-        this.superFlash();
-        this.currentLevel--;
-        this.currentInLevelProgressNumber = 0;
-        this.currentLevelRequiredNumber = currentLevelRequiredNumber;
-        this.updateDescriptionAndCardImg();
-    }
-
-    @Deprecated
-    public void initTask() {
-    }
-
-    @Deprecated
-    public void endTask() {
-        this.superFlash();
-        this.initTask();
-        this.initializeDescription();
-        this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
-    }
-
     public ArrayList<AbstractCard> getCardsToPreview() {
         return null;
     }
 
+    @Override
     public void update() {
         super.update();
         if (this.getCardsToPreview() != null && this.hb.hovered)
@@ -266,6 +211,14 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public static class Enum {
         @SpireEnum
+        public static AbstractCard.CardTags CHANT;
+        @SpireEnum
+        public static AbstractCard.CardTags LEGENDARY_SPELL;
+        @SpireEnum
+        public static AbstractCard.CardTags SEAL;
+        @SpireEnum
+        public static AbstractCard.CardTags COST_REST;
+        @SpireEnum
         public static AbstractCard.CardTags CAN_NOT_RANDOM_GENERATED_IN_COMBAT;
         @SpireEnum
         public static AbstractCard.CardTags LESS_CHANCE_TO_MEET;
@@ -278,9 +231,10 @@ public abstract class AbstractBaseCard extends CustomCard {
     protected static TextureAtlas.AtlasRegion getImg(Texture texture, int width, int height) {
         return new TextureAtlas.AtlasRegion(texture, 0, 0, width, height);
     }
+
     protected void renderHelper(SpriteBatch sb, Color color, TextureAtlas.AtlasRegion img, float drawX, float drawY) {
         sb.setColor(color);
-        sb.draw(img, drawX + img.offsetX - (float)img.originalWidth / 2.0F, drawY + img.offsetY - (float)img.originalHeight / 2.0F, (float)img.originalWidth / 2.0F - img.offsetX, (float)img.originalHeight / 2.0F - img.offsetY, (float)img.packedWidth, (float)img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
+        sb.draw(img, drawX + img.offsetX - (float) img.originalWidth / 2.0F, drawY + img.offsetY - (float) img.originalHeight / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalHeight / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, this.drawScale * Settings.scale, this.drawScale * Settings.scale, this.angle);
     }
 
 }

@@ -47,7 +47,7 @@ public class TongueTwisterSpell extends AbstractBaseCard {
                 tickDuration();
                 if (this.isDone)
                     for (AbstractCard c : DrawCardAction.drawnCards) {
-                        if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+                        if (c instanceof Mana) {
                             this.addToBot(new GainBlockAction(p, block));
                         }
                     }

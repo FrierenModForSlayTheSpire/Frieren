@@ -28,8 +28,8 @@ public class ContinualChant extends AbstractBaseCard {
         this.chantX = this.baseChantX = 3;
         this.magicNumber = this.baseMagicNumber = 3;
         this.cardsToPreview = new Mana();
-        this.isChantCard = true;
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
 
     @Override

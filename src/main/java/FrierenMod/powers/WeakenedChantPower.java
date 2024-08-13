@@ -16,7 +16,7 @@ public class WeakenedChantPower extends AbstractBasePower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isChantCard) {
+        if (card.hasTag(AbstractBaseCard.Enum.CHANT)) {
             this.flash();
         }
     }

@@ -46,7 +46,7 @@ public class AccelerateFlowPower extends AbstractBasePower {
     }
     private void upgradeManaInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && !((AbstractBaseCard) c).isAccelMana){
+            if(c instanceof Mana && !((AbstractBaseCard) c).isAccelMana){
                 if (((AbstractBaseCard) c).isLimitedOverMana) {
                     if (cardGroup.type == CardGroup.CardGroupType.HAND) {
                         c.superFlash();
@@ -71,7 +71,7 @@ public class AccelerateFlowPower extends AbstractBasePower {
     }
     private void degradeManaInGroup(CardGroup cardGroup){
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana && ((AbstractBaseCard) c).isAccelMana){
+            if(c instanceof Mana && ((AbstractBaseCard) c).isAccelMana){
                 if (((AbstractBaseCard) c).isLimitedOverMana) {
                     CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER));
                 }else {

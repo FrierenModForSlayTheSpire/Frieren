@@ -19,7 +19,7 @@ public class DrawLegendarySpellAction extends AbstractGameAction {
             if (counts >= this.drawNumber){
                 break;
             }
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard)c).isLegendarySpell){
+            if(c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL)){
                 counts++;
                 this.addToBot(new DrawPileToHandAction(c));
             }

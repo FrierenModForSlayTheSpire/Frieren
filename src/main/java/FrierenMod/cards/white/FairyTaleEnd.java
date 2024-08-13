@@ -27,7 +27,7 @@ public class FairyTaleEnd extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 10;
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
 
     @Override

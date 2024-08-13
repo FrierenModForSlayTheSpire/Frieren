@@ -18,7 +18,7 @@ public class UpsideDown extends AbstractBaseCard {
 
     @Override
     public void triggerOnOtherCardPlayed(AbstractCard c) {
-        if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana) {
+        if (c instanceof Mana) {
             this.addToBot(new ExchangeDrawAndDiscardPileAction(AbstractDungeon.player));
             this.addToBot(new LoseHPAction(AbstractDungeon.player, AbstractDungeon.player, 2));
         }

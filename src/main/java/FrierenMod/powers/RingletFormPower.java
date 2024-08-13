@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,7 +16,7 @@ public class RingletFormPower extends AbstractBasePower {
 
     @Override
     public void onExhaust(AbstractCard card) {
-        if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana) {
+        if (card instanceof Mana) {
             this.flash();
             this.addToBot(new GainBlockAction(this.owner, this.owner, this.amount));
         }

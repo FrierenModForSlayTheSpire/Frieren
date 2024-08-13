@@ -1,6 +1,7 @@
 package FrierenMod.ui.panels;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.FrierenRes;
@@ -79,7 +80,7 @@ public class ManaPanel extends AbstractPanel {
             if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
                 return true;
             for (AbstractCard card : AbstractDungeon.player.masterDeck.group) {
-                if (card instanceof AbstractBaseCard && ((AbstractBaseCard) card).isMana)
+                if (card instanceof Mana)
                     return true;
             }
             if (CombatHelper.isInCombat()) {

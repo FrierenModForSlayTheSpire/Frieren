@@ -27,7 +27,7 @@ public class Famehameha extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 31;
-        this.isCostResetCard = true;
+        this.tags.add(AbstractBaseCard.Enum.COST_REST);
     }
 
     @Override

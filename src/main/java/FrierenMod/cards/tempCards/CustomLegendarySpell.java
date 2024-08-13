@@ -10,7 +10,7 @@ public class CustomLegendarySpell extends AbstractBaseCard {
     public String usedModifierText = this.rawDescription;
     public CustomLegendarySpell() {
         super(info);
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
     @Override
     public boolean canUpgrade(){

@@ -27,7 +27,7 @@ public class OilSpell extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 12;
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
 
     @Override

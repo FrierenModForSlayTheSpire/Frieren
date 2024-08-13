@@ -26,7 +26,7 @@ public class DefensiveMagic extends AbstractBaseCard {
     public void initSpecifiedAttributes() {
         this.block = this.baseBlock = 3;
         this.chantX = this.baseChantX = 1;
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
         SecondDefensiveMagic c = new SecondDefensiveMagic();
         if (this.upgraded) {
             c.upgrade();

@@ -25,7 +25,7 @@ public class FlowerFieldSpell extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.isChantCard = true;
+        this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.chantX = this.baseChantX = 2;
         this.cardsToPreview = new BlueMoonWeed();
     }

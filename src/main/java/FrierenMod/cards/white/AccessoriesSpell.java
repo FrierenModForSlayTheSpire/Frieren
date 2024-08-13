@@ -18,7 +18,7 @@ public class AccessoriesSpell extends AbstractBaseCard {
     public void initSpecifiedAttributes() {
         this.isInnate = true;
         this.isEthereal = true;
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
         this.tags.add(Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT);
     }
 

@@ -22,7 +22,7 @@ public class ChantMod extends AbstractCardModifier {
     }
     public void onInitialApplication(AbstractCard card) {
         ((AbstractBaseCard) card).chantX = ((AbstractBaseCard) card).baseChantX =this.chantAmt;
-        ((AbstractBaseCard) card).isChantCard = true;
+        card.tags.add(AbstractBaseCard.Enum.CHANT);
         if(card instanceof CustomLegendarySpell)
             ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + "!CX!" + TEXT[1];
     }

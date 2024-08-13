@@ -1,6 +1,7 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractBaseCard;
+
+import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.gameHelpers.CombatHelper;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -26,7 +27,7 @@ public class DamagePerAttackPlayedAction extends AbstractGameAction {
             int count = 0;
             if (this.type == Type.SynchroTimes)
                 for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                    if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isMana)
+                    if (c instanceof Mana)
                         count++;
                 }
             if (this.type == Type.ChantCardUsedTimes)

@@ -22,7 +22,7 @@ public class LightningMagic extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.isLegendarySpell = true;
+        this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }
 
     @Override
