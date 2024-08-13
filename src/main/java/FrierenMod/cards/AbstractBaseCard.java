@@ -268,6 +268,8 @@ public abstract class AbstractBaseCard extends CustomCard {
     public static class Enum {
         @SpireEnum
         public static AbstractCard.CardTags CAN_NOT_RANDOM_GENERATED_IN_COMBAT;
+        @SpireEnum
+        public static AbstractCard.CardTags LESS_CHANCE_TO_MEET;
     }
 
     protected static TextureAtlas.AtlasRegion getImg(Texture texture) {

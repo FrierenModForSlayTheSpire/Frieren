@@ -87,12 +87,16 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
             chance += RandomField2.getBlizzardMagicItemMod();
         }
         Log.logger.info("MAGIC ITEM CHANCE: {}", chance);
-        if (RandomField.getMagicItemRng().random(0, 99) < chance || Config.IN_DEV) {
+        if (RandomField.getMagicItemRng().random(0, 99) < chance) {
             MagicItemReward.addMagicItemRewardToRoom();
             RandomField2.addBlizzardMagicItemMod(-10);
         } else {
             RandomField2.addBlizzardMagicItemMod(10);
         }
+        if(Config.IN_DEV)
+            for (int i = 0; i < 50; i++) {
+                MagicItemReward.addMagicItemRewardToRoom();
+            }
     }
 
     @Override

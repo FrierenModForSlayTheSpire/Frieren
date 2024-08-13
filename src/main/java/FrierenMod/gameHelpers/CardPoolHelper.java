@@ -17,7 +17,6 @@ import java.util.ArrayList;
 
 import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
-;
 
 public class CardPoolHelper {
     public static ArrayList<AbstractCard> getBaseFrierenFernCardPool() {
@@ -35,8 +34,8 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getChantCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        for(AbstractCard c: CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)){
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)){
+        for (AbstractCard c : CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isChantCard && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
                 retVal.add(c.makeCopy());
             }
         }
@@ -45,8 +44,8 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getLegendarySpellCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        for(AbstractCard c: CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)){
-            if(c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)){
+        for (AbstractCard c : CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)) {
+            if (c instanceof AbstractBaseCard && ((AbstractBaseCard) c).isLegendarySpell && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
                 retVal.add(c.makeCopy());
             }
         }
@@ -55,7 +54,7 @@ public class CardPoolHelper {
 
     public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
-        for(AbstractCard c: CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY)){
+        for (AbstractCard c : CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY)) {
             srcCardPool.add(c.makeCopy());
         }
         ArrayList<AbstractCard> common = new ArrayList<>();
@@ -129,6 +128,8 @@ public class CardPoolHelper {
 
     public static AbstractCard getRandomMagicItem(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
+        if(RandomField.getMagicItemRng().random(100) > 20)
+            list.removeIf(card -> card.hasTag(AbstractBaseCard.Enum.LESS_CHANCE_TO_MEET));
         return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
     }
 
