@@ -20,6 +20,7 @@ public class AccessoriesSpell extends AbstractBaseCard {
         this.isEthereal = true;
         this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
         this.tags.add(Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
