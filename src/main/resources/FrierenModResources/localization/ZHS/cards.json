@@ -613,8 +613,7 @@
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "魔力膨胀",
-    "DESCRIPTION": "将你的 *魔力 数量翻倍。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "将你的 *魔力 数量翻三倍。 NL 消耗 。"
+    "DESCRIPTION": "将你的 *魔力 数量翻倍。 NL 消耗 。"
   },
   "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "从抽牌堆膨胀",

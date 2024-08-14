@@ -10,7 +10,6 @@ import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ManaExpansion extends AbstractBaseCard {
@@ -32,9 +31,7 @@ public class ManaExpansion extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
-            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
-            this.initializeDescription();
+            this.upgradeBaseCost(0);
         }
     }
 

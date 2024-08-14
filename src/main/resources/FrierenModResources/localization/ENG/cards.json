@@ -616,8 +616,7 @@
   },
   "FrierenMod:ManaExpansion": {
     "NAME": "Mana Expansion",
-    "DESCRIPTION": "DOUBLE the amount of your *Mana . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "TRIPLE the amount of your *Mana . NL Exhaust."
+    "DESCRIPTION": "DOUBLE the amount of your *Mana . NL Exhaust."
   },
   "FrierenMod:DoubleManaInDrawPile": {
     "NAME": "Double From Draw Pile",
