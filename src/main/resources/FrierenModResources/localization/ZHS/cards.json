@@ -700,7 +700,7 @@
   },
   "FrierenMod:Recycle": {
     "NAME": "再循环",
-    "DESCRIPTION": "你的弃牌堆中每有!M!张 *魔力 ，将1张魔力放入抽牌堆。"
+    "DESCRIPTION": "将弃牌堆 *魔力 数量的 *魔力 放入抽牌堆。 NL 消耗 。"
   },
   "FrierenMod:AirSlash": {
     "NAME": "空气斩",
