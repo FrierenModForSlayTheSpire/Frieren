@@ -12,15 +12,12 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Perpetual extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Perpetual.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.SELF);
 
     public Perpetual() {
         super(info);
     }
 
-//    public Perpetual(CardColor color) {
-//        super(ID, 1, CardType.POWER, color, CardRarity.UNCOMMON, CardTarget.SELF);
-//    }
     @Override
     public void upgrade() {
         if (!this.upgraded) {

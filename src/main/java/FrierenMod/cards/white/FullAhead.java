@@ -11,15 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FullAhead extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FullAhead.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+    public static final CardInfo info = new CardInfo(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 
     public FullAhead() {
         super(info);
     }
-
-//    public FullAhead(CardColor color) {
-//        super(ID, 0, color, CardRarity.COMMON);
-//    }
 
     @Override
     public void initSpecifiedAttributes() {
