@@ -11,15 +11,11 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RingletForm extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RingletForm.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+    public static final CardInfo info = new CardInfo(ID, 3, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.RARE);
 
     public RingletForm() {
         super(info);
     }
-
-//    public RingletForm(CardColor color) {
-//        super(ID, 2, CardType.POWER, color, CardRarity.RARE);
-//    }
 
     @Override
     public void initSpecifiedAttributes() {
