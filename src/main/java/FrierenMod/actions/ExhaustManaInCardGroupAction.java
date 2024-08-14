@@ -26,7 +26,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     }
                     if (c instanceof Mana) {
                         counts++;
-                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile));
+                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.drawPile, true));
                     }
                 }
                 break;
@@ -37,7 +37,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     }
                     if (c instanceof Mana) {
                         counts++;
-                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand, true));
                     }
                 }
                 break;
@@ -48,7 +48,7 @@ public class ExhaustManaInCardGroupAction extends AbstractGameAction {
                     }
                     if (c instanceof Mana) {
                         counts++;
-                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile));
+                        this.addToTop(new ExhaustSpecificCardAction(c, AbstractDungeon.player.discardPile, true));
                     }
                 }
                 break;
