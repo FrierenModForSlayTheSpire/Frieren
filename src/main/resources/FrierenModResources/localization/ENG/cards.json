@@ -636,8 +636,8 @@
   },
   "FrierenMod:TimeConcept": {
     "NAME": "Time Concept of Elf",
-    "DESCRIPTION": "Send your everything 2 turns into the future.",
-    "UPGRADE_DESCRIPTION": "Send your everything 2 turns into the future, and frierenmod:world-line will change."
+    "DESCRIPTION": "Send your everything two turns into the future. Two Turns later, put a *Regret into your draw pile and hand.",
+    "UPGRADE_DESCRIPTION": "Send your everything two turns into the future. Two Turns later, put a *Regret into your draw pile."
   },
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",

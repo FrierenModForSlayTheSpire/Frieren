@@ -1,7 +1,10 @@
 package FrierenMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -12,14 +15,14 @@ public class MakeCardsAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> hand;
     private final ArrayList<AbstractCard> discardPile;
     private final ArrayList<AbstractCard> exhaustPile;
-    private boolean isChanged;
+    private boolean upgraded;
 
-    public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, boolean isChanged) {
+    public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, boolean upgraded) {
         this.drawPile = drawPile;
         this.hand = hand;
         this.discardPile = discardPile;
         this.exhaustPile = exhaustPile;
-        this.isChanged = isChanged;
+        this.upgraded = upgraded;
     }
 
     public MakeCardsAction(ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile) {
@@ -34,10 +37,7 @@ public class MakeCardsAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
         if (this.drawPile != null)
             for (AbstractCard c : this.drawPile) {
-                if (isChanged)
-                    p.drawPile.addToRandomSpot(c);
-                else
-                    p.drawPile.addToTop(c);
+                p.drawPile.addToTop(c);
                 c.unfadeOut();
                 c.lighten(true);
             }
@@ -59,6 +59,10 @@ public class MakeCardsAction extends AbstractGameAction {
                 c.unfadeOut();
                 c.lighten(true);
             }
+        AbstractCard card = new Regret();
+        if (!upgraded)
+            this.addToBot(new MakeTempCardInHandAction(card));
+        this.addToBot(new MakeTempCardInDrawPileAction(card, 1, true, true));
         this.isDone = true;
     }
 }

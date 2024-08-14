@@ -25,11 +25,11 @@ public class TimeTravelAction extends AbstractGameAction {
     private final ArrayList<AbstractCard> discardPile = new ArrayList<>();
     private final ArrayList<AbstractCard> exhaustPile = new ArrayList<>();
     private final ArrayList<AbstractCard> cardsPlayedThisTurn = new ArrayList<>();
-    private boolean isChanged = false;
+    private final boolean upgraded;
 
-    public TimeTravelAction(AbstractCard excludeCard, boolean isChanged) {
+    public TimeTravelAction(AbstractCard excludeCard, boolean upgraded) {
         this.excludeCard = excludeCard;
-        this.isChanged = isChanged;
+        this.upgraded = upgraded;
         this.init();
         int hp = AbstractDungeon.player.currentHealth;
         int maxHp = AbstractDungeon.player.maxHealth;
@@ -42,7 +42,7 @@ public class TimeTravelAction extends AbstractGameAction {
 
     @Override
     public void update() {
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TimeTravelPower(AbstractDungeon.player, status, isChanged)));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TimeTravelPower(AbstractDungeon.player, status, upgraded)));
         this.isDone = true;
     }
 

@@ -5,6 +5,7 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.curses.Regret;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -12,12 +13,16 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class TimeConcept extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(TimeConcept.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+
     public TimeConcept() {
         super(info);
     }
-//    public TimeConcept(CardColor color) {
-//        super(ID, 2, color, CardRarity.RARE);
-//    }
+
+    @Override
+    public void initSpecifiedAttributes() {
+        this.cardsToPreview = new Regret();
+    }
+
     @Override
     public void upgrade() {
         if (!this.upgraded) {
@@ -26,8 +31,9 @@ public class TimeConcept extends AbstractBaseCard {
             this.initializeDescription();
         }
     }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new TimeTravelAction(this,upgraded));
+        this.addToBot(new TimeTravelAction(this, upgraded));
     }
 }
