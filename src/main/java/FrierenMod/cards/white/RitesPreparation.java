@@ -19,14 +19,14 @@ public class RitesPreparation extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.magicNumber = baseMagicNumber = 4;
+        this.magicNumber = baseMagicNumber = 3;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
 

@@ -381,7 +381,7 @@
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "Preparation of Rites",
-    "DESCRIPTION": "The next !M! *Mana you frierenmod:Synchro will deal 6 damage to All enemies."
+    "DESCRIPTION": "The next !M! *Mana you frierenmod:Synchro will deal 5 damage to All enemies."
   },
   "FrierenMod:FireSpell": {
     "NAME": "Spell That Starts a Fire",

@@ -378,7 +378,7 @@
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "仪式的准备",
-    "DESCRIPTION": "下 !M! 次 frierenmod:同调 会对所有敌人造成6点伤害。"
+    "DESCRIPTION": "下 !M! 次 frierenmod:同调 会对所有敌人造成5点伤害。"
   },
   "FrierenMod:FireSpell": {
     "NAME": "放出火焰的魔法",

@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 
 public class RitesPreparationPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(RitesPreparationPower.class.getSimpleName());
+    private static final int DAMAGE = 5;
 
     public RitesPreparationPower(AbstractCreature owner, int amount) {
         super(POWER_ID, owner, amount, PowerType.BUFF);
@@ -23,7 +24,7 @@ public class RitesPreparationPower extends AbstractBasePower {
         if (card instanceof Mana) {
             this.flash();
             this.amount--;
-            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(6, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
+            this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(DAMAGE, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.SLASH_VERTICAL, true));
             this.updateDescription();
             if (this.amount <= 0)
                 this.addToBot(new RemoveSpecificPowerAction(owner, owner, this));
