@@ -9,6 +9,7 @@ import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
 import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.powers.WeakenedChantPower;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -92,7 +93,7 @@ public class CombatHelper {
     }
 
     public static boolean cannotPlayLegendarySpell() {
-        return getChantCardUsedThisTurn() == 0;
+        return getChantCardUsedThisTurn() == 0 && !Config.IN_DEV;
     }
 
     public static int getChantCardUsedThisTurn() {

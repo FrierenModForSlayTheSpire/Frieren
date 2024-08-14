@@ -15,6 +15,7 @@ public class OilSpellAction extends AbstractGameAction {
     public int[] damage;
 
     private int baseDamage;
+    private int secondBaseDamage;
 
     private boolean firstFrame = true, utilizeBaseDamage = false;
 
@@ -31,13 +32,10 @@ public class OilSpellAction extends AbstractGameAction {
         }
     }
 
-    public OilSpellAction(AbstractCreature source, int[] amount, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect) {
-        this(source, amount, type, effect, false);
-    }
-
-    public OilSpellAction(AbstractPlayer player, int baseDamage, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect) {
-        this(player, (int[]) null, type, effect, false);
+    public OilSpellAction(AbstractPlayer player, int baseDamage, DamageInfo.DamageType type, AbstractGameAction.AttackEffect effect,int secondBaseDamage) {
+        this(player, null, type, effect, false);
         this.baseDamage = baseDamage;
+        this.secondBaseDamage = secondBaseDamage;
         this.utilizeBaseDamage = true;
     }
 
@@ -84,8 +82,9 @@ public class OilSpellAction extends AbstractGameAction {
             if (again)
                 for (int i = 0; i < temp; i++) {
                     AbstractMonster target = AbstractDungeon.getCurrRoom().monsters.monsters.get(i);
+                    int[] secondDamage = DamageInfo.createDamageMatrix(secondBaseDamage);
                     if (!target.isDeadOrEscaped()) {
-                        target.damage(new DamageInfo(this.source, this.damage[i], this.damageType));
+                        target.damage(new DamageInfo(this.source, secondDamage[i], this.damageType));
                     }
                 }
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())

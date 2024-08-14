@@ -353,7 +353,7 @@
   },
   "FrierenMod:OilSpell": {
     "NAME": "清除顽固油渍的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !D! 点。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 对所有敌人造成 !D! 点伤害。 如果没有敌人死亡，则再造成 !M! 点。"
   },
   "FrierenMod:ApexMagic": {
     "NAME": "视觉攻击魔法",
