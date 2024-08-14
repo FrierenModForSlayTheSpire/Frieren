@@ -33,12 +33,16 @@ public class Famehameha extends AbstractBaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
+        int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
+        if (costForTurn > tmp)
+            this.setCostForTurn(tmp);
     }
 
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
+        int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
+        if (costForTurn > tmp)
+            this.setCostForTurn(tmp);
     }
 
     public void atTurnStart() {
@@ -61,10 +65,12 @@ public class Famehameha extends AbstractBaseCard {
     }
 
     public AbstractCard makeCopy() {
-        AbstractCard tmp = new Famehameha();
+        AbstractCard card = new Famehameha();
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            this.setCostForTurn(this.cost - CombatHelper.getContinualSynchroMaxTimes());
+            int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
+            if (costForTurn > tmp)
+                this.setCostForTurn(tmp);
         }
-        return tmp;
+        return card;
     }
 }
