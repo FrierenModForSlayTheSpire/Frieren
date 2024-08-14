@@ -40,7 +40,7 @@ public class OrdinaryOffensiveMagic extends DualCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(1);
         }
     }
 
