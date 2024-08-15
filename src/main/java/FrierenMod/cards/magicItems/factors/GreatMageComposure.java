@@ -11,7 +11,7 @@ public class GreatMageComposure extends AbstractMagicItem {
     public GreatMageComposure() {
         super(ID);
         loadRarity(MagicItemRarity.RARE);
-        this.manaNeedMultipleCoefficient = 3;
+        this.manaNeedMultipleCoefficient = 4;
     }
 
     @Override
