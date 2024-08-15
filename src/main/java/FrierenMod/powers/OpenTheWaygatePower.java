@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
@@ -29,7 +29,7 @@ public class OpenTheWaygatePower extends AbstractBasePower {
     }
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof Mana) {
+        if (card.hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
             this.flash();
             this.amount = this.originAmt - CombatHelper.getContinualSynchroTimes(card);
             this.updateDescription();

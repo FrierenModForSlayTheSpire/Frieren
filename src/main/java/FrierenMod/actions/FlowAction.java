@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -20,7 +20,7 @@ public class FlowAction extends AbstractGameAction {
                 if(counts >= this.magicNumber){
                     break;
                 }
-                if(c instanceof Mana){
+                if(c.hasTag(AbstractBaseCard.Enum.MANA)){
                     counts++;
                     this.addToBot(new DrawPileToDiscardPileAction(c));
                 }

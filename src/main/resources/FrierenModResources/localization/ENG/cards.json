@@ -189,9 +189,9 @@
   },
   "FrierenMod:PinchAndScrape": {
     "NAME": "Pinch And Scrape",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Synchro is FREE.",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Synchro don't Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, the next 2X times frierenmod:Synchro is FREE."
+      "Exhaust X *Mana in pile, the next 2X times frierenmod:Synchro don't Exhaust."
     ]
   },
   "FrierenMod:BluePrint": {

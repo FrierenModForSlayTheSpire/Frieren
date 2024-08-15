@@ -1,10 +1,7 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.ManaMod;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -15,75 +12,73 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 public class AccelerateFlowPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(AccelerateFlowPower.class.getSimpleName());
     private final AbstractPlayer p = AbstractDungeon.player;
+
     public AccelerateFlowPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
         this.updateDescription();
+        this.priority = 11;
     }
+
     @Override
     public void onInitialApplication() {
-        upgradeMana();
+        giveTags();
     }
+
     @Override
     public void onDrawOrDiscard() {
-        upgradeMana();
+        giveTags();
     }
+
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
-        upgradeMana();
+        giveTags();
     }
+
+    @Override
     public void atEndOfTurn(boolean isPlayer) {
-        degradeMana();
+        removeTags();
         this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
     }
 
     @Override
     public void onRemove() {
-        degradeMana();
+        removeTags();
     }
 
     public void updateDescription() {
         this.description = descriptions[0];
     }
-    private void upgradeManaInGroup(CardGroup cardGroup) {
+
+    private void giveCardTagsInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof Mana && !((AbstractBaseCard) c).isAccelMana){
-                if (((AbstractBaseCard) c).isLimitedOverMana) {
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER_ACCEL));
-                    c.applyPowers();
-                } else{
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.ACCEL));
-                    c.applyPowers();
+            if (c.hasTag(AbstractBaseCard.Enum.SYNCHRO) && !c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO)) {
+                if (cardGroup.type == CardGroup.CardGroupType.HAND) {
+                    c.superFlash();
                 }
+                c.tags.add(AbstractBaseCard.Enum.ACCEL_SYNCHRO);
             }
         }
     }
-    private void upgradeMana(){
-        upgradeManaInGroup(p.drawPile);
-        upgradeManaInGroup(p.hand);
-        upgradeManaInGroup(p.discardPile);
-        upgradeManaInGroup(p.exhaustPile);
+
+    private void giveTags() {
+        giveCardTagsInGroup(p.drawPile);
+        giveCardTagsInGroup(p.hand);
+        giveCardTagsInGroup(p.discardPile);
+        giveCardTagsInGroup(p.exhaustPile);
     }
-    private void degradeManaInGroup(CardGroup cardGroup){
+
+    private void removeCardTagsInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof Mana && ((AbstractBaseCard) c).isAccelMana){
-                if (((AbstractBaseCard) c).isLimitedOverMana) {
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER));
-                }else {
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.NORMAL));
-                }
+            if (c.hasTag(AbstractBaseCard.Enum.SYNCHRO) && c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO)) {
+                c.tags.remove(AbstractBaseCard.Enum.ACCEL_SYNCHRO);
             }
         }
     }
-    private void degradeMana(){
-        degradeManaInGroup(p.drawPile);
-        degradeManaInGroup(p.hand);
-        degradeManaInGroup(p.discardPile);
-        degradeManaInGroup(p.exhaustPile);
+
+    private void removeTags() {
+        removeCardTagsInGroup(p.drawPile);
+        removeCardTagsInGroup(p.hand);
+        removeCardTagsInGroup(p.discardPile);
+        removeCardTagsInGroup(p.exhaustPile);
     }
 }

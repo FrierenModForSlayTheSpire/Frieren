@@ -21,8 +21,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import java.util.ArrayList;
 
 public abstract class AbstractBaseCard extends CustomCard {
-    public boolean isLimitedOverMana;
-    public boolean isAccelMana;
     public int baseChantX = -1;
     public int chantX = -1;
     public boolean isChantXModified;
@@ -71,8 +69,6 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isMagicNumberModified = false;
         this.isRaidNumberModified = false;
         this.isChantXModified = false;
-        this.isLimitedOverMana = false;
-        this.isAccelMana = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
     }
@@ -141,8 +137,6 @@ public abstract class AbstractBaseCard extends CustomCard {
         card.misc = this.misc;
         card.freeToPlayOnce = this.freeToPlayOnce;
         if (card instanceof AbstractBaseCard) {
-            ((AbstractBaseCard) card).isLimitedOverMana = this.isLimitedOverMana;
-            ((AbstractBaseCard) card).isAccelMana = this.isAccelMana;
             ((AbstractBaseCard) card).baseChantX = this.baseChantX;
             ((AbstractBaseCard) card).chantX = this.chantX;
             ((AbstractBaseCard) card).isChantXModified = this.isChantXModified;
@@ -211,7 +205,15 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public static class Enum {
         @SpireEnum
+        public static AbstractCard.CardTags SYNCHRO;
+        @SpireEnum
+        public static AbstractCard.CardTags ACCEL_SYNCHRO;
+        @SpireEnum
+        public static AbstractCard.CardTags LIMIT_OVER_SYNCHRO;
+        @SpireEnum
         public static AbstractCard.CardTags CHANT;
+        @SpireEnum
+        public static AbstractCard.CardTags MANA;
         @SpireEnum
         public static AbstractCard.CardTags LEGENDARY_SPELL;
         @SpireEnum

@@ -1,6 +1,7 @@
 package FrierenMod.gameHelpers;
 
 import FrierenMod.actions.SealCardsAction;
+import FrierenMod.cardMods.SynchroMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.MagicDeckField;
@@ -13,7 +14,9 @@ import FrierenMod.utils.Log;
 import basemod.ReflectionHacks;
 import basemod.TopPanelGroup;
 import basemod.TopPanelItem;
+import basemod.helpers.CardModifierManager;
 import basemod.interfaces.*;
+import basemod.patches.com.megacrit.cardcrawl.core.CardCrawlGame.UpdateHooks;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
@@ -26,7 +29,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
 import java.util.ArrayList;
 
-public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber {
+public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber, PostUpdateSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -93,7 +96,7 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
         } else {
             RandomField2.addBlizzardMagicItemMod(10);
         }
-        if(Config.IN_DEV)
+        if (Config.IN_DEV)
             for (int i = 0; i < 50; i++) {
                 MagicItemReward.addMagicItemRewardToRoom();
             }
@@ -113,6 +116,39 @@ public class HookHelper implements OnPlayerTurnStartSubscriber, OnStartBattleSub
                 }
             if (!hasPanel)
                 items.add(new MagicDeckPanel());
+        }
+    }
+
+    @Override
+    public void receivePostUpdate() {
+        if (CombatHelper.isInCombat()) {
+            updateExistingCard();
+        }
+    }
+
+    public void updateExistingCard() {
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            modCard(c);
+        }
+        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+            modCard(c);
+        }
+        for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+            modCard(c);
+        }
+        for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
+            modCard(c);
+        }
+    }
+
+    private void modCard(AbstractCard card) {
+        if (card.hasTag(AbstractBaseCard.Enum.SYNCHRO) || card.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO) || card.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO)) {
+            if (!CardModifierManager.hasModifier(card, SynchroMod.ID))
+                CardModifierManager.addModifier(card, new SynchroMod());
+            else {
+                CardModifierManager.getModifiers(card, SynchroMod.ID).get(0).onInitialApplication(card);
+                card.initializeDescription();
+            }
         }
     }
 }

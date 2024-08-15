@@ -126,10 +126,19 @@
   },
   "FrierenMod:ManaMod": {
     "TEXT": [
-      " frierenmod:同调 。",
-      " frierenmod:加速同调 。",
-      " frierenmod:终极同调 。",
-      " frierenmod:终极加速同调 。"
+      " frierenmod:同调 ",
+      " frierenmod:加速同调 ",
+      " frierenmod:终极同调 ",
+      " frierenmod:终极加速同调 "
+    ]
+  },
+  "FrierenMod:SynchroMod": {
+    "TEXT": [
+      " frierenmod:同调 ",
+      " frierenmod:加速同调 ",
+      " frierenmod:终极同调 ",
+      " frierenmod:终极加速同调 ",
+      "。"
     ]
   },
   "FrierenMod:ManaPanel": {

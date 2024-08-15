@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -22,7 +22,7 @@ public class ReplaceManaAction extends AbstractGameAction {
     public void update() {
         int i = 0;
         for (AbstractCard c : p.drawPile.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 if (i >= amt) {
                     this.isDone = true;
                     return;
@@ -33,7 +33,7 @@ public class ReplaceManaAction extends AbstractGameAction {
             }
         }
         for (AbstractCard c : p.discardPile.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 if (i >= amt) {
                     this.isDone = true;
                     return;

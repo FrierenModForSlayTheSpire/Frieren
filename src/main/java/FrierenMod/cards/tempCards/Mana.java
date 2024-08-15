@@ -1,8 +1,6 @@
 package FrierenMod.cards.tempCards;
 
-import FrierenMod.actions.ManaAction;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.powers.SynchroWithoutManaPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
@@ -15,7 +13,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireOverride;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -31,13 +28,8 @@ public class Mana extends AbstractBaseCard {
 
     @Override
     public void initSpecifiedAttributes() {
-        this.exhaust = true;
-    }
-
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        this.exhaust = !AbstractDungeon.player.hasPower(SynchroWithoutManaPower.POWER_ID);
+        this.tags.add(Enum.SYNCHRO);
+        this.tags.add(Enum.MANA);
     }
 
     @Override
@@ -45,21 +37,10 @@ public class Mana extends AbstractBaseCard {
         return false;
     }
 
-    @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ManaAction(Type.NORMAL));
-    }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         return true;
-    }
-
-    public enum Type {
-        NORMAL,
-        ACCEL,
-        LIMITED_OVER,
-        LIMITED_OVER_ACCEL
     }
 
     @SpireOverride

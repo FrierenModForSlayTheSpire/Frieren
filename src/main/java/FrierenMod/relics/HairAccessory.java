@@ -1,6 +1,6 @@
 package FrierenMod.relics;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -27,7 +27,7 @@ public class HairAccessory extends AbstractBaseRelic {
     }
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if(card instanceof Mana){
+        if(card.hasTag(AbstractBaseCard.Enum.SYNCHRO)){
             this.counter++;
             if (this.counter >= 4) {
                 this.counter = 0;

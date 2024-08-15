@@ -3,7 +3,6 @@ package FrierenMod.gameHelpers;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.BluePrint;
-import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
@@ -27,7 +26,7 @@ public class CombatHelper {
     public static int getManaNumInDrawPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 counts++;
             }
         }
@@ -37,7 +36,7 @@ public class CombatHelper {
     public static int getManaNumInHand() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 counts++;
             }
         }
@@ -47,7 +46,7 @@ public class CombatHelper {
     public static int getManaNumInDiscardPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 counts++;
             }
         }
@@ -57,7 +56,7 @@ public class CombatHelper {
     public static int getManaNumInExhaustPile() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.player.exhaustPile.group) {
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 counts++;
             }
         }
@@ -125,13 +124,21 @@ public class CombatHelper {
         return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
     }
 
+    public static int getSynchroTimesThisTurn(){
+        int counts = 0;
+        for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
+            if(c.hasTag(AbstractBaseCard.Enum.SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO))
+                counts++;
+        }
+        return counts;
+    }
     public static int getContinualSynchroTimes(AbstractCard card) {
         ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         int counts = 0;
         for (int i = 0; i < cardsPlayedThisTurn.size(); i++) {
             if (cardsPlayedThisTurn.get(i).uuid.equals(card.uuid)) {
                 for (int j = i; j >= 0; j--) {
-                    if (cardsPlayedThisTurn.get(j) instanceof Mana) {
+                    if (cardsPlayedThisTurn.get(j).hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
                         counts++;
                     } else
                         break;
@@ -146,10 +153,10 @@ public class CombatHelper {
         int max = 0;
         ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         for (int i = 0; i < cardsPlayedThisTurn.size(); i++) {
-            if (cardsPlayedThisTurn.get(i) instanceof Mana) {
+            if (cardsPlayedThisTurn.get(i).hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
                 int counts = 0;
                 for (int j = i; j < cardsPlayedThisTurn.size(); j++) {
-                    if (cardsPlayedThisTurn.get(j) instanceof Mana)
+                    if (cardsPlayedThisTurn.get(j).hasTag(AbstractBaseCard.Enum.SYNCHRO))
                         counts++;
                     else
                         break;

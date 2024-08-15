@@ -10,7 +10,7 @@
     "NAME": "菲伦的发饰",
     "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
     "DESCRIPTIONS": [
-      "你每 #y同调 #b4 张 #y魔力 ，抽 #b1 张牌。"
+      "你每 #y同调 #b4 次 ，抽 #b1 张牌。"
     ]
   },
   "FrierenMod:MercuryPudding": {

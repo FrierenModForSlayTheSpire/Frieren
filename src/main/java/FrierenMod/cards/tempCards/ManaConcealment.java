@@ -29,7 +29,7 @@ public class ManaConcealment extends AbstractBaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         ActionHelper.addToBotAbstract(() -> {
             for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
-                if (c instanceof Mana) {
+                if (c.hasTag(Enum.MANA)) {
                     this.addToBot(new DrawPileToDiscardPileAction(c));
                 }
             }

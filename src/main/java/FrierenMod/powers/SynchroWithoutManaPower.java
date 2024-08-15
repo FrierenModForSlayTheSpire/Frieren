@@ -1,11 +1,11 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SynchroWithoutManaPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(SynchroWithoutManaPower.class.getSimpleName());
@@ -15,10 +15,12 @@ public class SynchroWithoutManaPower extends AbstractBasePower {
         this.updateDescription();
     }
 
-    public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof Mana) {
+    @Override
+    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+        if (card.hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
             this.flash();
             this.amount--;
+            card.exhaust = false;
             this.updateDescription();
             if (this.amount <= 0)
                 this.addToBot(new RemoveSpecificPowerAction(owner, owner, this));

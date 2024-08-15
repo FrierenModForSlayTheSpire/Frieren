@@ -187,9 +187,9 @@
   },
   "FrierenMod:PinchAndScrape": {
     "NAME": "省吃俭用",
-    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:同调 不 消耗 *魔力 。",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，下 !SM! 次 frierenmod:同调 不再 消耗 。",
     "EXTENDED_DESCRIPTION": [
-      " 消耗 牌堆中X张 *魔力 ，下2X次 frierenmod:同调 不 消耗 *魔力 。"
+      " 消耗 牌堆中X张 *魔力 ，下2X次 frierenmod:同调 不再 消耗 。"
     ]
   },
   "FrierenMod:BluePrint": {

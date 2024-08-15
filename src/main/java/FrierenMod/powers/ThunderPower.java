@@ -1,10 +1,7 @@
 package FrierenMod.powers;
 
-import FrierenMod.cardMods.ManaMod;
 import FrierenMod.cards.AbstractBaseCard;
-import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.utils.ModInformation;
-import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -18,49 +15,49 @@ public class ThunderPower extends AbstractBasePower {
     public ThunderPower(AbstractCreature owner) {
         super(POWER_ID, owner, PowerType.BUFF);
         this.updateDescription();
+        this.priority = 11;
     }
+
     @Override
     public void onInitialApplication() {
-        upgradeMana();
+        giveTags();
     }
+
     @Override
     public void onDrawOrDiscard() {
-        upgradeMana();
+        giveTags();
     }
+
     @Override
     public void atStartOfTurnPostDraw() {
-        upgradeMana();
+        giveTags();
     }
+
     @Override
     public void onAfterCardPlayed(AbstractCard usedCard) {
-        upgradeMana();
+        giveTags();
     }
+
     public void updateDescription() {
         this.description = descriptions[0];
     }
-    private void upgradeManaInGroup(CardGroup cardGroup) {
+
+    private void giveCardTagsInGroup(CardGroup cardGroup) {
         for (AbstractCard c : cardGroup.group) {
-            if(c instanceof Mana && !((AbstractBaseCard) c).isLimitedOverMana){
-                if (((AbstractBaseCard) c).isAccelMana) {
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER_ACCEL));
-                    c.applyPowers();
-                } else{
-                    if (cardGroup.type == CardGroup.CardGroupType.HAND) {
-                        c.superFlash();
-                    }
-                    CardModifierManager.addModifier(c, new ManaMod(Mana.Type.LIMITED_OVER));
-                    c.applyPowers();
+            if (c.hasTag(AbstractBaseCard.Enum.SYNCHRO) && !c.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO)) {
+                c.tags.add(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO);
+                if (cardGroup.type == CardGroup.CardGroupType.HAND) {
+                    c.superFlash();
                 }
             }
         }
     }
-    public void upgradeMana(){
-        upgradeManaInGroup(p.drawPile);
-        upgradeManaInGroup(p.hand);
-        upgradeManaInGroup(p.discardPile);
-        upgradeManaInGroup(p.exhaustPile);
+
+    public void giveTags() {
+        giveCardTagsInGroup(p.drawPile);
+        giveCardTagsInGroup(p.hand);
+        giveCardTagsInGroup(p.discardPile);
+        giveCardTagsInGroup(p.exhaustPile);
     }
+
 }

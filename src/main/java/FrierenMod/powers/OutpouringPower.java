@@ -1,6 +1,6 @@
 package FrierenMod.powers;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -19,7 +19,7 @@ public class OutpouringPower extends AbstractBasePower {
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card instanceof Mana) {
+        if (card.hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
             this.flash();
             this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, 1), this.amount));
         }
