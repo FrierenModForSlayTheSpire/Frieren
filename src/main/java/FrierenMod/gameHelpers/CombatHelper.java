@@ -89,7 +89,7 @@ public class CombatHelper {
                 Log.logger.info("NO SUCH SLOT NUMBER: {}", slotNumber);
                 break;
         }
-        return getChantChoices() != null && getChantChoices()[slotNumber] != null && (getManaNeed(chantX, getChantChoices()[slotNumber])) <= manaNum;
+        return getChantChoices() != null && getChantChoices()[slotNumber] != null && (getManaNeedBeforeLoaded(chantX, getChantChoices()[slotNumber])) <= manaNum;
     }
 
     public static boolean cannotPlayLegendarySpell() {
@@ -187,7 +187,12 @@ public class CombatHelper {
         return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
-    public static int getManaNeed(int chantX, AbstractMagicItem f) {
+    public static int getManaNeedBeforeLoaded(int chantX, AbstractMagicItem f) {
+        int baseManaNeed = chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient;
+        return Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
+    }
+
+    public static int getManaNeedWhenLoading(int chantX, AbstractMagicItem f) {
         int baseManaNeed = chantX * f.manaNeedMultipleCoefficient + f.manaNeedAddCoefficient;
         if (AbstractDungeon.player.hasPower(ChantWithoutManaPower.POWER_ID))
             return 0;

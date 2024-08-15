@@ -133,7 +133,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
 
     public void loadMagicFactor(int chantX) {
         int reward = chantX * this.rewardMultipleCoefficient + this.rewardAddCoefficient;
-        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeed(chantX, this);
+        this.magicNumber = this.baseMagicNumber = CombatHelper.getManaNeedWhenLoading(chantX, this);
         this.block = this.baseBlock = reward;
         this.applyPowers();
         this.secondMagicNumber = this.baseSecondMagicNumber = reward;
