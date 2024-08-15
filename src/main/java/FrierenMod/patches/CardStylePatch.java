@@ -2,7 +2,7 @@ package FrierenMod.patches;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.white.HighDensityMana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.utils.FrierenRes;
@@ -39,7 +39,7 @@ public class CardStylePatch {
         @SpireInsertPatch(rloc = 0, localvars = {"sb"})
         public static SpireReturn<Void> Insert(SingleCardViewPopup _inst, SpriteBatch sb) {
             AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
-            if (c instanceof Mana) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
                 FontHelper.renderFontCentered(sb, FontHelper.panelNameFont, TEXT[0], (float) Settings.WIDTH / 2.0F + 3.0F * Settings.scale, (float) Settings.HEIGHT / 2.0F - 40.0F * Settings.scale, ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "CARD_TYPE_COLOR"));
                 return SpireReturn.Return();
             }
@@ -61,7 +61,7 @@ public class CardStylePatch {
         @SpirePrefixPatch
         public static SpireReturn<TextureAtlas.AtlasRegion> Insert(SingleCardViewPopup _inst) {
             AbstractCard c = ReflectionHacks.getPrivate(_inst, SingleCardViewPopup.class, "card");
-            if (c instanceof Mana || (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP))
+            if (c.hasTag(AbstractBaseCard.Enum.MANA) || (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity != AbstractMagicItem.MagicItemRarity.PROP))
                 return SpireReturn.Return(MANA_TEXTURE_IMG);
             if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).magicItemRarity == AbstractMagicItem.MagicItemRarity.PROP)
                 return SpireReturn.Return(ImageMaster.CARD_SKILL_BG_GRAY_L);
@@ -103,6 +103,16 @@ public class CardStylePatch {
             if (img != null) {
                 sb.draw(img, x + img.offsetX - (float) img.originalWidth / 2.0F, y + img.offsetY - (float) img.originalHeight / 2.0F, (float) img.originalWidth / 2.0F - img.offsetX, (float) img.originalHeight / 2.0F - img.offsetY, (float) img.packedWidth, (float) img.packedHeight, Settings.scale, Settings.scale, 0.0F);
             }
+        }
+    }
+    @SpirePatch(clz = SingleCardViewPopup.class, method = "allowUpgradePreview")
+    public static class PatchAllowUpgradePreview {
+        public static SpireReturn<Boolean> Prefix(SingleCardViewPopup _inst){
+            AbstractCard card = ReflectionHacks.getPrivate(_inst,SingleCardViewPopup.class,"card");
+            if(card instanceof HighDensityMana){
+                return SpireReturn.Return(true);
+            }
+            return SpireReturn.Continue();
         }
     }
 

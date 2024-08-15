@@ -4,6 +4,7 @@ import FrierenMod.cards.tempCards.CustomLegendarySpell;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import FrierenMod.utils.PublicRes;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
@@ -16,6 +17,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
@@ -40,6 +42,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public ArrayList<TooltipInfo> tips = new ArrayList<>();
     public static final String[] cantUseTEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("cantUseMessage")).TEXT;
     protected static final String[] typeTEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("CardStyleText")).TEXT;
+    protected static final TextureAtlas.AtlasRegion MANA_TEXTURE_IMG = getImg(ImageMaster.loadImage(PublicRes.BG_MANA_512));
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
@@ -200,7 +203,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterChantFinished() {
     }
 
-    public void afterSynchroFinished() {
+    public void afterSynchroFinished(AbstractCard card) {
     }
 
     public static class Enum {

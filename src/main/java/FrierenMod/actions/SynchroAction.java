@@ -30,6 +30,7 @@ public class SynchroAction extends AbstractGameAction {
         } else if (card.hasTag(AbstractBaseCard.Enum.SYNCHRO)) {
             this.addToBot(new DrawCardAction(1));
         }
+        this.triggerCardsInGroup(AbstractDungeon.player.drawPile);
         this.triggerCardsInGroup(AbstractDungeon.player.discardPile);
         this.isDone = true;
     }
@@ -37,7 +38,7 @@ public class SynchroAction extends AbstractGameAction {
     private void triggerCardsInGroup(CardGroup group) {
         for (AbstractCard c : group.group)
             if (c instanceof AbstractBaseCard) {
-                ((AbstractBaseCard) c).afterSynchroFinished();
+                ((AbstractBaseCard) c).afterSynchroFinished(card);
             }
     }
 }

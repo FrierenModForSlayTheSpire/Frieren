@@ -9,6 +9,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -49,7 +50,7 @@ public class LittleFire extends AbstractBaseCard {
     }
 
     @Override
-    public void afterSynchroFinished() {
+    public void afterSynchroFinished(AbstractCard card) {
         this.addToBot(new DiscardToHandAction(this));
     }
 }

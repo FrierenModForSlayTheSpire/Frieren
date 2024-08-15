@@ -823,6 +823,11 @@
       " NL (%d times)"
     ]
   },
+  "FrierenMod:HighDensityMana": {
+    "NAME": "High Density Mana",
+    "DESCRIPTION": "After frierenmod:Synchro CONTINUALLY for 3 times in one turn, put this from draw pile to hand. NL Gain [E] when Exhausted. NL frierenmod:Synchro .",
+    "UPGRADE_DESCRIPTION": "After frierenmod:Synchro CONTINUALLY for 3 times in one turn, put this from draw pile to hand. NL Gain [E] [E] when Exhausted. NL frierenmod:Synchro ."
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."
