@@ -199,6 +199,20 @@
       " frierenmod:咏唱 时始终复制下一 frierenmod:槽位 的 *魔法因子 。"
     ]
   },
+  "FrierenMod:BloodSpell": {
+    "NAME": "他山之石：驭血魔法",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，失去 !SM! 点生命。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X-2张 *魔力 ，失去X+2点生命。"
+    ]
+  },
+  "FrierenMod:BigFire": {
+    "NAME": "大大火灾",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，将 !SM! 张 *小小火花 放入 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 。",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中2X张 *魔力 ，将X张 *小小火花 放入牌堆。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "谜题: ！？？",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ？|2= ？} ",
