@@ -5,6 +5,7 @@ target/
 !**/src/test/**/target/
 pom.xml
 /dependency-reduced-pom.xml
+VFX/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml
