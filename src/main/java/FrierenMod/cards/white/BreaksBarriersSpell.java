@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BreaksBarriersSpell extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(BreaksBarriersSpell.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.RARE);
+    public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 
     public BreaksBarriersSpell() {
         super(info);
