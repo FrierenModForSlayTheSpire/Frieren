@@ -47,12 +47,6 @@ public class FrushDownPower extends AbstractBasePower {
         this.updateDescription();
     }
 
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        this.counts = REST_AMT;
-        this.updateDescription();
-    }
-
     public void updateDescription() {
         this.description = String.format(descriptions[0], counts, amount, amount);
     }

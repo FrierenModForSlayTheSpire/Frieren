@@ -841,11 +841,11 @@
   },
   "FrierenMod:PaperPlaneSpell": {
     "NAME": "让纸飞机飞得很远的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 一回合中连续 frierenmod:同调 4次后，下1次攻击造成的伤害翻倍。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 每连续 frierenmod:同调 4次，下1次攻击造成的伤害翻倍。"
   },
   "FrierenMod:FrushDown": {
     "NAME": "猛芙下山",
-    "DESCRIPTION": "一回合中连续 frierenmod:同调 2次后，抽 !M! 张牌并丢弃手中最左边的 !M! 张牌。"
+    "DESCRIPTION": "每连续 frierenmod:同调 2次，抽 !M! 张牌并丢弃手中最左边的 !M! 张牌。"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",

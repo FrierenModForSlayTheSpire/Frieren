@@ -55,12 +55,6 @@ public class PaperPlaneSpellPower extends TwoAmountPower {
         this.updateDescription();
     }
 
-    @Override
-    public void atEndOfTurn(boolean isPlayer) {
-        this.amount = REST_AMT;
-        this.updateDescription();
-    }
-
     public void updateDescription() {
         this.description = String.format(descriptions[0], amount2, amount, delta);
     }

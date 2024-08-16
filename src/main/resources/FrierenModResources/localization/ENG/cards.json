@@ -844,11 +844,11 @@
   },
   "FrierenMod:PaperPlaneSpell": {
     "NAME": "Spell that makes paper plane fly further",
-    "DESCRIPTION": "frierenmod:Legendary_Spell. NL After frierenmod:Synchro 5 times CONTINUALLY in one turn, your next Attack deals double damage."
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Every 4 times CONTINUAL frierenmod:Synchro make your next Attack deals double damage."
   },
   "FrierenMod:FrushDown": {
     "NAME": "Frush Down",
-    "DESCRIPTION": "After frierenmod:Synchro 2 times CONTINUALLY in one turn, draw !M! cards and discard !M! cards from the far left in your hand."
+    "DESCRIPTION": "After every 2 times CONTINUAL frierenmod:Synchro, draw !M! cards and discard !M! cards from the far left in your hand."
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
