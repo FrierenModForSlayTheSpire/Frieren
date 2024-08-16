@@ -18,6 +18,11 @@ public class PaperPlaneSpell extends AbstractBaseCard {
     }
 
     @Override
+    public void initSpecifiedAttributes() {
+        this.tags.add(Enum.LEGENDARY_SPELL);
+    }
+
+    @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
