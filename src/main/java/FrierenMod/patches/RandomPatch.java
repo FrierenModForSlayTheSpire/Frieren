@@ -1,6 +1,6 @@
 package FrierenMod.patches;
 
-import FrierenMod.cards.tempCards.Mana;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.gameHelpers.SaveFileHelper;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;
@@ -65,7 +65,7 @@ public class RandomPatch {
     public static class PatchAddToRandomSpot {
         @SpireInsertPatch(rloc = 0,localvars = {"c"})
         public static SpireReturn<Void> Insert(CardGroup _inst, AbstractCard c){
-            if(c instanceof Mana){
+            if(c.hasTag(AbstractBaseCard.Enum.MANA)){
                 if (_inst.group.isEmpty())
                     _inst.group.add(c);
                 else
