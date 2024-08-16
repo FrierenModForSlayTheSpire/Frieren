@@ -206,5 +206,11 @@
     "DESCRIPTIONS": [
       "...Monster..."
     ]
+  },
+  "FrierenMod:PaperPlaneSpellPower": {
+    "NAME": "Spell that makes paper plane fly further",
+    "DESCRIPTIONS": [
+      "Your next #b%d times #yAttack deals double damage. NL #ySynchro #b%d times CONTINUALLY to increase #b%d times."
+    ]
   }
 }

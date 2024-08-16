@@ -207,6 +207,12 @@
       "...怪物..."
     ]
   },
+  "FrierenMod:PaperPlaneSpellPower": {
+    "NAME": "让纸飞机飞得很远的魔法",
+    "DESCRIPTIONS": [
+      "下 #b%d 次攻击伤害翻倍。 NL 再连续 #y同调 #b%d 次后 增加 #b%d 翻倍次数。"
+    ]
+  },
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [

@@ -44,7 +44,7 @@ public abstract class AbstractBasePower extends AbstractPower {
         this.type = PowerType.BUFF;
     }
 
-    private static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
+    public static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
         if(ResourceChecker.exist( ModInformation.makePowerPath(id.split(":")[1], size))){
             return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ModInformation.makePowerPath(id.split(":")[1], size)), 0, 0, size, size);
         }

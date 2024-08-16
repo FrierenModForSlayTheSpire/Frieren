@@ -825,6 +825,10 @@
     "DESCRIPTION": "一回合中连续 frierenmod:同调 3次后，将此牌从抽牌堆加入手牌。 NL 被 消耗 时，获得 [E] 。 NL frierenmod:同调 。",
     "UPGRADE_DESCRIPTION": "一回合中连续 frierenmod:同调 3次后，将此牌从抽牌堆加入手牌。 NL 被 消耗 时，获得 [E] [E] 。 NL frierenmod:同调 。"
   },
+  "FrierenMod:PaperPlaneSpell": {
+    "NAME": "让纸飞机飞得很远的魔法",
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 一回合中连续 frierenmod:同调 4次后，下1次攻击造成的伤害翻倍并重置该能力计数。"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL 每 frierenmod:同调 一次，交换你的抽牌堆和弃牌堆并失去2点生命。"
