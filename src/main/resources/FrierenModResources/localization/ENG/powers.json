@@ -212,5 +212,11 @@
     "DESCRIPTIONS": [
       "Your next #b%d times #yAttack deals double damage. NL #ySynchro #b%d times CONTINUALLY to increase #b%d times."
     ]
+  },
+  "FrierenMod:FrushDownPower": {
+    "NAME": "Frush Down",
+    "DESCRIPTIONS": [
+      "After #ySynchro #b%d times CONTINUALLY in one turn, draw #b%d cards and discard #b%d cards from the far left in your hand."
+    ]
   }
 }

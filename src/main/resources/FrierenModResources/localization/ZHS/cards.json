@@ -843,6 +843,10 @@
     "NAME": "让纸飞机飞得很远的魔法",
     "DESCRIPTION": " frierenmod:传说魔法 。 NL 一回合中连续 frierenmod:同调 4次后，下1次攻击造成的伤害翻倍并重置该能力计数。"
   },
+  "FrierenMod:FrushDown": {
+    "NAME": "猛芙下山",
+    "DESCRIPTION": "一回合中连续 frierenmod:同调 2次后，抽 !M! 张牌并丢弃手中最左边的 !M! 张牌。"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL 每 frierenmod:同调 一次，交换你的抽牌堆和弃牌堆并失去2点生命。"

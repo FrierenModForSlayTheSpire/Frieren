@@ -213,6 +213,12 @@
       "下 #b%d 次攻击伤害翻倍。 NL 再连续 #y同调 #b%d 次后 增加 #b%d 翻倍次数。"
     ]
   },
+  "FrierenMod:FrushDownPower": {
+    "NAME": "猛芙下山",
+    "DESCRIPTIONS": [
+      "连续 #y同调 #b%d 次后，抽 #b%d 张牌并丢弃手中最左边的 #b%d 张牌。"
+    ]
+  },
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [

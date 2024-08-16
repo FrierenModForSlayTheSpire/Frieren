@@ -846,6 +846,10 @@
     "NAME": "Spell that makes paper plane fly further",
     "DESCRIPTION": "frierenmod:Legendary_Spell. NL After frierenmod:Synchro 5 times CONTINUALLY in one turn, your next Attack deals double damage and rest the counter."
   },
+  "FrierenMod:FrushDown": {
+    "NAME": "Frush Down",
+    "DESCRIPTION": "After frierenmod:Synchro 2 times CONTINUALLY in one turn, draw !M! cards and discard !M! cards from the far left in your hand."
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."
