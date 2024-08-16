@@ -841,7 +841,7 @@
   },
   "FrierenMod:PaperPlaneSpell": {
     "NAME": "让纸飞机飞得很远的魔法",
-    "DESCRIPTION": " frierenmod:传说魔法 。 NL 一回合中连续 frierenmod:同调 4次后，下1次攻击造成的伤害翻倍并重置该能力计数。"
+    "DESCRIPTION": " frierenmod:传说魔法 。 NL 一回合中连续 frierenmod:同调 4次后，下1次攻击造成的伤害翻倍。"
   },
   "FrierenMod:FrushDown": {
     "NAME": "猛芙下山",
