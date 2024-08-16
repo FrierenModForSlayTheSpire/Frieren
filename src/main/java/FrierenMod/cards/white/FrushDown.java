@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FrushDown extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FrushDown.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
 
     public FrushDown() {
         super(info);

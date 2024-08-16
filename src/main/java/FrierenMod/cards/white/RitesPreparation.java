@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class RitesPreparation extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RitesPreparation.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
 
     public RitesPreparation() {
         super(info);
