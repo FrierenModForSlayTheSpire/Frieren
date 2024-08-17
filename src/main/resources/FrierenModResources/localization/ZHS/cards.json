@@ -213,6 +213,13 @@
       " 消耗 牌堆中2X张 *魔力 ，将X张 *小小火花 放入牌堆。"
     ]
   },
+  "FrierenMod:FloatingSpell": {
+    "NAME": "让物体漂浮的魔法",
+    "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，使{!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆顶|1= 手牌最左侧|2= 弃牌堆顶} !SM! 张牌获得 frierenmod:同调 。 ",
+    "EXTENDED_DESCRIPTION": [
+      " 消耗 牌堆中X张 *魔力 ，使牌堆顶的X张非 *魔力 牌获得 frierenmod:同调 。"
+    ]
+  },
   "FrierenMod:Factor100": {
     "NAME": "谜题: ！？？",
     "DESCRIPTION": "{@@} 消耗 {!frierenmod:SlotNumber!|-1= Error|0= 抽牌堆|1= 手牌|2= 弃牌堆} 中 !M! 张 *魔力 ，{@@}{!frierenmod:SlotNumber!|-1= Error|0= ！|1= ？|2= ？} ",
