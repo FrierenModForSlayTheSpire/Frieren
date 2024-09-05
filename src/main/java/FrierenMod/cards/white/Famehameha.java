@@ -1,5 +1,6 @@
 package FrierenMod.cards.white;
 
+import FrierenMod.actions.ModifyCostAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
@@ -18,7 +19,7 @@ import com.megacrit.cardcrawl.vfx.combat.MindblastEffect;
 
 public class Famehameha extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Famehameha.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 5, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 4, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
     public Famehameha() {
         super(info);
@@ -27,22 +28,17 @@ public class Famehameha extends AbstractBaseCard {
     @Override
     public void initSpecifiedAttributes() {
         this.damage = this.baseDamage = 31;
-        this.tags.add(AbstractBaseCard.Enum.COST_REST);
+        this.tags.add(Enum.LEGENDARY_SPELL);
+        this.tags.add(Enum.COST_REST);
     }
 
-    @Override
-    public void applyPowers() {
-        super.applyPowers();
-        int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
-        if (costForTurn > tmp)
-            this.setCostForTurn(tmp);
+    public void afterChant() {
+        this.addToBot(new ModifyCostAction(this.uuid, -1));
     }
 
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
-        if (costForTurn > tmp)
-            this.setCostForTurn(tmp);
+        this.setCostForTurn(this.cost - CombatHelper.getChantCardUsedThisTurn());
     }
 
     public void atTurnStart() {
@@ -65,12 +61,10 @@ public class Famehameha extends AbstractBaseCard {
     }
 
     public AbstractCard makeCopy() {
-        AbstractCard card = new Famehameha();
+        AbstractCard tmp = new Famehameha();
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            int tmp = Math.max(this.cost - CombatHelper.getContinualSynchroMaxTimes(), 0);
-            if (costForTurn > tmp)
-                this.setCostForTurn(tmp);
+            this.setCostForTurn(this.cost - CombatHelper.getChantCardUsedThisTurn());
         }
-        return card;
+        return tmp;
     }
 }
