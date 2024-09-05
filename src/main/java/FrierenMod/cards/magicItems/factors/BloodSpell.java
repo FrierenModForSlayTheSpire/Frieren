@@ -2,8 +2,10 @@ package FrierenMod.cards.magicItems.factors;
 
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.utils.ModInformation;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 
+@AutoAdd.Ignore
 public class BloodSpell extends AbstractMagicItem {
     public static final String ID = ModInformation.makeID(BloodSpell.class.getSimpleName());
 
