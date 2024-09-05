@@ -34,7 +34,7 @@ public class ConfigPanel extends ModPanel {
         properties.setProperty("ENCOUNTER_SPIEGEL", Boolean.toString(Config.ENCOUNTER_SPIEGEL));
         properties.setProperty("REMOVE_TIME_EATER", Boolean.toString(Config.REMOVE_TIME_EATER));
         try {
-            return new SpireConfig(ModInformation.MOD_NAME, "config", properties);
+            return new SpireConfig(ModInformation.MOD_NAME, "frierenmod_config", properties);
         } catch (Exception e) {
             return null;
         }

@@ -7,6 +7,6 @@ public class Config {
     public static boolean REMOVE_VELVET_CHOKER = true;
     public static boolean REMOVE_DEAD_BRANCH = true;
     public static boolean REMOVE_STRANGE_SPOON = true;
-    public static boolean ENCOUNTER_SPIEGEL = false;
+    public static boolean ENCOUNTER_SPIEGEL = true;
     public static boolean REMOVE_TIME_EATER = true;
 }
