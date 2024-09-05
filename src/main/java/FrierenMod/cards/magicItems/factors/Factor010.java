@@ -14,7 +14,6 @@ public class Factor010 extends AbstractMagicItem {
         this.manaNeedMultipleCoefficient = 2;
         this.manaNeedAddCoefficient = 2;
         this.tags.add(Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT);
-        this.tags.add(Enum.LESS_CHANCE_TO_MEET);
     }
 
     @Override
