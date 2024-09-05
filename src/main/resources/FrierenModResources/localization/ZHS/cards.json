@@ -334,10 +334,8 @@
   },
   "FrierenMod:Outpouring": {
     "NAME": "倾泻",
-    "DESCRIPTION": "获得本回合内最高连续 frierenmod:同调 次数的 力量 。",
-    "UPGRADE_DESCRIPTION": " 保留 。 NL 获得本回合内最高连续 frierenmod:同调 次数的 力量 。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （获得%d点）"]
+    "DESCRIPTION": "打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。打出此牌后，你在本回合内每 frierenmod:同调 一张 *魔力，获得 !M! 点 力量 。 NL  消耗 。"
   },
   "FrierenMod:ContinualChant": {
     "NAME": "连环咏唱",

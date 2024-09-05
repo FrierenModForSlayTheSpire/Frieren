@@ -329,10 +329,8 @@
   },
   "FrierenMod:Outpouring": {
     "NAME": "Outpouring",
-    "DESCRIPTION": "Gain Strength as the amount of the max times you frierenmod:Synchro CONTINUALLY this turn.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Gain Strength as the amount of the max times you frierenmod:Synchro CONTINUALLY this turn.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Gain %d Strength)"]
+    "DESCRIPTION": "Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Whenever you frierenmod:Synchro a *Mana this turn, gain !M! Strength. NL Exhaust."
   },
   "FrierenMod:ContinualChant": {
     "NAME": "Continual Chant",
