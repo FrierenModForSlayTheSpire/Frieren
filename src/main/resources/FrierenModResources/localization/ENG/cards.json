@@ -705,7 +705,7 @@
   },
   "FrierenMod:OpenTheWaygate": {
     "NAME": "Open The Waygate",
-    "DESCRIPTION": "After frierenmod:Synchro !M! times CONTINUALLY in one turn, take an extra turn after this one, end your turn and remove this power."
+    "DESCRIPTION": "After frierenmod:Synchro !M! times CONTINUALLY in one turn, take an extra turn after this one and remove this power."
   },
   "FrierenMod:GrandCross": {
     "NAME": "Grand Cross",

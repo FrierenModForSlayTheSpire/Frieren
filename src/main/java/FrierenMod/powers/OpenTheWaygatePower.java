@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.actions.watcher.PressEndTurnButtonAction;
 import com.megacrit.cardcrawl.actions.watcher.SkipEnemiesTurnAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -33,10 +32,9 @@ public class OpenTheWaygatePower extends AbstractBasePower {
             this.flash();
             this.amount = this.originAmt - CombatHelper.getContinualSynchroTimes(card);
             this.updateDescription();
-            if (this.amount <= 0){
+            if (this.amount <= 0) {
                 addToBot(new VFXAction(new WhirlwindEffect(new Color(1.0F, 0.9F, 0.4F, 1.0F), true)));
                 addToBot(new SkipEnemiesTurnAction());
-                addToBot(new PressEndTurnButtonAction());
                 addToBot(new RemoveSpecificPowerAction(owner, owner, this));
             }
         } else {
