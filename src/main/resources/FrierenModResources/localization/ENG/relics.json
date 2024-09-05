@@ -80,7 +80,7 @@
     "NAME": "Icicle Cherry Blossom",
     "FLAVOR": "Icicle Cherry Blossom blooms in winter, although their flowers are poisonous, they are very beautiful. It is also Frieren's favorite winter flower.",
     "DESCRIPTIONS": [
-      "Right-click this relic to make a #yMana into your draw pile. ( #b%d left )"
+      "Future card rewards have #b60 % to be replaced by #yMana .Gain [E] at the start of your turn. "
     ]
   },
   "FrierenMod:UbelStaff": {

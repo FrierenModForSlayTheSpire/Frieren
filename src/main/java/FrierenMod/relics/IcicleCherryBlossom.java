@@ -1,40 +1,31 @@
 package FrierenMod.relics;
 
-import FrierenMod.actions.MakeManaInDrawPileAction;
-import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.ModInformation;
-import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 
-public class IcicleCherryBlossom extends AbstractBaseRelic implements ClickableRelic {
+public class IcicleCherryBlossom extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
+    public static final int RATE = 60;
 
     public IcicleCherryBlossom() {
-        super(ID, RelicTier.UNCOMMON);
-        this.counter = 10;
-        this.description = String.format(DESCRIPTIONS[0], this.counter);
-        this.tips.clear();
-        this.tips.add(new PowerTip(this.name, this.description));
+        super(ID, RelicTier.BOSS);
     }
 
     public String getUpdatedDescription() {
-        return String.format(this.DESCRIPTIONS[0], this.counter);
+        return this.DESCRIPTIONS[0];
     }
 
-    @Override
-    public void onRightClick() {
-        if (!usedUp && CombatHelper.isInCombat()) {
-            --this.counter;
-            this.description = String.format(DESCRIPTIONS[0], this.counter);
-            this.tips.clear();
-            this.tips.add(new PowerTip(this.name, this.description));
-            this.initializeTips();
-            this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            this.addToBot(new MakeManaInDrawPileAction(1));
-            if (counter <= 0)
-                usedUp();
+    public AbstractRelic makeCopy() {
+        return new IcicleCherryBlossom();
+    }
+
+    public boolean isNormal() {
+        for (AbstractMonster m : (AbstractDungeon.getMonsters()).monsters) {
+            if (m.type == AbstractMonster.EnemyType.BOSS)
+                return true;
         }
+        return false;
     }
 }
