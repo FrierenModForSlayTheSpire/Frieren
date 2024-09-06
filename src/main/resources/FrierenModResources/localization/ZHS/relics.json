@@ -90,6 +90,20 @@
       "你每 #y咏唱 #b6 次，获得 [E] 。"
     ]
   },
+  "FrierenMod:FakeFlammeGrimoire": {
+    "NAME": "伏拉梅的著作（伪）",
+    "FLAVOR": "众所周知，世上流通的伏拉梅的著作都是假的，也许在某个秘密的地方能找到真的那一本...",
+    "DESCRIPTIONS": [
+      "在第一个回合，你打出 #y传说魔法 不需要提前 #y咏唱 。"
+    ]
+  },
+  "FrierenMod:FlammeGrimoire": {
+    "NAME": "大魔法使伏拉梅的著作",
+    "FLAVOR": "在大陆的最北边，我抵达了灵魂长眠之地，被世人们称之为天国的地方...",
+    "DESCRIPTIONS": [
+      "你打出 #y传说魔法 不再需要提前 #y咏唱 。"
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "海塔留下的法杖",
     "FLAVOR": "",
