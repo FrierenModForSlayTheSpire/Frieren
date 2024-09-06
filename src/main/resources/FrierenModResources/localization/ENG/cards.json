@@ -848,6 +848,10 @@
     "NAME": "Frush Down",
     "DESCRIPTION": "After every 2 times CONTINUAL frierenmod:Synchro, draw !M! cards and discard !M! cards from the far left in your hand."
   },
+  "FrierenMod:Tutorial": {
+    "NAME": "MagicDeck Tutorial",
+    "DESCRIPTION": "Magic items will drop randomly in Rewards. NL Right click a prop, then left click the target to trigger the prop's effect。"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",
     "DESCRIPTION": "Unplayable. NL After you frierenmod:Synchro 1 *Mana, Switch your draw pile and discard pile and lose 2 hp."

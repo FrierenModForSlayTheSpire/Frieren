@@ -90,6 +90,20 @@
       "Every #b6th you #yChant gain 1 [E]."
     ]
   },
+  "FrierenMod:FakeFlammeGrimoire": {
+    "NAME": "Flamme's Grimoire(Fake)",
+    "FLAVOR": "Books attributed to Flamme are never real，But maybe you can find the real one in some secret place...",
+    "DESCRIPTIONS": [
+      "In your first turn, you don't need to #yChant before you play #yLegendary_Spell card."
+    ]
+  },
+  "FrierenMod:FlammeGrimoire": {
+    "NAME": "Flamme's Grimoire",
+    "FLAVOR": "On the northernmost end of the continent, I arrived at the place the people of this world call heaven: Aureole, the land where souls rest...",
+    "DESCRIPTIONS": [
+      "You will not need to #yChant before you play #yLegendary_Spell card."
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "Haitaa Wand",
     "FLAVOR": "",
