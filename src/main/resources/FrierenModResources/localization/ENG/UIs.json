@@ -149,8 +149,9 @@
   },
   "FrierenMod:FTUE": {
     "TEXT": [
-      "As a mage, Frieren is good at manipulating #yMana, so the gain of #yMana and the flow through plies are the foundation of win.",
-      "Further more, the way to Exhaust #yMana is the key to win!"
+      "As a mage, Frieren is good at manipulating #yMana, so gain of #yMana and the flow them is the key to win. Your #yMana amount will show on the panel, if you have #yChanted this turn, its edge will become yellow.",
+      "#yChant #ycards need to exhaust enough #yMana to be played, you can choose one of three piles which has enough #yMana when you #yChant.",
+      "Card rewards will randomly drop #yMagic Factor and Props. Only by loading 3 #yFactors in 3 pile slots can you #yChant and trigger the Factor's effect, Magic Prop can be used to exchange Factors, create Factors and so on."
     ],
     "EXTRA_TEXT": [
       "Next",
