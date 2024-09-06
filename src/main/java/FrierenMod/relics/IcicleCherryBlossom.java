@@ -28,4 +28,12 @@ public class IcicleCherryBlossom extends AbstractBaseRelic {
         }
         return false;
     }
+
+    public void onEquip() {
+        AbstractDungeon.player.energy.energyMaster++;
+    }
+
+    public void onUnequip() {
+        AbstractDungeon.player.energy.energyMaster--;
+    }
 }
