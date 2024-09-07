@@ -134,10 +134,10 @@
   },
   "FrierenMod:SynchroMod": {
     "TEXT": [
-      " frierenmod:Synchro ",
-      " frierenmod:Accel_Synchro ",
-      " frierenmod:Limit_Over_Synchro ",
-      " frierenmod:Limit_Over_Accel_Synchro ",
+      "frierenmod:Synchro",
+      "frierenmod:Accel_Synchro",
+      "frierenmod:Limit_Over_Synchro",
+      "frierenmod:Limit_Over_Accel_Synchro",
       "."
     ]
   },
