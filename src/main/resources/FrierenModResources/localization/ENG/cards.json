@@ -292,6 +292,13 @@
       "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot."
     ]
   },
+  "FrierenMod:Tutorial": {
+    "NAME": "MagicDeck Tutorial",
+    "DESCRIPTION": "Magic items will drop randomly in Rewards. NL Right-click a prop, then left-click the target to trigger the prop's effect.",
+    "EXTENDED_DESCRIPTION": [
+      "Magic items will drop randomly in Rewards. NL Right-click a prop, then left-click the target to trigger the prop's effect."
+    ]
+  },
   "FrierenMod:SwampSpell": {
     "NAME": "Spell to Pull Out From a Swamp",
     "DESCRIPTION": "Draw !M! *Mana."
@@ -847,10 +854,6 @@
   "FrierenMod:FrushDown": {
     "NAME": "Frush Down",
     "DESCRIPTION": "After every 2 times CONTINUAL frierenmod:Synchro, draw !M! cards and discard !M! cards from the far left in your hand."
-  },
-  "FrierenMod:Tutorial": {
-    "NAME": "MagicDeck Tutorial",
-    "DESCRIPTION": "Magic items will drop randomly in Rewards. NL Right click a prop, then left click the target to trigger the prop's effect。"
   },
   "FrierenMod:UpsideDown": {
     "NAME": "Upside Down",

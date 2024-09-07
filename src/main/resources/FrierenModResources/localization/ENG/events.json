@@ -116,7 +116,8 @@
       "Examine the next...",
       "Examine the final...",
       "[And some Prop?] Gain 2 #yMagic_Prop .",
-      "Let's go!"
+      "Let's go!",
+      "[First Playing?] Gain a #yTutorial_Prop ."
     ]
   }
 }

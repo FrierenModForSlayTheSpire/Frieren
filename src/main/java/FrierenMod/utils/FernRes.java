@@ -32,6 +32,6 @@ public class FernRes {
     public static final String MP_WRAP_LAYER = ModInformation.makeUIPanelPath("FernPanel/MPWrap");
     public static final String MP_WRAP_PINK_LAYER = ModInformation.makeUIPanelPath("FernPanel/MPWrapPink");
     public static final String GAIN_MP_VFX = ModInformation.makeUIPanelPath("FernPanel/GainMPVFX");
-    public static final String TIP_01 = ModInformation.makeTipImgPath(CHARACTER_NAME,"01");
-    public static final String TIP_02 = ModInformation.makeTipImgPath(CHARACTER_NAME, "02");
+//    public static final String TIP_01 = ModInformation.makeTipImgPath(CHARACTER_NAME,"01");
+//    public static final String TIP_02 = ModInformation.makeTipImgPath(CHARACTER_NAME, "02");
 }

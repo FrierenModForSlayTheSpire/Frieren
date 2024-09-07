@@ -130,6 +130,7 @@ public class CardPoolHelper {
         ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
         if(RandomField.getMagicItemRng().random(100) > 20)
             list.removeIf(card -> card.hasTag(AbstractBaseCard.Enum.LESS_CHANCE_TO_MEET));
+        list.removeIf(card -> card.hasTag(AbstractBaseCard.Enum.NEVER_DROP));
         return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
     }
 
