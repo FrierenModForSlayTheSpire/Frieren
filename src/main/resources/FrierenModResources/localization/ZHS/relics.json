@@ -111,6 +111,13 @@
       "每次进入？房间时获得一个 #y神奇妙妙工具 。"
     ]
   },
+  "FrierenMod:HimmelGravestone": {
+    "NAME": "辛美尔之墓",
+    "FLAVOR": "辛美尔，打倒了魔王的勇者，对芙莉莲有好感但没有被及时察觉，步入天国后推动了芙莉莲踏上理解人类的旅途。",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 [E] ，当你拾起这件遗物时，获得一个独特的 #r诅咒 。"
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "海塔留下的法杖",
     "FLAVOR": "",
