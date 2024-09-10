@@ -104,6 +104,13 @@
       "你打出 #y传说魔法 不再需要提前 #y咏唱 。"
     ]
   },
+  "FrierenMod:MickeyHouse": {
+    "NAME": "神奇妙妙屋",
+    "FLAVOR": "这儿的老鼠总能拿出些奇奇怪怪的妙妙工具",
+    "DESCRIPTIONS": [
+      "每次进入？房间时获得一个 #y神奇妙妙工具 。"
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "海塔留下的法杖",
     "FLAVOR": "",

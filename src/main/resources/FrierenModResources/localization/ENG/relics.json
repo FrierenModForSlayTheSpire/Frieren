@@ -104,6 +104,13 @@
       "You will not need to #yChant before you play #yLegendary_Spell card."
     ]
   },
+  "FrierenMod:MickeyHouse": {
+    "NAME": "Unbelievable House",
+    "FLAVOR": "You can always find some unbelievable tools in this house",
+    "DESCRIPTIONS": [
+      "Whenever you enter a ? room, gain a #yUnbelievable_Tool. "
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "Haitaa Wand",
     "FLAVOR": "",
