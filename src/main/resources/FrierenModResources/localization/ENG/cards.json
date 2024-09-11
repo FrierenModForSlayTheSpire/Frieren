@@ -870,5 +870,13 @@
     "EXTENDED_DESCRIPTION": [
       "It is not a bird, or a bird-like enemy"
     ]
+  },
+  "FrierenMod:LongevityPain": {
+    "NAME": "Pain From Longevity",
+    "DESCRIPTION": "#yUnplayable . NL After frierenmod:Synchro CONTINUALLY 10 times, it becomes #yFatalism . NL There is no escape from this #yCurse."
+  },
+  "FrierenMod:Fatalism": {
+    "NAME": "Fatalism",
+    "DESCRIPTION": "Every character lose 999 HP."
   }
 }

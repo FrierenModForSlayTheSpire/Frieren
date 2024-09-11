@@ -862,6 +862,14 @@
     "NAME": "猛芙下山",
     "DESCRIPTION": "每连续 frierenmod:同调 2次，抽 !M! 张牌并丢弃手中最左边的 !M! 张牌。"
   },
+  "FrierenMod:LongevityPain": {
+    "NAME": "长寿种的痛苦",
+    "DESCRIPTION": "#y不能被打出 。连续 frierenmod:同调 10次后转变为 #y寿命论 。 NL 这个 #y诅咒 无法逃脱。"
+  },
+  "FrierenMod:Fatalism": {
+    "NAME": "宿命论",
+    "DESCRIPTION": "所有角色失去999生命。"
+  },
   "FrierenMod:UpsideDown": {
     "NAME": "颠倒",
     "DESCRIPTION": " 不能被打出 。 NL 每 frierenmod:同调 一次，交换你的抽牌堆和弃牌堆并失去2点生命。"

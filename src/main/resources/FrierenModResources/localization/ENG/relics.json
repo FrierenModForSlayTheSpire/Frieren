@@ -111,11 +111,18 @@
       "Whenever you enter a ? room, gain a #yUnbelievable_Tool. "
     ]
   },
+  "FrierenMod:HimmelGravestone": {
+    "NAME": "Himmel's Gravestone",
+    "FLAVOR": "Himmel was the Hero of the Hero Party, defeated the Demon King and created an era of peace. After his death from old age, Frieren resolves to get to know Humans better.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. When you take this relic, get a unique #rCurse."
+    ]
+  },
   "FrierenMod:HaitaaWand": {
     "NAME": "Haitaa Wand",
     "FLAVOR": "",
     "DESCRIPTIONS": [
       "Test"
     ]
-  }
+  },
 }
