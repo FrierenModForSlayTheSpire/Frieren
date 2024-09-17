@@ -37,8 +37,8 @@
     "DESCRIPTION": "Shuffle !M! *Mana into your draw pile."
   },
   "FrierenMod:ManaConcealment": {
-    "NAME": "ManaConcealment",
-    "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
+    "NAME": "Mana Concealment",
+    "DESCRIPTION": "Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust. NL Ethereal."
   },
   "FrierenMod:BePrepared": {
     "NAME": "Be Prepared",
