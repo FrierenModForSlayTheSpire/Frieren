@@ -662,8 +662,8 @@
   },
   "FrierenMod:TimeConcept": {
     "NAME": "精灵的时间观念",
-    "DESCRIPTION": "将你当前的一切送入两回合后的未来。两回合后，将一张 *悔恨 放入抽牌堆和手牌。",
-    "UPGRADE_DESCRIPTION": "将你当前的一切送入两回合后的未来。两回合后，将一张 *悔恨 放入抽牌堆。"
+    "DESCRIPTION": "将你当前的一切送入两回合后的未来。两回合后，将一张 *悔恨 放入手中。",
+    "UPGRADE_DESCRIPTION": "将你当前的一切送入两回合后的未来。"
   },
   "FrierenMod:Imagination": {
     "NAME": "魔法&想象力",

@@ -1,7 +1,6 @@
 package FrierenMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.curses.Regret;
@@ -62,7 +61,6 @@ public class MakeCardsAction extends AbstractGameAction {
         AbstractCard card = new Regret();
         if (!upgraded)
             this.addToBot(new MakeTempCardInHandAction(card));
-        this.addToBot(new MakeTempCardInDrawPileAction(card, 1, true, true));
         this.isDone = true;
     }
 }
