@@ -864,7 +864,10 @@
   },
   "FrierenMod:LongevityPain": {
     "NAME": "长寿种的痛苦",
-    "DESCRIPTION": "#y不能被打出 。连续 frierenmod:同调 10次后转变为 #y寿命论 。 NL 这个 #y诅咒 无法逃脱。"
+    "DESCRIPTION": " 不能被打出 。连续 frierenmod:同调 10次后将 *寿命论 放入手中。 NL 这个 *诅咒 无法逃脱。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （还剩 %d次。）"
+    ]
   },
   "FrierenMod:Fatalism": {
     "NAME": "宿命论",

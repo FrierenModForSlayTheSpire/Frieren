@@ -873,7 +873,10 @@
   },
   "FrierenMod:LongevityPain": {
     "NAME": "Pain From Longevity",
-    "DESCRIPTION": "#yUnplayable . NL After frierenmod:Synchro CONTINUALLY 10 times, it becomes #yFatalism . NL There is no escape from this #yCurse."
+    "DESCRIPTION": "Unplayable. NL After frierenmod:Synchro CONTINUALLY 10 times, put ^Fatalism into your hand. NL There is no escape from this *Curse .",
+    "EXTENDED_DESCRIPTION": [
+      " NL (%d times left)"
+    ]
   },
   "FrierenMod:Fatalism": {
     "NAME": "Fatalism",
