@@ -115,8 +115,8 @@
     "NAME": "Himmel's Gravestone",
     "FLAVOR": "Himmel was the Hero of the Hero Party, defeated the Demon King and created an era of peace. After his death from old age, Frieren resolves to get to know Humans better.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. When you take this relic, get a unique #rCurse."
-      "Test"
+      "Gain [E] at the start of your turn. When you take this relic, get a unique #rCurse.",
+      "May Himmel rest in peace in heaven..."
     ]
   },
   "FrierenMod:HaitaaWand": {
