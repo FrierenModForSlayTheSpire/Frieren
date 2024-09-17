@@ -760,7 +760,7 @@
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "Lure The Enemy In Deep",
     "DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] [E] . NL If you frierenmod:Chant from hand, return it to your hand.",
-    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] [E] . NL If you frierenmod:Chant from hand, return it to your hand."
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] . NL If you frierenmod:Chant from hand, return it to your hand."
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
