@@ -67,6 +67,11 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     @Override
     public void receivePostInitialize() {
+        try {
+            AntiPirateHelper.antiPirate();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         RegisterHelper.registerPotions();
         RegisterHelper.registerBosses();
         RegisterHelper.registerAudios();
