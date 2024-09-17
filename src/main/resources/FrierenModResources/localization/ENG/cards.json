@@ -177,7 +177,7 @@
     "NAME": "Transfer to Alchemist",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, apply !SM! Poison to ALL enemies.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X *Mana in pile, apply !SM! Poison to ALL enemies."
+      "Exhaust X *Mana in pile, apply 2X Poison to ALL enemies."
     ]
   },
   "FrierenMod:GreatMageComposure": {
@@ -690,7 +690,7 @@
   },
   "FrierenMod:FinalChant": {
     "NAME": "Final Chant",
-    "DESCRIPTION": "frierenmod:Chant ALL *Mana as possible, WHEREVER are they."
+    "DESCRIPTION": "frierenmod:Chant ALL *Mana as possible, WHEREVER they are."
   },
   "FrierenMod:Kiss": {
     "NAME": "Kiss(very lethal!)",
@@ -767,7 +767,7 @@
   "FrierenMod:LureTheEnemyInDeep": {
     "NAME": "Lure The Enemy In Deep",
     "DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] [E] . NL If you frierenmod:Chant from hand, return it to your hand.",
-    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] [E] . NL If you frierenmod:Chant from hand, return it to your hand."
+    "UPGRADE_DESCRIPTION": "frierenmod:Chant !CX!. Gain [E] . NL If you frierenmod:Chant from hand, return it to your hand."
   },
   "FrierenMod:ManaCollapse": {
     "NAME": "Mana Collapse",
