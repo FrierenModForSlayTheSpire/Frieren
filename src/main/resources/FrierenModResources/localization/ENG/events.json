@@ -1,19 +1,19 @@
 {
   "FrierenMod:MimicFight": {
-    "NAME": "遭遇宝箱怪",
+    "NAME": "Mimic!?",
     "DESCRIPTIONS": [
-      "那里有一个闪闪发光的宝箱！你使用了宝箱判别魔法 #bMeekhite 发现它有百分之99的概率是宝箱怪,身为真正的魔法使,你打算...",
-      "不出所料它是个宝箱怪,而你落到了它的的嘴里！ ~好黑,好可怕~ 但堂堂魔法使不会被宝箱怪单杀！,你决定...",
-      "你满怀期待地打开它,发现它居然是一个真的宝箱！里面有一本闪闪发光的魔导书和大量的财宝,你证明了自己是真正的魔法使,你的不懈努力没有白费！",
-      "宝箱怪灰飞烟灭,而你被烫成了卷发"
+      "There is a #y@glittering@ #y@chest@ ! You chant #b~Meekhite~ , the spell to analyze treasure chests, and it has 99% to be a #rMimic . As a true Mage, you decide...",
+      "It is a #rMimic , for sure, and you just jump into its mouth! ~Dark~ ~and~ ~Scary~ ! But #gGreat #gMage won't be killed by a Mimic! You decide...",
+      "You burn the Mimic into ash in a second, but your hairstyle become Ringlet.",
+      "Fern pulled you out, with a look of disgust. Then she kill the Mimic by Ordinary Offensive Magic."
     ],
     "OPTIONS": [
-      "[冲动]毫不犹豫地打开宝箱！",
-      "[理智]果然还是要打开宝箱！",
-      "[战斗]让宝箱怪吐出自己,和它一决胜负!",
-      "[逃离]使用爆破魔法强行消灭宝箱怪.",
-      "[发财]拿走宝箱里的一切！",
-      "[离开]"
+      "[excited] #rOpen #rthe #rchest without hesitation!",
+      "[calm] #rOpen #rthe #rchest after hesitation!",
+      "[Battle] #rFight #rwith #rMimic! ",
+      "[Explosion] #rLose #r15 #rHP , #gGain #gRinglet_Form.",
+      "[Help] Let Fern pull you out.",
+      "[Leave]"
     ]
   },
   "FrierenMod:FoodEvent": {
