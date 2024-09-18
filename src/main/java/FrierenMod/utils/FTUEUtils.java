@@ -22,7 +22,7 @@ public class FTUEUtils {
             ImageMaster.loadImage(FrierenRes.TIP_02_ENG), ImageMaster.loadImage(FrierenRes.TIP_03_ENG)};
 
     public static void openCombatTip() {
-        if (!(Boolean) TipTracker.tips.get(COMBAT_TIP_KEY) || Config.IN_DEV) {
+        if (!(Boolean) TipTracker.tips.get(COMBAT_TIP_KEY)) {
             if (language == Settings.GameLanguage.ZHS)
                 AbstractDungeon.ftue = new CustomMultiPageFtue(TEXTURES_ZHS, uiStrings.TEXT);
             else

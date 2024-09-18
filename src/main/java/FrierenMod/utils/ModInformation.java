@@ -10,11 +10,11 @@ public class ModInformation {
         return MOD_NAME + ":" + id;
     }
 
-    public static String getResPath() {
+    private static String getResPath() {
         return MOD_NAME + "Resources/";
     }
 
-    public static String getImgPath() {
+    private static String getImgPath() {
         return getResPath() + "img/";
     }
 
@@ -22,7 +22,7 @@ public class ModInformation {
         return getImgPath() + content;
     }
 
-    public static String getAudioPath() {
+    private static String getAudioPath() {
         return getResPath() + "audio/";
     }
 
@@ -34,7 +34,7 @@ public class ModInformation {
         return getResPath() + "localization/" + lang + "/" + content + ".json";
     }
 
-    public static String getCardStylesPath() {
+    private static String getCardStylesPath() {
         return getImgPath() + "cardStyles/";
     }
 
@@ -50,7 +50,7 @@ public class ModInformation {
         return getImgPath() + "monsters/" + content + ".png";
     }
 
-    public static String getUIPath() {
+    private static String getUIPath() {
         return getImgPath() + "UI/";
     }
 
@@ -58,7 +58,7 @@ public class ModInformation {
         return getUIPath() + content + ".png";
     }
 
-    public static String getOrbPath() {
+    private static String getOrbPath() {
         return getUIPath() + "orb/";
     }
 
