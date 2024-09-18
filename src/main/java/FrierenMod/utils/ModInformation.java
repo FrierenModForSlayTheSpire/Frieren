@@ -1,5 +1,7 @@
 package FrierenMod.utils;
 
+import java.util.Objects;
+
 public class ModInformation {
     public final static String MOD_NAME = "FrierenMod";
     public final static String KEY_WORD = MOD_NAME.toLowerCase();
@@ -93,6 +95,7 @@ public class ModInformation {
     public static String makeCardBannerPath(String character, String bannerType, String bannerSize) {
         return getCardStylesPath() + character + "/banners/" + "card_banner_" + bannerType + "_" + bannerSize + ".png";
     }
+
     public static String makeIconPath(String content) {
         return getUIPath() + "icons/" + content + ".png";
     }
@@ -118,11 +121,11 @@ public class ModInformation {
             return "ERROR!";
     }
 
-    public static String makeTipImgPath(String character, String tipNum) {
-//        if (language == Settings.GameLanguage.ZHS) {
-        return makeUIPath("tip/ZHS/" + character + "/tip" + tipNum);
-//        } else {
-//            return makeUIPath("tip/ENG/"+ character +"/tip" + tipNum + ".png");
-//        }
+    public static String makeTipImgPath(String character, String tipNum, String language) {
+        if (Objects.equals(language, "ZHS")) {
+            return makeUIPath("tip/ZHS/" + character + "/tip" + tipNum);
+        } else {
+            return makeUIPath("tip/ENG/" + character + "/tip" + tipNum);
+        }
     }
 }

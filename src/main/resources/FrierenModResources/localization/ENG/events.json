@@ -105,8 +105,8 @@
     "DESCRIPTIONS": [
       "\"A new Maze!!!\"",
       "\"Wow, what a high tower!\" While you were delighted to be able to explore a new maze, you suddenly noticed that the three magic books in your suitcase were out of the ordinary. It could be caused by the great whale on one side...",
-      "You sense that the mana flowing within you is undergoing a transformation...",
-      "After examining the grimoires, it seems that part of your #ymana has materialized. Excitedly, you make your way towards the spire.",
+      "You sense that the mana flowing within you is undergoing a ~transformation~ ...",
+      "After examining the grimoires, it seems that part of your #ymana has ~materialized~ . Excitedly, you make your way towards the spire.",
       "Choose one to put in Draw Slot.",
       "Choose one to put in Hand Slot.",
       "Choose one to put in Discard Slot."
@@ -116,7 +116,8 @@
       "Examine the next...",
       "Examine the final...",
       "[And some Prop?] Gain 2 #yMagic_Prop .",
-      "Let's go!"
+      "Let's go!",
+      "[First Playing?] Gain a #yTutorial_Prop ."
     ]
   }
 }

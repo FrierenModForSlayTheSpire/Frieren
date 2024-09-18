@@ -10,7 +10,9 @@
   "FrierenMod:OrdinaryOffensiveMagic": {
     "NAME": "普通攻击魔法",
     "DESCRIPTION": "造成你在本场战斗中 消耗 过的 *魔力 总数两倍的伤害。",
-    "EXTENDED_DESCRIPTION": [" NL （造成 !D! 点伤害。）"]
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "防御魔法",
@@ -297,6 +299,13 @@
       "选择2张 frierenmod:[#9ffc4f]已装载 的 *魔法因子 ，使它们 frierenmod:槽位 互换。"
     ]
   },
+  "FrierenMod:Tutorial": {
+    "NAME": "魔法牌组教程",
+    "DESCRIPTION": "战斗胜利后有概率掉落 *魔法因子 和 *魔具 。 NL *右键 选中魔具， *左键 选中魔具使用的对象。",
+    "EXTENDED_DESCRIPTION": [
+      "战斗胜利后有概率掉落 *魔法因子 和 *魔具 。 NL *右键 选中 *魔具 ， *左键 选中 *魔具 使用的对象。"
+    ]
+  },
   "FrierenMod:SwampSpell": {
     "NAME": "拔出无底沼泽的魔法",
     "DESCRIPTION": "抽 !M! 张 *魔力 。"
@@ -393,7 +402,8 @@
     "UPGRADE_DESCRIPTION": "随机造成X+4点伤害X+1次，将X张 *魔力 放入手牌。",
     "EXTENDED_DESCRIPTION": [
       " NL （造成 !D! 点伤害",
-      "次）"]
+      "次）"
+    ]
   },
   "FrierenMod:RitesPreparation": {
     "NAME": "仪式的准备",
@@ -852,13 +862,12 @@
     "NAME": "猛芙下山",
     "DESCRIPTION": "每连续 frierenmod:同调 2次，抽 !M! 张牌并丢弃手中最左边的 !M! 张牌。"
   },
-  "FrierenMod:Tutorial": {
-    "NAME": "魔法牌组教程",
-    "DESCRIPTION": "战斗胜利后有概率掉落因子和魔具。 NL 右键选中魔具，左键选中魔具使用的对象。"
-  },
   "FrierenMod:LongevityPain": {
     "NAME": "长寿种的痛苦",
-    "DESCRIPTION": "#y不能被打出 。连续 frierenmod:同调 10次后转变为 #y寿命论 。 NL 这个 #y诅咒 无法逃脱。"
+    "DESCRIPTION": " 不能被打出 。连续 frierenmod:同调 10次后将 *寿命论 放入手中。 NL 这个 *诅咒 无法逃脱。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （还剩 %d次。）"
+    ]
   },
   "FrierenMod:Fatalism": {
     "NAME": "宿命论",
@@ -912,7 +921,9 @@
   "FrierenMod:Moody": {
     "NAME": "喜怒无常",
     "DESCRIPTION": "造成你在本场战斗中 frierenmod:专注 层数变化次数的伤害。",
-    "EXTENDED_DESCRIPTION": [" NL （造成 !D! 点伤害。）"]
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
   },
   "FrierenMod:WashingClothesSpell": {
     "NAME": "彻底清除衣服污渍的魔法",

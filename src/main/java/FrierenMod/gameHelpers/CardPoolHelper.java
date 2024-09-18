@@ -55,7 +55,8 @@ public class CardPoolHelper {
     public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY)) {
-            srcCardPool.add(c.makeCopy());
+            if(!c.hasTag(AbstractBaseCard.Enum.NEVER_DROP))
+                srcCardPool.add(c.makeCopy());
         }
         ArrayList<AbstractCard> common = new ArrayList<>();
         ArrayList<AbstractCard> uncommon = new ArrayList<>();
@@ -97,7 +98,7 @@ public class CardPoolHelper {
     public static CardGroup getMagicItemCardGroup(AbstractMagicItem.MagicItemRarity rarity) {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : getMagicItemCardPool(rarity))
-            retVal.addToTop(c);
+                retVal.addToTop(c);
         return retVal;
     }
 

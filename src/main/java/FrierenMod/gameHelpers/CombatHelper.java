@@ -8,6 +8,8 @@ import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
 import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.powers.WeakenedChantPower;
+import FrierenMod.relics.FakeFlammeGrimoire;
+import FrierenMod.relics.FlammeGrimoire;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -92,6 +94,11 @@ public class CombatHelper {
     }
 
     public static boolean cannotPlayLegendarySpell() {
+        if (AbstractDungeon.player.getRelic(FlammeGrimoire.ID) != null)
+            return false;
+        FakeFlammeGrimoire relic = (FakeFlammeGrimoire) AbstractDungeon.player.getRelic(FakeFlammeGrimoire.ID);
+        if (relic != null && relic.takeEffect)
+            return false;
         return getChantCardUsedThisTurn() == 0 && !Config.IN_DEV;
     }
 
@@ -124,14 +131,15 @@ public class CombatHelper {
         return isInUsingCard ? cardsPlayedThisTurnSize - 1 : cardsPlayedThisTurnSize;
     }
 
-    public static int getSynchroTimesThisTurn(){
+    public static int getSynchroTimesThisTurn() {
         int counts = 0;
         for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-            if(c.hasTag(AbstractBaseCard.Enum.SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO))
+            if (c.hasTag(AbstractBaseCard.Enum.SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO) || c.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO))
                 counts++;
         }
         return counts;
     }
+
     public static int getContinualSynchroTimes(AbstractCard card) {
         ArrayList<AbstractCard> cardsPlayedThisTurn = AbstractDungeon.actionManager.cardsPlayedThisTurn;
         int counts = 0;

@@ -1,15 +1,18 @@
 package FrierenMod.relics;
 
+import FrierenMod.cards.tempCards.LongevityPain;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
-public class IcicleCherryBlossom extends AbstractBaseRelic {
-    public static final String ID = ModInformation.makeID(IcicleCherryBlossom.class.getSimpleName());
-    public static final int RATE = 60;
+public class HimmelGravestone extends AbstractBaseRelic {
+    public static final String ID = ModInformation.makeID(HimmelGravestone.class.getSimpleName());
+    private boolean cardsReceived = true;
 
-    public IcicleCherryBlossom() {
+    public HimmelGravestone() {
         super(ID, RelicTier.BOSS);
     }
 
@@ -18,7 +21,7 @@ public class IcicleCherryBlossom extends AbstractBaseRelic {
     }
 
     public AbstractRelic makeCopy() {
-        return new IcicleCherryBlossom();
+        return new HimmelGravestone();
     }
 
     public boolean isNormal() {
@@ -30,6 +33,12 @@ public class IcicleCherryBlossom extends AbstractBaseRelic {
     }
 
     public void onEquip() {
+        this.cardsReceived = false;
+        CardGroup group = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
+        LongevityPain longevityPain = new LongevityPain();
+        UnlockTracker.markCardAsSeen(longevityPain.cardID);
+        group.addToBottom(longevityPain.makeCopy());
+        AbstractDungeon.gridSelectScreen.openConfirmationGrid(group, this.DESCRIPTIONS[1]);
         AbstractDungeon.player.energy.energyMaster++;
     }
 

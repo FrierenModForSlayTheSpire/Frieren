@@ -35,6 +35,10 @@ public class FrierenRes {
     public static final String MP_WRAP_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPWrap");
     public static final String MP_WRAP_GOLDEN_LAYER = ModInformation.makeUIPanelPath("manaPanel/MPWrapGolden");
     public static final String GAIN_MP_VFX = ModInformation.makeUIPanelPath("manaPanel/GainMPVFX");
-    public static final String TIP_01 = ModInformation.makeTipImgPath(CHARACTER_NAME,"01");
-    public static final String TIP_02 = ModInformation.makeTipImgPath(CHARACTER_NAME, "02");
+    public static final String TIP_01_ZHS = ModInformation.makeTipImgPath(CHARACTER_NAME,"01","ZHS");
+    public static final String TIP_02_ZHS = ModInformation.makeTipImgPath(CHARACTER_NAME, "02","ZHS");
+    public static final String TIP_03_ZHS = ModInformation.makeTipImgPath(CHARACTER_NAME, "03","ZHS");
+    public static final String TIP_01_ENG = ModInformation.makeTipImgPath(CHARACTER_NAME,"01","ENG");
+    public static final String TIP_02_ENG = ModInformation.makeTipImgPath(CHARACTER_NAME, "02","ENG");
+    public static final String TIP_03_ENG = ModInformation.makeTipImgPath(CHARACTER_NAME, "03","ENG");
 }
