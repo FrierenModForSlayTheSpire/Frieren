@@ -1,12 +1,16 @@
 package FrierenMod.cards.tempCards;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.relics.HimmelGravestone;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.vfx.NecronomicurseEffect;
 
 public class LongevityPain extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(LongevityPain.class.getSimpleName());
@@ -25,7 +29,7 @@ public class LongevityPain extends AbstractBaseCard {
         if (c.hasTag(Enum.SYNCHRO)) {
             this.times--;
             this.superFlash();
-            if (this.times == 0){
+            if (this.times == 0) {
                 this.times = 10;
                 this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy()));
             }
@@ -43,5 +47,17 @@ public class LongevityPain extends AbstractBaseCard {
     public void onMoveToDiscard() {
         this.rawDescription = cardStrings.DESCRIPTION;
         initializeDescription();
+    }
+
+    public void onRemoveFromMasterDeck() {
+        if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID))
+            AbstractDungeon.player.getRelic(HimmelGravestone.ID).flash();
+        AbstractDungeon.effectsQueue.add(new NecronomicurseEffect(new LongevityPain(), Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F));
+    }
+
+    public void triggerOnExhaust() {
+        if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID))
+            AbstractDungeon.player.getRelic(HimmelGravestone.ID).flash();
+        addToBot(new MakeTempCardInHandAction(makeCopy()));
     }
 }
