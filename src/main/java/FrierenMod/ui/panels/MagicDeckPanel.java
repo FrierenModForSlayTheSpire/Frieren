@@ -1,6 +1,7 @@
 package FrierenMod.ui.panels;
 
 import FrierenMod.patches.fields.MagicDeckField;
+import FrierenMod.powers.DarkPower;
 import FrierenMod.ui.screens.MagicDeckScreen;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
@@ -15,6 +16,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class MagicDeckPanel extends TopPanelItem {
     public static final String ID = ModInformation.makeID(MagicDeckPanel.class.getSimpleName());
@@ -28,6 +30,10 @@ public class MagicDeckPanel extends TopPanelItem {
 
     @Override
     protected void onClick() {
+        AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+        if (po instanceof DarkPower && po.amount < 2) {
+            return;
+        }
         if (AbstractDungeon.screen == MagicDeckScreen.Enum.MAGIC_DECK_SCREEN) {
             CardCrawlGame.sound.play("DECK_CLOSE");
             AbstractDungeon.closeCurrentScreen();
@@ -75,6 +81,10 @@ public class MagicDeckPanel extends TopPanelItem {
     }
 
     protected void onHover() {
+        AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+        if (po instanceof DarkPower && po.amount < 2) {
+            return;
+        }
         this.angle = MathHelper.angleLerpSnap(this.angle, 15.0F);
         this.tint.a = 0.25F;
         TipHelper.renderGenericTip(TOP_RIGHT_TIP_X, TIP_Y, TEXT[0], TEXT[1]);
@@ -82,6 +92,10 @@ public class MagicDeckPanel extends TopPanelItem {
 
     @Override
     public void render(SpriteBatch sb) {
+        AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+        if (po instanceof DarkPower && po.amount < 2) {
+            return;
+        }
         super.render(sb);
         FontHelper.renderFontRightTopAligned(sb, FontHelper.topPanelAmountFont,
                 Integer.toString(MagicDeckField.getDeck().size()), this.x + 58.0F * Settings.scale, this.y + 25.0F * Settings.scale, Color.WHITE.cpy());

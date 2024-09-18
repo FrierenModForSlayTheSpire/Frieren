@@ -3,6 +3,7 @@ package FrierenMod.ui.panels;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.DarkPower;
 import FrierenMod.utils.FrierenRes;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.Gdx;
@@ -19,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 
 public class ManaPanel extends AbstractPanel {
@@ -73,6 +75,10 @@ public class ManaPanel extends AbstractPanel {
     }
 
     public static boolean canShowThisPanel() {
+        AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+        if (po instanceof DarkPower && po.amount < 4) {
+            return false;
+        }
         if (AbstractDungeon.player.chosenClass == CharacterEnums.FERN)
             return false;
         if (CardCrawlGame.isInARun()) {
