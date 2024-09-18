@@ -38,7 +38,7 @@
   },
   "FrierenMod:ManaConcealment": {
     "NAME": "ManaConcealment",
-    "DESCRIPTION": "Retain. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Shuffle ALL *Mana in draw pile into your discard pile. NL Exhaust."
   },
   "FrierenMod:BePrepared": {
     "NAME": "Be Prepared",
@@ -661,7 +661,7 @@
   "FrierenMod:Imagination": {
     "NAME": "Magic & Imagination",
     "DESCRIPTION": "This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana from cards, frierenmod:Chant can be FREELY activated. NL  Exhaust."
+    "UPGRADE_DESCRIPTION": "Retain. This turn, Your cards don't Cost [E] , Cost the same amount of *Mana instead. You CANNOT get new *Mana from cards, Mana used for frierenmod:Chant will return. NL  Exhaust."
   },
   "FrierenMod:ContinuousShooting": {
     "NAME": "Continuous Shooting",
