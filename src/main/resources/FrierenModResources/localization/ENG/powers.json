@@ -218,5 +218,11 @@
     "DESCRIPTIONS": [
       "After #ySynchro #b%d times CONTINUALLY, draw #b%d cards and discard #b%d cards from the far left in your hand."
     ]
+  },
+  "FrierenMod:DarkPower": {
+    "NAME": "test",
+    "DESCRIPTIONS": [
+      "test","test"
+    ]
   }
 }
