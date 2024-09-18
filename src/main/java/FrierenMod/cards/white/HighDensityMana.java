@@ -59,7 +59,7 @@ public class HighDensityMana extends AbstractBaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return true;
+        return hasEnoughEnergy();
     }
 
     @SpireOverride
