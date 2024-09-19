@@ -128,4 +128,10 @@ public class ModInformation {
             return makeUIPath("tip/ENG/" + character + "/tip" + tipNum);
         }
     }
+    private static String getEventImgPath() {
+        return getImgPath() + "events/";
+    }
+    public static String makeEventImgPath(String content) {
+        return getEventImgPath() + content + ".png";
+    }
 }

@@ -6,6 +6,7 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.events.AnimalWell;
 import FrierenMod.events.FoodEvent;
+import FrierenMod.events.MimicFight;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.HookHelper;
 import FrierenMod.monsters.Spiegel_Frieren;
@@ -24,6 +25,7 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 
 public class RegisterHelper {
     public static void registerColor() {
@@ -124,6 +126,7 @@ public class RegisterHelper {
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
 //        BaseMod.addEvent("KraftGift", KraftGift.class);
         BaseMod.addEvent("AnimalWell", AnimalWell.class);
+        BaseMod.addEvent(MimicFight.ID, MimicFight.class, TheCity.ID);
         Log.logger.info("Done adding events");
     }
 

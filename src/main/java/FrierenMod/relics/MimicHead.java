@@ -8,7 +8,7 @@ public class MimicHead extends AbstractBaseRelic {
     public static final String ID = ModInformation.makeID(MimicHead.class.getSimpleName());
 
     public MimicHead() {
-        super(ID, RelicTier.UNCOMMON);
+        super(ID, RelicTier.SPECIAL);
     }
 
     public String getUpdatedDescription() {
