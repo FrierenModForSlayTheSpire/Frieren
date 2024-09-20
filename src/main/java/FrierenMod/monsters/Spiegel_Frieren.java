@@ -43,9 +43,9 @@ public class Spiegel_Frieren extends AbstractMonster {
         super(monsterStrings.NAME, MONSTER_ID, 500, 30.0F, -30.0F, 476.0F, 410.0F, MonsterRes.SPIEGEL_FRIEREN, -50.0F, 30.0F);
         this.type = EnemyType.BOSS;
         if (AbstractDungeon.ascensionLevel >= 19)
-            this.damage.add(new DamageInfo(this, BASE_DAMAGE));
-        else
             this.damage.add(new DamageInfo(this, BASE_DAMAGE_ASC));
+        else
+            this.damage.add(new DamageInfo(this, BASE_DAMAGE));
         this.initDebuffQueue();
     }
 
