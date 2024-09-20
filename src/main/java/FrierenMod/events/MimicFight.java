@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
@@ -92,12 +91,5 @@ public class MimicFight extends AbstractImageEvent {
                 return;
         }
         openMap();
-    }
-    @Override
-    public void enterCombatFromImage(){
-        super.enterCombatFromImage();
-        for(AbstractMonster mo:AbstractDungeon.getCurrRoom().monsters.monsters){
-            mo.usePreBattleAction();
-        }
     }
 }
