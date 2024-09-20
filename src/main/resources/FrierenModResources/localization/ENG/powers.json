@@ -235,7 +235,7 @@
   "FrierenMod:SwallowedPower": {
     "NAME": "Swallowed",
     "DESCRIPTIONS": [
-      "Decrease your hand size by #b&d this combat."
+      "Decrease your hand size by #b%d this combat."
     ]
   }
 }
