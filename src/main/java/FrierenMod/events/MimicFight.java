@@ -1,6 +1,7 @@
 package FrierenMod.events;
 
 import FrierenMod.cards.white.RingletForm;
+import FrierenMod.monsters.Mimic;
 import FrierenMod.relics.FakeFlammeGrimoire;
 import FrierenMod.relics.FlammeGrimoire;
 import FrierenMod.relics.MimicHead;
@@ -13,6 +14,7 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.RoomEventDialog;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
@@ -51,7 +53,7 @@ public class MimicFight extends AbstractImageEvent {
                 switch (buttonPressed) {
                     //战斗
                     case 0:
-                        (AbstractDungeon.getCurrRoom()).monsters = MonsterHelper.getEncounter("Colosseum Slavers");
+                        (AbstractDungeon.getCurrRoom()).monsters = MonsterHelper.getEncounter(Mimic.MONSTER_ID);
                         (AbstractDungeon.getCurrRoom()).eliteTrigger = true;
                         (AbstractDungeon.getCurrRoom()).rewards.clear();
                         if (AbstractDungeon.player.hasRelic(FakeFlammeGrimoire.ID))
@@ -90,5 +92,12 @@ public class MimicFight extends AbstractImageEvent {
                 return;
         }
         openMap();
+    }
+    @Override
+    public void enterCombatFromImage(){
+        super.enterCombatFromImage();
+        for(AbstractMonster mo:AbstractDungeon.getCurrRoom().monsters.monsters){
+            mo.usePreBattleAction();
+        }
     }
 }

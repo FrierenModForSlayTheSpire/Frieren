@@ -219,10 +219,23 @@
       "连续 #y同调 #b%d 次后，抽 #b%d 张牌并丢弃手中最左边的 #b%d 张牌。"
     ]
   },
+  "FrierenMod:MimicPower": {
+    "NAME": "宝箱怪",
+    "DESCRIPTIONS": [
+      "当你打出 #b%d 张牌后，你的回合会强制结束，移除你所有 #y魔力 并获得 #y好黑啊 。"
+    ]
+  },
   "FrierenMod:DarkPower": {
     "NAME": "好黑啊",
     "DESCRIPTIONS": [
-      "test","好黑，好 #r@可怕@ 啊"
+      "在宝箱怪肚子里看不清了...",
+      "好黑，好 #r@可怕@ 啊"
+    ]
+  },
+  "FrierenMod:SwallowedPower": {
+    "NAME": "被吞噬",
+    "DESCRIPTIONS": [
+      "本场战斗中手牌上限减少 #b%d 。"
     ]
   },
   "FrierenMod:ConcentrationPower": {

@@ -9,6 +9,7 @@ import FrierenMod.events.FoodEvent;
 import FrierenMod.events.MimicFight;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.HookHelper;
+import FrierenMod.monsters.Mimic;
 import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.potions.BottledMana;
 import FrierenMod.potions.DissolveClothPotion;
@@ -107,6 +108,11 @@ public class RegisterHelper {
         Log.logger.info("Adding commands...");
         MagicItemCommand.register();
         Log.logger.info("Done adding commands");
+    }
+    public static void registerMonsters(){
+        Log.logger.info("Adding monsters...");
+        Mimic.register();
+        Log.logger.info("Done adding monsters");
     }
 
     public static void registerBosses() {

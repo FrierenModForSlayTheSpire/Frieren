@@ -74,6 +74,7 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
         }
         RegisterHelper.registerPotions();
         RegisterHelper.registerBosses();
+        RegisterHelper.registerMonsters();
         RegisterHelper.registerAudios();
         RegisterHelper.registerEvents();
         RegisterHelper.registerSundries();

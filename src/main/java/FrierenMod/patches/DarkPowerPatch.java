@@ -522,12 +522,34 @@ public class DarkPowerPatch {
                 return SpireReturn.Continue();
             }
         }
+        @SpirePatch(clz = DrawPilePanel.class, method = "updatePositions")
+        public static class PatchUpdatePositions {
+            @SpirePrefixPatch
+            public static SpireReturn<Void> Prefix(DrawPilePanel __instance) {
+                AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+                if (po instanceof DarkPower && po.amount < HIDE_LEVEL) {
+                    return SpireReturn.Return();
+                }
+                return SpireReturn.Continue();
+            }
+        }
     }
     public static class HideDiscardPilePanel{
         private static final int HIDE_LEVEL = 4;
 
         @SpirePatch(clz = DiscardPilePanel.class, method = "render")
         public static class PatchRender {
+            @SpirePrefixPatch
+            public static SpireReturn<Void> Prefix(DiscardPilePanel __instance) {
+                AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
+                if (po instanceof DarkPower && po.amount < HIDE_LEVEL) {
+                    return SpireReturn.Return();
+                }
+                return SpireReturn.Continue();
+            }
+        }
+        @SpirePatch(clz = DiscardPilePanel.class, method = "updatePositions")
+        public static class PatchUpdatePositions {
             @SpirePrefixPatch
             public static SpireReturn<Void> Prefix(DiscardPilePanel __instance) {
                 AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
@@ -552,8 +574,8 @@ public class DarkPowerPatch {
                 return SpireReturn.Continue();
             }
         }
-        @SpirePatch(clz = ExhaustPanel.class, method = "updateVfx")
-        public static class PatchUpdateVfx {
+        @SpirePatch(clz = ExhaustPanel.class, method = "updatePositions")
+        public static class PatchUpdatePositions {
             @SpirePrefixPatch
             public static SpireReturn<Void> Prefix(ExhaustPanel __instance) {
                 AbstractPower po = AbstractDungeon.player.getPower(DarkPower.POWER_ID);
