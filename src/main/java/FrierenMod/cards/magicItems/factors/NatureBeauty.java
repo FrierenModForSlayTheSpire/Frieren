@@ -11,7 +11,7 @@ public class NatureBeauty extends AbstractMagicItem {
     public NatureBeauty() {
         super(ID);
         loadRarity(MagicItemRarity.UNCOMMON);
-        this.manaNeedAddCoefficient = 2;
+        this.manaNeedAddCoefficient = 1;
     }
 
     @Override

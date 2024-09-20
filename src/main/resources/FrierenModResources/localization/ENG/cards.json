@@ -58,7 +58,7 @@
     "NAME": "Party Tricks: Nature's Beauty",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !SM! [E] next turn.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X+2 *Mana in pile, gain X [E] next turn."
+      "Exhaust X+1 *Mana in pile, gain X [E] next turn."
     ]
   },
   "FrierenMod:IceArrows": {
@@ -114,7 +114,7 @@
     "NAME": "Barrier Magic",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, gain !B! Block and Block is not removed at the start of your next !SM! turns.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust X+2 *Mana in pile, gain X Block and Block will not be removed at the start of your next X turns."
+      "Exhaust X+1 *Mana in pile, gain X Block and Block will not be removed at the start of your next X turns."
     ]
   },
   "FrierenMod:PassOnTheTorch": {

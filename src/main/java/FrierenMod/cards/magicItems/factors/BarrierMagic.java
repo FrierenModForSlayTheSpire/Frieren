@@ -12,7 +12,7 @@ public class BarrierMagic extends AbstractMagicItem {
     public BarrierMagic() {
         super(ID);
         loadRarity(MagicItemRarity.UNCOMMON);
-        this.manaNeedAddCoefficient = 2;
+        this.manaNeedAddCoefficient = 1;
     }
 
     @Override
