@@ -220,21 +220,22 @@
     ]
   },
   "FrierenMod:MimicPower": {
-    "NAME": "宝箱怪",
+    "NAME": "Mimic",
     "DESCRIPTIONS": [
-      "当你打出 #b%d 张牌后，你的回合会强制结束，移除你所有 #y魔力 并获得 #y好黑啊 。"
+      "After you played #b%d cards, end your turn, remove your #yMana and apply #yDark_and_Scary to you."
     ]
   },
   "FrierenMod:DarkPower": {
-    "NAME": "test",
+    "NAME": "Dark and Scary",
     "DESCRIPTIONS": [
-      "test","test"
+      "You can't see clearly in the Mimic...",
+      "So dark, and #r@Scary@"
     ]
   },
   "FrierenMod:SwallowedPower": {
-    "NAME": "被吞噬",
+    "NAME": "Swallowed",
     "DESCRIPTIONS": [
-      "本场战斗中手牌上限减少 #b%d 。"
+      "Decrease your hand size by #b&d this combat."
     ]
   }
 }

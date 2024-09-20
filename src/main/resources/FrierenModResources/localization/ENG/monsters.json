@@ -17,14 +17,14 @@
   },
   "FrierenMod:Mimic": {
     "MOVES": [
-      "伪装",
-      "重击",
-      "吞噬",
-      "吃撑了"
+      "Camouflage",
+      "Heavy Attack",
+      "Swallow",
+      "Hiccup"
     ],
-    "NAME": "宝箱怪",
+    "NAME": "Mimic",
     "DIALOG": [
-      " ~嗝~ ~~~~~~"
+      " ~Burp~ ~~~~~~"
     ]
   }
 }
