@@ -23,7 +23,7 @@ public class MimicFight extends AbstractImageEvent {
     public int state = 0;
 
     public MimicFight() {
-        super(EVENT_STRINGS.NAME, EVENT_STRINGS.DESCRIPTIONS[1], ModInformation.makeEventImgPath("MimicEvent1"));
+        super(EVENT_STRINGS.NAME, EVENT_STRINGS.DESCRIPTIONS[0], ModInformation.makeEventImgPath("MimicEvent1"));
         this.imageEventText.clearAllDialogs();
         this.imageEventText.clearRemainingOptions();
         this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[0]);
