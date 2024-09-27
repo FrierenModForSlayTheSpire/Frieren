@@ -225,6 +225,12 @@
       "取消"
     ]
   },
+  "FrierenMod:MagicDeckHistory": {
+    "TEXT": [
+      "魔法牌组",
+      "抽牌槽：%s，手牌槽：%s，弃牌槽：%s"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "特殊音效",

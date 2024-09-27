@@ -225,6 +225,12 @@
       "Cancel"
     ]
   },
+  "FrierenMod:MagicDeckHistory": {
+    "TEXT": [
+      "Magic Deck",
+      "Draw Slot:%s, Hand Slot:%s, Discard Slot:%s"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "Special VFX",
