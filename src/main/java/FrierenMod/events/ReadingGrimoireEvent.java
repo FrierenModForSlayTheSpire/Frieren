@@ -4,7 +4,6 @@ import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.props.Tutorial;
 import FrierenMod.cards.magicItems.props.UnbelievableTool;
 import FrierenMod.gameHelpers.CardPoolHelper;
-import FrierenMod.utils.Config;
 import FrierenMod.utils.ModInformation;
 import basemod.ReflectionHacks;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -93,7 +92,7 @@ public class ReadingGrimoireEvent extends AbstractImageEvent {
             case 3:
                 if (buttonPressed == 0) {
                     this.imageEventText.clearAllDialogs();
-                    if (!(Boolean) TipTracker.tips.get(COMBAT_TIP_KEY) || Config.IN_DEV) {
+                    if (!(Boolean) TipTracker.tips.get(COMBAT_TIP_KEY)) {
                         this.state = 5;
                         this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[5]);
                     } else {
