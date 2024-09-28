@@ -46,6 +46,11 @@ public class HighDensityMana extends AbstractBaseCard {
     }
 
     @Override
+    public boolean canUpgrade() {
+        return !this.upgraded;
+    }
+
+    @Override
     public void triggerOnExhaust() {
         this.addToBot(new GainEnergyAction(1));
     }
