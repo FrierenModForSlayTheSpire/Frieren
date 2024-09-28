@@ -4,11 +4,15 @@ import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.ExhaustMagicItemEffect;
 import FrierenMod.effects.MagicPropUsingEffect;
 import FrierenMod.patches.fields.MagicDeckField;
+import FrierenMod.ui.slot.Slot;
 import FrierenMod.utils.ModInformation;
+import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -31,13 +35,16 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(MagicDeckScreen.class.getSimpleName())).TEXT;
     private AbstractCard hoveredCard = null;
     private AbstractCard clickStartedCard = null;
-    private static float drawStartX;
-    private static float drawStartY = Settings.HEIGHT * 0.66F;
-    private static float padX;
+    private static float deckDrawStartX;
+    private static float loadedFactorsDrawStartX;
+    private static final float deckDrawStartY = Settings.HEIGHT * 0.28F;
+    private static final float loadedFactorsDrawStartY = Settings.HEIGHT * 0.76F;
+    private static float deckPadX;
+    private static float loadedFactorsPadX;
 
-    private static float padY;
+    private static float deckPadY;
     private float grabStartY = 0.0F, currentDiffY = 0.0F;
-    private float scrollLowerBound = -Settings.DEFAULT_SCROLL_LIMIT;
+    private final float scrollLowerBound = -Settings.DEFAULT_SCROLL_LIMIT;
 
     private float scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
     private float tmpHeaderPosition = Float.NEGATIVE_INFINITY;
@@ -57,18 +64,28 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private boolean previousHasBlackScreen = false;
     private boolean choosable = true;
 
+    private final Slot slot1;
+    private final Slot slot2;
+    private final Slot slot3;
+
+
     public MagicDeckScreen() {
-        drawStartX = Settings.WIDTH;
-        drawStartX -= 5.0F * AbstractCard.IMG_WIDTH * 0.75F;
-        drawStartX -= 4.0F * Settings.CARD_VIEW_PAD_X;
-        drawStartX /= 2.0F;
-        drawStartX += AbstractCard.IMG_WIDTH * 0.75F / 2.0F;
-        padX = AbstractCard.IMG_WIDTH * 0.75F + Settings.CARD_VIEW_PAD_X;
-        padY = AbstractCard.IMG_HEIGHT * 0.75F + Settings.CARD_VIEW_PAD_Y;
+        deckDrawStartX = Settings.WIDTH;
+        deckDrawStartX -= 5.0F * AbstractCard.IMG_WIDTH * 0.75F;
+        deckDrawStartX -= 4.0F * Settings.CARD_VIEW_PAD_X;
+        deckDrawStartX /= 2.0F;
+        deckDrawStartX += AbstractCard.IMG_WIDTH * 0.75F / 2.0F;
+        deckPadX = AbstractCard.IMG_WIDTH * 0.75F + Settings.CARD_VIEW_PAD_X;
+        deckPadY = AbstractCard.IMG_HEIGHT * 0.75F + Settings.CARD_VIEW_PAD_Y;
+        loadedFactorsPadX = 1.5F * deckPadX;
+        loadedFactorsDrawStartX = deckDrawStartX + 0.5F * deckPadX;
         this.scrollBar = new ScrollBar(this);
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
         this.sortHeader = new MagicDeckSortHeader(this);
         chosenCards = new ArrayList<>();
+        slot1 = new Slot(PublicRes.SLOT_1, 0);
+        slot2 = new Slot(PublicRes.SLOT_2, 1);
+        slot3 = new Slot(PublicRes.SLOT_3, 2);
     }
 
     @Override
@@ -92,9 +109,6 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         return Enum.MAGIC_DECK_SCREEN;
     }
 
-    // Note that this can be private and take any parameters you want.
-    // When you call openCustomScreen it finds the first method named "open"
-    // and calls it with whatever arguments were passed to it.
     public void open() {
         if (AbstractDungeon.screen != AbstractDungeon.CurrentScreen.NONE) {
             AbstractDungeon.previousScreen = AbstractDungeon.screen;
@@ -134,7 +148,15 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         AbstractDungeon.overlayMenu.cancelButton.hide();
         genericScreenOverlayReset();
         cancelUsingProp();
-        for (AbstractCard c : getDeck()) {
+        AbstractCard[] loadedFactors = getLoadedFactors();
+        for (AbstractCard loadedFactor : loadedFactors) {
+            if (loadedFactor == null)
+                break;
+            loadedFactor.drawScale = 0.12F;
+            loadedFactor.targetDrawScale = 0.12F;
+            loadedFactor.unhover();
+        }
+        for (AbstractCard c : getDeckWithoutLoadedFactors()) {
             c.drawScale = 0.12F;
             c.targetDrawScale = 0.12F;
             c.unhover();
@@ -148,6 +170,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             isDraggingScrollBar = this.scrollBar.update();
         if (!isDraggingScrollBar)
             updateScrolling();
+        updateSlot();
         updatePositions();
         this.sortHeader.update();
         updateClicking();
@@ -156,6 +179,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     @Override
     public void render(SpriteBatch sb) {
+        renderSlot(sb);
         if (isUsingProp != null) {
             boolean showVFX = true;
             for (AbstractGameEffect effect : AbstractDungeon.topLevelEffects) {
@@ -182,14 +206,32 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         if (shouldShowScrollBar())
             this.scrollBar.render(sb);
         if (this.hoveredCard == null) {
-            this.renderMagicFactorDeck(sb);
+            this.renderMagicDeck(sb);
         } else {
-            this.renderMagicFactorDeckExceptOneCard(sb, this.hoveredCard);
+            this.renderMagicDeckExceptOneCard(sb, this.hoveredCard);
             this.hoveredCard.renderHoverShadow(sb);
             this.hoveredCard.render(sb);
         }
         this.sortHeader.render(sb);
         MagicDeckField.getDeck().renderTip(sb);
+    }
+
+    public void renderSlot(SpriteBatch sb) {
+        slot1.render(sb);
+        slot2.render(sb);
+        slot3.render(sb);
+    }
+
+    public void updateSlot() {
+        slot1.target_x = loadedFactorsDrawStartX;
+        slot1.target_y = loadedFactorsDrawStartY + this.currentDiffY;
+        slot1.update();
+        slot2.target_x = loadedFactorsDrawStartX + loadedFactorsPadX;
+        slot2.target_y = loadedFactorsDrawStartY + this.currentDiffY;
+        slot2.update();
+        slot3.target_x = loadedFactorsDrawStartX + 2 * loadedFactorsPadX;
+        slot3.target_y = loadedFactorsDrawStartY + this.currentDiffY;
+        slot3.update();
     }
 
     @Override
@@ -199,7 +241,8 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private void updatePositions() {
         this.hoveredCard = null;
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getDeck();
+        ArrayList<AbstractCard> cards = getDeckWithoutLoadedFactors();
+        AbstractCard[] factors = getLoadedFactors();
         if (this.sortOrder != null) {
             cards = new ArrayList<>(cards);
             cards.sort(this.sortOrder);
@@ -212,12 +255,22 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
             if (abstractCard != null)
                 this.tmpHeaderPosition = abstractCard.current_y;
         }
+        for (int i = 0; i < factors.length; i++) {
+            if (factors[i] == null)
+                break;
+            factors[i].target_x = loadedFactorsDrawStartX + i * loadedFactorsPadX;
+            factors[i].target_y = loadedFactorsDrawStartY + this.currentDiffY;
+            factors[i].update();
+            factors[i].updateHoverLogic();
+            if (factors[i].hb.hovered)
+                this.hoveredCard = factors[i];
+        }
         for (int i = 0; i < cards.size(); i++) {
             int mod = i % 5;
             if (mod == 0 && i != 0)
                 lineNum++;
-            cards.get(i).target_x = drawStartX + mod * padX;
-            cards.get(i).target_y = drawStartY + this.currentDiffY - lineNum * padY;
+            cards.get(i).target_x = deckDrawStartX + mod * deckPadX;
+            cards.get(i).target_y = deckDrawStartY + this.currentDiffY - lineNum * deckPadY;
             cards.get(i).update();
             cards.get(i).updateHoverLogic();
             if (cards.get(i).hb.hovered)
@@ -240,24 +293,56 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         }
     }
 
-    public void renderMagicFactorDeck(SpriteBatch sb) {
-        for (AbstractCard c : getDeck()) {
+    public void renderMagicDeck(SpriteBatch sb) {
+        for (AbstractCard c : getDeckWithoutLoadedFactors()) {
+            c.render(sb);
+        }
+        for (AbstractCard c : getLoadedFactors()) {
+            if (c == null)
+                break;
             c.render(sb);
         }
     }
 
-    public ArrayList<AbstractCard> getDeck() {
-        ArrayList<AbstractCard> retVal = MagicDeckField.getDeck().group;
-        for (AbstractCard c : retVal) {
-            if (c instanceof AbstractMagicItem) {
+    private ArrayList<AbstractCard> getDeckWithoutLoadedFactors() {
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == -1) {
                 ((AbstractMagicItem) c).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.DECK);
+                retVal.add(c);
             }
         }
         return retVal;
     }
 
-    public void renderMagicFactorDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {
-        for (AbstractCard c : getDeck()) {
+    private AbstractCard[] getLoadedFactors() {
+        AbstractCard[] retVal = new AbstractCard[3];
+        for (AbstractCard c : MagicDeckField.getDeck().group) {
+            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot != -1) {
+                if (((AbstractMagicItem) c).currentSlot == 0) {
+                    ((AbstractMagicItem) c).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.DECK);
+                    retVal[0] = c;
+                } else if (((AbstractMagicItem) c).currentSlot == 1) {
+                    ((AbstractMagicItem) c).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.DECK);
+                    retVal[1] = c;
+                } else if (((AbstractMagicItem) c).currentSlot == 2) {
+                    ((AbstractMagicItem) c).setDescriptionByShowPlaceType(AbstractMagicItem.ShowPlaceType.DECK);
+                    retVal[2] = c;
+                }
+            }
+        }
+        return retVal;
+    }
+
+    public void renderMagicDeckExceptOneCard(SpriteBatch sb, AbstractCard card) {
+        for (AbstractCard c : getDeckWithoutLoadedFactors()) {
+            if (!c.equals(card)) {
+                c.render(sb);
+            }
+        }
+        for (AbstractCard c : getLoadedFactors()) {
+            if (c == null)
+                break;
             if (!c.equals(card)) {
                 c.render(sb);
             }
@@ -285,7 +370,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         } else {
             this.grabbedScreen = false;
         }
-        if (this.prevDeckSize != getDeck().size())
+        if (this.prevDeckSize != getDeckWithoutLoadedFactors().size())
             calculateScrollBounds();
         resetScrolling();
         updateBarPosition();
@@ -328,29 +413,40 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     private void hideCards() {
         int lineNum = 0;
-        ArrayList<AbstractCard> cards = getDeck();
+        ArrayList<AbstractCard> cards = getDeckWithoutLoadedFactors();
         for (int i = 0; i < cards.size(); i++) {
             int mod = i % 5;
             if (mod == 0 && i != 0)
                 lineNum++;
-            cards.get(i).current_x = drawStartX + mod * padX;
-            cards.get(i).current_y = drawStartY + this.currentDiffY - lineNum * padY - MathUtils.random(100.0F * Settings.scale, 200.0F * Settings.scale);
+            cards.get(i).current_x = deckDrawStartX + mod * deckPadX;
+            cards.get(i).current_y = deckDrawStartY + this.currentDiffY - lineNum * deckPadY - MathUtils.random(100.0F * Settings.scale, 200.0F * Settings.scale);
             cards.get(i).targetDrawScale = 0.75F;
             cards.get(i).drawScale = 0.75F;
             cards.get(i).setAngle(0.0F, true);
         }
+        AbstractCard[] factors = getLoadedFactors();
+        for (int i = 0; i < factors.length; i++) {
+            if (factors[i] == null) {
+                break;
+            }
+            factors[i].current_x = loadedFactorsDrawStartX + i * loadedFactorsPadX;
+            factors[i].current_y = loadedFactorsDrawStartY + this.currentDiffY - MathUtils.random(100.0F * Settings.scale, 200.0F * Settings.scale);
+            factors[i].targetDrawScale = 0.75F;
+            factors[i].drawScale = 0.75F;
+            factors[i].setAngle(0.0F, true);
+        }
     }
 
     private void calculateScrollBounds() {
-        if (getDeck().size() > 10) {
-            int scrollTmp = getDeck().size() / 5 - 2;
-            if (getDeck().size() % 5 != 0)
+        if (getDeckWithoutLoadedFactors().size() > 10) {
+            int scrollTmp = getDeckWithoutLoadedFactors().size() / 5 - 2;
+            if (getDeckWithoutLoadedFactors().size() % 5 != 0)
                 scrollTmp++;
-            this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + scrollTmp * padY;
+            this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + scrollTmp * deckPadY;
         } else {
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT;
         }
-        this.prevDeckSize = getDeck().size();
+        this.prevDeckSize = getDeckWithoutLoadedFactors().size();
     }
 
     private void resetScrolling() {
@@ -426,5 +522,9 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     @Override
     public boolean allowOpenMap() {
         return true;
+    }
+
+    private static TextureAtlas.AtlasRegion getImg(Texture texture) {
+        return new TextureAtlas.AtlasRegion(texture, 0, 0, texture.getWidth(), texture.getHeight());
     }
 }

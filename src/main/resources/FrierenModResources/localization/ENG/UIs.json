@@ -231,6 +231,13 @@
       "Draw Slot:%s, Hand Slot:%s, Discard Slot:%s"
     ]
   },
+  "FrierenMod:Slot": {
+    "TEXT": [
+      "Draw Slot",
+      "Hand Slot",
+      "Discard Slot"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "Special VFX",

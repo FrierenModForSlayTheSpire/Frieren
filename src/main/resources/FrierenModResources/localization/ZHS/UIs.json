@@ -231,6 +231,13 @@
       "抽牌槽：%s，手牌槽：%s，弃牌槽：%s"
     ]
   },
+  "FrierenMod:Slot": {
+    "TEXT": [
+      "抽牌槽",
+      "手牌槽",
+      "弃牌槽"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "特殊音效",

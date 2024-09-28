@@ -74,13 +74,13 @@ public class MagicDeckSortHeader extends CardLibSortHeader {
         super(null);
         this.magicDeckScreen = magicDeckScreen;
         float xPosition = START_X;
-        SortHeaderButton loadButton = new SortHeaderButton(TEXT[0], xPosition, 0.0F, this);
-        xPosition += SPACE_X;
+//        SortHeaderButton loadButton = new SortHeaderButton(TEXT[0], xPosition, 0.0F, this);
+//        xPosition += SPACE_X;
         SortHeaderButton rarityButton = new SortHeaderButton(TEXT[1], xPosition, 0.0F, this);
         xPosition += SPACE_X;
         SortHeaderButton typeButton = new SortHeaderButton(TEXT[2], xPosition, 0.0F, this);
-        this.buttons = new SortHeaderButton[]{loadButton, rarityButton, typeButton};
-        this.magicDeckScreen.setSortOrder(BY_LOAD);
+        this.buttons = new SortHeaderButton[]{rarityButton, typeButton};
+        this.magicDeckScreen.setSortOrder(BY_RARITY);
         float HB_W = (this.buttons[0]).hb.width;
         float leftSideOffset = Settings.WIDTH / 2.0F - HB_W * this.buttons.length / 2.0F;
         for (int i = 0; i < this.buttons.length; i++) {
@@ -93,10 +93,8 @@ public class MagicDeckSortHeader extends CardLibSortHeader {
         Comparator<AbstractCard> order;
         button.setActive(true);
         if (button == this.buttons[0]) {
-            order = BY_LOAD;
-        } else if (button == this.buttons[1]) {
             order = BY_RARITY;
-        } else if (button == this.buttons[2]) {
+        } else if (button == this.buttons[1]) {
             order = BY_TYPE;
         } else {
             return;

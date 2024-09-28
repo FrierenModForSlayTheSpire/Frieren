@@ -73,9 +73,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     }
 
     public String getDeckDescription(String id) {
-        if (this.magicItemRarity == MagicItemRarity.PROP)
-            return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0];
-        return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0] + LOAD_MESSAGES[currentSlot + 1];
+        return CardCrawlGame.languagePack.getCardStrings(id).EXTENDED_DESCRIPTION[0];
     }
 
     public void setCurrentSlot(int currentSlot) {
