@@ -238,6 +238,11 @@
       "弃牌槽"
     ]
   },
+  "FrierenMod:ChantOneAction": {
+    "TEXT": [
+      "激活一个槽位中的魔法因子"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "特殊音效",

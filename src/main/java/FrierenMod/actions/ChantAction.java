@@ -52,34 +52,33 @@ public class ChantAction extends AbstractGameAction {
     public void update() {
         ArrayList<AbstractCard> stanceChoices;
         AbstractMagicItem[] chantChoices = CombatHelper.getChantChoices();
+        int bannedCount;
         switch (this.chantType) {
             case NORMAL:
+                bannedCount = 0;
                 stanceChoices = new ArrayList<>();
-                if (CombatHelper.canActivateSlot(chantX, 0)) {
-                    chantChoices[0].loadMagicFactor(chantX, nextAction);
-                    if (this.blockGain != null)
-                        chantChoices[0].extraActions.add(new GainBlockAction(AbstractDungeon.player, this.blockGain));
-                    stanceChoices.add(chantChoices[0]);
-                }
-                if (CombatHelper.canActivateSlot(chantX, 1)) {
-                    chantChoices[1].loadMagicFactor(chantX, nextAction);
-                    if (cardToReturn != null) {
-                        chantChoices[1].immediateActions.add(() -> {
-                            cardToReturn.returnToHand = true;
-                        });
+                for (int i = 0; i < 3; i++) {
+                    chantChoices[i].loadMagicFactor(chantX, nextAction);
+                    stanceChoices.add(chantChoices[i]);
+                    if (!CombatHelper.canActivateSlot(chantX, i)) {
+                        chantChoices[i].setBanned();
+                        bannedCount++;
                     }
-                    stanceChoices.add(chantChoices[1]);
                 }
-                if (CombatHelper.canActivateSlot(chantX, 2)) {
-                    chantChoices[2].loadMagicFactor(chantX, nextAction);
-                    stanceChoices.add(chantChoices[2]);
+                if (this.blockGain != null)
+                    chantChoices[0].extraActions.add(new GainBlockAction(AbstractDungeon.player, this.blockGain));
+                if (cardToReturn != null) {
+                    chantChoices[1].immediateActions.add(() -> {
+                        cardToReturn.returnToHand = true;
+                    });
                 }
-                if (!stanceChoices.isEmpty()) {
-                    this.addToTop(new ChooseOneAction(stanceChoices));
+                if (bannedCount < 3) {
+                    this.addToTop(new ChantOneAction(stanceChoices));
                 }
                 break;
             case PRECISE:
             case FINAL:
+                bannedCount = 0;
                 stanceChoices = new ArrayList<>();
                 int[] manaNums = new int[3];
                 manaNums[0] = CombatHelper.getManaNumInDrawPile();
@@ -87,19 +86,20 @@ public class ChantAction extends AbstractGameAction {
                 manaNums[2] = CombatHelper.getManaNumInDiscardPile();
                 for (int i = 0; i < 3; i++) {
                     int chantX = getChantX(manaNums[i], chantChoices[i]);
-                    if (CombatHelper.canActivateSlot(chantX, i) && chantX > 0) {
-                        chantChoices[i].loadMagicFactor(chantX);
-                        stanceChoices.add(chantChoices[i]);
+                    chantChoices[i].loadMagicFactor(chantX);
+                    if (!CombatHelper.canActivateSlot(chantX, i) || chantX > 0) {
+                        chantChoices[i].setBanned();
+                        bannedCount++;
                     }
+                    stanceChoices.add(chantChoices[i]);
                 }
-                if (this.chantType == ChantType.PRECISE) {
-                    if (!stanceChoices.isEmpty())
+                if (bannedCount < 3) {
+                    if (this.chantType == ChantType.PRECISE) {
                         this.addToTop(new ChooseOneAction(stanceChoices));
-                } else {
-                    if (!stanceChoices.isEmpty()) {
+                    } else {
                         boolean haveTriggered = false;
                         for (AbstractCard f : stanceChoices) {
-                            if (f instanceof AbstractMagicItem) {
+                            if (f instanceof AbstractMagicItem && !((AbstractMagicItem) f).isBanned) {
                                 f.onChoseThisOption();
                                 if (!haveTriggered) {
                                     ((AbstractMagicItem) f).triggerPowers();

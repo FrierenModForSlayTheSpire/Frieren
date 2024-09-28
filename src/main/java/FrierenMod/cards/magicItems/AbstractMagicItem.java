@@ -50,6 +50,8 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
     public static String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("MagicItemTip")).TEXT;
     public int propCanChooseMaxAmt;
     public ArrayList<ActionHelper.Lambda> immediateActions;
+    public boolean isBanned;
+    private static final float BANNED_ALPHA = 0.2F;
 
     public AbstractMagicItem(String ID) {
         super(new CardInfo(ID, CardCrawlGame.languagePack.getCardStrings(ID).EXTENDED_DESCRIPTION[0], CardType.SKILL, CardTarget.NONE));
@@ -59,6 +61,7 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
         this.rewardMultipleCoefficient = 1;
         this.rewardAddCoefficient = 0;
         this.propCanChooseMaxAmt = 0;
+        this.isBanned = false;
     }
 
     public void takeEffect() {
@@ -206,6 +209,23 @@ public abstract class AbstractMagicItem extends AbstractBaseCard {
             this.tips.add(new TooltipInfo(TEXT[0], TEXT[1]));
         }
         return this.tips;
+    }
+
+    public void setBanned() {
+        this.isBanned = true;
+        this.transparency = this.targetTransparency = BANNED_ALPHA;
+        ReflectionHacks.privateMethod(AbstractCard.class, "updateTransparency").invoke(this);
+    }
+
+    @Override
+    public void updateHoverLogic() {
+        if (!isBanned)
+            super.updateHoverLogic();
+    }
+
+    public void hover() {
+        if (!isBanned)
+            super.hover();
     }
 
     @SpireOverride

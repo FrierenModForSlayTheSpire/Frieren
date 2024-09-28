@@ -37,6 +37,10 @@ public class Slot {
         this.hb = new Hitbox(width, height);
         this.type = type;
     }
+    public void setPosition(float x, float y) {
+        this.target_x = x;
+        this.target_y = y;
+    }
 
     public void update() {
         if (this.hoverTimer != 0.0F) {

@@ -238,6 +238,11 @@
       "Discard Slot"
     ]
   },
+  "FrierenMod:ChantOneAction": {
+    "TEXT": [
+      "Activate a Magic Factor in a slot"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "Special VFX",
