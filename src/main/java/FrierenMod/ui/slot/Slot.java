@@ -15,12 +15,14 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.MathHelper;
+import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.screens.charSelect.CharacterSelectScreen;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 
 import static com.megacrit.cardcrawl.helpers.FontHelper.panelNameFont;
 import static com.megacrit.cardcrawl.helpers.FontHelper.renderFontCentered;
@@ -30,7 +32,7 @@ public class Slot {
     public Texture img;
     public boolean hovered;
     public float hoverTimer;
-    private float hoverDuration;
+    private float hoverDuration = 0.0F;
     private boolean renderTip;
     public Hitbox hb;
     public float current_x;
@@ -50,6 +52,7 @@ public class Slot {
     public boolean locked;
     private ArrayList<SlotGlowBoarder> glowList = new ArrayList<>();
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT;
+    private static final Map<String, String> UNLOCK_TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
 
 
     public Slot(String id, int type) {
@@ -79,6 +82,7 @@ public class Slot {
         this.hoverTimer = 0.0F;
         this.width = drawScale * img.getWidth();
         this.height = drawScale * img.getHeight();
+        this.renderTip = false;
         this.hb = new Hitbox(width, height);
         this.renderColor = Color.WHITE.cpy();
         this.transparency = 1.0F;
@@ -130,10 +134,15 @@ public class Slot {
 
     public void updateHoverLogicInLibrary() {
         this.hb.update();
-        if (this.hb.hovered && !locked) {
+        if (this.hb.hovered) {
             this.hover();
-            this.targetDrawScale = 0.75F * Settings.scale;
-            this.drawScale = MathHelper.cardScaleLerpSnap(this.drawScale, this.targetDrawScale);
+            this.hoverDuration += Gdx.graphics.getDeltaTime();
+            if (this.hoverDuration > 0.2F)
+                this.renderTip = true;
+            if (!locked) {
+                this.targetDrawScale = 0.75F * Settings.scale;
+                this.drawScale = MathHelper.cardScaleLerpSnap(this.drawScale, this.targetDrawScale);
+            }
         } else {
             this.unhoverInLibrary();
         }
@@ -155,6 +164,8 @@ public class Slot {
             this.hovered = false;
             this.drawScale = 0.7F * Settings.scale;
             this.targetDrawScale = 0.7F * Settings.scale;
+            this.renderTip = false;
+            this.hoverDuration = 0.0F;
         }
     }
 
@@ -201,6 +212,7 @@ public class Slot {
         updateGlow();
         renderGlow(sb);
         renderHelper(sb, this.img, this.current_x, this.current_y);
+        renderSlotTipInLibrary(sb);
         if (this.drawScale == Settings.scale)
             renderTitle(sb, TEXT[type]);
         this.hb.render(sb);
@@ -212,8 +224,28 @@ public class Slot {
         sb.setBlendFunction(770, 771);
     }
 
+    public void renderSlotTipInLibrary(SpriteBatch sb) {
+        if (this.renderTip) {
+            String unlockText = UNLOCK_TEXT.get(this.id);
+            if (unlockText == null) {
+                unlockText = UNLOCK_TEXT.get("EXCEPTION");
+            }
+            if (this.locked)
+                unlockText += TEXT[5];
+            else
+                unlockText += TEXT[4];
+            float drawX;
+            float drawY = current_y + 200.0F;
+            if (current_x > 1200 * Settings.scale) {
+                drawX = current_x - 600.0F * drawScale;
+            } else
+                drawX = current_x + 200.0F * drawScale;
+            TipHelper.renderGenericTip(drawX, drawY, TEXT[3], unlockText);
+        }
+    }
+
     public void setLockedInLibrary() {
-        this.transparency = 0.5F;
+        this.transparency = 0.4F;
         this.locked = true;
     }
 

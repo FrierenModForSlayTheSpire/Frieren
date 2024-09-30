@@ -1,87 +1,111 @@
 {
   "FrierenMod:DrawMod": {
     "TEXT": [
-      " NL Draw ", " card.", " cards."
+      " NL Draw ",
+      " card.",
+      " cards."
     ]
   },
   "FrierenMod:ManaInDiscardNumMod": {
     "TEXT": [
-      " NL Shuffle ", " *Mana into discard pile."
+      " NL Shuffle ",
+      " *Mana into discard pile."
     ]
   },
   "FrierenMod:ManaInHandNumMod": {
     "TEXT": [
-      " NL Add ", " *Mana into your hand."
+      " NL Add ",
+      " *Mana into your hand."
     ]
   },
   "FrierenMod:ManaInDrawNumMod": {
     "TEXT": [
-      " NL Shuffle  ", " *Mana into your draw pile."
+      " NL Shuffle  ",
+      " *Mana into your draw pile."
     ]
   },
   "FrierenMod:ScryMod": {
     "TEXT": [
-      " NL  Scry ", "."
+      " NL  Scry ",
+      "."
     ]
   },
   "FrierenMod:CostZeroMod": {
     "TEXT": [
-      " NL Reduce the cost of ", " random card in your hand to 0 this turn."," random cards in your hand to 0 this turn."
+      " NL Reduce the cost of ",
+      " random card in your hand to 0 this turn.",
+      " random cards in your hand to 0 this turn."
     ]
   },
   "FrierenMod:GainRandomCardMod": {
     "TEXT": [
-      " NL Add ", " random common card into your hand.It costs 0 this turn.", " random common cards into your hand.They cost 0 this turn."
+      " NL Add ",
+      " random common card into your hand.It costs 0 this turn.",
+      " random common cards into your hand.They cost 0 this turn."
     ]
   },
   "FrierenMod:SelfRetainMod": {
     "TEXT": [
-      " NL  Retain  ", " card in your hand."," cards in your hand."
+      " NL  Retain  ",
+      " card in your hand.",
+      " cards in your hand."
     ]
   },
   "FrierenMod:DamageAllMod": {
     "TEXT": [
-      " NL  Deal ", " damage to ALL enemies."
+      " NL  Deal ",
+      " damage to ALL enemies."
     ]
   },
   "FrierenMod:DamageMod": {
     "TEXT": [
-      " NL  Deal ", " damage."
+      " NL  Deal ",
+      " damage."
     ]
   },
   "FrierenMod:DamageThirdMod": {
     "TEXT": [
-      " NL  Deal ", " damage 3 times."
+      " NL  Deal ",
+      " damage 3 times."
     ]
   },
   "FrierenMod:BlockMod": {
     "TEXT": [
-      " NL Gain ", " Block ."
+      " NL Gain ",
+      " Block ."
     ]
   },
   "FrierenMod:EnergyMod": {
     "TEXT": [
-      " NL Next turn, gain ", " [E] ", " [E] [E] "," [E] [E] [E] ", "."
+      " NL Next turn, gain ",
+      " [E] ",
+      " [E] [E] ",
+      " [E] [E] [E] ",
+      "."
     ]
   },
   "FrierenMod:ExtinguishMod": {
     "TEXT": [
-      " NL If the enemy has ", " or less HP, set their HP to 0."
+      " NL If the enemy has ",
+      " or less HP, set their HP to 0."
     ]
   },
   "FrierenMod:ChantMod": {
     "TEXT": [
-      " NL  frierenmod:Chant ", " ."
+      " NL  frierenmod:Chant ",
+      " ."
     ]
   },
   "FrierenMod:DexterityMod": {
     "TEXT": [
-      " NL Gain ", " Dexterity . NL Exhaust ."
+      " NL Gain ",
+      " Dexterity . NL Exhaust ."
     ]
   },
   "FrierenMod:IntangibleMod": {
     "TEXT": [
-      " NL Gain ", " Intangible . NL Exhaust ."
+      " NL Gain ",
+      " Intangible . NL Exhaust ."
     ]
   },
   "FrierenMod:RemoveDebuffMod": {
@@ -106,22 +130,32 @@
   },
   "FrierenMod:VulnerableMod": {
     "TEXT": [
-      " NL Apply ", " Vulnerable to ALL enemies."
+      " NL Apply ",
+      " Vulnerable to ALL enemies."
     ]
   },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
-      " frierenmod:Analyze %d:"," *Reward ：","(Progress:%d/%d).",
-      " frierenmod:Synchro 4 *Mana . NL "," !B! Block . NL ",
-      "Play 3 frierenmod:Chant cards . NL "," !M! frierenmod:Legendary_Spell with 0 cost this turn . NL ",
-      "Play 3 frierenmod:Legendary_Spell . NL "," Deal !D! damage to ALL enemies. NL "
+      " frierenmod:Analyze %d:",
+      " *Reward ：",
+      "(Progress:%d/%d).",
+      " frierenmod:Synchro 4 *Mana . NL ",
+      " !B! Block . NL ",
+      "Play 3 frierenmod:Chant cards . NL ",
+      " !M! frierenmod:Legendary_Spell with 0 cost this turn . NL ",
+      "Play 3 frierenmod:Legendary_Spell . NL ",
+      " Deal !D! damage to ALL enemies. NL "
     ]
   },
   "FrierenMod:RockGolemSpellMod": {
     "TEXT": [
-      " frierenmod:Analyze %d:"," *Reward ：","(Progress:%d/%d).",
-      " frierenmod:Synchro 2 *Mana . NL "," Deal !D! damage to a random enemy and switch to Defend Mode. NL ",
-      " Play a frierenmod:Chant card. NL "," !B! Block, switch to Attack Mode. NL "
+      " frierenmod:Analyze %d:",
+      " *Reward ：",
+      "(Progress:%d/%d).",
+      " frierenmod:Synchro 2 *Mana . NL ",
+      " Deal !D! damage to a random enemy and switch to Defend Mode. NL ",
+      " Play a frierenmod:Chant card. NL ",
+      " !B! Block, switch to Attack Mode. NL "
     ]
   },
   "FrierenMod:ManaMod": {
@@ -235,8 +269,17 @@
     "TEXT": [
       "Draw Slot",
       "Hand Slot",
-      "Discard Slot"
-    ]
+      "Discard Slot",
+      "Unlock way:",
+      " NL #gUnlocked! ",
+      " NL #rLocked！ "
+    ],
+    "TEXT_DICT": {
+      "0001": "Unlock when start.",
+      "0002": "Unlock when start.",
+      "0003": "Unlock when start.",
+      "EXCEPTION": "No unlock way, please wait for update."
+    }
   },
   "FrierenMod:ChantOneAction": {
     "TEXT": [

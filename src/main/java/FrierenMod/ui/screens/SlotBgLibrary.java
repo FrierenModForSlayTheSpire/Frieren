@@ -178,8 +178,9 @@ public class SlotBgLibrary implements ScrollBarListener {
             if (slot.hovered) {
                 if (InputHelper.justClickedLeft) {
                     InputHelper.justClickedLeft = false;
+                    if(!slot.locked)
+                        this.chosenSlot = slot;
                     slot.unhover();
-                    this.chosenSlot = slot;
                 }
             }
             if (slot.id.equals(chosenSlot.id)) {

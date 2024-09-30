@@ -1,87 +1,111 @@
 {
   "FrierenMod:DrawMod": {
-  "TEXT": [
-    " NL 抽 ", " 张牌。", " 张牌。"
+    "TEXT": [
+      " NL 抽 ",
+      " 张牌。",
+      " 张牌。"
     ]
   },
   "FrierenMod:ManaInDiscardNumMod": {
     "TEXT": [
-      " NL 将 ", " 张 *魔力 放入弃牌堆。"
+      " NL 将 ",
+      " 张 *魔力 放入弃牌堆。"
     ]
   },
   "FrierenMod:ManaInHandNumMod": {
     "TEXT": [
-      " NL 将 ", " 张 *魔力 放入手牌。"
+      " NL 将 ",
+      " 张 *魔力 放入手牌。"
     ]
   },
   "FrierenMod:ManaInDrawNumMod": {
     "TEXT": [
-      " NL 将 ", " 张 *魔力 放入抽牌堆。"
+      " NL 将 ",
+      " 张 *魔力 放入抽牌堆。"
     ]
   },
   "FrierenMod:ScryMod": {
     "TEXT": [
-      " NL  预见 ", "。"
+      " NL  预见 ",
+      "。"
     ]
   },
   "FrierenMod:CostZeroMod": {
     "TEXT": [
-      " NL 你手牌中 ", " 张随机牌在本回合中耗能变为0。", " 张随机牌在本回合中耗能变为0。"
+      " NL 你手牌中 ",
+      " 张随机牌在本回合中耗能变为0。",
+      " 张随机牌在本回合中耗能变为0。"
     ]
   },
   "FrierenMod:GainRandomCardMod": {
     "TEXT": [
-      " NL 获得 ", " 张在本回合耗能为0的随机普通牌。", " 张在本回合耗能为0的随机普通牌。"
+      " NL 获得 ",
+      " 张在本回合耗能为0的随机普通牌。",
+      " 张在本回合耗能为0的随机普通牌。"
     ]
   },
   "FrierenMod:SelfRetainMod": {
     "TEXT": [
-      " NL  保留 手中的 ", " 张牌。"," 张牌。"
+      " NL  保留 手中的 ",
+      " 张牌。",
+      " 张牌。"
     ]
   },
   "FrierenMod:DamageAllMod": {
     "TEXT": [
-      " NL  对所有敌人造成 ", " 点伤害。"
+      " NL  对所有敌人造成 ",
+      " 点伤害。"
     ]
   },
   "FrierenMod:DamageMod": {
     "TEXT": [
-      " NL  造成 ", " 点伤害。"
+      " NL  造成 ",
+      " 点伤害。"
     ]
   },
   "FrierenMod:DamageThirdMod": {
     "TEXT": [
-      " NL  造成 ", " 点伤害三次。"
+      " NL  造成 ",
+      " 点伤害三次。"
     ]
   },
   "FrierenMod:BlockMod": {
     "TEXT": [
-      " NL 获得 ", " 点 格挡 。"
+      " NL 获得 ",
+      " 点 格挡 。"
     ]
   },
   "FrierenMod:EnergyMod": {
     "TEXT": [
-      " NL 下一回合，获得", " [E] ", " [E] [E] "," [E] [E] [E] ", "。"
+      " NL 下一回合，获得",
+      " [E] ",
+      " [E] [E] ",
+      " [E] [E] [E] ",
+      "。"
     ]
   },
   "FrierenMod:ExtinguishMod": {
     "TEXT": [
-      " NL 如果目标敌人的生命值小于等于 ", " 点，则将其生命值变为0。"
+      " NL 如果目标敌人的生命值小于等于 ",
+      " 点，则将其生命值变为0。"
     ]
   },
   "FrierenMod:ChantMod": {
     "TEXT": [
-      " NL  frierenmod:咏唱 ", " 。"
+      " NL  frierenmod:咏唱 ",
+      " 。"
     ]
   },
   "FrierenMod:DexterityMod": {
     "TEXT": [
-      " NL 获得 ", " 点 敏捷 。 NL 消耗 。"
+      " NL 获得 ",
+      " 点 敏捷 。 NL 消耗 。"
     ]
   },
   "FrierenMod:IntangibleMod": {
     "TEXT": [
-      " NL 获得", " 层 无实体 。 NL 消耗 。"
+      " NL 获得",
+      " 层 无实体 。 NL 消耗 。"
     ]
   },
   "FrierenMod:RemoveDebuffMod": {
@@ -106,22 +130,32 @@
   },
   "FrierenMod:VulnerableMod": {
     "TEXT": [
-      " NL 给与所有敌人 ", " 层 易伤 。"
+      " NL 给与所有敌人 ",
+      " 层 易伤 。"
     ]
   },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
-      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
-      " frierenmod:同调 4张 *魔力 。 NL "," !B! 点格挡。 NL ",
-      " 打出3张 frierenmod:咏唱 牌 。 NL "," !M! 张本回合消耗为0的 frierenmod:传说魔法 。 NL ",
-      "打出3张 frierenmod:传说魔法 。 NL "," 对所有敌人造成 !D! 点伤害。 NL "
+      " frierenmod:解析 %d：",
+      " *奖励 ：",
+      "（当前进度%d/%d）。",
+      " frierenmod:同调 4张 *魔力 。 NL ",
+      " !B! 点格挡。 NL ",
+      " 打出3张 frierenmod:咏唱 牌 。 NL ",
+      " !M! 张本回合消耗为0的 frierenmod:传说魔法 。 NL ",
+      "打出3张 frierenmod:传说魔法 。 NL ",
+      " 对所有敌人造成 !D! 点伤害。 NL "
     ]
   },
   "FrierenMod:RockGolemSpellMod": {
     "TEXT": [
-      " frierenmod:解析 %d："," *奖励 ：","（当前进度%d/%d）。",
-      " frierenmod:同调 2张 *魔力 。 NL "," 随机造成 !D! 点伤害，切换至防御形态。 NL ",
-      " 打出1张 frierenmod:咏唱 牌 。 NL "," !B! 点 格挡 ，切换至攻击形态。 NL "
+      " frierenmod:解析 %d：",
+      " *奖励 ：",
+      "（当前进度%d/%d）。",
+      " frierenmod:同调 2张 *魔力 。 NL ",
+      " 随机造成 !D! 点伤害，切换至防御形态。 NL ",
+      " 打出1张 frierenmod:咏唱 牌 。 NL ",
+      " !B! 点 格挡 ，切换至攻击形态。 NL "
     ]
   },
   "FrierenMod:ManaMod": {
@@ -235,8 +269,17 @@
     "TEXT": [
       "抽牌槽",
       "手牌槽",
-      "弃牌槽"
-    ]
+      "弃牌槽",
+      "解锁方式",
+      " NL #g已解锁！ ",
+      " NL #r未解锁！ "
+    ],
+    "TEXT_DICT": {
+      "0001": "初始解锁。",
+      "0002": "初始解锁。",
+      "0003": "初始解锁。",
+      "EXCEPTION": "暂无解锁方式，请等待后续更新。"
+    }
   },
   "FrierenMod:ChantOneAction": {
     "TEXT": [
