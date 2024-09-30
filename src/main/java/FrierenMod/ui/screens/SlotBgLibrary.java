@@ -2,6 +2,7 @@ package FrierenMod.ui.screens;
 
 import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.ui.slot.Slot;
+import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -71,6 +72,13 @@ public class SlotBgLibrary implements ScrollBarListener {
 
 
     public SlotBgLibrary() {
+        this.slots = SlotBgHelper.getAllSlotsFromFiles();
+        if (slots != null)
+            this.allNumber = slots.size();
+        else{
+            this.allNumber = 0;
+            Log.logger.info("WHY SLOTS IS NULL?");
+        }
         this.scrollBar = new ScrollBar(this);
         background = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBg"));
         board = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBgBoard"));
@@ -123,10 +131,13 @@ public class SlotBgLibrary implements ScrollBarListener {
         this.openSlotId = openSlotId;
         this.openSlotIndex = openSlotIndex;
         this.previewSlots = previousSlots;
-        this.progressPercent = SlotBgHelper.getProgressBarPercent();
         this.collectedNumber = SlotBgHelper.getCollectedSlotBgNumber();
-        this.allNumber = SlotBgHelper.getAllSlotBgNumber();
-        this.slots = SlotBgHelper.getAllSlotsFromFiles();
+        if (this.allNumber != 0) {
+            this.progressPercent = (float) collectedNumber / this.allNumber;
+        } else {
+            Log.logger.info("WHY ALL NUMBER IS ZERO?");
+            this.progressPercent = 0.0F;
+        }
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
         this.yesHb.x = yesButtonX;
         this.yesHb.y = yesButtonY;
@@ -178,7 +189,7 @@ public class SlotBgLibrary implements ScrollBarListener {
             if (slot.hovered) {
                 if (InputHelper.justClickedLeft) {
                     InputHelper.justClickedLeft = false;
-                    if(!slot.locked)
+                    if (!slot.locked)
                         this.chosenSlot = slot;
                     slot.unhover();
                 }

@@ -78,12 +78,6 @@ public class SlotBgHelper {
         return slots;
     }
 
-    public static int getAllSlotBgNumber() {
-        if (getAllSlotsFromFiles() == null)
-            return 0;
-        return getAllSlotsFromFiles().size();
-    }
-
     public static int getCollectedSlotBgNumber() {
         String[] parts = loadingString.split(",");
         return parts.length;
@@ -91,14 +85,6 @@ public class SlotBgHelper {
 
     private static String getId(String fileName) {
         return fileName.replaceAll(ModInformation.getSlotBgFolder() + "/", "").replaceAll(".png", "");
-    }
-
-    public static float getProgressBarPercent() {
-        if (getAllSlotBgNumber() == 0) {
-            Log.logger.info("Error while getting progress percent!");
-            return 0;
-        }
-        return (float) getCollectedSlotBgNumber() / getAllSlotBgNumber();
     }
 
     public static void changeLoading(int index, String newId) {
