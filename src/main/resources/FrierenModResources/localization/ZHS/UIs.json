@@ -243,6 +243,18 @@
       "激活一个槽位中的魔法因子"
     ]
   },
+  "FrierenMod:SlotBgPreview": {
+    "TEXT": [
+      "当前卡槽背景："
+    ]
+  },
+  "FrierenMod:SlotBgLibrary": {
+    "TEXT": [
+      "收集进度 %d / %d",
+      "保存",
+      "退出"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "特殊音效",

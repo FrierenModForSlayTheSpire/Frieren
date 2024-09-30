@@ -1,10 +1,10 @@
 package FrierenMod.actions;
 
 import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.patches.fields.CardRewardScreenField;
 import FrierenMod.ui.slot.Slot;
 import FrierenMod.utils.ModInformation;
-import FrierenMod.utils.PublicRes;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,12 +32,11 @@ public class ChantOneAction extends AbstractGameAction {
             AbstractDungeon.cardRewardScreen.chooseOneOpen(choices);
             AbstractDungeon.dynamicBanner.hide();
             AbstractDungeon.dynamicBanner.appear(TEXT[0]);
-            String[] slotUrls = new String[]{PublicRes.SLOT_1, PublicRes.SLOT_2, PublicRes.SLOT_3};
+            ArrayList<Slot> slots = SlotBgHelper.getLoadingSlots();
             CardRewardScreenField.getSlots().clear();
             for (int i = 0; i < 3; i++) {
-                Slot slot = new Slot(slotUrls[i], i);
-                slot.setPosition(AbstractDungeon.cardRewardScreen.rewardGroup.get(i).current_x, AbstractDungeon.cardRewardScreen.rewardGroup.get(i).current_y);
-                CardRewardScreenField.getSlots().add(slot);
+                slots.get(i).setPosition(AbstractDungeon.cardRewardScreen.rewardGroup.get(i).current_x, AbstractDungeon.cardRewardScreen.rewardGroup.get(i).current_y);
+                CardRewardScreenField.getSlots().add(slots.get(i));
             }
             this.tickDuration();
         } else {

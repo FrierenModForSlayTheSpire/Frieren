@@ -1,5 +1,6 @@
 package FrierenMod.ui.panels;
 
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
@@ -33,6 +34,8 @@ public class ConfigPanel extends ModPanel {
         properties.setProperty("REMOVE_STRANGE_SPOON", Boolean.toString(Config.REMOVE_STRANGE_SPOON));
         properties.setProperty("ENCOUNTER_SPIEGEL", Boolean.toString(Config.ENCOUNTER_SPIEGEL));
         properties.setProperty("REMOVE_TIME_EATER", Boolean.toString(Config.REMOVE_TIME_EATER));
+        properties.setProperty("SLOT_BG_COLLECTION_PROGRESS", SlotBgHelper.progressString);
+        properties.setProperty("SLOT_BG_LOADING", SlotBgHelper.loadingString);
         try {
             return new SpireConfig(ModInformation.MOD_NAME, "frierenmod_config", properties);
         } catch (Exception e) {
@@ -51,7 +54,10 @@ public class ConfigPanel extends ModPanel {
         Config.REMOVE_STRANGE_SPOON = config.getBool("REMOVE_STRANGE_SPOON");
         Config.ENCOUNTER_SPIEGEL = config.getBool("ENCOUNTER_SPIEGEL");
         Config.REMOVE_TIME_EATER = config.getBool("REMOVE_TIME_EATER");
+        SlotBgHelper.progressString = config.getString("SLOT_BG_COLLECTION_PROGRESS");
+        SlotBgHelper.loadingString = config.getString("SLOT_BG_LOADING");
     }
+
 
     private static void save(SpireConfig config) {
         if (config == null)
@@ -63,16 +69,20 @@ public class ConfigPanel extends ModPanel {
         }
     }
 
-    public static void SaveConfig() {
+    public static void saveSlotChange(String newString) {
         SpireConfig config = makeConfig();
         assert config != null;
-        config.setBool("ALLOW_SPECIAL_SFX", Config.ALLOW_SPECIAL_SFX);
-        config.setBool("REMOVE_VELVET_CHOKER", Config.REMOVE_VELVET_CHOKER);
-        config.setBool("REMOVE_DEAD_BRANCH", Config.REMOVE_DEAD_BRANCH);
-        config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
-        config.setBool("ENCOUNTER_SPIEGEL", Config.ENCOUNTER_SPIEGEL);
-        config.setBool("REMOVE_TIME_EATER", Config.REMOVE_TIME_EATER);
+        config.setString("SLOT_BG_LOADING", newString);
         save(config);
+        loadSlotBgLoadingString(config);
+    }
+
+    public static void loadSlotBgLoadingString(SpireConfig config) {
+        if (config == null) {
+            Log.logger.info("Missing config file");
+            return;
+        }
+        SlotBgHelper.loadingString = config.getString("SLOT_BG_LOADING");
     }
 
     public static void makeModPanels() {

@@ -25,7 +25,4 @@ public class PublicRes {
     public static final Color MAGIC_ITEM_RENDER_COLOR = CardHelper.getColor(157, 68, 250);
     public static final String BG_MAGIC_FACTOR_512 = BG_MANA_512;
     public static final String BG_MAGIC_FACTOR_1024 = BG_MANA_1024;
-    public static final String SLOT_1 = ModInformation.makeUIPath("slotBg/slot1");
-    public static final String SLOT_2 = ModInformation.makeUIPath("slotBg/slot2");
-    public static final String SLOT_3 = ModInformation.makeUIPath("slotBg/slot3");
 }

@@ -53,6 +53,9 @@ public class ModInformation {
     private static String getUIPath() {
         return getImgPath() + "UI/";
     }
+    public static String getSlotBgFolder(){
+        return getUIPath() + "slotBg";
+    }
 
     public static String makeUIPath(String content) {
         return getUIPath() + content + ".png";

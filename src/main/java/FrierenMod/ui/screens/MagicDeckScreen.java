@@ -3,10 +3,10 @@ package FrierenMod.ui.screens;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.ExhaustMagicItemEffect;
 import FrierenMod.effects.MagicPropUsingEffect;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.ui.slot.Slot;
 import FrierenMod.utils.ModInformation;
-import FrierenMod.utils.PublicRes;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomScreen;
 import com.badlogic.gdx.graphics.Color;
@@ -63,10 +63,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     private final ArrayList<AbstractCard> chosenCards;
     private boolean previousHasBlackScreen = false;
     private boolean choosable = true;
-
-    private final Slot slot1;
-    private final Slot slot2;
-    private final Slot slot3;
+    private ArrayList<Slot> loadingSlots;
 
 
     public MagicDeckScreen() {
@@ -83,9 +80,6 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
         this.scrollBar.move(0.0F, -30.0F * Settings.scale);
         this.sortHeader = new MagicDeckSortHeader(this);
         chosenCards = new ArrayList<>();
-        slot1 = new Slot(PublicRes.SLOT_1, 0);
-        slot2 = new Slot(PublicRes.SLOT_2, 1);
-        slot3 = new Slot(PublicRes.SLOT_3, 2);
     }
 
     @Override
@@ -121,6 +115,7 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
 
     @Override
     public void reopen() {
+        loadingSlots = SlotBgHelper.getLoadingSlots();
         AbstractDungeon.screen = curScreen();
         AbstractDungeon.isScreenUp = true;
         AbstractDungeon.player.releaseCard();
@@ -217,21 +212,17 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     public void renderSlot(SpriteBatch sb) {
-        slot1.render(sb);
-        slot2.render(sb);
-        slot3.render(sb);
+        for (Slot slot : loadingSlots)
+            slot.render(sb);
     }
 
     public void updateSlot() {
-        slot1.target_x = loadedFactorsDrawStartX;
-        slot1.target_y = loadedFactorsDrawStartY + this.currentDiffY;
-        slot1.update();
-        slot2.target_x = loadedFactorsDrawStartX + loadedFactorsPadX;
-        slot2.target_y = loadedFactorsDrawStartY + this.currentDiffY;
-        slot2.update();
-        slot3.target_x = loadedFactorsDrawStartX + 2 * loadedFactorsPadX;
-        slot3.target_y = loadedFactorsDrawStartY + this.currentDiffY;
-        slot3.update();
+        for (int i = 0; i < loadingSlots.size(); i++) {
+            Slot slot = loadingSlots.get(i);
+            slot.target_x = loadedFactorsDrawStartX + i * loadedFactorsPadX;
+            slot.target_y = loadedFactorsDrawStartY + this.currentDiffY;
+            slot.update();
+        }
     }
 
     @Override

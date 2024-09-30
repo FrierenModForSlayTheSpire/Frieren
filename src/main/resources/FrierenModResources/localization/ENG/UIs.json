@@ -243,6 +243,18 @@
       "Activate a Magic Factor in a slot"
     ]
   },
+  "FrierenMod:SlotBgPreview": {
+    "TEXT": [
+      "Slot Background:"
+    ]
+  },
+  "FrierenMod:SlotBgLibrary": {
+    "TEXT": [
+      "Collection progress %d / %d",
+      "Save",
+      "Exit"
+    ]
+  },
   "FrierenMod:ConfigPanel": {
     "TEXT": [
       "Special VFX",
