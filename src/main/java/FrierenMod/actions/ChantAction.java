@@ -5,7 +5,6 @@ import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.watcher.ChooseOneAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
@@ -87,7 +86,7 @@ public class ChantAction extends AbstractGameAction {
                 for (int i = 0; i < 3; i++) {
                     int chantX = getChantX(manaNums[i], chantChoices[i]);
                     chantChoices[i].loadMagicFactor(chantX);
-                    if (!CombatHelper.canActivateSlot(chantX, i) || chantX > 0) {
+                    if (!CombatHelper.canActivateSlot(chantX, i) || chantX <= 0) {
                         chantChoices[i].setBanned();
                         bannedCount++;
                     }
@@ -95,7 +94,7 @@ public class ChantAction extends AbstractGameAction {
                 }
                 if (bannedCount < 3) {
                     if (this.chantType == ChantType.PRECISE) {
-                        this.addToTop(new ChooseOneAction(stanceChoices));
+                        this.addToTop(new ChantOneAction(stanceChoices));
                     } else {
                         boolean haveTriggered = false;
                         for (AbstractCard f : stanceChoices) {
