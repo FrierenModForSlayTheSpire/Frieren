@@ -18,6 +18,7 @@ import java.util.jar.JarFile;
 public class SlotBgHelper {
     public static String progressString = "0001,0002,0003";
     public static String loadingString = "0001,0002,0003";
+    public static String allString = getAllStringFromFiles();
 
     public static ArrayList<Slot> getLoadingSlotsInPreview() {
         String[] parts = loadingString.split(",");
@@ -56,7 +57,7 @@ public class SlotBgHelper {
         return slots;
     }
 
-    public static ArrayList<Slot> getAllSlotsFromFiles() {
+    public static String getAllStringFromFiles() {
         ClassLoader classLoader = ResourceChecker.class.getClassLoader();
         URL resource = classLoader.getResource(ModInformation.getSlotBgFolder());
         if (resource == null) {
@@ -64,18 +65,32 @@ public class SlotBgHelper {
             return null;
         }
         String jarPath = resource.getPath().substring(5, resource.getPath().indexOf("!"));
-        ArrayList<Slot> slots = new ArrayList<>();
+        StringBuilder retVal = new StringBuilder();
         try (JarFile jarFile = new JarFile(jarPath)) {
             Enumeration<JarEntry> entries = jarFile.entries();
             while (entries.hasMoreElements()) {
                 JarEntry entry = entries.nextElement();
                 String entryName = entry.getName();
                 if (entryName.startsWith(ModInformation.getSlotBgFolder()) && !entry.isDirectory()) {
-                    slots.add(new Slot(getId(entryName), true));
+                    retVal.append(getId(entryName)).append(",");
                 }
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
+        }
+        if (retVal.length() > 0) {
+            return retVal.substring(0, retVal.length() - 1);
+        }
+        Log.logger.info("WHY NO ANY SLOT BG?");
+        return "";
+    }
+
+    public static ArrayList<Slot> getAllSlotsInLibrary() {
+        ArrayList<Slot> slots = new ArrayList<>();
+        String[] parts = allString.split(",");
+        for (String part : parts) {
+            Slot slot = new Slot(part, true);
+            slots.add(slot);
         }
         return slots;
     }

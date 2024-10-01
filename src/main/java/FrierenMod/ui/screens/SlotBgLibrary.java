@@ -72,13 +72,8 @@ public class SlotBgLibrary implements ScrollBarListener {
 
 
     public SlotBgLibrary() {
-        this.slots = SlotBgHelper.getAllSlotsFromFiles();
-        if (slots != null)
-            this.allNumber = slots.size();
-        else {
-            this.allNumber = 0;
-            Log.logger.info("WHY SLOTS IS NULL?");
-        }
+        this.slots = SlotBgHelper.getAllSlotsInLibrary();
+        this.allNumber = slots.size();
         this.scrollBar = new ScrollBar(this);
         background = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBg"));
         board = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBgBoard"));
