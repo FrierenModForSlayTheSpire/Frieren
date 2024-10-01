@@ -117,6 +117,12 @@ public class Slot {
         updateTransparency();
     }
 
+    public void updateWithAchievementPanel(float current_x, float current_y) {
+        this.current_x = this.target_x = current_x;
+        this.current_y = this.target_y = current_y;
+        this.hb.move(this.current_x, this.current_y);
+    }
+
     public void updateTransparency() {
         this.renderColor.a = this.transparency;
     }
@@ -281,7 +287,7 @@ public class Slot {
         renderFontCentered(sb, panelNameFont, title, current_x, current_y + 200.0F * drawScale, Color.WHITE.cpy());
     }
 
-    private static String makeUrl(String id) {
+    public static String makeUrl(String id) {
         return ModInformation.makeUIPath("slotBg/" + id);
     }
 }

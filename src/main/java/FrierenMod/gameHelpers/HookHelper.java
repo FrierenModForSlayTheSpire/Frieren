@@ -4,10 +4,12 @@ import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cardMods.SynchroMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.patches.fields.CardCrawlGameField;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;
 import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.ui.panels.AchievementPopUpPanel;
 import FrierenMod.ui.panels.MagicDeckPanel;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
@@ -18,6 +20,7 @@ import basemod.helpers.CardModifierManager;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.core.CardCrawlGame.UpdateHooks;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -29,7 +32,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
 import java.util.ArrayList;
 
-public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber, PostUpdateSubscriber {
+public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber, PostUpdateSubscriber, RenderSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -124,6 +127,13 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         if (CombatHelper.isInCombat()) {
             updateExistingCard();
         }
+        ArrayList<AchievementPopUpPanel> panelQueue = CardCrawlGameField.achievementPopUpPanelQueue.get();
+        if (panelQueue != null) {
+            panelQueue.removeIf(panel -> panel.ended);
+            if (!panelQueue.isEmpty()) {
+                panelQueue.get(0).update();
+            }
+        }
     }
 
     public void updateExistingCard() {
@@ -150,5 +160,14 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
                 card.initializeDescription();
             }
         }
+    }
+
+    @Override
+    public void receiveRender(SpriteBatch sb) {
+        ArrayList<AchievementPopUpPanel> panelQueue = CardCrawlGameField.achievementPopUpPanelQueue.get();
+        if (panelQueue != null && !panelQueue.isEmpty())
+            for (AchievementPopUpPanel panel : CardCrawlGameField.achievementPopUpPanelQueue.get()) {
+                panel.render(sb);
+            }
     }
 }

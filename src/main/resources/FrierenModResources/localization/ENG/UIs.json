@@ -271,13 +271,15 @@
       "Hand Slot",
       "Discard Slot",
       "Unlock way:",
-      " NL #gUnlocked! ",
-      " NL #rLocked！ "
+      " NL #gUnlocked!",
+      " NL #rLocked!",
+      "Slot Bg UnLocked!"
     ],
     "TEXT_DICT": {
       "0001": "Unlock when start.",
       "0002": "Unlock when start.",
       "0003": "Unlock when start.",
+      "1001": "After Defeated CorruptHeart in A0 or higher.",
       "EXCEPTION": "No unlock way, please wait for update."
     }
   },

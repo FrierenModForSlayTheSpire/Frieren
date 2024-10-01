@@ -74,15 +74,15 @@ public class ConfigPanel extends ModPanel {
         assert config != null;
         config.setString("SLOT_BG_LOADING", newString);
         save(config);
-        loadSlotBgLoadingString(config);
+        SlotBgHelper.loadingString = config.getString("SLOT_BG_LOADING");
     }
 
-    public static void loadSlotBgLoadingString(SpireConfig config) {
-        if (config == null) {
-            Log.logger.info("Missing config file");
-            return;
-        }
-        SlotBgHelper.loadingString = config.getString("SLOT_BG_LOADING");
+    public static void saveSlotProgress(String newString) {
+        SpireConfig config = makeConfig();
+        assert config != null;
+        config.setString("SLOT_BG_COLLECTION_PROGRESS", newString);
+        save(config);
+        SlotBgHelper.loadingString = config.getString("SLOT_BG_COLLECTION_PROGRESS");
     }
 
     public static void makeModPanels() {

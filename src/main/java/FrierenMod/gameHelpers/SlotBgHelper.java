@@ -1,5 +1,7 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.patches.fields.CardCrawlGameField;
+import FrierenMod.ui.panels.AchievementPopUpPanel;
 import FrierenMod.ui.panels.ConfigPanel;
 import FrierenMod.ui.slot.Slot;
 import FrierenMod.utils.Log;
@@ -97,5 +99,33 @@ public class SlotBgHelper {
                 newLoadingString.append(",");
         }
         ConfigPanel.saveSlotChange(newLoadingString.toString());
+    }
+
+    public static void unlockANewSlot(String id) {
+        if (isASlotCollected(id) || !isASlotValid(id)) {
+            return;
+        }
+        String newProgressString = getNewSlotProgressString(id);
+//        ConfigPanel.saveSlotProgress(newProgressString);
+        CardCrawlGameField.achievementPopUpPanelQueue.get().add(new AchievementPopUpPanel(id));
+        Log.logger.info("A new slotBg [{}] is collected successfully!", id);
+    }
+
+    public static boolean isASlotCollected(String id) {
+        String[] parts = SlotBgHelper.progressString.split(",");
+        for (String part : parts) {
+            if (part.equals(id)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isASlotValid(String id) {
+        return ResourceChecker.exist(Slot.makeUrl(id));
+    }
+
+    public static String getNewSlotProgressString(String id) {
+        return progressString + "," + id;
     }
 }
