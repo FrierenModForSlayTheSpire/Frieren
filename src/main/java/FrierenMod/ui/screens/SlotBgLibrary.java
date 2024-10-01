@@ -82,6 +82,7 @@ public class SlotBgLibrary implements ScrollBarListener {
         noButtonTexture = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/cancelButton"));
         yesHb = new Hitbox(yesButton.getWidth(), yesButton.getHeight() / 2.5F);
         noHb = new Hitbox(noButtonTexture.getWidth(), noButtonTexture.getHeight() + 30.0F * Settings.scale);
+        SlotBgHelper.cleanInvalidIdsInProgressString();
     }
 
     public void sortedSlots() {

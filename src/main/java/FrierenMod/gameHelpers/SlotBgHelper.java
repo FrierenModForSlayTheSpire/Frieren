@@ -10,8 +10,7 @@ import FrierenMod.utils.ResourceChecker;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Enumeration;
+import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -96,7 +95,7 @@ public class SlotBgHelper {
     }
 
     public static int getCollectedSlotBgNumber() {
-        String[] parts = loadingString.split(",");
+        String[] parts = progressString.split(",");
         return parts.length;
     }
 
@@ -121,7 +120,7 @@ public class SlotBgHelper {
             return;
         }
         String newProgressString = getNewSlotProgressString(id);
-//        ConfigPanel.saveSlotProgress(newProgressString);
+        ConfigPanel.saveSlotProgress(newProgressString);
         CardCrawlGameField.achievementPopUpPanelQueue.get().add(new AchievementPopUpPanel(id));
         Log.logger.info("A new slotBg [{}] is collected successfully!", id);
     }
@@ -137,10 +136,48 @@ public class SlotBgHelper {
     }
 
     public static boolean isASlotValid(String id) {
-        return ResourceChecker.exist(Slot.makeUrl(id));
+        return allString.contains(id);
     }
 
     public static String getNewSlotProgressString(String id) {
+        cleanInvalidIdsInProgressString();
         return progressString + "," + id;
+    }
+
+    public static void cleanInvalidIdsInProgressString() {
+        String[] parts = progressString.split(",");
+        StringBuilder builder = new StringBuilder();
+        for (String part : parts) {
+            if (allString.contains(part))
+                builder.append(part).append(",");
+            else
+                Log.logger.info("DELETE INVALID ID: {} ", part);
+        }
+        String newString = builder.toString();
+        if (!newString.isEmpty())
+            progressString = newString.substring(0, newString.length() - 1);
+    }
+
+    public static String rollANewCommonSlotId(int ascensionLevel) {
+        HashSet<Character> availableFirstChar = new HashSet<>();
+        availableFirstChar.add('1');
+        if (ascensionLevel >= 10)
+            availableFirstChar.add('2');
+        if (ascensionLevel == 20)
+            availableFirstChar.add('3');
+        String[] parts = allString.split(",");
+        ArrayList<String> pool = new ArrayList<>();
+        for (String part : parts) {
+            if (availableFirstChar.contains(part.charAt(0))) {
+                pool.add(part);
+            }
+        }
+        pool.removeIf(id -> progressString.contains(id));
+        if (pool.isEmpty()) {
+            Log.logger.info("ALL AVAILABLE SLOT BG COLLECTED!");
+            return null;
+        }
+        Collections.shuffle(pool);
+        return pool.get(0);
     }
 }
