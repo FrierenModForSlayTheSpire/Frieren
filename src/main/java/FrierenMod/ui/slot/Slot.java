@@ -249,7 +249,7 @@ public class Slot {
             if (current_x > 1200 * Settings.scale) {
                 drawX = current_x - 600.0F * drawScale;
             } else
-                drawX = current_x + 200.0F * drawScale;
+                drawX = current_x + 250.0F * drawScale;
             TipHelper.renderGenericTip(drawX, drawY, TEXT[3], unlockText);
         }
     }

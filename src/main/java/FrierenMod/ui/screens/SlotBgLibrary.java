@@ -37,9 +37,9 @@ public class SlotBgLibrary implements ScrollBarListener {
     private static final float slotStartX = 350.0F * Settings.scale;
     private static final float slotStartY = Settings.HEIGHT - 300.0F * Settings.scale;
     private static final float yesButtonX = 1350.0F * Settings.scale;
-    private static final float yesButtonY = 0.0F;
-    private static final float noButtonX = Settings.WIDTH / 2.0F - 200.0F * Settings.scale;
-    private static final float noButtonY = 0.0F;
+    private static final float yesButtonY = -30.0F * Settings.scale;
+    private static final float noButtonX = Settings.WIDTH / 2.0F - 240.0F * Settings.scale;
+    private static final float noButtonY = -20.0F * Settings.scale;
     private static final float pad = 400.0F * Settings.scale;
     private final float scrollLowerBound = -Settings.DEFAULT_SCROLL_LIMIT;
     private static final float SCROLL_BAR_THRESHOLD = 500.0F * Settings.scale;
@@ -75,7 +75,7 @@ public class SlotBgLibrary implements ScrollBarListener {
         this.slots = SlotBgHelper.getAllSlotsFromFiles();
         if (slots != null)
             this.allNumber = slots.size();
-        else{
+        else {
             this.allNumber = 0;
             Log.logger.info("WHY SLOTS IS NULL?");
         }
@@ -86,7 +86,7 @@ public class SlotBgLibrary implements ScrollBarListener {
         grayYesButton = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/graySaveButton"));
         noButtonTexture = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/cancelButton"));
         yesHb = new Hitbox(yesButton.getWidth(), yesButton.getHeight() / 2.5F);
-        noHb = new Hitbox(noButtonTexture.getWidth(), noButtonTexture.getHeight());
+        noHb = new Hitbox(noButtonTexture.getWidth(), noButtonTexture.getHeight() + 30.0F * Settings.scale);
     }
 
     public void sortedSlots() {
@@ -191,7 +191,6 @@ public class SlotBgLibrary implements ScrollBarListener {
                     InputHelper.justClickedLeft = false;
                     if (!slot.locked)
                         this.chosenSlot = slot;
-                    slot.unhover();
                 }
             }
             if (slot.id.equals(chosenSlot.id)) {
@@ -286,7 +285,7 @@ public class SlotBgLibrary implements ScrollBarListener {
 
     public void renderBg(SpriteBatch sb) {
         sb.setColor(screenColor);
-        sb.draw(background, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
+        sb.draw(background, 0.0F, -20.0F * Settings.scale, Settings.WIDTH, Settings.HEIGHT + 20.0F * Settings.scale);
     }
 
     public void renderSlots(SpriteBatch sb) {
@@ -299,19 +298,19 @@ public class SlotBgLibrary implements ScrollBarListener {
         sb.draw(yesButtonTexture, yesButtonX, yesButtonY, yesButtonTexture.getWidth() * Settings.scale, yesButtonTexture.getHeight() * Settings.scale);
         FontHelper.renderFont(sb, FontHelper.topPanelInfoFont, TEXT[1], yesButtonX + 300.0F * Settings.scale, yesButtonY + 80.0F * Settings.scale, yesFontColor);
         sb.draw(noButtonTexture, noButtonX, noButtonY, noButtonTexture.getWidth() * Settings.scale, noButtonTexture.getHeight() * Settings.scale);
-        FontHelper.renderFont(sb, FontHelper.topPanelInfoFont, TEXT[2], noButtonX + 180.0F * Settings.scale, noButtonY + 60.0F * Settings.scale, noFontColor);
+        FontHelper.renderFont(sb, FontHelper.topPanelInfoFont, TEXT[2], noButtonX + 200.0F * Settings.scale, noButtonY + 70.0F * Settings.scale, noFontColor);
     }
 
     public void renderBlackScreen(SpriteBatch sb) {
         Color c = Color.BLACK;
         c.a = 0.5F;
         sb.setColor(c);
-        sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, 0.0F, (float) Settings.WIDTH, (float) Settings.HEIGHT);
+        sb.draw(ImageMaster.WHITE_SQUARE_IMG, 0.0F, -20.0F * Settings.scale, (float) Settings.WIDTH, (float) Settings.HEIGHT + 20.0F * Settings.scale);
     }
 
     public void renderBgBoard(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
-        sb.draw(board, 0.0F, 0.0F, Settings.WIDTH, Settings.HEIGHT);
+        sb.draw(board, 0.0F, -20.0F * Settings.scale, Settings.WIDTH, Settings.HEIGHT + 20.0F * Settings.scale);
     }
 
     protected void renderProgressBar(SpriteBatch sb) {
