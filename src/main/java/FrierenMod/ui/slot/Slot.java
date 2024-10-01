@@ -265,6 +265,11 @@ public class Slot {
         this.locked = true;
     }
 
+    public void setUnLockedInLibrary() {
+        this.transparency = 1.0F;
+        this.locked = false;
+    }
+
     private void renderHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
         sb.setColor(renderColor);
         this.width = img.getWidth() * drawScale;

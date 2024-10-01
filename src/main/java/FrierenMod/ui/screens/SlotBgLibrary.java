@@ -105,11 +105,11 @@ public class SlotBgLibrary implements ScrollBarListener {
     }
 
     public void refreshLockedSlots() {
-        List<String> collectedIds = Arrays.asList(SlotBgHelper.progressString.split(","));
         for (Slot slot : slots) {
-            if (!collectedIds.contains(slot.id)) {
+            if (SlotBgHelper.progressString.contains(slot.id)) {
+                slot.setUnLockedInLibrary();
+            }else
                 slot.setLockedInLibrary();
-            }
         }
     }
 
@@ -133,7 +133,7 @@ public class SlotBgLibrary implements ScrollBarListener {
             Log.logger.info("WHY ALL NUMBER IS ZERO?");
             this.progressPercent = 0.0F;
         }
-        this.scrollBar.move(0.0F, -30.0F * Settings.scale);
+        this.scrollBar.move(30.0F * Settings.scale, -30.0F * Settings.scale);
         this.yesHb.x = yesButtonX;
         this.yesHb.y = yesButtonY;
         this.noHb.x = noButtonX;

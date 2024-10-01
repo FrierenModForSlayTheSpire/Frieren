@@ -82,7 +82,7 @@ public class ConfigPanel extends ModPanel {
         assert config != null;
         config.setString("SLOT_BG_COLLECTION_PROGRESS", newString);
         save(config);
-        SlotBgHelper.loadingString = config.getString("SLOT_BG_COLLECTION_PROGRESS");
+        SlotBgHelper.progressString = config.getString("SLOT_BG_COLLECTION_PROGRESS");
     }
 
     public static void makeModPanels() {
