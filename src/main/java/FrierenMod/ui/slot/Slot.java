@@ -53,6 +53,11 @@ public class Slot {
     private ArrayList<SlotGlowBoarder> glowList = new ArrayList<>();
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT;
     private static final Map<String, String> UNLOCK_TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
+    private static final Texture silhouette = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/bd_slot_silhouette"));
+    private static final Color FRAME_SHADOW_COLOR = new Color(0.0F, 0.0F, 0.0F, 0.25F);
+    private static final float SHADOW_OFFSET_X = 18.0F * Settings.scale;
+
+    private static final float SHADOW_OFFSET_Y = 14.0F * Settings.scale;
 
 
     public Slot(String id, int type) {
@@ -209,6 +214,7 @@ public class Slot {
         if (!this.isOnScreen()) {
             return;
         }
+        renderShadow(sb);
         updateGlow();
         renderGlow(sb);
         renderHelper(sb, this.img, this.current_x, this.current_y);
@@ -216,6 +222,10 @@ public class Slot {
         if (this.drawScale == Settings.scale)
             renderTitle(sb, TEXT[type]);
         this.hb.render(sb);
+    }
+
+    public void renderShadow(SpriteBatch sb) {
+        renderHelper(sb, FRAME_SHADOW_COLOR, silhouette, this.current_x + SHADOW_OFFSET_X * this.drawScale, this.current_y - SHADOW_OFFSET_Y * this.drawScale);
     }
 
     private void renderGlow(SpriteBatch sb) {
@@ -249,15 +259,15 @@ public class Slot {
         this.locked = true;
     }
 
-
-//    public void renderTip() {
-//        if (this.renderTip) {
-//            TipHelper.renderGenericTip(current_x + 200.0F * drawScale, current_y + 200.0F * drawScale, "test", "test");
-//        }
-//    }
-
     private void renderHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
         sb.setColor(renderColor);
+        this.width = img.getWidth() * drawScale;
+        this.height = img.getHeight() * drawScale;
+        sb.draw(img, drawX - width / 2.0F, drawY - height / 2.0F, width, height);
+    }
+
+    private void renderHelper(SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
+        sb.setColor(color);
         this.width = img.getWidth() * drawScale;
         this.height = img.getHeight() * drawScale;
         sb.draw(img, drawX - width / 2.0F, drawY - height / 2.0F, width, height);
