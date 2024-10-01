@@ -13,23 +13,17 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 
-import java.util.Map;
-
 public class AchievementPopUpPanel {
-    public String newSlotBgId;
     public Slot slot;
-    public String description;
     public boolean ended;
-    public float animateTimer = 3.0F;
-    private static final float WAIT_TIME = 2.0f;  // 等待3秒
-    private float timer = 0.0f;     // 用于计时停留
-    private static final Texture background = ImageMaster.loadImage("FrierenModResources/img/UI/achievement/background.png");
+    private static final float WAIT_TIME = 2.0f;
+    private float timer = 0.0f;
+    private static final Texture BACKGROUND = ImageMaster.loadImage(ModInformation.makeUIPath("achievement/background.png"));
     private static final String TITLE = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT[6];
-    private static final Map<String, String> TEXT_DICT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
     private static final float ORIGIN_START_X = Settings.WIDTH / 2.0F;
-    private static final float ORIGIN_START_Y = Settings.HEIGHT + background.getHeight() * Settings.scale;
+    private static final float ORIGIN_START_Y = Settings.HEIGHT + BACKGROUND.getHeight() * Settings.scale;
     private static final float ORIGIN_END_X = Settings.WIDTH / 2.0F;
-    private static final float ORIGIN_END_Y = Settings.HEIGHT - background.getHeight() * Settings.scale + 150.0F * Settings.scale;
+    private static final float ORIGIN_END_Y = Settings.HEIGHT - BACKGROUND.getHeight() * Settings.scale + 150.0F * Settings.scale;
     private static final float DRAW_SCALE = 0.6F * Settings.scale;
     private float startX, startY;
     private float endX, endY;
@@ -47,12 +41,7 @@ public class AchievementPopUpPanel {
         this.currentY = startY = ORIGIN_START_Y;
         this.endX = ORIGIN_END_X;
         this.endY = ORIGIN_END_Y;
-        this.newSlotBgId = newSlotBgId;
         this.slot = new Slot(newSlotBgId);
-        this.description = TEXT_DICT.get(newSlotBgId);
-        if (description == null)
-            description = "ERROR!";
-        this.animateTimer = 3.0F;
         this.state = State.MOVING_TO_TARGET;
         this.speed = 2.0f;
         this.playedSfx = false;
@@ -62,7 +51,7 @@ public class AchievementPopUpPanel {
         float deltaTime = Gdx.graphics.getDeltaTime();
         if (!this.playedSfx) {
             this.playedSfx = true;
-            if(Config.ALLOW_SPECIAL_SFX)
+            if (Config.ALLOW_SPECIAL_SFX)
                 CardCrawlGame.sound.play("achievement.mp3");
         }
         switch (state) {
@@ -83,7 +72,7 @@ public class AchievementPopUpPanel {
             case WAITING:
                 timer += deltaTime;
                 if (timer >= WAIT_TIME) {
-                    state = State.MOVING_BACK;  // 进入移动回原点状态
+                    state = State.MOVING_BACK;
                 }
                 break;
 
@@ -107,10 +96,10 @@ public class AchievementPopUpPanel {
     public void render(SpriteBatch sb) {
         if (!isOnScreen())
             return;
-        renderHelper(sb, Color.WHITE, background, currentX, currentY);
+        renderHelper(sb, Color.WHITE, BACKGROUND, currentX, currentY);
         this.slot.render(sb);
         FontHelper.renderFontLeftTopAligned(sb, FontHelper.tipHeaderFont, TITLE, currentX - 60.0F * Settings.scale, currentY + 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy());
-        FontHelper.renderSmartText(sb, FontHelper.tipBodyFont, description, currentX - 60.0F * Settings.scale, currentY, background.getWidth() * DRAW_SCALE * 0.6F, 25.0F * Settings.scale, Settings.CREAM_COLOR);
+        FontHelper.renderSmartText(sb, FontHelper.tipBodyFont, slot.unlockText, currentX - 60.0F * Settings.scale, currentY, BACKGROUND.getWidth() * DRAW_SCALE * 0.6F, 25.0F * Settings.scale, Settings.CREAM_COLOR);
     }
 
     private void renderHelper(SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {

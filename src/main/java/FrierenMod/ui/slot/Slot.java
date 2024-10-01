@@ -50,6 +50,7 @@ public class Slot {
     public boolean isGlowing;
     private float glowTimer = 0.0F;
     public boolean locked;
+    public String unlockText;
     private ArrayList<SlotGlowBoarder> glowList = new ArrayList<>();
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT;
     private static final Map<String, String> UNLOCK_TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
@@ -71,7 +72,7 @@ public class Slot {
         initialize(id);
     }
 
-    public Slot(String id, boolean inDetail) {
+    public Slot(String id, boolean inLibrary) {
         this.drawScale = 0.7F * Settings.scale;
         initialize(id);
     }
@@ -81,6 +82,7 @@ public class Slot {
         String imgUrl = makeUrl(id);
         if (!ResourceChecker.exist(imgUrl)) {
             this.img = ImageMaster.loadImage(makeUrl("0001"));
+            this.id = "0001";
             Log.logger.info("SlogBg is not Found:{}", imgUrl);
         }
         this.img = ImageMaster.loadImage(imgUrl);
@@ -92,6 +94,7 @@ public class Slot {
         this.renderColor = Color.WHITE.cpy();
         this.transparency = 1.0F;
         this.locked = false;
+        this.unlockText = getUnlockText(id);
     }
 
     public void setPosition(float x, float y) {
@@ -242,10 +245,7 @@ public class Slot {
 
     public void renderSlotTipInLibrary(SpriteBatch sb) {
         if (this.renderTip) {
-            String unlockText = UNLOCK_TEXT.get(this.id);
-            if (unlockText == null) {
-                unlockText = UNLOCK_TEXT.get("EXCEPTION");
-            }
+            String unlockText = this.unlockText;
             if (this.locked)
                 unlockText += TEXT[5];
             else
@@ -289,5 +289,20 @@ public class Slot {
 
     public static String makeUrl(String id) {
         return ModInformation.makeUIPath("slotBg/" + id);
+    }
+
+    public static String getUnlockText(String id) {
+        switch (id.charAt(0)) {
+            case '1':
+                return UNLOCK_TEXT.get("1");
+            case '2':
+                return UNLOCK_TEXT.get("2");
+            case '3':
+                return UNLOCK_TEXT.get("3");
+            default:
+                if (UNLOCK_TEXT.get(id) != null)
+                    return UNLOCK_TEXT.get(id);
+        }
+        return UNLOCK_TEXT.get("EXCEPTION");
     }
 }
