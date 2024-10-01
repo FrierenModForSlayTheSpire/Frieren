@@ -18,7 +18,7 @@ public class AchievementPopUpPanel {
     public boolean ended;
     private static final float WAIT_TIME = 2.0f;
     private float timer = 0.0f;
-    private static final Texture BACKGROUND = ImageMaster.loadImage(ModInformation.makeUIPath("achievement/background.png"));
+    private static final Texture BACKGROUND = ImageMaster.loadImage(ModInformation.makeUIPath("achievement/background"));
     private static final String TITLE = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT[6];
     private static final float ORIGIN_START_X = Settings.WIDTH / 2.0F;
     private static final float ORIGIN_START_Y = Settings.HEIGHT + BACKGROUND.getHeight() * Settings.scale;
