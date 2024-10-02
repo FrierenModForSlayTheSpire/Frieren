@@ -127,13 +127,7 @@ public class SlotBgHelper {
     }
 
     public static boolean isASlotCollected(String id) {
-        String[] parts = SlotBgHelper.progressString.split(",");
-        for (String part : parts) {
-            if (part.equals(id)) {
-                return true;
-            }
-        }
-        return false;
+        return progressString.contains(id);
     }
 
     public static boolean isASlotValid(String id) {
