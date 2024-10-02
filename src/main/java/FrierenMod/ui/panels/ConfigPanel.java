@@ -29,6 +29,8 @@ public class ConfigPanel extends ModPanel {
     public static SpireConfig makeConfig() {
         Properties properties = new Properties();
         properties.setProperty("ALLOW_SPECIAL_SFX", Boolean.toString(Config.ALLOW_SPECIAL_SFX));
+        properties.setProperty("SHOW_SLOT_TYPE", Boolean.toString(Config.SHOW_SLOT_TYPE));
+        properties.setProperty("ALLOW_ACHIEVEMENT", Boolean.toString(Config.ALLOW_ACHIEVEMENT));
         properties.setProperty("REMOVE_VELVET_CHOKER", Boolean.toString(Config.REMOVE_VELVET_CHOKER));
         properties.setProperty("REMOVE_DEAD_BRANCH", Boolean.toString(Config.REMOVE_DEAD_BRANCH));
         properties.setProperty("REMOVE_STRANGE_SPOON", Boolean.toString(Config.REMOVE_STRANGE_SPOON));
@@ -49,6 +51,8 @@ public class ConfigPanel extends ModPanel {
             return;
         }
         Config.ALLOW_SPECIAL_SFX = config.getBool("ALLOW_SPECIAL_SFX");
+        Config.SHOW_SLOT_TYPE = config.getBool("SHOW_SLOT_TYPE");
+        Config.ALLOW_ACHIEVEMENT = config.getBool("ALLOW_ACHIEVEMENT");
         Config.REMOVE_VELVET_CHOKER = config.getBool("REMOVE_VELVET_CHOKER");
         Config.REMOVE_DEAD_BRANCH = config.getBool("REMOVE_DEAD_BRANCH");
         Config.REMOVE_STRANGE_SPOON = config.getBool("REMOVE_STRANGE_SPOON");
@@ -95,7 +99,23 @@ public class ConfigPanel extends ModPanel {
             config.setBool("ALLOW_SPECIAL_SFX", Config.ALLOW_SPECIAL_SFX);
             save(config);
         });
-        ModLabeledToggleButton removeVelvetChoker = new ModLabeledToggleButton(TEXT[1], BASE_X_POSE, BASE_Y_POSE - GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_VELVET_CHOKER, settings, l -> {
+        ModLabeledToggleButton showSlotType = new ModLabeledToggleButton(TEXT[1], BASE_X_POSE, BASE_Y_POSE - GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.SHOW_SLOT_TYPE, settings, l -> {
+        }, btn -> {
+            Config.SHOW_SLOT_TYPE = btn.enabled;
+            SpireConfig config = makeConfig();
+            assert config != null;
+            config.setBool("SHOW_SLOT_TYPE", Config.SHOW_SLOT_TYPE);
+            save(config);
+        });
+        ModLabeledToggleButton allowAchievement = new ModLabeledToggleButton(TEXT[2], BASE_X_POSE, BASE_Y_POSE - GAP * 2, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ALLOW_ACHIEVEMENT, settings, l -> {
+        }, btn -> {
+            Config.ALLOW_ACHIEVEMENT = btn.enabled;
+            SpireConfig config = makeConfig();
+            assert config != null;
+            config.setBool("ALLOW_ACHIEVEMENT", Config.ALLOW_ACHIEVEMENT);
+            save(config);
+        });
+        ModLabeledToggleButton removeVelvetChoker = new ModLabeledToggleButton(TEXT[3], BASE_X_POSE, BASE_Y_POSE - GAP * 3, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_VELVET_CHOKER, settings, l -> {
         }, btn -> {
             Config.REMOVE_VELVET_CHOKER = btn.enabled;
             SpireConfig config = makeConfig();
@@ -103,7 +123,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_VELVET_CHOKER", Config.REMOVE_VELVET_CHOKER);
             save(config);
         });
-        ModLabeledToggleButton removeDeadBranch = new ModLabeledToggleButton(TEXT[2], BASE_X_POSE, BASE_Y_POSE - 2 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_DEAD_BRANCH, settings, l -> {
+        ModLabeledToggleButton removeDeadBranch = new ModLabeledToggleButton(TEXT[4], BASE_X_POSE, BASE_Y_POSE - GAP * 4, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_DEAD_BRANCH, settings, l -> {
         }, btn -> {
             Config.REMOVE_DEAD_BRANCH = btn.enabled;
             SpireConfig config = makeConfig();
@@ -111,7 +131,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_DEAD_BRANCH", Config.REMOVE_DEAD_BRANCH);
             save(config);
         });
-        ModLabeledToggleButton removeStrangeSpoon = new ModLabeledToggleButton(TEXT[3], BASE_X_POSE, BASE_Y_POSE - 3 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_STRANGE_SPOON, settings, l -> {
+        ModLabeledToggleButton removeStrangeSpoon = new ModLabeledToggleButton(TEXT[5], BASE_X_POSE, BASE_Y_POSE - GAP * 5, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_STRANGE_SPOON, settings, l -> {
         }, btn -> {
             Config.REMOVE_STRANGE_SPOON = btn.enabled;
             SpireConfig config = makeConfig();
@@ -119,7 +139,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("REMOVE_STRANGE_SPOON", Config.REMOVE_STRANGE_SPOON);
             save(config);
         });
-        ModLabeledToggleButton encounterSpiegel = new ModLabeledToggleButton(TEXT[4], BASE_X_POSE, BASE_Y_POSE - 4 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ENCOUNTER_SPIEGEL, settings, l -> {
+        ModLabeledToggleButton encounterSpiegel = new ModLabeledToggleButton(TEXT[6], BASE_X_POSE, BASE_Y_POSE - GAP * 6, Color.WHITE.cpy(), FontHelper.charDescFont, Config.ENCOUNTER_SPIEGEL, settings, l -> {
         }, btn -> {
             Config.ENCOUNTER_SPIEGEL = btn.enabled;
             SpireConfig config = makeConfig();
@@ -127,7 +147,7 @@ public class ConfigPanel extends ModPanel {
             config.setBool("ENCOUNTER_SPIEGEL", Config.ENCOUNTER_SPIEGEL);
             save(config);
         });
-        ModLabeledToggleButton removeTimeEater = new ModLabeledToggleButton(TEXT[5], BASE_X_POSE, BASE_Y_POSE - 5 * GAP, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_TIME_EATER, settings, l -> {
+        ModLabeledToggleButton removeTimeEater = new ModLabeledToggleButton(TEXT[7], BASE_X_POSE, BASE_Y_POSE - GAP * 7, Color.WHITE.cpy(), FontHelper.charDescFont, Config.REMOVE_TIME_EATER, settings, l -> {
         }, btn -> {
             Config.REMOVE_TIME_EATER = btn.enabled;
             SpireConfig config = makeConfig();
@@ -136,6 +156,8 @@ public class ConfigPanel extends ModPanel {
             save(config);
         });
         settings.addUIElement(allowSFX);
+        settings.addUIElement(showSlotType);
+        settings.addUIElement(allowAchievement);
         settings.addUIElement(removeVelvetChoker);
         settings.addUIElement(removeDeadBranch);
         settings.addUIElement(removeStrangeSpoon);

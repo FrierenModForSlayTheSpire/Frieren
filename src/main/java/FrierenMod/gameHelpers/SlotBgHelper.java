@@ -4,6 +4,7 @@ import FrierenMod.patches.fields.CardCrawlGameField;
 import FrierenMod.ui.panels.AchievementPopUpPanel;
 import FrierenMod.ui.panels.ConfigPanel;
 import FrierenMod.ui.slot.Slot;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.ResourceChecker;
@@ -116,7 +117,7 @@ public class SlotBgHelper {
     }
 
     public static void unlockANewSlot(String id) {
-        if (isASlotCollected(id) || !isASlotValid(id)) {
+        if (!Config.ALLOW_ACHIEVEMENT || isASlotCollected(id) || !isASlotValid(id)) {
             return;
         }
         String newProgressString = getNewSlotProgressString(id);
