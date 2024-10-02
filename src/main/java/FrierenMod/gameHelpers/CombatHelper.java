@@ -225,11 +225,9 @@ public class CombatHelper {
         for (AbstractCard c : MagicDeckField.getDeck().group) {
             if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
                 chantChoices[0] = (AbstractMagicItem) c.makeStatEquivalentCopy();
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+            } else if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
                 chantChoices[1] = (AbstractMagicItem) c.makeStatEquivalentCopy();
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+            } else if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
                 chantChoices[2] = (AbstractMagicItem) c.makeStatEquivalentCopy();
             }
         }
@@ -260,11 +258,9 @@ public class CombatHelper {
         for (AbstractCard c : MagicDeckField.getDeck().group) {
             if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 0) {
                 chantChoices[0] = (AbstractMagicItem) c;
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
+            } else if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 1) {
                 chantChoices[1] = (AbstractMagicItem) c;
-            }
-            if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
+            } else if (c instanceof AbstractMagicItem && ((AbstractMagicItem) c).currentSlot == 2) {
                 chantChoices[2] = (AbstractMagicItem) c;
             }
         }
