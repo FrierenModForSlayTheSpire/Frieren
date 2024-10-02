@@ -2,6 +2,7 @@ package FrierenMod.ui.slot;
 
 import FrierenMod.effects.SlotGlowBoarder;
 import FrierenMod.patches.fields.CharacterSelectScreenField;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.ResourceChecker;
@@ -60,20 +61,27 @@ public class Slot {
 
     private static final float SHADOW_OFFSET_Y = 14.0F * Settings.scale;
 
+    public enum ShowPlace {CHANT_OR_DECK, PREVIEW, LIBRARY}
+
+    private final ShowPlace showPlace;
+
 
     public Slot(String id, int type) {
         this.drawScale = Settings.scale;
         this.type = type;
+        this.showPlace = ShowPlace.CHANT_OR_DECK;
         initialize(id);
     }
 
     public Slot(String id) {
         this.drawScale = 0.2F * Settings.scale;
+        this.showPlace = ShowPlace.PREVIEW;
         initialize(id);
     }
 
     public Slot(String id, boolean inLibrary) {
         this.drawScale = 0.7F * Settings.scale;
+        this.showPlace = ShowPlace.LIBRARY;
         initialize(id);
     }
 
@@ -227,8 +235,9 @@ public class Slot {
         updateGlow();
         renderGlow(sb);
         renderHelper(sb, this.img, this.current_x, this.current_y);
-        renderSlotTipInLibrary(sb);
-        if (this.drawScale == Settings.scale)
+        if (showPlace == ShowPlace.LIBRARY)
+            renderSlotTipInLibrary();
+        else if (showPlace == ShowPlace.CHANT_OR_DECK && Config.SHOW_SLOT_TYPE)
             renderTitle(sb, TEXT[type]);
         this.hb.render(sb);
     }
@@ -243,7 +252,7 @@ public class Slot {
         sb.setBlendFunction(770, 771);
     }
 
-    public void renderSlotTipInLibrary(SpriteBatch sb) {
+    public void renderSlotTipInLibrary() {
         if (this.renderTip) {
             String unlockText = this.unlockText;
             if (this.locked)
