@@ -117,7 +117,7 @@ public class SlotBgHelper {
     }
 
     public static void unlockANewSlot(String id) {
-        if (!Config.ALLOW_ACHIEVEMENT || isASlotCollected(id) || !isASlotValid(id)) {
+        if (id == null || !Config.ALLOW_ACHIEVEMENT || isASlotCollected(id) || !isASlotValid(id)) {
             return;
         }
         String newProgressString = getNewSlotProgressString(id);
@@ -134,7 +134,7 @@ public class SlotBgHelper {
     }
 
     public static boolean isASlotValid(String id) {
-        if(Config.IN_DEV)
+        if (Config.IN_DEV)
             return true;
         return allString.contains(id);
     }
@@ -158,17 +158,11 @@ public class SlotBgHelper {
             progressString = newString.substring(0, newString.length() - 1);
     }
 
-    public static String rollANewCommonSlotId(int ascensionLevel) {
-        HashSet<Character> availableFirstChar = new HashSet<>();
-        availableFirstChar.add('1');
-        if (ascensionLevel >= 10)
-            availableFirstChar.add('2');
-        if (ascensionLevel == 20)
-            availableFirstChar.add('3');
+    public static String rollANewCommonSlotId(char firstChar) {
         String[] parts = allString.split(",");
         ArrayList<String> pool = new ArrayList<>();
         for (String part : parts) {
-            if (availableFirstChar.contains(part.charAt(0))) {
+            if (part.charAt(0) == firstChar) {
                 pool.add(part);
             }
         }

@@ -21,9 +21,11 @@ public class AchievementPatch {
         @SpireInsertPatch(rloc = 5)
         public static void Insert() {
             if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
-                String newSlotId = SlotBgHelper.rollANewCommonSlotId(AbstractDungeon.ascensionLevel);
-                if (newSlotId != null)
-                    SlotBgHelper.unlockANewSlot(newSlotId);
+                if (AbstractDungeon.ascensionLevel == 20)
+                    SlotBgHelper.unlockANewSlot(SlotBgHelper.rollANewCommonSlotId('3'));
+                if (AbstractDungeon.ascensionLevel >= 10)
+                    SlotBgHelper.unlockANewSlot(SlotBgHelper.rollANewCommonSlotId('2'));
+                SlotBgHelper.unlockANewSlot(SlotBgHelper.rollANewCommonSlotId('1'));
             }
         }
     }
