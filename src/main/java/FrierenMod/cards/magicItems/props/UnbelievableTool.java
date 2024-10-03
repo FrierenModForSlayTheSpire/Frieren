@@ -1,6 +1,7 @@
 package FrierenMod.cards.magicItems.props;
 
 import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 
@@ -41,6 +42,7 @@ public class UnbelievableTool extends AbstractMagicItem {
         item2.currentSlot = tmp;
         item1.superFlash();
         item2.superFlash();
+        SlotBgHelper.unlockANewSlot("0006");
         return true;
     }
 }

@@ -121,7 +121,10 @@ public class SlotBgHelper {
             return;
         }
         String newProgressString = getNewSlotProgressString(id);
-        ConfigPanel.saveSlotProgress(newProgressString);
+        if (Config.IN_DEV)
+            Log.logger.info("newProgressString: {}", newProgressString);
+        else
+            ConfigPanel.saveSlotProgress(newProgressString);
         CardCrawlGameField.achievementPopUpPanelQueue.get().add(new AchievementPopUpPanel(id));
         Log.logger.info("A new slotBg [{}] is collected successfully!", id);
     }
@@ -131,6 +134,8 @@ public class SlotBgHelper {
     }
 
     public static boolean isASlotValid(String id) {
+        if(Config.IN_DEV)
+            return true;
         return allString.contains(id);
     }
 

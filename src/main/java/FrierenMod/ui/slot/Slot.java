@@ -89,8 +89,7 @@ public class Slot {
         this.id = id;
         String imgUrl = makeUrl(id);
         if (!ResourceChecker.exist(imgUrl)) {
-            this.img = ImageMaster.loadImage(makeUrl("0001"));
-            this.id = "0001";
+            imgUrl = makeUrl("0001");
             Log.logger.info("SlogBg is not Found:{}", imgUrl);
         }
         this.img = ImageMaster.loadImage(imgUrl);
