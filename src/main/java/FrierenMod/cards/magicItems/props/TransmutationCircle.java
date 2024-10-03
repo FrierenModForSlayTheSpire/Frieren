@@ -31,7 +31,7 @@ public class TransmutationCircle extends AbstractMagicItem {
         for (AbstractCard chosenCard : chosenCards) {
             AbstractMagicItem oldItem = (AbstractMagicItem) chosenCard;
             AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(oldItem));
-            AbstractMagicItem newItem = (AbstractMagicItem) CardPoolHelper.getRandomMagicItem(oldItem.magicItemRarity);
+            AbstractMagicItem newItem = (AbstractMagicItem) CardPoolHelper.getRandomMagicItem(oldItem.magicItemRarity, true);
             newItem.currentSlot = oldItem.currentSlot;
             MagicDeckField.getDeck().addToTop(newItem);
             newItem.superFlash();
