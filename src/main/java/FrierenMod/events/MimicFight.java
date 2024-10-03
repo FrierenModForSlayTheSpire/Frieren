@@ -6,6 +6,7 @@ import FrierenMod.relics.FakeFlammeGrimoire;
 import FrierenMod.relics.FlammeGrimoire;
 import FrierenMod.relics.MimicHead;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -21,6 +22,7 @@ public class MimicFight extends AbstractImageEvent {
     public static String ID = ModInformation.makeID(MimicFight.class.getSimpleName());
     public static EventStrings EVENT_STRINGS = CardCrawlGame.languagePack.getEventString(ID);
     public int state = 0;
+    private static final AbstractCard rewardCard = new RingletForm();
 
     public MimicFight() {
         super(EVENT_STRINGS.NAME, EVENT_STRINGS.DESCRIPTIONS[0], ModInformation.makeEventImgPath("MimicEvent1"));
@@ -45,6 +47,7 @@ public class MimicFight extends AbstractImageEvent {
                     this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[2]);
                     this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[3]);
                     this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[4]);
+                    this.imageEventText.updateDialogOption(1, EVENT_STRINGS.OPTIONS[3], rewardCard.makeCopy());
                     return;
                 }
                 return;
@@ -70,7 +73,7 @@ public class MimicFight extends AbstractImageEvent {
                         this.imageEventText.clearAllDialogs();
                         this.imageEventText.setDialogOption(EVENT_STRINGS.OPTIONS[5]);
                         AbstractDungeon.player.damage(new DamageInfo(null, 15));
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new RingletForm(), (float) Settings.WIDTH / 2, (float) (Settings.HEIGHT / 2)));
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(rewardCard.makeCopy(), (float) Settings.WIDTH / 2, (float) (Settings.HEIGHT / 2)));
                         this.state = 3;
                         return;
                     //肥伦
