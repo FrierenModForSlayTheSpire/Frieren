@@ -6,6 +6,7 @@ public class Config {
     public static boolean ALLOW_SPECIAL_SFX = true;
     public static boolean SHOW_SLOT_TYPE = true;
     public static boolean ALLOW_ACHIEVEMENT = true;
+    public static boolean ALLOW_PUZZLE_FACTOR_DROP = true;
     public static boolean REMOVE_VELVET_CHOKER = true;
     public static boolean REMOVE_DEAD_BRANCH = true;
     public static boolean REMOVE_STRANGE_SPOON = true;
