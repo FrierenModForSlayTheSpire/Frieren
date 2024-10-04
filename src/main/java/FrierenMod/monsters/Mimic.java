@@ -1,5 +1,6 @@
 package FrierenMod.monsters;
 
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.powers.MimicPower;
 import FrierenMod.powers.SwallowedPower;
 import FrierenMod.utils.ModInformation;
@@ -110,6 +111,13 @@ public class Mimic extends AbstractMonster {
     private boolean isFull() {
         AbstractPower po = AbstractDungeon.player.getPower(SwallowedPower.POWER_ID);
         return po != null && po.amount >= 6 && haveNotFull;
+    }
+
+    @Override
+    public void die() {
+        if (AbstractDungeon.actionManager.cardsPlayedThisCombat.size() <= 5)
+            SlotBgHelper.unlockANewSlot("6001");
+        super.die();
     }
 
     public static void register() {

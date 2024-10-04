@@ -1,5 +1,6 @@
 package FrierenMod.powers;
 
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
@@ -37,6 +38,7 @@ public class Factor001Power extends AbstractBasePower {
     @Override
     public void atEndOfTurn(boolean isPlayer) {
         if (owner.hasPower(Factor001Power.POWER_ID) && owner.hasPower(Factor010Power.POWER_ID) && owner.hasPower(Factor001Power.POWER_ID)) {
+            SlotBgHelper.unlockANewSlot("7002");
             this.addToBot(new VFXAction(new GrandFinalEffect(), 0.7F));
             for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
                 if (!mo.halfDead && !mo.isDying && !mo.isEscaping)

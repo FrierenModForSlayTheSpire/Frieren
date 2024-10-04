@@ -2,6 +2,7 @@ package FrierenMod.ui.slot;
 
 import FrierenMod.effects.SlotGlowBoarder;
 import FrierenMod.patches.fields.CharacterSelectScreenField;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.ResourceChecker;
@@ -50,24 +51,37 @@ public class Slot {
     public boolean isGlowing;
     private float glowTimer = 0.0F;
     public boolean locked;
+    public String unlockText;
     private ArrayList<SlotGlowBoarder> glowList = new ArrayList<>();
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT;
     private static final Map<String, String> UNLOCK_TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
+    private static final Texture silhouette = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/bd_slot_silhouette"));
+    private static final Color FRAME_SHADOW_COLOR = new Color(0.0F, 0.0F, 0.0F, 0.25F);
+    private static final float SHADOW_OFFSET_X = 18.0F * Settings.scale;
+
+    private static final float SHADOW_OFFSET_Y = 14.0F * Settings.scale;
+
+    public enum ShowPlace {CHANT_OR_DECK, PREVIEW, LIBRARY}
+
+    private final ShowPlace showPlace;
 
 
     public Slot(String id, int type) {
         this.drawScale = Settings.scale;
         this.type = type;
+        this.showPlace = ShowPlace.CHANT_OR_DECK;
         initialize(id);
     }
 
     public Slot(String id) {
         this.drawScale = 0.2F * Settings.scale;
+        this.showPlace = ShowPlace.PREVIEW;
         initialize(id);
     }
 
-    public Slot(String id, boolean inDetail) {
+    public Slot(String id, boolean inLibrary) {
         this.drawScale = 0.7F * Settings.scale;
+        this.showPlace = ShowPlace.LIBRARY;
         initialize(id);
     }
 
@@ -75,7 +89,7 @@ public class Slot {
         this.id = id;
         String imgUrl = makeUrl(id);
         if (!ResourceChecker.exist(imgUrl)) {
-            this.img = ImageMaster.loadImage(makeUrl("0001"));
+            imgUrl = makeUrl("0001");
             Log.logger.info("SlogBg is not Found:{}", imgUrl);
         }
         this.img = ImageMaster.loadImage(imgUrl);
@@ -87,6 +101,7 @@ public class Slot {
         this.renderColor = Color.WHITE.cpy();
         this.transparency = 1.0F;
         this.locked = false;
+        this.unlockText = getUnlockText(id);
     }
 
     public void setPosition(float x, float y) {
@@ -110,6 +125,12 @@ public class Slot {
         this.current_y = MathHelper.cardLerpSnap(this.current_y, this.target_y);
         this.hb.move(this.current_x, this.current_y);
         updateTransparency();
+    }
+
+    public void updateWithAchievementPanel(float current_x, float current_y) {
+        this.current_x = this.target_x = current_x;
+        this.current_y = this.target_y = current_y;
+        this.hb.move(this.current_x, this.current_y);
     }
 
     public void updateTransparency() {
@@ -209,13 +230,19 @@ public class Slot {
         if (!this.isOnScreen()) {
             return;
         }
+        renderShadow(sb);
         updateGlow();
         renderGlow(sb);
         renderHelper(sb, this.img, this.current_x, this.current_y);
-        renderSlotTipInLibrary(sb);
-        if (this.drawScale == Settings.scale)
+        if (showPlace == ShowPlace.LIBRARY)
+            renderSlotTipInLibrary();
+        else if (showPlace == ShowPlace.CHANT_OR_DECK && Config.SHOW_SLOT_TYPE)
             renderTitle(sb, TEXT[type]);
         this.hb.render(sb);
+    }
+
+    public void renderShadow(SpriteBatch sb) {
+        renderHelper(sb, FRAME_SHADOW_COLOR, silhouette, this.current_x + SHADOW_OFFSET_X * this.drawScale, this.current_y - SHADOW_OFFSET_Y * this.drawScale);
     }
 
     private void renderGlow(SpriteBatch sb) {
@@ -224,12 +251,9 @@ public class Slot {
         sb.setBlendFunction(770, 771);
     }
 
-    public void renderSlotTipInLibrary(SpriteBatch sb) {
+    public void renderSlotTipInLibrary() {
         if (this.renderTip) {
-            String unlockText = UNLOCK_TEXT.get(this.id);
-            if (unlockText == null) {
-                unlockText = UNLOCK_TEXT.get("EXCEPTION");
-            }
+            String unlockText = this.unlockText;
             if (this.locked)
                 unlockText += TEXT[5];
             else
@@ -239,7 +263,7 @@ public class Slot {
             if (current_x > 1200 * Settings.scale) {
                 drawX = current_x - 600.0F * drawScale;
             } else
-                drawX = current_x + 200.0F * drawScale;
+                drawX = current_x + 250.0F * drawScale;
             TipHelper.renderGenericTip(drawX, drawY, TEXT[3], unlockText);
         }
     }
@@ -249,15 +273,20 @@ public class Slot {
         this.locked = true;
     }
 
-
-//    public void renderTip() {
-//        if (this.renderTip) {
-//            TipHelper.renderGenericTip(current_x + 200.0F * drawScale, current_y + 200.0F * drawScale, "test", "test");
-//        }
-//    }
+    public void setUnLockedInLibrary() {
+        this.transparency = 1.0F;
+        this.locked = false;
+    }
 
     private void renderHelper(SpriteBatch sb, Texture img, float drawX, float drawY) {
         sb.setColor(renderColor);
+        this.width = img.getWidth() * drawScale;
+        this.height = img.getHeight() * drawScale;
+        sb.draw(img, drawX - width / 2.0F, drawY - height / 2.0F, width, height);
+    }
+
+    private void renderHelper(SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
+        sb.setColor(color);
         this.width = img.getWidth() * drawScale;
         this.height = img.getHeight() * drawScale;
         sb.draw(img, drawX - width / 2.0F, drawY - height / 2.0F, width, height);
@@ -271,7 +300,24 @@ public class Slot {
         renderFontCentered(sb, panelNameFont, title, current_x, current_y + 200.0F * drawScale, Color.WHITE.cpy());
     }
 
-    private static String makeUrl(String id) {
+    public static String makeUrl(String id) {
         return ModInformation.makeUIPath("slotBg/" + id);
+    }
+
+    public static String getUnlockText(String id) {
+        //temp
+        if (Settings.language == Settings.GameLanguage.ZHS)
+            switch (id.charAt(0)) {
+                case '1':
+                    return UNLOCK_TEXT.get("1");
+                case '2':
+                    return UNLOCK_TEXT.get("2");
+                case '3':
+                    return UNLOCK_TEXT.get("3");
+                default:
+                    if (UNLOCK_TEXT.get(id) != null)
+                        return UNLOCK_TEXT.get(id);
+            }
+        return UNLOCK_TEXT.get("EXCEPTION");
     }
 }

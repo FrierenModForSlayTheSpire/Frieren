@@ -2,6 +2,7 @@ package FrierenMod.cards.white;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -9,6 +10,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.HexPower;
 
 public class RustCleanMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(RustCleanMagic.class.getSimpleName());
@@ -45,6 +47,8 @@ public class RustCleanMagic extends AbstractBaseCard {
                     for (AbstractPower po : m.powers) {
                         if (po.type == AbstractPower.PowerType.BUFF) {
                             this.addToTop(new RemoveSpecificPowerAction(m, m, po.ID));
+                            if (po.ID.equals(HexPower.POWER_ID))
+                                SlotBgHelper.unlockANewSlot("4006");
                             break;
                         }
                     }

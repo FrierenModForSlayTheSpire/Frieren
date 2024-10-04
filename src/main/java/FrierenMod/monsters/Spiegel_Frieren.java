@@ -3,11 +3,13 @@ package FrierenMod.monsters;
 import FrierenMod.actions.ReplaceManaAction;
 import FrierenMod.cards.tempCards.UpsideDown;
 import FrierenMod.gameHelpers.ActionHelper;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.powers.*;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.MonsterRes;
 import basemod.BaseMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -149,6 +151,9 @@ public class Spiegel_Frieren extends AbstractMonster {
 
     public void die() {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose) {
+            if (GameActionManager.turn <= 3)
+                SlotBgHelper.unlockANewSlot("6002");
+            SlotBgHelper.unlockANewSlot("0007");
             super.die();
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);

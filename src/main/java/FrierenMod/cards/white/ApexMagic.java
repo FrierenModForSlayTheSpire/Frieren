@@ -5,6 +5,7 @@ import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.ActionHelper;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -44,6 +45,7 @@ public class ApexMagic extends AbstractBaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         ActionHelper.addToBotAbstract(() -> {
             if (CombatHelper.getManaNumInDrawPile() == 4 && CombatHelper.getManaNumInHand() == 4 && CombatHelper.getManaNumInDiscardPile() == 4) {
+                SlotBgHelper.unlockANewSlot("4003");
                 this.addToBot(new VFXAction(new GrandFinalEffect(), 0.7F));
                 for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters)
                     if (!mo.halfDead && !mo.isDying && !mo.isEscaping)

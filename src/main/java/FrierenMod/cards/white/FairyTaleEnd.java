@@ -3,6 +3,7 @@ package FrierenMod.cards.white;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -61,6 +62,8 @@ public class FairyTaleEnd extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         calculateDamage(m, true);
+        if(this.damage >= 1000)
+            SlotBgHelper.unlockANewSlot("4005");
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
     }
 

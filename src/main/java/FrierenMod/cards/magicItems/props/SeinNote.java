@@ -2,6 +2,7 @@ package FrierenMod.cards.magicItems.props;
 
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.effects.ExhaustMagicItemEffect;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -31,6 +32,7 @@ public class SeinNote extends AbstractMagicItem {
         for (AbstractCard c : chosenCards)
             AbstractDungeon.topLevelEffects.add(new ExhaustMagicItemEffect(c));
         p.heal(10, true);
+        SlotBgHelper.unlockANewSlot("4013");
         return true;
     }
 }

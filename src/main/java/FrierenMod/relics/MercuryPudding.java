@@ -1,5 +1,6 @@
 package FrierenMod.relics;
 
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
@@ -24,6 +25,12 @@ public class MercuryPudding extends AbstractBaseRelic {
             usedUp();
         }
         this.counter = setCounter;
+    }
+
+    @Override
+    public void usedUp() {
+        super.usedUp();
+        SlotBgHelper.unlockANewSlot("4011");
     }
 
     public void onVictory() {

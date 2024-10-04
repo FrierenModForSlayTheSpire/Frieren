@@ -2,6 +2,9 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.cards.magicItems.factors.Factor001;
+import FrierenMod.cards.magicItems.factors.Factor010;
+import FrierenMod.cards.magicItems.factors.Factor100;
 import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
 import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
@@ -55,7 +58,7 @@ public class CardPoolHelper {
     public static ArrayList<AbstractCard> getMagicItemCardPool(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> srcCardPool = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getCardList(CardEnums.MAGIC_ITEM_LIBRARY)) {
-            if(!c.hasTag(AbstractBaseCard.Enum.NEVER_DROP))
+            if (!c.hasTag(AbstractBaseCard.Enum.NEVER_DROP))
                 srcCardPool.add(c.makeCopy());
         }
         ArrayList<AbstractCard> common = new ArrayList<>();
@@ -98,7 +101,7 @@ public class CardPoolHelper {
     public static CardGroup getMagicItemCardGroup(AbstractMagicItem.MagicItemRarity rarity) {
         CardGroup retVal = new CardGroup(CardGroup.CardGroupType.UNSPECIFIED);
         for (AbstractCard c : getMagicItemCardPool(rarity))
-                retVal.addToTop(c);
+            retVal.addToTop(c);
         return retVal;
     }
 
@@ -129,8 +132,10 @@ public class CardPoolHelper {
 
     public static AbstractCard getRandomMagicItem(AbstractMagicItem.MagicItemRarity rarity) {
         ArrayList<AbstractCard> list = getMagicItemCardPool(rarity);
-        if(RandomField.getMagicItemRng().random(100) > 20)
+        if (RandomField.getMagicItemRng().random(100) > 20)
             list.removeIf(card -> card.hasTag(AbstractBaseCard.Enum.LESS_CHANCE_TO_MEET));
+        if (!Config.ALLOW_PUZZLE_FACTOR_DROP)
+            list.removeIf(card -> card.cardID.equals(Factor100.ID) || card.cardID.equals(Factor010.ID) || card.cardID.equals(Factor001.ID));
         return list.get(RandomField.getMagicItemRng().random(list.size() - 1));
     }
 

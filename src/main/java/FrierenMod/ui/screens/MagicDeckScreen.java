@@ -429,9 +429,8 @@ public class MagicDeckScreen extends CustomScreen implements ScrollBarListener {
     }
 
     private void calculateScrollBounds() {
-        if (getDeckWithoutLoadedFactors().size() > 10) {
-            int scrollTmp = getDeckWithoutLoadedFactors().size() / 5 - 2;
-            scrollTmp++;
+        if (getDeckWithoutLoadedFactors().size() > 5) {
+            int scrollTmp = (getDeckWithoutLoadedFactors().size()) / 5 - 1;
             if (getDeckWithoutLoadedFactors().size() % 5 != 0)
                 scrollTmp++;
             this.scrollUpperBound = Settings.DEFAULT_SCROLL_LIMIT + scrollTmp * deckPadY;

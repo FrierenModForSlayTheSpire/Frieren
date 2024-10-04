@@ -2,6 +2,7 @@ package FrierenMod.relics;
 
 import FrierenMod.cards.tempCards.Himmel;
 import FrierenMod.effects.HimmelEffect;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
@@ -28,6 +29,7 @@ public class MirroredLotusRing extends AbstractBaseRelic {
         this.counter++;
         if (this.counter == 4){
             flash();
+            SlotBgHelper.unlockANewSlot("4012");
             this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             this.addToBot(new VFXAction(new HimmelEffect()));
             this.addToBot(new MakeTempCardInHandAction(new Himmel(),1));

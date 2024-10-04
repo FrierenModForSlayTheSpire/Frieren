@@ -3,14 +3,26 @@ package FrierenMod.gameHelpers;
 import FrierenMod.actions.SealCardsAction;
 import FrierenMod.cardMods.SynchroMod;
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.magicItems.factors.BluePrint;
+import FrierenMod.cards.tempCards.Fatalism;
+import FrierenMod.cards.tempCards.Laziness;
+import FrierenMod.cards.white.HellFireSummoning;
+import FrierenMod.cards.white.LightningMagic;
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.patches.fields.CardCrawlGameField;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;
+import FrierenMod.powers.GetPlayerBlockPower;
+import FrierenMod.relics.HimmelGravestone;
+import FrierenMod.relics.MirroredLotusRing;
+import FrierenMod.relics.StatueOfHimmel;
 import FrierenMod.rewards.MagicItemReward;
+import FrierenMod.ui.panels.AchievementPopUpPanel;
 import FrierenMod.ui.panels.MagicDeckPanel;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
+import basemod.BaseMod;
 import basemod.ReflectionHacks;
 import basemod.TopPanelGroup;
 import basemod.TopPanelItem;
@@ -18,18 +30,23 @@ import basemod.helpers.CardModifierManager;
 import basemod.interfaces.*;
 import basemod.patches.com.megacrit.cardcrawl.core.CardCrawlGame.UpdateHooks;
 import basemod.patches.com.megacrit.cardcrawl.helpers.TopPanel.TopPanelHelper;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
-public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber, PostUpdateSubscriber {
+public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscriber, OnStartBattleSubscriber, PostCreateStartingDeckSubscriber, PostBattleSubscriber, StartGameSubscriber, PostUpdateSubscriber, RenderSubscriber, OnCardUseSubscriber {
     @Override
     public void receiveOnPlayerTurnStart() {
         try {
@@ -37,6 +54,24 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
+        if (CombatHelper.getAllManaNum() >= 100)
+            SlotBgHelper.unlockANewSlot("5001");
+        if (AbstractDungeon.player.currentBlock == 999)
+            SlotBgHelper.unlockANewSlot("5002");
+        if (AbstractDungeon.player.powers.stream().filter(po -> po.type == AbstractPower.PowerType.BUFF && !po.ID.equals(GetPlayerBlockPower.POWER_ID)).count() >= 5)
+            SlotBgHelper.unlockANewSlot("5003");
+        if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID) && AbstractDungeon.player.hasRelic(StatueOfHimmel.ID) && AbstractDungeon.player.hasRelic(MirroredLotusRing.ID))
+            SlotBgHelper.unlockANewSlot("5004");
+        if (AbstractDungeon.player.hand.group.stream().filter(c -> c.cardID.equals(Laziness.ID)).count() >= 4)
+            SlotBgHelper.unlockANewSlot("5005");
+        if (AbstractDungeon.player.drawPile.group.stream().filter(c -> c.cardID.equals(Dazed.ID)).count() >= 8)
+            SlotBgHelper.unlockANewSlot("5006");
+        if (BaseMod.MAX_HAND_SIZE == 0)
+            SlotBgHelper.unlockANewSlot("5007");
+        if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(c -> c.cardID.equals(BluePrint.ID)).count() == 3)
+            SlotBgHelper.unlockANewSlot("7001");
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount >= 30)
+            SlotBgHelper.unlockANewSlot("5015");
     }
 
     private void resetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
@@ -124,6 +159,13 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         if (CombatHelper.isInCombat()) {
             updateExistingCard();
         }
+        ArrayList<AchievementPopUpPanel> panelQueue = CardCrawlGameField.achievementPopUpPanelQueue.get();
+        if (panelQueue != null) {
+            panelQueue.removeIf(panel -> panel.ended);
+            if (!panelQueue.isEmpty()) {
+                panelQueue.get(0).update();
+            }
+        }
     }
 
     public void updateExistingCard() {
@@ -150,5 +192,28 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
                 card.initializeDescription();
             }
         }
+    }
+
+    @Override
+    public void receiveRender(SpriteBatch sb) {
+        ArrayList<AchievementPopUpPanel> panelQueue = CardCrawlGameField.achievementPopUpPanelQueue.get();
+        if (panelQueue != null && !panelQueue.isEmpty())
+            for (AchievementPopUpPanel panel : CardCrawlGameField.achievementPopUpPanelQueue.get()) {
+                panel.render(sb);
+            }
+    }
+
+    @Override
+    public void receiveCardUsed(AbstractCard c) {
+        if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.CHANT))
+            SlotBgHelper.unlockANewSlot("0004");
+        if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL))
+            SlotBgHelper.unlockANewSlot("0005");
+        if (c.cardID.equals(LightningMagic.ID))
+            SlotBgHelper.unlockANewSlot("4001");
+        if (c.cardID.equals(HellFireSummoning.ID))
+            SlotBgHelper.unlockANewSlot("4002");
+        if (c.cardID.equals(Fatalism.ID))
+            SlotBgHelper.unlockANewSlot("4007");
     }
 }

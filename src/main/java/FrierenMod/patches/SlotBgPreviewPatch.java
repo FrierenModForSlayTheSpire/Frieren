@@ -26,7 +26,7 @@ import javassist.expr.FieldAccess;
 import java.util.ArrayList;
 
 public class SlotBgPreviewPatch {
-    private static final float startX = 1500.0F * Settings.scale;
+    private static final float startX = 1600.0F * Settings.scale;
     private static final float startY = Settings.HEIGHT - 100.0F * Settings.scale;
     private static final float padX = 100.0F * Settings.scale;
     private static final float padY = 100.0F * Settings.scale;

@@ -4,6 +4,7 @@ package FrierenMod.powers;
 import FrierenMod.actions.ExhaustManaInCardGroupAction;
 import FrierenMod.cards.white.PajamasForm;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
@@ -24,6 +25,8 @@ public class PajamasFormPower extends AbstractBasePower {
         if (isPlayer) {
             this.updateDescription();
             this.flash();
+            if(CombatHelper.getAllManaNum() >= 30)
+                SlotBgHelper.unlockANewSlot("4009");
             this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInDrawPile(),0));
             this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInHand(),1));
             this.addToBot(new ExhaustManaInCardGroupAction(CombatHelper.getManaNumInDiscardPile(),2));
