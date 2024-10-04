@@ -153,6 +153,7 @@ public class Spiegel_Frieren extends AbstractMonster {
         if (!(AbstractDungeon.getCurrRoom()).cannotLose) {
             if (GameActionManager.turn <= 3)
                 SlotBgHelper.unlockANewSlot("6002");
+            SlotBgHelper.unlockANewSlot("0007");
             super.die();
             useFastShakeAnimation(5.0F);
             CardCrawlGame.screenShake.rumble(4.0F);

@@ -143,9 +143,9 @@ public class SlotBgLibrary implements ScrollBarListener {
         refreshLockedSlots();
         refreshChosenSlot();
         if(collectedNumber >= 50)
-            SlotBgHelper.unlockANewSlot("8001");
+            SlotBgHelper.unlockANewSlot("9001");
         if(collectedNumber >= 100)
-            SlotBgHelper.unlockANewSlot("8002");
+            SlotBgHelper.unlockANewSlot("9002");
     }
 
     public void save() {

@@ -5,13 +5,18 @@ import FrierenMod.cards.magicItems.props.UnbelievableTool;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.SlotBgHelper;
+import FrierenMod.monsters.Spiegel_Frieren;
 import FrierenMod.patches.fields.MagicDeckField;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.city.Chosen;
 import com.megacrit.cardcrawl.monsters.ending.CorruptHeart;
+import com.megacrit.cardcrawl.screens.DeathScreen;
 
 import java.util.Arrays;
 
@@ -49,6 +54,24 @@ public class AchievementPatch {
                     SlotBgHelper.unlockANewSlot("5013");
                 if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(factor -> factor.cardID.equals(UnbelievableTool.ID)).count() == 5)
                     SlotBgHelper.unlockANewSlot("5014");
+            }
+        }
+    }
+
+    @SpirePatch(clz = DeathScreen.class, method = SpirePatch.CONSTRUCTOR)
+    public static class PatchDeathScreen {
+        @SpirePostfixPatch
+        public static void Postfix(DeathScreen __instance, MonsterGroup m) {
+            if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
+                SlotBgHelper.unlockANewSlot("0008");
+            }
+            for (AbstractMonster monster : m.monsters) {
+                if (monster.id.equals(Chosen.ID)) {
+                    SlotBgHelper.unlockANewSlot("0009");
+                }
+                else if (monster.id.equals(Spiegel_Frieren.MONSTER_ID)) {
+                    SlotBgHelper.unlockANewSlot("0010");
+                }
             }
         }
     }

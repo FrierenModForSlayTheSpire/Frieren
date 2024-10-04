@@ -305,17 +305,19 @@ public class Slot {
     }
 
     public static String getUnlockText(String id) {
-        switch (id.charAt(0)) {
-            case '1':
-                return UNLOCK_TEXT.get("1");
-            case '2':
-                return UNLOCK_TEXT.get("2");
-            case '3':
-                return UNLOCK_TEXT.get("3");
-            default:
-                if (UNLOCK_TEXT.get(id) != null)
-                    return UNLOCK_TEXT.get(id);
-        }
+        //temp
+        if (Settings.language == Settings.GameLanguage.ZHS)
+            switch (id.charAt(0)) {
+                case '1':
+                    return UNLOCK_TEXT.get("1");
+                case '2':
+                    return UNLOCK_TEXT.get("2");
+                case '3':
+                    return UNLOCK_TEXT.get("3");
+                default:
+                    if (UNLOCK_TEXT.get(id) != null)
+                        return UNLOCK_TEXT.get(id);
+            }
         return UNLOCK_TEXT.get("EXCEPTION");
     }
 }

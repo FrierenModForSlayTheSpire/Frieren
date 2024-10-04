@@ -4,6 +4,7 @@ import FrierenMod.cards.DualCard;
 import FrierenMod.effects.NormalAttackEffect;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.gameHelpers.SlotBgHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -70,6 +71,8 @@ public class OrdinaryOffensiveMagic extends DualCard {
         int manaCount = CombatHelper.getManaNumInExhaustPile();
         this.baseDamage = manaCount * magicNumber;
         this.calculateCardDamage(m);
+        if(this.damage >= 100)
+            SlotBgHelper.unlockANewSlot("4008");
         this.addToTop(new VFXAction(p, new NormalAttackEffect(), 0.1F, true));
         this.addToBot(new VFXAction(p, new MindblastEffect(p.dialogX, p.dialogY, p.flipHorizontal), 0.1F));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));

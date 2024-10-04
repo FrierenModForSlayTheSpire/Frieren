@@ -37,6 +37,7 @@ import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoom;
@@ -66,9 +67,11 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         if (AbstractDungeon.player.drawPile.group.stream().filter(c -> c.cardID.equals(Dazed.ID)).count() >= 8)
             SlotBgHelper.unlockANewSlot("5006");
         if (BaseMod.MAX_HAND_SIZE == 0)
-            SlotBgHelper.unlockANewSlot("5012");
+            SlotBgHelper.unlockANewSlot("5007");
         if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(c -> c.cardID.equals(BluePrint.ID)).count() == 3)
             SlotBgHelper.unlockANewSlot("7001");
+        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount >= 30)
+            SlotBgHelper.unlockANewSlot("5015");
     }
 
     private void resetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {

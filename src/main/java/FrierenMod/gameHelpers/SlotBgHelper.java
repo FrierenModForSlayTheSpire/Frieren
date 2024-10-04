@@ -8,6 +8,7 @@ import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.ResourceChecker;
+import com.megacrit.cardcrawl.core.Settings;
 
 import java.io.IOException;
 import java.net.URL;
@@ -117,7 +118,8 @@ public class SlotBgHelper {
     }
 
     public static void unlockANewSlot(String id) {
-        if (id == null || !Config.ALLOW_ACHIEVEMENT || isASlotCollected(id) || !isASlotValid(id)) {
+        //temp
+        if (Settings.language == Settings.GameLanguage.ENG || id == null || !Config.ALLOW_ACHIEVEMENT || isASlotCollected(id) || !isASlotValid(id)) {
             return;
         }
         String newProgressString = getNewSlotProgressString(id);
