@@ -62,14 +62,16 @@ public class AchievementPatch {
     public static class PatchDeathScreen {
         @SpirePostfixPatch
         public static void Postfix(DeathScreen __instance, MonsterGroup m) {
-            if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
-                SlotBgHelper.unlockANewSlot("0008");
-            }
-            for (AbstractMonster monster : m.monsters) {
-                if (monster.id.equals(Chosen.ID)) {
-                    SlotBgHelper.unlockANewSlot("0009");
-                } else if (monster.id.equals(Spiegel_Frieren.MONSTER_ID)) {
-                    SlotBgHelper.unlockANewSlot("0010");
+            if (m != null) {
+                if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
+                    SlotBgHelper.unlockANewSlot("0008");
+                }
+                for (AbstractMonster monster : m.monsters) {
+                    if (monster.id.equals(Chosen.ID)) {
+                        SlotBgHelper.unlockANewSlot("0009");
+                    } else if (monster.id.equals(Spiegel_Frieren.MONSTER_ID)) {
+                        SlotBgHelper.unlockANewSlot("0010");
+                    }
                 }
             }
         }
