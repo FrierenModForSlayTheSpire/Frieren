@@ -313,8 +313,8 @@
       "5007": "0 Max Hand Size at start of turn.",
       "5008": "40 cards in deck when victory.",
       "5009": "30 cards in magic deck when victory.",
-      "5010": "All rare Factors when victory.",
-      "5011": "All common Factors when victory.",
+      "5010": "All rare Factors loading when victory.",
+      "5011": "All common Factors loading when victory.",
       "5012": "2 hours play time when victory.",
       "5013": "All the same Factors when victory.",
       "5014": "5 Unbelievable Tools when victory.",
@@ -325,7 +325,7 @@
       "7002": "! ! !",
       "9001": "50 Slot Backgrounds.",
       "9002": "100 Slot Backgrounds.",
-      "9003": "",
+      "9003": "Meet Himmel, Heiter and Eisen.",
       "EXCEPTION": "No unlock way, please wait for update."
     }
   },
