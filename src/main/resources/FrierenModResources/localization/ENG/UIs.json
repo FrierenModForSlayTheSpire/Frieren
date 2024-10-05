@@ -232,7 +232,7 @@
   },
   "FrierenMod:MagicItemReward": {
     "TEXT": [
-      "Add a #yMagic_Factor or #yMagic_Prop to your Magic Deck",
+      "Add a #yMagic_Item to your Magic Deck",
       "Choose a Magic Factor or Magic Prop"
     ]
   },
@@ -273,7 +273,7 @@
       "Unlock way:",
       " NL #gUnlocked!",
       " NL #rLocked!",
-      "Slot Bg UnLocked!"
+      "UnLocked!"
     ],
     "TEXT_DICT": {
       "0001": "Unlock when start.",
