@@ -19,7 +19,6 @@ public class AchievementPopUpPanel {
     private static final float WAIT_TIME = 2.0f;
     private float timer = 0.0f;
     private static final Texture BACKGROUND = ImageMaster.loadImage(ModInformation.makeUIPath("achievement/background"));
-    private static final String TITLE = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT[6];
     private static final float ORIGIN_START_X = Settings.WIDTH / 2.0F;
     private static final float ORIGIN_START_Y = Settings.HEIGHT + BACKGROUND.getHeight() * Settings.scale;
     private static final float ORIGIN_END_X = Settings.WIDTH / 2.0F;
@@ -29,6 +28,8 @@ public class AchievementPopUpPanel {
     private float endX, endY;
     private float currentX, currentY;
     private float speed;
+    private static final float height = BACKGROUND.getHeight() * DRAW_SCALE;
+    private float width;
 
     private enum State {MOVING_TO_TARGET, WAITING, MOVING_BACK}
 
@@ -45,6 +46,7 @@ public class AchievementPopUpPanel {
         this.state = State.MOVING_TO_TARGET;
         this.speed = 2.0f;
         this.playedSfx = false;
+        initializeBackgroundWidth();
     }
 
     public void update() {
@@ -89,7 +91,7 @@ public class AchievementPopUpPanel {
                 }
                 break;
         }
-        this.slot.updateWithAchievementPanel(this.currentX - 100.0F * Settings.scale, this.currentY);
+        this.slot.updateWithAchievementPanel(this.currentX - 0.5f * width + 80.0f * Settings.scale, this.currentY);
     }
 
 
@@ -98,18 +100,27 @@ public class AchievementPopUpPanel {
             return;
         renderHelper(sb, Color.WHITE, BACKGROUND, currentX, currentY);
         this.slot.render(sb);
-        FontHelper.renderFontLeftTopAligned(sb, FontHelper.tipHeaderFont, TITLE, currentX - 60.0F * Settings.scale, currentY + 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy());
-        FontHelper.renderSmartText(sb, FontHelper.tipBodyFont, slot.unlockText, currentX - 60.0F * Settings.scale, currentY, BACKGROUND.getWidth() * DRAW_SCALE * 0.6F, 25.0F * Settings.scale, Settings.CREAM_COLOR);
+        FontHelper.renderFontLeftTopAligned(sb, FontHelper.tipHeaderFont, slot.title, currentX - 0.5f * width + slot.width + 60.0f * Settings.scale, currentY + 40.0F * Settings.scale, Settings.GOLD_COLOR.cpy());
+        FontHelper.renderSmartText(sb, FontHelper.tipBodyFont, slot.unlockText, currentX - 0.5f * width + slot.width + 60.0f * Settings.scale, currentY, width * 0.6F, 25.0F * Settings.scale, Settings.CREAM_COLOR);
     }
 
     private void renderHelper(SpriteBatch sb, Color color, Texture img, float drawX, float drawY) {
         sb.setColor(color);
-        float width = img.getWidth() * DRAW_SCALE;
-        float height = img.getHeight() * DRAW_SCALE;
         sb.draw(img, drawX - width / 2.0F, drawY - height / 2.0F, width, height);
     }
 
     private boolean isOnScreen() {
         return !(this.currentY < -200.0F * Settings.scale) && !(this.currentY > (float) Settings.HEIGHT + 200.0F * Settings.scale);
+    }
+
+    private void initializeBackgroundWidth() {
+        switch (Settings.language) {
+            case ZHS:
+                this.width = BACKGROUND.getWidth() * DRAW_SCALE + Math.max(0, this.slot.title.length() - 5) * 25.0F * DRAW_SCALE;
+                break;
+            default:
+            case ENG:
+                break;
+        }
     }
 }
