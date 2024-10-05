@@ -54,24 +54,26 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
-        if (CombatHelper.getAllManaNum() >= 100)
-            SlotBgHelper.unlockANewSlot("5001");
-        if (AbstractDungeon.player.currentBlock == 999)
-            SlotBgHelper.unlockANewSlot("5002");
-        if (AbstractDungeon.player.powers.stream().filter(po -> po.type == AbstractPower.PowerType.BUFF && !po.ID.equals(GetPlayerBlockPower.POWER_ID)).count() >= 5)
-            SlotBgHelper.unlockANewSlot("5003");
-        if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID) && AbstractDungeon.player.hasRelic(StatueOfHimmel.ID) && AbstractDungeon.player.hasRelic(MirroredLotusRing.ID))
-            SlotBgHelper.unlockANewSlot("5004");
-        if (AbstractDungeon.player.hand.group.stream().filter(c -> c.cardID.equals(Laziness.ID)).count() >= 4)
-            SlotBgHelper.unlockANewSlot("5005");
-        if (AbstractDungeon.player.drawPile.group.stream().filter(c -> c.cardID.equals(Dazed.ID)).count() >= 8)
-            SlotBgHelper.unlockANewSlot("5006");
-        if (BaseMod.MAX_HAND_SIZE == 0)
-            SlotBgHelper.unlockANewSlot("5007");
-        if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(c -> c.cardID.equals(BluePrint.ID)).count() == 3)
-            SlotBgHelper.unlockANewSlot("7001");
-        if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount >= 30)
-            SlotBgHelper.unlockANewSlot("5015");
+        if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+            if (CombatHelper.getAllManaNum() >= 100)
+                SlotBgHelper.unlockANewSlot("5001");
+            if (AbstractDungeon.player.currentBlock == 999)
+                SlotBgHelper.unlockANewSlot("5002");
+            if (AbstractDungeon.player.powers.stream().filter(po -> po.type == AbstractPower.PowerType.BUFF && !po.ID.equals(GetPlayerBlockPower.POWER_ID)).count() >= 5)
+                SlotBgHelper.unlockANewSlot("5003");
+            if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID) && AbstractDungeon.player.hasRelic(StatueOfHimmel.ID) && AbstractDungeon.player.hasRelic(MirroredLotusRing.ID))
+                SlotBgHelper.unlockANewSlot("5004");
+            if (AbstractDungeon.player.hand.group.stream().filter(c -> c.cardID.equals(Laziness.ID)).count() >= 4)
+                SlotBgHelper.unlockANewSlot("5005");
+            if (AbstractDungeon.player.drawPile.group.stream().filter(c -> c.cardID.equals(Dazed.ID)).count() >= 8)
+                SlotBgHelper.unlockANewSlot("5006");
+            if (BaseMod.MAX_HAND_SIZE == 0)
+                SlotBgHelper.unlockANewSlot("5007");
+            if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(c -> c.cardID.equals(BluePrint.ID)).count() == 3)
+                SlotBgHelper.unlockANewSlot("7001");
+            if (AbstractDungeon.player.hasPower(StrengthPower.POWER_ID) && AbstractDungeon.player.getPower(StrengthPower.POWER_ID).amount >= 30)
+                SlotBgHelper.unlockANewSlot("5015");
+        }
     }
 
     private void resetBackFireCardCostInCardGroup(CardGroup group) throws InstantiationException, IllegalAccessException {
@@ -205,15 +207,17 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
 
     @Override
     public void receiveCardUsed(AbstractCard c) {
-        if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.CHANT))
-            SlotBgHelper.unlockANewSlot("0004");
-        if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL))
-            SlotBgHelper.unlockANewSlot("0005");
-        if (c.cardID.equals(LightningMagic.ID))
-            SlotBgHelper.unlockANewSlot("4001");
-        if (c.cardID.equals(HellFireSummoning.ID))
-            SlotBgHelper.unlockANewSlot("4002");
-        if (c.cardID.equals(Fatalism.ID))
-            SlotBgHelper.unlockANewSlot("4007");
+        if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+            if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.CHANT))
+                SlotBgHelper.unlockANewSlot("0004");
+            if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL))
+                SlotBgHelper.unlockANewSlot("0005");
+            if (c.cardID.equals(LightningMagic.ID))
+                SlotBgHelper.unlockANewSlot("4001");
+            if (c.cardID.equals(HellFireSummoning.ID))
+                SlotBgHelper.unlockANewSlot("4002");
+            if (c.cardID.equals(Fatalism.ID))
+                SlotBgHelper.unlockANewSlot("4007");
+        }
     }
 }
