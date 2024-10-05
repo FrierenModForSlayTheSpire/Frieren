@@ -19,7 +19,7 @@ public class SlotBgHelper {
     public static String progressString = "0001,0002,0003";
     public static String loadingString = "0001,0002,0003";
     public static String allString = getAllStringFromFiles();
-    public static final Set<String> Himmel = new HashSet<>(Arrays.asList("2007", "2008", "3002", "4012"));
+    public static final Set<String> Himmel = new HashSet<>(Arrays.asList("2007", "2008", "3002", "4012", "9003"));
     public static final Set<String> Heiter = new HashSet<>(Arrays.asList("4013"));
     public static final Set<String> Eisen = new HashSet<>(Arrays.asList("1008", "5015"));
 
