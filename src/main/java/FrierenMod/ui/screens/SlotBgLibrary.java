@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class SlotBgLibrary implements ScrollBarListener {
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(SlotBgLibrary.class.getSimpleName())).TEXT;
@@ -109,7 +110,7 @@ public class SlotBgLibrary implements ScrollBarListener {
         for (Slot slot : slots) {
             if (SlotBgHelper.progressString.contains(slot.id)) {
                 slot.setUnLockedInLibrary();
-            }else
+            } else
                 slot.setLockedInLibrary();
         }
     }
@@ -142,10 +143,33 @@ public class SlotBgLibrary implements ScrollBarListener {
         sortedSlots();
         refreshLockedSlots();
         refreshChosenSlot();
-        if(collectedNumber >= 50)
+        if (collectedNumber >= 50)
             SlotBgHelper.unlockANewSlot("9001");
-        if(collectedNumber >= 100)
+        if (collectedNumber >= 100)
             SlotBgHelper.unlockANewSlot("9002");
+        List<Slot> collectedSlots = slots.stream().filter(slot -> !slot.locked).collect(Collectors.toList());
+        ArrayList<Slot> team = new ArrayList<>();
+        for (Slot slot : collectedSlots) {
+            if (SlotBgHelper.Himmel.contains(slot.id)) {
+                team.add(slot);
+                break;
+            }
+        }
+        for (Slot slot : collectedSlots) {
+            if (SlotBgHelper.Eisen.contains(slot.id)) {
+                team.add(slot);
+                break;
+            }
+        }
+        for (Slot slot : collectedSlots) {
+            if (SlotBgHelper.Heiter.contains(slot.id)) {
+                team.add(slot);
+                break;
+            }
+        }
+        if (team.size() == 3) {
+            SlotBgHelper.unlockANewSlot("9003");
+        }
     }
 
     public void save() {

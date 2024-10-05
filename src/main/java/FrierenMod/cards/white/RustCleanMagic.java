@@ -47,13 +47,13 @@ public class RustCleanMagic extends AbstractBaseCard {
                     for (AbstractPower po : m.powers) {
                         if (po.type == AbstractPower.PowerType.BUFF) {
                             this.addToTop(new RemoveSpecificPowerAction(m, m, po.ID));
-                            if (po.ID.equals(HexPower.POWER_ID))
-                                SlotBgHelper.unlockANewSlot("4006");
                             break;
                         }
                     }
                 for (AbstractPower po : p.powers) {
                     if (po.type == AbstractPower.PowerType.DEBUFF) {
+                        if (po.ID.equals(HexPower.POWER_ID))
+                            SlotBgHelper.unlockANewSlot("4006");
                         this.addToTop(new RemoveSpecificPowerAction(p, p, po.ID));
                         break;
                     }

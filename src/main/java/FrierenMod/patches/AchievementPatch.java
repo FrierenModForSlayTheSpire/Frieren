@@ -52,7 +52,7 @@ public class AchievementPatch {
                     SlotBgHelper.unlockANewSlot("5012");
                 if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).map(factor -> factor.cardID).distinct().count() == 1)
                     SlotBgHelper.unlockANewSlot("5013");
-                if (Arrays.stream(CombatHelper.getLoadedMagicFactor()).filter(factor -> factor.cardID.equals(UnbelievableTool.ID)).count() == 5)
+                if (MagicDeckField.getDeck().group.stream().filter(factor -> factor.cardID.equals(UnbelievableTool.ID)).count() == 5)
                     SlotBgHelper.unlockANewSlot("5014");
             }
         }
@@ -68,8 +68,7 @@ public class AchievementPatch {
             for (AbstractMonster monster : m.monsters) {
                 if (monster.id.equals(Chosen.ID)) {
                     SlotBgHelper.unlockANewSlot("0009");
-                }
-                else if (monster.id.equals(Spiegel_Frieren.MONSTER_ID)) {
+                } else if (monster.id.equals(Spiegel_Frieren.MONSTER_ID)) {
                     SlotBgHelper.unlockANewSlot("0010");
                 }
             }

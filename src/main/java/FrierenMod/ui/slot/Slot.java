@@ -51,9 +51,11 @@ public class Slot {
     public boolean isGlowing;
     private float glowTimer = 0.0F;
     public boolean locked;
+    public String title;
     public String unlockText;
     private ArrayList<SlotGlowBoarder> glowList = new ArrayList<>();
     private static final String[] TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT;
+    private static final Map<String, String> TITLE = CardCrawlGame.languagePack.getUIString(ModInformation.makeID("Slot2")).TEXT_DICT;
     private static final Map<String, String> UNLOCK_TEXT = CardCrawlGame.languagePack.getUIString(ModInformation.makeID(Slot.class.getSimpleName())).TEXT_DICT;
     private static final Texture silhouette = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/bd_slot_silhouette"));
     private static final Color FRAME_SHADOW_COLOR = new Color(0.0F, 0.0F, 0.0F, 0.25F);
@@ -101,6 +103,7 @@ public class Slot {
         this.renderColor = Color.WHITE.cpy();
         this.transparency = 1.0F;
         this.locked = false;
+        this.title = getTitle(id);
         this.unlockText = getUnlockText(id);
     }
 
@@ -305,19 +308,32 @@ public class Slot {
     }
 
     public static String getUnlockText(String id) {
-        //temp
-        if (Settings.language == Settings.GameLanguage.ZHS)
-            switch (id.charAt(0)) {
-                case '1':
-                    return UNLOCK_TEXT.get("1");
-                case '2':
-                    return UNLOCK_TEXT.get("2");
-                case '3':
-                    return UNLOCK_TEXT.get("3");
-                default:
-                    if (UNLOCK_TEXT.get(id) != null)
-                        return UNLOCK_TEXT.get(id);
-            }
+        switch (id.charAt(0)) {
+            case '1':
+                return UNLOCK_TEXT.get("1");
+            case '2':
+                return UNLOCK_TEXT.get("2");
+            case '3':
+                return UNLOCK_TEXT.get("3");
+            default:
+                if (UNLOCK_TEXT.get(id) != null)
+                    return UNLOCK_TEXT.get(id);
+        }
         return UNLOCK_TEXT.get("EXCEPTION");
+    }
+
+    public static String getTitle(String id) {
+        switch (id.charAt(0)) {
+            case '1':
+                return TITLE.get("1");
+            case '2':
+                return TITLE.get("2");
+            case '3':
+                return TITLE.get("3");
+            default:
+                if (TITLE.get(id) != null)
+                    return TITLE.get(id);
+        }
+        return TITLE.get("EXCEPTION");
     }
 }
