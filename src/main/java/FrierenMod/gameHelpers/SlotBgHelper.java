@@ -11,9 +11,7 @@ import FrierenMod.utils.ResourceChecker;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Enumeration;
+import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
@@ -21,6 +19,9 @@ public class SlotBgHelper {
     public static String progressString = "0001,0002,0003";
     public static String loadingString = "0001,0002,0003";
     public static String allString = getAllStringFromFiles();
+    public static final Set<String> Himmel = new HashSet<>(Arrays.asList("2007", "2008", "3002", "4012"));
+    public static final Set<String> Heiter = new HashSet<>(Arrays.asList("4013"));
+    public static final Set<String> Eisen = new HashSet<>(Arrays.asList("1008", "5015"));
 
     public static ArrayList<Slot> getLoadingSlotsInPreview() {
         String[] parts = loadingString.split(",");

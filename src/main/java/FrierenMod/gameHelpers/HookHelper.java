@@ -54,7 +54,7 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
         } catch (InstantiationException | IllegalAccessException e) {
             throw new RuntimeException(e);
         }
-        if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+        if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
             if (CombatHelper.getAllManaNum() >= 100)
                 SlotBgHelper.unlockANewSlot("5001");
             if (AbstractDungeon.player.currentBlock == 999)
@@ -63,7 +63,7 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
                 SlotBgHelper.unlockANewSlot("5003");
             if (AbstractDungeon.player.hasRelic(HimmelGravestone.ID) && AbstractDungeon.player.hasRelic(StatueOfHimmel.ID) && AbstractDungeon.player.hasRelic(MirroredLotusRing.ID))
                 SlotBgHelper.unlockANewSlot("5004");
-            if (AbstractDungeon.player.hand.group.stream().filter(c -> c.cardID.equals(Laziness.ID)).count() >= 4)
+            if (AbstractDungeon.player.discardPile.group.stream().filter(c -> c.cardID.equals(Laziness.ID)).count() >= 4)
                 SlotBgHelper.unlockANewSlot("5005");
             if (AbstractDungeon.player.drawPile.group.stream().filter(c -> c.cardID.equals(Dazed.ID)).count() >= 8)
                 SlotBgHelper.unlockANewSlot("5006");
@@ -207,7 +207,7 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
 
     @Override
     public void receiveCardUsed(AbstractCard c) {
-        if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN){
+        if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
             if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.CHANT))
                 SlotBgHelper.unlockANewSlot("0004");
             if (c instanceof AbstractBaseCard && c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL))
@@ -218,6 +218,8 @@ public class HookHelper extends UpdateHooks implements OnPlayerTurnStartSubscrib
                 SlotBgHelper.unlockANewSlot("4002");
             if (c.cardID.equals(Fatalism.ID))
                 SlotBgHelper.unlockANewSlot("4007");
+            if (c.hasTag(AbstractBaseCard.Enum.LIMIT_OVER_SYNCHRO) && c.hasTag(AbstractBaseCard.Enum.ACCEL_SYNCHRO))
+                SlotBgHelper.unlockANewSlot("4015");
         }
     }
 }

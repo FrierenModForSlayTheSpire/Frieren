@@ -120,6 +120,7 @@ public class AchievementPopUpPanel {
                 break;
             default:
             case ENG:
+                this.width = BACKGROUND.getWidth() * DRAW_SCALE + Math.max(0, this.slot.title.length() - 10) * 12.5F * DRAW_SCALE;
                 break;
         }
     }
