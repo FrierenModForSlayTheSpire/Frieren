@@ -10,7 +10,9 @@ import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.ResourceChecker;
 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.net.URLDecoder;
 import java.util.*;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
@@ -18,7 +20,17 @@ import java.util.jar.JarFile;
 public class SlotBgHelper {
     public static String progressString = "0001,0002,0003";
     public static String loadingString = "0001,0002,0003";
-    public static String allString = getAllStringFromFiles();
+    public static String allString;
+
+    static {
+        try {
+            allString = getAllStringFromFiles();
+        } catch (UnsupportedEncodingException e) {
+            Log.logger.info("Can not get Slot Bg url!");
+            throw new RuntimeException(e);
+        }
+    }
+
     public static final Set<String> Himmel = new HashSet<>(Arrays.asList("2007", "2008", "3002", "4012", "9003"));
     public static final Set<String> Heiter = new HashSet<>(Arrays.asList("4013"));
     public static final Set<String> Eisen = new HashSet<>(Arrays.asList("1008", "5015"));
@@ -60,14 +72,14 @@ public class SlotBgHelper {
         return slots;
     }
 
-    public static String getAllStringFromFiles() {
+    public static String getAllStringFromFiles() throws UnsupportedEncodingException {
         ClassLoader classLoader = ResourceChecker.class.getClassLoader();
         URL resource = classLoader.getResource(ModInformation.getSlotBgFolder());
         if (resource == null) {
             Log.logger.info("WHY NO SLOT BG FOLDER?");
             return null;
         }
-        String jarPath = resource.getPath().substring(5, resource.getPath().indexOf("!"));
+        String jarPath = URLDecoder.decode(resource.getPath().substring(5, resource.getPath().indexOf("!")), "UTF-8");
         StringBuilder retVal = new StringBuilder();
         try (JarFile jarFile = new JarFile(jarPath)) {
             Enumeration<JarEntry> entries = jarFile.entries();
@@ -79,6 +91,7 @@ public class SlotBgHelper {
                 }
             }
         } catch (IOException e) {
+            Log.logger.info("Can not load slot bg files!");
             throw new RuntimeException(e);
         }
         if (retVal.length() > 0) {
