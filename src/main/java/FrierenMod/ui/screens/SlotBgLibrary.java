@@ -124,6 +124,7 @@ public class SlotBgLibrary implements ScrollBarListener {
     }
 
     public void show(String openSlotId, int openSlotIndex, ArrayList<Slot> previousSlots) {
+        SlotBgHelper.unlockANewSlot("9999");
         this.shown = true;
         this.openSlotId = openSlotId;
         this.openSlotIndex = openSlotIndex;

@@ -326,6 +326,7 @@
       "9001": "50 Slot Backgrounds.",
       "9002": "100 Slot Backgrounds.",
       "9003": "Meet Himmel, Heiter and Eisen.",
+      "9999": "Thanks for playing",
       "EXCEPTION": "No unlock way, please wait for update."
     }
   },
@@ -381,6 +382,7 @@
       "9001": "No Longer Transparent Memories",
       "9002": "Unfading Memories",
       "9003": "A true hero",
+      "9999": "A souvenir of 1.0ver",
       "EXCEPTION": "???"
     }
   },
