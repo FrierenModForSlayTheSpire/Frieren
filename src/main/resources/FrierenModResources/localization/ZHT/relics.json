@@ -1,0 +1,136 @@
+{
+  "FrierenMod:HolyEmblem": {
+    "NAME": "聖杖之證",
+    "FLAVOR": "相當久遠前的魔法使資格證明，但管理魔法的團體經常更換，芙莉蓮對此頭疼不已。",
+    "DESCRIPTIONS": [
+      "每個回合開始時，在抽牌堆和棄牌堆各放入 #b1 張 #y魔力 。"
+    ]
+  },
+  "FrierenMod:HairAccessory": {
+    "NAME": "菲倫的髮飾",
+    "FLAVOR": "芙莉蓮送給徒弟菲倫的16歲生日禮物。",
+    "DESCRIPTIONS": [
+      "你每 #y同調 #b4 次 ，抽 #b1 張牌。"
+    ]
+  },
+  "FrierenMod:MercuryPudding": {
+    "NAME": "水星布丁",
+    "FLAVOR": "芙莉蓮喜歡吃的甜點。同時也是芙莉蓮想要了解人類的契機之一。",
+    "DESCRIPTIONS": [
+      "戰鬥結束時，若你的血量在10點及以下，回覆你最大生命值的 #b50% （僅能奏效一次）。"
+    ]
+  },
+  "FrierenMod:ScaleOfObedience": {
+    "NAME": "服從的天平",
+    "FLAVOR": "七崩賢之一“斷頭台阿烏拉”所擁有的強大魔法道具，能將自己與對手的靈魂放在天平上，魔力弱的一方將被完全支配。",
+    "DESCRIPTIONS": [
+      "在普通戰鬥中，你在每回合開始時獲得 [E] ，抽 #b1 張牌。"
+    ]
+  },
+  "FrierenMod:MimicHead": {
+    "NAME": "寶箱怪的頭",
+    "FLAVOR": "某個黑暗的地方有這麼一個傳言：戴上寶箱怪的頭就會掉落更多獎勵。wuxiu~~芙莉蓮又一次邊唱邊跳地落入寶箱怪的嘴裡。",
+    "DESCRIPTIONS": [
+      "你每次打開一個非boss寶箱，裡面都會有額外的 #b100 金幣!"
+    ]
+  },
+  "FrierenMod:Stille": {
+    "NAME": "隕鐵鳥",
+    "FLAVOR": "最大飛行速度可以超過音速，對魔力很敏感。在魔法使資格考試時，芙莉蓮使用捕鳥魔法成功抓獲一隻。",
+    "DESCRIPTIONS": [
+      "戰鬥開始時獲得 #b2 點 #y敏捷 ,在第三回合結束時失去 #b2 點 #y敏捷 。"
+    ]
+  },
+  "FrierenMod:EarAccessory": {
+    "NAME": "精美的耳飾",
+    "FLAVOR": "芙莉蓮一直帶著的耳飾，似乎和師傅伏拉梅的款式一樣。",
+    "DESCRIPTIONS": [
+      "戰鬥開始時，將 #b2 張 #y魔力 加入你的手牌。"
+    ]
+  },
+  "FrierenMod:ComfortableBed": {
+    "NAME": "舒適的床",
+    "FLAVOR": "連活了千年以上的大魔法使芙莉蓮都無法掙脫它的束縛，可見其強大。",
+    "DESCRIPTIONS": [
+      "每回合開始時獲得 [E] 。在戰鬥開始時，將一張 #r懶懶散散 放入你的抽牌堆和棄牌堆。"
+    ]
+  },
+  "FrierenMod:MirroredLotusRing": {
+    "NAME": "鏡蓮花戒指",
+    "FLAVOR": "芙莉蓮隨意挑的禮物，辛美爾送給了她並親自為她戴上，直至辛美爾逝世後芙莉蓮才意識到鏡蓮花的花語是永遠的愛情。",
+    "DESCRIPTIONS": [
+      "在第 #b4 回合開始時，將一張 #y辛美爾 置入你的手牌。"
+    ]
+  },
+  "FrierenMod:ImmovableCloak": {
+    "NAME": "不動的外套",
+    "FLAVOR": "一級魔法使布魯格用魔法製成的外套，上面附著了強韌的防禦術式，一般的考生根本無法擊退他半步。",
+    "DESCRIPTIONS": [
+      "只要本場戰鬥你沒有失去過生命，每回合開始多抽 #b1 張牌。"
+    ]
+  },
+  "FrierenMod:StatueOfHimmel": {
+    "NAME": "辛美爾的雕像",
+    "FLAVOR": "為了讓世人銘記自己，同時也讓未來的芙莉蓮不感到孤獨，辛美爾在各地都建立了自己的雕像。即便百年過後，辛美爾的雕像依然被人們呵護著。",
+    "DESCRIPTIONS": [
+      "在前三個回合開始時，若你沒有 #y人工製品 ，則獲得 #b1 層 #y人工製品 。"
+    ]
+  },
+  "FrierenMod:IcicleCherryBlossom": {
+    "NAME": "冰柱櫻",
+    "FLAVOR": "冰柱櫻在冬天開花，儘管它的花朵有毒，但非常美麗。它也是芙莉蓮最喜歡的冬季花。",
+    "DESCRIPTIONS": [
+      "在每回合開始時獲得 [E] 。在卡牌獎勵畫面，可供選擇的牌有 #b60 %的機率被替換為 #y魔力 。"
+    ]
+  },
+  "FrierenMod:UbelStaff": {
+    "NAME": "尤貝爾的法杖",
+    "FLAVOR": "尤貝爾以她特有的魔法天賦“共鳴”的和“近乎無所不切魔法”而聞名，法杖發出的一斬曾切碎了身穿不動的外套的一級魔法使布魯格",
+    "DESCRIPTIONS": [
+      "你每 #y詠唱 #b6 次，獲得 [E] 。"
+    ]
+  },
+  "FrierenMod:FakeFlammeGrimoire": {
+    "NAME": "伏拉梅的著作（偽）",
+    "FLAVOR": "眾所周知，世上流通的伏拉梅的著作都是假的，也許在某個秘密的地方能找到真的那一本...",
+    "DESCRIPTIONS": [
+      "在第一個回合，你打出 #y傳說魔法 不需要提前 #y詠唱 。"
+    ]
+  },
+  "FrierenMod:FlammeGrimoire": {
+    "NAME": "大魔法使伏拉梅的著作",
+    "FLAVOR": "在大陸的最北邊，我抵達了靈魂長眠之地，被世人們稱之為天國的地方...",
+    "DESCRIPTIONS": [
+      "你打出 #y傳說魔法 不再需要提前 #y詠唱 。"
+    ]
+  },
+  "FrierenMod:MickeyHouse": {
+    "NAME": "神奇妙妙屋",
+    "FLAVOR": "這裡的老鼠總能拿出些奇奇怪怪的妙妙工具",
+    "DESCRIPTIONS": [
+      "每次進入？房間時獲得一個 #y神奇妙妙工具 。"
+    ]
+  },
+  "FrierenMod:HimmelGravestone": {
+    "NAME": "辛美爾之墓",
+    "FLAVOR": "辛美爾，打倒了魔王的勇者，對芙莉蓮有好感但沒有被及時察覺，步入天國後推動了芙莉蓮踏上理解人類的旅途。",
+    "DESCRIPTIONS": [
+      "在每回合開始時獲得 [E] ，當你撿起這件遺物時，獲得一個獨特的 #r詛咒 。",
+      "願勇者辛美爾在天堂安息..."
+    ]
+  },
+  "FrierenMod:HaitaaWand": {
+    "NAME": "海塔留下的法杖",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "每個回合開始時，獲得 #b1 層 #y專注 。 NL 每個回合結束時，消耗所有 #y魔力 ，每消耗 #b1 張就獲得 #b1 層 #y專注 。"
+    ]
+  },
+  "FrierenMod:ExchangeRelic": {
+    "NAME": "",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      ""
+    ]
+  }
+}
