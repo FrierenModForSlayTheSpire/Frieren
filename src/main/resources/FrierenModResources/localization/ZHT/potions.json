@@ -1,0 +1,21 @@
+{
+  "FrierenMod:BottledMana": {
+    "NAME": "瓶裝魔力",
+    "DESCRIPTIONS": [
+      " 將 #b%d 張 #y魔力 加入手牌。"
+    ]
+  },
+  "FrierenMod:DissolveClothPotion": {
+    "NAME": "只溶解衣服的藥水",
+    "DESCRIPTIONS": [
+      "去除對象的格擋並給予 #b%d 層 #y易傷 和 #y虛弱 。"
+    ]
+  },
+  "FrierenMod:EmperorWine": {
+    "NAME": "皇帝酒",
+    "DESCRIPTIONS": [
+      "從 #b3 張隨機的稀有牌中選擇 #b1 張加入你的手牌。這張牌在本回合耗能變為0 。",
+      "從 #b3 張隨機的稀有牌中選擇 #b1 張，將它的 #b2 張複製加入你的手牌。這些牌在本回合耗能變為0 。"
+    ]
+  }
+}

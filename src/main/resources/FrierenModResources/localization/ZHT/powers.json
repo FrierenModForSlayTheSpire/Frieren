@@ -1,0 +1,266 @@
+{
+  "FrierenMod:PerpetualPower": {
+    "NAME": "永續",
+    "DESCRIPTIONS": [
+      "在你的回合開始時，將 #b%d 張 #y魔力 置入棄牌堆。 "
+    ]
+  },
+  "FrierenMod:OutpouringPower": {
+    "NAME": "傾瀉",
+    "DESCRIPTIONS": [
+      "你每 #y同調 一張 #y魔力，獲得 #b%d 點 #y力量 。"
+    ]
+  },
+  "FrierenMod:PajamasFormPower": {
+    "NAME": "睡衣形態",
+    "DESCRIPTIONS": [
+      "在每回合結束時，消耗所有 #y魔力 ，對所有敵人造成消耗的 #y魔力 數量的傷害的 #b%d 倍。 NL （將造成 #b%d 點傷害）。"
+    ]
+  },
+  "FrierenMod:TrickPower": {
+    "NAME": "欺騙魔族的小把戲",
+    "DESCRIPTIONS": [
+      "在你的回合開始時，將一張 #y魔力隱藏 置入手牌。"
+    ]
+  },
+  "FrierenMod:GainRelicPower": {
+    "NAME": "尋找遺失飾品的魔法",
+    "DESCRIPTIONS": [
+      "戰鬥結束時，獲得 #b%d 件隨機遺物。"
+    ]
+  },
+  "FrierenMod:RitesPreparationPower": {
+    "NAME": "儀式準備",
+    "DESCRIPTIONS": [
+      "下 #b%d 張 #y同調 的 #y魔力 會對所有敵人造成6點傷害。"
+    ]
+  },
+  "FrierenMod:SwitchStrengthAndDexterityPower": {
+    "NAME": "交換",
+    "DESCRIPTIONS": [
+      "在你的回合結束時，交換你的 #y力量 和 #y敏捷 層數。"
+    ]
+  },
+  "FrierenMod:TimeTravelPower": {
+    "NAME": "精靈的時間觀念",
+    "DESCRIPTIONS": [
+      "將你當前的一切送入 #b%d 回合後的未來。"
+    ]
+  },
+  "FrierenMod:ThunderPower": {
+    "NAME": "破滅之雷",
+    "DESCRIPTIONS": [
+      "本場戰鬥中你的 #y同調 變為 #y終極同調 。"
+    ]
+  },
+  "FrierenMod:AccelerateFlowPower": {
+    "NAME": "加速流動",
+    "DESCRIPTIONS": [
+      "本回合中你的 #y同調 變為 #y加速同調 。"
+    ]
+  },
+  "FrierenMod:ManaReturnPower": {
+    "NAME": "魔力返還",
+    "DESCRIPTIONS": [
+      "每當玩家攻擊敵人時，將 #b%d 張 #y魔力 置入棄牌堆 。"
+    ]
+  },
+  "FrierenMod:ChantWithoutManaPower": {
+    "NAME": "魔法",
+    "DESCRIPTIONS": [
+      "在本回合中，你的 #y詠唱 不再 消耗 #y魔力 。"
+    ]
+  },
+  "FrierenMod:ChantWithoutManaTimesPower": {
+    "NAME": "魔力預支",
+    "DESCRIPTIONS": [
+      "在本回合中，下 #b%d 次 #y詠唱 不再 消耗 #y魔力 。"
+    ]
+  },
+  "FrierenMod:SynchroWithoutManaPower": {
+    "NAME": "魔力回收",
+    "DESCRIPTIONS": [
+      "下 #b%d 次 #y同調 不再 消耗 #y魔力 。"
+    ]
+  },
+  "FrierenMod:BanManaGainPower": {
+    "NAME": "&",
+    "DESCRIPTIONS": [
+      "在本回合中，你無法從卡牌中獲取 #y魔力 。"
+    ]
+  },
+  "FrierenMod:ManaInsteadOfEnergyPower": {
+    "NAME": "想像力",
+    "DESCRIPTIONS": [
+      "在本回合中，你的卡牌不再消耗 [E] ，而是 消耗 等量的 #y魔力 。"
+    ]
+  },
+  "FrierenMod:MageStyleChokePower": {
+    "NAME": "魔法使流勒脖",
+    "DESCRIPTIONS": [
+      "每當玩家同調 #y魔力 時，受到 #b%d 點傷害 。"
+    ]
+  },
+  "FrierenMod:RingletFormPower": {
+    "NAME": "卷髮形態",
+    "DESCRIPTIONS": [
+      "你每 #y消耗 一張 #y魔力，獲得 #b%d 點 #y格擋 。"
+    ]
+  },
+  "FrierenMod:SealPower": {
+    "NAME": "封印",
+    "DESCRIPTIONS": [
+      "一回合內 #y詠唱 #b%d 次後打破封印，將 #b%d 張 #y地獄業火魔法 加入你的手牌。"
+    ]
+  },
+  "FrierenMod:ManaBarricadePower": {
+    "NAME": "魔力壁壘",
+    "DESCRIPTIONS": [
+      "你的回合結束時，若你的 #y魔力 總數大於等於5，獲得 #y壁壘 。否則失去 #y壁壘 。"
+    ]
+  },
+  "FrierenMod:FullAheadPower": {
+    "NAME": "全速前進",
+    "DESCRIPTIONS": [
+      "每回合第一次 #y詠唱 後，獲得 #b%d #y力量 和 #b%d #y敏捷 。"
+    ]
+  },
+  "FrierenMod:FrierenSuitcasePower": {
+    "NAME": "芙莉蓮的旅行箱",
+    "DESCRIPTIONS": [
+      "本場戰鬥中手牌上限提高至13。 NL 使用卡牌後若手牌已滿，獲得 #b%d 點格擋。"
+    ]
+  },
+  "FrierenMod:SimmeringPower": {
+    "NAME": "暗流湧動",
+    "DESCRIPTIONS": [
+      " #y詠唱 後，抽 #b%d 張 #y傳說魔法 。"
+    ]
+  },
+  "FrierenMod:FlyingMagicPower": {
+    "NAME": "飛行魔法",
+    "DESCRIPTIONS": [
+      "你的回合結束時， #y消耗 棄牌堆中 #b%d 張 #y魔力 。"
+    ]
+  },
+  "FrierenMod:OpenTheWaygatePower": {
+    "NAME": "打開時空之門",
+    "DESCRIPTIONS": [
+      "一回合內連續 #y同調 #b%d 張 #y魔力 後，結束你的回合併額外獲得一回合，失去該能力。"
+    ]
+  },
+  "FrierenMod:CopyPower": {
+    "NAME": "複製體",
+    "DESCRIPTIONS": [
+      "受到未被格擋的傷害時，獲得等量 #r魔力 層數 。 NL 玩家獲得 #y格擋 時，獲得相同數量的 #y格擋 。 NL 血量降到100以下時將會逼出複製體的全力！"
+    ]
+  },
+  "FrierenMod:EnemyManaPower": {
+    "NAME": "魔力",
+    "DESCRIPTIONS": [
+      "使用 #r魔法 時會失去對應的層數。"
+    ]
+  },
+  "FrierenMod:SpellCasterPower": {
+    "NAME": "魔法精通",
+    "DESCRIPTIONS": [
+      "誓死守護寶庫的魔法 NL ",
+      "花費 #b%d 層 #r魔力 ，獲得 #y壁壘 和 #b%d 點 #y格擋  。 NL ",
+      "高速詠唱SP NL ",
+      "花費 #b%d 層 #r魔力 ，獲得 #b%d 層 #y儀式 。 NL ",
+      "操縱石像的魔法SP NL ",
+      "花費 #b%d 層 #r魔力 ，獲得 #b%d 層 #y人工製品 。 NL ",
+      "地獄業火魔法SP NL ",
+      "花費 #b%d 層 #r魔力 ，在敵人抽牌堆中放入 #b%d 張 #y灼傷 。 NL ",
+      "破滅之雷魔法SP NL ",
+      "花費 #b%d 層 #r魔力 ，使敵人獲得 #b%d 層 #y易傷 和 #y虛弱 。 NL ",
+      "防禦魔法完全體SP NL ",
+      "花費 #b%d 層 #r魔力 ，獲得 #b%d 層 #y緩衝 和 #b%d 層 #y柔韌 。 NL ",
+      "捕鳥魔法 NL ",
+      "花費 #b%d 層 #r魔力 ，召喚 #b1 隻 #y喀喀 。 NL ",
+      "飛行魔法SP NL ",
+      "花費 #b%d 層 #r魔力 ，獲得 #b%d 層 #y無實體 。",
+      "花費 #b%d 層 #r魔力 ，獲得 #b%d 層 #y緩衝 和 #b%d 層 #y金屬化 。 NL "
+    ]
+  },
+  "FrierenMod:WeakenedChantPower": {
+    "NAME": "詠唱削弱",
+    "DESCRIPTIONS": [
+      "在本回合中， #y詠唱 消耗的 #y魔力 增加 #b%d 張 。"
+    ]
+  },
+  "FrierenMod:Factor100Power": {
+    "NAME": "！？？",
+    "DESCRIPTIONS": [
+      "...芙莉蓮..."
+    ]
+  },
+  "FrierenMod:Factor010Power": {
+    "NAME": "？！？",
+    "DESCRIPTIONS": [
+      "...消滅..."
+    ]
+  },
+  "FrierenMod:Factor001Power": {
+    "NAME": "？？！",
+    "DESCRIPTIONS": [
+      "...怪物..."
+    ]
+  },
+  "FrierenMod:PaperPlaneSpellPower": {
+    "NAME": "讓紙飛機飛得很遠的魔法",
+    "DESCRIPTIONS": [
+      "下 #b%d 次攻擊傷害翻倍。 NL 再連續 #y同調 #b%d 次後 增加 #b%d 翻倍次數。"
+    ]
+  },
+  "FrierenMod:FrushDownPower": {
+    "NAME": "猛芙下山",
+    "DESCRIPTIONS": [
+      "連續 #y同調 #b%d 次後，抽 #b%d 張牌並丟棄手中最左邊的 #b%d 張牌。"
+    ]
+  },
+  "FrierenMod:MimicPower": {
+    "NAME": "寶箱怪",
+    "DESCRIPTIONS": [
+      "當你打出 #b%d 張牌後，你的回合會強制結束，移除你所有 #y魔力 並獲得 #y好黑啊 。"
+    ]
+  },
+  "FrierenMod:DarkPower": {
+    "NAME": "好黑啊",
+    "DESCRIPTIONS": [
+      "在寶箱怪肚子裡看不清了...",
+      "好黑，好 #r@可怕@ 啊"
+    ]
+  },
+  "FrierenMod:SwallowedPower": {
+    "NAME": "被吞噬",
+    "DESCRIPTIONS": [
+      "本場戰鬥中手牌上限減少 #b%d 。"
+    ]
+  },
+  "FrierenMod:ConcentrationPower": {
+    "NAME": "專注",
+    "DESCRIPTIONS": [
+      "使用 #b1 張牌後失去 #b1 層該能力， #y詠唱 消耗 的 #y魔力 減少 #b%d 張。"
+    ]
+  },
+  "FrierenMod:SuperSeriousPower": {
+    "NAME": "超級認真",
+    "DESCRIPTIONS": [
+      "使用的下 #b%d 張牌不會失去 #y專注 ，而是獲得1層 #y專注 。"
+    ]
+  },
+  "FrierenMod:DancingPower": {
+    "NAME": "交際舞",
+    "DESCRIPTIONS": [
+      "使用卡牌後，獲得或失去 #y專注 ，使 #y離差 永恆為 #b2 。"
+    ]
+  },
+  "FrierenMod:WashingClothesPower": {
+    "NAME": "徹底清除衣服汙漬的魔法",
+    "DESCRIPTIONS": [
+      "下一回合，獲得 #b%d 層 #y專注 ， #b%d 點 [E] 。",
+      "下一回合，獲得 #b%d 層 #y專注 ， #b%d 點 [E] ，抽 #b%d 張牌。"
+    ]
+  }
+}
