@@ -22,7 +22,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -151,10 +150,17 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     public void receiveEditKeywords() {
         Gson gson = new Gson();
         String lang;
-        if (language == Settings.GameLanguage.ZHS) {
-            lang = "ZHS";
-        } else {
-            lang = "ENG";
+        switch (language) {
+            case ZHS:
+                lang = "ZHS";
+                break;
+            case ZHT:
+                lang = "ZHT";
+                break;
+            default:
+            case ENG:
+                lang = "ENG";
+                break;
         }
         String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang, "keywords"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
@@ -169,10 +175,17 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     public void receiveEditStrings() {
         String lang;
-        if (language == Settings.GameLanguage.ZHS) {
-            lang = "ZHS";
-        } else {
-            lang = "ENG";
+        switch (language) {
+            case ZHS:
+                lang = "ZHS";
+                break;
+            case ZHT:
+                lang = "ZHT";
+                break;
+            default:
+            case ENG:
+                lang = "ENG";
+                break;
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang, "cards"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang, "characters"));
