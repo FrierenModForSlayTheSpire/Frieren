@@ -16,8 +16,8 @@
   },
   "FrierenMod:DefensiveMagic": {
     "NAME": "防禦魔法",
-    "DESCRIPTION": " frierenmod:詠唱 !CX! 。獲得 !B! 點格擋 NL 將另一張 *防禦魔法 放入手牌。",
-    "UPGRADE_DESCRIPTION": " frierenmod:詠唱 !CX! 。獲得 !B! 點格擋 NL 將另一張 *防禦魔法+ 放入手牌。"
+    "DESCRIPTION": " frierenmod:詠唱 !CX! 。獲得 !B! 點 格擋 。 NL 將另一張 *防禦魔法 放入手牌。",
+    "UPGRADE_DESCRIPTION": " frierenmod:詠唱 !CX! 。獲得 !B! 點 格擋 。 NL 將另一張 *防禦魔法+ 放入手牌。"
   },
   "FrierenMod:SecondDefensiveMagic": {
     "NAME": "防禦魔法",
