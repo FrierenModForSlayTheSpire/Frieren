@@ -1,11 +1,13 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.MultipleOffensiveMagicAction;
+import FrierenMod.actions.MakeManaInHandAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.Mana;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -43,7 +45,20 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MultipleOffensiveMagicAction(p, this, this.energyOnUse, this.upgraded));
+        int baseDamage = this.energyOnUse + 4;
+        int counts = this.upgraded ? this.energyOnUse + 1 : this.energyOnUse;
+        int magicNum = this.energyOnUse;
+        if (p.hasRelic("Chemical X")) {
+            baseDamage += 2;
+            counts += 2;
+            magicNum += 2;
+            p.getRelic("Chemical X").flash();
+        }
+        this.baseDamage = baseDamage;
+        for (int i = 0; i < counts; i++) {
+            this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING));
+        }
+        this.addToBot(new MakeManaInHandAction(magicNum));
     }
 
     public void onMoveToDiscard() {
