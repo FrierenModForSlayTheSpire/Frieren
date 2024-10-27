@@ -59,6 +59,7 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
             this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING));
         }
         this.addToBot(new MakeManaInHandAction(magicNum));
+        EnergyPanel.useEnergy(this.energyOnUse);
     }
 
     public void onMoveToDiscard() {
