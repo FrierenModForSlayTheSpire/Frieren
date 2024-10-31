@@ -151,6 +151,12 @@ public class SlotBgLibrary implements ScrollBarListener {
         if (SlotBgHelper.unlockANewSlot("9999")) {
             slotChanged = true;
         }
+        if (SlotBgHelper.unlockANewSlot("9997")) {
+            slotChanged = true;
+        }
+        if (SlotBgHelper.unlockANewSlot("9998")) {
+            slotChanged = true;
+        }
         if (collectedNumber >= 50) {
             if (SlotBgHelper.unlockANewSlot("9001")) {
                 slotChanged = true;
