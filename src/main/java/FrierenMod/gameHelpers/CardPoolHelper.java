@@ -5,8 +5,6 @@ import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.Factor001;
 import FrierenMod.cards.magicItems.factors.Factor010;
 import FrierenMod.cards.magicItems.factors.Factor100;
-import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
-import FrierenMod.cards.whitePurple.RapidChant;
 import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.patches.fields.RandomField;
@@ -25,12 +23,8 @@ public class CardPoolHelper {
     public static ArrayList<AbstractCard> getBaseFrierenFernCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         if (Config.FERN_ENABLE) {
-            retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info2));
-            retVal.add(new RapidChant(RapidChant.info2));
             retVal.add(new ShavedIceSpell(ShavedIceSpell.info2));
         }
-        retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info));
-        retVal.add(new RapidChant(RapidChant.info));
         retVal.add(new ShavedIceSpell(ShavedIceSpell.info));
         return retVal;
     }

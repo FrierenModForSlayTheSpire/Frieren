@@ -1,40 +1,43 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.purple;
 
-import FrierenMod.actions.DrawCardByTagAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class PreparedPosture extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(PreparedPosture.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
+public class AggrieveStrike extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(AggrieveStrike.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, 0, AbstractCard.CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, AbstractCard.CardTarget.ENEMY);
 
-    public PreparedPosture() {
+    public AggrieveStrike() {
         super(info);
     }
 
     @Override
     public void initSpecifiedAttributes() {
-        this.damage = this.baseDamage = 6;
+        this.damage = this.baseDamage = 5;
+        this.raidNumber = this.baseRaidNumber = 2;
+        this.tags.add(Enum.RAID);
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(2);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new DrawCardByTagAction(1, Enum.CHANT));
+        this.isRaidTriggered = CombatHelper.triggerRaid(this.raidNumber, () -> this.returnToHand = true);
     }
 }

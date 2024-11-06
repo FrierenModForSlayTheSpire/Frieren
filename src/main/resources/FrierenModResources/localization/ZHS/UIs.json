@@ -134,6 +134,21 @@
       " 层 易伤 。"
     ]
   },
+  "FrierenMod:ExhaustEtherealMod": {
+    "TEXT": [
+      " NL 虚无 。 消耗 。"
+    ]
+  },
+  "FrierenMod:GainEnergyMod": {
+    "TEXT": [
+      "获得", "点 [E] 。"
+    ]
+  },
+  "FrierenMod:WeakVulnerableMod": {
+    "TEXT": [
+      "给予", "层 虚弱 和 易伤 。"
+    ]
+  },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
       " frierenmod:解析 %d：",
@@ -422,14 +437,15 @@
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
-      "双职业卡",
+      "双色卡",
       " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
     ]
   },
   "FrierenMod:FernPanel": {
     "TEXT": [
-      "计数器",
-      "上：本回合使用过的卡牌数 NL 中： #y离差 NL 下： #y专注 层数"
+      "海塔留下的法杖",
+      "当 #y专注 层数大于0时， #r右键 法杖获得一张 #y特化普攻魔法 ，其伤害值等于  #y专注 层数的2倍，然后失去所有 #y专注 。",
+      "没有 #r专注 ，无法获得 #y特化普攻魔法 。"
     ]
   }
 }

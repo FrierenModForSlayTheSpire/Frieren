@@ -1,25 +1,26 @@
 package FrierenMod.actions;
 
-import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DrawChantAction extends AbstractGameAction {
+public class DrawCardByTagAction extends AbstractGameAction {
     private final int drawNumber;
+    private final AbstractCard.CardTags tag;
 
-    public DrawChantAction(int drawNumber) {
+    public DrawCardByTagAction(int drawNumber, AbstractCard.CardTags tag) {
+        this.tag = tag;
         this.actionType = ActionType.WAIT;
         this.drawNumber = drawNumber;
     }
 
     public void update() {
         int counts = 0;
-        for(AbstractCard c: AbstractDungeon.player.drawPile.group){
-            if (counts >= this.drawNumber){
+        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+            if (counts >= this.drawNumber) {
                 break;
             }
-            if(c.hasTag(AbstractBaseCard.Enum.CHANT)){
+            if (c.hasTag(tag)) {
                 counts++;
                 this.addToBot(new DrawPileToHandAction(c));
             }

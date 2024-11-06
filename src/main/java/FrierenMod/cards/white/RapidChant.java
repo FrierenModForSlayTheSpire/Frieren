@@ -1,4 +1,4 @@
-package FrierenMod.cards.whitePurple;
+package FrierenMod.cards.white;
 
 import FrierenMod.actions.ChantAction;
 import FrierenMod.actions.MakeManaInDrawPileAction;
@@ -14,7 +14,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class RapidChant extends DualCard {
     public static final String ID = ModInformation.makeID(RapidChant.class.getSimpleName());
     public static CardInfo info = new CardInfo(ID, 0, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
-    public static CardInfo info2 = new CardInfo(ID, 0, CardEnums.FERN_CARD, CardRarity.COMMON,true);
     public RapidChant() {
         super(info);
     }

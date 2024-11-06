@@ -1,4 +1,4 @@
-package FrierenMod.cards.whitePurple;
+package FrierenMod.cards.white;
 
 import FrierenMod.cards.DualCard;
 import FrierenMod.effects.NormalAttackEffect;
@@ -20,7 +20,6 @@ public class OrdinaryOffensiveMagic extends DualCard {
     public static final String ID = ModInformation.makeID(OrdinaryOffensiveMagic.class.getSimpleName());
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
-    public static CardInfo info2 = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY, true);
 
     public OrdinaryOffensiveMagic() {
         super(info);

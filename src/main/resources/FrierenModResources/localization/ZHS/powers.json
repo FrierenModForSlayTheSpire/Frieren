@@ -241,7 +241,37 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
-      "使用 #b1 张牌后失去 #b1 层该能力， #y咏唱 消耗 的 #y魔力 减少 #b%d 张。"
+      " 打出非 #y魔力 牌后失去 #b1 层该能力。"
+    ]
+  },
+  "FrierenMod:DamageFusionPower": {
+    "NAME": "伤害融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 造成 #b%d 点伤害 。"
+    ]
+  },
+  "FrierenMod:EnergyFusionPower": {
+    "NAME": "能量融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 获得 #b%d 点 [E] 。"
+    ]
+  },
+  "FrierenMod:WeakVulnerableFusionPower": {
+    "NAME": "虚弱易伤融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 给予 #b%d 层 #y虚弱 和 #y易伤 。"
+    ]
+  },
+  "FrierenMod:FightPower": {
+    "NAME": "加把劲骑士",
+    "DESCRIPTIONS": [
+      "在本回合中下 #b%d 张获得的 #y特化攻击魔法 耗能变为0。"
+    ]
+  },
+  "FrierenMod:MysticEyePower": {
+    "NAME": "直视的魔眼",
+    "DESCRIPTIONS": [
+      "每当玩家攻击敌人时，玩家获得 #b%d 层 #y专注 。"
     ]
   },
   "FrierenMod:SuperSeriousPower": {

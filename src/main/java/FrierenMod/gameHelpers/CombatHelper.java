@@ -176,10 +176,6 @@ public class CombatHelper {
         return max;
     }
 
-    public static ConcentrationPower getConcentrationPower() {
-        return (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
-    }
-
     public static int getWeakenedChantPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(WeakenedChantPower.POWER_ID);
         return po == null ? 0 : po.amount;
@@ -188,18 +184,6 @@ public class CombatHelper {
     public static int getConcentrationPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
         return po == null ? 0 : po.amount;
-    }
-
-    public static int getDeviationAmt(boolean isUsingCard) {
-        return Math.abs(getCardsUsedThisTurnSize(isUsingCard) - getConcentrationPowerAmt());
-    }
-
-    public static boolean isDeviationEven(boolean isUsingCard) {
-        return getDeviationAmt(isUsingCard) % 2 == 0;
-    }
-
-    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard) {
-        return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
     public static int getManaNeedBeforeLoaded(int chantX, AbstractMagicItem f) {
@@ -214,10 +198,6 @@ public class CombatHelper {
         if (AbstractDungeon.player.hasPower(ChantWithoutManaTimesPower.POWER_ID))
             return 0;
         return Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
-    }
-
-    public static boolean isRaidReversed() {
-        return false;
     }
 
     public static AbstractMagicItem[] getChantChoices() {
@@ -272,6 +252,17 @@ public class CombatHelper {
             if (f == null)
                 return false;
         }
+        return true;
+    }
+
+    public static boolean canRaidTakeEffect(int raidNumber) {
+        return raidNumber == getConcentrationPowerAmt();
+    }
+
+    public static boolean triggerRaid(int raidNumber, ActionHelper.Lambda raidEffect) {
+        if (!canRaidTakeEffect(raidNumber))
+            return false;
+        raidEffect.run();
         return true;
     }
 }

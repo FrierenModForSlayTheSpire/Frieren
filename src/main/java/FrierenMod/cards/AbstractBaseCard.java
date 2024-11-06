@@ -1,6 +1,7 @@
 package FrierenMod.cards;
 
 import FrierenMod.cards.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -35,6 +36,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public int baseRaidNumber = -1;
     public boolean upgradedRaidNumber;
     public boolean isRaidNumberModified;
+    public boolean isRaidTriggered;
     protected float rotationTimer;
     protected int previewIndex;
 
@@ -74,6 +76,7 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isChantXModified = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
+        this.isRaidTriggered = false;
     }
 
     public void initSpecifiedAttributes() {
@@ -118,27 +121,9 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
-        if (this instanceof CustomLegendarySpell)
+        if (this instanceof CustomLegendarySpell || this instanceof SpecializedOffensiveMagic)
             return super.makeStatEquivalentCopy();
         AbstractCard card = this.makeCopy();
-        card.name = this.name;
-        card.target = this.target;
-        card.upgraded = this.upgraded;
-        card.timesUpgraded = this.timesUpgraded;
-        card.baseDamage = this.baseDamage;
-        card.baseBlock = this.baseBlock;
-        card.baseMagicNumber = this.baseMagicNumber;
-        card.cost = this.cost;
-        card.costForTurn = this.costForTurn;
-        card.isCostModified = this.isCostModified;
-        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
-        card.inBottleLightning = this.inBottleLightning;
-        card.inBottleFlame = this.inBottleFlame;
-        card.inBottleTornado = this.inBottleTornado;
-        card.isSeen = this.isSeen;
-        card.isLocked = this.isLocked;
-        card.misc = this.misc;
-        card.freeToPlayOnce = this.freeToPlayOnce;
         if (card instanceof AbstractBaseCard) {
             ((AbstractBaseCard) card).baseChantX = this.baseChantX;
             ((AbstractBaseCard) card).chantX = this.chantX;
@@ -167,6 +152,12 @@ public abstract class AbstractBaseCard extends CustomCard {
             return false;
         }
         return super.canUse(p, m);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (this.raidNumber != -1 && this.hasTag(Enum.RAID))
+            this.glowColor = (CombatHelper.canRaidTakeEffect(this.raidNumber)) ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m) {
@@ -229,6 +220,12 @@ public abstract class AbstractBaseCard extends CustomCard {
         public static AbstractCard.CardTags LESS_CHANCE_TO_MEET;
         @SpireEnum
         public static AbstractCard.CardTags NEVER_DROP;
+        @SpireEnum
+        public static AbstractCard.CardTags RAID;
+        @SpireEnum
+        public static AbstractCard.CardTags SPEED;
+        @SpireEnum
+        public static AbstractCard.CardTags FUSION;
     }
 
     protected static TextureAtlas.AtlasRegion getImg(Texture texture) {

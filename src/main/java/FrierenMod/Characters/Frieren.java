@@ -1,7 +1,7 @@
 package FrierenMod.Characters;
 
 import FrierenMod.cards.white.*;
-import FrierenMod.cards.whitePurple.RapidChant;
+import FrierenMod.cards.white.RapidChant;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.relics.HolyEmblem;

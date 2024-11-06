@@ -1,23 +1,35 @@
 package FrierenMod.ui.panels;
 
+import FrierenMod.actions.MakeSpecializedOffensiveMagicAction;
+import FrierenMod.cardMods.DamageMod;
+import FrierenMod.cardMods.ExhaustEtherealMod;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.AbstractBasePower;
+import FrierenMod.powers.ConcentrationPower;
+import FrierenMod.powers.FusionPower.AbstractFusionPower;
+import FrierenMod.powers.FusionPower.DamageFusionPower;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Interpolation;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
-import com.megacrit.cardcrawl.helpers.MathHelper;
 import com.megacrit.cardcrawl.helpers.TipHelper;
+import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
+import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
 public class FernPanel extends AbstractPanel {
     public static final String ID = ModInformation.makeID(FernPanel.class.getSimpleName());
@@ -43,51 +55,101 @@ public class FernPanel extends AbstractPanel {
 
     private float VFXTimer = 0.0F;
 
-    private int cardPlayedThisTurnCounter = 0;
-    private int deviationCounter = 0;
     private int concentrationCounter = 0;
+    private AbstractCard previewCard;
 
 
     public FernPanel() {
-        super(94.0F * Settings.xScale, 414.0F * Settings.yScale, -720.0F * Settings.xScale, 540.0F * Settings.yScale, 12.0F * Settings.scale, -12.0F * Settings.scale, null, true);
+        super(124.0F * Settings.xScale, 414.0F * Settings.yScale, -720.0F * Settings.xScale, 540.0F * Settings.yScale, 42.0F * Settings.scale, -12.0F * Settings.scale, null, true);
     }
 
     public static boolean canShowThisPanel() {
-        if(AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
+        if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
             return false;
         if (CardCrawlGame.isInARun()) {
             return AbstractDungeon.player.chosenClass == CharacterEnums.FERN;
         }
         return false;
     }
-    public void updateMP(){
-        int cardPlayedThisTurn = CombatHelper.getCardsUsedThisTurnSize(false);
-        int deviationAmt = CombatHelper.getDeviationAmt(false);
+
+    public void updateMP() {
         int concentration = CombatHelper.getConcentrationPowerAmt();
-        boolean isDecreased = deviationAmt - this.deviationCounter < 0;
-        if(isDecreased){
+        boolean isDecreased = CombatHelper.getConcentrationPowerAmt() - this.concentrationCounter < 0;
+        if (isDecreased) {
             this.FontScale = 2.0F;
             this.VFXTimer = 1.0F;
         }
-        this.cardPlayedThisTurnCounter = cardPlayedThisTurn;
-        this.deviationCounter = deviationAmt;
         this.concentrationCounter = concentration;
     }
 
     public void clearMP() {
-        this.cardPlayedThisTurnCounter = 0;
-        this.deviationCounter = 0;
         this.concentrationCounter = 0;
     }
+
     public void update() {
         updateMP();
         //updateOrb();
         updateVFX();
-        if (this.FontScale != 1.0F)
-            this.FontScale = MathHelper.scaleLerpSnap(this.FontScale, 1.0F);
+        updateAction();
+//        if (this.FontScale != 1.0F)
+//            this.FontScale = MathHelper.scaleLerpSnap(this.FontScale, 1.0F);
         this.TipHitBox.update();
-        if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp)
+        if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp) {
             AbstractDungeon.overlayMenu.hoveredTip = true;
+            this.previewCard = getPreviewCard();
+            if (this.previewCard != null) {
+                previewCard.current_x = this.current_x;
+                previewCard.current_y = this.current_y + 200.0F * Settings.scale;
+            }
+        }
+
+    }
+
+    public AbstractCard getPreviewCard() {
+        SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
+        magic.baseDamage = getBaseDamage();
+        if (magic.baseDamage == 0)
+            return null;
+        CardModifierManager.addModifier(magic, new DamageMod(getBaseDamage()));
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractFusionPower) {
+                if (po instanceof DamageFusionPower) {
+                    magic.baseDamage += po.amount;
+                } else {
+                    CardModifierManager.addModifier(magic, ((AbstractFusionPower) po).modifier);
+                }
+            }
+        }
+        CardModifierManager.addModifier(magic, new ExhaustEtherealMod());
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower) {
+                ((AbstractBasePower) po).beforeGainSpecializedOffensiveMagic(magic);
+            }
+        }
+        magic.rawDescription = magic.usedModifierText;
+        magic.initializeDescription();
+        return magic;
+    }
+
+    public void updateAction() {
+        if (this.TipHitBox.hovered) {
+            if (InputHelper.justClickedRight) {
+                InputHelper.justClickedRight = false;
+                if (!CombatHelper.isInCombat())
+                    return;
+                if (CombatHelper.getConcentrationPowerAmt() == 0) {
+                    AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, uiStrings.TEXT[2], true));
+                    return;
+                }
+                int damage = getBaseDamage();
+                AbstractDungeon.actionManager.addToBottom(new MakeSpecializedOffensiveMagicAction(damage));
+                AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, ConcentrationPower.POWER_ID));
+            }
+        }
+    }
+
+    public int getBaseDamage() {
+        return CombatHelper.getConcentrationPowerAmt() * 2;
     }
 
     public void render(SpriteBatch sb) {
@@ -96,17 +158,21 @@ public class FernPanel extends AbstractPanel {
             renderOrb(sb);
             renderVFX(sb);
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(this.FontScale);
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.cardPlayedThisTurnCounter), this.current_x - 70.0F, this.current_y + 100.0F, MPTextColor.cpy());
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.deviationCounter), this.current_x, this.current_y, MPTextColor.cpy());
-            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.concentrationCounter), this.current_x + 70.0F, this.current_y - 100.0F, MPTextColor.cpy());
+//            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.concentrationCounter), this.current_x + 70.0F * Settings.scale, this.current_y + 100.0F * Settings.scale, MPTextColor.cpy());
             this.TipHitBox.render(sb);
-            if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp)
+            if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp) {
                 TipHelper.renderGenericTip(this.current_x + (MPImage.getWidth()) / 2.0F * Settings.scale, this.current_y + (MPImage.getHeight()) / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1]);
+                if (previewCard != null) {
+                    previewCard.render(sb);
+                }
+            }
         }
     }
-    private boolean isEmpty(){
-        return this.cardPlayedThisTurnCounter == 0 && this.deviationCounter == 0;
+
+    private boolean isEmpty() {
+        return this.concentrationCounter == 0;
     }
+
     private void updateOrb() {
         this.OrbAngle += (this.isEmpty() ? 6.0F : -30.0F) * Gdx.graphics.getDeltaTime();
     }
@@ -127,7 +193,7 @@ public class FernPanel extends AbstractPanel {
     private void renderOrb(SpriteBatch sb) {
         sb.setColor(Color.WHITE);
         sb.draw(MPImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, this.OrbAngle, 0, 0, 256, 256, false, false);
-        sb.draw((this.deviationCounter == 0) ? MPWrapPinkImage : MPWrapImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
+        sb.draw((this.concentrationCounter == 0) ? MPWrapImage : MPWrapPinkImage, this.current_x - 128.0F, this.current_y - 128.0F, 128.0F, 128.0F, 256.0F, 256.0F, Settings.scale, Settings.scale, 0.0F, 0, 0, 256, 256, false, false);
     }
 
     private void renderVFX(SpriteBatch sb) {
