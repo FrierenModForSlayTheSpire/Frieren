@@ -1,6 +1,6 @@
 package FrierenMod.powers.FusionPower;
 
-import FrierenMod.cardMods.EnergyMod;
+import FrierenMod.cardMods.GainEnergyMod;
 import FrierenMod.utils.ModInformation;
 
 public class EnergyFusionPower extends AbstractFusionPower {
@@ -8,7 +8,7 @@ public class EnergyFusionPower extends AbstractFusionPower {
 
     public EnergyFusionPower(int amount) {
         super(POWER_ID, amount);
-        this.modifier = new EnergyMod(amount);
+        this.modifier = new GainEnergyMod(amount);
         this.updateDescription();
     }
 

@@ -83,13 +83,12 @@ public class BackstabAction extends AbstractGameAction {
                     }
                 }
             }
-            if (reward)
-                for (int i = 0; i < temp; i++) {
-                    this.addToBot(new GainEnergyAction(1));
-                    if (upgraded) {
-                        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConcentrationPower(3)));
-                    }
+            if (reward) {
+                this.addToBot(new GainEnergyAction(1));
+                if (upgraded) {
+                    this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConcentrationPower(3)));
                 }
+            }
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
                 AbstractDungeon.actionManager.clearPostCombatActions();
             if (!Settings.FAST_MODE)

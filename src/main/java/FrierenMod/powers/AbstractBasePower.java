@@ -64,4 +64,13 @@ public abstract class AbstractBasePower extends AbstractPower {
     public void afterGainSpecializedOffensiveMagic(AbstractCard magic) {
 
     }
+    public int modifyRaidTriggerTimes(){
+        return 0;
+    }
+    public int modifyRaidTriggerTimes(boolean bool){
+        return 0;
+    }
+    public void afterRaidTriggered(){
+
+    }
 }

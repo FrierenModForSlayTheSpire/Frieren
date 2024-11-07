@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class EmergencyDefense extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(EmergencyDefense.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF);
 
     public EmergencyDefense() {
         super(info);

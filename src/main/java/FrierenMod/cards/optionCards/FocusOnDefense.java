@@ -10,11 +10,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class FocusOnDefend extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(FocusOnDefend.class.getSimpleName());
+public class FocusOnDefense extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(FocusOnDefense.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
 
-    public FocusOnDefend() {
+    public FocusOnDefense() {
         super(info);
     }
 

@@ -2,7 +2,7 @@ package FrierenMod.cards.purple;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.optionCards.FocusOnAttack;
-import FrierenMod.cards.optionCards.FocusOnDefend;
+import FrierenMod.cards.optionCards.FocusOnDefense;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -40,12 +40,12 @@ public class CounterAttack extends AbstractBaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         ArrayList<AbstractCard> options = new ArrayList<>();
         FocusOnAttack focusOnAttack = new FocusOnAttack();
-        FocusOnDefend focusOnDefend = new FocusOnDefend();
+        FocusOnDefense focusOnDefense = new FocusOnDefense();
         focusOnAttack.target = m;
         focusOnAttack.damage = focusOnAttack.baseDamage = this.damage;
-        focusOnDefend.block = focusOnDefend.baseBlock = this.baseBlock;
+        focusOnDefense.block = focusOnDefense.baseBlock = this.baseBlock;
         options.add(focusOnAttack);
-        options.add(focusOnDefend);
+        options.add(focusOnDefense);
         this.addToBot(new ChooseOneAction(options));
     }
 }

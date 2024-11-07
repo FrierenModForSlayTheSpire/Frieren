@@ -21,7 +21,7 @@ public class CriticalHit extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 6;
+        this.damage = this.baseDamage = 8;
         this.raidNumber = this.baseRaidNumber = 1;
         this.tags.add(Enum.RAID);
     }
@@ -37,7 +37,7 @@ public class CriticalHit extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)));
+        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, true, () -> this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL)));
     }
 }
 

@@ -51,7 +51,7 @@ public class SeriousSeriesSpell extends AbstractBaseCard {
         if (!CombatHelper.canRaidTakeEffect(this.raidNumber))
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         else
-            this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL)));
+            this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, true, () -> this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL)));
     }
 }
 

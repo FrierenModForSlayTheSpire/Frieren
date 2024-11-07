@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FocusOnAttack extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FocusOnAttack.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, -2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
+    public static final CardInfo info = new CardInfo(ID, -2, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
     public AbstractMonster target;
 
     public FocusOnAttack() {

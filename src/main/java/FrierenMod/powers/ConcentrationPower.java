@@ -5,7 +5,6 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class ConcentrationPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(ConcentrationPower.class.getSimpleName());
@@ -16,7 +15,7 @@ public class ConcentrationPower extends AbstractBasePower {
     }
 
     @Override
-    public void onPlayCard(AbstractCard card, AbstractMonster m) {
+    public void onAfterCardPlayed(AbstractCard card) {
         if (card.hasTag(AbstractBaseCard.Enum.MANA)) {
             return;
         }
@@ -27,6 +26,6 @@ public class ConcentrationPower extends AbstractBasePower {
     }
 
     public void updateDescription() {
-        this.description = descriptions[0];
+        this.description = String.format(descriptions[0], 1);
     }
 }

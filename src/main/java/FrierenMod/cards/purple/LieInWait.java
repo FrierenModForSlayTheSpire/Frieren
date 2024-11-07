@@ -6,6 +6,7 @@ import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
@@ -33,6 +34,7 @@ public class LieInWait extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new GainBlockAction(p, this.block));
         this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(2)));
     }
 }

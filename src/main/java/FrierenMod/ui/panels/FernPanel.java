@@ -1,18 +1,12 @@
 package FrierenMod.ui.panels;
 
 import FrierenMod.actions.MakeSpecializedOffensiveMagicAction;
-import FrierenMod.cardMods.DamageMod;
-import FrierenMod.cardMods.ExhaustEtherealMod;
-import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.powers.AbstractBasePower;
 import FrierenMod.powers.ConcentrationPower;
-import FrierenMod.powers.FusionPower.AbstractFusionPower;
-import FrierenMod.powers.FusionPower.DamageFusionPower;
+import FrierenMod.powers.RecollectionOfBenefactorPower;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
-import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
@@ -27,7 +21,6 @@ import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.ui.panels.AbstractPanel;
 import com.megacrit.cardcrawl.vfx.ThoughtBubble;
 
@@ -57,6 +50,7 @@ public class FernPanel extends AbstractPanel {
 
     private int concentrationCounter = 0;
     private AbstractCard previewCard;
+    private int rate = 2;
 
 
     public FernPanel() {
@@ -90,45 +84,19 @@ public class FernPanel extends AbstractPanel {
         updateMP();
         //updateOrb();
         updateVFX();
+        updateRate();
         updateAction();
 //        if (this.FontScale != 1.0F)
 //            this.FontScale = MathHelper.scaleLerpSnap(this.FontScale, 1.0F);
         this.TipHitBox.update();
         if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp) {
             AbstractDungeon.overlayMenu.hoveredTip = true;
-            this.previewCard = getPreviewCard();
+            this.previewCard = CombatHelper.getPreviewSpecializedOffensiveMagic(getBaseDamage(), false);
             if (this.previewCard != null) {
                 previewCard.current_x = this.current_x;
                 previewCard.current_y = this.current_y + 200.0F * Settings.scale;
             }
         }
-
-    }
-
-    public AbstractCard getPreviewCard() {
-        SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
-        magic.baseDamage = getBaseDamage();
-        if (magic.baseDamage == 0)
-            return null;
-        CardModifierManager.addModifier(magic, new DamageMod(getBaseDamage()));
-        for (AbstractPower po : AbstractDungeon.player.powers) {
-            if (po instanceof AbstractFusionPower) {
-                if (po instanceof DamageFusionPower) {
-                    magic.baseDamage += po.amount;
-                } else {
-                    CardModifierManager.addModifier(magic, ((AbstractFusionPower) po).modifier);
-                }
-            }
-        }
-        CardModifierManager.addModifier(magic, new ExhaustEtherealMod());
-        for (AbstractPower po : AbstractDungeon.player.powers) {
-            if (po instanceof AbstractBasePower) {
-                ((AbstractBasePower) po).beforeGainSpecializedOffensiveMagic(magic);
-            }
-        }
-        magic.rawDescription = magic.usedModifierText;
-        magic.initializeDescription();
-        return magic;
     }
 
     public void updateAction() {
@@ -148,8 +116,16 @@ public class FernPanel extends AbstractPanel {
         }
     }
 
+    public void updateRate() {
+        if (AbstractDungeon.player.hasPower(RecollectionOfBenefactorPower.POWER_ID)) {
+            this.rate = 4;
+        } else
+            this.rate = 2;
+    }
+
+
     public int getBaseDamage() {
-        return CombatHelper.getConcentrationPowerAmt() * 2;
+        return CombatHelper.getConcentrationPowerAmt() * this.rate;
     }
 
     public void render(SpriteBatch sb) {
@@ -161,7 +137,7 @@ public class FernPanel extends AbstractPanel {
 //            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.concentrationCounter), this.current_x + 70.0F * Settings.scale, this.current_y + 100.0F * Settings.scale, MPTextColor.cpy());
             this.TipHitBox.render(sb);
             if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp) {
-                TipHelper.renderGenericTip(this.current_x + (MPImage.getWidth()) / 2.0F * Settings.scale, this.current_y + (MPImage.getHeight()) / 2.0F * Settings.scale, uiStrings.TEXT[0], uiStrings.TEXT[1]);
+                TipHelper.renderGenericTip(this.current_x + (MPImage.getWidth()) / 2.0F * Settings.scale, this.current_y + (MPImage.getHeight()) / 2.0F * Settings.scale, uiStrings.TEXT[0], String.format(uiStrings.TEXT[1], rate));
                 if (previewCard != null) {
                     previewCard.render(sb);
                 }

@@ -113,7 +113,7 @@
       " NL 移除你身上的所有负面效果。"
     ]
   },
-  "FrierenMod:StrengthMod": {
+  "FrierenMod:LimitBreakMod": {
     "TEXT": [
       " NL 将你的 力量 翻倍。 NL  消耗 。"
     ]
@@ -141,12 +141,33 @@
   },
   "FrierenMod:GainEnergyMod": {
     "TEXT": [
-      "获得", "点 [E] 。"
+      "获得",
+      "点 [E] 。"
     ]
   },
   "FrierenMod:WeakVulnerableMod": {
     "TEXT": [
-      "给予", "层 虚弱 和 易伤 。"
+      "给予",
+      "层 虚弱 和 易伤 。"
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardMod": {
+    "TEXT": [
+      "在弃牌堆放入",
+      "张本牌的复制品。",
+      "张本牌的复制品。"
+    ]
+  },
+  "FrierenMod:ConcentrationMod": {
+    "TEXT": [
+      "获得",
+      "点 frierenmod:专注 。"
+    ]
+  },
+  "FrierenMod:StrengthMod": {
+    "TEXT": [
+      "获得",
+      "点 力量 。"
     ]
   },
   "FrierenMod:BreaksBarriersSpellMod": {
@@ -437,15 +458,20 @@
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
-      "双色卡",
+      "双色牌",
       " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
     ]
   },
   "FrierenMod:FernPanel": {
     "TEXT": [
       "海塔留下的法杖",
-      "当 #y专注 层数大于0时， #r右键 法杖获得一张 #y特化普攻魔法 ，其伤害值等于  #y专注 层数的2倍，然后失去所有 #y专注 。",
+      "当 你拥有 #y专注 时， #r右键 法杖获得一张 #y特化普攻魔法 ，其伤害值等于 #y专注 数的 #b%d 倍，然后失去所有 #y专注 。",
       "没有 #r专注 ，无法获得 #y特化普攻魔法 。"
+    ]
+  },
+  "FrierenMod:SnuggleOptionCard1Action": {
+    "TEXT": [
+      "丢弃魔力以获得能量"
     ]
   }
 }

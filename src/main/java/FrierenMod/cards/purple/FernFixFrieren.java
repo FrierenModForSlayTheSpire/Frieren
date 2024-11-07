@@ -7,7 +7,6 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -40,10 +39,8 @@ public class FernFixFrieren extends AbstractBaseCard {
     }
 
     @Override
-    public void triggerOnOtherCardPlayed(AbstractCard cardPlayed) {
-        if (cardPlayed instanceof AbstractBaseCard && ((AbstractBaseCard) cardPlayed).isRaidTriggered) {
-            this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
-            this.superFlash();
-        }
+    public void afterRaidTriggered() {
+        this.addToBot(new ModifyDamageAction(this.uuid, this.magicNumber));
+        this.superFlash();
     }
 }

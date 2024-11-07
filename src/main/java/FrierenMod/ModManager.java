@@ -3,9 +3,9 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.DataObject;
 import FrierenMod.gameHelpers.SaveFileHelper;
 import FrierenMod.utils.*;
@@ -100,6 +100,12 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 BaseMod.addCard(card);
                 if (Config.IN_DEV && info.seen)
                     UnlockTracker.unlockCard(card.cardID);
+                if (Config.FERN_ENABLE && card.hasTag(AbstractBaseCard.Enum.FRIEREN_FERN_CARD) && card instanceof AbstractBaseCard) {
+                    AbstractCard secondRegisterCard = ((AbstractBaseCard) card).getCardForSecondRegister();
+                    BaseMod.addCard(secondRegisterCard);
+                    if (Config.IN_DEV && info.seen)
+                        UnlockTracker.unlockCard(secondRegisterCard.cardID);
+                }
             });
         }
         if (Config.FERN_ENABLE)
@@ -108,15 +114,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 if (Config.IN_DEV && info.seen)
                     UnlockTracker.unlockCard(card.cardID);
             });
-//        for (AbstractCard c: CardPoolHelper.getFrierenCardPool())
-//            BaseMod.addCard(c);
-//        for (AbstractCard c: CardPoolHelper.getFernCardPool())
-//            BaseMod.addCard(c);
-        for (AbstractCard c : CardPoolHelper.getBaseFrierenFernCardPool()) {
-            BaseMod.addCard(c);
-            if (Config.IN_DEV)
-                UnlockTracker.unlockCard(c.cardID);
-        }
         Log.logger.info("Done adding cards!");
     }
 

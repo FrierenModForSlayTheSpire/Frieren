@@ -1,18 +1,21 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.cardMods.DamageMod;
+import FrierenMod.cardMods.ExhaustEtherealMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.BluePrint;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.patches.fields.GameActionManagerField;
 import FrierenMod.patches.fields.MagicDeckField;
-import FrierenMod.powers.ChantWithoutManaPower;
-import FrierenMod.powers.ChantWithoutManaTimesPower;
-import FrierenMod.powers.ConcentrationPower;
-import FrierenMod.powers.WeakenedChantPower;
+import FrierenMod.powers.*;
+import FrierenMod.powers.FusionPower.AbstractFusionPower;
+import FrierenMod.powers.FusionPower.DamageFusionPower;
 import FrierenMod.relics.FakeFlammeGrimoire;
 import FrierenMod.relics.FlammeGrimoire;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -257,15 +260,65 @@ public class CombatHelper {
     }
 
     public static boolean canRaidTakeEffect(int raidNumber) {
+        if (AbstractDungeon.player.hasPower(SocialDancingPower.POWER_ID))
+            return raidNumber == getConcentrationPowerAmt() || raidNumber == getConcentrationPowerAmt() + 1 || raidNumber == Math.max(0, getConcentrationPowerAmt() - 1);
         return raidNumber == getConcentrationPowerAmt();
     }
 
     public static boolean triggerRaid(int raidNumber, ActionHelper.Lambda raidEffect) {
+        return triggerRaid(raidNumber, false, raidEffect);
+    }
+
+    public static boolean triggerRaid(int raidNumber, boolean isDamage, ActionHelper.Lambda raidEffect) {
         if (!canRaidTakeEffect(raidNumber))
             return false;
-        raidEffect.run();
-        GameActionManagerField.raidTriggeredThisTurn.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisTurn.get(AbstractDungeon.actionManager) + 1);
-        GameActionManagerField.raidTriggeredThisCombat.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisCombat.get(AbstractDungeon.actionManager) + 1);
+        int times = 1;
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower) {
+                times += ((AbstractBasePower) po).modifyRaidTriggerTimes();
+                times += ((AbstractBasePower) po).modifyRaidTriggerTimes(isDamage);
+            }
+        }
+        for (int i = 0; i < times; i++) {
+            raidEffect.run();
+            for (AbstractPower po : AbstractDungeon.player.powers) {
+                if (po instanceof AbstractBasePower)
+                    ((AbstractBasePower) po).afterRaidTriggered();
+            }
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c instanceof AbstractBaseCard) {
+                    ((AbstractBaseCard) c).afterRaidTriggered();
+                }
+            }
+        }
+        GameActionManagerField.raidTriggeredThisTurn.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisTurn.get(AbstractDungeon.actionManager) + times);
+        GameActionManagerField.raidTriggeredThisCombat.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisCombat.get(AbstractDungeon.actionManager) + times);
         return true;
+    }
+
+    public static AbstractCard getPreviewSpecializedOffensiveMagic(int baseDamage, boolean allowZero) {
+        if (baseDamage <= 0 && !allowZero)
+            return null;
+        SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
+        magic.baseDamage = baseDamage;
+        CardModifierManager.addModifier(magic, new DamageMod(baseDamage));
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractFusionPower) {
+                if (po instanceof DamageFusionPower) {
+                    magic.baseDamage += po.amount;
+                } else {
+                    CardModifierManager.addModifier(magic, ((AbstractFusionPower) po).modifier);
+                }
+            }
+        }
+        CardModifierManager.addModifier(magic, new ExhaustEtherealMod());
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower) {
+                ((AbstractBasePower) po).beforeGainSpecializedOffensiveMagic(magic);
+            }
+        }
+        magic.rawDescription = magic.usedModifierText;
+        magic.initializeDescription();
+        return magic;
     }
 }

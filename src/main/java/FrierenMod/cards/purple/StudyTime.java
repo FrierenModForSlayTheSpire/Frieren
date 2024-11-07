@@ -1,30 +1,28 @@
-package FrierenMod.cards.white;
+package FrierenMod.cards.purple;
 
 import FrierenMod.actions.MakeManaInHandAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.powers.AccelerateFlowPower;
+import FrierenMod.powers.FusionPower.CopySelfToDiscardFusionPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
-public class ClearMind extends AbstractBaseCard {
-    public static final String ID = ModInformation.makeID(ClearMind.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardEnums.FRIEREN_CARD, CardRarity.UNCOMMON);
+public class StudyTime extends AbstractBaseCard {
+    public static final String ID = ModInformation.makeID(StudyTime.class.getSimpleName());
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
 
-    public ClearMind() {
+    public StudyTime() {
         super(info);
     }
-
-//    public ClearMind(CardColor color) {
-//        super(ID, 2, color, CardRarity.UNCOMMON);
-//    }
 
     @Override
     public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
+        this.exhaust = true;
     }
 
     @Override
@@ -37,7 +35,9 @@ public class ClearMind extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MakeManaInHandAction(this.magicNumber));
-        this.addToBot(new ApplyPowerAction(p, p, new AccelerateFlowPower(p)));
+        this.addToBot(new MakeManaInHandAction(magicNumber));
+        this.addToBot(new MakeTempCardInDiscardAction(this, 1));
+        this.addToBot(new ApplyPowerAction(p, p, new CopySelfToDiscardFusionPower(1)));
     }
 }
+

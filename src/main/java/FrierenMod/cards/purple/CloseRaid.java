@@ -39,7 +39,7 @@ public class CloseRaid extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> {
+        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, true, () -> {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
             this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(damage)));
         });

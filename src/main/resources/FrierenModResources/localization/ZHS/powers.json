@@ -241,7 +241,7 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
-      " 打出非 #y魔力 牌后失去 #b1 层该能力。"
+      " 打出非 #y魔力 牌后失去 #b1 点该能力。"
     ]
   },
   "FrierenMod:DamageFusionPower": {
@@ -262,35 +262,100 @@
       "下一张获得的 #y特化普攻魔法 将附加： NL 给予 #b%d 层 #y虚弱 和 #y易伤 。"
     ]
   },
+  "FrierenMod:DrawCardFusionPower": {
+    "NAME": "抽牌融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 抽 #b%d 张牌。"
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardFusionPower": {
+    "NAME": "复制融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 在弃牌堆放入 #b%d1 张本牌的复制品。"
+    ]
+  },
+  "FrierenMod:ConcentrationFusionPower": {
+    "NAME": "专注融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 获得 #b%d 点 #y专注 。"
+    ]
+  },
+  "FrierenMod:StrengthFusionPower": {
+    "NAME": "力量融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL 获得 #b%d 点 #y力量 。"
+    ]
+  },
   "FrierenMod:FightPower": {
     "NAME": "加把劲骑士",
     "DESCRIPTIONS": [
       "在本回合中下 #b%d 张获得的 #y特化攻击魔法 耗能变为0。"
     ]
   },
-  "FrierenMod:MysticEyePower": {
-    "NAME": "直视的魔眼",
+  "FrierenMod:WithNoStopPower": {
+    "NAME": "疾速飞驰",
     "DESCRIPTIONS": [
-      "每当玩家攻击敌人时，玩家获得 #b%d 层 #y专注 。"
+      "下 #b%d 张使用的牌获得 #y疾速 。"
     ]
   },
-  "FrierenMod:SuperSeriousPower": {
-    "NAME": "超级认真",
+  "FrierenMod:MasterAndApprenticePower": {
+    "NAME": "师与徒",
     "DESCRIPTIONS": [
-      "使用的下 #b%d 张牌不会失去 #y专注 ，而是获得1层 #y专注 。"
+      "在你的回合开始时，增加 #b%d 张随机 #y双色牌 到你的手牌。"
     ]
   },
-  "FrierenMod:DancingPower": {
+  "FrierenMod:SkilledMagePower": {
+    "NAME": "干练的魔法使",
+    "DESCRIPTIONS": [
+      "打出 #y融合 或 #y疾速 牌后，获得 #b%d 点 #y格挡 。"
+    ]
+  },
+  "FrierenMod:BoldReversalPower": {
+    "NAME": "回马枪",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 次 #y奇袭 效果将额外触发一次。"
+    ]
+  },
+  "FrierenMod:FernRushdownPower": {
+    "NAME": "菲伦下山",
+    "DESCRIPTIONS": [
+      "触发 #y奇袭 后，抽 #b%d 张牌。"
+    ]
+  },
+  "FrierenMod:ManaAffinityPower": {
+    "NAME": "魔力亲和",
+    "DESCRIPTIONS": [
+      "手中的 #y魔力 回合结束前获得 #y保留 。"
+    ]
+  },
+  "FrierenMod:SocialDancingPower": {
     "NAME": "交际舞",
     "DESCRIPTIONS": [
-      "使用卡牌后，获得或失去 #y专注 ，使 #y离差 永恒为 #b2 。"
+      " #y奇袭 X的判定条件改为X-1、X 、X+1均可触发。"
     ]
   },
-  "FrierenMod:WashingClothesPower": {
-    "NAME": "彻底清除衣服污渍的魔法",
+  "FrierenMod:ConfidencePower": {
+    "NAME": "胸有成竹",
     "DESCRIPTIONS": [
-      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] 。",
-      "下一回合，获得 #b%d 层 #y专注 ， #b%d 点 [E] ，抽 #b%d 张牌。"
+      "所有造成伤害的 #y奇袭 效果会额外触发一次。每回合开始后失去所有 #y专注 。"
+    ]
+  },
+  "FrierenMod:GamblePower": {
+    "NAME": "豪赌",
+    "DESCRIPTIONS": [
+      "打出卡牌后，随机化你的 #y专注 数为1～6。若为6，对所有敌人造成 #b%d 点伤害。"
+    ]
+  },
+  "FrierenMod:FumeshroomFormPower": {
+    "NAME": "大喷菇形态",
+    "DESCRIPTIONS": [
+      "你的所有单体伤害也将对未指向的敌人造成伤害。"
+    ]
+  },
+  "FrierenMod:RecollectionOfBenefactorPower": {
+    "NAME": "心系故人",
+    "DESCRIPTIONS": [
+      "通过 #y海塔留下的法杖 获得 #y特化普攻魔法 时，伤害从2倍改为4倍。"
     ]
   }
 }
