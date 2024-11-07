@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FusionRaid extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FusionRaid.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
 
     public FusionRaid() {
         super(info);
