@@ -3,6 +3,7 @@ package FrierenMod.gameHelpers;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.BluePrint;
+import FrierenMod.patches.fields.GameActionManagerField;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.powers.ChantWithoutManaPower;
 import FrierenMod.powers.ChantWithoutManaTimesPower;
@@ -263,6 +264,8 @@ public class CombatHelper {
         if (!canRaidTakeEffect(raidNumber))
             return false;
         raidEffect.run();
+        GameActionManagerField.raidTriggeredThisTurn.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisTurn.get(AbstractDungeon.actionManager) + 1);
+        GameActionManagerField.raidTriggeredThisCombat.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisCombat.get(AbstractDungeon.actionManager) + 1);
         return true;
     }
 }
