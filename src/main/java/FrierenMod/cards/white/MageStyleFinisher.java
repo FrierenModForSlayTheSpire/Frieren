@@ -28,7 +28,7 @@ public class MageStyleFinisher extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 5;
     }
 

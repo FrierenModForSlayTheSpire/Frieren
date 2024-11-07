@@ -22,7 +22,7 @@ public class PreciseChant extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.exhaust = true;
     }

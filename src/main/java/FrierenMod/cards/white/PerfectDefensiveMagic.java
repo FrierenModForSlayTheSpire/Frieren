@@ -25,7 +25,7 @@ public class PerfectDefensiveMagic extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = this.baseBlock = 10;
         this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.magicNumber = this.baseMagicNumber = 1;

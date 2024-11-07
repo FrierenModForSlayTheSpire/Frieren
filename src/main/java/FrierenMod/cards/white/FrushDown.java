@@ -20,7 +20,7 @@ public class FrushDown extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 1;
     }
 

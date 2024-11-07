@@ -18,7 +18,7 @@ public class RaidPreparation extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.raidNumber = this.baseRaidNumber = 3;
         this.tags.add(Enum.RAID);
     }

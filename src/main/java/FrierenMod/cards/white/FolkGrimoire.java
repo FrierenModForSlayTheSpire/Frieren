@@ -20,7 +20,7 @@ public class FolkGrimoire extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.exhaust = true;
         this.magicNumber = baseMagicNumber = 1;
     }

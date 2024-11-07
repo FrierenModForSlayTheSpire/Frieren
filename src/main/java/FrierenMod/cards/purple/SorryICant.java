@@ -25,7 +25,7 @@ public class SorryICant extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.cardsToPreview = new Mana();
         this.exhaust = true;
     }

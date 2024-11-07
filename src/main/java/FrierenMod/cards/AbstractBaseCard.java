@@ -48,7 +48,9 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
-        initCards();
+        this.initializeBaseSwitches();
+        this.initializeSpecifiedAttributes();
+        this.loadSpecifiedCardStyle();
     }
 
     @Override
@@ -60,13 +62,7 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     }
 
-    private void initCards() {
-        this.initBaseSwitches();
-        this.initSpecifiedAttributes();
-        this.loadSpecifiedCardStyle();
-    }
-
-    private void initBaseSwitches() {
+    private void initializeBaseSwitches() {
         this.isCostModified = false;
         this.isCostModifiedForTurn = false;
         this.isDamageModified = false;
@@ -79,7 +75,7 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isRaidTriggered = false;
     }
 
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
     }
 
     public void loadSpecifiedCardStyle() {

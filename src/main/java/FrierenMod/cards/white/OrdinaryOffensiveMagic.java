@@ -30,7 +30,7 @@ public class OrdinaryOffensiveMagic extends DualCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.baseDamage = 0;
         this.magicNumber = baseMagicNumber = 2;

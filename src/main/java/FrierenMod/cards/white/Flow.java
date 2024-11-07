@@ -29,7 +29,7 @@ public class Flow extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 3;
         this.cardsToPreview = new Mana();
     }

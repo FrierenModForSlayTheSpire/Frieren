@@ -23,7 +23,7 @@ public class Trick extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.cardsToPreview = new ManaConcealment();
     }
 

@@ -1,7 +1,7 @@
 package FrierenMod.actions;
 
 import FrierenMod.utils.ObjectCloner;
-import FrierenMod.gameHelpers.Status;
+import FrierenMod.gameHelpers.State;
 import FrierenMod.powers.TimeTravelPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import java.util.ArrayList;
 
 public class TimeTravelAction extends AbstractGameAction {
-    private final Status status;
+    private final State state;
     private final AbstractCard excludeCard;
     private final ArrayList<AbstractPotion> potions = new ArrayList<>();
     private final ArrayList<AbstractRelic> relics = new ArrayList<>();
@@ -37,12 +37,12 @@ public class TimeTravelAction extends AbstractGameAction {
         int block = AbstractDungeon.player.currentBlock;
         int energy = EnergyPanel.totalCount;
         int maxEnergy = AbstractDungeon.player.maxOrbs;
-        status = new Status(hp, maxHp, gold, potions, relics, block, powers, energy, maxEnergy, drawPile, hand, discardPile, exhaustPile, cardsPlayedThisTurn);
+        state = new State(hp, maxHp, gold, potions, relics, block, powers, energy, maxEnergy, drawPile, hand, discardPile, exhaustPile, cardsPlayedThisTurn);
     }
 
     @Override
     public void update() {
-        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TimeTravelPower(AbstractDungeon.player, status, upgraded)));
+        this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TimeTravelPower(AbstractDungeon.player, state, upgraded)));
         this.isDone = true;
     }
 

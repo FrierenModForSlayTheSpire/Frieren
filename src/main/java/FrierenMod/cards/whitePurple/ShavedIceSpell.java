@@ -22,7 +22,7 @@ public class ShavedIceSpell extends DualCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.baseMagicNumber = this.magicNumber = 3;
         this.cardsToPreview = new Mana();

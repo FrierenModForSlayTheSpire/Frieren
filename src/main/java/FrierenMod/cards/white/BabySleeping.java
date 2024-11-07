@@ -21,7 +21,7 @@ public class BabySleeping extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = baseBlock = 7;
         this.magicNumber = this.baseMagicNumber = 1;
     }

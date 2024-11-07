@@ -25,7 +25,7 @@ public class FusionSlash extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 20;
         this.tags.add(Enum.FUSION);
         this.cardsToPreview = new SpecializedOffensiveMagic();

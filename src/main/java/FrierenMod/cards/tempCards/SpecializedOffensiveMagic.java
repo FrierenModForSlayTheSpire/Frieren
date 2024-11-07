@@ -14,7 +14,7 @@ public class SpecializedOffensiveMagic extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.baseDamage = this.damage = 0;
     }
 

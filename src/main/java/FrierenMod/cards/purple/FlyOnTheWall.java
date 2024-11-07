@@ -22,7 +22,7 @@ public class FlyOnTheWall extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 10;
         this.block = this.baseBlock = 15;
         this.raidNumber = this.baseRaidNumber = 2;

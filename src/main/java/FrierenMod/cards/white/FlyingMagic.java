@@ -19,7 +19,7 @@ public class FlyingMagic extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
     }
 

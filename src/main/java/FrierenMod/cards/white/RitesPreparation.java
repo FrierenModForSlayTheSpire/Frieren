@@ -18,7 +18,7 @@ public class RitesPreparation extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = baseMagicNumber = 3;
     }
 

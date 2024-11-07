@@ -30,7 +30,7 @@ public class Free extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 2;
         this.block = this.baseBlock = 2;
     }

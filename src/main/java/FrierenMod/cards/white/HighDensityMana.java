@@ -29,7 +29,7 @@ public class HighDensityMana extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(Enum.MANA);
         this.tags.add(Enum.SYNCHRO);
         this.magicNumber = this.baseMagicNumber = 1;

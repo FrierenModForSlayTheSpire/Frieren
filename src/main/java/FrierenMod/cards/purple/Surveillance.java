@@ -23,7 +23,7 @@ public class Surveillance extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 5;
         this.raidNumber = this.baseRaidNumber = 1;
         this.tags.add(Enum.RAID);

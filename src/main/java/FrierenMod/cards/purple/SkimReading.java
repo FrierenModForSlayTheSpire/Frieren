@@ -18,7 +18,7 @@ public class SkimReading extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 3;
         this.raidNumber = this.baseRaidNumber = 2;
         this.tags.add(Enum.RAID);

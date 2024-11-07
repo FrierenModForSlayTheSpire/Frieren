@@ -23,7 +23,7 @@ public class RaidRace extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 21;
         this.tags.add(Enum.SPEED);
     }

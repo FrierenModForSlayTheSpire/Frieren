@@ -20,7 +20,7 @@ public class PreparedPosture extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 6;
     }
 

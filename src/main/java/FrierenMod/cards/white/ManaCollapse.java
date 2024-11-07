@@ -26,7 +26,7 @@ public class ManaCollapse extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 9;
         this.magicNumber = this.baseMagicNumber = 2;
         this.shuffleBackIntoDrawPile = true;

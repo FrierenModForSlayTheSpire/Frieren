@@ -23,7 +23,7 @@ public class FireSpell extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         LittleFire c = new LittleFire();
         if (this.upgraded) {
             c.upgrade();

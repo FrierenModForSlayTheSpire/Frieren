@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 
-public class Status {
+public class State {
     public final int hp;
     public final int maxHp;
     public final int gold;
@@ -22,7 +22,7 @@ public class Status {
     public final ArrayList<AbstractCard> discardPile;
     public final ArrayList<AbstractCard> exhaustPile;
     public final ArrayList<AbstractCard> cardsPlayedThisTurn;
-    public Status(int hp, int maxHp, int gold, ArrayList<AbstractPotion> potions, ArrayList<AbstractRelic> relics, int block, ArrayList<AbstractPower> powers, int energy, int maxEnergy, ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, ArrayList<AbstractCard> cardsPlayedThisTurn){
+    public State(int hp, int maxHp, int gold, ArrayList<AbstractPotion> potions, ArrayList<AbstractRelic> relics, int block, ArrayList<AbstractPower> powers, int energy, int maxEnergy, ArrayList<AbstractCard> drawPile, ArrayList<AbstractCard> hand, ArrayList<AbstractCard> discardPile, ArrayList<AbstractCard> exhaustPile, ArrayList<AbstractCard> cardsPlayedThisTurn){
         this.hp = hp;
         this.maxHp = maxHp;
         this.gold = gold;

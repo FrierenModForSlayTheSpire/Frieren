@@ -24,7 +24,7 @@ public class ButtSlam extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = baseDamage = 10;
     }
 

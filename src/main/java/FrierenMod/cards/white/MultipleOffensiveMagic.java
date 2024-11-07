@@ -29,7 +29,7 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.cardsToPreview = new Mana();
     }
 

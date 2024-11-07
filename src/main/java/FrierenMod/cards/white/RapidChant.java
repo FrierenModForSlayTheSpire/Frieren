@@ -26,7 +26,7 @@ public class RapidChant extends DualCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.isFrierenFernCard = true;
         this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.chantX = this.baseChantX = 1;

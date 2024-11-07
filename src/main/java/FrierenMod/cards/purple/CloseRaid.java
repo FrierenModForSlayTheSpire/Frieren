@@ -23,7 +23,7 @@ public class CloseRaid extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 14;
         this.raidNumber = this.baseRaidNumber = 5;
         this.tags.add(Enum.RAID);

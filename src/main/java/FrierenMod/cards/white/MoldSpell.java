@@ -23,7 +23,7 @@ public class MoldSpell extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 4;
         this.magicNumber = this.baseMagicNumber = 5;
         this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);

@@ -21,7 +21,7 @@ public class MysticEye extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 5;
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;

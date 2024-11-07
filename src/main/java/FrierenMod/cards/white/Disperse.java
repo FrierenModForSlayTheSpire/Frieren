@@ -25,7 +25,7 @@ public class Disperse extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.exhaust = true;
         this.cardsToPreview = new Mana();
     }

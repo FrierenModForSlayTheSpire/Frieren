@@ -24,7 +24,7 @@ public class ColdBlood extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 20;
         this.raidNumber = this.baseRaidNumber = 2;
         this.tags.add(Enum.RAID);

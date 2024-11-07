@@ -17,7 +17,7 @@ public class ManaBarricade extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = this.baseBlock = 12;
         this.chantX = this.baseChantX = 2;
         this.tags.add(AbstractBaseCard.Enum.CHANT);

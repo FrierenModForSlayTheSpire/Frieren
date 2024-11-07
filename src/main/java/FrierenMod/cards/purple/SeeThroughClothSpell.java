@@ -23,7 +23,7 @@ public class SeeThroughClothSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
         this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(Enum.FUSION);

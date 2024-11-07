@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.Status;
+import FrierenMod.gameHelpers.State;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -8,35 +8,35 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
-public class ReceivePlayerStatusAction extends AbstractGameAction {
-    private final Status status;
+public class ReceivePlayerStateAction extends AbstractGameAction {
+    private final State state;
 
-    public ReceivePlayerStatusAction(Status status) {
-        this.status = status;
+    public ReceivePlayerStateAction(State state) {
+        this.state = state;
     }
 
     @Override
     public void update() {
         AbstractPlayer p = AbstractDungeon.player;
-        p.currentHealth = status.hp;
+        p.currentHealth = state.hp;
         p.healthBarUpdatedEvent();
-        p.currentBlock = status.block;
-        p.maxHealth = status.maxHp;
+        p.currentBlock = state.block;
+        p.maxHealth = state.maxHp;
         p.relics.clear();
-        p.relics.addAll(status.relics);
+        p.relics.addAll(state.relics);
         p.powers.clear();
-        p.powers.addAll(status.powers);
+        p.powers.addAll(state.powers);
         for (AbstractPotion potion : p.potions) {
             p.removePotion(potion);
         }
-        p.maxOrbs = status.maxEnergy;
-        EnergyPanel.totalCount = status.energy;
+        p.maxOrbs = state.maxEnergy;
+        EnergyPanel.totalCount = state.energy;
         p.reorganizeRelics();
         p.updatePowers();
-        for (AbstractPotion potion : status.potions) {
+        for (AbstractPotion potion : state.potions) {
             AbstractDungeon.player.obtainPotion(potion);
         }
-        AbstractDungeon.actionManager.cardsPlayedThisTurn.addAll(status.cardsPlayedThisTurn);
+        AbstractDungeon.actionManager.cardsPlayedThisTurn.addAll(state.cardsPlayedThisTurn);
         for (AbstractMonster mo : AbstractDungeon.getMonsters().monsters) {
             mo.createIntent();
         }

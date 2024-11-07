@@ -17,7 +17,7 @@ public class Defend_Fern extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = baseBlock = 5;
         this.tags.add(CardTags.STARTER_DEFEND);
     }

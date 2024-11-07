@@ -18,7 +18,7 @@ public class LieInWait extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = baseBlock = 5;
         this.tags.add(Enum.SPEED);
     }

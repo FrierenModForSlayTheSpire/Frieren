@@ -21,7 +21,7 @@ public class Thunder extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
         this.exhaust = true;
         this.isEthereal = true;

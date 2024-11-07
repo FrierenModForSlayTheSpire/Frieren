@@ -22,7 +22,7 @@ public class CounterAttack extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 9;
         this.block = this.baseBlock = 9;
     }

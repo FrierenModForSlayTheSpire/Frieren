@@ -21,7 +21,7 @@ public class FernFixFrieren extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 7;
         this.magicNumber = this.baseMagicNumber = 3;
     }

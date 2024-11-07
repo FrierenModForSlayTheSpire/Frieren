@@ -21,7 +21,7 @@ public class SeriousSeriesSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 18;
         this.raidNumber = this.baseRaidNumber = 3;
         this.tags.add(Enum.RAID);
