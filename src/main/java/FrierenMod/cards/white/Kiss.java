@@ -25,7 +25,7 @@ public class Kiss extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.isEthereal = true;
         this.exhaust = true;
     }

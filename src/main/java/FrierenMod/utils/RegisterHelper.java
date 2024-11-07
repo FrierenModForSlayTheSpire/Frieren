@@ -6,6 +6,7 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.events.AnimalWell;
 import FrierenMod.events.FoodEvent;
+import FrierenMod.events.KraftGift;
 import FrierenMod.events.MimicFight;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.gameHelpers.HookHelper;
@@ -26,6 +27,7 @@ import basemod.patches.com.megacrit.cardcrawl.cards.AbstractCard.DynamicTextBloc
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 
 public class RegisterHelper {
@@ -109,7 +111,8 @@ public class RegisterHelper {
         MagicItemCommand.register();
         Log.logger.info("Done adding commands");
     }
-    public static void registerMonsters(){
+
+    public static void registerMonsters() {
         Log.logger.info("Adding monsters...");
         Mimic.register();
         Log.logger.info("Done adding monsters");
@@ -130,7 +133,7 @@ public class RegisterHelper {
     public static void registerEvents() {
         Log.logger.info("Adding events...");
         BaseMod.addEvent("FoodEvent", FoodEvent.class);
-//        BaseMod.addEvent("KraftGift", KraftGift.class);
+        BaseMod.addEvent("KraftGift", KraftGift.class, TheCity.ID, TheBeyond.ID);
         BaseMod.addEvent("AnimalWell", AnimalWell.class);
         BaseMod.addEvent(MimicFight.ID, MimicFight.class, TheCity.ID);
         Log.logger.info("Done adding events");

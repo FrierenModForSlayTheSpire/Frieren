@@ -1,0 +1,189 @@
+[
+  {
+    "PROPER_NAME": "詠唱X",
+    "NAMES": [
+      "詠唱X",
+      "詠唱"
+    ],
+    "DESCRIPTION": "在 #g裝載中 且對應牌堆 #y魔力 充足的 #y魔法因子 中選擇1張發動效果。"
+  },
+  {
+    "PROPER_NAME": "槽位",
+    "NAMES": [
+      "槽位"
+    ],
+    "DESCRIPTION": "分為抽牌槽，手牌槽，棄牌槽。 NL 在 #y詠唱 時 對應 #y消耗 抽牌堆、手牌、棄牌堆中的 #y魔力 。"
+  },
+  {
+    "PROPER_NAME": "未裝載",
+    "NAMES": [
+      "未裝載",
+      "[#ff4e41]未裝載"
+    ],
+    "DESCRIPTION": "裝載槽位之外。"
+  },
+  {
+    "PROPER_NAME": "已裝載",
+    "NAMES": [
+      "已裝載",
+      "[#9ffc4f]已裝載"
+    ],
+    "DESCRIPTION": "裝載在抽牌槽、手牌或棄牌槽中。"
+  },
+  {
+    "PROPER_NAME": "抽牌槽",
+    "NAMES": [
+      "抽牌槽",
+      "[#9ffc4f]抽牌槽裝載中",
+      "[#9ffc4f]抽牌槽"
+    ],
+    "DESCRIPTION": "對應抽牌堆。"
+  },
+  {
+    "PROPER_NAME": "手牌槽",
+    "NAMES": [
+      "手牌槽",
+      "[#9ffc4f]手牌槽",
+      "[#9ffc4f]手牌槽裝載中"
+    ],
+    "DESCRIPTION": "對應手牌。"
+  },
+  {
+    "PROPER_NAME": "棄牌槽",
+    "NAMES": [
+      "棄牌槽",
+      "[#9ffc4f]棄牌槽",
+      "[#9ffc4f]棄牌槽裝載中"
+    ],
+    "DESCRIPTION": "對應棄牌堆。"
+  },
+  {
+    "PROPER_NAME": "同調",
+    "NAMES": [
+      "同調"
+    ],
+    "DESCRIPTION": "抽1張牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "終極同調",
+    "NAMES": [
+      "終極同調"
+    ],
+    "DESCRIPTION": "隨機對1個敵人造成15點傷害。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "加速同調",
+    "NAMES": [
+      "加速同調"
+    ],
+    "DESCRIPTION": "抽2張牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "終極加速同調",
+    "NAMES": [
+      "終極加速同調"
+    ],
+    "DESCRIPTION": "隨機對1個敵人造成15點傷害，抽2張牌。 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "傳說魔法",
+    "NAMES": [
+      "傳說魔法"
+    ],
+    "DESCRIPTION": "本回合中打出過 #y詠唱 牌後才可打出。"
+  },
+  {
+    "PROPER_NAME": "解析X",
+    "NAMES": [
+      "解析",
+      "解析X",
+      "獎勵"
+    ],
+    "DESCRIPTION": " #y保留 且 #y無法被打出 。 NL 在手牌中完成解析條件會使X-1，獲得相應 #y獎勵 並刷新。 NL  X為0時會使此牌 #y消耗 。"
+  },
+  {
+    "PROPER_NAME": "臨時力量",
+    "NAMES": [
+      "臨時力量"
+    ],
+    "DESCRIPTION": "獲得力量。在你的回合結束時，失去相等數量的力量。"
+  },
+  {
+    "PROPER_NAME": "緩衝",
+    "NAMES": [
+      "緩衝"
+    ],
+    "DESCRIPTION": "阻止你下一次受到的生命值損傷。"
+  },
+  {
+    "PROPER_NAME": "纏繞",
+    "NAMES": [
+      "纏繞"
+    ],
+    "DESCRIPTION": "在回合結束時承受傷害。"
+  },
+  {
+    "PROPER_NAME": "變動",
+    "NAMES": [
+      "變動"
+    ],
+    "DESCRIPTION": "抽牌順序將改變。"
+  },
+  {
+    "PROPER_NAME": "緩慢",
+    "NAMES": [
+      "緩慢"
+    ],
+    "DESCRIPTION": "你在這個回合每打出一張卡牌，該敵人本回合受到的傷害增加 10% 。"
+  },
+  {
+    "PROPER_NAME": "封印",
+    "NAMES": [
+      "封印"
+    ],
+    "DESCRIPTION": "戰鬥開始時此牌位於所有牌堆之外，一回合內打出5張 #y詠唱 牌後加入你的手牌。"
+  },
+  {
+    "PROPER_NAME": "回火",
+    "NAMES": [
+      "回火"
+    ],
+    "DESCRIPTION": "這張牌本回合中每被打出1次，耗能+1，下回合開始時重設耗能。"
+  },
+  {
+    "PROPER_NAME": "壁壘",
+    "NAMES": [
+      "壁壘"
+    ],
+    "DESCRIPTION": "格擋不會在你的回合開始時消失。"
+  },
+  {
+    "PROPER_NAME": "離差",
+    "NAMES": [
+      "離差"
+    ],
+    "DESCRIPTION": "本回合使用過的卡牌數和 #y專注 層數之差的絕對值。"
+  },
+  {
+    "PROPER_NAME": "專注",
+    "NAMES": [
+      "專注"
+    ],
+    "DESCRIPTION": "使用 #b1 張牌後失去 #b1 層該能力 ， #y詠唱 消耗 的 #y魔力 減少（該能力層數）張。"
+  },
+  {
+    "PROPER_NAME": "奇襲X",
+    "NAMES": [
+      "奇襲X",
+      "奇襲"
+    ],
+    "DESCRIPTION": " #y離差 小於等於X時觸發。"
+  },
+  {
+    "PROPER_NAME": "凝聚",
+    "NAMES": [
+      "凝聚"
+    ],
+    "DESCRIPTION": "自動同調你下1張加入手牌的 #y魔力 ，且同調時不失去專注層數。"
+  }
+]

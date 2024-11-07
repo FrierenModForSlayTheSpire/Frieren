@@ -23,7 +23,7 @@ public class RestraintMagic extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.baseMagicNumber = magicNumber = 3;
         this.exhaust = true;
     }

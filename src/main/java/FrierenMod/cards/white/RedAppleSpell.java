@@ -23,7 +23,7 @@ public class RedAppleSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.cardsToPreview = new GreenApple();
     }
 

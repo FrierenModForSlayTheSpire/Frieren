@@ -17,7 +17,7 @@ public class Strike_Frieren extends AbstractBaseCard {
         super(info);
     }
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 6;
         this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CardTags.STRIKE);

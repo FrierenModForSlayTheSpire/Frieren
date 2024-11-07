@@ -4,6 +4,7 @@ import FrierenMod.utils.ModInformation;
 import FrierenMod.utils.PublicRes;
 import FrierenMod.utils.ResourceChecker;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
@@ -45,7 +46,7 @@ public abstract class AbstractBasePower extends AbstractPower {
     }
 
     public static TextureAtlas.AtlasRegion getImgTexture(String id, int size) {
-        if(ResourceChecker.exist( ModInformation.makePowerPath(id.split(":")[1], size))){
+        if (ResourceChecker.exist(ModInformation.makePowerPath(id.split(":")[1], size))) {
             return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(ModInformation.makePowerPath(id.split(":")[1], size)), 0, 0, size, size);
         }
         return new TextureAtlas.AtlasRegion(ImageMaster.loadImage(((size == 84) ? PublicRes.DEV_POWER_IMG_84 : PublicRes.DEV_POWER_IMG_32)), 0, 0, size, size);
@@ -55,5 +56,21 @@ public abstract class AbstractBasePower extends AbstractPower {
     }
 
     public void afterChantFinished() {
+    }
+
+    public void beforeGainSpecializedOffensiveMagic(AbstractCard magic) {
+
+    }
+    public void afterGainSpecializedOffensiveMagic(AbstractCard magic) {
+
+    }
+    public int modifyRaidTriggerTimes(){
+        return 0;
+    }
+    public int modifyRaidTriggerTimes(boolean bool){
+        return 0;
+    }
+    public void afterRaidTriggered(){
+
     }
 }

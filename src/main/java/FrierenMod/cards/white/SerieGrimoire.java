@@ -20,7 +20,7 @@ public class SerieGrimoire extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.exhaust = true;
     }
 

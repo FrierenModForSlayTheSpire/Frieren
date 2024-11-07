@@ -5,15 +5,14 @@ import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.Factor001;
 import FrierenMod.cards.magicItems.factors.Factor010;
 import FrierenMod.cards.magicItems.factors.Factor100;
-import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
-import FrierenMod.cards.whitePurple.RapidChant;
-import FrierenMod.cards.whitePurple.ShavedIceSpell;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.enums.CharacterEnums;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 
 import java.util.ArrayList;
@@ -22,16 +21,22 @@ import static com.megacrit.cardcrawl.dungeons.AbstractDungeon.cardRandomRng;
 
 
 public class CardPoolHelper {
-    public static ArrayList<AbstractCard> getBaseFrierenFernCardPool() {
+    public static ArrayList<AbstractCard> getDualCardPool() {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
-        if (Config.FERN_ENABLE) {
-            retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info2));
-            retVal.add(new RapidChant(RapidChant.info2));
-            retVal.add(new ShavedIceSpell(ShavedIceSpell.info2));
+        if (AbstractDungeon.player == null)
+            return retVal;
+        CardLibrary.LibraryType libraryType;
+        if (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN)
+            libraryType = CardEnums.FRIEREN_LIBRARY;
+        else if (AbstractDungeon.player.chosenClass == CharacterEnums.FERN)
+            libraryType = CardEnums.FERN_LIBRARY;
+        else
+            return retVal;
+        for (AbstractCard c : CardLibrary.getCardList(libraryType)) {
+            if (c.hasTag(AbstractBaseCard.Enum.FRIEREN_FERN_CARD)) {
+                retVal.add(c.makeCopy());
+            }
         }
-        retVal.add(new OrdinaryOffensiveMagic(OrdinaryOffensiveMagic.info));
-        retVal.add(new RapidChant(RapidChant.info));
-        retVal.add(new ShavedIceSpell(ShavedIceSpell.info));
         return retVal;
     }
 
@@ -49,6 +54,16 @@ public class CardPoolHelper {
         ArrayList<AbstractCard> retVal = new ArrayList<>();
         for (AbstractCard c : CardLibrary.getCardList(CardEnums.FRIEREN_LIBRARY)) {
             if (c.hasTag(AbstractBaseCard.Enum.LEGENDARY_SPELL) && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
+                retVal.add(c.makeCopy());
+            }
+        }
+        return retVal;
+    }
+
+    public static ArrayList<AbstractCard> getFusionCardPool() {
+        ArrayList<AbstractCard> retVal = new ArrayList<>();
+        for (AbstractCard c : CardLibrary.getCardList(CardEnums.FERN_LIBRARY)) {
+            if (c.hasTag(AbstractBaseCard.Enum.FUSION) && !c.hasTag(AbstractBaseCard.Enum.CAN_NOT_RANDOM_GENERATED_IN_COMBAT)) {
                 retVal.add(c.makeCopy());
             }
         }
@@ -122,6 +137,12 @@ public class CardPoolHelper {
                         retVal.add(c);
                 }
                 return retVal.get(RandomField.getMagicItemRandomRng().random(retVal.size() - 1));
+            case FUSION:
+                list = getFusionCardPool();
+                break;
+            case DUAL_CARD:
+                list = getDualCardPool();
+                break;
             default:
                 list = null;
                 Log.logger.info("WTF?");
@@ -173,6 +194,8 @@ public class CardPoolHelper {
     public enum PoolType {
         CHANT,
         LEGENDARY_SPELL,
-        MAGIC_FACTOR
+        MAGIC_FACTOR,
+        FUSION,
+        DUAL_CARD
     }
 }

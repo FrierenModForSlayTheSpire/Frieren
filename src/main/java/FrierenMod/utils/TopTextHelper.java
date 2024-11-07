@@ -6,7 +6,7 @@ import FrierenMod.cards.magicItems.factors.IceArrows;
 import FrierenMod.cards.magicItems.factors.MetallicizFlower;
 import FrierenMod.cards.white.HellFireSummoning;
 import FrierenMod.cards.white.LightningMagic;
-import FrierenMod.cards.whitePurple.OrdinaryOffensiveMagic;
+import FrierenMod.cards.white.OrdinaryOffensiveMagic;
 
 import java.util.HashMap;
 import java.util.Map;

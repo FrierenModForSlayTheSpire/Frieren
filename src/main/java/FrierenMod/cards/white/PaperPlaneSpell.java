@@ -20,7 +20,7 @@ public class PaperPlaneSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(Enum.LEGENDARY_SPELL);
     }
 

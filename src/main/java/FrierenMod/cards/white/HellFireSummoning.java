@@ -29,7 +29,7 @@ public class HellFireSummoning extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
         this.tags.add(AbstractBaseCard.Enum.COST_REST);
         this.tags.add(Enum.SEAL);

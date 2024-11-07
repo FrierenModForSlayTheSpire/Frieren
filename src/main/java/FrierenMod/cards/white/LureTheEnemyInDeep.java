@@ -24,7 +24,7 @@ public class LureTheEnemyInDeep extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.chantX = this.baseChantX = 2;
         this.magicNumber = this.baseMagicNumber = 2;

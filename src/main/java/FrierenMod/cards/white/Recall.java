@@ -21,7 +21,7 @@ public class Recall extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 1;
         this.exhaust = true;
     }

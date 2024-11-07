@@ -267,7 +267,7 @@ public class Slot {
                 drawX = current_x - 600.0F * drawScale;
             } else
                 drawX = current_x + 250.0F * drawScale;
-            TipHelper.renderGenericTip(drawX, drawY, TEXT[3], unlockText);
+            TipHelper.renderGenericTip(drawX, drawY, title, unlockText);
         }
     }
 

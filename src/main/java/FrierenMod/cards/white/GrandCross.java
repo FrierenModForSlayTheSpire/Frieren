@@ -24,7 +24,7 @@ public class GrandCross extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.baseDamage = this.damage = 12;
     }
 

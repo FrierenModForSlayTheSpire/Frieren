@@ -3,9 +3,9 @@ package FrierenMod;
 
 import FrierenMod.Characters.Fern;
 import FrierenMod.Characters.Frieren;
+import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.gameHelpers.CardPoolHelper;
 import FrierenMod.gameHelpers.DataObject;
 import FrierenMod.gameHelpers.SaveFileHelper;
 import FrierenMod.utils.*;
@@ -22,7 +22,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 
@@ -101,6 +100,12 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 BaseMod.addCard(card);
                 if (Config.IN_DEV && info.seen)
                     UnlockTracker.unlockCard(card.cardID);
+                if (Config.FERN_ENABLE && card.hasTag(AbstractBaseCard.Enum.FRIEREN_FERN_CARD) && card instanceof AbstractBaseCard) {
+                    AbstractCard secondRegisterCard = ((AbstractBaseCard) card).getCardForSecondRegister();
+                    BaseMod.addCard(secondRegisterCard);
+                    if (Config.IN_DEV && info.seen)
+                        UnlockTracker.unlockCard(secondRegisterCard.cardID);
+                }
             });
         }
         if (Config.FERN_ENABLE)
@@ -109,15 +114,6 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
                 if (Config.IN_DEV && info.seen)
                     UnlockTracker.unlockCard(card.cardID);
             });
-//        for (AbstractCard c: CardPoolHelper.getFrierenCardPool())
-//            BaseMod.addCard(c);
-//        for (AbstractCard c: CardPoolHelper.getFernCardPool())
-//            BaseMod.addCard(c);
-        for (AbstractCard c : CardPoolHelper.getBaseFrierenFernCardPool()) {
-            BaseMod.addCard(c);
-            if (Config.IN_DEV)
-                UnlockTracker.unlockCard(c.cardID);
-        }
         Log.logger.info("Done adding cards!");
     }
 
@@ -151,10 +147,17 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
     public void receiveEditKeywords() {
         Gson gson = new Gson();
         String lang;
-        if (language == Settings.GameLanguage.ZHS) {
-            lang = "ZHS";
-        } else {
-            lang = "ENG";
+        switch (language) {
+            case ZHS:
+                lang = "ZHS";
+                break;
+            case ZHT:
+                lang = "ZHT";
+                break;
+            default:
+            case ENG:
+                lang = "ENG";
+                break;
         }
         String json = Gdx.files.internal(ModInformation.makeLocalizationPath(lang, "keywords"))
                 .readString(String.valueOf(StandardCharsets.UTF_8));
@@ -169,10 +172,17 @@ public class ModManager implements EditCardsSubscriber, EditStringsSubscriber, E
 
     public void receiveEditStrings() {
         String lang;
-        if (language == Settings.GameLanguage.ZHS) {
-            lang = "ZHS";
-        } else {
-            lang = "ENG";
+        switch (language) {
+            case ZHS:
+                lang = "ZHS";
+                break;
+            case ZHT:
+                lang = "ZHT";
+                break;
+            default:
+            case ENG:
+                lang = "ENG";
+                break;
         }
         BaseMod.loadCustomStringsFile(CardStrings.class, ModInformation.makeLocalizationPath(lang, "cards"));
         BaseMod.loadCustomStringsFile(CharacterStrings.class, ModInformation.makeLocalizationPath(lang, "characters"));

@@ -23,7 +23,7 @@ public class LockTarget extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.baseDamage = 8;
         this.baseMagicNumber = this.magicNumber = 1;
     }

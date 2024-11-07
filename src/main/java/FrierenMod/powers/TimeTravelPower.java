@@ -1,7 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.actions.ReceiveEverythingAction;
-import FrierenMod.gameHelpers.Status;
+import FrierenMod.gameHelpers.State;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
@@ -13,13 +13,13 @@ import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 
 public class TimeTravelPower extends AbstractBasePower {
     public static final String POWER_ID = ModInformation.makeID(TimeTravelPower.class.getSimpleName());
-    private final Status status;
+    private final State state;
     private final boolean upgraded;
     private int counts = 2;
 
-    public TimeTravelPower(AbstractCreature owner, Status status, boolean upgraded) {
+    public TimeTravelPower(AbstractCreature owner, State state, boolean upgraded) {
         super(POWER_ID, owner, PowerType.BUFF);
-        this.status = status;
+        this.state = state;
         this.upgraded = upgraded;
         this.updateDescription();
     }
@@ -38,7 +38,7 @@ public class TimeTravelPower extends AbstractBasePower {
                 AbstractDungeon.effectsQueue.add(new BorderFlashEffect(Color.GOLD, true));
                 AbstractDungeon.topLevelEffectsQueue.add(new TimeWarpTurnEndEffect());
                 this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-                this.addToBot(new ReceiveEverythingAction(this.status, upgraded));
+                this.addToBot(new ReceiveEverythingAction(this.state, upgraded));
             }
         }
     }

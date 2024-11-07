@@ -23,7 +23,7 @@ public class TongueTwisterSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
         this.block = this.baseBlock = 5;
         this.cardsToPreview = new Mana();

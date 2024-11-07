@@ -24,7 +24,7 @@ public class HalfTheSky extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 4;
     }
 

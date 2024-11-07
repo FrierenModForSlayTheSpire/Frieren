@@ -113,7 +113,7 @@
       " NL Remove all of your debuffs."
     ]
   },
-  "FrierenMod:StrengthMod": {
+  "FrierenMod:LimitBreakMod": {
     "TEXT": [
       " NL Double your Strength . NL  Exhaust ."
     ]
@@ -326,6 +326,8 @@
       "9001": "50 Slot Backgrounds.",
       "9002": "100 Slot Backgrounds.",
       "9003": "Meet Himmel, Heiter and Eisen.",
+      "9997": "Congratulatory picture",
+      "9998": "Congratulatory picture",
       "9999": "Thanks for playing",
       "EXCEPTION": "No unlock way, please wait for update."
     }
@@ -382,6 +384,8 @@
       "9001": "No Longer Transparent Memories",
       "9002": "Unfading Memories",
       "9003": "A true hero",
+      "9997": "Witch Frieren",
+      "9998": "Witch Fern",
       "9999": "A souvenir of 1.0ver",
       "EXCEPTION": "???"
     }

@@ -73,9 +73,9 @@ public class SlotBgLibrary implements ScrollBarListener {
 
 
     public SlotBgLibrary() {
+        this.scrollBar = new ScrollBar(this);
         this.slots = SlotBgHelper.getAllSlotsInLibrary();
         this.allNumber = slots.size();
-        this.scrollBar = new ScrollBar(this);
         background = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBg"));
         board = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/SlotLibraryBgBoard"));
         yesButton = ImageMaster.loadImage(ModInformation.makeUIPath("slotPreviewAndLibrary/saveButton"));
@@ -106,8 +106,13 @@ public class SlotBgLibrary implements ScrollBarListener {
         });
     }
 
-    public void refreshLockedSlots() {
+    public void refreshSlots() {
+        boolean chosen = false;
         for (Slot slot : slots) {
+            if (!chosen && slot.id.equals(openSlotId)) {
+                this.chosenSlot = slot;
+                chosen = true;
+            }
             if (SlotBgHelper.progressString.contains(slot.id)) {
                 slot.setUnLockedInLibrary();
             } else
@@ -115,16 +120,7 @@ public class SlotBgLibrary implements ScrollBarListener {
         }
     }
 
-    public void refreshChosenSlot() {
-        for (Slot slot : slots) {
-            if (slot.id.equals(openSlotId)) {
-                this.chosenSlot = slot;
-            }
-        }
-    }
-
     public void show(String openSlotId, int openSlotIndex, ArrayList<Slot> previousSlots) {
-        SlotBgHelper.unlockANewSlot("9999");
         this.shown = true;
         this.openSlotId = openSlotId;
         this.openSlotIndex = openSlotIndex;
@@ -141,13 +137,36 @@ public class SlotBgLibrary implements ScrollBarListener {
         this.yesHb.y = yesButtonY;
         this.noHb.x = noButtonX;
         this.noHb.y = noButtonY;
+        boolean slotChanged = unlockNewSlots();
+        if (slotChanged) {
+            this.slots = SlotBgHelper.getAllSlotsInLibrary();
+            this.allNumber = slots.size();
+        }
         sortedSlots();
-        refreshLockedSlots();
-        refreshChosenSlot();
-        if (collectedNumber >= 50)
-            SlotBgHelper.unlockANewSlot("9001");
-        if (collectedNumber >= 100)
-            SlotBgHelper.unlockANewSlot("9002");
+        refreshSlots();
+    }
+
+    public boolean unlockNewSlots() {
+        boolean slotChanged = false;
+        if (SlotBgHelper.unlockANewSlot("9999")) {
+            slotChanged = true;
+        }
+        if (SlotBgHelper.unlockANewSlot("9997")) {
+            slotChanged = true;
+        }
+        if (SlotBgHelper.unlockANewSlot("9998")) {
+            slotChanged = true;
+        }
+        if (collectedNumber >= 50) {
+            if (SlotBgHelper.unlockANewSlot("9001")) {
+                slotChanged = true;
+            }
+        }
+        if (collectedNumber >= 100) {
+            if (SlotBgHelper.unlockANewSlot("9002")) {
+                slotChanged = true;
+            }
+        }
         List<Slot> collectedSlots = slots.stream().filter(slot -> !slot.locked).collect(Collectors.toList());
         ArrayList<Slot> team = new ArrayList<>();
         for (Slot slot : collectedSlots) {
@@ -169,8 +188,11 @@ public class SlotBgLibrary implements ScrollBarListener {
             }
         }
         if (team.size() == 3) {
-            SlotBgHelper.unlockANewSlot("9003");
+            if (SlotBgHelper.unlockANewSlot("9003")) {
+                slotChanged = true;
+            }
         }
+        return slotChanged;
     }
 
     public void save() {

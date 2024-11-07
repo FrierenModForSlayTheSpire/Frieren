@@ -21,7 +21,7 @@ public class HotTeaSpell extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = baseBlock = 12;
         this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
     }

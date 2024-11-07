@@ -109,6 +109,13 @@
     "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
   },
   {
+    "PROPER_NAME": "临时敏捷",
+    "NAMES": [
+      "临时敏捷"
+    ],
+    "DESCRIPTION": "获得敏捷。在你的回合结束时，失去相等数量的敏捷。"
+  },
+  {
     "PROPER_NAME": "缓冲",
     "NAMES": [
       "缓冲"
@@ -158,18 +165,25 @@
     "DESCRIPTION": "格挡不会在你的回合开始时消失。"
   },
   {
-    "PROPER_NAME": "离差",
-    "NAMES": [
-      "离差"
-    ],
-    "DESCRIPTION": "本回合使用过的卡牌数和 #y专注 层数之差的绝对值。"
-  },
-  {
     "PROPER_NAME": "专注",
     "NAMES": [
       "专注"
     ],
-    "DESCRIPTION": "使用 #b1 张牌后失去 #b1 层该能力 ， #y咏唱 消耗 的 #y魔力 减少（该能力层数）张。"
+    "DESCRIPTION": " 打出非 #y魔力 牌后失去 #b%d 点该能力。"
+  },
+  {
+    "PROPER_NAME": "疾速",
+    "NAMES": [
+      "疾速"
+    ],
+    "DESCRIPTION": " 打出本牌后不会失去 #y专注 。"
+  },
+  {
+    "PROPER_NAME": "融合",
+    "NAMES": [
+      "融合"
+    ],
+    "DESCRIPTION": " 效果会额外附加到下一张获得的 #特化普攻魔法 上。"
   },
   {
     "PROPER_NAME": "奇袭X",
@@ -177,13 +191,20 @@
       "奇袭X",
       "奇袭"
     ],
-    "DESCRIPTION": " #y离差 小于等于X时触发。"
+    "DESCRIPTION": " 当 #y专注 数 恰好为X时触发。"
   },
   {
-    "PROPER_NAME": "凝聚",
+    "PROPER_NAME": "属性",
     "NAMES": [
-      "凝聚"
+      "属性"
     ],
-    "DESCRIPTION": "自动同调你下1张加入手牌的 #y魔力 ，且同调时不失去专注层数。"
+    "DESCRIPTION": "血量， #y格挡 ， #r体重？！ "
+  },
+  {
+    "PROPER_NAME": "双色牌",
+    "NAMES": [
+      "双色牌"
+    ],
+    "DESCRIPTION": " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
   }
 ]

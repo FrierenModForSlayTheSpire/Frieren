@@ -26,7 +26,7 @@ public class TrueColours extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.chantX = this.baseChantX = 4;
         this.tags.add(AbstractBaseCard.Enum.CHANT);
         this.exhaust = true;

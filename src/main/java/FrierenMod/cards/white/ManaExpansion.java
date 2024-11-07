@@ -22,7 +22,7 @@ public class ManaExpansion extends AbstractBaseCard {
 
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = baseMagicNumber = 1;
         this.exhaust = true;
     }
