@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.Hitbox;
 import com.megacrit.cardcrawl.helpers.TipHelper;
 import com.megacrit.cardcrawl.helpers.input.InputHelper;
@@ -134,7 +135,7 @@ public class FernPanel extends AbstractPanel {
             renderOrb(sb);
             renderVFX(sb);
             AbstractDungeon.player.getEnergyNumFont().getData().setScale(this.FontScale);
-//            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.concentrationCounter), this.current_x + 70.0F * Settings.scale, this.current_y + 100.0F * Settings.scale, MPTextColor.cpy());
+            FontHelper.renderFontCentered(sb, AbstractDungeon.player.getEnergyNumFont(), String.valueOf(this.concentrationCounter), this.current_x, this.current_y, MPTextColor.cpy());
             this.TipHitBox.render(sb);
             if (this.TipHitBox.hovered && !AbstractDungeon.isScreenUp) {
                 TipHelper.renderGenericTip(this.current_x + (MPImage.getWidth()) / 2.0F * Settings.scale, this.current_y + (MPImage.getHeight()) / 2.0F * Settings.scale, uiStrings.TEXT[0], String.format(uiStrings.TEXT[1], rate));

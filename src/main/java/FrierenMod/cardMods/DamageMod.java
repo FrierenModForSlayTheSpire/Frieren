@@ -13,18 +13,16 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DamageMod extends AbstractCardModifier {
+public class DamageMod extends AbstractCardModifier{
     public static final String ID = ModInformation.makeID(DamageMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private final int damageAmt;
-    private final boolean increased;
+    private int damageAmt;
 
     public DamageMod(int damageAmt) {
         this.damageAmt = damageAmt;
         this.priority = -1;
-        this.increased = false;
     }
 
     public AbstractCardModifier makeCopy() {

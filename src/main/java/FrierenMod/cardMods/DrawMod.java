@@ -11,12 +11,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DrawMod extends AbstractCardModifier {
+public class DrawMod extends AbstractCardModifier implements SpecializedOffensiveMagicMod{
     public static final String ID = ModInformation.makeID(DrawMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private final int drawAmt;
+    private int drawAmt;
 
     public DrawMod(int drawAmt) {
         this.drawAmt = drawAmt;
@@ -46,5 +46,10 @@ public class DrawMod extends AbstractCardModifier {
 
     public String identifier(AbstractCard card) {
         return ID;
+    }
+
+    @Override
+    public void updateAmt(int newAmt) {
+        this.drawAmt = newAmt;
     }
 }

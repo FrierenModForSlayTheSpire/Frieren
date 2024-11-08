@@ -1054,8 +1054,8 @@
   },
   "FrierenMod:TrainingByEating": {
     "NAME": "加练一组甜点",
-    "DESCRIPTION": "获得 frierenmod:专注 数的力量，失去所有 frierenmod:专注 。 NL frierenmod:奇袭 !R! ：frierenmod:疾速 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 frierenmod:专注 数的力量，失去所有 frierenmod:专注 。 NL frierenmod:奇袭 !R! ：frierenmod:疾速 。"
+    "DESCRIPTION": "获得 frierenmod:专注 数的力量，失去所有 frierenmod:专注 。 NL frierenmod:奇袭 !R! ： frierenmod:疾速 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 frierenmod:专注 数的力量，失去所有 frierenmod:专注 。 NL frierenmod:奇袭 !R! ： frierenmod:疾速 。"
   },
   "FrierenMod:GirlishHeart": {
     "NAME": "少女心",

@@ -10,12 +10,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class GainEnergyMod extends AbstractCardModifier {
+public class GainEnergyMod extends AbstractCardModifier implements SpecializedOffensiveMagicMod{
     public static final String ID = ModInformation.makeID(GainEnergyMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private final int amount;
+    private int amount;
 
     public GainEnergyMod(int amount) {
         this.amount = amount;
@@ -38,6 +38,11 @@ public class GainEnergyMod extends AbstractCardModifier {
 
     public String identifier(AbstractCard card) {
         return ID;
+    }
+
+    @Override
+    public void updateAmt(int newAmt) {
+        this.amount = newAmt;
     }
 
 //    public String modifyDescription(String rawDescription, AbstractCard card) {
