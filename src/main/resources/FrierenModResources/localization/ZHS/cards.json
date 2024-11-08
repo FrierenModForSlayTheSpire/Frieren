@@ -1097,7 +1097,7 @@
   },
   "FrierenMod:Snuggle": {
     "NAME": "贴贴",
-    "DESCRIPTION": "选择：丢弃最多 !M! 张 *魔力 获得等量 [E] ，将 !M! 张 *魔力 放入手中。"
+    "DESCRIPTION": "选择：丢弃最多 !M! 张 *魔力 获得等量 [E] ，将1张 *魔力 放入手中。"
   },
   "FrierenMod:Snuggle1": {
     "NAME": "选项卡1",

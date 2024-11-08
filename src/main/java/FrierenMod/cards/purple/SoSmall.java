@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SoSmall extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SoSmall.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.RARE, CardTarget.ENEMY);
 
     public SoSmall() {
         super(info);
@@ -20,7 +20,7 @@ public class SoSmall extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.block = baseBlock = 8;
         this.exhaust = true;
     }

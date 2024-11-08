@@ -40,7 +40,8 @@ public class Snuggle extends AbstractBaseCard {
         ActionHelper.addToBotAbstract(() -> {
             Snuggle1 option1 = new Snuggle1();
             Snuggle2 option2 = new Snuggle2();
-            option1.magicNumber = option1.baseMagicNumber = option2.baseMagicNumber = option2.magicNumber = this.magicNumber;
+            option1.magicNumber = option1.baseMagicNumber = this.magicNumber;
+            option2.baseMagicNumber = option2.magicNumber = 1;
             ArrayList<AbstractCard> options = new ArrayList<>();
             options.add(option1);
             options.add(option2);
