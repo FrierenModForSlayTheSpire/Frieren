@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class LieInWait extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(LieInWait.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.BASIC, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.BASIC, CardTarget.SELF);
 
     public LieInWait() {
         super(info);

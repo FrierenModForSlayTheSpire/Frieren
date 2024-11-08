@@ -27,7 +27,7 @@ public class Meditation extends AbstractBaseCard {
             this.upgradeName();
             this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
             this.initializeDescription();
-            if(!this.hasTag(Enum.SPEED))
+            if (!this.hasTag(Enum.SPEED))
                 this.tags.add(Enum.SPEED);
         }
     }
@@ -35,7 +35,7 @@ public class Meditation extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         ActionHelper.addToBotAbstract(() -> {
-            int effect = EnergyPanel.totalCount;
+            int effect = EnergyPanel.getCurrentEnergy();
             if (this.energyOnUse != -1)
                 effect = this.energyOnUse;
             if (p.hasRelic("Chemical X")) {
