@@ -915,7 +915,7 @@
   },
   "FrierenMod:AggrieveStrike": {
     "NAME": "委屈打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：将此牌返回手中。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：将此牌返回手中。 NL stslib:消耗性 !stslib:ex! 。"
   },
   "FrierenMod:Backstab": {
     "NAME": "背刺",
@@ -1171,7 +1171,7 @@
     "DESCRIPTION": "失去所有 frierenmod:专注 ，获得 !B! 点 格挡 ，结束你的回合。将一张 *治好了！ 放入抽牌堆。 NL 消耗 。"
   },
   "FrierenMod:GetWell": {
-    "NAME": "发烧了！",
+    "NAME": "治好了！",
     "DESCRIPTION": " 保留 。 NL 移除你所有的负面效果，恢复7点生命值。 NL 消耗 。"
   },
   "FrierenMod:SpellToMapADungeon": {

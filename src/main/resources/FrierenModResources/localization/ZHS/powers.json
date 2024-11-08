@@ -304,6 +304,12 @@
       "下 #b%d 张使用的牌获得 #y疾速 。"
     ]
   },
+  "FrierenMod:MysticEyePower": {
+    "NAME": "直视的魔眼",
+    "DESCRIPTIONS": [
+      "每当玩家攻击敌人时，玩家获得 #b%d 点 #y专注 。"
+    ]
+  },
   "FrierenMod:MasterAndApprenticePower": {
     "NAME": "师与徒",
     "DESCRIPTIONS": [
