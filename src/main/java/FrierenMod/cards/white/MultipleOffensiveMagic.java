@@ -8,6 +8,7 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.AttackDamageRandomEnemyAction;
+import com.megacrit.cardcrawl.actions.unique.LoseEnergyAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -59,7 +60,7 @@ public class MultipleOffensiveMagic extends AbstractBaseCard {
             this.addToBot(new AttackDamageRandomEnemyAction(this, AbstractGameAction.AttackEffect.LIGHTNING));
         }
         this.addToBot(new MakeManaInHandAction(magicNum));
-        EnergyPanel.useEnergy(this.energyOnUse);
+        this.addToBot(new LoseEnergyAction(this.energyOnUse));
     }
 
     public void onMoveToDiscard() {
