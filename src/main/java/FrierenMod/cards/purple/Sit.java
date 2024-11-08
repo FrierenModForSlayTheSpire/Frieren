@@ -54,7 +54,7 @@ public class Sit extends AbstractBaseCard {
         super.calculateCardDamage(mo);
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)
-            this.rawDescription += String.format(cardStrings.EXTENDED_DESCRIPTION[0], amount);
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 
@@ -63,7 +63,7 @@ public class Sit extends AbstractBaseCard {
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)
-            this.rawDescription += String.format(cardStrings.EXTENDED_DESCRIPTION[0], amount);
+            this.rawDescription += cardStrings.EXTENDED_DESCRIPTION[0] + amount + cardStrings.EXTENDED_DESCRIPTION[1];
         initializeDescription();
     }
 }
