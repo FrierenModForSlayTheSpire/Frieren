@@ -1067,8 +1067,8 @@
   },
   "FrierenMod:MasterHelpApprentice": {
     "NAME": "师徒协力",
-    "DESCRIPTION": "从3张 frierenmod:双色 牌中选择1张加入你的手牌。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "从3张 frierenmod:双色 牌中选择1张加入你的手牌。 这张牌在本回合耗能变为0。 NL 消耗 。"
+    "DESCRIPTION": "从3张 frierenmod:双色牌 中选择1张加入你的手牌。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "从3张 frierenmod:双色牌 中选择1张加入你的手牌。 这张牌在本回合耗能变为0。 NL 消耗 。"
   },
   "FrierenMod:MoodyGirl": {
     "NAME": "阴晴不定大姐姐",
@@ -1144,7 +1144,7 @@
   },
   "FrierenMod:Catwalk": {
     "NAME": "猫步",
-    "DESCRIPTION": "当前所有 frierenmod:融合 层数增加 !M! 。 NL frierenmod:融合 :获得2点 力量 。 NL 消耗 。"
+    "DESCRIPTION": "所有 frierenmod:融合 层数增加 !M! 。 NL frierenmod:融合 :获得2点 力量 。 NL 消耗 。"
   },
   "FrierenMod:NoMercy": {
     "NAME": "毫不留情",
@@ -1168,7 +1168,7 @@
   },
   "FrierenMod:GetSick": {
     "NAME": "发烧了！",
-    "DESCRIPTION": "失去所有 frierenmod:专注 ，获得 !B! 点 格挡 ，结束你的回合。 NL 将一张 *治好了！ 放入抽牌堆。 NL 消耗 。"
+    "DESCRIPTION": "失去所有 frierenmod:专注 ，获得 !B! 点 格挡 ，结束你的回合。将一张 *治好了！ 放入抽牌堆。 NL 消耗 。"
   },
   "FrierenMod:GetWell": {
     "NAME": "发烧了！",
@@ -1176,7 +1176,7 @@
   },
   "FrierenMod:SpellToMapADungeon": {
     "NAME": "绘制地图的魔法",
-    "DESCRIPTION": "若上一个地点是 *商店 ，获得 !M! 金币。 NL 若上一个地点是 *篝火 ，升级你牌组中的一张随机牌。 NL 虚无 。消耗 。"
+    "DESCRIPTION": "若上一个地点是 *商店 ，获得 !M! 金币。 NL 若上一个地点是 *篝火 ，升级你牌组中的一张随机牌。 NL 虚无 。 消耗 。"
   },
   "FrierenMod:MemoryOfChildhood": {
     "NAME": "童年的回忆",
