@@ -169,7 +169,7 @@
     "NAMES": [
       "专注"
     ],
-    "DESCRIPTION": " 打出非 #y魔力 牌后失去 #b%d 点该能力。"
+    "DESCRIPTION": " 打出非 #y魔力 牌后失去1点该能力。"
   },
   {
     "PROPER_NAME": "疾速",
@@ -183,7 +183,7 @@
     "NAMES": [
       "融合"
     ],
-    "DESCRIPTION": " 效果会额外附加到下一张获得的 #特化普攻魔法 上。"
+    "DESCRIPTION": " 效果会额外附加到下一张获得的 #y特化普攻魔法 上。"
   },
   {
     "PROPER_NAME": "奇袭X",

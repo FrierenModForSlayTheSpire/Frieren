@@ -22,7 +22,7 @@ public class ChargeUp extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 5;
+        this.damage = this.baseDamage = 6;
         this.tags.add(Enum.FUSION);
     }
 

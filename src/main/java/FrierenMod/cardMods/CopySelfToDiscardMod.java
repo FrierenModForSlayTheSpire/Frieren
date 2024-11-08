@@ -9,11 +9,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
-public class CopySelfToDiscardMod extends AbstractCardModifier {
+public class CopySelfToDiscardMod extends AbstractCardModifier implements SpecializedOffensiveMagicMod {
     public static final String ID = ModInformation.makeID(CopySelfToDiscardMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
-    private final int amount;
+    private int amount;
 
     public CopySelfToDiscardMod(int amount) {
         this.amount = amount;
@@ -41,4 +41,8 @@ public class CopySelfToDiscardMod extends AbstractCardModifier {
         return ID;
     }
 
+    @Override
+    public void updateAmt(int newAmt) {
+        this.amount = newAmt;
+    }
 }

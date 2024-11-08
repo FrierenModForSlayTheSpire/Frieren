@@ -241,7 +241,7 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "专注",
     "DESCRIPTIONS": [
-      " 打出非 #y魔力 牌后失去 #b1 点该能力。"
+      " 打出非 #y魔力 牌后失去1点该能力。"
     ]
   },
   "FrierenMod:DamageFusionPower": {
@@ -286,6 +286,12 @@
       "下一张获得的 #y特化普攻魔法 将附加： NL 获得 #b%d 点 #y力量 。"
     ]
   },
+  "FrierenMod:StrengthFusionPowerFusionPower": {
+    "NAME": "力量融合融合",
+    "DESCRIPTIONS": [
+      "下一张获得的 #y特化普攻魔法 将附加： NL #y融合 ：获得 #b%d 点 #y力量 。"
+    ]
+  },
   "FrierenMod:FightPower": {
     "NAME": "加把劲骑士",
     "DESCRIPTIONS": [
@@ -296,6 +302,12 @@
     "NAME": "疾速飞驰",
     "DESCRIPTIONS": [
       "下 #b%d 张使用的牌获得 #y疾速 。"
+    ]
+  },
+  "FrierenMod:MysticEyePower": {
+    "NAME": "直视的魔眼",
+    "DESCRIPTIONS": [
+      "每当玩家攻击敌人时，玩家获得 #b%d 点 #y专注 。"
     ]
   },
   "FrierenMod:MasterAndApprenticePower": {

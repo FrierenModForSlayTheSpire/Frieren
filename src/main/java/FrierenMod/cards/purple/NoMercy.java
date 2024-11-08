@@ -38,7 +38,7 @@ public class NoMercy extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int amount = 2 * (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
+        int amount = 1 + (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
         for (int i = 0; i < amount; i++) {
             this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
@@ -50,7 +50,7 @@ public class NoMercy extends AbstractBaseCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        int amount = 2 * (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
+        int amount = 1 + (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
         super.calculateCardDamage(mo);
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)
@@ -59,7 +59,7 @@ public class NoMercy extends AbstractBaseCard {
     }
 
     public void applyPowers() {
-        int amount = 2 * (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
+        int amount = 1 + (int) AbstractDungeon.player.exhaustPile.group.stream().filter(card -> card.cardID.equals(SpecializedOffensiveMagic.ID)).count();
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)

@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SaturationOffensiveMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SaturationOffensiveMagic.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
     public SaturationOffensiveMagic() {
         super(info);

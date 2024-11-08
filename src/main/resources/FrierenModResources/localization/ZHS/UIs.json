@@ -170,6 +170,12 @@
       "点 力量 。"
     ]
   },
+  "FrierenMod:StrengthFusionMod": {
+    "TEXT": [
+      " frierenmod:融合 ：获得",
+      "点 力量 。"
+    ]
+  },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
       " frierenmod:解析 %d：",

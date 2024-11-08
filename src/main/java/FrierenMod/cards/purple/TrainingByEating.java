@@ -6,10 +6,12 @@ import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.ConcentrationPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 
 public class TrainingByEating extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(TrainingByEating.class.getSimpleName());
@@ -47,6 +49,7 @@ public class TrainingByEating extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, CombatHelper.getConcentrationPowerAmt())));
         this.isRaidTriggered = CombatHelper.canRaidTakeEffect(this.raidNumber);
         if (!isRaidTriggered) {
             this.addToBot(new RemoveSpecificPowerAction(p, p, ConcentrationPower.POWER_ID));

@@ -11,11 +11,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 
-public class StrengthMod extends AbstractCardModifier {
+public class StrengthMod extends AbstractCardModifier implements SpecializedOffensiveMagicMod{
     public static final String ID = ModInformation.makeID(StrengthMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
-    private final int amount;
+    private int amount;
 
     public StrengthMod(int amount) {
         this.amount = amount;
@@ -40,4 +40,8 @@ public class StrengthMod extends AbstractCardModifier {
         return ID;
     }
 
+    @Override
+    public void updateAmt(int newAmt) {
+        this.amount = newAmt;
+    }
 }
