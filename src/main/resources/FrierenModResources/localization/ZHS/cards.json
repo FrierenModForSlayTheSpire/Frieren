@@ -928,7 +928,7 @@
   },
   "FrierenMod:Swoop": {
     "NAME": "以头抢地",
-    "DESCRIPTION": " frierenmod:融合 ：造成 !D! 点伤害，获得 [E] 。"
+    "DESCRIPTION": " frierenmod:融合 ：造成 !D! 点伤害，抽 !M! 张牌。"
   },
   "FrierenMod:SeeThroughClothSpell": {
     "NAME": "把衣服变透明的魔法",
