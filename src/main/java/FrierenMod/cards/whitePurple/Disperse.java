@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 public class Disperse extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Disperse.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.COMMON);
-    public static final CardInfo info2 = new CardInfo(ID, 1, CardEnums.FRIEREN_CARD, CardRarity.COMMON, true);
+    public static final CardInfo info2 = new CardInfo(ID, 1, CardEnums.FERN_CARD, CardRarity.COMMON, true);
 
     public Disperse() {
         super(info);

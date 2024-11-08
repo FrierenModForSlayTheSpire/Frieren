@@ -16,7 +16,7 @@ import com.megacrit.cardcrawl.powers.EquilibriumPower;
 public class BabySleeping extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(BabySleeping.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.SELF);
-    public static final CardInfo info2 = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FRIEREN_CARD, CardRarity.COMMON, CardTarget.SELF, true);
+    public static final CardInfo info2 = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF, true);
 
     public BabySleeping() {
         super(info);
