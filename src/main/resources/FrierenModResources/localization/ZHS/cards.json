@@ -1024,7 +1024,7 @@
   },
   "FrierenMod:LittlePunch": {
     "NAME": "小拳拳",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害和1层 易伤 X次。每造成一次未被 格挡 的伤害，获得 !B! 点 格挡 。"
+    "DESCRIPTION": "对所有敌人造成 !D! 点伤害并给予1层 易伤 X次。每造成一次未被 格挡 的伤害，获得 !B! 点 格挡 。"
   },
   "FrierenMod:SoSmall": {
     "NAME": "好小",
