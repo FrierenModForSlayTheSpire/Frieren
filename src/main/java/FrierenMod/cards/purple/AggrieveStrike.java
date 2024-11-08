@@ -39,6 +39,7 @@ public class AggrieveStrike extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        this.returnToHand=false;
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.isRaidTriggered = CombatHelper.triggerRaid(this.raidNumber, () -> this.returnToHand = true);
     }
