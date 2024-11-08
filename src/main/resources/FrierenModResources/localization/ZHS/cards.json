@@ -1148,7 +1148,7 @@
   },
   "FrierenMod:NoMercy": {
     "NAME": "毫不留情",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 消耗堆中每有一张 *特化普攻魔法 ，就重复2次。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 消耗堆中每有一张 *特化普攻魔法 ，就重复一次。",
     "EXTENDED_DESCRIPTION": [
       " NL （共造成 #b%d 次）"
     ]
