@@ -42,6 +42,7 @@ public class Meditation extends AbstractBaseCard {
                 effect += 2;
                 p.getRelic("Chemical X").flash();
             }
+            EnergyPanel.useEnergy(this.energyOnUse);
             if (effect > 0) {
                 for (int i = 0; i < effect; i++) {
                     this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(2)));
