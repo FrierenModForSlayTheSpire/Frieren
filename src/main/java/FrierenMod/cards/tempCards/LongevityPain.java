@@ -4,6 +4,7 @@ import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.relics.HimmelGravestone;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -22,6 +23,7 @@ public class LongevityPain extends AbstractBaseCard {
         super(info);
         this.times = 10;
         this.cardsToPreview = new Fatalism();
+        SoulboundField.soulbound.set(this, true);
     }
 
     @Override
