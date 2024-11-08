@@ -43,10 +43,10 @@ public class SpellToMapADungeon extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!CardCrawlGame.metricData.path_taken.isEmpty()) {
-            if (CardCrawlGame.metricData.path_taken.get(CardCrawlGame.metricData.path_taken.size() - 1).equals("$")) {
+        if (CardCrawlGame.metricData.path_taken.size() > 1) {
+            if (CardCrawlGame.metricData.path_taken.get(CardCrawlGame.metricData.path_taken.size() - 2).equals("$")) {
                 this.addToBot(new GainGoldAction(this.magicNumber));
-            } else if (CardCrawlGame.metricData.path_taken.get(CardCrawlGame.metricData.path_taken.size() - 1).equals("R")) {
+            } else if (CardCrawlGame.metricData.path_taken.get(CardCrawlGame.metricData.path_taken.size() - 2).equals("R")) {
                 ActionHelper.addToBotAbstract(() -> {
                     AbstractCard theCard = null;
                     ArrayList<AbstractCard> possibleCards = new ArrayList<>();
