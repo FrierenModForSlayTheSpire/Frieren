@@ -69,10 +69,12 @@ public class FernPanel extends AbstractPanel {
 
     public void updateMP() {
         int concentration = CombatHelper.getConcentrationPowerAmt();
-        boolean isDecreased = CombatHelper.getConcentrationPowerAmt() - this.concentrationCounter < 0;
-        if (isDecreased) {
+        boolean isIncreased = CombatHelper.getConcentrationPowerAmt() - this.concentrationCounter > 0;
+        if (isIncreased) {
             this.FontScale = 2.0F;
             this.VFXTimer = 1.0F;
+        }else {
+            this.FontScale = 1.0F;
         }
         this.concentrationCounter = concentration;
     }
