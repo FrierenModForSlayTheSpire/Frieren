@@ -52,7 +52,7 @@ public class HighDensityMana extends AbstractBaseCard {
 
     @Override
     public void triggerOnExhaust() {
-        this.addToBot(new GainEnergyAction(1));
+        this.addToBot(new GainEnergyAction(this.magicNumber));
     }
 
     @Override
