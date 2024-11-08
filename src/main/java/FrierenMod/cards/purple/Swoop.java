@@ -40,8 +40,8 @@ public class Swoop extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(this.damage)));
         this.addToBot(new DrawCardAction(p, this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(this.damage)));
         this.addToBot(new ApplyPowerAction(p, p, new DrawCardFusionPower(this.magicNumber)));
     }
 }

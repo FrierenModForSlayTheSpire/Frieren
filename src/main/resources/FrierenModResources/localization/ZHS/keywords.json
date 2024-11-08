@@ -169,7 +169,7 @@
     "NAMES": [
       "专注"
     ],
-    "DESCRIPTION": " 打出非 #y魔力 牌后失去 #b%d 点该能力。"
+    "DESCRIPTION": " 打出非 #y魔力 牌后失去1点该能力。"
   },
   {
     "PROPER_NAME": "疾速",

@@ -1045,7 +1045,7 @@
   },
   "FrierenMod:OneInHundred": {
     "NAME": "百里挑一",
-    "DESCRIPTION": "将2张本回合耗能为0的随机 frierenmod:融合 牌放入手中。消耗堆中每有一张 *特化普攻魔法 ，就重复1次。 NL 消耗 。"
+    "DESCRIPTION": "将 !M! 张随机 frierenmod:融合 牌放入手中。 NL 如果本场战斗中打出过 *特化普攻魔法 ，这些牌在本回合耗能为0。 NL 消耗 。"
   },
   "FrierenMod:PureMind": {
     "NAME": "明镜止水之心",
@@ -1144,7 +1144,7 @@
   },
   "FrierenMod:Catwalk": {
     "NAME": "猫步",
-    "DESCRIPTION": "所有 frierenmod:融合 层数增加 !M! 。 NL frierenmod:融合 :获得2点 力量 。 NL 消耗 。"
+    "DESCRIPTION": " frierenmod:融合 : frierenmod:融合 :获得2点 力量 。"
   },
   "FrierenMod:NoMercy": {
     "NAME": "毫不留情",
