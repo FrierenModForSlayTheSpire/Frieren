@@ -31,7 +31,7 @@ public class GamblePower extends AbstractBasePower {
             }
             if (roll == 6) {
                 this.flash();
-                this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(this.amount, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
+                this.addToBot(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(10, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE, true));
             }
         });
     }

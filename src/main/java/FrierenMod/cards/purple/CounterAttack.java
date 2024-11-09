@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class CounterAttack extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(CounterAttack.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 
     public CounterAttack() {
         super(info);

@@ -40,7 +40,7 @@ public class Reviewing extends AbstractBaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        int amount = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int amount = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> !card.hasTag(Enum.MANA)).count();
         this.addToBot(new GainBlockAction(p, p, this.block));
         this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(amount)));
     }
@@ -51,7 +51,7 @@ public class Reviewing extends AbstractBaseCard {
     }
 
     public void calculateCardDamage(AbstractMonster mo) {
-        int amount = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int amount = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> !card.hasTag(Enum.MANA)).count();
         super.calculateCardDamage(mo);
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)
@@ -60,7 +60,7 @@ public class Reviewing extends AbstractBaseCard {
     }
 
     public void applyPowers() {
-        int amount = AbstractDungeon.actionManager.cardsPlayedThisTurn.size();
+        int amount = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> !card.hasTag(Enum.MANA)).count();
         super.applyPowers();
         this.rawDescription = cardStrings.DESCRIPTION;
         if (amount > 0)

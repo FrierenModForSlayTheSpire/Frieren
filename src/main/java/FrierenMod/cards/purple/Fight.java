@@ -1,9 +1,9 @@
 package FrierenMod.cards.purple;
 
+import FrierenMod.actions.GainFernPanelEnergyAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.enums.CardEnums;
-import FrierenMod.powers.FightPower;
 import FrierenMod.powers.FusionPower.DamageFusionPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -25,6 +25,7 @@ public class Fight extends AbstractBaseCard {
     @Override
     public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 6;
+        this.magicNumber = this.baseMagicNumber = 1;
         this.tags.add(Enum.FUSION);
         this.cardsToPreview = new SpecializedOffensiveMagic();
     }
@@ -33,13 +34,13 @@ public class Fight extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBaseCost(0);
+            this.upgradeMagicNumber(1);
         }
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new FightPower(1)));
+        this.addToBot(new GainFernPanelEnergyAction(this.magicNumber));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(this.damage)));
     }

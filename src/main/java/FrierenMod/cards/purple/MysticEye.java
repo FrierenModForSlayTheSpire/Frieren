@@ -5,6 +5,7 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.powers.MysticEyePower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
+import basemod.AutoAdd;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -12,6 +13,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
+@AutoAdd.Ignore
 public class MysticEye extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(MysticEye.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);

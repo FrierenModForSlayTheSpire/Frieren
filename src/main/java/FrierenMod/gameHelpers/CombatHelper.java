@@ -260,7 +260,9 @@ public class CombatHelper {
     }
 
     public static boolean canRaidTakeEffect(int raidNumber) {
-        if (AbstractDungeon.player.hasPower(SocialDancingPower.POWER_ID))
+        if (Config.IN_DEV)
+            return true;
+        if (AbstractDungeon.player.hasPower(SocialDancingPower.POWER_ID) && getConcentrationPowerAmt() > 0)
             return raidNumber == getConcentrationPowerAmt() || raidNumber == getConcentrationPowerAmt() + 1 || raidNumber == Math.max(0, getConcentrationPowerAmt() - 1);
         return raidNumber == getConcentrationPowerAmt();
     }
@@ -296,9 +298,7 @@ public class CombatHelper {
         return true;
     }
 
-    public static AbstractCard getPreviewSpecializedOffensiveMagic(int baseDamage, boolean allowZero) {
-        if (baseDamage <= 0 && !allowZero)
-            return null;
+    public static AbstractCard getPreviewSpecializedOffensiveMagic(int baseDamage) {
         SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
         magic.baseDamage = baseDamage;
         CardModifierManager.addModifier(magic, new DamageMod(baseDamage));

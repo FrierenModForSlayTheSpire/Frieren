@@ -60,7 +60,7 @@ public class Fern extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for (int x = 0; x < 3; x++) {
+        for (int x = 0; x < 4; x++) {
             retVal.add(Strike_Fern.ID);
         }
         for (int x = 0; x < 4; x++) {
@@ -68,7 +68,6 @@ public class Fern extends CustomPlayer {
         }
         retVal.add(CriticalHit.ID);
         retVal.add(LieInWait.ID);
-        retVal.add(ChargeUp.ID);
         return retVal;
     }
 

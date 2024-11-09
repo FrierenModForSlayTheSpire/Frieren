@@ -3,22 +3,24 @@ package FrierenMod.cards.purple;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
+import FrierenMod.powers.ConcentrationPower;
+import FrierenMod.powers.FusionPower.ConcentrationFusionPower;
+import FrierenMod.powers.FusionPower.DamageFusionPower;
 import FrierenMod.powers.FusionPower.DrawCardFusionPower;
-import FrierenMod.powers.FusionPower.EnergyFusionPower;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.GainEnergyAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FusionRaid extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FusionRaid.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
 
     public FusionRaid() {
         super(info);
@@ -26,9 +28,9 @@ public class FusionRaid extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 20;
+        this.damage = this.baseDamage = 10;
         this.raidNumber = this.baseRaidNumber = 2;
-        this.isMultiDamage = true;
+        this.magicNumber = this.baseMagicNumber = 4;
         this.tags.add(Enum.RAID);
         this.tags.add(Enum.FUSION);
     }
@@ -37,7 +39,8 @@ public class FusionRaid extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(5);
+            this.upgradeDamage(3);
+            this.upgradeMagicNumber(1);
         }
     }
 
@@ -53,13 +56,16 @@ public class FusionRaid extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         boolean triggered1 = CombatHelper.triggerRaid(1, () -> {
+            this.addToBot(new ApplyPowerAction(p, p, new ConcentrationPower(this.magicNumber)));
+            this.addToBot(new ApplyPowerAction(p, p, new ConcentrationFusionPower(this.magicNumber)));
+        });
+        boolean triggered2 = CombatHelper.triggerRaid(2, true, () -> {
+            this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+            this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(this.damage)));
+        });
+        boolean triggered3 = CombatHelper.triggerRaid(3, () -> {
             this.addToBot(new DrawCardAction(2));
             this.addToBot(new ApplyPowerAction(p, p, new DrawCardFusionPower(2)));
-        });
-        boolean triggered2 = CombatHelper.triggerRaid(2, true, () -> this.addToBot(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.SLASH_DIAGONAL)));
-        boolean triggered3 = CombatHelper.triggerRaid(3, () -> {
-            this.addToBot(new GainEnergyAction(2));
-            this.addToBot(new ApplyPowerAction(p, p, new EnergyFusionPower(2)));
         });
         this.isRaidTriggered = triggered1 || triggered2 || triggered3;
     }

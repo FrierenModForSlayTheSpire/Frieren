@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SeriousSeriesSpell extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SeriousSeriesSpell.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 
     public SeriousSeriesSpell() {
         super(info);
@@ -22,8 +22,8 @@ public class SeriousSeriesSpell extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 18;
-        this.raidNumber = this.baseRaidNumber = 3;
+        this.damage = this.baseDamage = 9;
+        this.raidNumber = this.baseRaidNumber = 2;
         this.tags.add(Enum.RAID);
     }
 
@@ -31,7 +31,7 @@ public class SeriousSeriesSpell extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeRaidNumber(-1);
+            this.upgradeDamage(3);
         }
     }
 

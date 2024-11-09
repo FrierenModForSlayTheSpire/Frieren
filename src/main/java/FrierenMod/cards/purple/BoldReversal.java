@@ -11,7 +11,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class BoldReversal extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(BoldReversal.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.POWER, CardEnums.FERN_CARD, CardRarity.UNCOMMON);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.POWER, CardEnums.FERN_CARD, CardRarity.UNCOMMON);
 
     public BoldReversal() {
         super(info);

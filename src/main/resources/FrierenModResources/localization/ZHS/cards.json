@@ -899,15 +899,15 @@
   },
   "FrierenMod:LieInWait": {
     "NAME": "伺机待发",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 !B! 点 格挡 和2点 frierenmod:专注 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 将 !M! 张 *魔力 放入手中 。"
   },
   "FrierenMod:CriticalHit": {
     "NAME": "会心一击",
-    "DESCRIPTION": "造成 !D! 点伤害。 frierenmod:奇袭 !R! ：造成 !D! 点伤害。"
+    "DESCRIPTION": " frierenmod:奇袭 !R! ：造成 !D! 点伤害 。 NL frierenmod:融合 ：造成 !D! 点伤害。"
   },
   "FrierenMod:ChargeUp": {
     "NAME": "普通蓄力",
-    "DESCRIPTION": " frierenmod:融合 ：造成 !D! 点伤害。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在下一回合获得 !M! 点 frierenmod:专注 。"
   },
   "FrierenMod:SpecializedOffensiveMagic": {
     "NAME": "特化普攻魔法",
@@ -915,7 +915,7 @@
   },
   "FrierenMod:AggrieveStrike": {
     "NAME": "委屈打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：将此牌返回手中。 NL stslib:消耗性 !stslib:ex! 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：将此牌返回手中。"
   },
   "FrierenMod:Backstab": {
     "NAME": "背刺",
@@ -947,11 +947,11 @@
   },
   "FrierenMod:Fight": {
     "NAME": "加把劲骑士",
-    "DESCRIPTION": "在本回合中下一张获得的 *特化攻击魔法 耗能变为0。 NL frierenmod:融合 ：造成 !D! 点伤害。"
+    "DESCRIPTION": "获得 !M! 点 frierenmod:法杖充能 。 NL frierenmod:融合 ：造成 !D! 点伤害。"
   },
   "FrierenMod:HuddleForWarmth": {
     "NAME": "抱团取暖",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL frierenmod:奇袭 !R! ：你的下一回合开始时 格挡 不会消失。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL frierenmod:奇袭 !R! ：你的下一回合开始时 格挡 不会消失。 NL 消耗 。"
   },
   "FrierenMod:SkimReading": {
     "NAME": "快速检阅",
@@ -963,7 +963,7 @@
   },
   "FrierenMod:EmergencyDefense": {
     "NAME": "应急防御",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 !B! 点 格挡 。 NL 消耗 。 NL frierenmod:奇袭 !R! :改为不 消耗 。"
+    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 !B! 点 格挡 。 NL frierenmod:奇袭 !R! :获得 [E] 。 NL 消耗 。"
   },
   "FrierenMod:CounterAttack": {
     "NAME": "防御反击",
@@ -996,7 +996,7 @@
   },
   "FrierenMod:RaidRace": {
     "NAME": "竞速赛",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 你在这个回合内每打出一张 *疾速 牌，耗能就减少1 [E] 。 NL 造成 !D! 点伤害。"
+    "DESCRIPTION": " frierenmod:疾速 。 NL 你在这个回合内每触发1次 frierenmod:奇袭 ，耗能就减少1 [E] 。 NL 造成 !D! 点伤害。"
   },
   "FrierenMod:SeriousSeriesSpell": {
     "NAME": "认真系列，认真一击",
@@ -1004,7 +1004,7 @@
   },
   "FrierenMod:Surveillance": {
     "NAME": "观察敌情",
-    "DESCRIPTION": "抽1张牌。 NL  frierenmod:奇袭 !R! ：将本牌放入抽牌堆。 NL frierenmod:融合 ：造成 !D! 点伤害。"
+    "DESCRIPTION": "抽1张牌。 NL frierenmod:奇袭 !R! ：获得1点 frierenmod:法杖充能 。 NL frierenmod:融合 ：造成 !D! 点伤害。"
   },
   "FrierenMod:SorryICant": {
     "NAME": "对不起，做不到",
@@ -1016,7 +1016,7 @@
   },
   "FrierenMod:FusionRaid": {
     "NAME": "奇袭的三击",
-    "DESCRIPTION": " frierenmod:奇袭 1： frierenmod:融合 ：抽2张牌。 NL frierenmod:奇袭 2：对所有敌人造成 !D! 点伤害。 NL frierenmod:奇袭 3： frierenmod:融合 ：获得 [E] [E] 。"
+    "DESCRIPTION": "frierenmod:奇袭 1： frierenmod:融合 ：获得 !M! 点 frierenmod:专注 。 NL  frierenmod:奇袭 2： frierenmod:融合 ：造成 !D! 点伤害。 NL frierenmod:奇袭 3： frierenmod:融合 ：抽2张牌。"
   },
   "FrierenMod:SaturationOffensiveMagic": {
     "NAME": "饱和攻击魔法",
@@ -1032,12 +1032,11 @@
   },
   "FrierenMod:Meditation": {
     "NAME": "冥想",
-    "DESCRIPTION": "获得2X点 frierenmod:专注 和X [E] 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:疾速 。 NL 获得2X点 frierenmod:专注 和X [E] 。"
+    "DESCRIPTION": " 不能被打出 。 NL 当你抽到这张牌时，获得3点 frierenmod:专注 并抽1张牌，然后 消耗 。"
   },
   "FrierenMod:InjuryTime": {
     "NAME": "伤停补时",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 [E] [E] 和 !B! 点 格挡 。 NL 消耗 。"
+    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 [E] [E] 和 !M! 点 专注 。 NL 消耗 。"
   },
   "FrierenMod:StudyTime": {
     "NAME": "请莲大学习",
@@ -1045,7 +1044,7 @@
   },
   "FrierenMod:OneInHundred": {
     "NAME": "百里挑一",
-    "DESCRIPTION": "将 !M! 张随机 frierenmod:融合 牌放入手中。 NL 如果本场战斗中打出过 *特化普攻魔法 ，这些牌在本回合耗能为0。 NL 消耗 。"
+    "DESCRIPTION": "将 !M! 张随机 frierenmod:融合 牌放入手中。如果你没有任何 frierenmod:融合 ，这些牌在本回合耗能为0。 NL 消耗 。"
   },
   "FrierenMod:PureMind": {
     "NAME": "明镜止水之心",
@@ -1089,8 +1088,8 @@
   },
   "FrierenMod:Reviewing": {
     "NAME": "复盘",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合中你每打出过1张牌，就获得1点 frierenmod:专注 。",
-    "UPGRADE_DESCRIPTION": " frierenmod:疾速 。 NL 获得 !B! 点 格挡 。 NL 本回合中你每打出过1张牌，就获得1点 frierenmod:专注 。",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 本回合中你每打出过1张非 *魔力 牌，就获得1点 frierenmod:专注 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:疾速 。 NL 获得 !B! 点 格挡 。 NL 本回合中你每打出过1张非 *魔力 牌，就获得1点 frierenmod:专注 。",
     "EXTENDED_DESCRIPTION": [
       " NL （获得 %d 点专注）"
     ]
@@ -1109,7 +1108,7 @@
   },
   "FrierenMod:WithNoStop": {
     "NAME": "疾速飞驰",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 下3张使用的牌获得 *疾速 。"
+    "DESCRIPTION": " frierenmod:疾速 。 NL 下3张牌打出后获得2点 frierenmod:专注 。"
   },
   "FrierenMod:MasterAndApprentice": {
     "NAME": "师与徒",
@@ -1137,14 +1136,12 @@
   },
   "FrierenMod:Sit": {
     "NAME": "神坐",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 每有 !M! 点 frierenmod:专注 ,重复一次。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （共造成 %d 次）"
-    ]
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 斩杀 时，永久获得 !M! 点最大 frierenmod:法杖充能 。 NL stslib:即逝 。"
   },
   "FrierenMod:Catwalk": {
     "NAME": "猫步",
-    "DESCRIPTION": " frierenmod:融合 : frierenmod:融合 :获得2点 力量 。"
+    "DESCRIPTION": " frierenmod:融合 : frierenmod:融合 :获得 !M! 点 力量 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:融合 : frierenmod:融合 :获得 !M! 点 力量 。"
   },
   "FrierenMod:NoMercy": {
     "NAME": "毫不留情",
@@ -1159,7 +1156,7 @@
   },
   "FrierenMod:ContinuousOffensiveMagic": {
     "NAME": "连环普攻魔法",
-    "DESCRIPTION": "获得一张耗能为0的特化普攻魔法，伤害值等于 frierenmod:专注 数的2倍。 NL frierenmod:奇袭 !R! ：再获取1张复制。"
+    "DESCRIPTION": "获得一张伤害值为 !M! 的 *特化普攻魔法 。 NL frierenmod:奇袭 !R! ：再获得1张复制。"
   },
   "FrierenMod:Metamorphose": {
     "NAME": "化蝶",
@@ -1180,11 +1177,12 @@
   },
   "FrierenMod:MemoryOfChildhood": {
     "NAME": "童年的回忆",
-    "DESCRIPTION": "再次打出消耗堆中所有 *特化普攻魔法 的复制，目标随机而定。 NL 消耗 。"
+    "DESCRIPTION": "再次打出消耗堆中所有 *特化普攻魔法 的复制，目标随机而定。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " 保留 。 NL 再次打出消耗堆中所有 *特化普攻魔法 的复制，目标随机而定。 NL 消耗 。"
   },
   "FrierenMod:SocialDancing": {
     "NAME": "交际舞",
-    "DESCRIPTION": " frierenmod:奇袭 X的判定条件改为X-1、X 、X+1均可触发。"
+    "DESCRIPTION": "当你拥有 frierenmod:专注 时， frierenmod:奇袭 X的判定条件改为X-1、X 、X+1均可触发。"
   },
   "FrierenMod:Confidence": {
     "NAME": "胸有成竹",

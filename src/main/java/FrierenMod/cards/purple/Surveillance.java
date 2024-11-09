@@ -1,5 +1,6 @@
 package FrierenMod.cards.purple;
 
+import FrierenMod.actions.GainFernPanelEnergyAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
@@ -39,15 +40,9 @@ public class Surveillance extends AbstractBaseCard {
     }
 
     @Override
-    public void applyPowers() {
-        super.applyPowers();
-        this.shuffleBackIntoDrawPile = false;
-    }
-
-    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DrawCardAction(1));
-        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> this.shuffleBackIntoDrawPile = true);
+        this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> this.addToBot(new GainFernPanelEnergyAction(1)));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         this.addToBot(new ApplyPowerAction(p, p, new DamageFusionPower(this.damage)));
     }

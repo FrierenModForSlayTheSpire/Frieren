@@ -30,7 +30,8 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.raidNumber = this.baseRaidNumber = 5;
+        this.raidNumber = this.baseRaidNumber = 2;
+        this.magicNumber = this.baseMagicNumber = 10;
         this.tags.add(Enum.RAID);
     }
 
@@ -38,21 +39,21 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeRaidNumber(-1);
+            this.upgradeMagicNumber(5);
         }
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.cardsToPreview = CombatHelper.getPreviewSpecializedOffensiveMagic(CombatHelper.getConcentrationPowerAmt() * 2);
+        this.cardsToPreview = CombatHelper.getPreviewSpecializedOffensiveMagic(this.magicNumber);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
         ActionHelper.addToBotAbstract(() -> {
-            int baseDamage = CombatHelper.getConcentrationPowerAmt() * 2;
+            int baseDamage = this.magicNumber;
             magic.baseDamage = baseDamage;
             CardModifierManager.addModifier(magic, new DamageMod(baseDamage));
             for (AbstractPower po : AbstractDungeon.player.powers) {

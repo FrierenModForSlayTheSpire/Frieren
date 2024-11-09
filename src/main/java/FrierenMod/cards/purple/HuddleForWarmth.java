@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.powers.BlurPower;
 
 public class HuddleForWarmth extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(HuddleForWarmth.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.SELF);
 
     public HuddleForWarmth() {
         super(info);
@@ -21,16 +21,17 @@ public class HuddleForWarmth extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.block = baseBlock = 15;
+        this.block = baseBlock = 12;
         this.raidNumber = baseRaidNumber = 2;
         this.tags.add(Enum.RAID);
+        this.exhaust = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(4);
+            this.upgradeBlock(6);
         }
     }
 

@@ -301,7 +301,7 @@
   "FrierenMod:WithNoStopPower": {
     "NAME": "疾速飞驰",
     "DESCRIPTIONS": [
-      "下 #b%d 张使用的牌获得 #y疾速 。"
+      "下 #b%d 张牌打出后获得两点专注。"
     ]
   },
   "FrierenMod:MysticEyePower": {

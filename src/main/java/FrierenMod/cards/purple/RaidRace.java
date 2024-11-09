@@ -2,6 +2,7 @@ package FrierenMod.cards.purple;
 
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
+import FrierenMod.patches.fields.GameActionManagerField;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -38,15 +39,13 @@ public class RaidRace extends AbstractBaseCard {
 
     public void triggerWhenDrawn() {
         super.triggerWhenDrawn();
-        int speedPlayed = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> card.hasTag(Enum.SPEED)).count();
-        setCostForTurn(this.cost - speedPlayed);
+        setCostForTurn(this.cost - GameActionManagerField.getRaidTriggeredThisTurn());
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        int speedPlayed = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> card.hasTag(Enum.SPEED)).count();
-        setCostForTurn(this.cost - speedPlayed);
+        setCostForTurn(this.cost - GameActionManagerField.getRaidTriggeredThisTurn());
     }
 
     public void atTurnStart() {
@@ -63,8 +62,7 @@ public class RaidRace extends AbstractBaseCard {
         AbstractCard tmp = new RaidRace();
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null &&
                 (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT) {
-            int speedPlayed = (int) AbstractDungeon.actionManager.cardsPlayedThisTurn.stream().filter(card -> card.hasTag(Enum.SPEED)).count();
-            setCostForTurn(this.cost - speedPlayed);
+            setCostForTurn(this.cost - GameActionManagerField.getRaidTriggeredThisTurn());
         }
         return tmp;
     }

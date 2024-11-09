@@ -14,7 +14,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class SleepingBeauty extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SleepingBeauty.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.RARE, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.RARE, CardTarget.SELF);
 
     public SleepingBeauty() {
         super(info);

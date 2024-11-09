@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FernFixFrieren extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FernFixFrieren.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.COMMON, CardTarget.ENEMY);
 
     public FernFixFrieren() {
         super(info);
@@ -21,8 +21,8 @@ public class FernFixFrieren extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 7;
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.damage = this.baseDamage = 3;
+        this.magicNumber = this.baseMagicNumber = 5;
     }
 
     @Override

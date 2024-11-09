@@ -5,7 +5,6 @@ import FrierenMod.enums.CardEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
-import com.evacipated.cardcrawl.mod.stslib.variables.ExhaustiveVariable;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,8 +23,7 @@ public class AggrieveStrike extends AbstractBaseCard {
     @Override
     public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 5;
-        this.raidNumber = this.baseRaidNumber = 2;
-        ExhaustiveVariable.setBaseValue(this, 6);
+        this.raidNumber = this.baseRaidNumber = 1;
         this.tags.add(Enum.RAID);
     }
 
