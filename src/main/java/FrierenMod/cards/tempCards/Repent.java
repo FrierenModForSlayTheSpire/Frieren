@@ -5,6 +5,7 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.BetterDiscardPileToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Repent extends AbstractBaseCard {
@@ -24,6 +25,9 @@ public class Repent extends AbstractBaseCard {
         }
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new BetterDiscardPileToHandAction(this.magicNumber,0));
-    }
+        if (AbstractDungeon.player.discardPile.size() != 0) {
+            if(AbstractDungeon.player.discardPile.size() ==1) this.addToBot(new BetterDiscardPileToHandAction(1,0));
+            this.addToBot(new BetterDiscardPileToHandAction(this.magicNumber,0));
+
+        }    }
 }
