@@ -1,5 +1,6 @@
 package FrierenMod.actions;
 
+import FrierenMod.cards.AbstractBaseCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.helpers.GetAllInBattleInstances;
@@ -17,9 +18,11 @@ public class ModifyRaidNumberAction extends AbstractGameAction {
 
     public void update() {
         for (AbstractCard c : GetAllInBattleInstances.get(uuid)) {
-            c.baseMagicNumber += this.amount;
-            if (c.baseMagicNumber < 0) {
-                c.baseMagicNumber = 0;
+            if (c instanceof AbstractBaseCard) {
+                ((AbstractBaseCard) c).baseRaidNumber += this.amount;
+                if (((AbstractBaseCard) c).baseRaidNumber < 0)
+                    ((AbstractBaseCard) c).baseRaidNumber = 0;
+                ((AbstractBaseCard) c).raidNumber = ((AbstractBaseCard) c).baseRaidNumber;
             }
         }
         this.isDone = true;

@@ -73,7 +73,7 @@ public class FernPanel extends AbstractPanel {
         if (isIncreased) {
             this.FontScale = 2.0F;
             this.VFXTimer = 1.0F;
-        }else {
+        } else {
             this.FontScale = 1.0F;
         }
         this.concentrationCounter = concentration;
@@ -106,6 +106,10 @@ public class FernPanel extends AbstractPanel {
         if (this.TipHitBox.hovered) {
             if (InputHelper.justClickedRight) {
                 InputHelper.justClickedRight = false;
+                if (AbstractDungeon.actionManager.actions.stream().anyMatch(action -> action instanceof MakeSpecializedOffensiveMagicAction))
+                    return;
+                if (AbstractDungeon.actionManager.turnHasEnded)
+                    return;
                 if (!CombatHelper.isInCombat())
                     return;
                 if (CombatHelper.getConcentrationPowerAmt() == 0) {

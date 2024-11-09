@@ -7,7 +7,7 @@ import FrierenMod.utils.ModInformation;
 public class SpecializedOffensiveMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SpecializedOffensiveMagic.class.getSimpleName());
     public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
-    public String usedModifierText = "";
+    public String usedModifierText;
 
     public SpecializedOffensiveMagic() {
         super(info);
@@ -15,6 +15,7 @@ public class SpecializedOffensiveMagic extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
+        this.usedModifierText = "";
         this.baseDamage = this.damage = 0;
     }
 
@@ -24,11 +25,10 @@ public class SpecializedOffensiveMagic extends AbstractBaseCard {
     }
 
     @Override
-    public void applyPowers() {
-        if (!this.usedModifierText.isEmpty()) {
+    public void initializeDescription() {
+        if (this.usedModifierText != null && !this.usedModifierText.isEmpty()) {
             this.rawDescription = this.usedModifierText;
-            this.initializeDescription();
         }
-        super.applyPowers();
+        super.initializeDescription();
     }
 }
