@@ -6,7 +6,7 @@ import FrierenMod.utils.ModInformation;
 
 public class SpecializedOffensiveMagic extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(SpecializedOffensiveMagic.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
     public String usedModifierText;
 
     public SpecializedOffensiveMagic() {

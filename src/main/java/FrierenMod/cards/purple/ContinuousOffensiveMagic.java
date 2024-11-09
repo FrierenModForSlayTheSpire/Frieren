@@ -45,7 +45,7 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        this.cardsToPreview = CombatHelper.getPreviewSpecializedOffensiveMagic(CombatHelper.getConcentrationPowerAmt() * 2, true);
+        this.cardsToPreview = CombatHelper.getPreviewSpecializedOffensiveMagic(CombatHelper.getConcentrationPowerAmt() * 2);
     }
 
     @Override

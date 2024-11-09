@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.ui.buttons.EndTurnButton;
 import com.megacrit.cardcrawl.ui.panels.DrawPilePanel;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
+import com.megacrit.cardcrawl.vfx.PlayerTurnEffect;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 
@@ -21,6 +22,7 @@ public class PanelPatch {
     public static class PanelField {
         public static SpireField<FrierenMod.ui.panels.ManaPanel> ManaPanel = new SpireField<>(ManaPanel::new);
         public static SpireField<FrierenMod.ui.panels.FernPanel> FernPanel = new SpireField<>(FernPanel::new);
+        public static SpireField<Integer> fernPanelMaxEnergy = new SpireField<>(() -> 1);
     }
 
     @SpirePatch2(clz = GameActionManager.class, method = "clear")
@@ -38,6 +40,14 @@ public class PanelPatch {
                 Matcher.FieldAccessMatcher matcher = new Matcher.FieldAccessMatcher(GameActionManager.class, "mantraGained");
                 return LineFinder.findInOrder(behavior, (Matcher) matcher);
             }
+        }
+    }
+
+    @SpirePatch2(clz = PlayerTurnEffect.class, method = SpirePatch.CONSTRUCTOR)
+    public static class rechargeFernPanel {
+        @SpirePostfixPatch
+        public static void postfix(PlayerTurnEffect __instance) {
+            FernPanel.recharge();
         }
     }
 
