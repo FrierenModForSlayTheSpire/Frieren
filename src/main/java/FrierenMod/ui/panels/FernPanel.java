@@ -4,7 +4,6 @@ import FrierenMod.actions.MakeSpecializedOffensiveMagicAction;
 import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
 import FrierenMod.powers.ConcentrationPower;
-import FrierenMod.powers.RecollectionOfBenefactorPower;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.Gdx;
@@ -31,10 +30,15 @@ public class FernPanel extends AbstractPanel {
     private static final UIStrings uiStrings = CardCrawlGame.languagePack.getUIString(ID);
 
     private static final Color MPTextColor = new Color(0.9F, 1.0F, 1.0F, 1.0F);
+
     private static final Texture MPImage = new Texture(FernRes.MP_LAYER);
+
     private static final Texture MPWrapImage = new Texture(FernRes.MP_WRAP_LAYER);
+
     private static final Texture MPWrapPinkImage = new Texture(FernRes.MP_WRAP_PINK_LAYER);
+
     private static final Texture GainMPImage = new Texture(FernRes.GAIN_MP_VFX);
+
     private final Hitbox TipHitBox = new Hitbox(0.0F, 0.0F, 120.0F * Settings.scale, 120.0F * Settings.scale);
 
     private final Color VFXColor = Color.WHITE.cpy();
@@ -50,9 +54,10 @@ public class FernPanel extends AbstractPanel {
     private float VFXTimer = 0.0F;
 
     private int concentrationCounter = 0;
-    private AbstractCard previewCard;
-    private int rate = 2;
 
+    private AbstractCard previewCard;
+
+    private int rate = 2;
 
     public FernPanel() {
         super(124.0F * Settings.xScale, 414.0F * Settings.yScale, -720.0F * Settings.xScale, 540.0F * Settings.yScale, 42.0F * Settings.scale, -12.0F * Settings.scale, null, true);
@@ -81,13 +86,13 @@ public class FernPanel extends AbstractPanel {
 
     public void clearMP() {
         this.concentrationCounter = 0;
+        this.rate = 2;
     }
 
     public void update() {
         updateMP();
         //updateOrb();
         updateVFX();
-        updateRate();
         updateAction();
 //        if (this.FontScale != 1.0F)
 //            this.FontScale = MathHelper.scaleLerpSnap(this.FontScale, 1.0F);
@@ -123,11 +128,8 @@ public class FernPanel extends AbstractPanel {
         }
     }
 
-    public void updateRate() {
-        if (AbstractDungeon.player.hasPower(RecollectionOfBenefactorPower.POWER_ID)) {
-            this.rate = 4;
-        } else
-            this.rate = 2;
+    public void setRate(int rate) {
+        this.rate = rate;
     }
 
 

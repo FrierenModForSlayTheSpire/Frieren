@@ -16,9 +16,9 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import javassist.CannotCompileException;
 import javassist.CtBehavior;
 
-public class ManaPanelPatch {
+public class PanelPatch {
     @SpirePatch2(clz = AbstractPlayer.class, method = "<class>")
-    public static class MPField {
+    public static class PanelField {
         public static SpireField<FrierenMod.ui.panels.ManaPanel> ManaPanel = new SpireField<>(ManaPanel::new);
         public static SpireField<FrierenMod.ui.panels.FernPanel> FernPanel = new SpireField<>(FernPanel::new);
     }
@@ -28,8 +28,8 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = ClearMPAfterCombatLocator.class)
         public static void ClearMP() {
             if (AbstractDungeon.player != null) {
-                (MPField.ManaPanel.get(AbstractDungeon.player)).clearMP();
-                (MPField.FernPanel.get(AbstractDungeon.player)).clearMP();
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).clearMP();
+                (PanelField.FernPanel.get(AbstractDungeon.player)).clearMP();
             }
         }
 
@@ -46,8 +46,8 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = ShowPanelLocator.class)
         public static void Show() {
             if (AbstractDungeon.player != null) {
-                (MPField.ManaPanel.get(AbstractDungeon.player)).show();
-                (MPField.FernPanel.get(AbstractDungeon.player)).show();
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).show();
+                (PanelField.FernPanel.get(AbstractDungeon.player)).show();
             }
         }
 
@@ -64,8 +64,8 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = HidePanelLocator.class)
         public static void Hide() {
             if (AbstractDungeon.player != null) {
-                (MPField.ManaPanel.get(AbstractDungeon.player)).hide();
-                (MPField.FernPanel.get(AbstractDungeon.player)).hide();
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).hide();
+                (PanelField.FernPanel.get(AbstractDungeon.player)).hide();
             }
         }
 
@@ -82,8 +82,8 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = RenderPanelLocator.class)
         public static void Render(SpriteBatch sb) {
             if (AbstractDungeon.player != null) {
-                (MPField.ManaPanel.get(AbstractDungeon.player)).render(sb);
-                (MPField.FernPanel.get(AbstractDungeon.player)).render(sb);
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).render(sb);
+                (PanelField.FernPanel.get(AbstractDungeon.player)).render(sb);
             }
         }
 
@@ -100,10 +100,10 @@ public class ManaPanelPatch {
         @SpireInsertPatch(locator = UpdatePanelLocator.class)
         public static void Update() {
             if (AbstractDungeon.player != null) {
-                (MPField.ManaPanel.get(AbstractDungeon.player)).updatePositions();
-                (MPField.ManaPanel.get(AbstractDungeon.player)).update();
-                (MPField.FernPanel.get(AbstractDungeon.player)).updatePositions();
-                (MPField.FernPanel.get(AbstractDungeon.player)).update();
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).updatePositions();
+                (PanelField.ManaPanel.get(AbstractDungeon.player)).update();
+                (PanelField.FernPanel.get(AbstractDungeon.player)).updatePositions();
+                (PanelField.FernPanel.get(AbstractDungeon.player)).update();
             }
         }
 
