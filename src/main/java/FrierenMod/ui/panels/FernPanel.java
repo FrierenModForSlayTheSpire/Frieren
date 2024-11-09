@@ -210,10 +210,15 @@ public class FernPanel extends AbstractPanel {
     }
 
     public static int getMaxEnergy() {
-        return AbstractDungeon.player == null ? 0 : PanelPatch.PanelField.fernPanelMaxEnergy.get(AbstractDungeon.player);
+        return AbstractDungeon.player == null ? 1 : PanelPatch.PanelField.fernPanelMaxEnergy.get(AbstractDungeon.player);
+    }
+
+    public static void setMaxEnergy(int newMaxEnergy) {
+        if(AbstractDungeon.player != null)
+            PanelPatch.PanelField.fernPanelMaxEnergy.set(AbstractDungeon.player, newMaxEnergy);
     }
 
     public static void recharge() {
-        setEnergy(1);
+        setEnergy(getMaxEnergy());
     }
 }

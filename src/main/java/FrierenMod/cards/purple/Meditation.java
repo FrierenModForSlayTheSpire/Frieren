@@ -7,6 +7,7 @@ import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -36,6 +37,7 @@ public class Meditation extends AbstractBaseCard {
     public void triggerWhenDrawn() {
         this.addToBot(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new ConcentrationPower(this.magicNumber)));
         this.addToBot(new DrawCardAction(1));
+        this.addToTop(new ExhaustSpecificCardAction(this, AbstractDungeon.player.hand));
     }
 
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {

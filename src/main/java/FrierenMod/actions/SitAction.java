@@ -1,6 +1,6 @@
 package FrierenMod.actions;
 
-import FrierenMod.patches.PanelPatch;
+import FrierenMod.ui.panels.FernPanel;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -29,8 +29,8 @@ public class SitAction extends AbstractGameAction {
             this.target.damage(this.info);
             if ((this.target.isDying || this.target.currentHealth <= 0) && !this.target.halfDead &&
                     !this.target.hasPower("Minion")) {
-                int currentFernPanelMaxEnergy = PanelPatch.PanelField.fernPanelMaxEnergy.get(AbstractDungeon.player);
-                PanelPatch.PanelField.fernPanelMaxEnergy.set(AbstractDungeon.player, currentFernPanelMaxEnergy + amt);
+                int currentFernPanelMaxEnergy = FernPanel.getMaxEnergy();
+                FernPanel.setMaxEnergy(currentFernPanelMaxEnergy + amt);
             }
             if ((AbstractDungeon.getCurrRoom()).monsters.areMonstersBasicallyDead())
                 AbstractDungeon.actionManager.clearPostCombatActions();

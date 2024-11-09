@@ -369,5 +369,11 @@
     "DESCRIPTIONS": [
       "通过 #y海塔留下的法杖 获得 #y特化普攻魔法 时，伤害从2倍改为4倍。"
     ]
+  },
+  "FrierenMod:NextTurnConcentrationPower": {
+    "NAME": "普通蓄力",
+    "DESCRIPTIONS": [
+      "在下一回合获得 #b%d 点 #y专注 。"
+    ]
   }
 }
