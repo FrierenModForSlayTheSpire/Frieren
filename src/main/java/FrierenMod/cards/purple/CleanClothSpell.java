@@ -13,7 +13,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CleanClothSpell extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(CleanClothSpell.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.RARE, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 0, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.RARE, CardTarget.ALL_ENEMY);
 
     public CleanClothSpell() {
         super(info);
