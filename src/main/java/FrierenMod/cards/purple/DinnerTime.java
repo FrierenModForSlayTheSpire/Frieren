@@ -27,6 +27,7 @@ public class DinnerTime extends AbstractBaseCard {
         this.magicNumber = this.baseMagicNumber = 2;
         this.raidNumber = this.baseRaidNumber = 1;
         this.cardsToPreview = new GreenApple();
+        this.tags.add(Enum.RAID);
     }
 
     @Override
