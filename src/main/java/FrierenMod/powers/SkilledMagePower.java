@@ -16,10 +16,20 @@ public class SkilledMagePower extends AbstractBasePower {
 
     @Override
     public void onAfterCardPlayed(AbstractCard card) {
-        if (card.hasTag(AbstractBaseCard.Enum.SPEED) || card.hasTag(AbstractBaseCard.Enum.FUSION)) {
+        if (card.hasTag(AbstractBaseCard.Enum.SPEED)) {
             this.flash();
             this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
         }
+        if (card.hasTag(AbstractBaseCard.Enum.FUSION)) {
+            this.flash();
+            this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
+        }
+    }
+
+    @Override
+    public void afterRaidTriggered() {
+        this.flash();
+        this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
     }
 
     public void updateDescription() {

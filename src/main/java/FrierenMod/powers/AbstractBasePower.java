@@ -73,4 +73,7 @@ public abstract class AbstractBasePower extends AbstractPower {
     public void afterRaidTriggered(){
 
     }
+    public void afterRaidFinished(){
+
+    }
 }

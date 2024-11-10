@@ -22,6 +22,11 @@ public class FocusOnAttack extends AbstractBaseCard {
     }
 
     @Override
+    public void initializeSpecifiedAttributes() {
+        this.damage = this.baseDamage = 9;
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }

@@ -19,6 +19,11 @@ public class FocusOnDefense extends AbstractBaseCard {
     }
 
     @Override
+    public void initializeSpecifiedAttributes() {
+        this.block = this.baseBlock = 9;
+    }
+
+    @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.onChoseThisOption();
     }

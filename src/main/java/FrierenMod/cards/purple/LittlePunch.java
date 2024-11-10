@@ -18,7 +18,7 @@ public class LittlePunch extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.baseDamage = 1;
+        this.damage = this.baseDamage = 1;
         this.block = this.baseBlock = 3;
         this.isMultiDamage = true;
     }

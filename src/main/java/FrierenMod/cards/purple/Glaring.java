@@ -29,6 +29,7 @@ public class Glaring extends AbstractBaseCard {
     public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 12;
         this.magicNumber = this.baseMagicNumber = 3;
+        this.exhaust = true;
     }
 
     @Override

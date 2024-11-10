@@ -293,6 +293,10 @@ public class CombatHelper {
                 }
             }
         }
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower)
+                ((AbstractBasePower) po).afterRaidFinished();
+        }
         GameActionManagerField.raidTriggeredThisTurn.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisTurn.get(AbstractDungeon.actionManager) + times);
         GameActionManagerField.raidTriggeredThisCombat.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisCombat.get(AbstractDungeon.actionManager) + times);
         return true;

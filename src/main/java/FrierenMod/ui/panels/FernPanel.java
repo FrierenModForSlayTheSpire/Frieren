@@ -76,7 +76,7 @@ public class FernPanel extends AbstractPanel {
 
     public void clearMP() {
         this.rate = 2;
-        this.totalCount = 1;
+        this.totalCount = getMaxEnergy();
     }
 
     public void update() {

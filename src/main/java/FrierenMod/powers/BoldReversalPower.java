@@ -13,7 +13,7 @@ public class BoldReversalPower extends AbstractBasePower {
     }
 
     @Override
-    public void afterRaidTriggered() {
+    public void afterRaidFinished() {
         addToBot(new ReducePowerAction(AbstractDungeon.player, AbstractDungeon.player, this, 1));
     }
 

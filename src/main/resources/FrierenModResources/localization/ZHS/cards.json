@@ -988,7 +988,7 @@
   "FrierenMod:ColdBlood": {
     "NAME": "冷酷无情",
     "DESCRIPTION": "如果本场战斗中打出的上一张牌触发了 frierenmod:奇袭 ，造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：造成 !D! 点伤害。",
-    "UPGRADE_DESCRIPTION": "如果本场战斗中打出的上一张 frierenmod:奇袭 牌触发了 frierenmod:奇袭 ，造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：造成 !D! 点伤害。"
+    "UPGRADE_DESCRIPTION": "如果本场战斗中打出的上一张 frierenmod:奇袭 牌触发了 *奇袭 ，造成 !D! 点伤害。 NL frierenmod:奇袭 !R! ：造成 !D! 点伤害。"
   },
   "FrierenMod:FernFixFrieren": {
     "NAME": "富妇抚芙服",
@@ -1032,11 +1032,11 @@
   },
   "FrierenMod:Meditation": {
     "NAME": "冥想",
-    "DESCRIPTION": " 不能被打出 。 NL 当你抽到这张牌时，获得3点 frierenmod:专注 并抽1张牌，然后 消耗 。"
+    "DESCRIPTION": " 不能被打出 。 NL 当你抽到这张牌时，获得 !M! 点 frierenmod:专注 并抽1张牌，然后 消耗 。"
   },
   "FrierenMod:InjuryTime": {
     "NAME": "伤停补时",
-    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 [E] [E] 和 !M! 点 专注 。 NL 消耗 。"
+    "DESCRIPTION": " frierenmod:疾速 。 NL 获得 [E] [E] 和 !M! 点 frierenmod:专注 。 NL 消耗 。"
   },
   "FrierenMod:StudyTime": {
     "NAME": "请莲大学习",
@@ -1116,7 +1116,7 @@
   },
   "FrierenMod:SkilledMage": {
     "NAME": "干练的魔法使",
-    "DESCRIPTION": "打出 frierenmod:融合 或 frierenmod:疾速 牌后，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "打出 frierenmod:融合 、 frierenmod:疾速 牌或触发 frierenmod:奇袭 后，获得 !M! 点 格挡 。"
   },
   "FrierenMod:BoldReversal": {
     "NAME": "回马枪",
@@ -1128,7 +1128,7 @@
   },
   "FrierenMod:ManaAffinity": {
     "NAME": "魔力亲和",
-    "DESCRIPTION": "手中的 *魔力 回合结束前获得 保留 。"
+    "DESCRIPTION": " *魔力 拥有 保留 。"
   },
   "FrierenMod:CleanClothSpell": {
     "NAME": "彻底清除衣服污渍的魔法",

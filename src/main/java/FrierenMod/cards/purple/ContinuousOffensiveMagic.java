@@ -72,13 +72,13 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
                 }
             }
             magic.modifyCostForCombat(-9);
-            this.addToBot(new MakeTempCardInHandAction(magic));
             for (AbstractPower po : AbstractDungeon.player.powers) {
                 if (po instanceof AbstractBasePower) {
                     ((AbstractBasePower) po).afterGainSpecializedOffensiveMagic(magic);
                 }
             }
         });
+        this.addToBot(new MakeTempCardInHandAction(magic));
         this.isRaidTriggered = CombatHelper.triggerRaid(raidNumber, () -> {
             this.addToBot(new MakeTempCardInHandAction(magic));
         });
