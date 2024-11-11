@@ -20,7 +20,7 @@ public class EmergencyDefense extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.block = baseBlock = 10;
+        this.block = baseBlock = 12;
         this.raidNumber = baseRaidNumber = 1;
         this.tags.add(Enum.RAID);
         this.tags.add(Enum.SPEED);

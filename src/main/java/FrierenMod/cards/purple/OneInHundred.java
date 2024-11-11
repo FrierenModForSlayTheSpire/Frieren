@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class OneInHundred extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(OneInHundred.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 0, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
+    public static final CardInfo info = new CardInfo(ID, 1, CardType.SKILL, CardEnums.FERN_CARD, CardRarity.UNCOMMON, CardTarget.SELF);
 
     public OneInHundred() {
         super(info);
@@ -31,7 +31,7 @@ public class OneInHundred extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeBaseCost(0);
         }
     }
 

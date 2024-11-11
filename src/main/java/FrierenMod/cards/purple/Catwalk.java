@@ -22,6 +22,7 @@ public class Catwalk extends AbstractBaseCard {
     @Override
     public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
+        this.tags.add(Enum.FUSION);
         this.exhaust = true;
     }
 

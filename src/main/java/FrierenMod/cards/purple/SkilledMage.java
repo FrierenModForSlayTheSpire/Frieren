@@ -19,14 +19,14 @@ public class SkilledMage extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.magicNumber = this.baseMagicNumber = 3;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
         }
     }
 

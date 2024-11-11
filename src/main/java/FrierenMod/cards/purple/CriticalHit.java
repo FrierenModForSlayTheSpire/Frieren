@@ -15,7 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class CriticalHit extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(CriticalHit.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 1, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.BASIC, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 2, CardType.ATTACK, CardEnums.FERN_CARD, CardRarity.BASIC, CardTarget.ENEMY);
 
     public CriticalHit() {
         super(info);
@@ -32,7 +32,7 @@ public class CriticalHit extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeBaseCost(1);
         }
     }
 

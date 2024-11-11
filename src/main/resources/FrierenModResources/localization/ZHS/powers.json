@@ -319,7 +319,7 @@
   "FrierenMod:SkilledMagePower": {
     "NAME": "干练的魔法使",
     "DESCRIPTIONS": [
-      "打出 #y融合 或 #y疾速 牌后，获得 #b%d 点 #y格挡 。"
+      "打出 #y融合 、 #y疾速 牌、 #y特化普攻魔法 或触发 #y奇袭 后，获得 #b%d 点 #y格挡 。"
     ]
   },
   "FrierenMod:BoldReversalPower": {

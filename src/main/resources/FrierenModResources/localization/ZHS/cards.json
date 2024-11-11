@@ -951,7 +951,7 @@
   },
   "FrierenMod:HuddleForWarmth": {
     "NAME": "抱团取暖",
-    "DESCRIPTION": "获得 !B! 点 格挡 。 NL frierenmod:奇袭 !R! ：你的下一回合开始时 格挡 不会消失。 NL 消耗 。"
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL frierenmod:奇袭 !R! ：你的下一回合开始时 格挡 不会消失。 NL 虚无 。"
   },
   "FrierenMod:SkimReading": {
     "NAME": "快速检阅",
@@ -1040,7 +1040,8 @@
   },
   "FrierenMod:StudyTime": {
     "NAME": "请莲大学习",
-    "DESCRIPTION": "将 !M! 张 *魔力 放入手中。 frierenmod:融合 ：在弃牌堆放入1张本牌的复制品。 NL 消耗 。"
+    "DESCRIPTION": "将 !M! 张 *魔力 放入手中。 frierenmod:融合 ：在弃牌堆放入1张本牌的复制品。",
+    "UPGRADE_DESCRIPTION": "将 !M! 张 *魔力 放入手中。 frierenmod:融合 ：在弃牌堆放入1张本牌的复制品。 NL 消耗 。"
   },
   "FrierenMod:OneInHundred": {
     "NAME": "百里挑一",
@@ -1116,7 +1117,7 @@
   },
   "FrierenMod:SkilledMage": {
     "NAME": "干练的魔法使",
-    "DESCRIPTION": "打出 frierenmod:融合 、 frierenmod:疾速 牌或触发 frierenmod:奇袭 后，获得 !M! 点 格挡 。"
+    "DESCRIPTION": "打出 frierenmod:融合 、 frierenmod:疾速 牌、 *特化普攻魔法 或触发 frierenmod:奇袭 后，获得 !M! 点 格挡 。"
   },
   "FrierenMod:BoldReversal": {
     "NAME": "回马枪",

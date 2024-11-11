@@ -1,6 +1,7 @@
 package FrierenMod.powers;
 
 import FrierenMod.cards.AbstractBaseCard;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -21,6 +22,10 @@ public class SkilledMagePower extends AbstractBasePower {
             this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
         }
         if (card.hasTag(AbstractBaseCard.Enum.FUSION)) {
+            this.flash();
+            this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
+        }
+        if(card.cardID.equals(SpecializedOffensiveMagic.ID)){
             this.flash();
             this.addToBot(new GainBlockAction(AbstractDungeon.player, this.amount));
         }

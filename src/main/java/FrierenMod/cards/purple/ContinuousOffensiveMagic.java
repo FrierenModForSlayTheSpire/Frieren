@@ -31,7 +31,7 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
     @Override
     public void initializeSpecifiedAttributes() {
         this.raidNumber = this.baseRaidNumber = 2;
-        this.magicNumber = this.baseMagicNumber = 10;
+        this.magicNumber = this.baseMagicNumber = 9;
         this.tags.add(Enum.RAID);
     }
 
@@ -39,7 +39,7 @@ public class ContinuousOffensiveMagic extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(5);
+            this.upgradeMagicNumber(3);
         }
     }
 

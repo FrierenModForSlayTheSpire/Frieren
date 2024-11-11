@@ -24,14 +24,14 @@ public class HuddleForWarmth extends AbstractBaseCard {
         this.block = baseBlock = 12;
         this.raidNumber = baseRaidNumber = 2;
         this.tags.add(Enum.RAID);
-        this.exhaust = true;
+        this.isEthereal = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeBlock(6);
+            this.upgradeBlock(3);
         }
     }
 

@@ -27,8 +27,7 @@ public class LieInWait extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
-            this.upgradeBlock(2);
+            this.upgradeBlock(3);
         }
     }
 

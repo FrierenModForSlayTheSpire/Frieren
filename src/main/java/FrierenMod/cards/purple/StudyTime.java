@@ -9,6 +9,7 @@ import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class StudyTime extends AbstractBaseCard {
@@ -22,14 +23,15 @@ public class StudyTime extends AbstractBaseCard {
     @Override
     public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 2;
-        this.exhaust = true;
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.rawDescription = CardCrawlGame.languagePack.getCardStrings(ID).UPGRADE_DESCRIPTION;
+            initializeDescription();
+            this.exhaust = true;
         }
     }
 
