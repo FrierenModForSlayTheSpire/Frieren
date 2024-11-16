@@ -146,13 +146,13 @@
   "FrierenMod:OpenTheWaygatePower": {
     "NAME": "打開時空之門",
     "DESCRIPTIONS": [
-      "一回合內連續 #y同調 #b%d 張 #y魔力 後，結束你的回合併額外獲得一回合，失去該能力。"
+      "一回合內連續 #y同調 #b%d 張 #y魔力 後，結束你的回合並額外獲得一回合，失去該能力。"
     ]
   },
   "FrierenMod:CopyPower": {
-    "NAME": "複製體",
+    "NAME": "復製體",
     "DESCRIPTIONS": [
-      "受到未被格擋的傷害時，獲得等量 #r魔力 層數 。 NL 玩家獲得 #y格擋 時，獲得相同數量的 #y格擋 。 NL 血量降到100以下時將會逼出複製體的全力！"
+      "受到未被格擋的傷害時，獲得等量 #r魔力 層數 。 NL 玩家獲得 #y格擋 時，獲得相同數量的 #y格擋 。 NL 血量降到100以下時將會逼出復製體的全力！"
     ]
   },
   "FrierenMod:EnemyManaPower": {
@@ -239,28 +239,141 @@
     ]
   },
   "FrierenMod:ConcentrationPower": {
-    "NAME": "專注",
+    "NAME": "專註",
     "DESCRIPTIONS": [
-      "使用 #b1 張牌後失去 #b1 層該能力， #y詠唱 消耗 的 #y魔力 減少 #b%d 張。"
+      " 打出非 #y魔力 牌後失去1點該能力。"
     ]
   },
-  "FrierenMod:SuperSeriousPower": {
-    "NAME": "超級認真",
+  "FrierenMod:DamageFusionPower": {
+    "NAME": "傷害融合",
     "DESCRIPTIONS": [
-      "使用的下 #b%d 張牌不會失去 #y專注 ，而是獲得1層 #y專注 。"
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 造成 #b%d 點傷害 。"
     ]
   },
-  "FrierenMod:DancingPower": {
+  "FrierenMod:EnergyFusionPower": {
+    "NAME": "能量融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 獲得 #b%d 點 [E] 。"
+    ]
+  },
+  "FrierenMod:WeakVulnerableFusionPower": {
+    "NAME": "虛弱易傷融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 給予 #b%d 層 #y虛弱 和 #y易傷 。"
+    ]
+  },
+  "FrierenMod:DrawCardFusionPower": {
+    "NAME": "抽牌融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 抽 #b%d 張牌。"
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardFusionPower": {
+    "NAME": "復製融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 在棄牌堆放入 #b%d1 張本牌的復製品。"
+    ]
+  },
+  "FrierenMod:ConcentrationFusionPower": {
+    "NAME": "專註融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 獲得 #b%d 點 #y專註 。"
+    ]
+  },
+  "FrierenMod:StrengthFusionPower": {
+    "NAME": "力量融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 獲得 #b%d 點 #y力量 。"
+    ]
+  },
+  "FrierenMod:StrengthFusionPowerFusionPower": {
+    "NAME": "力量融合融合",
+    "DESCRIPTIONS": [
+      "下一張獲得的 #y特化普攻魔法 將附加： NL #y融合 ：獲得 #b%d 點 #y力量 。"
+    ]
+  },
+  "FrierenMod:FightPower": {
+    "NAME": "加把勁騎士",
+    "DESCRIPTIONS": [
+      "在本回合中下 #b%d 張獲得的 #y特化攻擊魔法 耗能變為0。"
+    ]
+  },
+  "FrierenMod:WithNoStopPower": {
+    "NAME": "疾速飛馳",
+    "DESCRIPTIONS": [
+      "下 #b%d 張牌打出後獲得兩點專註。"
+    ]
+  },
+  "FrierenMod:MysticEyePower": {
+    "NAME": "直視的魔眼",
+    "DESCRIPTIONS": [
+      "每當玩家攻擊敵人時，玩家獲得 #b%d 點 #y專註 。"
+    ]
+  },
+  "FrierenMod:MasterAndApprenticePower": {
+    "NAME": "師與徒",
+    "DESCRIPTIONS": [
+      "在你的回合開始時，增加 #b%d 張隨機 #y雙色牌 到你的手牌。"
+    ]
+  },
+  "FrierenMod:SkilledMagePower": {
+    "NAME": "幹練的魔法使",
+    "DESCRIPTIONS": [
+      "打出 #y融合 、 #y疾速 牌、 #y特化普攻魔法 或觸發 #y奇襲 後，獲得 #b%d 點 #y格擋 。"
+    ]
+  },
+  "FrierenMod:BoldReversalPower": {
+    "NAME": "回馬槍",
+    "DESCRIPTIONS": [
+      "你的下 #b%d 次 #y奇襲 效果將額外觸發一次。"
+    ]
+  },
+  "FrierenMod:FernRushdownPower": {
+    "NAME": "菲倫下山",
+    "DESCRIPTIONS": [
+      "觸發 #y奇襲 後，抽 #b%d 張牌。"
+    ]
+  },
+  "FrierenMod:ManaAffinityPower": {
+    "NAME": "魔力親和",
+    "DESCRIPTIONS": [
+      " #y魔力 擁有 #y保留 。"
+    ]
+  },
+  "FrierenMod:SocialDancingPower": {
     "NAME": "交際舞",
     "DESCRIPTIONS": [
-      "使用卡牌後，獲得或失去 #y專注 ，使 #y離差 永恆為 #b2 。"
+      "當你擁有 #y專註 時， #y奇襲 X的判定條件改為X-1、X 、X+1均可觸發。"
     ]
   },
-  "FrierenMod:WashingClothesPower": {
-    "NAME": "徹底清除衣服汙漬的魔法",
+  "FrierenMod:ConfidencePower": {
+    "NAME": "胸有成竹",
     "DESCRIPTIONS": [
-      "下一回合，獲得 #b%d 層 #y專注 ， #b%d 點 [E] 。",
-      "下一回合，獲得 #b%d 層 #y專注 ， #b%d 點 [E] ，抽 #b%d 張牌。"
+      "所有造成傷害的 #y奇襲 效果會額外觸發一次。每回合開始後失去所有 #y專註 。"
+    ]
+  },
+  "FrierenMod:GamblePower": {
+    "NAME": "豪賭",
+    "DESCRIPTIONS": [
+      "打出卡牌後，隨機化你的 #y專註 數為1～6。若為6，對所有敵人造成 #b%d 點傷害。"
+    ]
+  },
+  "FrierenMod:FumeshroomFormPower": {
+    "NAME": "大噴菇形態",
+    "DESCRIPTIONS": [
+      "你的所有單體傷害也將對未指向的敵人造成傷害。"
+    ]
+  },
+  "FrierenMod:RecollectionOfBenefactorPower": {
+    "NAME": "心系故人",
+    "DESCRIPTIONS": [
+      "通過 #y海塔留下的法杖 獲得 #y特化普攻魔法 時，傷害從2倍改為4倍。"
+    ]
+  },
+  "FrierenMod:NextTurnConcentrationPower": {
+    "NAME": "普通蓄力",
+    "DESCRIPTIONS": [
+      "在下一回合獲得 #b%d 點 #y專註 。"
     ]
   }
 }

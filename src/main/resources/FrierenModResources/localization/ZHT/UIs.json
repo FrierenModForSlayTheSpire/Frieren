@@ -134,6 +134,48 @@
       " 層 易傷 。"
     ]
   },
+  "FrierenMod:ExhaustEtherealMod": {
+    "TEXT": [
+      " NL 虛無 。 消耗 。"
+    ]
+  },
+  "FrierenMod:GainEnergyMod": {
+    "TEXT": [
+      "獲得",
+      "點 [E] 。"
+    ]
+  },
+  "FrierenMod:WeakVulnerableMod": {
+    "TEXT": [
+      "給予",
+      "層 虛弱 和 易傷 。"
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardMod": {
+    "TEXT": [
+      "在棄牌堆放入",
+      "張本牌的復製品。",
+      "張本牌的復製品。"
+    ]
+  },
+  "FrierenMod:ConcentrationMod": {
+    "TEXT": [
+      "獲得",
+      "點 frierenmod:專註 。"
+    ]
+  },
+  "FrierenMod:StrengthMod": {
+    "TEXT": [
+      "獲得",
+      "點 力量 。"
+    ]
+  },
+  "FrierenMod:StrengthFusionMod": {
+    "TEXT": [
+      " frierenmod:融合 ：獲得",
+      "點 力量 。"
+    ]
+  },
   "FrierenMod:BreaksBarriersSpellMod": {
     "TEXT": [
       " frierenmod:解析 %d：",
@@ -422,14 +464,20 @@
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
-      "雙職業卡",
+      "雙色牌",
       " [#edeaf5]芙莉蓮[] 和 [#784183]菲倫[] 的通用卡牌。"
     ]
   },
   "FrierenMod:FernPanel": {
     "TEXT": [
-      "計數器",
-      "上：本回合使用過的卡牌數 NL 中： #y離差 NL 下： #y專注 層數"
+      "海塔留下的法杖",
+      "擁有充能時， #r右鍵 法杖獲得一張 #y特化普攻魔法 ，其傷害值等於 #y專註 數的 #b%d 倍，然後失去所有 #y專註 。",
+      "沒有足夠 #r充能 。"
+    ]
+  },
+  "FrierenMod:SnuggleOptionCard1Action": {
+    "TEXT": [
+      "（丟棄魔力以獲得能量）"
     ]
   }
 }

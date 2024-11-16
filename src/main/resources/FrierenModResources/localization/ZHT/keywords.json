@@ -109,9 +109,16 @@
     "DESCRIPTION": "獲得力量。在你的回合結束時，失去相等數量的力量。"
   },
   {
-    "PROPER_NAME": "緩衝",
+    "PROPER_NAME": "臨時敏捷",
     "NAMES": [
-      "緩衝"
+      "臨時敏捷"
+    ],
+    "DESCRIPTION": "獲得敏捷。在你的回合結束時，失去相等數量的敏捷。"
+  },
+  {
+    "PROPER_NAME": "緩沖",
+    "NAMES": [
+      "緩沖"
     ],
     "DESCRIPTION": "阻止你下一次受到的生命值損傷。"
   },
@@ -148,7 +155,7 @@
     "NAMES": [
       "回火"
     ],
-    "DESCRIPTION": "這張牌本回合中每被打出1次，耗能+1，下回合開始時重設耗能。"
+    "DESCRIPTION": "這張牌本回合中每被打出1次，耗能+1，下回合開始時重置耗能。"
   },
   {
     "PROPER_NAME": "壁壘",
@@ -158,18 +165,25 @@
     "DESCRIPTION": "格擋不會在你的回合開始時消失。"
   },
   {
-    "PROPER_NAME": "離差",
+    "PROPER_NAME": "專註",
     "NAMES": [
-      "離差"
+      "專註"
     ],
-    "DESCRIPTION": "本回合使用過的卡牌數和 #y專注 層數之差的絕對值。"
+    "DESCRIPTION": " 打出非 #y魔力 牌後失去1點該能力。"
   },
   {
-    "PROPER_NAME": "專注",
+    "PROPER_NAME": "疾速",
     "NAMES": [
-      "專注"
+      "疾速"
     ],
-    "DESCRIPTION": "使用 #b1 張牌後失去 #b1 層該能力 ， #y詠唱 消耗 的 #y魔力 減少（該能力層數）張。"
+    "DESCRIPTION": " 打出本牌後不會失去 #y專註 。"
+  },
+  {
+    "PROPER_NAME": "融合",
+    "NAMES": [
+      "融合"
+    ],
+    "DESCRIPTION": " 效果會額外附加到下一張獲得的 #y特化普攻魔法 上。"
   },
   {
     "PROPER_NAME": "奇襲X",
@@ -177,13 +191,27 @@
       "奇襲X",
       "奇襲"
     ],
-    "DESCRIPTION": " #y離差 小於等於X時觸發。"
+    "DESCRIPTION": " 當 #y專註 數 恰好為X時觸發。"
   },
   {
-    "PROPER_NAME": "凝聚",
+    "PROPER_NAME": "屬性",
     "NAMES": [
-      "凝聚"
+      "屬性"
     ],
-    "DESCRIPTION": "自動同調你下1張加入手牌的 #y魔力 ，且同調時不失去專注層數。"
+    "DESCRIPTION": "血量， #y格擋 ， #r體重？！ "
+  },
+  {
+    "PROPER_NAME": "雙色牌",
+    "NAMES": [
+      "雙色牌"
+    ],
+    "DESCRIPTION": " [#edeaf5]芙莉蓮[] 和 [#784183]菲倫[] 的通用卡牌。"
+  },
+  {
+    "PROPER_NAME": "法杖充能",
+    "NAMES": [
+      "法杖充能"
+    ],
+    "DESCRIPTION": " #y海塔留下的法杖 需要充能才能使用。"
   }
 ]
