@@ -28,9 +28,9 @@ public class FusionRaid extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
-        this.damage = this.baseDamage = 10;
+        this.damage = this.baseDamage = 8;
         this.raidNumber = this.baseRaidNumber = 2;
-        this.magicNumber = this.baseMagicNumber = 4;
+        this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(Enum.RAID);
         this.tags.add(Enum.FUSION);
     }
@@ -39,7 +39,7 @@ public class FusionRaid extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(3);
+            this.upgradeDamage(2);
             this.upgradeMagicNumber(1);
         }
     }

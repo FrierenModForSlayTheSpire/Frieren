@@ -27,7 +27,7 @@ public class RaidPreparation extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeRaidNumber(-1);
+            this.upgradeBaseCost(0);
         }
     }
 

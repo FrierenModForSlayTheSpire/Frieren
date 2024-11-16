@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class FusionSlash extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(FusionSlash.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, AbstractCard.CardType.ATTACK, CardEnums.FERN_CARD, AbstractCard.CardRarity.COMMON, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 3, AbstractCard.CardType.ATTACK, CardEnums.FERN_CARD, AbstractCard.CardRarity.COMMON, CardTarget.ENEMY);
 
     public FusionSlash() {
         super(info);
@@ -35,7 +35,7 @@ public class FusionSlash extends AbstractBaseCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeDamage(4);
         }
     }
 
