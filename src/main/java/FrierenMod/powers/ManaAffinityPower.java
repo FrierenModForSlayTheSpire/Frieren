@@ -25,4 +25,13 @@ public class ManaAffinityPower extends AbstractBasePower {
             }
         }
     }
+
+    @Override
+    public void onRemove() {
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c.hasTag(AbstractBaseCard.Enum.MANA)) {
+                c.selfRetain = false;
+            }
+        }
+    }
 }

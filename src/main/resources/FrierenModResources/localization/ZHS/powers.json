@@ -337,7 +337,7 @@
   "FrierenMod:ManaAffinityPower": {
     "NAME": "魔力亲和",
     "DESCRIPTIONS": [
-      "手中的 #y魔力 回合结束前获得 #y保留 。"
+      " #y魔力 拥有 #y保留 。"
     ]
   },
   "FrierenMod:SocialDancingPower": {
