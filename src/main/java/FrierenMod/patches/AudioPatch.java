@@ -48,7 +48,7 @@ public class AudioPatch {
             if (Objects.equals(key, "Frieren_DeathStinger")) {
                 return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/Frieren_DeathStinger.mp3")));
             }
-            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
+            if (canReplaceMusic()) {
                 switch (key) {
                     case "SHOP":
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Merchant_NewMix_v1.ogg")));
@@ -81,7 +81,7 @@ public class AudioPatch {
     public static class PatchGetSongInMainMusic {
         @SpireInsertPatch(rloc = 0, localvars = {"key"})
         public static SpireReturn<Music> Insert(MainMusic __instance, String key) {
-            if (AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN) {
+            if (canReplaceMusic()) {
                 switch (key) {
                     case "Exordium":
                         if (AbstractDungeon.miscRng.random(1) == 0) {
@@ -136,7 +136,7 @@ public class AudioPatch {
         }
 
         public static boolean check() {
-            return AbstractDungeon.player != null && AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN;
+            return canReplaceMusic();
         }
 
         public static void calc() {
@@ -146,5 +146,8 @@ public class AudioPatch {
 
     private static void load(SoundMaster instance, HashMap<String, Sfx> ___map, String key) {
         ___map.put(key, new Sfx(ModInformation.makeAudioPath("sound/" + key), false));
+    }
+    private static boolean canReplaceMusic(){
+        return AbstractDungeon.player != null && (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN || AbstractDungeon.player.chosenClass == CharacterEnums.FERN);
     }
 }
