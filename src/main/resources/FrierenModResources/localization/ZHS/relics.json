@@ -10,7 +10,7 @@
     "NAME": "菲伦的发饰",
     "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
     "DESCRIPTIONS": [
-      "每当 #y魔力 消耗后，获得1层 #y专注 。"
+      "每当 #y魔力 消耗后，获得1点 #y专注 。"
     ]
   },
   "FrierenMod:OLDHairAccessory": {
