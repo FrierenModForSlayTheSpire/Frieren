@@ -141,5 +141,55 @@
       "Barricade","barricade"
     ],
     "DESCRIPTION": "Block is not removed at the start of your turn."
+  },
+  {
+    "PROPER_NAME": "Concentration",
+    "NAMES": [
+      "Concentration","concentration"
+    ],
+    "DESCRIPTION": "Lose 1 of this power after playing a non #yMana card."
+  },
+  {
+    "PROPER_NAME": "Speed",
+    "NAMES": [
+      "Speed","speed"
+    ],
+    "DESCRIPTION": "Not Lose #yConcentration After played this card."
+  },
+  {
+    "PROPER_NAME": "Fusion",
+    "NAMES": [
+      "Fusion","fusion"
+    ],
+    "DESCRIPTION": "Effect will attach to the next #ySpecialized #yOffensive #yMagic additionally."
+  },
+  {
+    "PROPER_NAME": "Raid X",
+    "NAMES": [
+      "RaidX",
+      "raid"
+    ],
+    "DESCRIPTION": "Take Effect when your amount of #yConcentration is just X."
+  },
+  {
+    "PROPER_NAME": "Attribute",
+    "NAMES": [
+      "Attribute","attribute"
+    ],
+    "DESCRIPTION": "Health, #yBlock , #rWeight ?! "
+  },
+  {
+    "PROPER_NAME": "Bicolor",
+    "NAMES": [
+      "Bicolor","bicolor"
+    ],
+    "DESCRIPTION": "The card belongs to [#edeaf5]Frieren[] and [#784183]Fern[] ."
+  },
+  {
+    "PROPER_NAME": "Wand Energy",
+    "NAMES": [
+      "Wand Energy","wand_energy"
+    ],
+    "DESCRIPTION": "The energy that #yHitaa #yWand use."
   }
 ]
