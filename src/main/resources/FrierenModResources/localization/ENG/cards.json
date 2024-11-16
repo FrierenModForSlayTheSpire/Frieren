@@ -1159,7 +1159,7 @@
   },
   "FrierenMod:GetSick": {
     "NAME": "Get Sick",
-    "DESCRIPTION": "Lose all frierenmod:Concentration, gain !B! Block, end your turn. Shuffle a *Get_Well into the draw pile. NL Exhaust."
+    "DESCRIPTION": "Lose all frierenmod:Concentration, gain !B! Block, end your turn. Shuffle a *Get *Well into the draw pile. NL Exhaust."
   },
   "FrierenMod:GetWell": {
     "NAME": "Get Well",
