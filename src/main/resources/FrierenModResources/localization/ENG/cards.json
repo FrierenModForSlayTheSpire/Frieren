@@ -1056,7 +1056,7 @@
   },
   "FrierenMod:DinnerTime": {
     "NAME": "Dinner Time",
-    "DESCRIPTION": " frierenmod:Speed . NL Add 1 *Green *Apple into your hand. frierenmod:Raid !R! : Gain !M! frierenmod:temporary Dexterity."
+    "DESCRIPTION": " frierenmod:Speed . NL Add 1 *Green *Apple into your hand. frierenmod:Raid !R! : Gain !M! frierenmod:Temporary_Dexterity."
   },
   "FrierenMod:MasterHelpApprentice": {
     "NAME": "Master Help Apprentice",

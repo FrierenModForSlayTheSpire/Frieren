@@ -101,11 +101,32 @@
     "DESCRIPTION": "#yRetain and #yUnplayable . NL If you complete the request, then X-1 and get #yReward and update the request. NL This card #yExhaust when X=0."
   },
   {
+    "PROPER_NAME": "临时力量",
+    "NAMES": [
+      "临时力量"
+    ],
+    "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
+  },
+  {
+    "PROPER_NAME": "Temporary Dexterity",
+    "NAMES": [
+      "Temporary Dexterity","temporary_dexterity"
+    ],
+    "DESCRIPTION": "Gain #yDexterity . NL At the end of your turn, lose an equal amount of #yDexterity ."
+  },
+  {
     "PROPER_NAME":"Buffer",
     "NAMES": [
       "Buffer","buffer"
     ],
     "DESCRIPTION": "Prevent the next time you would lose HP."
+  },
+  {
+    "PROPER_NAME": "缠绕",
+    "NAMES": [
+      "缠绕"
+    ],
+    "DESCRIPTION": "在回合结束时承受伤害。"
   },
   {
     "PROPER_NAME":"world-line",
