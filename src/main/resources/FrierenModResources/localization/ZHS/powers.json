@@ -343,7 +343,7 @@
   "FrierenMod:SocialDancingPower": {
     "NAME": "交际舞",
     "DESCRIPTIONS": [
-      " #y奇袭 X的判定条件改为X-1、X 、X+1均可触发。"
+      "当你拥有 #y专注 时， #y奇袭 X的判定条件改为X-1、X 、X+1均可触发。"
     ]
   },
   "FrierenMod:ConfidencePower": {
