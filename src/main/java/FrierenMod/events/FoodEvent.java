@@ -1,6 +1,7 @@
 package FrierenMod.events;
 
 import FrierenMod.cards.tempCards.EmergencyFood;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -12,7 +13,7 @@ import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 
 public class FoodEvent extends AbstractImageEvent {
-    public static final String ID = "FoodEvent";
+    public static final String ID = ModInformation.makeID(FoodEvent.class.getSimpleName());
     private static final EventStrings eventStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;
