@@ -19,7 +19,7 @@ public class PatchDamageAction {
     public static class PatchConstructor {
         @SpirePostfixPatch
         public static void PostFix(DamageAction __instance, AbstractCreature target, DamageInfo info, AbstractGameAction.AttackEffect effect) {
-            if (info.owner.equals(AbstractDungeon.player) && AbstractDungeon.player.hasPower(FumeshroomFormPower.POWER_ID)) {
+            if (info.owner.equals(AbstractDungeon.player) && target != AbstractDungeon.player && AbstractDungeon.player.hasPower(FumeshroomFormPower.POWER_ID)) {
                 DamageActionField.backUpAction.set(__instance, new DamageAllEnemiesAction((AbstractPlayer) info.owner, info.base, info.type, effect));
             }
         }
