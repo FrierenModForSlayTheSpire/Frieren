@@ -2,6 +2,7 @@ package FrierenMod.gameHelpers;
 
 import FrierenMod.ModManager;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
+import FrierenMod.patches.PanelPatch;
 import FrierenMod.patches.fields.MagicDeckField;
 import FrierenMod.patches.fields.RandomField;
 import FrierenMod.patches.fields.RandomField2;
@@ -25,15 +26,27 @@ public class SaveFileHelper {
     public static final String MAGIC_ITEM_RANDOMIZER_SAVE_NAME = "magic_item_randomizer";
     public static final String MAGIC_ITEM_CHANCE_SAVE_NAME = "magic_item_chance";
     public static final String MAGIC_ITEM_RANDOM_COUNT_SAVE_NAME = "magic_item_random_seed_count";
+    public static final String FERN_PANEL_MAX_ENERGY_NAME = "fern_panel_max_energy";
 
     public static void save() {
         saveMagicDeck();
         saveRandomNumber();
+        ModManager.saveData.putValue(FERN_PANEL_MAX_ENERGY_NAME, null);
+        if (PanelPatch.PanelField.fernPanelMaxEnergy.get(AbstractDungeon.player) != null) {
+            ModManager.saveData.putValue(FERN_PANEL_MAX_ENERGY_NAME, PanelPatch.PanelField.fernPanelMaxEnergy.get(AbstractDungeon.player));
+        } else {
+            ModManager.saveData.putValue(FERN_PANEL_MAX_ENERGY_NAME, 1);
+            Log.logger.info("WHY FERN PANEL MAX ENERGY NULL?");
+        }
     }
 
     public static void load() {
         loadMagicDeck();
         loadRandomNumber();
+        if (ModManager.saveData.containsKey(FERN_PANEL_MAX_ENERGY_NAME)) {
+            PanelPatch.PanelField.fernPanelMaxEnergy.set(AbstractDungeon.player, Integer.valueOf(ModManager.saveData.getValue(FERN_PANEL_MAX_ENERGY_NAME)));
+        } else
+            PanelPatch.PanelField.fernPanelMaxEnergy.set(AbstractDungeon.player, 1);
     }
 
     private static void loadMagicDeck() {

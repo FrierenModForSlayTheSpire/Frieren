@@ -132,9 +132,9 @@ public class RegisterHelper {
 
     public static void registerEvents() {
         Log.logger.info("Adding events...");
-        BaseMod.addEvent("FoodEvent", FoodEvent.class);
-        BaseMod.addEvent("KraftGift", KraftGift.class, TheCity.ID, TheBeyond.ID);
-        BaseMod.addEvent("AnimalWell", AnimalWell.class);
+        BaseMod.addEvent(FoodEvent.ID, FoodEvent.class);
+        BaseMod.addEvent(KraftGift.ID, KraftGift.class, TheCity.ID, TheBeyond.ID);
+        BaseMod.addEvent(AnimalWell.ID, AnimalWell.class);
         BaseMod.addEvent(MimicFight.ID, MimicFight.class, TheCity.ID);
         Log.logger.info("Done adding events");
     }

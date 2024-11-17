@@ -1,6 +1,6 @@
 package FrierenMod.cards.white;
 
-import FrierenMod.actions.DrawChantAction;
+import FrierenMod.actions.DrawCardByTagAction;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.utils.CardInfo;
@@ -20,7 +20,7 @@ public class PreparedPosture extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 6;
     }
 
@@ -35,6 +35,6 @@ public class PreparedPosture extends AbstractBaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        this.addToBot(new DrawChantAction(1));
+        this.addToBot(new DrawCardByTagAction(1, Enum.CHANT));
     }
 }

@@ -101,11 +101,32 @@
     "DESCRIPTION": "#yRetain and #yUnplayable . NL If you complete the request, then X-1 and get #yReward and update the request. NL This card #yExhaust when X=0."
   },
   {
+    "PROPER_NAME": "临时力量",
+    "NAMES": [
+      "临时力量"
+    ],
+    "DESCRIPTION": "获得力量。在你的回合结束时，失去相等数量的力量。"
+  },
+  {
+    "PROPER_NAME": "Temporary Dexterity",
+    "NAMES": [
+      "Temporary Dexterity","temporary_dexterity"
+    ],
+    "DESCRIPTION": "Gain #yDexterity . NL At the end of your turn, lose an equal amount of #yDexterity ."
+  },
+  {
     "PROPER_NAME":"Buffer",
     "NAMES": [
       "Buffer","buffer"
     ],
     "DESCRIPTION": "Prevent the next time you would lose HP."
+  },
+  {
+    "PROPER_NAME": "缠绕",
+    "NAMES": [
+      "缠绕"
+    ],
+    "DESCRIPTION": "在回合结束时承受伤害。"
   },
   {
     "PROPER_NAME":"world-line",
@@ -141,5 +162,55 @@
       "Barricade","barricade"
     ],
     "DESCRIPTION": "Block is not removed at the start of your turn."
+  },
+  {
+    "PROPER_NAME": "Concentration",
+    "NAMES": [
+      "Concentration","concentration"
+    ],
+    "DESCRIPTION": "Lose 1 of this power after playing a non #yMana card."
+  },
+  {
+    "PROPER_NAME": "Speed",
+    "NAMES": [
+      "Speed","speed"
+    ],
+    "DESCRIPTION": "Not Lose #yConcentration After played this card."
+  },
+  {
+    "PROPER_NAME": "Fusion",
+    "NAMES": [
+      "Fusion","fusion"
+    ],
+    "DESCRIPTION": "Effect will attach to the next #ySpecialized #yOffensive #yMagic additionally."
+  },
+  {
+    "PROPER_NAME": "Raid X",
+    "NAMES": [
+      "RaidX",
+      "raid"
+    ],
+    "DESCRIPTION": "Take Effect when your amount of #yConcentration is just X."
+  },
+  {
+    "PROPER_NAME": "Attribute",
+    "NAMES": [
+      "Attribute","attribute"
+    ],
+    "DESCRIPTION": "Health, #yBlock , #rWeight ?! "
+  },
+  {
+    "PROPER_NAME": "Bicolor",
+    "NAMES": [
+      "Bicolor","bicolor"
+    ],
+    "DESCRIPTION": "The card belongs to [#edeaf5]Frieren[] and [#784183]Fern[] ."
+  },
+  {
+    "PROPER_NAME": "Wand Energy",
+    "NAMES": [
+      "Wand Energy","wand_energy"
+    ],
+    "DESCRIPTION": "The energy that #yHitaa #yWand use."
   }
 ]

@@ -1,9 +1,9 @@
 package FrierenMod.cardMods;
 
 import FrierenMod.cards.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.AbstractCardModifier;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -11,21 +11,29 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
-public class DrawMod extends AbstractCardModifier {
+public class DrawMod extends AbstractCardModifier implements SpecializedOffensiveMagicMod{
     public static final String ID = ModInformation.makeID(DrawMod.class.getSimpleName());
 
     public static final String[] TEXT = (CardCrawlGame.languagePack.getUIString(ID)).TEXT;
 
-    private final int drawAmt;
+    private int drawAmt;
 
     public DrawMod(int drawAmt) {
         this.drawAmt = drawAmt;
     }
+
     public void onInitialApplication(AbstractCard card) {
-        if(this.drawAmt == 1)
-            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
-        else
-            ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
+        if (this.drawAmt == 1) {
+            if (card instanceof CustomLegendarySpell)
+                ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
+            else if (card instanceof SpecializedOffensiveMagic)
+                ((SpecializedOffensiveMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[1];
+        } else {
+            if (card instanceof CustomLegendarySpell)
+                ((CustomLegendarySpell) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
+            else if (card instanceof SpecializedOffensiveMagic)
+                ((SpecializedOffensiveMagic) card).usedModifierText += TEXT[0] + this.drawAmt + TEXT[2];
+        }
     }
 
     public AbstractCardModifier makeCopy() {
@@ -33,16 +41,15 @@ public class DrawMod extends AbstractCardModifier {
     }
 
     public void onUse(AbstractCard card, AbstractCreature target, UseCardAction action) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DrawCardAction(this.drawAmt));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(this.drawAmt));
     }
 
     public String identifier(AbstractCard card) {
         return ID;
     }
 
-//    public String modifyDescription(String rawDescription, AbstractCard card) {
-//        if (this.drawAmt == 1)
-//            return rawDescription + TEXT[0] + this.drawAmt + TEXT[1];
-//        return rawDescription + TEXT[0] + this.drawAmt + TEXT[2];
-//    }
+    @Override
+    public void updateAmt(int newAmt) {
+        this.drawAmt = newAmt;
+    }
 }

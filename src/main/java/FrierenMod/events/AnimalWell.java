@@ -1,7 +1,7 @@
 package FrierenMod.events;
 
 import FrierenMod.cards.tempCards.BirdCapturingSpell;
-import FrierenMod.cards.tempCards.EmergencyFood;
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -11,17 +11,12 @@ import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.FirePotion;
-import com.megacrit.cardcrawl.relics.*;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 
-import java.util.Iterator;
-
 public class AnimalWell extends AbstractImageEvent {
-    public static final String ID = "AnimalWell";
+    public static final String ID = ModInformation.makeID(AnimalWell.class.getSimpleName());
     private static final EventStrings eventStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;

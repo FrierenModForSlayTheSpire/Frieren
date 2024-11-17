@@ -1,17 +1,18 @@
 package FrierenMod.events;
 
+import FrierenMod.utils.ModInformation;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.relics.*;
-
-import java.util.Iterator;
+import com.megacrit.cardcrawl.relics.MeatOnTheBone;
+import com.megacrit.cardcrawl.relics.MembershipCard;
+import com.megacrit.cardcrawl.relics.RingOfTheSerpent;
 
 public class KraftGift extends AbstractImageEvent {
-    public static final String ID = "KraftGift";
+    public static final String ID = ModInformation.makeID(KraftGift.class.getSimpleName());
     private static final EventStrings eventStrings;
     public static final String NAME;
     public static final String[] DESCRIPTIONS;

@@ -1,13 +1,9 @@
 package FrierenMod.Characters;
 
-import FrierenMod.cards.purple.CriticalStrike;
-import FrierenMod.cards.purple.Defend_Fern;
-import FrierenMod.cards.purple.Strike_Fern;
-import FrierenMod.cards.purple.WaitingInTheWings;
-import FrierenMod.cards.whitePurple.ShavedIceSpell;
+import FrierenMod.cards.purple.*;
 import FrierenMod.enums.CardEnums;
 import FrierenMod.enums.CharacterEnums;
-import FrierenMod.relics.HaitaaWand;
+import FrierenMod.relics.HairAccessory;
 import FrierenMod.utils.FernRes;
 import FrierenMod.utils.ModInformation;
 import basemod.abstracts.CustomPlayer;
@@ -33,7 +29,7 @@ public class Fern extends CustomPlayer {
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString(ModInformation.MOD_NAME + ":" + FernRes.CHARACTER_NAME);
 
     public Fern(String name) {
-        super(name, CharacterEnums.FERN,FernRes.ORB_TEXTURES,FernRes.ORB_VFX,FernRes.LAYER_SPEED, null, null);
+        super(name, CharacterEnums.FERN, FernRes.ORB_TEXTURES, FernRes.ORB_VFX, FernRes.LAYER_SPEED, null, null);
 
         // 人物对话气泡的大小，如果游戏中尺寸不对在这里修改（libgdx的坐标轴左下为原点）
         this.dialogX = (this.drawX + 0.0F * Settings.scale);
@@ -64,22 +60,21 @@ public class Fern extends CustomPlayer {
     // 初始卡组的ID，可直接写或引用变量
     public ArrayList<String> getStartingDeck() {
         ArrayList<String> retVal = new ArrayList<>();
-        for(int x = 0; x<4; x++) {
+        for (int x = 0; x < 4; x++) {
             retVal.add(Strike_Fern.ID);
         }
-        for(int x = 0; x<4; x++) {
+        for (int x = 0; x < 4; x++) {
             retVal.add(Defend_Fern.ID);
         }
-        retVal.add(ShavedIceSpell.info2.baseId);
-        retVal.add(CriticalStrike.ID);
-        retVal.add(WaitingInTheWings.ID);
+        retVal.add(CriticalHit.ID);
+        retVal.add(LieInWait.ID);
         return retVal;
     }
 
     // 初始遗物的ID，可以先写个原版遗物凑数
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(HaitaaWand.ID);
+        retVal.add(HairAccessory.ID);
         return retVal;
     }
 

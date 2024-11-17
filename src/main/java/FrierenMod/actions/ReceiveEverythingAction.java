@@ -1,21 +1,21 @@
 package FrierenMod.actions;
 
-import FrierenMod.gameHelpers.Status;
+import FrierenMod.gameHelpers.State;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 
 public class ReceiveEverythingAction extends AbstractGameAction {
-    private final Status status;
+    private final State state;
     private final boolean upgraded;
 
-    public ReceiveEverythingAction(Status status, boolean upgraded) {
+    public ReceiveEverythingAction(State state, boolean upgraded) {
         this.upgraded = upgraded;
-        this.status = status;
+        this.state = state;
     }
 
     @Override
     public void update() {
-        this.addToBot(new ReceiveCardsAction(status.drawPile, status.hand, status.discardPile, status.exhaustPile, upgraded));
-        this.addToBot(new ReceivePlayerStatusAction(status));
+        this.addToBot(new ReceiveCardsAction(state.drawPile, state.hand, state.discardPile, state.exhaustPile, upgraded));
+        this.addToBot(new ReceivePlayerStateAction(state));
         this.isDone = true;
     }
 }

@@ -10,6 +10,13 @@
     "NAME": "菲伦的发饰",
     "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
     "DESCRIPTIONS": [
+      "每当 #y魔力 消耗后，获得1点 #y专注 。"
+    ]
+  },
+  "FrierenMod:OLDHairAccessory": {
+    "NAME": "菲伦的发饰",
+    "FLAVOR": "芙莉莲送给徒弟菲伦的16岁生日礼物。",
+    "DESCRIPTIONS": [
       "你每 #y同调 #b4 次 ，抽 #b1 张牌。"
     ]
   },

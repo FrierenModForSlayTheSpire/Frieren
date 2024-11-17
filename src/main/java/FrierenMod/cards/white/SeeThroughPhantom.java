@@ -21,7 +21,7 @@ public class SeeThroughPhantom extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 8;
         this.baseMagicNumber = this.magicNumber = 1;
     }

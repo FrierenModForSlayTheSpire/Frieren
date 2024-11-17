@@ -25,7 +25,7 @@ public class RustCleanMagic extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);
         this.exhaust = true;
     }

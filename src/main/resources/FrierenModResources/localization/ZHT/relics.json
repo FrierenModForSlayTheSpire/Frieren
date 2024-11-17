@@ -7,7 +7,14 @@
     ]
   },
   "FrierenMod:HairAccessory": {
-    "NAME": "菲倫的髮飾",
+    "NAME": "菲倫的發飾",
+    "FLAVOR": "芙莉蓮送給徒弟菲倫的16歲生日禮物。",
+    "DESCRIPTIONS": [
+      "每當 #y魔力 消耗後，獲得1點 #y專註 。"
+    ]
+  },
+  "FrierenMod:OLDHairAccessory": {
+    "NAME": "菲倫的發飾",
     "FLAVOR": "芙莉蓮送給徒弟菲倫的16歲生日禮物。",
     "DESCRIPTIONS": [
       "你每 #y同調 #b4 次 ，抽 #b1 張牌。"

@@ -26,7 +26,7 @@ public class ApexMagic extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.magicNumber = this.baseMagicNumber = 1;
         this.cardsToPreview = new Mana();
     }

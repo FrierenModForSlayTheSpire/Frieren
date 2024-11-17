@@ -22,7 +22,7 @@ public class ContinuousShooting extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 3;
         this.exhaust = true;
     }

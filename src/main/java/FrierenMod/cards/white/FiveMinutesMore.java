@@ -21,7 +21,7 @@ public class FiveMinutesMore extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.baseMagicNumber = this.magicNumber = 2;
         this.cardsToPreview = new Laziness();
     }

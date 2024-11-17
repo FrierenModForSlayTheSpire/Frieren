@@ -23,7 +23,7 @@ public class Mana extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.tags.add(Enum.SYNCHRO);
         this.tags.add(Enum.MANA);
     }

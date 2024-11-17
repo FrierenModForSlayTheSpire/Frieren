@@ -1,17 +1,21 @@
 package FrierenMod.gameHelpers;
 
+import FrierenMod.cardMods.DamageMod;
+import FrierenMod.cardMods.ExhaustEtherealMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.cards.magicItems.AbstractMagicItem;
 import FrierenMod.cards.magicItems.factors.BluePrint;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
+import FrierenMod.patches.fields.GameActionManagerField;
 import FrierenMod.patches.fields.MagicDeckField;
-import FrierenMod.powers.ChantWithoutManaPower;
-import FrierenMod.powers.ChantWithoutManaTimesPower;
-import FrierenMod.powers.ConcentrationPower;
-import FrierenMod.powers.WeakenedChantPower;
+import FrierenMod.powers.*;
+import FrierenMod.powers.FusionPower.AbstractFusionPower;
+import FrierenMod.powers.FusionPower.DamageFusionPower;
 import FrierenMod.relics.FakeFlammeGrimoire;
 import FrierenMod.relics.FlammeGrimoire;
 import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
+import basemod.helpers.CardModifierManager;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -176,10 +180,6 @@ public class CombatHelper {
         return max;
     }
 
-    public static ConcentrationPower getConcentrationPower() {
-        return (ConcentrationPower) AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
-    }
-
     public static int getWeakenedChantPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(WeakenedChantPower.POWER_ID);
         return po == null ? 0 : po.amount;
@@ -188,18 +188,6 @@ public class CombatHelper {
     public static int getConcentrationPowerAmt() {
         AbstractPower po = AbstractDungeon.player.getPower(ConcentrationPower.POWER_ID);
         return po == null ? 0 : po.amount;
-    }
-
-    public static int getDeviationAmt(boolean isUsingCard) {
-        return Math.abs(getCardsUsedThisTurnSize(isUsingCard) - getConcentrationPowerAmt());
-    }
-
-    public static boolean isDeviationEven(boolean isUsingCard) {
-        return getDeviationAmt(isUsingCard) % 2 == 0;
-    }
-
-    public static boolean canRaidTakeEffect(int raidNumber, boolean isUsingCard) {
-        return isRaidReversed() == (getDeviationAmt(isUsingCard) > raidNumber);
     }
 
     public static int getManaNeedBeforeLoaded(int chantX, AbstractMagicItem f) {
@@ -214,10 +202,6 @@ public class CombatHelper {
         if (AbstractDungeon.player.hasPower(ChantWithoutManaTimesPower.POWER_ID))
             return 0;
         return Math.max((baseManaNeed - getConcentrationPowerAmt() + getWeakenedChantPowerAmt()), 0);
-    }
-
-    public static boolean isRaidReversed() {
-        return false;
     }
 
     public static AbstractMagicItem[] getChantChoices() {
@@ -273,5 +257,72 @@ public class CombatHelper {
                 return false;
         }
         return true;
+    }
+
+    public static boolean canRaidTakeEffect(int raidNumber) {
+        if (Config.IN_DEV)
+            return true;
+        if (AbstractDungeon.player.hasPower(SocialDancingPower.POWER_ID) && getConcentrationPowerAmt() > 0)
+            return raidNumber == getConcentrationPowerAmt() || raidNumber == getConcentrationPowerAmt() + 1 || raidNumber == Math.max(0, getConcentrationPowerAmt() - 1);
+        return raidNumber == getConcentrationPowerAmt();
+    }
+
+    public static boolean triggerRaid(int raidNumber, ActionHelper.Lambda raidEffect) {
+        return triggerRaid(raidNumber, false, raidEffect);
+    }
+
+    public static boolean triggerRaid(int raidNumber, boolean isDamage, ActionHelper.Lambda raidEffect) {
+        if (!canRaidTakeEffect(raidNumber))
+            return false;
+        int times = 1;
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower) {
+                times += ((AbstractBasePower) po).modifyRaidTriggerTimes();
+                times += ((AbstractBasePower) po).modifyRaidTriggerTimes(isDamage);
+            }
+        }
+        for (int i = 0; i < times; i++) {
+            raidEffect.run();
+            for (AbstractPower po : AbstractDungeon.player.powers) {
+                if (po instanceof AbstractBasePower)
+                    ((AbstractBasePower) po).afterRaidTriggered();
+            }
+            for (AbstractCard c : AbstractDungeon.player.hand.group) {
+                if (c instanceof AbstractBaseCard) {
+                    ((AbstractBaseCard) c).afterRaidTriggered();
+                }
+            }
+        }
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower)
+                ((AbstractBasePower) po).afterRaidFinished();
+        }
+        GameActionManagerField.raidTriggeredThisTurn.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisTurn.get(AbstractDungeon.actionManager) + times);
+        GameActionManagerField.raidTriggeredThisCombat.set(AbstractDungeon.actionManager, GameActionManagerField.raidTriggeredThisCombat.get(AbstractDungeon.actionManager) + times);
+        return true;
+    }
+
+    public static AbstractCard getPreviewSpecializedOffensiveMagic(int baseDamage) {
+        SpecializedOffensiveMagic magic = new SpecializedOffensiveMagic();
+        magic.baseDamage = baseDamage;
+        CardModifierManager.addModifier(magic, new DamageMod(baseDamage));
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractFusionPower) {
+                if (po instanceof DamageFusionPower) {
+                    magic.baseDamage += po.amount;
+                } else {
+                    CardModifierManager.addModifier(magic, ((AbstractFusionPower) po).modifier);
+                }
+            }
+        }
+        CardModifierManager.addModifier(magic, new ExhaustEtherealMod());
+        for (AbstractPower po : AbstractDungeon.player.powers) {
+            if (po instanceof AbstractBasePower) {
+                ((AbstractBasePower) po).beforeGainSpecializedOffensiveMagic(magic);
+            }
+        }
+        magic.rawDescription = magic.usedModifierText;
+        magic.initializeDescription();
+        return magic;
     }
 }

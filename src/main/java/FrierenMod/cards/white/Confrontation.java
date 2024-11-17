@@ -23,7 +23,7 @@ public class Confrontation extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = baseBlock = 6;
     }
 

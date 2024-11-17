@@ -18,7 +18,7 @@ public class AccessoriesSpell extends AbstractBaseCard {
         super(info);
     }
 
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.isInnate = true;
         this.isEthereal = true;
         this.tags.add(AbstractBaseCard.Enum.LEGENDARY_SPELL);

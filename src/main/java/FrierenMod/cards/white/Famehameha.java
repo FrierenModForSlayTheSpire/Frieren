@@ -26,7 +26,7 @@ public class Famehameha extends AbstractBaseCard {
     }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 31;
         this.tags.add(Enum.LEGENDARY_SPELL);
         this.tags.add(Enum.COST_REST);

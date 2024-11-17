@@ -237,5 +237,143 @@
     "DESCRIPTIONS": [
       "Decrease your hand size by #b%d this combat."
     ]
+  },
+  "FrierenMod:ConcentrationPower": {
+    "NAME": "Concentration",
+    "DESCRIPTIONS": [
+      "Lose 1 of this power after playing a non #yMana card."
+    ]
+  },
+  "FrierenMod:DamageFusionPower": {
+    "NAME": "Damage Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Deal #b%d damage."
+    ]
+  },
+  "FrierenMod:EnergyFusionPower": {
+    "NAME": "Energy Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Gain #b%d [E] ."
+    ]
+  },
+  "FrierenMod:WeakVulnerableFusionPower": {
+    "NAME": "Weak Vulnerable Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Apply #b%d #yWeak and #yVulnerable ."
+    ]
+  },
+  "FrierenMod:DrawCardFusionPower": {
+    "NAME": "Draw Card Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Draw #b%d cards."
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardFusionPower": {
+    "NAME": "Copy Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Put #b%d copies of this card into the discard pile."
+    ]
+  },
+  "FrierenMod:ConcentrationFusionPower": {
+    "NAME": "Concentration Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Gain #b%d #yconcentration."
+    ]
+  },
+  "FrierenMod:StrengthFusionPower": {
+    "NAME": "Strength Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Gain #b%d #yStrength."
+    ]
+  },
+  "FrierenMod:StrengthFusionPowerFusionPower": {
+    "NAME": "Strength Fusion Fusion",
+    "DESCRIPTIONS": [
+      "The next #ySpecialized #yOffensive #yMagic will have: NL #yFusion: Gain #b%d #yStrength."
+    ]
+  },
+  "FrierenMod:FightPower": {
+    "NAME": "Fight",
+    "DESCRIPTIONS": [
+      " "
+    ]
+  },
+  "FrierenMod:WithNoStopPower": {
+    "NAME": "With No Stop",
+    "DESCRIPTIONS": [
+      "After playing the next #b%d cards, gain 2 #yConcentration ."
+    ]
+  },
+  "FrierenMod:MysticEyePower": {
+    "NAME": "Mystic Eye",
+    "DESCRIPTIONS": [
+      " "
+    ]
+  },
+  "FrierenMod:MasterAndApprenticePower": {
+    "NAME": "Master And Apprentice",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b%d random #yBicolor cards to your hand."
+    ]
+  },
+  "FrierenMod:SkilledMagePower": {
+    "NAME": "Skilled Mage",
+    "DESCRIPTIONS": [
+      "After playing #yFusion, #ySpeed cards, #ySpecialized #yOffensive #yMagic, or triggering #yRaid, gain #b%d #yBlock ."
+    ]
+  },
+  "FrierenMod:BoldReversalPower": {
+    "NAME": "Bold Reversal",
+    "DESCRIPTIONS": [
+      "Your next #b%d #yRaid effects will trigger an additional time."
+    ]
+  },
+  "FrierenMod:FernRushdownPower": {
+    "NAME": "Fern Rushdown",
+    "DESCRIPTIONS": [
+      "After triggering #yRaid , draw #b%d cards."
+    ]
+  },
+  "FrierenMod:ManaAffinityPower": {
+    "NAME": "Mana Affinity",
+    "DESCRIPTIONS": [
+      " #yMana has #yRetain ."
+    ]
+  },
+  "FrierenMod:SocialDancingPower": {
+    "NAME": "Social Dancing",
+    "DESCRIPTIONS": [
+      "The condition for #yRaid X is changed to X-1, X, and X+1 when you have #yConcentration ."
+    ]
+  },
+  "FrierenMod:ConfidencePower": {
+    "NAME": "Confidence",
+    "DESCRIPTIONS": [
+      "All #yraid effects that deal damage will trigger an additional time. Lose all #yconcentration at the start of each turn."
+    ]
+  },
+  "FrierenMod:GamblePower": {
+    "NAME": "Gamble",
+    "DESCRIPTIONS": [
+      "After playing a card, randomize your #yConcentration count to between 1 and 6. If it is 6, deal #b%d damage to all enemies."
+    ]
+  },
+  "FrierenMod:FumeshroomFormPower": {
+    "NAME": "Fumeshroom Form",
+    "DESCRIPTIONS": [
+      "All your single-target damage will also deal damage to non-targeted enemies."
+    ]
+  },
+  "FrierenMod:RecollectionOfBenefactorPower": {
+    "NAME": "Recollection Of Benefactor",
+    "DESCRIPTIONS": [
+      "When gaining a #ySpecialized #yOffensive #yMagic through #yHaitaa #yWand, damage is increased from 2x to 4x."
+    ]
+  },
+  "FrierenMod:NextTurnConcentrationPower": {
+    "NAME": "Next Turn Concentration",
+    "DESCRIPTIONS": [
+      "Gain #b%d #yConcentration in the next turn."
+    ]
   }
 }

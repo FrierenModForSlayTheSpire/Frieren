@@ -1,10 +1,10 @@
 package FrierenMod.cards;
 
 import FrierenMod.cards.tempCards.CustomLegendarySpell;
+import FrierenMod.cards.tempCards.SpecializedOffensiveMagic;
+import FrierenMod.enums.CharacterEnums;
 import FrierenMod.gameHelpers.CombatHelper;
-import FrierenMod.utils.CardInfo;
-import FrierenMod.utils.ModInformation;
-import FrierenMod.utils.PublicRes;
+import FrierenMod.utils.*;
 import basemod.abstracts.CustomCard;
 import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.Gdx;
@@ -17,10 +17,15 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static FrierenMod.utils.PublicRes.*;
+import static FrierenMod.utils.PublicRes.BG_SKILL_FRIEREN_FERN_1024;
 
 public abstract class AbstractBaseCard extends CustomCard {
     public int baseChantX = -1;
@@ -35,6 +40,7 @@ public abstract class AbstractBaseCard extends CustomCard {
     public int baseRaidNumber = -1;
     public boolean upgradedRaidNumber;
     public boolean isRaidNumberModified;
+    public boolean isRaidTriggered;
     protected float rotationTimer;
     protected int previewIndex;
 
@@ -46,7 +52,13 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     public AbstractBaseCard(CardInfo info) {
         super(info.baseId, info.name, info.img, info.baseCost, info.rawDescription, info.cardType, info.cardColor, info.cardRarity, info.cardTarget);
-        initCards();
+        this.initializeBaseSwitches();
+        this.initializeSpecifiedAttributes();
+        this.loadSpecifiedCardStyle();
+    }
+
+    public AbstractCard getCardForSecondRegister() {
+        return this;
     }
 
     @Override
@@ -58,13 +70,7 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     }
 
-    private void initCards() {
-        this.initBaseSwitches();
-        this.initSpecifiedAttributes();
-        this.loadSpecifiedCardStyle();
-    }
-
-    private void initBaseSwitches() {
+    private void initializeBaseSwitches() {
         this.isCostModified = false;
         this.isCostModifiedForTurn = false;
         this.isDamageModified = false;
@@ -74,12 +80,55 @@ public abstract class AbstractBaseCard extends CustomCard {
         this.isChantXModified = false;
         this.isSecondMagicNumberModified = false;
         this.upgradedSecondMagicNumber = false;
+        this.isRaidTriggered = false;
     }
 
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
     }
 
     public void loadSpecifiedCardStyle() {
+        if (this.hasTag(Enum.FRIEREN_FERN_CARD) && Config.FERN_ENABLE) {
+            String img512, img1024;
+            switch (this.type) {
+                case ATTACK:
+                    img512 = BG_ATTACK_FRIEREN_FERN_512;
+                    img1024 = BG_ATTACK_FRIEREN_FERN_1024;
+                    break;
+                case SKILL:
+                    img512 = BG_SKILL_FRIEREN_FERN_512;
+                    img1024 = BG_SKILL_FRIEREN_FERN_1024;
+                    break;
+                case POWER:
+                    img512 = BG_POWER_FRIEREN_FERN_512;
+                    img1024 = BG_POWER_FRIEREN_FERN_1024;
+                    break;
+                default:
+                    img512 = BG_SKILL_FRIEREN_FERN_512;
+                    img1024 = BG_SKILL_FRIEREN_FERN_1024;
+                    Log.logger.info("WTF?");
+                    break;
+            }
+            this.setBackgroundTexture(img512, img1024);
+            if (AbstractDungeon.player != null) {
+                String energyOrb, bigOrb;
+                if (AbstractDungeon.player.chosenClass == CharacterEnums.FERN) {
+                    energyOrb = FernRes.ENERGY_ORB;
+                    bigOrb = FernRes.BIG_ORB;
+                } else {
+                    energyOrb = FrierenRes.ENERGY_ORB;
+                    bigOrb = FrierenRes.BIG_ORB;
+                }
+                this.setOrbTexture(energyOrb, bigOrb);
+            }
+        }
+    }
+
+    public List<TooltipInfo> getCustomTooltips() {
+        if (this.hasTag(Enum.FRIEREN_FERN_CARD) && Config.FERN_ENABLE) {
+            this.tips.clear();
+            this.tips.add(new TooltipInfo(CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[0], CardCrawlGame.languagePack.getUIString("FrierenMod:DualCardTip").TEXT[1]));
+        }
+        return this.tips;
     }
 
     public void upgradeChantX(int amount) {
@@ -118,27 +167,9 @@ public abstract class AbstractBaseCard extends CustomCard {
 
     @Override
     public AbstractCard makeStatEquivalentCopy() {
-        if (this instanceof CustomLegendarySpell)
+        if (this instanceof CustomLegendarySpell || this instanceof SpecializedOffensiveMagic)
             return super.makeStatEquivalentCopy();
         AbstractCard card = this.makeCopy();
-        card.name = this.name;
-        card.target = this.target;
-        card.upgraded = this.upgraded;
-        card.timesUpgraded = this.timesUpgraded;
-        card.baseDamage = this.baseDamage;
-        card.baseBlock = this.baseBlock;
-        card.baseMagicNumber = this.baseMagicNumber;
-        card.cost = this.cost;
-        card.costForTurn = this.costForTurn;
-        card.isCostModified = this.isCostModified;
-        card.isCostModifiedForTurn = this.isCostModifiedForTurn;
-        card.inBottleLightning = this.inBottleLightning;
-        card.inBottleFlame = this.inBottleFlame;
-        card.inBottleTornado = this.inBottleTornado;
-        card.isSeen = this.isSeen;
-        card.isLocked = this.isLocked;
-        card.misc = this.misc;
-        card.freeToPlayOnce = this.freeToPlayOnce;
         if (card instanceof AbstractBaseCard) {
             ((AbstractBaseCard) card).baseChantX = this.baseChantX;
             ((AbstractBaseCard) card).chantX = this.chantX;
@@ -167,6 +198,12 @@ public abstract class AbstractBaseCard extends CustomCard {
             return false;
         }
         return super.canUse(p, m);
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        if (this.raidNumber != -1 && this.hasTag(Enum.RAID))
+            this.glowColor = (CombatHelper.canRaidTakeEffect(this.raidNumber)) ? AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy() : AbstractCard.BLUE_BORDER_GLOW_COLOR.cpy();
     }
 
     public boolean canUseOriginally(AbstractPlayer p, AbstractMonster m) {
@@ -206,6 +243,9 @@ public abstract class AbstractBaseCard extends CustomCard {
     public void afterSynchroFinished(AbstractCard card) {
     }
 
+    public void afterRaidTriggered() {
+    }
+
     public static class Enum {
         @SpireEnum
         public static AbstractCard.CardTags SYNCHRO;
@@ -229,6 +269,14 @@ public abstract class AbstractBaseCard extends CustomCard {
         public static AbstractCard.CardTags LESS_CHANCE_TO_MEET;
         @SpireEnum
         public static AbstractCard.CardTags NEVER_DROP;
+        @SpireEnum
+        public static AbstractCard.CardTags RAID;
+        @SpireEnum
+        public static AbstractCard.CardTags SPEED;
+        @SpireEnum
+        public static AbstractCard.CardTags FUSION;
+        @SpireEnum
+        public static AbstractCard.CardTags FRIEREN_FERN_CARD;
     }
 
     protected static TextureAtlas.AtlasRegion getImg(Texture texture) {

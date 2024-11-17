@@ -113,7 +113,7 @@
       " NL Remove all of your debuffs."
     ]
   },
-  "FrierenMod:StrengthMod": {
+  "FrierenMod:LimitBreakMod": {
     "TEXT": [
       " NL Double your Strength . NL  Exhaust ."
     ]
@@ -132,6 +132,48 @@
     "TEXT": [
       " NL Apply ",
       " Vulnerable to ALL enemies."
+    ]
+  },
+  "FrierenMod:ExhaustEtherealMod": {
+    "TEXT": [
+      " NL Ethereal. Exhaust."
+    ]
+  },
+  "FrierenMod:GainEnergyMod": {
+    "TEXT": [
+      "Gain",
+      " [E] ."
+    ]
+  },
+  "FrierenMod:WeakVulnerableMod": {
+    "TEXT": [
+      "Apply",
+      "Weak and Vulnerable."
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardMod": {
+    "TEXT": [
+      "Put",
+      "copy of this card into the discard pile.",
+      "copies of this card into the discard pile."
+    ]
+  },
+  "FrierenMod:ConcentrationMod": {
+    "TEXT": [
+      "Gain",
+      " frierenmod:Concentration ."
+    ]
+  },
+  "FrierenMod:StrengthMod": {
+    "TEXT": [
+      "Gain",
+      "Strength."
+    ]
+  },
+  "FrierenMod:StrengthFusionMod": {
+    "TEXT": [
+      " frierenmod:fusion : Gain",
+      "Strength."
     ]
   },
   "FrierenMod:BreaksBarriersSpellMod": {
@@ -422,8 +464,20 @@
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
-      "双职业卡",
-      " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌."
+      "Bicolor",
+      "The card belongs to [#edeaf5]Frieren[] and [#784183]Fern[] ."
+    ]
+  },
+  "FrierenMod:FernPanel": {
+    "TEXT": [
+      "Haitaa Wand",
+      "When you have #yWand_Energy , #rright-click the wand to gain a #ySpecialized_Offensive_Magic , its damage value equals the number of #yConcentration multiplied by #b%d times, then lose all #yConcentration.",
+      "No enough #rEnergy ."
+    ]
+  },
+  "FrierenMod:SnuggleOptionCard1Action": {
+    "TEXT": [
+      "(Discard Mana to Gain Energy)"
     ]
   }
 }

@@ -27,7 +27,7 @@ public class LittleFire extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.damage = this.baseDamage = 3;
         this.magicNumber = this.baseMagicNumber = 2;
         this.tags.add(AbstractBaseCard.Enum.COST_REST);

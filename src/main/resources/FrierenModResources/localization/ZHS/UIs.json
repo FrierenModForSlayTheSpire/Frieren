@@ -113,7 +113,7 @@
       " NL 移除你身上的所有负面效果。"
     ]
   },
-  "FrierenMod:StrengthMod": {
+  "FrierenMod:LimitBreakMod": {
     "TEXT": [
       " NL 将你的 力量 翻倍。 NL  消耗 。"
     ]
@@ -132,6 +132,48 @@
     "TEXT": [
       " NL 给与所有敌人 ",
       " 层 易伤 。"
+    ]
+  },
+  "FrierenMod:ExhaustEtherealMod": {
+    "TEXT": [
+      " NL 虚无 。 消耗 。"
+    ]
+  },
+  "FrierenMod:GainEnergyMod": {
+    "TEXT": [
+      "获得",
+      "点 [E] 。"
+    ]
+  },
+  "FrierenMod:WeakVulnerableMod": {
+    "TEXT": [
+      "给予",
+      "层 虚弱 和 易伤 。"
+    ]
+  },
+  "FrierenMod:CopySelfToDiscardMod": {
+    "TEXT": [
+      "在弃牌堆放入",
+      "张本牌的复制品。",
+      "张本牌的复制品。"
+    ]
+  },
+  "FrierenMod:ConcentrationMod": {
+    "TEXT": [
+      "获得",
+      "点 frierenmod:专注 。"
+    ]
+  },
+  "FrierenMod:StrengthMod": {
+    "TEXT": [
+      "获得",
+      "点 力量 。"
+    ]
+  },
+  "FrierenMod:StrengthFusionMod": {
+    "TEXT": [
+      " frierenmod:融合 ：获得",
+      "点 力量 。"
     ]
   },
   "FrierenMod:BreaksBarriersSpellMod": {
@@ -422,14 +464,20 @@
   },
   "FrierenMod:DualCardTip": {
     "TEXT": [
-      "双职业卡",
+      "双色牌",
       " [#edeaf5]芙莉莲[] 和 [#784183]菲伦[] 的通用卡牌。"
     ]
   },
   "FrierenMod:FernPanel": {
     "TEXT": [
-      "计数器",
-      "上：本回合使用过的卡牌数 NL 中： #y离差 NL 下： #y专注 层数"
+      "海塔留下的法杖",
+      "拥有充能时， #r右键 法杖获得一张 #y特化普攻魔法 ，其伤害值等于 #y专注 数的 #b%d 倍，然后失去所有 #y专注 。",
+      "没有足够 #r充能 。"
+    ]
+  },
+  "FrierenMod:SnuggleOptionCard1Action": {
+    "TEXT": [
+      "（丢弃魔力以获得能量）"
     ]
   }
 }

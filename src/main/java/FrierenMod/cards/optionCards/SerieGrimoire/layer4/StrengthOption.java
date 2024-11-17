@@ -1,6 +1,6 @@
 package FrierenMod.cards.optionCards.SerieGrimoire.layer4;
 
-import FrierenMod.cardMods.StrengthMod;
+import FrierenMod.cardMods.LimitBreakMod;
 import FrierenMod.cards.AbstractBaseCard;
 import FrierenMod.utils.CardInfo;
 import FrierenMod.utils.ModInformation;
@@ -32,6 +32,6 @@ public class StrengthOption extends AbstractBaseCard {
     }
 
     public void onChoseThisOption() {
-        CardModifierManager.addModifier(this.currentLegendMagic, new StrengthMod());
+        CardModifierManager.addModifier(this.currentLegendMagic, new LimitBreakMod());
     }
 }

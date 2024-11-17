@@ -23,7 +23,7 @@ public class DefensiveMagic extends AbstractBaseCard {
 //    }
 
     @Override
-    public void initSpecifiedAttributes() {
+    public void initializeSpecifiedAttributes() {
         this.block = this.baseBlock = 3;
         this.chantX = this.baseChantX = 1;
         this.tags.add(AbstractBaseCard.Enum.CHANT);
