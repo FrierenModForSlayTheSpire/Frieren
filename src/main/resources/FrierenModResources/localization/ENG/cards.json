@@ -188,7 +188,7 @@
     ]
   },
   "FrierenMod:PinchAndScrape": {
-    "NAME": "Pinch And Scrape",
+    "NAME": "Pinch and Scrape",
     "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, the next !SM! times frierenmod:Synchro don't Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust X *Mana in pile, the next 2X times frierenmod:Synchro don't Exhaust."
@@ -198,7 +198,7 @@
     "NAME": "Blue Print",
     "DESCRIPTION": "",
     "EXTENDED_DESCRIPTION": [
-      "Always COPY the *Magic_Factor in the next frierenmod:Slot when frierenmod:Chant ."
+      "Always COPY the *Magic *Factor in the next frierenmod:Slot when frierenmod:Chant ."
     ]
   },
   "FrierenMod:BloodSpell": {
@@ -210,9 +210,9 @@
   },
   "FrierenMod:BigFire": {
     "NAME": "Big Fire",
-    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add !SM! *Little_Fire into {!frierenmod:SlotNumber!|-1= Error|0= draw pile|1= hand|2= discard pile}.",
+    "DESCRIPTION": "Exhaust !M! *Mana {@@} in {!frierenmod:SlotNumber!|-1= Error|0= Draw Pile |1= Hand|2= Discard Pile}, add !SM! *Little *Fire into {!frierenmod:SlotNumber!|-1= Error|0= draw pile|1= hand|2= discard pile}.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust 2X *Mana in pile, add X *Little_Fire into pile."
+      "Exhaust 2X *Mana in pile, add X *Little *Fire into pile."
     ]
   },
   "FrierenMod:Factor100": {
@@ -238,58 +238,58 @@
   },
   "FrierenMod:UnbelievableTool": {
     "NAME": "Unbelievable Tool",
-    "DESCRIPTION": "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot.",
+    "DESCRIPTION": "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic *Factor ,swap their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
-      "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic_Factor ,swap their frierenmod:slot."
+      "Choose one [#ff4e41]Unloaded[#ff4e41] and one [#9ffc4f]Loading[#9ffc4f] *Magic *Factor ,swap their frierenmod:Slot."
     ]
   },
   "FrierenMod:MysteryBox": {
     "NAME": "Mystery Box",
-    "DESCRIPTION": "Add 2 random *Magic_Factor to your Magic Deck.",
+    "DESCRIPTION": "Add 2 random *Magic *Factor to your Magic Deck.",
     "EXTENDED_DESCRIPTION": [
-      "Add 2 random *Magic_Factor to your Magic Deck."
+      "Add 2 random *Magic *Factor to your Magic Deck."
     ]
   },
   "FrierenMod:SeinNote": {
     "NAME": "Sein's Note",
-    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP.",
+    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , Heal 10 HP.",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, Heal 10 HP."
+      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , Heal 10 HP."
     ]
   },
   "FrierenMod:MysticBox": {
     "NAME": "Mystic Box",
-    "DESCRIPTION": "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly.",
+    "DESCRIPTION": "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic *Factor 's randomly.",
     "EXTENDED_DESCRIPTION": [
-      "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic_Factor 's randomly."
+      "Choose 3 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor , swap their frierenmod:Slot with [#9ffc4f]Loading[#9ffc4f] *Magic *Factor 's randomly."
     ]
   },
   "FrierenMod:ShadowDragonHorn": {
     "NAME": "Shadow Dragon's Horn",
-    "DESCRIPTION": "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E].",
+    "DESCRIPTION": "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , gain [E] [E].",
     "EXTENDED_DESCRIPTION": [
-      "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain [E] [E]."
+      "Only available in combat: Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , gain [E] [E]."
     ]
   },
   "FrierenMod:TransmutationCircle": {
     "NAME": "A Certain Scientific Transmutation Circle",
-    "DESCRIPTION": "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot.",
+    "DESCRIPTION": "Remove 2 *Magic *Factor , add random *Magic *Factor with the same rarity in their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 *Magic_Factor , add random *Magic_Factor with the same rarity in their frierenmod:Slot."
+      "Remove 2 *Magic *Factor , add random *Magic *Factor with the same rarity in their frierenmod:Slot."
     ]
   },
   "FrierenMod:UnbelievableToolBox": {
     "NAME": "Unbelievable Tool Box",
-    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool .",
+    "DESCRIPTION": "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , gain 2 *Unbelievable *Tool .",
     "EXTENDED_DESCRIPTION": [
-      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic_Factor or *Magic_Prop, gain 2 *Unbelievable_Tool ."
+      "Remove 2 [#ff4e41]Unloaded[#ff4e41] *Magic *Factor or *Magic *Prop , gain 2 *Unbelievable *Tool ."
     ]
   },
   "FrierenMod:CrystalBall": {
     "NAME": "Crystal Ball",
-    "DESCRIPTION": "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot.",
+    "DESCRIPTION": "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic *Factor , swap their frierenmod:Slot.",
     "EXTENDED_DESCRIPTION": [
-      "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic_Factor , swap their frierenmod:slot."
+      "Choose 2 [#9ffc4f]Loading[#9ffc4f] *Magic *Factor , swap their frierenmod:Slot."
     ]
   },
   "FrierenMod:Tutorial": {
@@ -349,7 +349,7 @@
   },
   "FrierenMod:PajamasForm": {
     "NAME": "Pajamas Form",
-    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 4 times the amount you Exhaust to ALL enemies. NL (Deal !M! damage)"
+    "DESCRIPTION": "At the end of your turn, Exhaust ALL *Mana and deal damage equal to 4 times the amount you Exhaust to ALL enemies."
   },
   "FrierenMod:PreparedPosture": {
     "NAME": "Prepared Posture",
@@ -404,8 +404,8 @@
   },
   "FrierenMod:FireSpell": {
     "NAME": "Spell That Starts a Fire",
-    "DESCRIPTION": "Add a *LittleSpark into your hand for every enemy in the room. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Add a *LittleSpark+ into your hand for every enemy in the room. NL Exhaust."
+    "DESCRIPTION": "Add a *Little *Spark into your hand for every enemy in the room. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a *Little *Spark+ into your hand for every enemy in the room. NL Exhaust."
   },
   "FrierenMod:Laziness": {
     "NAME": "Laziness",
@@ -825,7 +825,7 @@
   },
   "FrierenMod:FairyTaleEnd": {
     "NAME": "The end of Fairy Tale",
-    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Deal !D! damage. Double base damage of this card after you played a new kind of *Legendary_Spell this combat.",
+    "DESCRIPTION": "frierenmod:Legendary_Spell. NL Deal !D! damage. Double base damage of this card after you played a new kind of *Legendary *Spell this combat.",
     "EXTENDED_DESCRIPTION": [
       " NL （Have played",
       " kinds.）"
@@ -896,7 +896,7 @@
   },
   "FrierenMod:CriticalHit": {
     "NAME": "Critical Hit",
-    "DESCRIPTION": " frierenmod:Raid !R! : Deal !D! damage. NL frierenmod:Fusion : Deal !D! damage."
+    "DESCRIPTION": "frierenmod:Raid !R! :Deal !D! damage. NL frierenmod:Fusion :Deal !D! damage."
   },
   "FrierenMod:ChargeUp": {
     "NAME": "Charge Up",
@@ -908,59 +908,59 @@
   },
   "FrierenMod:AggrieveStrike": {
     "NAME": "Aggrieve Strike",
-    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Raid !R! : Return this card to your hand."
+    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Raid !R! :Return this card to your hand."
   },
   "FrierenMod:Backstab": {
     "NAME": "Backstab",
     "DESCRIPTION": "Deal !D! damage to all enemies. If no enemies die, gain [E].",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. If no enemies die, gain [E] and 3 frierenmod:Concentration ."
+    "UPGRADE_DESCRIPTION": "Deal !D! damage to all enemies. If no enemies die, gain [E] and 3 frierenmod:Concentration."
   },
   "FrierenMod:FlyOnTheWall": {
     "NAME": "Fly On The Wall",
-    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! : Deal !D! damage."
+    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! :Deal !D! damage."
   },
   "FrierenMod:Swoop": {
     "NAME": "Swoop",
-    "DESCRIPTION": " frierenmod:Fusion: Deal !D! damage, draw !M! cards."
+    "DESCRIPTION": "frierenmod:Fusion :Deal !D! damage, draw !M! cards."
   },
   "FrierenMod:SeeThroughClothSpell": {
     "NAME": "Spell to See Through Cloth",
-    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Fusion: Apply !M! Weak and Vulnerable."
+    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Fusion :Apply !M! Weak and Vulnerable."
   },
   "FrierenMod:CloseRaid": {
     "NAME": "Close Raid",
-    "DESCRIPTION": " frierenmod:Raid !R! : frierenmod:Fusion : Deal !D! damage."
+    "DESCRIPTION": "frierenmod:Raid !R! : frierenmod:Fusion :Deal !D! damage."
   },
   "FrierenMod:FusionSlash": {
     "NAME": "Fusion Slash",
-    "DESCRIPTION": "Can only be played if *Specialized *Offensive *Magic has been played this turn. NL frierenmod:Fusion : Deal !D! damage.",
+    "DESCRIPTION": "Can only be played if *Specialized *Offensive *Magic has been played this turn. NL frierenmod:Fusion: Deal !D! damage.",
     "EXTENDED_DESCRIPTION": [
-      " #ySpecialized_Offensive_Magic has not been played."
+      " #ySpecialized #yOffensive #yMagic has not been played."
     ]
   },
   "FrierenMod:Fight": {
     "NAME": "Fight",
-    "DESCRIPTION": "Gain !M! frierenmod:Wand_Energy . NL frierenmod:Fusion : Deal !D! damage."
+    "DESCRIPTION": "Gain !M! frierenmod:Wand_Energy. NL frierenmod:Fusion :Deal !D! damage."
   },
   "FrierenMod:HuddleForWarmth": {
     "NAME": "Huddle For Warmth",
-    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! : Block will not be removed at the start of your next turn. NL Ethereal."
+    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! :Block will not be removed at the start of your next turn. NL Ethereal."
   },
   "FrierenMod:SkimReading": {
     "NAME": "Skim Reading",
-    "DESCRIPTION": "Draw 3 cards, frierenmod:Raid !R! : Draw 1 more card."
+    "DESCRIPTION": "Draw 3 cards, frierenmod:Raid !R! :Draw 1 more card."
   },
   "FrierenMod:RaidPreparation": {
     "NAME": "Raid Preparation",
-    "DESCRIPTION": "Draw 1 frierenmod:Raid card. NL frierenmod:Raid !R! : Draw 1 frierenmod:Fusion card."
+    "DESCRIPTION": "Draw 1 frierenmod:Raid card. NL frierenmod:Raid !R! :Draw 1 frierenmod:Fusion card."
   },
   "FrierenMod:EmergencyDefense": {
     "NAME": "Emergency Defense",
-    "DESCRIPTION": "frierenmod:Speed. NL Gain !B! Block. NL frierenmod:Raid !R! : Gain [E] . NL Exhaust."
+    "DESCRIPTION": "frierenmod:Speed. NL Gain !B! Block. NL frierenmod:Raid !R! :Gain [E] . NL Exhaust."
   },
   "FrierenMod:CounterAttack": {
     "NAME": "Counter Attack",
-    "DESCRIPTION": "frierenmod:Speed. NL Choose: Gain 3 frierenmod:Concentration and deal !D! damage, lose 3 *concentration and gain !B! Block."
+    "DESCRIPTION": "frierenmod:Speed. NL Choose:Gain 3 frierenmod:Concentration and deal !D! damage, Lose 3 *concentration and gain !B! Block."
   },
   "FrierenMod:FocusOnAttack": {
     "NAME": "Focus On Attack",
@@ -980,8 +980,8 @@
   },
   "FrierenMod:ColdBlood": {
     "NAME": "Cold Blood",
-    "DESCRIPTION": "If the last card played in this battle triggered frierenmod:Raid, deal !D! damage. NL frierenmod:Raid !R!: Deal !D! damage.",
-    "UPGRADE_DESCRIPTION": "If the last frierenmod:Raid card played in this battle triggered *raid, deal !D! damage. NL frierenmod:Raid !R!: Deal !D! damage."
+    "DESCRIPTION": "If the last card played in this battle triggered frierenmod:Raid, deal !D! damage. NL frierenmod:Raid !R! :Deal !D! damage.",
+    "UPGRADE_DESCRIPTION": "If the last frierenmod:Raid card played in this battle triggered *Raid, deal !D! damage. NL frierenmod:Raid !R! :Deal !D! damage."
   },
   "FrierenMod:FernFixFrieren": {
     "NAME": "Fern Fix Frieren",
@@ -989,31 +989,31 @@
   },
   "FrierenMod:RaidRace": {
     "NAME": "Raid Race",
-    "DESCRIPTION": " frierenmod:Speed . NL Each time a frierenmod:Raid is triggered this turn, energy cost is reduced by 1 [E]. NL Deal !D! damage."
+    "DESCRIPTION": "frierenmod:Speed. NL Each time a frierenmod:Raid is triggered this turn, energy cost is reduced by 1 [E]. NL Deal !D! damage."
   },
   "FrierenMod:SeriousSeriesSpell": {
     "NAME": "Serious Series, Serious Spell",
-    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Raid !R! : Change to deal !D! damage to all enemies."
+    "DESCRIPTION": "Deal !D! damage. NL frierenmod:Raid !R! :Change to deal !D! damage to all enemies."
   },
   "FrierenMod:Surveillance": {
     "NAME": "Surveillance",
-    "DESCRIPTION": "Draw 1 card. NL frierenmod:Raid !R! : Gain 1 frierenmod:Wand_Energy. NL frierenmod:Fusion : Deal !D! damage."
+    "DESCRIPTION": "Draw 1 card. NL frierenmod:Raid !R! :Gain 1 frierenmod:Wand_Energy. NL frierenmod:Fusion :Deal !D! damage."
   },
   "FrierenMod:SorryICant": {
     "NAME": "Sorry I Can't",
-    "DESCRIPTION": "Lose all frierenmod:Concentration , put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose all frierenmod:Concentration , put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount.",
+    "DESCRIPTION": "Lose all frierenmod:Concentration, put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose all frierenmod:Concentration, put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deal !D! damage, put !M! *Mana.)"
     ]
   },
   "FrierenMod:FusionRaid": {
     "NAME": "Fusion Raid Triple Strike",
-    "DESCRIPTION": " frierenmod:Raid 1: frierenmod:Fusion : Gain !M! frierenmod:Concentration. NL frierenmod:Raid 2: frierenmod:Fusion : Deal !D! damage. NL frierenmod:Raid 3: frierenmod:Fusion : Draw 2 cards."
+    "DESCRIPTION": "frierenmod:Raid 1: frierenmod:Fusion :Gain !M! frierenmod:Concentration. NL frierenmod:Raid 2: frierenmod:Fusion :Deal !D! damage. NL frierenmod:Raid 3: frierenmod:Fusion :Draw 2 cards."
   },
   "FrierenMod:SaturationOffensiveMagic": {
     "NAME": "Saturation Offensive Magic",
-    "DESCRIPTION": "Deal !D! damage !M! times. NL frierenmod:Raid !R! : This card's attack count and frierenmod:Raid value are increased by 1 in this battle. NL Ethereal."
+    "DESCRIPTION": "Deal !D! damage !M! times. NL frierenmod:Raid !R! :This card's attack count and frierenmod:Raid value are increased by 1 in this battle. NL Ethereal."
   },
   "FrierenMod:LittlePunch": {
     "NAME": "Little Punch",
@@ -1021,7 +1021,7 @@
   },
   "FrierenMod:SoSmall": {
     "NAME": "So Small",
-    "DESCRIPTION": "For each frierenmod:attribute less than yours on the target, put !M! *Mana into your hand and gain !B! Block. NL Exhaust."
+    "DESCRIPTION": "For each frierenmod:Attribute less than yours on the target, put !M! *Mana into your hand and gain !B! Block. NL Exhaust."
   },
   "FrierenMod:Meditation": {
     "NAME": "Meditation",
@@ -1029,34 +1029,34 @@
   },
   "FrierenMod:InjuryTime": {
     "NAME": "Injury Time",
-    "DESCRIPTION": "frierenmod:Speed. NL Gain [E] [E] and !M! frierenmod:Concentration . NL Exhaust."
+    "DESCRIPTION": "frierenmod:Speed. NL Gain [E] [E] and !M! frierenmod:Concentration. NL Exhaust."
   },
   "FrierenMod:StudyTime": {
     "NAME": "Study Time",
-    "DESCRIPTION": "Add !M! *Mana into your hand. frierenmod:Fusion : Put a copy of this card into the discard pile.",
-    "UPGRADE_DESCRIPTION": "Add !M! *Mana into your hand. frierenmod:Fusion : Put a copy of this card into the discard pile. NL Exhaust."
+    "DESCRIPTION": "Add !M! *Mana into your hand. frierenmod:Fusion :Put a copy of this card into the discard pile.",
+    "UPGRADE_DESCRIPTION": "Add !M! *Mana into your hand. frierenmod:Fusion :Put a copy of this card into the discard pile. NL Exhaust."
   },
   "FrierenMod:OneInHundred": {
     "NAME": "One In Hundred",
-    "DESCRIPTION": "Add !M! random frierenmod:Fusion cards into your hand. If you have no frierenmod:Fusion , these cards cost 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Add !M! random frierenmod:Fusion cards into your hand. If you have no frierenmod:Fusion, these cards cost 0 this turn. NL Exhaust."
   },
   "FrierenMod:PureMind": {
     "NAME": "Pure Mind",
     "DESCRIPTION": "Shuffle 2 *Mana into draw pile. If 2 frierenmod:Speed cards have been played this turn, put 1 *Clear *Mind into your hand.",
-    "UPGRADE_DESCRIPTION": " frierenmod:Speed . NL Shuffle 2 *Mana into draw pile. If 2 frierenmod:Speed cards have been played this turn, put 1 *Clear *Mind into your hand."
+    "UPGRADE_DESCRIPTION": "frierenmod:Speed. NL Shuffle 2 *Mana into draw pile. If 2 frierenmod:Speed cards have been played this turn, put 1 *Clear *Mind into your hand."
   },
   "FrierenMod:TrainingByEating": {
     "NAME": "Training By Eating",
-    "DESCRIPTION": "Gain a number of Strength equal to frierenmod:Concentration , lose all frierenmod:Concentration . NL frierenmod:Raid !R! : frierenmod:Speed . NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain a number of Strength equal to frierenmod:Concentration , lose all frierenmod:Concentration . NL frierenmod:Raid !R! : frierenmod:Speed ."
+    "DESCRIPTION": "Gain a number of Strength equal to frierenmod:Concentration , lose all frierenmod:Concentration. NL frierenmod:Raid !R! : frierenmod:Speed. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain a number of Strength equal to frierenmod:Concentration , lose all frierenmod:Concentration. NL frierenmod:Raid !R! : frierenmod:Speed."
   },
   "FrierenMod:GirlishHeart": {
     "NAME": "Girlish Heart",
-    "DESCRIPTION": "Discard 1 card, draw !M! cards. NL frierenmod:Fusion : Gain 2 frierenmod:Concentration ."
+    "DESCRIPTION": "Discard 1 card, draw !M! cards. NL frierenmod:Fusion :Gain 2 frierenmod:Concentration."
   },
   "FrierenMod:DinnerTime": {
     "NAME": "Dinner Time",
-    "DESCRIPTION": " frierenmod:Speed . NL Add 1 *Green *Apple into your hand. frierenmod:Raid !R! : Gain !M! frierenmod:Temporary_Dexterity."
+    "DESCRIPTION": "frierenmod:Speed. NL Add 1 *Apple into your hand. NL frierenmod:Raid !R! :Gain !M! frierenmod:Temporary_Dexterity."
   },
   "FrierenMod:MasterHelpApprentice": {
     "NAME": "Master Help Apprentice",
@@ -1077,15 +1077,15 @@
   },
   "FrierenMod:Rewind": {
     "NAME": "Rewind",
-    "DESCRIPTION": " frierenmod:Raid !R! : Add a copy of the last *Specialized *Offensive *Magic played this turn into your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " frierenmod:Raid !R! : Add a copy of the last *Specialized *Offensive *Magic played into your hand. NL Exhaust."
+    "DESCRIPTION": " frierenmod:Raid !R! :Add a copy of the last *Specialized *Offensive *Magic played this turn into your hand. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": " frierenmod:Raid !R! :Add a copy of the last *Specialized *Offensive *Magic played into your hand. NL Exhaust."
   },
   "FrierenMod:Reviewing": {
     "NAME": "Reviewing",
-    "DESCRIPTION": "Gain !B! Block. NL Each time you play a non *Mana card this turn, gain 1 frierenmod:Concentration .",
-    "UPGRADE_DESCRIPTION": " frierenmod:Speed . NL Gain !B! Block. NL Each time you play a non *Mana card this turn, gain 1 frierenmod:Concentration .",
+    "DESCRIPTION": "Gain !B! Block. NL Each time you play a non *Mana card this turn, gain 1 frierenmod:Concentration.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Speed. NL Gain !B! Block. NL Each time you play a non *Mana card this turn, gain 1 frierenmod:Concentration.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Gain %d frierenmod:Concentration )"
+      " NL (Gain %d frierenmod:Concentration)"
     ]
   },
   "FrierenMod:Snuggle": {
@@ -1102,11 +1102,11 @@
   },
   "FrierenMod:WithNoStop": {
     "NAME": "With No Stop",
-    "DESCRIPTION": " frierenmod:Speed . NL After playing the next 3 cards, gain 2 frierenmod:Concentration ."
+    "DESCRIPTION": "frierenmod:Speed. NL After playing the next 3 cards, gain 2 frierenmod:Concentration."
   },
   "FrierenMod:MasterAndApprentice": {
-    "NAME": "Master And Apprentice",
-    "DESCRIPTION": "At the start of your turn, add a random frierenmod:two-color card to your hand."
+    "NAME": "Master and Apprentice",
+    "DESCRIPTION": "At the start of your turn, add a random frierenmod:Bicolor card to your hand."
   },
   "FrierenMod:SkilledMage": {
     "NAME": "Skilled Mage",
@@ -1118,24 +1118,24 @@
   },
   "FrierenMod:FernRushdown": {
     "NAME": "Fern Rushdown",
-    "DESCRIPTION": "After triggering frierenmod:Raid , draw 2 cards."
+    "DESCRIPTION": "After triggering frierenmod:Raid, draw 2 cards."
   },
   "FrierenMod:ManaAffinity": {
     "NAME": "Mana Affinity",
     "DESCRIPTION": " *Mana has Retain."
   },
   "FrierenMod:CleanClothSpell": {
-    "NAME": "Clean Cloth Spell",
+    "NAME": "Spell to Clean Cloth",
     "DESCRIPTION": "frierenmod:Raid !R! : Deal !D! damage to all enemies."
   },
   "FrierenMod:Sit": {
     "NAME": "Sit",
-    "DESCRIPTION": "Deal !D! damage. NL If Fatal, permanently gain !M! maximum frierenmod:Wand_Energy . NL stslib:Fleeting ."
+    "DESCRIPTION": "Deal !D! damage. NL If Fatal, permanently gain !M! maximum frierenmod:Wand_Energy. NL stslib:Fleeting ."
   },
   "FrierenMod:Catwalk": {
     "NAME": "Catwalk",
-    "DESCRIPTION": " frierenmod:Fusion : frierenmod:Fusion : Gain !M! Strength. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": " frierenmod:Fusion : frierenmod:Fusion : Gain !M! Strength."
+    "DESCRIPTION": "frierenmod:Fusion : frierenmod:Fusion :Gain !M! Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Fusion : frierenmod:Fusion :Gain !M! Strength."
   },
   "FrierenMod:NoMercy": {
     "NAME": "No Mercy",
@@ -1146,16 +1146,16 @@
   },
   "FrierenMod:SleepingBeauty": {
     "NAME": "Sleeping Beauty",
-    "DESCRIPTION": "Lose 1 frierenmod:Concentration , then gain [E] or draw 1 card. Repeat the above effect up to !M! times. NL Exhaust."
+    "DESCRIPTION": "Lose 1 frierenmod:Concentration, then gain [E] or draw 1 card. Repeat the above effect up to !M! times. NL Exhaust."
   },
   "FrierenMod:ContinuousOffensiveMagic": {
     "NAME": "Continuous Offensive Magic",
-    "DESCRIPTION": "Gain a *Specialized *Offensive *Magic with damage value !M! . NL frierenmod:Raid !R! : Gain 1 copy."
+    "DESCRIPTION": "Gain a *Specialized *Offensive *Magic with damage value !M! . NL frierenmod:Raid !R! :Gain 1 copy."
   },
   "FrierenMod:Metamorphose": {
     "NAME": "Metamorphose",
-    "DESCRIPTION": "Double the number of all frierenmod:Fusion . NL Die next turn. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Retain. NL Double the number of all frierenmod:Fusion . NL Die next turn. NL Exhaust."
+    "DESCRIPTION": "Double the number of all frierenmod:Fusion. NL Die next turn. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Retain. NL Double the number of all frierenmod:Fusion. NL Die next turn. NL Exhaust."
   },
   "FrierenMod:GetSick": {
     "NAME": "Get Sick",
@@ -1170,7 +1170,7 @@
     "DESCRIPTION": "If the previous location is a *Shop , gain !M! Gold. NL If the previous location is a *Campfire , upgrade a random card in your deck. NL Ethereal. Exhaust."
   },
   "FrierenMod:MemoryOfChildhood": {
-    "NAME": "Memory Of Childhood",
+    "NAME": "Memory of Childhood",
     "DESCRIPTION": "Play all *Specialized *Offensive *Magic copies in the Exhaust pile again, targets are random. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Retain. NL Play all *Specialized *Offensive *Magic copies in the Exhaust pile again, targets are random. NL Exhaust."
   },
@@ -1180,7 +1180,7 @@
   },
   "FrierenMod:Confidence": {
     "NAME": "Confidence",
-    "DESCRIPTION": "All frierenmod:Raid effects that deal damage will trigger an additional time. NL At the start of each turn, lose all frierenmod:Concentration ."
+    "DESCRIPTION": "All frierenmod:Raid effects that deal damage will trigger an additional time. NL At the start of each turn, lose all frierenmod:Concentration."
   },
   "FrierenMod:Gamble": {
     "NAME": "Gamble",
@@ -1191,7 +1191,7 @@
     "DESCRIPTION": "All your single-target damage will also deal damage to non-targeted enemies."
   },
   "FrierenMod:RecollectionOfBenefactor": {
-    "NAME": "Recollection Of Benefactor",
+    "NAME": "Recollection of Benefactor",
     "DESCRIPTION": "When gaining a *Specialized *Offensive *Magic through *Haitaa *Wand , damage is increased from 2x to 4x."
   }
 }

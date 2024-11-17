@@ -4,7 +4,7 @@
     "NAMES": [
       "ChantX","chant","chanted"
     ],
-    "DESCRIPTION": "Choose an available #yMagic_Factor to activate."
+    "DESCRIPTION": "Choose an available #yMagic #yFactor to activate."
   },
   {
     "PROPER_NAME": "Slot",
@@ -29,7 +29,7 @@
       "[#9ffc4f]Loading",
       "[#9ffc4f]loading"
     ],
-    "DESCRIPTION": "Draw_Slot, Hand_Slot or Discard_Slot Loading."
+    "DESCRIPTION": "Draw Slot, Hand Slot or Discard Slot Loading."
   },
   {
     "PROPER_NAME": "Draw Slot",
@@ -168,7 +168,7 @@
     "NAMES": [
       "Concentration","concentration"
     ],
-    "DESCRIPTION": "Lose 1 of this power after playing a non #yMana card."
+    "DESCRIPTION": "Lose 1 of this power after playing a #ynon-Mana card."
   },
   {
     "PROPER_NAME": "Speed",

@@ -255,7 +255,7 @@
   "FrierenMod:MagicDeckPanel": {
     "TEXT": [
       "Magic Deck",
-      "View #yMagic_Factor and #yMagic_Prop you have."
+      "View #yMagic #yFactor and #yMagic #yProp you have."
     ]
   },
   "FrierenMod:MagicDeckScreen": {
@@ -274,16 +274,16 @@
   },
   "FrierenMod:MagicItemReward": {
     "TEXT": [
-      "Add a #yMagic_Item to your Magic Deck",
+      "Add a #yMagic #yItem to your Magic Deck",
       "Choose a Magic Factor or Magic Prop"
     ]
   },
   "FrierenMod:MagicItemTip": {
     "TEXT": [
       "Magic Factor",
-      "A special kind of option card which can be loaded in #ySlot .It can be activated when you're #ychanting and there's enough #yMana in the pile corresponding to the #gLoading #ySlot .",
+      "A special kind of option card which can be loaded in #ySlot .It can be activated when you're #yChanting and there's enough #yMana in the pile corresponding to the #gLoading #ySlot .",
       "Magic Prop",
-      "A disposable card. Start or stop using by #rRight_Click itself in #yMagic_Deck ."
+      "A disposable card. Start or stop using by #rRight-Click itself in #yMagic #yDeck ."
     ]
   },
   "FrierenMod:CardStyleText": {
@@ -471,7 +471,7 @@
   "FrierenMod:FernPanel": {
     "TEXT": [
       "Haitaa Wand",
-      "When you have #yWand_Energy , #rright-click the wand to gain a #ySpecialized_Offensive_Magic , its damage value equals the number of #yConcentration multiplied by #b%d times, then lose all #yConcentration.",
+      "When you have #yWand #yEnergy , #rRight-Click the wand to gain a #ySpecialized #yOffensive #yMagic , its damage value equals the number of #yConcentration multiplied by #b%d times, then lose all #yConcentration .",
       "No enough #rEnergy ."
     ]
   },

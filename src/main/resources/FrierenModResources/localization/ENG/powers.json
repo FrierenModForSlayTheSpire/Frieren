@@ -50,13 +50,13 @@
   "FrierenMod:ThunderPower": {
     "NAME": "Destructive Lightning",
     "DESCRIPTIONS": [
-      " #ySynchro change into #yLimit_Over_Synchro in the rest of the combat."
+      " #ySynchro change into #yLimit #yOver #ySynchro in the rest of the combat."
     ]
   },
   "FrierenMod:AccelerateFlowPower": {
     "NAME": "Clear Mind",
     "DESCRIPTIONS": [
-      " This turn, #ySynchro changes into #yAccel_Synchro ."
+      " This turn, #ySynchro changes into #yAccel #ySynchro ."
     ]
   },
   "FrierenMod:ManaReturnPower": {
@@ -134,7 +134,7 @@
   "FrierenMod:SimmeringPower": {
     "NAME": "Simmering",
     "DESCRIPTIONS": [
-      "After #yChant , draw #b%d #yLegendary_Spell ."
+      "After #yChant , draw #b%d #yLegendary #ySpell ."
     ]
   },
   "FrierenMod:FlyingMagicPower": {
@@ -152,7 +152,7 @@
   "FrierenMod:CopyPower": {
     "NAME": "Replica",
     "DESCRIPTIONS": [
-      "When taken unblocked damage, gain the same amount of #rMana . NL When player gain #yBlock , Gain the same amount of #yBlock . NL It will use #rApex_Of_The_Magic when its HP less than 100!"
+      "When taken unblocked damage, gain the same amount of #rMana . NL When player gain #yBlock , Gain the same amount of #yBlock . NL It will use #rApex #yOf #yThe #yMagic when its HP less than 100!"
     ]
   },
   "FrierenMod:EnemyManaPower": {
@@ -222,7 +222,7 @@
   "FrierenMod:MimicPower": {
     "NAME": "Mimic",
     "DESCRIPTIONS": [
-      "After you played #b%d cards, end your turn, remove your #yMana and apply #yDark_and_Scary to you."
+      "After you played #b%d cards, end your turn, remove your #yMana and apply #yDark #yand #yScary to you."
     ]
   },
   "FrierenMod:DarkPower": {
@@ -241,7 +241,7 @@
   "FrierenMod:ConcentrationPower": {
     "NAME": "Concentration",
     "DESCRIPTIONS": [
-      "Lose 1 of this power after playing a non #yMana card."
+      "Lose 1 of this power after playing a #ynon-Mana card."
     ]
   },
   "FrierenMod:DamageFusionPower": {

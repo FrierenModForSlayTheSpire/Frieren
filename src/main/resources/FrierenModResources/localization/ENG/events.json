@@ -11,7 +11,7 @@
       "[excited] #rOpen #rthe #rchest without hesitation!",
       "[calm] #rOpen #rthe #rchest after hesitation!",
       "[Battle] #rFight #rwith #rMimic! ",
-      "[Explosion] #rLose #r15 #rHP , #gGain #gRinglet_Form.",
+      "[Explosion] #rLose #r15 #rHP , #gGain #gRinglet #yForm .",
       "[Help] Let Fern pull you out.",
       "[Leave]"
     ]
@@ -112,12 +112,12 @@
       "Choose one to put in Discard Slot."
     ],
     "OPTIONS": [
-      "[Examine the grimoires] Choose #yMagic_Factor in the basic #ySlot take turns.",
+      "[Examine the grimoires] Choose #yMagic #yFactor in the basic #ySlot take turns.",
       "Examine the next...",
       "Examine the final...",
-      "[And some Prop?] Gain 2 #yMagic_Prop .",
+      "[And some Prop?] Gain 2 #yMagic #yProp .",
       "Let's go!",
-      "[First Playing?] Gain a #yTutorial_Prop ."
+      "[First Playing?] Gain a #yTutorial #yProp ."
     ]
   }
 }
