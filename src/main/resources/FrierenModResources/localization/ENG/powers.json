@@ -253,13 +253,13 @@
   "FrierenMod:EnergyFusionPower": {
     "NAME": "Energy Fusion",
     "DESCRIPTIONS": [
-      "The next #ySpecialized #yOffensive #yMagic will have: NL Gain #b%d [E]."
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Gain #b%d [E] ."
     ]
   },
   "FrierenMod:WeakVulnerableFusionPower": {
     "NAME": "Weak Vulnerable Fusion",
     "DESCRIPTIONS": [
-      "The next #ySpecialized #yOffensive #yMagic will have: NL Apply #b%d stacks of #yWeak and #yVulnerable."
+      "The next #ySpecialized #yOffensive #yMagic will have: NL Apply #b%d #yWeak and #yVulnerable ."
     ]
   },
   "FrierenMod:DrawCardFusionPower": {
@@ -319,7 +319,7 @@
   "FrierenMod:SkilledMagePower": {
     "NAME": "Skilled Mage",
     "DESCRIPTIONS": [
-      "After playing #yFusion, #ySpeed cards, #ySpecialized #yOffensive #yMagic, or triggering #yRaid, gain #b%d #yBlock."
+      "After playing #yFusion, #ySpeed cards, #ySpecialized #yOffensive #yMagic, or triggering #yRaid, gain #b%d #yBlock ."
     ]
   },
   "FrierenMod:BoldReversalPower": {
@@ -343,7 +343,7 @@
   "FrierenMod:SocialDancingPower": {
     "NAME": "Social Dancing",
     "DESCRIPTIONS": [
-      "The condition for #yRaid X is changed to X-1, X, and X+1 when you have #yConcentration."
+      "The condition for #yRaid X is changed to X-1, X, and X+1 when you have #yConcentration ."
     ]
   },
   "FrierenMod:ConfidencePower": {
@@ -355,7 +355,7 @@
   "FrierenMod:GamblePower": {
     "NAME": "Gamble",
     "DESCRIPTIONS": [
-      "After playing a card, randomize your #yconcentration count to between 1 and 6. If it is 6, deal #b%d damage to all enemies."
+      "After playing a card, randomize your #yConcentration count to between 1 and 6. If it is 6, deal #b%d damage to all enemies."
     ]
   },
   "FrierenMod:FumeshroomFormPower": {
@@ -367,7 +367,7 @@
   "FrierenMod:RecollectionOfBenefactorPower": {
     "NAME": "Recollection Of Benefactor",
     "DESCRIPTIONS": [
-      "When gaining a #ySpecialized #yOffensive #yMagic through #yHaitaa_Wand, damage is increased from 2x to 4x."
+      "When gaining a #ySpecialized #yOffensive #yMagic through #yHaitaa #yWand, damage is increased from 2x to 4x."
     ]
   },
   "FrierenMod:NextTurnConcentrationPower": {
