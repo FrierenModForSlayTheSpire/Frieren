@@ -1100,11 +1100,11 @@
     "DESCRIPTION": "选择：丢弃最多 !M! 张 *魔力 获得等量 [E] ，将1张 *魔力 放入手中。"
   },
   "FrierenMod:Snuggle1": {
-    "NAME": "选项卡1",
+    "NAME": "和芙莉莲贴贴",
     "DESCRIPTION": "丢弃最多 !M! 张 *魔力 获得等量 [E] 。"
   },
   "FrierenMod:Snuggle2": {
-    "NAME": "选项卡2",
+    "NAME": "和修塔尔克贴贴",
     "DESCRIPTION": "将 !M! 张 *魔力 放入手中。"
   },
   "FrierenMod:WithNoStop": {
