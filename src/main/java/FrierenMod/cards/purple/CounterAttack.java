@@ -23,6 +23,7 @@ public class CounterAttack extends AbstractBaseCard {
 
     @Override
     public void initializeSpecifiedAttributes() {
+        this.tags.add(Enum.RAID);
         this.damage = this.baseDamage = 9;
         this.block = this.baseBlock = 9;
     }
