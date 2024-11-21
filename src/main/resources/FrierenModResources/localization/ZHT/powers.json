@@ -271,7 +271,7 @@
   "FrierenMod:CopySelfToDiscardFusionPower": {
     "NAME": "復製融合",
     "DESCRIPTIONS": [
-      "下一張獲得的 #y特化普攻魔法 將附加： NL 在棄牌堆放入 #b%d1 張本牌的復製品。"
+      "下一張獲得的 #y特化普攻魔法 將附加： NL 在棄牌堆放入 #b%d 張本牌的復製品。"
     ]
   },
   "FrierenMod:ConcentrationFusionPower": {
