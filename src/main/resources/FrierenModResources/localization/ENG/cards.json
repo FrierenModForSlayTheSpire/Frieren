@@ -1093,11 +1093,11 @@
     "DESCRIPTION": "Choose: Discard up to !M! *Mana to gain an equal amount of [E] , or put 1 *Mana into your hand."
   },
   "FrierenMod:Snuggle1": {
-    "NAME": "Option 1",
+    "NAME": "Snuggle With Frieren",
     "DESCRIPTION": "Discard up to !M! *Mana to gain an equal amount of [E] ."
   },
   "FrierenMod:Snuggle2": {
-    "NAME": "Option 2",
+    "NAME": "Snuggle With Stark",
     "DESCRIPTION": "Add !M! *Mana into your hand."
   },
   "FrierenMod:WithNoStop": {
