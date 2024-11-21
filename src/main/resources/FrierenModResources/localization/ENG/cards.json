@@ -944,7 +944,7 @@
   },
   "FrierenMod:HuddleForWarmth": {
     "NAME": "Huddle For Warmth",
-    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! :Block will not be removed at the start of your next turn. NL Ethereal."
+    "DESCRIPTION": "Gain !B! Block. NL frierenmod:Raid !R! :Block will not be removed at the start of your next turn."
   },
   "FrierenMod:SkimReading": {
     "NAME": "Skim Reading",
@@ -1038,7 +1038,7 @@
   },
   "FrierenMod:OneInHundred": {
     "NAME": "One In Hundred",
-    "DESCRIPTION": "Add !M! random frierenmod:Fusion cards into your hand. If you have no frierenmod:Fusion, these cards cost 0 this turn. NL Exhaust."
+    "DESCRIPTION": "Add !M! random frierenmod:Fusion cards into your hand. If you have no frierenmod:Wand_Energy, these cards cost 0 this turn. NL Exhaust."
   },
   "FrierenMod:PureMind": {
     "NAME": "Pure Mind",
@@ -1180,7 +1180,7 @@
   },
   "FrierenMod:Confidence": {
     "NAME": "Confidence",
-    "DESCRIPTION": "All frierenmod:Raid effects that deal damage will trigger an additional time. NL At the start of each turn, lose all frierenmod:Concentration."
+    "DESCRIPTION": "All frierenmod:Raid effects that deal damage will trigger an additional time. NL At the start of each turn, lose all frierenmod:Concentration. NL Ethereal."
   },
   "FrierenMod:Gamble": {
     "NAME": "Gamble",

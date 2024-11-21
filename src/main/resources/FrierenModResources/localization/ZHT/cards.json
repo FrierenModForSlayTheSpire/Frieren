@@ -951,7 +951,7 @@
   },
   "FrierenMod:HuddleForWarmth": {
     "NAME": "抱團取暖",
-    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL frierenmod:奇襲 !R! ：你的下一回合開始時 格擋 不會消失。 NL 虛無 。"
+    "DESCRIPTION": "獲得 !B! 點 格擋 。 NL frierenmod:奇襲 !R! ：你的下一回合開始時 格擋 不會消失。"
   },
   "FrierenMod:SkimReading": {
     "NAME": "快速檢閱",
@@ -1045,7 +1045,7 @@
   },
   "FrierenMod:OneInHundred": {
     "NAME": "百裏挑一",
-    "DESCRIPTION": "將 !M! 張隨機 frierenmod:融合 牌放入手中。如果你沒有任何 frierenmod:融合 ，這些牌在本回合耗能為0。 NL 消耗 。"
+    "DESCRIPTION": "將 !M! 張隨機 frierenmod:融合 牌放入手中。如果你沒有 frierenmod:法杖充能 ，這些牌在本回合耗能為0。 NL 消耗 。"
   },
   "FrierenMod:PureMind": {
     "NAME": "明鏡止水之心",
@@ -1187,7 +1187,7 @@
   },
   "FrierenMod:Confidence": {
     "NAME": "胸有成竹",
-    "DESCRIPTION": "所有造成傷害的 frierenmod:奇襲 效果會額外觸發一次。 NL 每回合開始後失去所有 frierenmod:專註 。"
+    "DESCRIPTION": "所有造成傷害的 frierenmod:奇襲 效果會額外觸發一次。 NL 每回合開始後失去所有 frierenmod:專註 。 NL 虛無 。"
   },
   "FrierenMod:Gamble": {
     "NAME": "豪賭",

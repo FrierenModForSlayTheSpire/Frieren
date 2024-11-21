@@ -12,7 +12,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 
 public class Cheering extends AbstractBaseCard {
     public static final String ID = ModInformation.makeID(Cheering.class.getSimpleName());
-    public static final CardInfo info = new CardInfo(ID, 2, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
+    public static final CardInfo info = new CardInfo(ID, 3, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
 
     public Cheering() {
         super(info);
