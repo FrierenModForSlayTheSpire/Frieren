@@ -1008,10 +1008,10 @@
   },
   "FrierenMod:SorryICant": {
     "NAME": "对不起，做不到",
-    "DESCRIPTION": "失去所有 frierenmod:专注 ，将失去数的 *魔力 放入抽牌堆，造成失去数的伤害。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "失去所有 frierenmod:专注 ，将失去数的 *魔力 放入抽牌堆，造成失去数的伤害。",
+    "DESCRIPTION": " frierenmod:疾速 。 NL 消耗 所有 *魔力 ，获得消耗数的 格挡 和 frierenmod:专注 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": " frierenmod:疾速 。 NL 消耗 所有 *魔力 ，获得消耗数的 格挡 和 frierenmod:专注 。",
     "EXTENDED_DESCRIPTION": [
-      " NL （造成 !D! 点伤害，放入 !M! 张 *魔力 。）"
+      " NL （获得 !B! 点 格挡 和 !M! 点 frierenmod:专注 ）"
     ]
   },
   "FrierenMod:FusionRaid": {

@@ -1001,10 +1001,10 @@
   },
   "FrierenMod:SorryICant": {
     "NAME": "Sorry I Can't",
-    "DESCRIPTION": "Lose all frierenmod:Concentration, put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Lose all frierenmod:Concentration, put the lost amount of *Mana into the draw pile, deal damage equal to the lost amount.",
+    "DESCRIPTION": "frierenmod:Speed. NL Exhaust all *Mana ,gain Block and frierenmod:Concentration with the same amount. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "frierenmod:Speed. NL Exhaust all *Mana ,gain Block and frierenmod:Concentration with the same amount.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! damage, put !M! *Mana.)"
+      " NL (Gain !B! Block and !M! frierenmod:Concentration )"
     ]
   },
   "FrierenMod:FusionRaid": {
