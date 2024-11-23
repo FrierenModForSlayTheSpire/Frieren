@@ -1008,8 +1008,8 @@
     ]
   },
   "FrierenMod:FusionRaid": {
-    "NAME": "Fusion Raid Triple Strike",
-    "DESCRIPTION": "frierenmod:Raid 1: frierenmod:Fusion :Gain !M! frierenmod:Concentration. NL frierenmod:Raid 2: frierenmod:Fusion :Deal !D! damage. NL frierenmod:Raid 3: frierenmod:Fusion :Draw 2 cards."
+    "NAME": "Triple Raid",
+    "DESCRIPTION": "frierenmod:Raid 1:Draw !M! cards. NL frierenmod:Raid 2:Deal !D! damage. NL frierenmod:Raid 3:Gain [E] [E] ."
   },
   "FrierenMod:SaturationOffensiveMagic": {
     "NAME": "Saturation Offensive Magic",

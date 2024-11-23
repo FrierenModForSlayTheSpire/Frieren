@@ -1016,7 +1016,7 @@
   },
   "FrierenMod:FusionRaid": {
     "NAME": "奇襲的三擊",
-    "DESCRIPTION": "frierenmod:奇襲 1： frierenmod:融合 ：獲得 !M! 點 frierenmod:專註 。 NL  frierenmod:奇襲 2： frierenmod:融合 ：造成 !D! 點傷害。 NL frierenmod:奇襲 3： frierenmod:融合 ：抽2張牌。"
+    "DESCRIPTION": " frierenmod:奇襲 1：抽 !M! 張牌 。 NL frierenmod:奇襲 2：造成 !D! 點傷害。 NL frierenmod:奇襲 3：獲得 [E] [E] 。"
   },
   "FrierenMod:SaturationOffensiveMagic": {
     "NAME": "飽和攻擊魔法",
