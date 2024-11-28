@@ -1069,7 +1069,7 @@
   },
   "FrierenMod:Pouting": {
     "NAME": "Pouting",
-    "DESCRIPTION": "Deal !D! damage to all enemies, all *Cheering increase this value. NL Ethereal."
+    "DESCRIPTION": "Deal !D! damage, all *Cheering increase this value. NL Ethereal."
   },
   "FrierenMod:Cheering": {
     "NAME": "Cheering",

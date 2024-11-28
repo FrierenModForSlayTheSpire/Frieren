@@ -1076,7 +1076,7 @@
   },
   "FrierenMod:Pouting": {
     "NAME": "气嘟嘟",
-    "DESCRIPTION": "对所有敌人造成 !D! 点伤害，所有 *乐呵呵 增加此数值。 NL 虚无 。"
+    "DESCRIPTION": "造成 !D! 点伤害，所有 *乐呵呵 增加此数值。 NL 虚无 。"
   },
   "FrierenMod:Cheering": {
     "NAME": "乐呵呵",
