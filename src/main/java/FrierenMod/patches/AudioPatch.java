@@ -35,6 +35,11 @@ public class AudioPatch {
             AudioPatch.load(instance, ___map, "win.mp3");
             AudioPatch.load(instance, ___map, "Himmel.mp3");
             AudioPatch.load(instance, ___map, "achievement.mp3");
+            AudioPatch.load(instance, ___map, "I_am_fern.mp3");
+            AudioPatch.load(instance, ___map, "BabySleeping.mp3");
+            AudioPatch.load(instance, ___map, "FumeshroomForm.mp3");
+            AudioPatch.load(instance, ___map, "SocialDancing.mp3");
+            AudioPatch.load(instance, ___map, "SoSmall.mp3");
         }
     }
 

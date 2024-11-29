@@ -133,8 +133,8 @@ public class Fern extends CustomPlayer {
     // 人物选择界面点击你的人物按钮时触发的方法，这里为屏幕轻微震动
     @Override
     public void doCharSelectScreenSelectEffect() {
-//        CardCrawlGame.sound.stop("I_am_frieren.mp3");
-//        CardCrawlGame.sound.play("I_am_frieren.mp3");
+        CardCrawlGame.sound.stop("I_am_fern.mp3");
+        CardCrawlGame.sound.play("I_am_fern.mp3");
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, false);
     }
 
