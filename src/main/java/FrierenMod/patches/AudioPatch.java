@@ -56,7 +56,10 @@ public class AudioPatch {
             if (canReplaceMusic()) {
                 switch (key) {
                     case "SHOP":
+                        if (AbstractDungeon.miscRng.random(1) == 0){
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Merchant_NewMix_v1.ogg")));
+                        }
+                        else return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Merchant_NewMix_v2.mp3")));
                     case "SHRINE":
                         return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Shrine_NewMix_v1.ogg")));
                     case "MINDBLOOM":
@@ -92,12 +95,12 @@ public class AudioPatch {
                         if (AbstractDungeon.miscRng.random(1) == 0) {
                             return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level1_NewMix_v1.mp3")));
                         }
-                        return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level1_NewMix_v1.mp3")));
+                        else return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level1-2_v2.MP3")));
                     case "TheCity":
                         if (AbstractDungeon.miscRng.random(1) == 0) {
                             return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level2_NewMix_v1.mp3")));
                         }
-                        return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level2-2_v2.mp3")));
+                        else return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level2-2_v2.MP3")));
                     case "TheBeyond":
                         if (AbstractDungeon.miscRng.random(1) == 0) {
                             return SpireReturn.Return(newMusic(ModInformation.makeAudioPath("sound/STS_Level3_v2.mp3")));
