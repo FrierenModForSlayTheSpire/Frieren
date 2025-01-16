@@ -3,6 +3,7 @@ package FrierenMod.utils;
 public class Config {
     public static final boolean IN_DEV = false;
     public static final boolean FERN_ENABLE = true;
+    public static final boolean STARK_ENABLE = false;
     public static boolean ALLOW_SPECIAL_SFX = true;
     public static boolean SHOW_SLOT_TYPE = true;
     public static boolean ALLOW_ACHIEVEMENT = true;

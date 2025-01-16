@@ -1200,5 +1200,13 @@
   "FrierenMod:RecollectionOfBenefactor": {
     "NAME": "心系故人",
     "DESCRIPTION": "通过 *海塔留下的法杖 获得 *特化普攻魔法 时，伤害从2倍改为4倍。"
+  },
+  "FrierenMod:Strike_Stark": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "FrierenMod:Defend_Defend": {
+    "NAME": "防御",
+    "DESCRIPTION": "获得 !B! 点 格挡 。"
   }
 }
