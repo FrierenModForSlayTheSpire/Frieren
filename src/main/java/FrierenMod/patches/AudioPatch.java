@@ -1,6 +1,7 @@
 package FrierenMod.patches;
 
 import FrierenMod.enums.CharacterEnums;
+import FrierenMod.utils.Config;
 import FrierenMod.utils.Log;
 import FrierenMod.utils.ModInformation;
 import com.badlogic.gdx.audio.Music;
@@ -156,6 +157,6 @@ public class AudioPatch {
         ___map.put(key, new Sfx(ModInformation.makeAudioPath("sound/" + key), false));
     }
     private static boolean canReplaceMusic(){
-        return AbstractDungeon.player != null && (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN || AbstractDungeon.player.chosenClass == CharacterEnums.FERN);
+        return Config.ALLOW_SPECIAL_BGM && AbstractDungeon.player != null && (AbstractDungeon.player.chosenClass == CharacterEnums.FRIEREN || AbstractDungeon.player.chosenClass == CharacterEnums.FERN);
     }
 }
