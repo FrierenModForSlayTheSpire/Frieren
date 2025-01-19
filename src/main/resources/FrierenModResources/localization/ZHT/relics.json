@@ -139,5 +139,12 @@
     "DESCRIPTIONS": [
       ""
     ]
+  },
+  "FrierenMod:StarkRelic": {
+    "NAME": "Test",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Test"
+    ]
   }
 }
